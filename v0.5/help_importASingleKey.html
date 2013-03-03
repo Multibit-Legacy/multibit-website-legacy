@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+<head>
+  <title>MultiBit - Help - How to import a single private key</title>
+  <link rel="stylesheet" type="text/css" href="main.css">
+
+  <meta name="Description" content="Easy to use bitcoin software for the PC, Mac and Linux">
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+  <meta name="keywords" CONTENT="bitcoin, bitcoinj, pseudonymous, p2p, peer to peer, cryptography, digital currency, java, multibit, satoshi, nakamoto, qr code">
+  <meta name="robots" content="index, follow" />
+  <meta name="copyright" content="Copyright 2011 multibit.org">
+
+  <link rel="shortcut icon" href="favicon.ico">
+
+	<style media="screen" type="text/css">
+	html,
+	body {
+		margin:0;
+		padding:0;
+		height:100%;
+	}
+	#container {
+		min-height:100%;
+		position:relative;
+	}
+	#header {
+		background:#D9E2EC;
+		padding:10px;
+	}
+	#body {
+		padding:0px;
+		padding-bottom:30px;	/* Height of the footer */
+	}
+	#footer {
+		position:absolute;
+		bottom:0;
+		width:100%;
+		height:30px;			/* Height of the footer */
+		background:#F0F0E7;
+	}
+	/* other non-essential CSS */
+	#header p,
+	#header h1 {
+		margin:0;
+		padding:10px 0 0 10px;
+	}
+	#footer p {
+		margin:0;
+		padding:5px;
+	}
+	</style>
+
+	<!--[if lt IE 7]>
+	<style media="screen" type="text/css">
+	#container {
+		height:100%;
+	}
+	</style>
+	<![endif]-->
+</head>
+<body>
+
+<div id="container">
+	<div id="body">
+		<!-- Body start -->
+
+<div id='naviBar' style="margin:0px; padding:4px; background:#e0f0f8; color:black; font-size:13px;">
+&nbsp;<a title="Help Contents" href="help_contents.html"><b>Help Contents</b></a></div>
+
+<div id="centercontent" style="padding:10px;">
+<h2>How to import a single private key</h2>
+
+<p>You can import a single private key into MultiBit that you have produced externally, perhaps by vanitygen or www.bitaddress.org.</p>
+
+<p>The easiest way to get the format exactly right is:
+<ol>
+<li>Create a new wallet saved to a file, say, example.wallet.</li>
+<li>Export the private keys, WITHOUT A PASSWORD, to a file example.key.</li> 
+<li>Open up the key file in a text editor. There is a big comment at the top that describes the format.  It is simply lines, each line containing the sipa format key - beginning with 5 - and the key creation date in a particular format. You will have an example in there to copy as a new wallet has one key in it.</li>
+<li>Add in your new key and a date a bit before when you created it.</li> 
+<li>Import the key file back into the wallet.</li>
+<li>MultiBit will then replay the blocks to get the transactions and work out the balance.</li>  
+</ol>
+<p>TIDY UP: It is good idea to then secure delete the key file so it is not lying around. If you want a quick key backup you can do another key export but add a password so that the key export file is encrypted.</p>
+
+<br>
+<table border="0" cellpadding="0" cellspacing="0" width=100%>
+	<tbody><tr width=100%>
+        	<td align="left" width="33%">
+			<a title="Previous" href="help_runFromUSBDrive.html">&#60; How to run MultiBit from a USB drive</a>
+		</td>
+		<td align="center" width=34%>
+			<a title="Help Contents" href="help_contents.html">Back to help contents</a>
+		</td>
+		<td align="right" width=33%>
+			<a title="Next" href="help_backupWalletUsingPrivateKeys.html">How to backup your wallet using private keys &#62;</a>
+		</td>
+
+	</tr></tbody>
+</table>
+</div>
+</body>
+</html>
