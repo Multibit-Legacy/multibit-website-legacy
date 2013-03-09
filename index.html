@@ -1,0 +1,16 @@
+---
+---
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>MultiBit • Secure lightweight international Bitcoin wallet</title>
+<meta name="description" content="MultiBit Bitcoin wallet - Official Site" />
+<script>
+var langs={};{% for lang in site.langs %}{% if lang.langcode != page.langcode %}langs['{{ lang.langcode }}']=true;{% endif %}{% endfor %}
+var lang=(navigator.language)?navigator.language:navigator.userLanguage;
+lang=lang.split('_')[0];
+if(!langs[lang])lang='en';
+window.location.href='/'+lang+'/';
+</script>
+</head>
+</html>
