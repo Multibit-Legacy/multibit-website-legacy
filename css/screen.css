@@ -70,7 +70,7 @@ legend {
 body {
   padding: 20px;
   font: normal 62.5%/1.5 "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Arial, Helvetica, sans-serif;
-  color: #554
+  color: #000
 }
 
 p, form, ol, ul, dl {
@@ -113,6 +113,7 @@ strong em, em strong {
 
 small {
   font-size: 100%
+  color: #000
 }
 
 abbr, acronym {
@@ -125,11 +126,11 @@ a abbr, a acronym {
 }
 
 a:link, a:visited {
-  color: #554
+  color: #000
 }
 
 a:hover, a:active {
-  color: #221
+  color: #222
 }
 
 .content ul, .content ol {
@@ -171,11 +172,7 @@ a:hover, a:active {
     background: url("../images/layout/footer_bg.png") repeat-x 0 0;
     padding: 40px 0 10px;
     text-align: center;
-    color: #79a
-  }
-
-  #footer a {
-    text-decoration: none
+    color: #000
   }
 
   #nav {
@@ -222,7 +219,7 @@ a:hover, a:active {
   }
 
   #nav a:link, #nav a:visited {
-    color: #bde;
+    color: #ddd;
     text-decoration: none;
     text-transform: uppercase
   }
@@ -232,49 +229,7 @@ a:hover, a:active {
   }
 
   #nav li.selected a:link, #nav li.selected a:visited, #nav li.download-selected a:link, #nav li.download-selected a:visited {
-    color: #256
-  }
-
-  ul.subnav, .subnav ul {
-    margin: 0;
-    font-size: 150%;
-    line-height: 1.2
-  }
-
-  .subnav a:link, .subnav a:visited {
-    text-decoration: none
-  }
-
-  .subnav a:hover, .subnav a:active {
-    text-decoration: underline
-  }
-
-  .subnav li {
-    -moz-border-radius: 6px;
-    -webkit-border-radius: 6px
-  }
-
-  .subnav li a {
-    padding: 6px 30px 6px 8px;
-    display: block
-  }
-
-  .subnav .open {
-    background-color: #eed;
-    padding: .1em 0 .3em
-  }
-
-  .subnav a.selected {
-    background: url("../images/icons/icon_arrow.png") no-repeat 95% 50%
-  }
-
-  .subnav ul {
-    font-size: 100%;
-    margin: 4px 0 0 20px
-  }
-
-  .subnav ul ul {
-    font-size: 80%
+    color: #444
   }
 
   #content {
@@ -292,7 +247,7 @@ a:hover, a:active {
   #sidebar {
     width: 339px;
     float: left;
-    border-right: 1px solid #cde
+    border-right: 1px solid #ddd
   }
 
   #home #main {
@@ -303,7 +258,7 @@ a:hover, a:active {
   #home #sidebar {
     float: none;
     margin-left: 650px;
-    border-left: 1px solid #cde;
+    border-left: 1px solid #ddd;
     border-right: 0
   }
 
@@ -317,20 +272,20 @@ a:hover, a:active {
   }
 
   .intro p {
-    color: #256;
+    color: #444;
     font-size: 150%;
     line-height: 1.467
   }
 
   .intro p a:link, .intro p a:visited {
-    color: #256;
-    border-bottom: 1px solid #bde;
+    color: #444;
+    border-bottom: 1px solid #ddd;
     text-decoration: none;
     padding: 0 .2em
   }
 
   .intro p a:hover, .intro p a:active {
-    background-color: #e0f0f8
+    background-color: #f0f0f0
   }
 
   .screens img {
@@ -351,7 +306,7 @@ a:hover, a:active {
     clear: left;
     float: left;
     width: 7em;
-    color: #79a;
+    color: #999;
     text-align: right;
     line-height: 1.85
   }
@@ -367,7 +322,7 @@ a:hover, a:active {
 
   .sidepanel {
     padding: 20px 15px 25px 29px;
-    border-bottom: 1px solid #cde
+    border-bottom: 1px solid #ddd
   }
 
   #sidebar .sidepanel:first-child {
@@ -377,7 +332,7 @@ a:hover, a:active {
   .featurelist ul {
     list-style: none;
     font-weight: bold;
-    color: #256;
+    color: #444;
     margin: 0
   }
 
@@ -413,41 +368,9 @@ a:hover, a:active {
     background: url("../images/icons/icon_clock.png") no-repeat 0 50%
   }
 
-  .featurelist li.speed {
-    background: url("../images/icons/icon_speed.png") no-repeat 0 50%
-  }
-
-  .featurelist li.config {
-    background: url("../images/icons/icon_config.png") no-repeat 0 50%
-  }
-
-  .downloadbox p {
-    padding: 12px 10px;
-    font-size: 90.9%;
-    background: url("../images/layout/dl_bg.png") no-repeat 0 100%
-  }
-
-  .downloadbox p strong {
-    font-size: 110%
-  }
-
-  .downloadbox a {
-    display: block;
-    padding-left: 40px
-  }
-
-  .downloadbox a:link, .downloadbox a:visited {
-    color: #256;
-    text-decoration: none
-  }
-
-  .downloadbox a:hover, .downloadbox a:active {
-    color: #023
-  }
-
   .underline {
     margin-bottom: 15px;
-    border-bottom: 1px solid #cde
+    border-bottom: 1px solid #ddd
   }
 
   .mute {
@@ -467,14 +390,14 @@ a:hover, a:active {
     bottom: 0;
     text-transform: uppercase;
     text-decoration: none;
-    border-left: 1px solid #cde;
+    border-left: 1px solid #ddd;
     padding-left: .5em;
     padding-bottom: .1em;
     color: #79a
   }
 
   .more a:hover {
-    color: #554
+    color: #555
   }
 
   .columns {
@@ -497,10 +420,9 @@ a:hover, a:active {
 
   h3 {
     margin: 0 0 10px;
-    font: normal 180%/1.1 Rockwell, Courier, sans-serif;
-    text-transform: uppercase;
+    font: normal 180%/1.1  "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Arial, Helvetica, sans-serif;
     letter-spacing: .1em;
-    color: #389
+    color: #000
   }
 
   h3.image {
@@ -510,10 +432,9 @@ a:hover, a:active {
 
   h4 {
     margin: 0 0 10px;
-    font: normal 120%/1.1 Rockwell, Courier, sans-serif;
-    text-transform: uppercase;
+    font: normal 120%/1.1 "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Arial, Helvetica, sans-serif;
     letter-spacing: .1em;
-    color: #389
+    color: #000
   }
 
   h5 {
@@ -562,31 +483,6 @@ a:hover, a:active {
     margin-bottom: 0
   }
 
-  form.layout .textbox, form.layout textarea, form.layout select {
-    width: 25em;
-    float: left
-  }
-
-  form.layout textarea {
-    height: 15em
-  }
-
-  form.layout .radio {
-    margin-right: 1.5em
-  }
-
-  form.purchase-form {
-    padding: 1em 2em;
-    border: #bfdfef 1px solid;
-    margin-bottom: 2em;
-    color: #023
-  }
-
-  form.payment-processor-form {
-    float: left;
-    margin-right: 2em
-  }
-
   .clear {
     clear: both
   }
@@ -606,7 +502,7 @@ a:hover, a:active {
 
   small {
     font-size: 100%;
-    color: #999
+    color: #000
   }
 
   .download-options {
