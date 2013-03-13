@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+<head>
+  <title>MultiBit - Help - Exporting private keys</title>
+  <link rel="stylesheet" type="text/css" href="main.css">
+
+  <meta name="Description" content="Easy to use bitcoin software for the PC, Mac and Linux">
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+  <meta name="keywords" CONTENT="bitcoin, bitcoinj, pseudonymous, p2p, peer to peer, cryptography, digital currency, java, multibit, satoshi, nakamoto, qr code">
+  <meta name="robots" content="index, follow" />
+  <meta name="copyright" content="Copyright 2012 multibit.org">
+
+  <link rel="shortcut icon" href="favicon.ico">
+
+	<style media="screen" type="text/css">
+	html,
+	body {
+		margin:0;
+		padding:0;
+		height:100%;
+	}
+	#container {
+		min-height:100%;
+		position:relative;
+	}
+	#header {
+		background:#D9E2EC;
+		padding:10px;
+	}
+	#body {
+		padding:0px;
+		padding-bottom:30px;	/* Height of the footer */
+	}
+	#footer {
+		position:absolute;
+		bottom:0;
+		width:100%;
+		height:30px;			/* Height of the footer */
+		background:#F0F0E7;
+	}
+	/* other non-essential CSS */
+	#header p,
+	#header h1 {
+		margin:0;
+		padding:10px 0 0 10px;
+	}
+	#footer p {
+		margin:0;
+		padding:5px;
+	}
+	</style>
+
+	<!--[if lt IE 7]>
+	<style media="screen" type="text/css">
+	#container {
+		height:100%;
+	}
+	</style>
+	<![endif]-->
+</head>
+<body>
+
+<div id="container">
+	<div id="body">
+		<!-- Body start -->
+
+<div id='naviBar' style="margin:0px; padding:4px; background:#e0f0f8; color:black; font-size:13px;">
+&nbsp;<a title="Help Contents" href="help_contents.html"><b>Help Contents</b></a></div>
+
+<div id="centercontent" style="padding:10px;">
+<h2>Exporting private keys</h2>
+<p>Private keys are long strings of letters and numbers that are literally the key to spending your bitcoin.   Each wallet has a number of private keys (one for each address).   You can back up your private keys for a MultiBit wallet into a text file called a 'private key export file'. You can password protect this text file to prevent other people reading this data.</p>
+<p>To export the private keys in a wallet, do the following:
+<ol>
+  <li><p>In the '<img width="16" height="16" title="Wallets" alt="Wallets" src="helpImages/yourWallets.png"/>&nbsp;Wallets' side panel choose the wallet you want to export the private keys for.</p></li>
+  <li><p>Select the menu option 'Tools | <img width="16" height="16" title="Export private keys" alt="Export private keys" src="helpImages/exportKey.png"/>&nbsp;Export Private Keys'. The '<img width="16" height="16" title="Export private keys" alt="Export private keys" src="helpImages/exportKey.png"/>&nbsp;Export Private Keys' screen appears.</p></li>
+  <li><p>By default, the private keys file is called the same as your wallet file, only with an extension 'key' rather than wallet. You can see this in the following screenshot:</p><p><img width="974" height="733" title="Export private keys" alt="Export private keys" src="helpImages/exportPrivateKeys.png"/></p></li>
+  <li><p>If the wallet is password protected, enter the wallet password in the field titled 'Wallet password'.</p></li>
+  <li><p>If you want to output the private key file to a different directory or filename click on the 'Choose export file' button. A file chooser opens and you can select the file to save to.</p></li>
+  <li><p>It is <b>strongly recommended</b> that you password protect your private key export files.   To do this, click on the 'Password protect export file' radio button. Enter the password you want to use in the 'Password' field and then repeat the same password in the 'Repeat password' field. If they match you get a little green tick on the right hand side.</p></li>
+  <li><p>To output the private keys to the output file specified, click on the button '<img width="16" height="16" title="Export private keys" alt="Export private keys" src="helpImages/exportKey.png"/>&nbsp;Export private keys'.   The private key file is written and a success message appears.</p><p>If the export of the private key file fails for any reason the error message is given on screen.</li>
+  <li><p>After the export file is written, it is then verified by reading the file back in again and checking the keys in the file match the keys in the wallet. A verification message is given if this is successful.</p></li>
+</ol>
+
+<br>
+<table border="0" cellpadding="0" cellspacing="0" width=100%>
+	<tbody><tr width=100%>
+        	<td align="left" width="33%">
+			<a title="Previous" href="help_importingPrivateKeys.html">&#60; Importing private keys</a>
+		</td>
+		<td align="center" width=34%>
+			<a title="Help Contents" href="help_contents.html">Back to help contents</a>
+		</td>
+		<td align="right" width=33%>
+			<a title="Next" href="help_resetBlockchain.html">Reset blockchain and transactions &#62;</a>
+		</td>
+	</tr></tbody>
+</table>
+</div>
+</body>
+</html>

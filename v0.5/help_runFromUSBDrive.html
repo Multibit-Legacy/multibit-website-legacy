@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+<head>
+  <title>MultiBit - Help - How to run MultiBit from a USB drive</title>
+  <link rel="stylesheet" type="text/css" href="main.css">
+
+  <meta name="Description" content="Easy to use bitcoin software for the PC, Mac and Linux">
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+  <meta name="keywords" CONTENT="bitcoin, bitcoinj, pseudonymous, p2p, peer to peer, cryptography, digital currency, java, multibit, satoshi, nakamoto, qr code">
+  <meta name="robots" content="index, follow" />
+  <meta name="copyright" content="Copyright 2011 multibit.org">
+
+  <link rel="shortcut icon" href="favicon.ico">
+
+	<style media="screen" type="text/css">
+	html,
+	body {
+		margin:0;
+		padding:0;
+		height:100%;
+	}
+	#container {
+		min-height:100%;
+		position:relative;
+	}
+	#header {
+		background:#D9E2EC;
+		padding:10px;
+	}
+	#body {
+		padding:0px;
+		padding-bottom:30px;	/* Height of the footer */
+	}
+	#footer {
+		position:absolute;
+		bottom:0;
+		width:100%;
+		height:30px;			/* Height of the footer */
+		background:#F0F0E7;
+	}
+	/* other non-essential CSS */
+	#header p,
+	#header h1 {
+		margin:0;
+		padding:10px 0 0 10px;
+	}
+	#footer p {
+		margin:0;
+		padding:5px;
+	}
+	</style>
+
+	<!--[if lt IE 7]>
+	<style media="screen" type="text/css">
+	#container {
+		height:100%;
+	}
+	</style>
+	<![endif]-->
+</head>
+<body>
+
+<div id="container">
+	<div id="body">
+		<!-- Body start -->
+
+<div id='naviBar' style="margin:0px; padding:4px; background:#e0f0f8; color:black; font-size:13px;">
+&nbsp;<a title="Help Contents" href="help_contents.html"><b>Help Contents</b></a></div>
+
+<div id="centercontent" style="padding:10px;">
+<h2>How to run MultiBit from a USB drive</h2>
+<h2>Windows</h2>
+<p>Installing MultiBit to run on a USB drive for Windows.</p>
+<ol>
+<li>Insert your USB drive into your PC.</li>
+<li>Run the MultiBit Windows installer. On the screen with the question "Select the installation path:" click on the "Browse" button and select a directory on your USB drive.</li>
+<li>Run the rest of the installation as normal.</li>
+<li>Once the installation is done, in Explorer navigate to your USB drive's MultiBit installation directory.   It is the directory with the "multibit.exe" file.</li>
+<li>Create a new text file called (exactly) "multibit.properties".   Leave the file empty.
+This is the MultiBit configuration file.   Having a copy in the installation directory (rather than the user's application data) tells MultiBit to run locally.</li>   
+<li>To run MultiBit locally, double click on the multibit.exe file.</li>
+</ol>
+<p>You will have a single default wallet created, called multibit.wallet.   You can create new ones using the 'Create Wallet' button and doing a save into your USB drive.   You will be using a locally stored blockchain (called multibit.blockchain).</p>
+<h2>Linux</h2>
+<p>Installing MultiBit to run on a USB drive for Linux.</p>
+<ol>
+<li>Insert your USB drive into your Linux machine.</li>
+<li>Run the MultiBit Linux installer. On the screen with the question "Select the installation path:" click on the "Browse" button and select a directory on your USB drive.</li>
+<li>Run the rest of the installation as normal.</li>
+<li>Once the installation is done, navigate to your USB drive's MultiBit installation directory.   It is the directory with the "multibit-exe.jar" file.</li>
+<li>Create a new text file called (exactly) "multibit.properties".   Leave the file empty.
+This is the MultiBit configuration file.   Having a copy in the installation directory (rather than the user's application data) tells MultiBit to run locally.</li>  
+<li>To run MultiBit locally, double click on the multibit-exe.jar.   If this does not start up the jar file, open a command line to your installation directory and run "java -jar multibit-exe.jar".</li>
+</ol>
+<h2>Mac</h2>
+<p>On a Mac, copy the entire MultiBit application onto your USB drive.   The name of the application file will be MultiBit-[version].app.   Then go to where your wallets are stored and copy the files multibit.properties and multibit.blockchain onto your USB drive into the same directory. You can then double click the MultiBit-[version].app on your USB drive to run MultiBit</p>
+<h2>Notes and Limitations</h2>
+<ol>
+<li>The path of the wallets in the configuration file contains the USB drive letter which may change according to how many other drives you have plugged in.   In this case the wallets other than multibit.wallet will not be found when MultiBit opens.   You can just use the "Open Wallet" button to load them.</li> 
+<li>With the instructions above, it assumes you have Java installed on the machine you plug into.   You can also have a "Java Runtime Environment" stored on the USB too so that it is guaranteed to run.   (More details to follow).</li>
+<li>The installer will add some shortcuts for running MultiBit pointing to the USB drive.  These will not work if the USB drive is removed.</li>
+</ol>
+<br>
+<table border="0" cellpadding="0" cellspacing="0" width=100%>
+	<tbody><tr width=100%>
+        	<td align="left" width="33%">
+			<a title="Previous" href="help_usingQRcodes.html">&#60; Using QR codes</a>
+		</td>
+		<td align="center" width=34%>
+			<a title="Help Contents" href="help_contents.html">Back to help contents</a>
+		</td>
+		<td align="right" width=33%>
+			<a title="Next" href="help_importASingleKey.html">How to import a single private key &#62;</a>
+		</td>
+
+	</tr></tbody>
+</table>
+</div>
+</body>
+</html>

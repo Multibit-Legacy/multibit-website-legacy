@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+<head>
+  <title>MultiBit - Help - Transactions</title>
+  <link rel="stylesheet" type="text/css" href="main.css">
+
+  <meta name="Description" content="Easy to use bitcoin software for the PC, Mac and Linux">
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+  <meta name="keywords" CONTENT="bitcoin, bitcoinj, pseudonymous, p2p, peer to peer, cryptography, digital currency, java, multibit, satoshi, nakamoto, qr code">
+  <meta name="robots" content="index, follow" />
+  <meta name="copyright" content="Copyright 2011 multibit.org">
+
+  <link rel="shortcut icon" href="favicon.ico">
+
+	<style media="screen" type="text/css">
+	html,
+	body {
+		margin:0;
+		padding:0;
+		height:100%;
+	}
+	#container {
+		min-height:100%;
+		position:relative;
+	}
+	#header {
+		background:#D9E2EC;
+		padding:10px;
+	}
+	#body {
+		padding:0px;
+		padding-bottom:30px;	/* Height of the footer */
+	}
+	#footer {
+		position:absolute;
+		bottom:0;
+		width:100%;
+		height:30px;			/* Height of the footer */
+		background:#F0F0E7;
+	}
+	/* other non-essential CSS */
+	#header p,
+	#header h1 {
+		margin:0;
+		padding:10px 0 0 10px;
+	}
+	#footer p {
+		margin:0;
+		padding:5px;
+	}
+	</style>
+
+	<!--[if lt IE 7]>
+	<style media="screen" type="text/css">
+	#container {
+		height:100%;
+	}
+	</style>
+	<![endif]-->
+</head>
+<body>
+
+<div id="container">
+	<div id="body">
+		<!-- Body start -->
+
+<div id='naviBar' style="margin:0px; padding:4px; background:#e0f0f8; color:black; font-size:13px;">
+&nbsp;<a title="Help Contents" href="help_contents.html"><b>Help Contents</b></a></div>
+
+<div id="centercontent" style="padding:10px;">
+<h2>Transactions</h2>
+<p>The '<img width="16" height="16" title="Transactions" alt="Transactions" src="helpImages/transactions.png"/>&nbsp;Transactions' tab shows all the transactions for the wallet selected in the '<img width="16" height="16" title="Wallets" alt="Wallets" src="helpImages/yourWallets.png"/>&nbsp;Wallets' side panel. This tab shows the user:
+<ul>
+<li><p>The status of the transaction.   The status icon shows two important characteristics of the transaction. First, it indicates if the transaction has been broadcast to the Bitcoin network successfully. When you send a transaction MultiBit counts how many of the Bitcoin network peers it is connected to have seen the transaction. The icons used are as follows:</p>
+    <p><img width="16" height="16" title="0 peer" alt="0 peer" src="helpImages/shapeTriangle.png"/>&nbsp;Seen by no peers</p>
+    <p><img width="16" height="16" title="1 peer" alt="1 peer" src="helpImages/shapeSquare.png"/>&nbsp;Seen by one peer</p>
+    <p><img width="16" height="16" title="2 peer" alt="2 peer" src="helpImages/shapePentagon.png"/>&nbsp;Seen by two peers</p>
+    <p><img width="16" height="16" title="3 peer" alt="3 peer" src="helpImages/shapeHexagon.png"/>&nbsp;Seen by three peers</p>
+    <p><img width="16" height="16" title="4 peer" alt="4 peer" src="helpImages/circleProgress0.png"/>&nbsp;Seen by 4 or more peers</p>
+    <p>When a transaction has been seen by two or more peers it is definitely out in the Bitcoin network. (You can then spend your change in the transaction).</p>
+</li>
+<li>Secondly, once the transaction has been broadcast to the Bitcoin network it is initially unconfirmed. Over the course of approximately one hour it becomes confirmed and can be relied on.   The status of the confirmations is show graphically by the status icon.   A circle is initially empty and fills up as the transaction confirms.   Once confirmed a tick mark is shown.   Here are the different status icons:</p><p><img width="476" height="276" title="Status icons" alt="Status icons" src="helpImages/status.png"/></p></li>
+<li>The date of the transaction is shown.</li>
+<li>A description of the transaction is given in text form</li>
+<li>The amount in bitcoin is shown in the "Amount (BTC)" column. If you have enabled fiat currency conversions in the '<img width="16" height="16" title="Preferences" alt="Preferences" src="helpImages/preferences.png"/>&nbsp;Preferences' tab, the amount is also shown converted to your fiat currency, eg "Amount ($)"</li>
+</ul>
+<p>You can right click with your mouse on any transaction and select 'Show transaction details...' to see more information.</p>
+
+<br>
+<table border="0" cellpadding="0" cellspacing="0" width=100%>
+	<tbody><tr width=100%>
+        	<td align="left" width="33%">
+			<a title="Previous" href="help_receivingBitcoin.html">&#60; Request bitcoin</a>
+		</td>
+		<td align="center" width=34%>
+			<a title="Help Contents" href="help_contents.html">Back to help contents</a>
+		</td>
+		<td align="right" width=33%>
+			<a title="Next" href="help_charts.html">Charts &#62;</a>
+		</td>
+	</tr></tbody>
+</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+<head>
+  <title>MultiBit - Help - Wallet management</title>
+  <link rel="stylesheet" type="text/css" href="main.css">
+
+  <meta name="Description" content="Easy to use bitcoin software for the PC, Mac and Linux">
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+  <meta name="keywords" CONTENT="bitcoin, bitcoinj, pseudonymous, p2p, peer to peer, cryptography, digital currency, java, multibit, satoshi, nakamoto, qr code">
+  <meta name="robots" content="index, follow" />
+  <meta name="copyright" content="Copyright 2011 multibit.org">
+
+  <link rel="shortcut icon" href="favicon.ico">
+
+	<style media="screen" type="text/css">
+	html,
+	body {
+		margin:0;
+		padding:0;
+		height:100%;
+	}
+	#container {
+		min-height:100%;
+		position:relative;
+	}
+	#header {
+		background:#D9E2EC;
+		padding:10px;
+	}
+	#body {
+		padding:0px;
+		padding-bottom:30px;	/* Height of the footer */
+	}
+	#footer {
+		position:absolute;
+		bottom:0;
+		width:100%;
+		height:30px;			/* Height of the footer */
+		background:#F0F0E7;
+	}
+	/* other non-essential CSS */
+	#header p,
+	#header h1 {
+		margin:0;
+		padding:10px 0 0 10px;
+	}
+	#footer p {
+		margin:0;
+		padding:5px;
+	}
+	</style>
+
+	<!--[if lt IE 7]>
+	<style media="screen" type="text/css">
+	#container {
+		height:100%;
+	}
+	</style>
+	<![endif]-->
+</head>
+<body>
+
+<div id="container">
+	<div id="body">
+		<!-- Body start -->
+
+<div id='naviBar' style="margin:0px; padding:4px; background:#e0f0f8; color:black; font-size:13px;">
+&nbsp;<a title="Help Contents" href="help_contents.html"><b>Help Contents</b></a></div>
+
+<div id="centercontent" style="padding:10px;">
+<h2>Wallet management</h2>
+<p>With MultiBit, you can have as many wallets as you like.   They are usually given the file extension ".wallet".</p>
+<p>When you open MultiBit, the wallets that were open in the previous use of MultiBit are reopened.   If this is the first time you have opened MultiBit a new, empty wallet file called 'multibit.wallet' is created in your application data directory. </p>
+<p>Your wallets appear in the side panel labelled '<img width="16" height="16" title="Wallets" alt="Wallets" src="helpImages/yourWallets.png"/>&nbsp;Wallets'.  Click on one of the wallets to make it the active wallet.  You can click on the small arrowhead '<img width="16" height="16" title="Twisty" alt="Twisty" src="helpImages/twistyRight.png"/>' (called a twisty) to see more details about the wallet.  Hover over the filename to see the file path. The balance for the active wallet is shown at the top of the MultiBit screen.</p>
+<p><b>Create a new wallet</b></p>
+<p>To create a new wallet, click on the 'New' button.   This opens a dialog window where you choose the location and name of the new wallet.   Click 'Ok' and a new wallet is created with the default description 'Your wallet description'.   You can change this to something more descriptive by clicking on the text.</p>
+<p><b>Open a wallet</b></p>
+<p>To open another wallet, click on the 'Open' button.   This then opens a file chooser dialog where you can choose the wallet to open. Note that MultiBit cannot open the wallet files from the Satoshi bitcoin client (wallet.dat files).</p> 
+
+<p><b>Delete a wallet</b></p>
+<p>To delete a wallet, click on the 'Delete' button.   A confirmation screen indicating that you will PERMANENTLY delete this wallet is shown.   If you are happy to delete the selected wallet  click "<img width="16" height="16" title="Delete" alt="Delete" src="helpImages/deleteWallet.png"/>&nbsp;Delete Wallet'. When you delete a wallet you not only delete any bitcoin in it but you will not be able to access any bitcoin that are sent to any of your wallet's receiving addresses in the future.</p><p><b><font color="red">MultiBit wallets are currently NOT encrypted.   We recommend you use TrueCrypt to protect your wallets from theft.</font></b></p>
+
+<br>
+<table border="0" cellpadding="0" cellspacing="0" width=100%>
+	<tbody><tr width=100%>
+        	<td align="left" width="33%">
+			<a title="Previous" href="help_gettingStarted.html">&#60; Getting started</a>
+		</td>
+		<td align="center" width=34%>
+			<a title="Help Contents" href="help_contents.html">Back to help contents</a>
+		</td>
+		<td align="right" width=33%>
+			<a title="Next" href="help_availableToSpend.html">What does "Available to spend" mean ? &#62;</a>
+		</td>
+	</tr></tbody>
+</table>
+</div>
+</body>
+</html>
