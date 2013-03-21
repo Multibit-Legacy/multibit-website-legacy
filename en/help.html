@@ -1,0 +1,51 @@
+---
+layout: base-en
+title: Help
+---
+<h1><b>Windows</b> - How to install MultiBit</h1>
+<p>Download the <a href="https://multibit.org/releases/multibit-{{ site.DOWNLOAD_VERSION }}/multibit-{{ site.DOWNLOAD_VERSION }}-windows.exe">Windows installer</a>.</p>
+<p>To run the installer, double click it and follow the instructions.</p>
+<p>Once installed, you can start MultiBit with the 'MultiBit' shortcut in your 'All Programs | MultiBit' menu or with your desktop 'MultiBit' shortcut.</p>
+<p>Note: If you are on Windows 8 and the installer gives the error <code>"This directory cannot be written to"</code> this is because you need to run it as an <strong>administrator</strong>. Close the installer. Right click on it and choose the option "Run as administrator".
+<hr/>
+<h1><b>Mac</b> - How to install MultiBit</h1>
+<p>If you are using Mac OSX 10.8 Mountain Lion please perform the following <a href="v0.5/help_mountain_lion.html">preparation step</a>.</p>
+<p>Download the <a href="https://multibit.org/releases/multibit-{{ site.DOWNLOAD_VERSION }}/multibit-{{ site.DOWNLOAD_VERSION }}.dmg">Mac OS X installer</a>.</p>
+<p>After you have downloaded the disk image file, double click it and a folder window opens.</p>
+<p>In the open folder window, drag the <code>MultiBit-{{ site.DOWNLOAD_VERSION }}.app</code> application to the Applications link. MultiBit will then be copied to your Applications folder</p>
+<p>You can then open MultiBit by double clicking on this app in your Applications folder.</p>
+<br/>
+<hr/>
+<h1><b>Linux</b> - How to install MultiBit</h1>
+<p>Download the <a href="https://multibit.org/releases/multibit-{{ site.DOWNLOAD_VERSION }}/multibit-{{ site.DOWNLOAD_VERSION }}-linux.jar">Linux / Unix installer</a>.</p>
+<p>Open a terminal window and make the installer executable with:</p>
+<pre>chmod +x multibit-{{ site.DOWNLOAD_VERSION }}-linux.jar</pre>
+<p>Run the installer with:</p><pre>java -jar multibit-{{ site.DOWNLOAD_VERSION }}-linux.jar</pre>
+<p>Follow the instructions in the installer.</p>
+<p>After installation, you will have a shortcut to start MultiBit in your "Applications | Other" menu.</p>
+<h2>Common gotchas</h2>
+<p>If you get an error like <code>"No command 'java' found"</code> or the installer window does not appear you probably need to install an up-to-date version of Java. See the section 'How to install Java on Linux' below.</p>
+<p>If you see an error <code>"***.desktop (No such file or directory)"</code> this is a glitch in installing the MultiBit shortcuts.  If you run the installer again with the same settings it normally fixes it.</p>
+<p>If no MultiBit shortcut is created, you can run MultiBit manually as follows:</p>
+<ol>
+    <li>open a terminal window and 'cd' to your installation directory</li>
+    <li>type <code>java -jar multibit-exe.jar</code></li>
+</ol>
+
+<h2>How to install Java on Linux</h2>
+<p>To install Java on a recent copy of <strong>Ubuntu</strong> open a terminal window and type:</p>
+<pre>sudo apt-get install openjdk-7-jdk</pre>
+<p>You will be prompted for your system password and then it will install the required packages.</p>
+<p>If you are running an older version of Ubuntu (e.g. something like Ubuntu 10.4 LTS) you will have to use the following:</p>
+<pre>sudo apt-get install openjdk-<b>6</b>-jdk</pre>
+
+<p>For <b>RedHat / CentOS</b> the installation command is:</p>
+<pre>yum install java</pre>
+
+<h1>More help</h1>
+<p>You can access the help that is shipped with MultiBit as follows:</p>
+<ul>
+    <li><p><a href="v0.4/help_contents.html" title="Online help for MultiBit 0.4.x">MultiBit version 0.4.x</a></p></li>
+    <li><p><a href="v0.5/help_contents.html" title="Online help for MultiBit 0.5.x">MultiBit version 0.5.x</a></p></li>
+</ul>
+
