@@ -1,100 +1,33 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
-<head>
-  <title>MultiBit - Help - Reset blockchain and transactions</title>
-  <link rel="stylesheet" type="text/css" href="main.css">
-
-  <meta name="Description" content="Easy to use bitcoin software for the PC, Mac and Linux">
-  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-  <meta name="keywords" CONTENT="bitcoin, bitcoinj, pseudonymous, p2p, peer to peer, cryptography, digital currency, java, multibit, satoshi, nakamoto, qr code">
-  <meta name="robots" content="index, follow" />
-  <meta name="copyright" content="Copyright 2011 multibit.org">
-
-  <link rel="shortcut icon" href="favicon.ico">
-
-	<style media="screen" type="text/css">
-	html,
-	body {
-		margin:0;
-		padding:0;
-		height:100%;
-	}
-	#container {
-		min-height:100%;
-		position:relative;
-	}
-	#header {
-		background:#D9E2EC;
-		padding:10px;
-	}
-	#body {
-		padding:0px;
-		padding-bottom:30px;	/* Height of the footer */
-	}
-	#footer {
-		position:absolute;
-		bottom:0;
-		width:100%;
-		height:30px;			/* Height of the footer */
-		background:#F0F0E7;
-	}
-	/* other non-essential CSS */
-	#header p,
-	#header h1 {
-		margin:0;
-		padding:10px 0 0 10px;
-	}
-	#footer p {
-		margin:0;
-		padding:5px;
-	}
-	</style>
-
-	<!--[if lt IE 7]>
-	<style media="screen" type="text/css">
-	#container {
-		height:100%;
-	}
-	</style>
-	<![endif]-->
-</head>
-<body>
-
-<div id="container">
-	<div id="body">
-		<!-- Body start -->
-
-<div id='naviBar' style="margin:0px; padding:4px; background:#e0f0f8; color:black; font-size:13px;">
-&nbsp;<a title="Help Contents" href="help_contents.html"><b>Help Contents</b></a></div>
-
-<div id="centercontent" style="padding:10px;">
+---
+layout: help-en
+title: MultiBit - Help - Reset blockchain and transactions
+---
 <h2>Reset blockchain and transactions</h2>
-<p>Occasionally you get transactions that never seem to confirm.   If you have a transaction that has not confirmed for several hours but you know it is definitely on the blockchain, you can reset your wallet as follows:</p>
+<p>Occasionally you get transactions that never seem to confirm. If you have a transaction that has not confirmed for
+  several hours but you know it is definitely on the blockchain, you can reset your wallet as follows:</p>
 <ol>
-<li>Open MultiBit and make sure the wallet you are interested in is selected in the '<img width="16" height="16" title="Wallets" alt="Wallets" src="helpImages/yourWallets.png"/>&nbsp;Wallets' side panel.</li>
-<li>Go the 'Tools | <img width="16" height="16" title="Reset" alt="Reset" src="helpImages/resetTransactions.png"/>&nbsp;Reset Blockchain and Transactions' menu option.</li>
-<li>This brings up a new screen.   On this screen read the notes. If you want to reset the whole wallet click the '<img width="16" height="16" title="Reset" alt="Reset" src="helpImages/resetTransactions.png"/>&nbsp;Reset blockchain and transactions' button.</li>
-<li>MultiBit will start reloading the blockchain.   This can take some time.   Just let it run and download the blockchain.   When it is finished, your wallet should reflect what is on the blockchain.</li>
+  <li>Open MultiBit and make sure the wallet you are interested in is selected in the '<img width="16" height="16"
+                                                                                            title="Wallets"
+                                                                                            alt="Wallets"
+                                                                                            src="img/yourWallets.png"/>&nbsp;Wallets'
+    side panel.
+  </li>
+  <li>Go the 'Tools | <img width="16" height="16" title="Reset" alt="Reset" src="img/resetTransactions.png"/>&nbsp;Reset
+    Blockchain and Transactions' menu option.
+  </li>
+  <li>This brings up a new screen. On this screen read the notes. If you want to reset the whole wallet click the '<img
+    width="16" height="16" title="Reset" alt="Reset" src="img/resetTransactions.png"/>&nbsp;Reset blockchain and
+    transactions' button.
+  </li>
+  <li>MultiBit will start reloading the blockchain. This can take some time. Just let it run and download the
+    blockchain. When it is finished, your wallet should reflect what is on the blockchain.
+  </li>
 </ol>
-<p>You can also reset your wallet from a particular date. To do this, select the 'Specify reset date' radio button and select a date in the date chooser. Now when you click on the '<img width="16" height="16" title="Reset" alt="Reset" src="helpImages/resetTransactions.png"/>&nbsp;Reset blockchain and transactions' button it will do the following:
+<p>You can also reset your wallet from a particular date. To do this, select the 'Specify reset date' radio button and
+  select a date in the date chooser. Now when you click on the '<img width="16" height="16" title="Reset" alt="Reset"
+                                                                     src="img/resetTransactions.png"/>&nbsp;Reset
+  blockchain and transactions' button it will do the following:
 <ol>
-<li>MultiBit removes all transactions on or after the date specified for the selected wallet.</li>
-<li>It then replays the blocks from midnight at the start of the day specified to pick up all the transactions.</li>
+  <li>MultiBit removes all transactions on or after the date specified for the selected wallet.</li>
+  <li>It then replays the blocks from midnight at the start of the day specified to pick up all the transactions.</li>
 </ol>
-<br>
-<table border="0" cellpadding="0" cellspacing="0" width=100%>
-	<tbody><tr width=50%>
-        	<td align="left" width="33%">
-			<a title="Previous" href="help_exportingPrivateKeys.html">&#60; Exporting private keys</a>
-		</td>
-		<td align="center" width=34%>
-			<a title="Help Contents" href="help_contents.html">Back to help contents</a>
-		</td>
-		<td align="right" width=33%>
-			<a title="Next" href="help_keyboardShortcuts.html">Keyboard shortcuts &#62;</a>
-		</td>
-	</tr></tbody>
-</table>
-</div>
-</body>
-</html>

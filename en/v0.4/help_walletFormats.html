@@ -1,92 +1,15 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
-<head>
-  <title>MultiBit - Help - What are the two wallet formats 'protobuf' and 'serialised' ?</title>
-  <link rel="stylesheet" type="text/css" href="main.css">
-
-  <meta name="Description" content="Easy to use bitcoin software for the PC, Mac and Linux">
-  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-  <meta name="keywords" CONTENT="bitcoin, bitcoinj, pseudonymous, p2p, peer to peer, cryptography, digital currency, java, multibit, satoshi, nakamoto, qr code">
-  <meta name="robots" content="index, follow" />
-  <meta name="copyright" content="Copyright 2012 multibit.org">
-
-  <link rel="shortcut icon" href="favicon.ico">
-
-	<style media="screen" type="text/css">
-	html,
-	body {
-		margin:0;
-		padding:0;
-		height:100%;
-	}
-	#container {
-		min-height:100%;
-		position:relative;
-	}
-	#header {
-		background:#e0f0f8;
-		padding:10px;
-	}
-	#body {
-		padding:0px;
-		padding-bottom:30px;	/* Height of the footer */
-	}
-	#footer {
-		position:absolute;
-		bottom:0;
-		width:100%;
-		height:30px;			/* Height of the footer */
-		background:#F0F0E7;
-	}
-	/* other non-essential CSS */
-	#header p,
-	#header h1 {
-		margin:0;
-		padding:10px 0 0 10px;
-	}
-	#footer p {
-		margin:0;
-		padding:5px;
-	}
-	</style>
-
-	<!--[if lt IE 7]>
-	<style media="screen" type="text/css">
-	#container {
-		height:100%;
-	}
-	</style>
-	<![endif]-->
-</head>
-<body>
-
-<div id="container">
-	<div id="body">
-		<!-- Body start -->
-
-<div id='naviBar' style="margin:0px; padding:4px; background:#e0f0f8; color:black; font-size:13px;">
-&nbsp;<a title="Help Contents" href="help_contents.html"><b>Help Contents</b></a></div>
-
-<div id="centercontent" style="padding:10px;">
+---
+layout: help-en
+title: MultiBit - Help - What are the two wallet formats 'protobuf' and 'serialised' ?
+---
 <h2>What are the two wallet formats 'protobuf' and 'serialised' ?</h2>
-<p>There are two file formats used by MultiBit to store wallets. Up until June 2012 (MultiBit version 0.3.5) a format known as 'serialised' was used.</p>
-<p>Starting with MultiBit version 0.4.0 a new format, called 'protobuf' was introduced. Protobuf wallets are smaller, faster to load and easier to extend. They will be used in future MultiBit versions to add more features such as wallet encryption.</p>
-<p>Both wallet formats are supported in versions of MultiBit from 0.4.0 and onwards. Older versions of MultiBit cannot read the protobuf format. When you start MultiBit there is a conversion utility that asks you whether you want to migrate older wallets to the new format. New wallets are always created in the protobuf format.</p>
-<p>You can see which version of MultiBit you are running by choosing the 'About MultiBit' menu option. For Windows and Linux machines this is in the 'Help' menu and on Macs it is in the 'MultiBit' application menu.</p>
-<br>
-<table border="0" cellpadding="0" cellspacing="0" width=100%>
-	<tbody><tr width=100%>
-        	<td align="left" width="33%">
-			<a title="Previous" href="help_whatIsAPrivateKey.html">&#60; What is a private key ?</a>
-		</td>
-		<td align="center" width=34%>
-			<a title="Help Contents" href="help_contents.html">Back to help contents</a>
-		</td>
-		<td align="right" width=33%>
-			<a title="Next" href="help_sendingBitcoin.html">Send bitcoin &#62;</a>
-		</td>
-	</tr></tbody>
-</table>
-</div>
-</body>
-</html>
+<p>There are two file formats used by MultiBit to store wallets. Up until June 2012 (MultiBit version 0.3.5) a format
+  known as 'serialised' was used.</p>
+<p>Starting with MultiBit version 0.4.0 a new format, called 'protobuf' was introduced. Protobuf wallets are smaller,
+  faster to load and easier to extend. They will be used in future MultiBit versions to add more features such as wallet
+  encryption.</p>
+<p>Both wallet formats are supported in versions of MultiBit from 0.4.0 and onwards. Older versions of MultiBit cannot
+  read the protobuf format. When you start MultiBit there is a conversion utility that asks you whether you want to
+  migrate older wallets to the new format. New wallets are always created in the protobuf format.</p>
+<p>You can see which version of MultiBit you are running by choosing the 'About MultiBit' menu option. For Windows and
+  Linux machines this is in the 'Help' menu and on Macs it is in the 'MultiBit' application menu.</p>
