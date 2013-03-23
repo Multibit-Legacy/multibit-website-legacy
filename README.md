@@ -66,7 +66,7 @@ Here is an example:
 ```
 ALERT_CLASS: error
 ALERT: <strong>Security alert:</strong> Please upgrade to 0.3.25 as soon as possible!
-ALERT_fr: <strong>Alerte de sécurité:</strong> Mettez MultiBit à jour vers la version 0.3.25 sans délais!
+ALERT_fr: <strong>Alerte de sécurité:</strong> Mettez MultiBit à jour vers la version 0.5.0 sans délais!
 ```
 
 The above will produce an English red alert box for all languages, and a translated red alert box for the French language. 
@@ -100,6 +100,14 @@ In general pages follow this format
 * `category: ...` category of post
 ** `releases`
 ** `events`
+
+### Common gotchas with Jekyll parsing
+
+#### `parse': (<unknown>): did not find expected key while parsing a block mapping
+You have formatted the front matter in the page and the `url` entry is probably out of alignment. Indent it and try again.
+
+#### Liquid Exception: Tag '{%' was not properly terminated with regexp: /\%\}/
+You have formatted a Liquid section over one or more lines. Put it all back on a single line and it'll be fine.
 
 ### Aliases for contributors
 

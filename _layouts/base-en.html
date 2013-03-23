@@ -50,8 +50,7 @@ menu:
 </div>
 <div id="container2">
   <ul id="menu" class="wrap">
-    {% for link in page.menu %}{% assign active = nil %}{% capture fullurl %}{{ link.url | append:'.html' }}{%
-    endcapture %}{% if page.url == fullurl %}{% assign active = 'active' %}{% endif %}
+    {% for link in page.menu %}{% assign active = nil %}{% capture fullurl %}{{ link.url | append:'.html' }}{% endcapture %}{% if page.url == fullurl %}{% assign active = 'active' %}{% endif %}
     <li
     {% if active %} class="{{ active }}"{% endif %}><a href="{{ link.url }}">{{ link.text }}</a></li>
     {% endfor %}
@@ -63,10 +62,8 @@ menu:
     <div id="back2">
       <div class="wrap">
         {% if site.ALERT or site.ALERT_en %}
-        {% if site.ALERT_CLASS %}{% assign class = site.ALERT_CLASS%}{% endif %}{% if site.ALERT_CLASS_en %}{% assign
-        class = site.ALERT_CLASS_en%}{% endif %}
-        {% if site.ALERT %}{% assign alert = site.ALERT%}{% endif %}{% if site.ALERT_en %}{% assign alert =
-        site.ALERT_en%}{% endif %}
+        {% if site.ALERT_CLASS %}{% assign class = site.ALERT_CLASS%}{% endif %}{% if site.ALERT_CLASS_en %}{% assign class = site.ALERT_CLASS_en%}{% endif %}
+        {% if site.ALERT %}{% assign alert = site.ALERT%}{% endif %}{% if site.ALERT_en %}{% assign alert = site.ALERT_en%}{% endif %}
         <div class="alert-message {{ class }}">
           {{ alert }}
         </div>
