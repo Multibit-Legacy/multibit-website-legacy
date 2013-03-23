@@ -95,10 +95,10 @@ MultiBit v0.4.18 is now available for download at
 In general pages follow this format
 
 ```
-* `SHORTTITLE` is used to construct the URL. Something like `v0.4.18` will be fine
+* `SHORTTITLE` is used to construct the URL. Something like `v0.4.23` will be fine
 * `layout: post` important for Jekyll
 * `title: ...` will be used as the title
-* `src: ...` (optional) link to full annoucement
+* `src: ...` (optional) link to full announcement
 * `category: ...` category of post
 ** `releases`
 ** `events`
@@ -117,7 +117,8 @@ Aliases for contributors are defined in `_config.yml`.
 
 ```
 aliases:
-  s_nakamoto: Satoshi Nakamoto
-  --author=Satoshi Nakamoto: Satoshi Nakamoto
-  gavinandresen: Gavin Andresen
+  garyrowe: Gary Rowe
+  jimburton: Jim Burton
+  saivanncarigan: Saivann Carigan
+  timmolter: Tim Molter
 ```

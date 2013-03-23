@@ -1,13 +1,22 @@
-DOWNLOAD_VERSION: 0.4.21
-ALERT_CLASS: 
-ALERT: 
+# Indicates the latest recommended release version
+DOWNLOAD_VERSION: 0.4.23
 
+# Place an alert using one of these classes:
+# error (big problem!)
+# success (we've fixed it!)
+# info (something important is happening)
+ALERT_CLASS: info
+# Add the text of the alert in here
+ALERT: Here is some alert text
+
+# The list of supported languages
 langs:
 - langcode: fr
   langtext: Français
 - langcode: en
   langtext: English
-  
+
+# Only applies to WEBrick
 safe:        false
 auto:        false
 server:      false
@@ -53,3 +62,5 @@ aliases:
   jimburton: Jim Burton
   garyrowe: Gary Rowe
   timmolter: Tim Molter
+  saivanncarigan: Saivann Carigan
+
