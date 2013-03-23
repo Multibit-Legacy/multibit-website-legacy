@@ -21,7 +21,9 @@ The following Unix commands will get you up and running straight away:
     sudo apt-get install rubygems ruby1.9.1-dev build-essential
     sudo gem install jekyll aquarium json less therubyracer
 
-If you're on other operating systems you may need to review the Ruby and gem installation instructions for your platform.
+If you're on other operating systems you may need to review the [Ruby and gem installation instructions](http://www.ruby-lang.org/en/downloads/) for your platform. 
+
+The [creators of Jekyll](https://github.com/mojombo/jekyll/wiki/install) provide a lot of useful troubleshooting information.
 
 # Building
 
