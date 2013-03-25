@@ -5,7 +5,7 @@ DOWNLOAD_VERSION: 0.4.23
 # error (big problem!)
 # success (we've fixed it!)
 # info (something important is happening)
-ALERT_CLASS: info
+ALERT_CLASS: success
 # Add the text of the alert in here
 ALERT: Here is some alert text
 
