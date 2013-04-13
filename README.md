@@ -6,39 +6,39 @@ This repo contains the source for the main MultiBit website.
 
 Much of the groundwork for this website was put in place by Saivann Carigan - thanks from the MultiBit team!
 
-# Requirements
+# OpenId Demo
 
-The site is built using the Jekyll static website builder. To run it up locally for development and changes you'll need to install Ruby and a bunch of gems.
+This project demonstrates the following
 
-* jekyll
-* aquarium
-* json
-* less
-* therubyracer
+* Dropwizard - Serves HTML
+* OpenId - Provides integration with OpenId providers (Google, Facebook etc)
+* Authorization - Security annotation supporting different levels of access
+* Session cookies - Not very stateless, but this is only a demo - you'd use a database in real life
 
-The following Unix commands will get you up and running straight away:
+## Notation
 
-    sudo apt-get install rubygems ruby1.9.1-dev build-essential
-    sudo gem install jekyll aquarium json less therubyracer
+```<project root>``` - The root directory of the project as checked out through git
 
-If you're on other operating systems you may need to review the [Ruby and gem installation instructions](http://www.ruby-lang.org/en/downloads/) for your platform. 
+All commands will work on *nix without modification, use \ instead of / for Windows.
 
-The [creators of Jekyll](https://github.com/mojombo/jekyll/wiki/install) provide a lot of useful troubleshooting information.
+## Getting started
 
-# Building
+From the console you can do the following
+```
+cd <project root>
+mvn clean install
+java -jar target/dropwizard-openid-1.0.0.jar server openid-demo.yml
+```
 
-After the gems are in place you can build the current version of the site from the `master` branch using
+## Where does the ASCII art come from?
 
-    jekyll --server
-
-then browse to `localhost:4000`. This will serve the content generated in `_site`.
+The ASCII art for the startup banner was created using the online tool available at
+[Webestools](http://www.webestools.com/ascii-text-generator-ascii-art-code-online-txt2ascii-text2ascii-maker-free-text-to-ascii-converter.html)
+with a font of Tiza
 
 # Making changes
 
-If you make changes then you'll need to update some extra support files.
-
-To bump the site version... update DOWNLOAD\_VERSION in _config.yml
-If you've changed a page... run `./_contrib/updatesitemap` 
+Use the `site-config.yml` to change static elements like the alert and download version.
 
 # Translation
 

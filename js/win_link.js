@@ -1,1 +1,0 @@
-document.write("<a href=\"releases/multibit-0.4.21/multibit-0.4.21-windows.exe\">Windows installer</a>&nbsp;&nbsp;(27.9MB, <a href=\"releases/multibit-0.4.21/multibit-0.4.21-windows.exe.asc\">signature</a>)")
