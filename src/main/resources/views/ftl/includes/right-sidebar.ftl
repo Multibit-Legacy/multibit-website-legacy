@@ -4,7 +4,7 @@
     <tr>
       <td><a
         href="https://multibit.org/releases/multibit-${downloadVersion}/multibit-${downloadVersion}-windows.exe"><img
-        src="/images/dow-win.png"></a></td>
+        src="/images/common/dow-win.png"></a></td>
       <td><a
         href="https://multibit.org/releases/multibit-${downloadVersion}/multibit-${downloadVersion}-windows.exe">Windows
         installer</a>
@@ -21,7 +21,7 @@
     <tr>
       <td><a
         href="https://multibit.org/releases/multibit-${downloadVersion}/multibit-${downloadVersion}.dmg"><img
-        src="/images/dow-osx-uni.png"></a></td>
+        src="/images/common/dow-osx-uni.png"></a></td>
       <td><a
         href="https://multibit.org/releases/multibit-${downloadVersion}/multibit-${downloadVersion}.dmg">Mac
         OS X installer</a>
@@ -40,7 +40,7 @@
     <tr>
       <td><a
         href="https://multibit.org/releases/multibit-${downloadVersion}/multibit-${downloadVersion}-linux.jar"><img
-        src="/images/dow-linux.png"></a></td>
+        src="/images/common/dow-linux.png"></a></td>
       <td><a
         href="https://multibit.org/releases/multibit-${downloadVersion}/multibit-${downloadVersion}-linux.jar">Linux
         / Unix installer</a>
@@ -72,7 +72,7 @@
   <p>
     <a
       href="bitcoin:1AhN6rPdrMuKBGFDKR1k9A8SCLYaNgXhty?amount=0.04&label=Please%20donate%20to%20multibit.org"><img
-      src="/images/donate0.04.png"><br>
+      src="/images/common/donate0.04.png"><br>
       <small>1AhN6rPdrMuKBGFDKR1k9A8SCLYaNgXhty</small>
     </a> <br>
   <h1>Follow</h1>

@@ -1,0 +1,44 @@
+body{background-color:#dbdbdb;color:#848484;font-family:"Helvetica Neue","Liberation Sans",Arial,sans-serif;margin:0;padding:0;}
+h1,h2{font-family:Copperplate,"Copperplate Gothic Light",fantasy;font-weight:normal;}
+h1{color:#a7414a;font-size:160%;}
+h2{color:#a7414a;font-size:130%;}
+h3{color:#a7414a;font-size:100%;}
+h1 img,h2 img,h3 img{vertical-align:middle;margin-right:5px;}
+a:link,a:visited,a:active{color:#a7414a;}
+a:link:hover,a:visited:hover,a:active:hover{color:#a7414a;}
+a img{border:0;}
+#container1{background-color:#ffffff;}
+#container2{background-color:#ffffff;border-bottom:3px solid #3b3b3b;border-top:3px solid #3b3b3b;-moz-box-shadow:0px 2px 1px rgba(0, 0, 0, 0.15);-webkit-box-shadow:0px 2px 1px rgba(0, 0, 0, 0.15);box-shadow:0px 2px 1px rgba(0, 0, 0, 0.15);background-image:linear-gradient(bottom, #000000 0%, #3b3b3b 80%);background-image:-o-linear-gradient(bottom, #000000 0%, #3b3b3b 80%);background-image:-moz-linear-gradient(bottom, #000000 0%, #3b3b3b 80%);background-image:-webkit-linear-gradient(bottom, #000000 0%, #3b3b3b 80%);background-image:-ms-linear-gradient(bottom, #000000 0%, #3b3b3b 80%);}
+.wrap{width:1000px;margin:auto;position:relative;}
+#back1{background:fixed url(/images/common/back2.png) repeat;}
+#back2{background:fixed url(/images/common/back1.png) repeat;}
+#lang{position:absolute;top:4px;right:0px;font-size:94%;background:url(/images/common/lang.png) top left no-repeat;height:24px;}
+#logo{position:absolute;left:0px;top:15px;}
+#logo a{display:block;background-image:url(/images/common/logotop.png);width:60px;height:60px;}
+#logo span{display:none;}
+#logotext{font-size:70px;font-family:Copperplate,"Copperplate Gothic Light",fantasy;display:inline-block;color:#3b3b3b;white-space:nowrap;margin:10px 0px 0px 80px;height:80px;}
+.home{font-size:16px;}
+#menu{padding:0px;margin:0px;margin:auto;position:relative;left:-6px;height:32px;}
+#menu li{list-style:none;float:left;border:1px solid transparent;border-radius:3px;-webkit-border-radius:3px;}
+#menu li a,#menu li a:active,#menu li a:visited,#menu li a:link{font-family:'Ubuntu',sans-serif;height:18px;font-size:90%;display:block;color:#dddddd;text-decoration:none;padding:6px 10px;}
+#menu li:hover a,#menu li.active a{color:#fff;}
+#menu li:hover,#menu li.active{background-color:#575757;background-image:linear-gradient(bottom, #3d3d3d 20%, #575757 80%);background-image:-o-linear-gradient(bottom, #3d3d3d 20%, #575757 80%);background-image:-moz-linear-gradient(bottom, #3d3d3d 20%, #575757 80%);background-image:-webkit-linear-gradient(bottom, #3d3d3d 20%, #575757 80%);background-image:-ms-linear-gradient(bottom, #3d3d3d 20%, #575757 80%);border:1px solid #000;}
+.alert-message{background-color:#fff3de;border:1px solid #a78241;margin:10px 0px;padding:10px;color:#000;}
+.alert-message.success{background-color:#e0f0f8;border-color:#41a093;}
+.alert-message.info{background-color:#fff3de;border-color:#a78241;}
+.alert-message.error{background-color:#ffdee1;border-color:#a7414a;}
+#content{margin-top:5px;position:relative;padding:15px 360px 20px 40px;width:600px;text-align:justify;background-color:#ffffff;min-height:1100px;-moz-box-shadow:0px 0px 120px rgba(0, 0, 0, 0.05);-webkit-box-shadow:0px 0px 120px rgba(0, 0, 0, 0.05);box-shadow:0px 0px 120px rgba(0, 0, 0, 0.05);}
+#downloadbox{width:300px;height:500px;font-size:15px;position:absolute;right:30px;top:20px;background-color:#e0f0f8;border:1px solid #a7414a;border-radius:5px;border:1px;-webkit-border-radius:5px;padding:5px;}
+#infobox{width:300px;height:500px;position:absolute;right:30px;top:550px;background-color:#e0f0f8;border-radius:5px;border:1px;-webkit-border-radius:5px;padding:5px;}
+#infobox small{font-size:11px;}
+#footer{position:relative;padding-left:40px;padding-bottom:40px;text-align:left;font-size:14px;background-color:#ffffff;}
+#footer>div{float:left;margin-right:200px;padding-top:6px;border-top:#e0f0f8 2px solid;}
+.index,.index ul,.index li{list-style:none;padding:0px;margin:0px;}
+.index{padding:20px;border:2px dashed #d1f0f3;display:inline-block;}
+.index>li>a{font-weight:bold;}
+.index>ul{padding:20px 0px 20px 20px;}
+.index a,.index a:link,.index a:active,.index a:visited{display:block;text-decoration:none;}
+.list>li{padding:5px 0px 5px 0px;}
+.versiontext{text-align:left;}
+.download a{font-size:20px;}
+@font-face{font-family:'UbuntuRegular';src:url('/assets/font/ubuntu-r-webfont.eot');src:url('/assets/font/ubuntu-r-webfont.eot?iefix') format('eot'),url('/assets/font/ubuntu-r-webfont.woff') format('woff'),url('/assets/font/ubuntu-r-webfont.ttf') format('truetype'),url('/assets/font/ubuntu-r-webfont.svg#webfontKT0zjHSC') format('svg');font-weight:normal;font-style:normal;}@font-face{font-family:'UbuntuItalic';src:url('/assets/font/ubuntu-ri-webfont.eot');src:url('/assets/font/ubuntu-ri-webfont.eot?iefix') format('eot'),url('/assets/font/ubuntu-ri-webfont.woff') format('woff'),url('/assets/font/ubuntu-ri-webfont.ttf') format('truetype'),url('/assets/font/ubuntu-ri-webfont.svg#webfontGetaoUfe') format('svg');font-weight:normal;font-style:normal;}@font-face{font-family:'UbuntuBold';src:url('/assets/font/ubuntu-b-webfont.eot');src:url('/assets/font/ubuntu-b-webfont.eot?iefix') format('eot'),url('/assets/font/ubuntu-b-webfont.woff') format('woff'),url('/assets/font/ubuntu-b-webfont.ttf') format('truetype'),url('/assets/font/ubuntu-b-webfont.svg#webfontEreyFiHC') format('svg');font-weight:normal;font-style:normal;}@font-face{font-family:'UbuntuBoldItalic';src:url('/assets/font/ubuntu-bi-webfont.eot');src:url('/assets/font/ubuntu-bi-webfont.eot?iefix') format('eot'),url('/assets/font/ubuntu-bi-webfont.woff') format('woff'),url('/assets/font/ubuntu-bi-webfont.ttf') format('truetype'),url('/assets/font/ubuntu-bi-webfont.svg#webfontf1YowZka') format('svg');font-weight:normal;font-style:normal;}

@@ -5,6 +5,7 @@ import org.multibit.site.views.PublicFreemarkerView;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 
 /**
  * <p>Resource to provide the following to application:</p>
@@ -16,15 +17,32 @@ import javax.ws.rs.Path;
  *         
  */
 @Path("/")
-public class PublicHomeResource {
+public class PublicHomeResource extends BaseResource {
 
   @GET
   public PublicFreemarkerView<BaseModel> getIndex() {
 
-    BaseModel model = new BaseModel();
-    return new PublicFreemarkerView<BaseModel>("common/home.ftl",model);
+    // Provide a default
+    return getHome("/en/index.html");
 
   }
 
+  @GET
+  @Path("/{resourcePath: (?!images|css).*}")
+  public PublicFreemarkerView<BaseModel> getHome(
+    @PathParam("resourcePath") String resourcePath
+  ) {
+
+    // TODO Implement i18n
+    if (!resourcePath.startsWith("/en/")) {
+      resourcePath = "/en/" + resourcePath;
+    } else {
+      resourcePath = "/" + resourcePath;
+    }
+
+    BaseModel model = new BaseModel(resourcePath);
+    return new PublicFreemarkerView<BaseModel>("content/home.ftl", model);
+
+  }
 
 }

@@ -1,47 +1,64 @@
-<!DOCTYPE html>
+<#-- @ftlvariable name="model" type="org.multibit.site.views.PublicFreemarkerView" -->
+<#include "../content/base.ftl">
 <html lang="en">
 <head>
-<#include "../includes/common/head.ftl">
+<#include "../includes/head.ftl">
 </head>
-
 <body>
+<#include "../includes/header.ftl">
 
-<div class="container">
-<#include "../includes/common/header.ftl">
-  <div class="row">
+<div id="container3">
+  <div id="back1">
+    <div id="back2">
+      <div class="wrap">
 
-    <div class="span12">
-      <h2>There doesn't appear to be anything here</h2>
+      <#if alert??>
+        <div class="alert-message ${alertClass}">${alertText}</div>
+      </#if>
+        <div id="content">
+
+          <div class="row">
+
+            <div class="span12">
+              <h2>There doesn't appear to be anything here</h2>
 
 
-      <p>It looks as though you were following a broken link. If it came from our site, we're very sorry about
-        this and our link maintenance reporting tool will have picked this up and
-        sent a notification to the support engineers about it. They will sort it out as soon as possible.</p>
+              <p>It looks as though you were following a broken link. If it came from our site, we're very sorry about
+                this and our link maintenance reporting tool will have picked this up and
+                sent a notification to the support engineers about it. They will sort it out as soon as possible.</p>
 
-      <p>Since the information isn't here, you should <a href="/">return to the home page</a>.</p>
+              <p>Since the information isn't here, you should <a href="/">return to the home page</a>.</p>
 
-      <h3>Technical</h3>
-      <p>404 - Resource not found</p>
+              <h3>Technical</h3>
 
+              <p>404 - Resource not found</p>
+
+            </div>
+
+          </div>
+
+          <div class="row">
+
+            <div class="span12">
+              <a href="/"><img src="/images/common/error.jpg"></a>
+            </div>
+
+          </div>
+
+        <#-- TODO Pull in the content from the model
+          ${model.content}
+          -->
+
+        </div>
+
+      <#include "../includes/footer.ftl">
+
+      </div>
     </div>
-
   </div>
-
-  <div class="row">
-
-    <div class="span12">
-      <a href="/"><img src="/images/error.jpg"></a>
-    </div>
-
-  </div>
-
-<#include "../includes/common/footer.ftl">
-
 </div>
-<!-- /container -->
 
-<#include "../includes/common/cdn-scripts.ftl">
-
+<#include "../includes/cdn-scripts.ftl">
 
 </body>
 </html>

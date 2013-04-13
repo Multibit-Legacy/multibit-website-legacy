@@ -43,6 +43,7 @@ public class SiteService extends Service<SiteConfiguration> {
     openIDDemoConfigurationBootstrap.addBundle(new AssetsBundle("/assets/css", "/css"));
     openIDDemoConfigurationBootstrap.addBundle(new AssetsBundle("/assets/images", "/images"));
     openIDDemoConfigurationBootstrap.addBundle(new AssetsBundle("/assets/jquery", "/jquery"));
+    openIDDemoConfigurationBootstrap.addBundle(new AssetsBundle("/views/html/en", "/en"));
     openIDDemoConfigurationBootstrap.addBundle(new ViewBundle());
   }
 
@@ -59,5 +60,7 @@ public class SiteService extends Service<SiteConfiguration> {
     environment.addProvider(new ViewMessageBodyWriter());
 
     // Session handler
-    environment.setSessionHandler(new SessionHandler());  }
+    environment.setSessionHandler(new SessionHandler());
+
+  }
 }

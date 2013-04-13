@@ -1,5 +1,5 @@
 <#-- @ftlvariable name="model" type="org.multibit.site.views.PublicFreemarkerView" -->
-<#include "../content/base.ftl">
+<#include "base.ftl">
 <html lang="en">
 <head>
 <#include "../includes/head.ftl">
@@ -17,14 +17,12 @@
       </#if>
         <div id="content">
 
-          <h1>Access denied!</h1>
+        <#-- Pull in the content from the model -->
+        ${model.content}
 
-          <p>You need to <a href="/openid">sign in</a> to access this information</p>
+        <p>Insufficient? Please <a href="https://github.com/jim618/multibit-website/issues">raise an Issue</a> so we can do better. It takes but a moment.</p>
 
-        <#-- TODO Pull in the content from the model
-          ${model.content}
-          -->
-
+        <#-- No sidebar for help -->
         </div>
 
       <#include "../includes/footer.ftl">
