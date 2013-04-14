@@ -8,7 +8,7 @@ import com.yammer.dropwizard.views.ViewBundle;
 import com.yammer.dropwizard.views.ViewMessageBodyWriter;
 import org.eclipse.jetty.server.session.SessionHandler;
 import org.multibit.site.health.SiteHealthCheck;
-import org.multibit.site.resources.PublicHomeResource;
+import org.multibit.site.resources.PublicPageResource;
 
 /**
  * <p>Service to provide the following to application:</p>
@@ -51,7 +51,7 @@ public class SiteService extends Service<SiteConfiguration> {
   public void run(SiteConfiguration openIDDemoConfiguration, Environment environment) throws Exception {
 
     // Configure environment
-    environment.scanPackagesForResourcesAndProviders(PublicHomeResource.class);
+    environment.scanPackagesForResourcesAndProviders(PublicPageResource.class);
 
     // Health checks
     environment.addHealthCheck(new SiteHealthCheck());

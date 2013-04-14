@@ -12,6 +12,7 @@
       <li><a href="/faq.html">FAQ</a></li>
       <li><a href="/support.html">Support</a></li>
       <li><a href="/community.html">Community</a></li>
+      <li><a href="/blog.html">Blog</a></li>
       <li><a href="/releases.html">Releases</a></li>
       <li><a href="/help.html">Help</a></li>
     </ul>

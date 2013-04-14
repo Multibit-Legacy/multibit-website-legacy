@@ -1,5 +1,5 @@
 <#-- @ftlvariable name="model" type="org.multibit.site.views.PublicFreemarkerView" -->
-<#-- Template for the home page with animation script -->
+<#-- Template for the blog pages with no download promotion -->
 <#include "base.ftl">
 <html lang="en">
 <head>
@@ -21,8 +21,6 @@
           <#-- Pull in the content from the model -->
           ${model.content}
 
-          <#include "../includes/right-sidebar.ftl">
-
         </div>
 
         <#include "../includes/footer.ftl">
@@ -33,21 +31,6 @@
 </div>
 
 <#include "../includes/cdn-scripts.ftl">
-
-<#-- Provide some animation for the screenshots -->
-<script src="/jquery/plugins/cycle/jquery.cycle.lite.js"></script>
-
-<script>
-
-  $(function() {
-
-    $('#slide').cycle({
-      delay:   -2000
-    });
-
-  });
-
-</script>
 
 </body>
 

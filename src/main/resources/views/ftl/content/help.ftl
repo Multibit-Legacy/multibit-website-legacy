@@ -1,4 +1,5 @@
 <#-- @ftlvariable name="model" type="org.multibit.site.views.PublicFreemarkerView" -->
+<#-- Template for the help pages (minimal extra formatting) -->
 <#include "base.ftl">
 <html lang="en">
 <head>
@@ -20,7 +21,7 @@
         <#-- Pull in the content from the model -->
         ${model.content}
 
-        <p>Insufficient? Please <a href="https://github.com/jim618/multibit-website/issues">raise an Issue</a> so we can do better. It takes but a moment.</p>
+        <p>Insufficient? Please <a href="https://github.com/jim618/multibit-website/issues/new">raise an Issue</a> so that we can do better.</p>
 
         <#-- No sidebar for help -->
         </div>
