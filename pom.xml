@@ -36,7 +36,6 @@
 
       <!-- LESS plugin is to compile the CSS assets -->
       <!-- Use this in a Maven build, Dropwizard will only find it in a JAR -->
-      <!--
       <plugin>
         <groupId>org.lesscss</groupId>
         <artifactId>lesscss-maven-plugin</artifactId>
@@ -57,7 +56,6 @@
           </execution>
         </executions>
       </plugin>
-      -->
 
       <!-- Shade plugin is required to make a "slim" JAR -->
       <plugin>

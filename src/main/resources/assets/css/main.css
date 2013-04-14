@@ -27,6 +27,7 @@ a img{border:0;}
 .alert-message.success{background-color:#e0f0f8;border-color:#41a093;}
 .alert-message.info{background-color:#fff3de;border-color:#a78241;}
 .alert-message.error{background-color:#ffdee1;border-color:#a7414a;}
+#content-full{margin-top:5px;position:relative;padding:15px 60px 20px 40px;width:900px;text-align:justify;background-color:#ffffff;min-height:1100px;-moz-box-shadow:0px 0px 120px rgba(0, 0, 0, 0.05);-webkit-box-shadow:0px 0px 120px rgba(0, 0, 0, 0.05);box-shadow:0px 0px 120px rgba(0, 0, 0, 0.05);}
 #content{margin-top:5px;position:relative;padding:15px 360px 20px 40px;width:600px;text-align:justify;background-color:#ffffff;min-height:1100px;-moz-box-shadow:0px 0px 120px rgba(0, 0, 0, 0.05);-webkit-box-shadow:0px 0px 120px rgba(0, 0, 0, 0.05);box-shadow:0px 0px 120px rgba(0, 0, 0, 0.05);}
 #downloadbox{width:300px;height:500px;font-size:15px;position:absolute;right:30px;top:20px;background-color:#e0f0f8;border:1px solid #a7414a;border-radius:5px;border:1px;-webkit-border-radius:5px;padding:5px;}
 #infobox{width:300px;height:500px;position:absolute;right:30px;top:550px;background-color:#e0f0f8;border-radius:5px;border:1px;-webkit-border-radius:5px;padding:5px;}
