@@ -8,35 +8,48 @@ Much of the groundwork for this website was put in place by Saivann Carigan - th
 
 # MultiBit Website
 
-This project demonstrates the following
+From a technical point of view this project uses
 
-* Dropwizard - Serves HTML and images
+* Java - Primary language of the app
+* [Maven](http://maven.apache.org/) - Build system
+* [Dropwizard](http://dropwizard.codahale.com) - Self-contained web server
+* HTML5 and CSS - All pages are simple HTML5
 
-## Notation
+Why Dropwizard? We don't want the complexity that comes with an application server or an
+external servlet container. Dropwizard gives us the simplicity we crave.
 
-```<project root>``` - The root directory of the project as checked out through git
-
-All commands will work on *nix without modification, use \ instead of / for Windows.
+We looked at [Jekyll](https://github.com/mojombo/jekyll), and while it's a great technology, we
+found it a bit limiting for what we needed from our website.
 
 ## Getting started
+
+Since it is all just Java and Maven, it's pretty straightforward to get the site running. Just clone
+from GitHub and note the following:
+
+`<project root>` - The root directory of the project as checked out through git
+`<version>` - The version as found in `pom.xml` (e.g. 3.0.0-SNAPSHOT)
+
+All commands will work on *nix without modification, use \ instead of / for Windows.
 
 From the console you can do the following
 ```
 cd <project root>
 mvn clean install
-java -jar target/dropwizard-openid-1.0.0.jar server openid-demo.yml
+java -jar target/multibit-site-<version>.jar server site-config.yml
 ```
 
 # Translation
 
 Bitcoin is a global currency and so this site has many translations. If you'd like to contribute your own translation for the pages on offer please use this process:
 
-1. Find the two letter ISO 639-1 code for your language (fr, en, jp)
-1. Rename html files in `src/main/resources/views/html/(lang)/` according to your language
-1. Update image files in `src/main/resources/assets/images/(lang)` to reflect your changes
+1. Find the two letter ISO 639-1 code for your language (fr, en, jp etc)
+1. Copy existing html files from `src/main/resources/views/html/{lang}/` according to your source language (e.g. you're a French to Japanese expert so base on `fr` and copy to `jp`)
+1. Paste new html files to `src/main/resources/views/html/{lang}/` according to your target language
+1. Repeat for image files in `src/main/resources/assets/images/{lang}` this is for language-specific screenshots that are applicable
 1. Translate all `.html` and image files as required then issue a pull request
 
-Tip: You can preview your work in a simple Google Chrome browser with no HTTP server. Just go to the existing English page, open the JavaScript console (`CTRL + SHIFT + J`) and use the following command to make the page editable : `document.body.contentEditable=true`
+Tip 1: You reference your page using the format /{page}.{lang}.html even though the file is organised as /{lang}/{page}.html
+Tip 2: You can preview your work in a simple Google Chrome browser with no HTTP server. Just go to the existing English page, open the JavaScript console (`CTRL + SHIFT + J`) and use the following command to make the page editable : `document.body.contentEditable=true`
 
 ## Advanced Usage
 
