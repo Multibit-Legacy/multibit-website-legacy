@@ -241,7 +241,7 @@ public class PublicPageResource extends BaseResource {
   ) {
 
     // Java6 uses StringBuilder to optimise this
-    String resourcePath = "/" + lang + "/" + version + "/help_contents.html";
+    String resourcePath = "/" + lang + "/help/" + version + "/help_contents.html";
 
     BaseModel model = new BaseModel(resourcePath);
     return new PublicFreemarkerView<BaseModel>("content/help.ftl", model);
@@ -266,7 +266,7 @@ public class PublicPageResource extends BaseResource {
   ) {
 
     // Java6 uses StringBuilder to optimise this
-    String resourcePath = "/" + lang + "/" + version + "/" + pathParam;
+    String resourcePath = "/" + lang + "/help/" + version + "/" + pathParam;
 
     BaseModel model = new BaseModel(resourcePath);
     return new PublicFreemarkerView<BaseModel>("content/help.ftl", model);
