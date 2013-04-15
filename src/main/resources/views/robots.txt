@@ -1,2 +1,1 @@
-
 Sitemap: http://multibit.org/sitemap.xml
