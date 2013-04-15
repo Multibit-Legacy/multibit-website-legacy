@@ -45,6 +45,22 @@ public class PublicPageResource extends BaseResource {
   }
 
   /**
+   * Provide the robots.txt
+   *
+   * @return The robots.txt file
+   */
+  @GET
+  @Path("robots.txt")
+  @Timed
+  @CacheControl(maxAge = 24, maxAgeUnit = TimeUnit.HOURS)
+  public Response viewRobots() {
+
+    InputStream is = PublicPageResource.class.getResourceAsStream("/views/robots.txt");
+
+    return Response.ok(is).build();
+  }
+
+  /**
    * @return The default index page for the main site
    */
   @GET

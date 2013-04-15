@@ -1,5 +1,4 @@
-<!-- TODO Provide a preferences setting for these links -->
-<title>MultiBit • Secure lightweight international Bitcoin client</title>
+<title>MultiBit • Secure lightweight international Bitcoin wallet</title>
 
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
@@ -10,11 +9,12 @@
 <meta name="alexaVerifyID" content="7tCwJOsMCYO8h_sG800FoCMpMJc" />
 <meta name="author" content="Gary Rowe">
 
+<link rel="shortcut icon" href="/images/favicon.png">
+
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+<link rel="stylesheet" href="/css/main.css" />
+
 <!-- Allow IE6-8 support of HTML5 elements (must be in head section) -->
 <!--[if lt IE 9]>
 <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
 <![endif]-->
-
-<link rel="shortcut icon" href="/images/favicon.png">
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
-<link rel="stylesheet" href="/css/main.css" />

@@ -45,9 +45,7 @@
 
           </div>
 
-        <#-- TODO Pull in the content from the model
           ${model.content}
-          -->
 
         </div>
 

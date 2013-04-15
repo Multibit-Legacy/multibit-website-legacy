@@ -21,10 +21,6 @@
 
           <p>You need to <a href="/openid">sign in</a> to access this information</p>
 
-        <#-- TODO Pull in the content from the model
-          ${model.content}
-          -->
-
         </div>
 
       <#include "../includes/footer.ftl">
