@@ -1,6 +1,8 @@
 <#-- @ftlvariable name="model" type="org.multibit.site.views.PublicFreemarkerView" -->
 <#-- Template for the help pages (minimal extra formatting) -->
 <#include "base.ftl">
+<#-- Required for IE to render correctly -->
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
 <#include "../includes/head.ftl">

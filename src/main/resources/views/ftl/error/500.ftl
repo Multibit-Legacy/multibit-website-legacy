@@ -15,7 +15,7 @@
       <#if alert??>
         <div class="alert-message ${alertClass}">${alertText}</div>
       </#if>
-        <div id="content">
+        <div id="content-full">
 
           <div class="row">
 

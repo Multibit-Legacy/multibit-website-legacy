@@ -1,20 +1,19 @@
 <#-- @ftlvariable name="model" type="org.multibit.site.views.PublicFreemarkerView" -->
 <#-- Template providing a single point of configuration for common variables -->
-<#assign downloadVersion = "1.2.3">
+<#assign downloadVersion = "0.4.23">
 
-<#-- Alerts are configured here
+<#-- Documentation for alerts
 
 # Place an alert using one of these classes:
 # error (big problem!)
 # success (we've fixed it!)
 # info (something important is happening)
-alertClass: success
-# Add the text of the alert in here
-alertText: Here is some alert text
+# Example of a beta test alert:
+
+<#assign alertClass = "success">
+<#assign alertText = "Beta testers: <a href='https://multibit.org/releases/multibit-0.5.9rc1/'>MultiBit v0.5.9 Release Candidate 1</a> is now available for trials.">
 
 -->
-
-<#assign alertClass = "error">
-<#assign alertText = "This is a test alert">
-<#-- Fixes IE rendering issue -->
-<!DOCTYPE HTML>
+<#-- Uncomment when ready to present -->
+<#assign alertClass = "success">
+<#assign alertText = "Beta testers: <a href='https://multibit.org/releases/multibit-0.5.9rc1/'>MultiBit v0.5.9 Release Candidate 1</a> is now available for trials.">

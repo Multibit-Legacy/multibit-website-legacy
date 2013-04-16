@@ -14,7 +14,6 @@ import java.nio.charset.Charset;
  * <li>Methods to operate on streams</li>
  * </ul>
  */
-
 public class StreamUtils {
 
   /**

@@ -2,6 +2,7 @@ package org.multibit.site.resources;
 
 import com.yammer.dropwizard.jersey.caching.CacheControl;
 import com.yammer.metrics.annotation.Timed;
+import org.multibit.site.InMemoryAssetCache;
 import org.multibit.site.model.BaseModel;
 import org.multibit.site.views.PublicFreemarkerView;
 
@@ -10,7 +11,10 @@ import javax.validation.constraints.Size;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.concurrent.TimeUnit;
 
@@ -41,7 +45,10 @@ public class PublicPageResource extends BaseResource {
 
     InputStream is = PublicPageResource.class.getResourceAsStream("/assets/images/favicon.ico");
 
-    return Response.ok(is).build();
+    return Response
+      .ok(is)
+      .type("image/png")
+      .build();
   }
 
   /**
@@ -53,6 +60,7 @@ public class PublicPageResource extends BaseResource {
   @Path("robots.txt")
   @Timed
   @CacheControl(maxAge = 24, maxAgeUnit = TimeUnit.HOURS)
+  @Produces(MediaType.TEXT_PLAIN)
   public Response viewRobots() {
 
     InputStream is = PublicPageResource.class.getResourceAsStream("/views/robots.txt");
@@ -61,9 +69,27 @@ public class PublicPageResource extends BaseResource {
   }
 
   /**
+   * Provide the site map file
+   *
+   * @return The sitemap.xml file
+   */
+  @GET
+  @Path("sitemap.xml")
+  @Timed
+  @CacheControl(maxAge = 24, maxAgeUnit = TimeUnit.HOURS)
+  @Produces(MediaType.TEXT_XML)
+  public Response viewSitemap() throws IOException {
+
+    return Response
+      .ok(InMemoryAssetCache.INSTANCE.getByResourcePath("/views/sitemap.xml"))
+      .build();
+  }
+
+  /**
    * @return The default index page for the main site
    */
   @GET
+  @Produces(MediaType.TEXT_HTML)
   public PublicFreemarkerView<BaseModel> getDefaultHomePage() {
 
     BaseModel model = new BaseModel("/" + DEFAULT_LANGUAGE + "/index.html");
@@ -76,6 +102,7 @@ public class PublicPageResource extends BaseResource {
    */
   @GET
   @Path("index.html")
+  @Produces(MediaType.TEXT_HTML)
   public PublicFreemarkerView<BaseModel> getHomePage() {
 
     return getDefaultHomePage();
@@ -89,6 +116,7 @@ public class PublicPageResource extends BaseResource {
    */
   @GET
   @Path("{page}.html")
+  @Produces(MediaType.TEXT_HTML)
   public PublicFreemarkerView<BaseModel> getDefaultPage(
     @PathParam("page") String page
   ) {
@@ -105,6 +133,7 @@ public class PublicPageResource extends BaseResource {
    */
   @GET
   @Path("{lang}")
+  @Produces(MediaType.TEXT_HTML)
   public PublicFreemarkerView<BaseModel> getLanguageSpecificDefaultHomePage(
     @Size(min = 3, max = 3) @PathParam("lang") String lang
   ) {
@@ -122,6 +151,7 @@ public class PublicPageResource extends BaseResource {
    */
   @GET
   @Path("{lang}/{page}.html")
+  @Produces(MediaType.TEXT_HTML)
   public PublicFreemarkerView<BaseModel> getLanguageSpecificPage(
     @Size(min = 3, max = 3) @PathParam("lang") String lang,
     @PathParam("page") String page
@@ -144,6 +174,7 @@ public class PublicPageResource extends BaseResource {
    */
   @GET
   @Path("blog/{year}/{month}/{day}/{page}.html")
+  @Produces(MediaType.TEXT_HTML)
   public PublicFreemarkerView<BaseModel> getDefaultBlogPage(
     @Digits(integer = 2, fraction = 0) @PathParam("year") String year,
     @Digits(integer = 2, fraction = 0) @PathParam("month") String month,
@@ -167,7 +198,8 @@ public class PublicPageResource extends BaseResource {
    * @return The view (template + data) allowing the HTML to be rendered
    */
   @GET
-  @Path("blog/{lang}/{year}/{month}/{day}/{page}.html")
+  @Path("/{lang}/blog/{year}/{month}/{day}/{page}.html")
+  @Produces(MediaType.TEXT_HTML)
   public PublicFreemarkerView<BaseModel> getLanguageSpecificBlogPage(
     @Size(min = 3, max = 3) @PathParam("lang") String lang,
     @Digits(integer = 2, fraction = 0) @PathParam("year") String year,
@@ -191,6 +223,7 @@ public class PublicPageResource extends BaseResource {
    */
   @GET
   @Path("help")
+  @Produces(MediaType.TEXT_HTML)
   public PublicFreemarkerView<BaseModel> getDefaultHelpPage() {
 
     // Java6 uses StringBuilder to optimise this
@@ -210,7 +243,8 @@ public class PublicPageResource extends BaseResource {
    * @return The view (template + data) allowing the HTML to be rendered
    */
   @GET
-  @Path("help/{lang}")
+  @Path("{lang}/help")
+  @Produces(MediaType.TEXT_HTML)
   public PublicFreemarkerView<BaseModel> getDefaultLanguageSpecificHelpPage(
     @Size(min = 3, max = 3) @PathParam("lang") String lang
   ) {
@@ -234,7 +268,8 @@ public class PublicPageResource extends BaseResource {
    * @return The view (template + data) allowing the HTML to be rendered
    */
   @GET
-  @Path("help/{lang}/{version}")
+  @Path("{lang}/help/{version}")
+  @Produces(MediaType.TEXT_HTML)
   public PublicFreemarkerView<BaseModel> getDefaultLanguageVersionSpecificHelpPage(
     @Size(min = 3, max = 3) @PathParam("lang") String lang,
     @PathParam("version") String version
@@ -258,7 +293,8 @@ public class PublicPageResource extends BaseResource {
    * @return The view (template + data) allowing the HTML to be rendered
    */
   @GET
-  @Path("help/{lang}/{version}/{pathParam: (?).*}")
+  @Path("{lang}/help/{version}/{pathParam: (?).*}")
+  @Produces(MediaType.TEXT_HTML)
   public PublicFreemarkerView<BaseModel> getLanguageVersionSpecificHelpPage(
     @Size(min = 3, max = 3) @PathParam("lang") String lang,
     @PathParam("version") String version,

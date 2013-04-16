@@ -1,6 +1,8 @@
 <#-- @ftlvariable name="model" type="org.multibit.site.views.PublicFreemarkerView" -->
 <#-- Template for the main navigation and information pages with no animation -->
 <#include "base.ftl">
+<#-- Required for IE to render correctly -->
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
   <#include "../includes/head.ftl">

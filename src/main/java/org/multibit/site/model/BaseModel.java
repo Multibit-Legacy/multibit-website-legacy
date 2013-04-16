@@ -41,8 +41,6 @@ public class BaseModel {
       return;
     }
 
-    // Markdown processing is slow so result must be cached
-
     // Only asset type supported is HTML
     if (resourcePath.endsWith(".html")) {
       // Attempt a load

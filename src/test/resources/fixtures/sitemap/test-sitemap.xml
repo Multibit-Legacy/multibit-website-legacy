@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<urlset>
+  <url>
+    <loc>http://org.example/example1.html</loc>
+    <lastmod>2000-01-01</lastmod>
+  </url>
+  <url>
+    <loc>http://org.example/example2.html</loc>
+    <lastmod>2000-01-02</lastmod>
+  </url>
+  <url>
+    <loc>http://org.example/example3.html</loc>
+    <lastmod>2000-01-03</lastmod>
+  </url>
+</urlset>

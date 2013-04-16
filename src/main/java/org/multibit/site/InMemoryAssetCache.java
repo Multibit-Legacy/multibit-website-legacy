@@ -5,8 +5,6 @@ import com.google.common.base.Preconditions;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 
-import java.util.concurrent.TimeUnit;
-
 /**
  * <p>Cache to provide the following to resources:</p>
  * <ul>
@@ -25,32 +23,28 @@ public enum InMemoryAssetCache {
 
   // A lot of threads will hit this cache
   private volatile Cache<String, String> pageCache;
+  private boolean noCaching=false;
 
   InMemoryAssetCache() {
-    reset(15, TimeUnit.MINUTES);
+    reset(false);
   }
 
   /**
    * Resets the cache and allows the expiry time to be set (perhaps for testing)
-   *
-   * @param duration The duration before a page must be manually rebuilt
-   * @param unit     The {@link java.util.concurrent.TimeUnit} that duration is expressed in
    */
-  public InMemoryAssetCache reset(int duration, TimeUnit unit) {
+  public InMemoryAssetCache reset(boolean noCaching) {
 
     // Build the cache
     if (pageCache != null) {
       pageCache.invalidateAll();
     }
 
-    // If there is no activity against a key then we want
-    // it to be expired from the cache, but each fresh write
-    // will reset the expiry timer
     pageCache = CacheBuilder
       .newBuilder()
-      .expireAfterWrite(duration, unit)
       .maximumSize(100)
       .build();
+
+    this.noCaching = noCaching;
 
     return INSTANCE;
   }
@@ -62,10 +56,12 @@ public enum InMemoryAssetCache {
    */
   public Optional<String> getByResourcePath(String resourcePath) {
 
-    // TODO Remove this when caching is required
-    if (true) {
-      return Optional.absent();
-    }
+    // Turn off page caching for development here
+    /*
+     if (true) {
+       return Optional.absent();
+     }
+     */
 
     // Check the cache
     Optional<String> viewOptional = Optional.fromNullable(pageCache.getIfPresent(resourcePath));
