@@ -1,5 +1,5 @@
 body{background-color:#dbdbdb;color:#848484;font-family:"Helvetica Neue","Liberation Sans",Arial,sans-serif;margin:0;padding:0;}
-h1,h2{font-family:Copperplate,"Copperplate Gothic Light",fantasy;font-weight:normal;}
+h1,h2{font-family:"Copperplate Gothic Light",fantasy;font-weight:normal;}
 h1{color:#a7414a;font-size:160%;}
 h2{color:#a7414a;font-size:130%;}
 h3{color:#a7414a;font-size:100%;}
@@ -8,7 +8,7 @@ a:link,a:visited,a:active{color:#a7414a;}
 a:link:hover,a:visited:hover,a:active:hover{color:#a7414a;}
 a img{border:0;}
 #container1{background-color:#ffffff;}
-#container2{background-color:#ffffff;border-bottom:3px solid #3b3b3b;border-top:3px solid #3b3b3b;-moz-box-shadow:0px 2px 1px rgba(0, 0, 0, 0.15);-webkit-box-shadow:0px 2px 1px rgba(0, 0, 0, 0.15);box-shadow:0px 2px 1px rgba(0, 0, 0, 0.15);background-image:linear-gradient(bottom, #000000 0%, #3b3b3b 80%);background-image:-o-linear-gradient(bottom, #000000 0%, #3b3b3b 80%);background-image:-moz-linear-gradient(bottom, #000000 0%, #3b3b3b 80%);background-image:-webkit-linear-gradient(bottom, #000000 0%, #3b3b3b 80%);background-image:-ms-linear-gradient(bottom, #000000 0%, #3b3b3b 80%);}
+#container2{background-color:#3b3b3b;border-bottom:3px solid #3b3b3b;border-top:3px solid #3b3b3b;-moz-box-shadow:0px 2px 1px rgba(0, 0, 0, 0.15);-webkit-box-shadow:0px 2px 1px rgba(0, 0, 0, 0.15);box-shadow:0px 2px 1px rgba(0, 0, 0, 0.15);background-image:linear-gradient(bottom, #000000 0%, #3b3b3b 80%);background-image:-o-linear-gradient(bottom, #000000 0%, #3b3b3b 80%);background-image:-moz-linear-gradient(bottom, #000000 0%, #3b3b3b 80%);background-image:-webkit-linear-gradient(bottom, #000000 0%, #3b3b3b 80%);background-image:-ms-linear-gradient(bottom, #000000 0%, #3b3b3b 80%);}
 .wrap{width:1000px;margin:auto;position:relative;}
 #back1{background:fixed url(/images/common/back2.png) repeat;}
 #back2{background:fixed url(/images/common/back1.png) repeat;}
@@ -16,7 +16,7 @@ a img{border:0;}
 #logo{position:absolute;left:0px;top:15px;}
 #logo a{display:block;background-image:url(/images/common/logotop.png);width:60px;height:60px;}
 #logo span{display:none;}
-#logotext{font-size:70px;font-family:Copperplate,"Copperplate Gothic Light",fantasy;display:inline-block;color:#3b3b3b;white-space:nowrap;margin:10px 0px 0px 80px;height:80px;}
+#logotext{font-size:70px;font-weight:bold;font-family:"Copperplate Gothic Light",fantasy;display:inline-block;color:#3b3b3b;white-space:nowrap;margin:10px 0px 0px 80px;height:80px;}
 .home{font-size:16px;}
 #menu{padding:0px;margin:0px;margin:auto;position:relative;left:-6px;height:32px;}
 #menu li{list-style:none;float:left;border:1px solid transparent;border-radius:3px;-webkit-border-radius:3px;}
