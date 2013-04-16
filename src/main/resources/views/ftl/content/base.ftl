@@ -16,3 +16,5 @@ alertText: Here is some alert text
 
 <#assign alertClass = "error">
 <#assign alertText = "This is a test alert">
+<#-- Fixes IE rendering issue -->
+<!DOCTYPE HTML>
