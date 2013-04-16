@@ -13,7 +13,7 @@
     <div id="back2">
       <div class="wrap">
 
-      <#if alert??>
+      <#if alertText??>
         <div class="alert-message ${alertClass}">${alertText}</div>
       </#if>
         <div id="content-full">
