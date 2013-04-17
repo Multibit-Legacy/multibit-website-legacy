@@ -34,7 +34,7 @@
     <tr>
       <td></td>
       <td>Universal disk image (DMG). Compatible with Mac OS X Intel 10.3-<a
-        href="en/v0.4/help_mountain_lion.html">10.8</a>, PowerPC 10.6-<a href="en/v0.4/help_mountain_lion.html">10.8</a>.
+        href="en/help/v0.4/help_mountain_lion.html">10.8</a>, PowerPC 10.6-<a href="en/help/v0.4/help_mountain_lion.html">10.8</a>.
       </td>
     </tr>
     <tr>
@@ -58,10 +58,10 @@
   <p>Installers are signed with the PGP key <a href="http://pgp.mit.edu:11371/pks/lookup?search=0x23F7FB7B">0x23F7FB7B</a>
     (a subkey of <a href="http://pgp.mit.edu:11371/pks/lookup?search=0x79F7C572">0x79F7C572</a>)
   </p>
-  <a href="/src/main/resources/views/html/en/releases.html" style="font-weight:bold;">Previous releases</a>
+  <a href="/en/releases.html" style="font-weight:bold;">Previous releases</a>
   <br/>
 
-  <p><a href="/src/main/resources/views/html/en/help.html">More information about downloads</a></p>
+  <p><a href="/en/help.html">More information about downloads</a></p>
 </div>
 
 <div id="infobox">

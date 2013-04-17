@@ -15,7 +15,7 @@
       <#if alert??>
         <div class="alert-message ${alertClass}">${alertText}</div>
       </#if>
-        <div id="content">
+        <div id="content-full">
 
           <div class="row">
 
@@ -36,18 +36,6 @@
             </div>
 
           </div>
-
-          <div class="row">
-
-            <div class="span12">
-              <a href="/"><img src="/images/common/error.jpg"></a>
-            </div>
-
-          </div>
-
-        <#-- TODO Pull in the content from the model
-          ${model.content}
-          -->
 
         </div>
 

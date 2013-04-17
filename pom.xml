@@ -37,7 +37,6 @@
       <!-- LESS plugin is to compile the CSS assets -->
       <!-- Use this in a Maven build, Dropwizard will only find it in a JAR -->
       <!-- If not changing CSS leave it commented out -->
-      <!--
       <plugin>
         <groupId>org.lesscss</groupId>
         <artifactId>lesscss-maven-plugin</artifactId>
@@ -58,7 +57,6 @@
           </execution>
         </executions>
       </plugin>
-      -->
 
       <!-- Shade plugin is required to make a "slim" JAR -->
       <plugin>
@@ -121,11 +119,11 @@
       <version>${dropwizard.version}</version>
     </dependency>
 
-    <!-- Use Pegdown for Markdown support -->
+    <!-- Guava support library -->
     <dependency>
-      <groupId>org.pegdown</groupId>
-      <artifactId>pegdown</artifactId>
-      <version>1.1.0</version>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>14.0.1</version>
     </dependency>
 
     <!-- LESS to improve CSS readability -->

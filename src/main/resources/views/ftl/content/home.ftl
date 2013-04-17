@@ -1,6 +1,8 @@
 <#-- @ftlvariable name="model" type="org.multibit.site.views.PublicFreemarkerView" -->
 <#-- Template for the home page with animation script -->
 <#include "base.ftl">
+<#-- Required for IE to render correctly -->
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
   <#include "../includes/head.ftl">
@@ -13,7 +15,7 @@
     <div id="back2">
       <div class="wrap">
 
-        <#if alert??>
+        <#if alertText??>
           <div class="alert-message ${alertClass}">${alertText}</div>
         </#if>
         <div id="content">
