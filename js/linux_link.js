@@ -1,1 +1,1 @@
-document.write("<a href=\"releases/multibit-0.4.23/multibit-0.4.23-linux.jar\">Linux / Unix installer</a>&nbsp;&nbsp;(28.5MB, <a href=\"releases/multibit-0.4.23/multibit-0.4.23-linux.jar.asc\">signature</a>)")
+document.write("<a href=\"releases/multibit-0.5.9/multibit-0.5.9-linux.jar\">Linux / Unix installer</a>&nbsp;&nbsp;(9.7MB, <a href=\"releases/multibit-0.5.9/multibit-0.5.9-linux.jar.asc\">signature</a>)")
