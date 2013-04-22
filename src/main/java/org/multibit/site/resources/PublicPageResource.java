@@ -30,8 +30,6 @@ import java.util.concurrent.TimeUnit;
 @Path("/")
 public class PublicPageResource extends BaseResource {
 
-  private static final String DEFAULT_LANGUAGE = "en";
-
   /**
    * Provide the favicon
    *
