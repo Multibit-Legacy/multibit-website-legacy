@@ -19,7 +19,7 @@ import javax.ws.rs.core.MediaType;
  * @since 0.0.1
  */
 @Path("/error")
-@Produces(MediaType.TEXT_HTML)
+@Produces(MediaType.TEXT_HTML + ";charset=utf-8")
 public class PublicErrorResource extends BaseResource {
 
   /**

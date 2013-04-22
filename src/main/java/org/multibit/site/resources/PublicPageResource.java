@@ -87,7 +87,7 @@ public class PublicPageResource extends BaseResource {
    * @return The default index page for the main site
    */
   @GET
-  @Produces(MediaType.TEXT_HTML)
+  @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   public PublicFreemarkerView<BaseModel> getDefaultHomePage() {
 
     BaseModel model = new BaseModel("/" + DEFAULT_LANGUAGE + "/index.html");
@@ -100,7 +100,7 @@ public class PublicPageResource extends BaseResource {
    */
   @GET
   @Path("index.html")
-  @Produces(MediaType.TEXT_HTML)
+  @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   public PublicFreemarkerView<BaseModel> getHomePage() {
 
     return getDefaultHomePage();
@@ -114,7 +114,7 @@ public class PublicPageResource extends BaseResource {
    */
   @GET
   @Path("{page}.html")
-  @Produces(MediaType.TEXT_HTML)
+  @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   public PublicFreemarkerView<BaseModel> getDefaultPage(
     @PathParam("page") String page
   ) {
@@ -131,7 +131,7 @@ public class PublicPageResource extends BaseResource {
    */
   @GET
   @Path("{lang}")
-  @Produces(MediaType.TEXT_HTML)
+  @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   public PublicFreemarkerView<BaseModel> getLanguageSpecificDefaultHomePage(
     @Size(min = 3, max = 3) @PathParam("lang") String lang
   ) {
@@ -149,7 +149,7 @@ public class PublicPageResource extends BaseResource {
    */
   @GET
   @Path("{lang}/{page}.html")
-  @Produces(MediaType.TEXT_HTML)
+  @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   public PublicFreemarkerView<BaseModel> getLanguageSpecificPage(
     @Size(min = 3, max = 3) @PathParam("lang") String lang,
     @PathParam("page") String page
@@ -172,7 +172,7 @@ public class PublicPageResource extends BaseResource {
    */
   @GET
   @Path("blog/{year}/{month}/{day}/{page}.html")
-  @Produces(MediaType.TEXT_HTML)
+  @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   public PublicFreemarkerView<BaseModel> getDefaultBlogPage(
     @Digits(integer = 2, fraction = 0) @PathParam("year") String year,
     @Digits(integer = 2, fraction = 0) @PathParam("month") String month,
@@ -197,7 +197,7 @@ public class PublicPageResource extends BaseResource {
    */
   @GET
   @Path("/{lang}/blog/{year}/{month}/{day}/{page}.html")
-  @Produces(MediaType.TEXT_HTML)
+  @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   public PublicFreemarkerView<BaseModel> getLanguageSpecificBlogPage(
     @Size(min = 3, max = 3) @PathParam("lang") String lang,
     @Digits(integer = 2, fraction = 0) @PathParam("year") String year,
@@ -221,7 +221,7 @@ public class PublicPageResource extends BaseResource {
    */
   @GET
   @Path("help")
-  @Produces(MediaType.TEXT_HTML)
+  @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   public PublicFreemarkerView<BaseModel> getDefaultHelpPage() {
 
     // Java6 uses StringBuilder to optimise this
@@ -242,7 +242,7 @@ public class PublicPageResource extends BaseResource {
    */
   @GET
   @Path("{lang}/help")
-  @Produces(MediaType.TEXT_HTML)
+  @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   public PublicFreemarkerView<BaseModel> getDefaultLanguageSpecificHelpPage(
     @Size(min = 3, max = 3) @PathParam("lang") String lang
   ) {
@@ -267,7 +267,7 @@ public class PublicPageResource extends BaseResource {
    */
   @GET
   @Path("{lang}/help/{version}")
-  @Produces(MediaType.TEXT_HTML)
+  @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   public PublicFreemarkerView<BaseModel> getDefaultLanguageVersionSpecificHelpPage(
     @Size(min = 3, max = 3) @PathParam("lang") String lang,
     @PathParam("version") String version
@@ -292,7 +292,7 @@ public class PublicPageResource extends BaseResource {
    */
   @GET
   @Path("{lang}/help/{version}/{pathParam: (?).*}")
-  @Produces(MediaType.TEXT_HTML)
+  @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   public PublicFreemarkerView<BaseModel> getLanguageVersionSpecificHelpPage(
     @Size(min = 3, max = 3) @PathParam("lang") String lang,
     @PathParam("version") String version,

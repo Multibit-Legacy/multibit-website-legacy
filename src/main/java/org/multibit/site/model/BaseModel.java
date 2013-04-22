@@ -1,5 +1,6 @@
 package org.multibit.site.model;
 
+import com.google.common.base.Charsets;
 import com.google.common.base.Optional;
 import org.multibit.site.InMemoryAssetCache;
 import org.multibit.site.utils.StreamUtils;
@@ -52,7 +53,8 @@ public class BaseModel {
 
       try {
         // Read the HTML fragment and cache it for later
-        content = StreamUtils.toString(is);
+        content = StreamUtils.toString(is, Charsets.UTF_8);
+        System.out.println(content);
         InMemoryAssetCache.INSTANCE.put(resourcePath, content);
         return;
       } catch (IOException e) {

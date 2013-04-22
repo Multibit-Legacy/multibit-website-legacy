@@ -70,7 +70,7 @@ public class PublicClientVersion0_4Resource extends BaseResource {
    */
   @GET
   @Path("{page}.html")
-  @Produces(MediaType.TEXT_HTML)
+  @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   public PublicFreemarkerView<BaseModel> getLanguageSpecificHelpPage(
     @PathParam("page") String page
   ) {
@@ -93,7 +93,7 @@ public class PublicClientVersion0_4Resource extends BaseResource {
    */
   @GET
   @Path("{lang}/{pathParam: (?).*}")
-  @Produces(MediaType.TEXT_HTML)
+  @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   public PublicFreemarkerView<BaseModel> getLanguageSpecificHelpPage(
     @Size(min = 3, max = 3) @PathParam("lang") String lang,
     @PathParam("pathParam") String pathParam
