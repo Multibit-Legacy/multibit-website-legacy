@@ -18,8 +18,8 @@ import java.io.InputStream;
  * @since 3.0.0
  *         
  */
-@Path("/v0.4")
-public class PublicClientVersion0_4Resource extends BaseResource {
+@Path("/v0.5")
+public class PublicClientVersion0_5Resource extends BaseResource {
 
   /**
    * Provide the help images
@@ -32,7 +32,7 @@ public class PublicClientVersion0_4Resource extends BaseResource {
     @PathParam("image") String image
   ) {
 
-    InputStream is = PublicPageResource.class.getResourceAsStream("/assets/images/en/v0_4/"+image);
+    InputStream is = PublicPageResource.class.getResourceAsStream("/assets/images/en/v0_5/"+image);
 
     if (is == null) {
       throw new WebApplicationException(Response.Status.NOT_FOUND);
@@ -54,7 +54,7 @@ public class PublicClientVersion0_4Resource extends BaseResource {
   public PublicFreemarkerView<BaseModel> getDefaultLanguageHelpContents() {
 
     // Java6 uses StringBuilder to optimise this
-    String resourcePath = "/" + DEFAULT_LANGUAGE + "/help/v0.4/help_contents.html";
+    String resourcePath = "/" + DEFAULT_LANGUAGE + "/help/v0.5/help_contents.html";
 
     BaseModel model = new BaseModel(resourcePath);
     return new PublicFreemarkerView<BaseModel>("content/bare-help.ftl", model);
@@ -76,7 +76,7 @@ public class PublicClientVersion0_4Resource extends BaseResource {
   ) {
 
     // Java6 uses StringBuilder to optimise this
-    String resourcePath = "/" + DEFAULT_LANGUAGE + "/help/v0.4/" + page + ".html";
+    String resourcePath = "/" + DEFAULT_LANGUAGE + "/help/v0.5/" + page + ".html";
 
     BaseModel model = new BaseModel(resourcePath);
     return new PublicFreemarkerView<BaseModel>("content/bare-help.ftl", model);
@@ -100,7 +100,7 @@ public class PublicClientVersion0_4Resource extends BaseResource {
   ) {
 
     // Java6 uses StringBuilder to optimise this
-    String resourcePath = "/" + lang + "/help/v0.4/" + pathParam;
+    String resourcePath = "/" + lang + "/help/v0.5/" + pathParam;
 
     BaseModel model = new BaseModel(resourcePath);
     return new PublicFreemarkerView<BaseModel>("content/bare-help.ftl", model);

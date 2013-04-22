@@ -1,6 +1,6 @@
 <#-- @ftlvariable name="model" type="org.multibit.site.views.PublicFreemarkerView" -->
 <#-- Template providing a single point of configuration for common variables -->
-<#assign downloadVersion = "0.4.23">
+<#assign downloadVersion = "0.5.9">
 
 <#-- Documentation for alerts
 
@@ -16,4 +16,4 @@
 -->
 <#-- Uncomment when ready to present -->
 <#assign alertClass = "success">
-<#assign alertText = "Beta testers: <a href='https://multibit.org/releases/multibit-0.5.9rc1/'>MultiBit v0.5.9 Release Candidate 1</a> is now available for trials.">
+<#assign alertText = "Community: <a href='https://multibit.org/releases/multibit-0.5.9/'>MultiBit v0.5.9 </a> is now available for download. Encrypt your wallets!">

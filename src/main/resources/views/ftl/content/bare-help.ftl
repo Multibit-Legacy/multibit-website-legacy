@@ -5,11 +5,22 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
+
+<style>
+  .alert-message {
+    background-color: #FFF3DE;
+    border: 1px solid #A78241;
+    margin: 10px 0px;
+    padding: 10px;
+    color: #000;
+  }
+
+</style>
 </head>
 <body>
 
 <#if alertText??>
-  <div>${alertText}</div>
+  <div class="alert-message">${alertText}</div>
 </#if>
 
 <#-- Pull in the content from the model -->
