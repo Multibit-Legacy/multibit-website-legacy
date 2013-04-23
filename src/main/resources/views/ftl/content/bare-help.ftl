@@ -19,12 +19,12 @@
 </head>
 <body>
 
-<p><a href="help_contents.html">Back to contents</a></p>
+<p><center><a href="help_contents.html">Back to contents</a></center></p>
 
 <#-- Pull in the content from the model -->
 ${model.content}
 
-<p><a href="help_contents.html">Back to contents</a></p>
+<p><center><a href="help_contents.html">Back to contents</a></center></p>
 
 </body>
 
