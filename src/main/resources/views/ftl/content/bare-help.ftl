@@ -19,17 +19,10 @@
 </head>
 <body>
 
-<#if alertText??>
-  <div class="alert-message">${alertText}</div>
-</#if>
-
 <#-- Pull in the content from the model -->
 ${model.content}
 
 <p><a href="help_contents.html">Back to contents</a></p>
-
-<hr/>
-<p>Insufficient? Please <a href="https://github.com/jim618/multibit-website/issues/new">raise an Issue</a> so that we can do better.</p>
 
 </body>
 
