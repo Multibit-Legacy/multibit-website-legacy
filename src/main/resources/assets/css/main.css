@@ -27,10 +27,11 @@ a img{border:0;}
 .alert-message.success{background-color:#e0f0f8;border-color:#41a093;}
 .alert-message.info{background-color:#fff3de;border-color:#a78241;}
 .alert-message.error{background-color:#ffdee1;border-color:#a7414a;}
-#content-full{margin-top:5px;position:relative;padding:15px 60px 20px 40px;width:900px;text-align:justify;background-color:#ffffff;min-height:1100px;-moz-box-shadow:0px 0px 120px rgba(0, 0, 0, 0.05);-webkit-box-shadow:0px 0px 120px rgba(0, 0, 0, 0.05);box-shadow:0px 0px 120px rgba(0, 0, 0, 0.05);}
-#content{margin-top:5px;position:relative;padding:15px 360px 20px 40px;width:600px;text-align:justify;background-color:#ffffff;min-height:1100px;-moz-box-shadow:0px 0px 120px rgba(0, 0, 0, 0.05);-webkit-box-shadow:0px 0px 120px rgba(0, 0, 0, 0.05);box-shadow:0px 0px 120px rgba(0, 0, 0, 0.05);}
-#downloadbox{width:300px;height:500px;font-size:15px;position:absolute;right:30px;top:20px;background-color:#e0f0f8;border:1px solid #a7414a;border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;padding:5px;}
-#infobox{width:300px;height:500px;position:absolute;right:30px;top:550px;background-color:#e0f0f8;border:1px;border-radius:5px;-webkit-border-radius:5px;padding:5px;}
+#content-full{margin-top:5px;position:relative;padding:15px 80px 20px 20px;width:900px;text-align:justify;background-color:#ffffff;min-height:1100px;-moz-box-shadow:0px 0px 120px rgba(0, 0, 0, 0.05);-webkit-box-shadow:0px 0px 120px rgba(0, 0, 0, 0.05);box-shadow:0px 0px 120px rgba(0, 0, 0, 0.05);}
+#content{margin-top:5px;position:relative;padding:15px 380px 20px 20px;width:600px;text-align:justify;background-color:#ffffff;min-height:1100px;-moz-box-shadow:0px 0px 120px rgba(0, 0, 0, 0.05);-webkit-box-shadow:0px 0px 120px rgba(0, 0, 0, 0.05);box-shadow:0px 0px 120px rgba(0, 0, 0, 0.05);}
+#content td{text-align:left;}
+#downloadbox{width:300px;height:500px;font-size:15px;position:absolute;top:20px;right:20px;background-color:#e0f0f8;border:1px solid #a7414a;border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;padding:10px;}
+#infobox{width:300px;height:500px;position:absolute;top:550px;right:20px;background-color:#e0f0f8;border:1px solid #41a093;border-radius:5px;-webkit-border-radius:5px;padding:10px;}
 #infobox small{font-size:11px;}
 #footer{position:relative;padding-left:40px;padding-bottom:40px;text-align:left;font-size:14px;background-color:#ffffff;}
 #footer>div{float:left;margin-right:200px;padding-top:6px;border-top:#e0f0f8 2px solid;}

@@ -15,7 +15,8 @@
 @primaryColor2: #4EE0F8;
 @primaryColor3: #41A093;
 @primaryColor4: #D1F0F3;
-@primaryColor5: #E0F0F8; /* E0F0F8 is used in the client */
+@primaryColor5: #E0F0F8;
+/* E0F0F8 is used in the client */
 
 /* Menus, navbars and message alerts */
 @secondaryColorA1: #FFE9C2;
@@ -73,9 +74,11 @@ h1 img, h2 img, h3 img {
 a:link, a:visited, a:active {
   color: @secondaryColorB3;
 }
+
 a:link:hover, a:visited:hover, a:active:hover {
   color: @secondaryColorB3;
 }
+
 a img {
   border: 0;
 }
@@ -84,6 +87,7 @@ a img {
 #container1 {
   background-color: @container1BackgroundColor;
 }
+
 /* Contains the menu bar */
 #container2 {
   background-color: @container2BackgroundColor;
@@ -98,6 +102,7 @@ a img {
   background-image: -webkit-linear-gradient(bottom, #000 0%, @logoTextColor 80%);
   background-image: -ms-linear-gradient(bottom, #000 0%, @logoTextColor 80%);
 }
+
 .wrap {
   width: @logoWidth;
   margin: auto;
@@ -108,6 +113,7 @@ a img {
 #back1 {
   background: fixed url(/images/common/back2.png) repeat;
 }
+
 #back2 {
   background: fixed url(/images/common/back1.png) repeat;
 }
@@ -128,15 +134,18 @@ a img {
   left: 0px;
   top: 15px;
 }
+
 #logo a {
   display: block;
   background-image: url(/images/common/logotop.png);
   width: 60px;
   height: 60px;
 }
+
 #logo span {
   display: none;
 }
+
 #logotext {
   font-size: 70px;
   font-family: Copperplate, "Copperplate Gothic Light", fantasy;
@@ -160,6 +169,7 @@ a img {
   left: -6px;
   height: 32px;
 }
+
 #menu li {
   list-style: none;
   float: left;
@@ -167,6 +177,7 @@ a img {
   border-radius: 3px;
   -webkit-border-radius: 3px;
 }
+
 #menu li a, #menu li a:active, #menu li a:visited, #menu li a:link {
   font-family: 'Ubuntu', sans-serif;
   height: 18px;
@@ -176,9 +187,11 @@ a img {
   text-decoration: none;
   padding: 6px 10px;
 }
+
 #menu li:hover a, #menu li.active a {
   color: #fff;
 }
+
 #menu li:hover, #menu li.active {
   background-color: #575757;
   background-image: linear-gradient(bottom, #3d3d3d 20%, #575757 80%);
@@ -197,14 +210,17 @@ a img {
   padding: 10px;
   color: #000;
 }
+
 .alert-message.success {
   background-color: @primaryColor5;
   border-color: @primaryColor3;
 }
+
 .alert-message.info {
   background-color: @secondaryColorA5;
   border-color: @secondaryColorA3;
 }
+
 .alert-message.error {
   background-color: @secondaryColorB5;
   border-color: @secondaryColorB3;
@@ -213,7 +229,7 @@ a img {
 #content-full {
   margin-top: 5px;
   position: relative;
-  padding: 15px (@logoWidth - @contentWidth - @boxWidth - 40) 20px 40px;
+  padding: 15px (@logoWidth - @contentWidth - @boxWidth - 20) 20px 20px;
   width: (@contentWidth + @boxWidth);
   text-align: justify;
   background-color: @contentBackgroundColor;
@@ -226,7 +242,7 @@ a img {
 #content {
   margin-top: 5px;
   position: relative;
-  padding: 15px (@logoWidth - @contentWidth - 40) 20px 40px;
+  padding: 15px (@logoWidth - @contentWidth - 20) 20px 20px;
   width: @contentWidth;
   text-align: justify;
   background-color: @contentBackgroundColor;
@@ -236,32 +252,36 @@ a img {
   box-shadow: 0px 0px 120px rgba(0, 0, 0, 0.05);
 }
 
+#content td {
+  text-align: left;
+}
+
 #downloadbox {
   width: @boxWidth;
   height: 500px;
   font-size: 15px;
   position: absolute;
-  right: 30px;
   top: 20px;
+  right: 20px;
   background-color: @primaryColor5;
   border: 1px solid @secondaryColorB3;
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
-  padding: 5px;
+  padding: 10px;
 }
 
 #infobox {
   width: @boxWidth;
   height: 500px;
   position: absolute;
-  right: 30px;
   top: 550px;
+  right: 20px;
   background-color: @primaryColor5;
-  border: 1px;
+  border: 1px solid @primaryColor3;
   border-radius: 5px;
   -webkit-border-radius: 5px;
-  padding: 5px;
+  padding: 10px;
 }
 
 #infobox small {
@@ -290,17 +310,21 @@ a img {
   padding: 0px;
   margin: 0px;
 }
+
 .index {
   padding: 20px;
   border: 2px dashed @primaryColor4;
   display: inline-block;
 }
+
 .index>li>a {
   font-weight: bold;
 }
+
 .index>ul {
   padding: 20px 0px 20px 20px;
 }
+
 .index a, .index a:link, .index a:active, .index a:visited {
   display: block;
   text-decoration: none;

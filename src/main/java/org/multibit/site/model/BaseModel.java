@@ -45,7 +45,6 @@ public class BaseModel {
     // Only asset type supported is HTML
     if (resourcePath.endsWith(".html")) {
       // Attempt a load
-      // TODO Add i18n support
       InputStream is = BaseModel.class.getResourceAsStream("/views/html" + resourcePath);
       if (is == null) {
         throw new WebApplicationException(Response.Status.NOT_FOUND);
@@ -54,7 +53,6 @@ public class BaseModel {
       try {
         // Read the HTML fragment and cache it for later
         content = StreamUtils.toString(is, Charsets.UTF_8);
-        System.out.println(content);
         InMemoryAssetCache.INSTANCE.put(resourcePath, content);
         return;
       } catch (IOException e) {

@@ -33,7 +33,8 @@
     </tr>
     <tr>
       <td></td>
-      <td>Universal disk image (DMG). Compatible with Mac OS X Intel 10.3-10.8.</td>
+      <td>Universal disk image (DMG). Compatible with Mac OS X Intel 10.3-10.8.
+      </td>
     </tr>
     <tr>
       <td><a
@@ -42,7 +43,7 @@
       <td><a
         href="https://multibit.org/releases/multibit-${downloadVersion}/multibit-${downloadVersion}-linux.jar">Linux
         / Unix installer</a>
-        <small>~12MB</small>
+        <small>~9.7MB</small>
         <a
           href="https://multibit.org/releases/multibit-${downloadVersion}/multibit-${downloadVersion}-linux.jar.asc">
           <small>Signature</small>
@@ -52,7 +53,7 @@
   <p>Installers are signed with the PGP key <a href="http://pgp.mit.edu:11371/pks/lookup?search=0x23F7FB7B">0x23F7FB7B</a>
     (a subkey of <a href="http://pgp.mit.edu:11371/pks/lookup?search=0x79F7C572">0x79F7C572</a>)
   </p>
-  <a href="/en/releases.html" style="font-weight:bold;">Previous releases</a>
+  <strong><a href="/en/releases.html">Previous releases</a></strong>
   <br/>
 
   <p><a href="/en/help.html">More information about downloads</a></p>
