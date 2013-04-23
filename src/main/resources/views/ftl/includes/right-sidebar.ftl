@@ -58,7 +58,7 @@
   <p>Installers are signed with the PGP key <a href="http://pgp.mit.edu:11371/pks/lookup?search=0x23F7FB7B">0x23F7FB7B</a>
     (a subkey of <a href="http://pgp.mit.edu:11371/pks/lookup?search=0x79F7C572">0x79F7C572</a>)
   </p>
-  <a href="/en/releases.html" style="font-weight:bold;">Previous releases</a>
+  <strong><a href="/en/releases.html">Previous releases</a></strong>
   <br/>
 
   <p><a href="/en/help.html">More information about downloads</a></p>
