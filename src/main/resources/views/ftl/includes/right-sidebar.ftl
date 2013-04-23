@@ -8,7 +8,7 @@
       <td><a
         href="https://multibit.org/releases/multibit-${downloadVersion}/multibit-${downloadVersion}-windows.exe">Windows
         installer</a>
-        <small>~27.9Mb</small>
+        <small>~10.6MB</small>
         <a
           href="https://multibit.org/releases/multibit-${downloadVersion}/multibit-${downloadVersion}-windows.exe.asc">
           <small>Signature</small>
@@ -25,7 +25,7 @@
       <td><a
         href="https://multibit.org/releases/multibit-${downloadVersion}/multibit-${downloadVersion}.dmg">Mac
         OS X installer</a>
-        <small>~26.8MB</small>
+        <small>~9.4MB</small>
         <a
           href="https://multibit.org/releases/multibit-${downloadVersion}/multibit-${downloadVersion}-dmg.asc">
           <small>Signature</small>
@@ -33,9 +33,7 @@
     </tr>
     <tr>
       <td></td>
-      <td>Universal disk image (DMG). Compatible with Mac OS X Intel 10.3-<a
-        href="en/help/v0.4/help_mountain_lion.html">10.8</a>, PowerPC 10.6-<a href="en/help/v0.4/help_mountain_lion.html">10.8</a>.
-      </td>
+      <td>Universal disk image (DMG). Compatible with Mac OS X Intel 10.3-10.8.</td>
     </tr>
     <tr>
       <td><a
@@ -49,10 +47,6 @@
           href="https://multibit.org/releases/multibit-${downloadVersion}/multibit-${downloadVersion}-linux.jar.asc">
           <small>Signature</small>
         </a></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>Linux / Unix installer</td>
     </tr>
   </table>
   <p>Installers are signed with the PGP key <a href="http://pgp.mit.edu:11371/pks/lookup?search=0x23F7FB7B">0x23F7FB7B</a>
