@@ -19,6 +19,8 @@
 </head>
 <body>
 
+<p><a href="help_contents.html">Back to contents</a></p>
+
 <#-- Pull in the content from the model -->
 ${model.content}
 
