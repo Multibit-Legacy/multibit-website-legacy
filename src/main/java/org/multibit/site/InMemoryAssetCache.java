@@ -5,6 +5,8 @@ import com.google.common.base.Preconditions;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * <p>Cache to provide the following to resources:</p>
  * <ul>
@@ -39,9 +41,12 @@ public enum InMemoryAssetCache {
       pageCache.invalidateAll();
     }
 
+    // Provide a simple protection against periods of high activity
+    // while allowing a developer to make progress with changes
     pageCache = CacheBuilder
       .newBuilder()
       .maximumSize(100)
+      .expireAfterAccess(5, TimeUnit.SECONDS)
       .build();
 
     this.noCaching = noCaching;
