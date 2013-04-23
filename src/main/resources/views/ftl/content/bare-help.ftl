@@ -25,7 +25,7 @@
 ${model.content}
 
 <p><center><a href="help_contents.html">Back to contents</a></center></p>
-
+<br>
 </body>
 
 </html>
