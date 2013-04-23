@@ -17,6 +17,8 @@ import java.util.Locale;
  */
 public abstract class BaseResource {
 
+  protected static final String DEFAULT_LANGUAGE = "en";
+
   /**
    * Jersey creates a fresh resource every request so this is safe
    */

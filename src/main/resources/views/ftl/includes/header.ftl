@@ -8,6 +8,7 @@
 <div id="container2">
   <ul id="menu" class="wrap">
     <li><a href="/index.html">Home</a></li>
+    <li><a href="/features.html">Features</a></li>
     <li><a href="/faq.html">FAQ</a></li>
     <li><a href="/support.html">Support</a></li>
     <li><a href="/community.html">Community</a></li>

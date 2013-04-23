@@ -60,7 +60,9 @@ public class SiteService extends Service<SiteConfiguration> {
 
     // Bundles
     bootstrap.addBundle(new AssetsBundle("/assets/css", "/css"));
+
     bootstrap.addBundle(new AssetsBundle("/assets/images", "/images"));
+
     bootstrap.addBundle(new AssetsBundle("/assets/jquery", "/jquery"));
     bootstrap.addBundle(new ViewBundle());
   }
