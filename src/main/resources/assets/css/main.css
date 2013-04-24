@@ -12,13 +12,11 @@ a img{border:0;}
 .wrap{width:1000px;margin:auto;position:relative;}
 #back1{background:fixed url(/images/common/back2.png) repeat;}
 #back2{background:fixed url(/images/common/back1.png) repeat;}
-#lang{position:absolute;top:4px;right:0px;font-size:94%;background:url(/images/common/lang.png) top left no-repeat;height:24px;}
-#logo{position:absolute;left:0px;top:15px;}
-#logo a{display:block;background-image:url(/images/common/logotop.png);width:60px;height:60px;}
+#logo{display:block;background-color:#ffffff;background-image:url(/images/common/banner.png);background-repeat:no-repeat;height:100px;width:1000px;}
 #logo span{display:none;}
 #logotext{font-size:70px;font-family:Copperplate,"Copperplate Gothic Light",fantasy;display:inline-block;color:#3b3b3b;white-space:nowrap;margin:10px 0px 0px 80px;height:80px;}
 .home{font-size:16px;}
-#menu{padding:0px;margin:0px;margin:auto;position:relative;left:-6px;height:32px;}
+#menu{padding:0px;margin:0px;margin:auto;position:relative;height:32px;}
 #menu li{list-style:none;float:left;border:1px solid transparent;border-radius:3px;-webkit-border-radius:3px;}
 #menu li a,#menu li a:active,#menu li a:visited,#menu li a:link{font-family:'Ubuntu',sans-serif;height:18px;font-size:90%;display:block;color:#dddddd;text-decoration:none;padding:6px 10px;}
 #menu li:hover a,#menu li.active a{color:#fff;}

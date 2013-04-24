@@ -118,28 +118,14 @@ a img {
   background: fixed url(/images/common/back1.png) repeat;
 }
 
-/* Language selector */
-#lang {
-  position: absolute;
-  top: 4px;
-  right: 0px;
-  font-size: 94%;
-  background: url(/images/common/lang.png) top left no-repeat;
-  height: 24px;
-}
-
 /* Logo */
 #logo {
-  position: absolute;
-  left: 0px;
-  top: 15px;
-}
-
-#logo a {
   display: block;
-  background-image: url(/images/common/logotop.png);
-  width: 60px;
-  height: 60px;
+  background-color: @contentBackgroundColor;
+  background-image: url(/images/common/banner.png);
+  background-repeat:no-repeat;
+  height: 100px;
+  width: @logoWidth;
 }
 
 #logo span {
@@ -166,7 +152,6 @@ a img {
   margin: 0px;
   margin: auto;
   position: relative;
-  left: -6px;
   height: 32px;
 }
 
