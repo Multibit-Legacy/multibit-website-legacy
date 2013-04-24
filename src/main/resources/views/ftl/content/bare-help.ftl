@@ -18,7 +18,7 @@
 </style>
 </head>
 <body>
-
+<div id="centercontent" style="padding:10px;">
 <p><center><a href="help_contents.html">Back to contents</a></center></p>
 
 <#-- Pull in the content from the model -->
@@ -26,6 +26,7 @@ ${model.content}
 
 <p><center><a href="help_contents.html">Back to contents</a></center></p>
 <br>
+</div>
 </body>
 
 </html>
