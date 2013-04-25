@@ -21,7 +21,7 @@
         <div id="content">
 
           <#-- Pull in the content from the model -->
-          ${model.content}
+        ${model.content?replace("downloadVersion","${downloadVersion}")}
 
           <#include "../includes/right-sidebar.ftl">
 

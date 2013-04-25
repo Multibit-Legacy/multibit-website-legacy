@@ -21,7 +21,7 @@
         <div id="content-full">
 
           <#-- Pull in the content from the model -->
-          ${model.content}
+        ${model.content?replace("downloadVersion","${downloadVersion}")}
 
         </div>
 

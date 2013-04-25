@@ -22,7 +22,7 @@
 <p><center><a href="help_contents.html">Back to contents</a></center></p>
 
 <#-- Pull in the content from the model -->
-${model.content}
+${model.content?replace("downloadVersion","${downloadVersion}")}
 
 <p><center><a href="help_contents.html">Back to contents</a></center></p>
 <br>
