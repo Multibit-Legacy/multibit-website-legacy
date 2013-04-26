@@ -8,27 +8,33 @@
   <li>multibit_debug.log - this contains messages from the MultiBit software itself.
 </ul>
 <h2>Where MultiBit stores your data</h2>
-<p>MultiBit stores user specific data such as logs and the default multibit.wallet in a "user application data
+<p>MultiBit stores user specific data such as logs and the default multibit.wallet in a "user data
   directory". This directory can be worked out as follows:</p>
 
 <p>1) See if there is a multibit.properties in MultiBit's current working directory. If there is, use this directory as
-  the application data directory. This is for backwards compatibility and for running everything from a USB drive.</p>
-<p>2) Otherwise set the user application data directory as follows:</p>
+  the user data directory. This is for backwards compatibility and for running everything from a USB drive.</p>
+<p>2) Otherwise set the user data directory as follows:</p>
 <ul>
   <li><p>PC</p>
-    <code>
-      <"APPDATA" environment setting>/MultiBit&nbsp;&nbsp;&nbsp;&nbsp;e.g. C:/Documents and
-      Settings/Administrator/Application Data/MultiBit
-    </code>
+    <p><code>
+      <"APPDATA" environment setting>/MultiBit&nbsp;&nbsp;&nbsp;&nbsp;e.g.
+    </code></p><p><code>
+      (Recent Windows) C:/Documents and Settings/jim/AppData/Roaming/MultiBit
+    </code></p><p><code>
+      or 
+    </code></p><p><code>
+      (old Windows) C:/Documents and Settings/jim/Application Data/MultiBit
+    </code></p>
   </li>
   <li><p>Mac</p>
-    <code>
+    <p><code>
       <"user.home" system property>/Library/Application Support/MultiBit&nbsp;&nbsp;&nbsp;&nbsp;e.g.
+    </code></p><p><code>
       /Users/jim/Library/Application Support/MultiBit
-    </code>
+    </code></p>
   </li>
   <li><p>Linux</p>
-    <code>
+    <p><code>
       <"user.home" system property>/MultiBit&nbsp;&nbsp;&nbsp;&nbsp;e.g. /Users/jim/MultiBit
-    </code>
+    </code></p>
 </ul>
