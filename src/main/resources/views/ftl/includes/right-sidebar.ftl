@@ -27,7 +27,7 @@
         OS X installer</a>
         <small>~9.4MB</small>
         <a
-          href="https://multibit.org/releases/multibit-${downloadVersion}/multibit-${downloadVersion}-dmg.asc">
+          href="https://multibit.org/releases/multibit-${downloadVersion}/multibit-${downloadVersion}.dmg.asc">
           <small>Signature</small>
         </a></td>
     </tr>
