@@ -39,7 +39,7 @@
   $(function() {
 
     $('#slide').cycle({
-      delay:   -2000
+      delay:   -3000
     });
 
   });
