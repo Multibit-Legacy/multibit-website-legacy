@@ -50,13 +50,13 @@
         </a></td>
     </tr>
   </table>
+  <p><a href="/en/help.html">More information about downloads</a></p>
+  <p><a href="/releases.html">Previous releases</a></p>
   <p>Installers are signed with the PGP key <a href="http://pgp.mit.edu:11371/pks/lookup?search=0x23F7FB7B">0x23F7FB7B</a>
     (a subkey of <a href="http://pgp.mit.edu:11371/pks/lookup?search=0x79F7C572">0x79F7C572</a>)
   </p>
-  <a href="/releases.html">Previous releases</a>
   <br/>
 
-  <p><a href="/en/help.html">More information about downloads</a></p>
 </div>
 
 <div id="infobox">
@@ -78,5 +78,5 @@
 
   <h1>Contribute</h1>
 
-  <p>To get involved you should <a href="https://github.com/jim618/multibit">fork the project on GitHub</a>.</p>
+  <p>To get involved you should <a href="https://github.com/jim618/multibit">fork the source code on GitHub</a>.</p>
 </div>
