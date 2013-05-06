@@ -1,0 +1,46 @@
+<h2>I sent bitcoin from MultiBit but they are stuck</h2>
+<br/>
+<h2>What is the symptom ?</h2>
+<p>You sent some bitcoin from MultiBit but the bitcoin is stuck and never confirms. The bitcoins never arrive.
+In the 'Transactions' tab the transaction is shown with a square ("Seen by 1 peer") or, very rarely, a triangle ("Seen by 0 peers").</p>
+
+
+<h2>What does a status of a square or triangle mean ?</h2>
+<p>When you press the 'Send' button, MultiBit broadcasts your transaction to a single bitcoind peer. It then listens on all its other connections to check that the transaction has been broadcast successfully. If you see a square or triangle in the transaction status this means that the broadcast and propagation through the Bitcoin network was unsuccessful.</p>
+
+
+<h2>What can you do about it ?</h2>
+<p>There are two main reasons why a transaction gets stuck on "Seen by one peer" and does not propagate through the Bitcoin network.
+These are:</p>
+
+<ul>
+<li><p>You lost your network connection and the transaction did not get sent successfully to the peer. If you suspect this is the cause, do the following:</p>
+  <ol>
+  <li><p>Close MultiBit.</p></li>
+  <li><p>Fix your network connection and try it out using a browser.</p></li>
+  <li><p>Restart MultiBit and it will re-transmit any transactions that were unsuccessfully sent previously. It can sometimes take a couple of minutes to send a transaction and for it to propagate through the Bitcoin network. </p></li>
+  </ol>
+</li>
+
+<li><p>The peer received the transaction but "did not like it". In this case it will not pass it onto other bitcoind instances. Your transaction thus never propagates across the Bitcoin network and the recipient will not receive it. It also will not appear on sites such as blockchain.info.</p>
+
+<p>There are various reasons why a peer does not propagate a transaction. In a rough order of frequency they are:</p>
+  <ol>
+  <li><p>There are lots of satoshi sized inputs in your wallet and the transaction fires the anti-spam rules.</p></li>
+  <li><p>The fee is too small and the peer chooses not to relay it.</p></li>
+  <li><p>The transaction is a double spend. Doubles spends aren't relayed through the network.</p></li>
+  <li><p>Some other reason - this is not a definitive list.</p></li>
+  </ol>
+</li>
+
+<p>You can get an idea of the size of the transaction you created by doing a right click on the transaction and choosing 'Show Transaction Details'. In the box 'Raw transaction' you can see a text representation of the transaction. A typical fee for a transaction is 0.0005 or 0.001 BTC per kB of transaction.</p>
+
+<p>You can remove the transaction that never propagated by doing a "Tools | Reset blockchain and transactions" and resetting the blockchain to the day before before the transaction's date.</p>
+
+<p>To spend a large number of very small amounts of bitcoin can be difficult as they are practically worthless. It is more art than science as you have to avoid the anti-spam rules and convince a miner to include your big transaction in a block. 
+You can try:</p>
+<ul>
+<li><p>Increasing the fee that you use in the 'View | Preferences"</p></li>
+<li><p>Letting the inputs age a while. The newer the transactions you try to spend the 'spammier' they are seen to be.</p></li>
+</ul>
+

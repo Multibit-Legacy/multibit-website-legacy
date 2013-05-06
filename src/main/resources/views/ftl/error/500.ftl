@@ -8,8 +8,6 @@
 <#include "../includes/header.ftl">
 
 <div id="container3">
-  <div id="back1">
-    <div id="back2">
       <div class="wrap">
 
       <#if alert??>
@@ -46,8 +44,6 @@
 
         <#include "../includes/footer.ftl">
 
-        </div>
-      </div>
     </div>
   </div>
 
