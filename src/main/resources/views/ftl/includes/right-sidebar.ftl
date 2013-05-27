@@ -8,7 +8,7 @@
       <td><a
         href="https://multibit.org/releases/multibit-${downloadVersion}/multibit-${downloadVersion}-windows.exe">Windows
         installer</a>
-        <small>~10.6MB</small>
+        <small>~11.6MB</small>
         <a
           href="https://multibit.org/releases/multibit-${downloadVersion}/multibit-${downloadVersion}-windows.exe.asc">
           <small>Signature</small>
@@ -25,7 +25,7 @@
       <td><a
         href="https://multibit.org/releases/multibit-${downloadVersion}/multibit-${downloadVersion}.dmg">Mac
         OS X installer</a>
-        <small>~9.4MB</small>
+        <small>~10.3MB</small>
         <a
           href="https://multibit.org/releases/multibit-${downloadVersion}/multibit-${downloadVersion}.dmg.asc">
           <small>Signature</small>
@@ -43,7 +43,7 @@
       <td><a
         href="https://multibit.org/releases/multibit-${downloadVersion}/multibit-${downloadVersion}-linux.jar">Linux
         / Unix installer</a>
-        <small>~9.7MB</small>
+        <small>~10.7MB</small>
         <a
           href="https://multibit.org/releases/multibit-${downloadVersion}/multibit-${downloadVersion}-linux.jar.asc">
           <small>Signature</small>
@@ -60,6 +60,12 @@
 </div>
 
 <div id="infobox">
+  <h1>Follow</h1>
+
+  <p>To keep up with the latest announcements you should follow MultiBit on Twitter</p><a
+  href="https://twitter.com/MultiBitOrg" class="twitter-follow-button" data-show-count="false">Follow
+  @MultiBitOrg</a>
+
   <h1>Donate</h1>
 
   <p>MultiBit depends on donations to keep going</p>
@@ -70,11 +76,6 @@
       src="/images/common/donate0.04.png"><br>
       <small>1AhN6rPdrMuKBGFDKR1k9A8SCLYaNgXhty</small>
     </a> <br>
-  <h1>Follow</h1>
-
-  <p>To keep up with the latest announcements you should follow MultiBit on Twitter</p><a
-  href="https://twitter.com/MultiBitOrg" class="twitter-follow-button" data-show-count="false">Follow
-  @MultiBitOrg</a>
 
   <h1>Contribute</h1>
 
