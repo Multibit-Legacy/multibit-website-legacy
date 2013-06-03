@@ -8,7 +8,7 @@
       <td><a
         href="https://multibit.org/releases/multibit-${downloadVersion}/multibit-${downloadVersion}-windows.exe">Windows
         installer</a>
-        <small>~11.6MB</small>
+        <small>~11.7MB</small>
         <a
           href="https://multibit.org/releases/multibit-${downloadVersion}/multibit-${downloadVersion}-windows.exe.asc">
           <small>Signature</small>
@@ -25,7 +25,7 @@
       <td><a
         href="https://multibit.org/releases/multibit-${downloadVersion}/multibit-${downloadVersion}.dmg">Mac
         OS X installer</a>
-        <small>~10.3MB</small>
+        <small>~10.4MB</small>
         <a
           href="https://multibit.org/releases/multibit-${downloadVersion}/multibit-${downloadVersion}.dmg.asc">
           <small>Signature</small>
