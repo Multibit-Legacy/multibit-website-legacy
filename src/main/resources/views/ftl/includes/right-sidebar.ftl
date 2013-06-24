@@ -43,7 +43,7 @@
       <td><a
         href="https://multibit.org/releases/multibit-${downloadVersion}/multibit-${downloadVersion}-linux.jar">Linux
         / Unix installer</a>
-        <small>~10.7MB</small>
+        <small>~10.8MB</small>
         <a
           href="https://multibit.org/releases/multibit-${downloadVersion}/multibit-${downloadVersion}-linux.jar.asc">
           <small>Signature</small>
