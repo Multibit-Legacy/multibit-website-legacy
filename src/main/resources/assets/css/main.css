@@ -17,8 +17,8 @@ a img{border:0;}
 #logotext{font-size:70px;font-family:Copperplate,"Copperplate Gothic Light",fantasy;display:inline-block;color:#3b3b3b;white-space:nowrap;margin:10px 0px 0px 80px;height:80px;}
 .home{font-size:16px;}
 #menu{padding:0px;margin:0px;margin:auto;position:relative;height:32px;}
-#menu li{list-style:none;float:left;border:1px solid transparent;border-radius:3px;-webkit-border-radius:3px;}
-#menu li a,#menu li a:active,#menu li a:visited,#menu li a:link{font-family:'Ubuntu',sans-serif;height:18px;font-size:100%;display:block;color:#dddddd;text-decoration:none;padding:6px 10px;}
+#menu li{list-style:none;float:left;border:1px solid transparent;border-radius:3px;-webkit-border-radius:3px;zoom:1;display:inline;}
+#menu li a,#menu li a:active,#menu li a:visited,#menu li a:link{font-family:'Ubuntu',sans-serif;font-size:90%;display:block;color:#dddddd;text-decoration:none;padding:6px 10px;}
 #menu li:hover a,#menu li.active a{color:#fff;}
 #menu li:hover,#menu li.active{background-color:#575757;background-image:linear-gradient(bottom, #3d3d3d 20%, #575757 80%);background-image:-o-linear-gradient(bottom, #3d3d3d 20%, #575757 80%);background-image:-moz-linear-gradient(bottom, #3d3d3d 20%, #575757 80%);background-image:-webkit-linear-gradient(bottom, #3d3d3d 20%, #575757 80%);background-image:-ms-linear-gradient(bottom, #3d3d3d 20%, #575757 80%);border:1px solid #000;}
 .alert-message{background-color:#fff3de;border:1px solid #a78241;margin:10px 0px;padding:10px;color:#000;}

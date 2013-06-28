@@ -161,12 +161,14 @@ a img {
   border: 1px solid transparent;
   border-radius: 3px;
   -webkit-border-radius: 3px;
+  /* Fixes IE7-8 border bug */
+  zoom:1;
+  display:inline;
 }
 
 #menu li a, #menu li a:active, #menu li a:visited, #menu li a:link {
   font-family: 'Ubuntu', sans-serif;
-  height: 18px;
-  font-size: 100%;
+  font-size: 90%;
   display: block;
   color: #dddddd;
   text-decoration: none;
