@@ -1,12 +1,12 @@
-# Welcome to the MultiBit Website Repository
+## Welcome to the MultiBit Website Repository
 
 This repo contains the source for the main MultiBit website.
 
-# Acknowledgements
+## Acknowledgements
 
 Much of the groundwork for this website was put in place by Saivann Carigan - thanks from the MultiBit team!
 
-# MultiBit Website
+## MultiBit Website
 
 From a technical point of view this project uses
 
@@ -21,7 +21,7 @@ external servlet container. Dropwizard gives us the simplicity we crave.
 We looked at [Jekyll](https://github.com/mojombo/jekyll), and while it's a great technology, we
 found it a bit limiting for what we needed from our website.
 
-## Getting started
+### Getting started
 
 Since it is all just Java and Maven, it's pretty straightforward to get the site running. Just clone
 from GitHub and note the following:
@@ -37,7 +37,7 @@ cd <project root>
 mvn clean install
 java -jar target/multibit-site-<version>.jar server site-config.yml
 ```
-# Translation
+## Translation
 
 Bitcoin is a global currency and so this site has many translations. If you'd like to contribute your own translation for the pages on offer please use this process:
 
@@ -47,16 +47,15 @@ Bitcoin is a global currency and so this site has many translations. If you'd li
 1. Repeat for image files in `src/main/resources/assets/images/{lang}` this is for language-specific screenshots that are applicable
 1. Translate all `.html` and image files as required then issue a pull request
 
-## Advanced Usage
+### Advanced Usage
 
 The following are for administrators of the site and don't affect most people.
 
-### Alerts
+#### Alerts
 
 Use `src/main/resources/views/ftl/base.ftl` to change static elements like the alert and download version.
 
-## Where does the ASCII art come from?
+### Where does the ASCII art come from?
 
 The ASCII art for the startup banner was created using the online tool available at
 [TAAG](http://patorjk.com/software/taag/#p=display&f=Standard&t=MultiBit%20Site)
-
