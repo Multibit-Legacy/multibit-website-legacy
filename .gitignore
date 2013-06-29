@@ -1,12 +1,10 @@
-_site/
-multibit-website.sublime-project
-multibit-website.sublime-workspace
-.DS_Store
 .classpath
 .project
 .settings/
 .idea/
 *.iml
 *.iws
+.DS_Store
 log/
 target/
+releases/

@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+<head>
+  <title>MultiBit - Help - Troubleshooting</title>
+  <link rel="stylesheet" type="text/css" href="main.css">
+
+  <meta name="Description" content="Easy to use bitcoin software for the PC, Mac and Linux">
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+  <meta name="keywords" CONTENT="bitcoin, bitcoinj, pseudonymous, p2p, peer to peer, cryptography, digital currency, java, multibit, satoshi, nakamoto, qr code">
+  <meta name="robots" content="index, follow" />
+  <meta name="copyright" content="Copyright 2011 multibit.org">
+
+  <link rel="shortcut icon" href="favicon.ico">
+
+	<style media="screen" type="text/css">
+	html,
+	body {
+		margin:0;
+		padding:0;
+		height:100%;
+	}
+	#container {
+		min-height:100%;
+		position:relative;
+	}
+	#header {
+		background:#D9E2EC;
+		padding:10px;
+	}
+	#body {
+		padding:0px;
+		padding-bottom:30px;	/* Height of the footer */
+	}
+	#footer {
+		position:absolute;
+		bottom:0;
+		width:100%;
+		height:30px;			/* Height of the footer */
+		background:#F0F0E7;
+	}
+	/* other non-essential CSS */
+	#header p,
+	#header h1 {
+		margin:0;
+		padding:10px 0 0 10px;
+	}
+	#footer p {
+		margin:0;
+		padding:5px;
+	}
+	</style>
+
+	<!--[if lt IE 7]>
+	<style media="screen" type="text/css">
+	#container {
+		height:100%;
+	}
+	</style>
+	<![endif]-->
+</head>
+<body>
+
+<div id="container">
+	<div id="body">
+		<!-- Body start -->
+
+<div id='naviBar' style="margin:0px; padding:4px; background:#e0f0f8; color:black; font-size:13px;">
+&nbsp;<a title="Help Contents" href="help_contents.html"><b>Help Contents</b></a></div>
+
+<div id="centercontent" style="padding:10px;">
+<h2>Troubleshooting</h2>
+<p>You can often diagnose a problem with MultiBit by looking at the Messages window by selecting the 'View | Messages' menu option.</p>
+<p>For a more detailed description of what has happened with MultiBit there are two log files to look at.   These are in the 'log' directory in your application data directory.   The two files are:</p>
+<ul>
+   <li>multibit_console.log - this contains messages from the code that accesses the bitcoin network.
+   <li>multibit_debug.log - this contains messages from the MultiBit software itself.
+</ul>
+<h2>Where MultiBit stores your data</h2>  
+<p>MultiBit stores user specific data such as logs and the default multibit.wallet in a "user application data directory".   This directory can be worked out as follows:</p>
+
+<p>1) See if there is a multibit.properties in MultiBit's current working directory. If there is, use this directory as the application data directory. This is for backwards compatibility and for running everything from a USB drive.</p>
+<p>2) Otherwise set the user application data directory as follows:</p>
+<ul> 
+   <li><p>PC</p> 
+<code>
+      <"APPDATA" environment setting>/MultiBit&nbsp;&nbsp;&nbsp;&nbsp;e.g. C:/Documents and Settings/Administrator/Application Data/MultiBit
+</code>
+   </li>    
+   <li><p>Mac</p> 
+<code>
+     <"user.home" system property>/Library/Application Support/MultiBit&nbsp;&nbsp;&nbsp;&nbsp;e.g. /Users/jim/Library/Application Support/MultiBit
+</code>
+   </li>    
+   <li><p>Linux</p> 
+<code>
+      <"user.home" system property>/MultiBit&nbsp;&nbsp;&nbsp;&nbsp;e.g. /Users/jim/MultiBit
+</code>
+ </ul>
+<br>
+<table border="0" cellpadding="0" cellspacing="0" width=100%>
+	<tbody><tr width=100%>
+        	<td align="left" width="33%">
+			<a title="Previous" href="help_fileDescriptions.html">&#60; File descriptions</a>
+		</td>
+		<td align="center" width=34%>
+			<a title="Help Contents" href="help_contents.html">Back to help contents</a>
+		</td>
+		<td align="right" width=33%>
+			&nbsp;
+		</td>
+	</tr></tbody>
+</table>
+</div>
+</body>
+</html>
