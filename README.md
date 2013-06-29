@@ -4,7 +4,7 @@ This repo contains the source for the main MultiBit website.
 
 ## Acknowledgements
 
-Much of the groundwork for this website was put in place by Saivann Carigan - thanks from the MultiBit team!
+Much of the groundwork for this website was put in place by [Saivann Carigan](https://github.com/saivann) - thanks from the MultiBit team!
 
 ## MultiBit Website
 
@@ -14,6 +14,7 @@ From a technical point of view this project uses
 * [Maven](http://maven.apache.org/) - Build system
 * [Dropwizard](http://dropwizard.codahale.com) - Self-contained web server
 * HTML5 and CSS - All pages are simple HTML5
+* [LESS](http://lesscss.org/) - LESS is compiled into CSS to provide succinct stylesheets
 
 Why Dropwizard? We don't want the complexity that comes with an application server or an
 external servlet container. Dropwizard gives us the simplicity we crave.
@@ -21,26 +22,94 @@ external servlet container. Dropwizard gives us the simplicity we crave.
 We looked at [Jekyll](https://github.com/mojombo/jekyll), and while it's a great technology, we
 found it a bit limiting for what we needed from our website.
 
-### Getting started
+## Branches
 
-Since it is all just Java and Maven, it's pretty straightforward to get the site running. Just clone
-from GitHub and note the following:
+We follow the ["master-develop" branching strategy](http://nvie.com/posts/a-successful-git-branching-model/).
 
-`<project root>` - The root directory of the project as checked out through git
-`<version>` - The version as found in `pom.xml` (e.g. 3.0.0-SNAPSHOT)
+This means that the latest release is on the "master" branch (the default) and the latest release candidate is on the "develop" branch.
+Any issues are addressed in feature branches from "develop" and merged in as required.
 
-All commands will work on *nix without modification, use \ instead of / for Windows.
+## Getting started
 
-From the console you can do the following
+If you are already familiar with Java and Maven you can skip ahead to the Build and Preview section.
+
+Some of the technology used when building the site may be unfamiliar at first so you'll need to install some supporting
+code first. It should only take a few minutes and you'll be up and running.
+
+1. Install or upgrade [Java](https://java.com/en/download/index.jsp)
+1. Install or upgrade [Maven](https://maven.apache.org/download.cgi)
+
+If you intend to do a lot of work involving the underlying Java code you'll need an IDE. We recommend [Intellij](https://www.jetbrains.com/idea/download/)
+([best](http://programmers.stackexchange.com/a/24231/7167)) or [Eclipse](https://www.eclipse.org/downloads/). Both are available as free downloads.
+
+If you just want to edit CSS and HTML you can do it all with a text editor and some console commands.
+
+### Build and Preview
+
+There are two ways to run up the project depending on whether you have access to a Java IDE or not.
+
+#### Inside an IDE
+
+Import the project as a Maven project in the usual manner.
+
+To start the project you just need to execute `SiteService.main()` as a Java application. You'll need a runtime configuration
+that passes in `server site-config.yml` as the Program Arguments.
+
+Open a browser to [http://localhost:8080/](http://localhost:8080/) and you should see the site.
+
+#### Outside of an IDE
+
+Assuming that you've got Java and Maven installed you'll find it very straightforward to get the site running. Just clone
+from GitHub do the following:
+
 ```
 cd <project root>
 mvn clean install
 java -jar target/multibit-site-<version>.jar server site-config.yml
 ```
 
-You can preview the result of your work on http://127.0.0.1:8080/ .
+where `<project root>` is he root directory of the project as checked out through git and `<version>` is the version
+as found in `pom.xml` (e.g. 3.0.0-SNAPSHOT)
 
-## Translation
+All commands will work on *nix without modification, use \ instead of / for Windows.
+
+Open a browser to [http://localhost:8080/](http://localhost:8080/) and you should see the site.
+
+## Workflows
+
+Nobody wants to waste time getting stuff done, so here are some processes that we follow to make changes to the site
+efficiently.
+
+### Changing CSS/HTML
+
+#### Inside an IDE
+
+If you are running the application within an IDE do the following:
+
+1. Create a runtime configuration for `mvn generate-resources` call it "Maven Resources"
+1. Start the `SiteService` process and leave it running continuously
+1. Use Firebug/Developer Tools to preview the effect you're after
+1. For CSS, locate the `main.less` file and edit to accommodate your changes otherwise just edit the HTML
+1. Run "Maven Resources" to compile `main.less` to `main.css` and copy all resources to `target`
+1. Refresh your browser and verify that Dropwizard serves the resource as a 200 OK rather than 304 NOT MODIFIED if the
+change is not apparent
+
+#### Outside an IDE
+
+If you're running via the command line your workflow is unfortunately a little less efficient.
+
+1. Run up the site application as detailed in the earlier sections
+1. Use Firebug/Developer Tools to preview the effect you're after
+1. For CSS, locate the `main.less` file and edit to accommodate your changes otherwise just edit the HTML
+1. Stop the site application process (CTRL+C)
+1. Run `mvn package` to rebuild with the newly generated `main.css`
+1. Restart with `java -jar target/multibit-site-<version>.jar server site-config.yml`
+1. Refresh your browser to observe the change
+
+Clearly an IDE is the better way to go if you think you will have a lot of editing work that will need an incremental
+approach.
+
+### Translation
 
 Bitcoin is a global currency and so this site has many translations. If you'd like to contribute your own translation for the pages on offer please use this process:
 
@@ -62,3 +131,15 @@ Use `src/main/resources/views/ftl/base.ftl` to change static elements like the a
 
 The ASCII art for the startup banner was created using the online tool available at
 [TAAG](http://patorjk.com/software/taag/#p=display&f=Standard&t=MultiBit%20Site)
+
+### I like this approach to building a website can I copy it?
+
+Yes. All the code in this repo is under the MIT license so you are welcome to take it and go.
+
+However, this implementation serves the [MultiBit site](https://multibit.org) so don't just clone this and run a
+mirror without first consulting us.
+
+### I've spotted a bug in the site what should I do?
+
+[Raise an Issue](https://github.com/jim618/multibit-website/issues) through GitHub and we'll address it. Before diving
+in make sure that you've checked to see that the issue has not already been raised by another.
