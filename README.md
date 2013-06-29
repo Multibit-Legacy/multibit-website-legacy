@@ -37,6 +37,9 @@ cd <project root>
 mvn clean install
 java -jar target/multibit-site-<version>.jar server site-config.yml
 ```
+
+You can preview the result of your work on http://127.0.0.1:8080/ .
+
 # Translation
 
 Bitcoin is a global currency and so this site has many translations. If you'd like to contribute your own translation for the pages on offer please use this process:
