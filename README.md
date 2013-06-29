@@ -60,7 +60,7 @@ Open a browser to [http://localhost:8080/](http://localhost:8080/) and you shoul
 #### Outside of an IDE
 
 Assuming that you've got Java and Maven installed you'll find it very straightforward to get the site running. Just clone
-from GitHub do the following:
+from GitHub and do the following:
 
 ```
 cd <project root>
@@ -68,8 +68,8 @@ mvn clean install
 java -jar target/multibit-site-<version>.jar server site-config.yml
 ```
 
-where `<project root>` is he root directory of the project as checked out through git and `<version>` is the version
-as found in `pom.xml` (e.g. 3.0.0-SNAPSHOT)
+where `<project root>` is the root directory of the project as checked out through git and `<version>` is the version
+as found in `pom.xml` (e.g. "3.0.0") but you'll see a `.jar` in the `target` directory so it'll be obvious.
 
 All commands will work on *nix without modification, use \ instead of / for Windows.
 
@@ -88,9 +88,10 @@ If you are running the application within an IDE do the following:
 
 1. Create a runtime configuration for `mvn generate-resources` call it "Maven Resources"
 1. Start the `SiteService` process and leave it running continuously
-1. Use Firebug/Developer Tools to preview the effect you're after
-1. For CSS, locate the `main.less` file and edit to accommodate your changes otherwise just edit the HTML
-1. Run "Maven Resources" to compile `main.less` to `main.css` and copy all resources to `target`
+1. For CSS, use Firebug/Developer Tools to preview the effect you're after then locate the `main.less` file and edit to
+accommodate your changes otherwise
+1. For HTML just edit the appropriate file under `src/main/resources/views/html`
+1. Run "Maven Resources" to compile `main.less` to `main.css` and copy all updated resources to `target`
 1. Refresh your browser and verify that Dropwizard serves the resource as a 200 OK rather than 304 NOT MODIFIED if the
 change is not apparent
 
@@ -100,7 +101,9 @@ If you're running via the command line your workflow is unfortunately a little l
 
 1. Run up the site application as detailed in the earlier sections
 1. Use Firebug/Developer Tools to preview the effect you're after
-1. For CSS, locate the `main.less` file and edit to accommodate your changes otherwise just edit the HTML
+1. For CSS, use Firebug/Developer Tools to preview the effect you're after then locate the `main.less` file and edit to
+accommodate your changes otherwise
+1. For HTML just edit the appropriate file under `src/main/resources/views/html`
 1. Stop the site application process (CTRL+C)
 1. Run `mvn package` to rebuild with the newly generated `main.css`
 1. Restart with `java -jar target/multibit-site-<version>.jar server site-config.yml`
@@ -111,7 +114,7 @@ approach.
 
 ### Translation
 
-Bitcoin is a global currency and so this site has many translations. If you'd like to contribute your own translation for the pages on offer please use this process:
+[Bitcoin is a global currency](http://bitcoin.org) and so this site has many translations. If you'd like to contribute your own translation for the pages on offer please use this process:
 
 1. Find the two letter [ISO 639-1](http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes#Partial_ISO_639_table) code for your language (fr, en, jp etc)
 1. Copy existing html files from `src/main/resources/views/html/{lang}/` according to your source language (e.g. you're a French to Japanese expert so base on `fr` and copy to `jp`)
@@ -138,6 +141,9 @@ Yes. All the code in this repo is under the MIT license so you are welcome to ta
 
 However, this implementation serves the [MultiBit site](https://multibit.org) so don't just clone this and run a
 mirror without first consulting us.
+
+You may be interested in deploying [Dropwizard applications on Heroku](http://gary-rowe.com/agilestack/2012/10/09/how-to-deploy-a-dropwizard-project-to-heroku/)
+since their free instances are sufficient for most low to medium traffic sites and they integrate very well with git.
 
 ### I've spotted a bug in the site what should I do?
 
