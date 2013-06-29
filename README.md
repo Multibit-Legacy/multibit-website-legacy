@@ -65,7 +65,7 @@ from GitHub and do the following:
 ```
 cd <project root>
 mvn clean install
-java -jar target/multibit-site-<version>.jar server site-config.yml
+java -jar target/site-<version>.jar server site-config.yml
 ```
 
 where `<project root>` is the root directory of the project as checked out through git and `<version>` is the version
@@ -106,7 +106,7 @@ accommodate your changes otherwise
 1. For HTML just edit the appropriate file under `src/main/resources/views/html`
 1. Stop the site application process (CTRL+C)
 1. Run `mvn package` to rebuild with the newly generated `main.css`
-1. Restart with `java -jar target/multibit-site-<version>.jar server site-config.yml`
+1. Restart with `java -jar target/site-<version>.jar server site-config.yml`
 1. Refresh your browser to observe the change
 
 Clearly an IDE is the better way to go if you think you will have a lot of editing work that will need an incremental

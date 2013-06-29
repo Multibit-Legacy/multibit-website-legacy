@@ -15,7 +15,7 @@
 
   <!-- Set the version levels for linked dependencies -->
   <properties>
-    <dropwizard.version>0.6.1</dropwizard.version>
+    <dropwizard.version>0.6.2</dropwizard.version>
   </properties>
 
   <build>
@@ -34,16 +34,14 @@
         </configuration>
       </plugin>
 
-      <!-- LESS plugin is to compile the CSS assets -->
-      <!-- Use this in a Maven build, Dropwizard will only find it in a JAR -->
-      <!-- If not changing CSS leave it commented out -->
+      <!-- LESS plugin is to compile the CSS assets into /target -->
       <plugin>
         <groupId>org.lesscss</groupId>
         <artifactId>lesscss-maven-plugin</artifactId>
         <version>1.3.3</version>
         <configuration>
           <sourceDirectory>${project.basedir}/src/main/resources/assets/less</sourceDirectory>
-          <outputDirectory>${project.basedir}/src/main/resources/assets/css</outputDirectory>
+          <outputDirectory>${project.build.outputDirectory}/assets/css</outputDirectory>
           <compress>true</compress>
           <includes>
             <include>main.less</include>
@@ -51,6 +49,7 @@
         </configuration>
         <executions>
           <execution>
+            <phase>generate-resources</phase>
             <goals>
               <goal>compile</goal>
             </goals>
