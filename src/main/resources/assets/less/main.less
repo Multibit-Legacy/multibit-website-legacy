@@ -152,18 +152,17 @@ a img {
   margin: 0px;
   margin: auto;
   position: relative;
-  height: 32px;
 }
 
 #menu li {
   list-style: none;
-  float: left;
   border: 1px solid transparent;
   border-radius: 3px;
   -webkit-border-radius: 3px;
+  display: inline-block;
   /* Fixes IE7-8 border bug */
-  zoom:1;
-  display:inline;
+  *display: inline;
+  zoom: 1;
 }
 
 #menu li a, #menu li a:active, #menu li a:visited, #menu li a:link {
