@@ -15,6 +15,7 @@ import org.joda.time.format.ISODateTimeFormat;
 import org.multibit.site.core.sitemap.SiteMap;
 import org.multibit.site.core.sitemap.SiteUrl;
 import org.multibit.site.health.SiteHealthCheck;
+import org.multibit.site.servlets.SafeLocaleFilter;
 import org.multibit.site.resources.PublicPageResource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -80,6 +81,9 @@ public class SiteService extends Service<SiteConfiguration> {
 
     // Providers
     environment.addProvider(new ViewMessageBodyWriter());
+
+    // Filters
+    environment.addFilter(new SafeLocaleFilter(), "/*");
 
     // Session handler
     environment.setSessionHandler(new SessionHandler());
