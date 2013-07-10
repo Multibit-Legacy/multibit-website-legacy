@@ -1,6 +1,6 @@
 ## Welcome to the MultiBit Website Repository
 
-This repo contains the source for the main MultiBit website.
+This repo contains the source for the [MultiBit website](https://multibit.org).
 
 ## Acknowledgements
 
