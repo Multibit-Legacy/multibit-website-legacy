@@ -1,0 +1,1 @@
+document.write("<a href=\"releases/multibit-0.5.9/multibit-0.5.9-windows.exe\">Windows installer</a>&nbsp;&nbsp;(10.6MB, <a href=\"releases/multibit-0.5.9/multibit-0.5.9-windows.exe.asc\">signature</a>)")

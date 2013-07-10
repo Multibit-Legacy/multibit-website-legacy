@@ -72,8 +72,8 @@
 
   <p>
     <a
-      href="bitcoin:1AhN6rPdrMuKBGFDKR1k9A8SCLYaNgXhty?amount=0.04&label=Please%20donate%20to%20multibit.org"><img
-      src="/images/common/donate0.04.png"><br>
+      href="bitcoin:1AhN6rPdrMuKBGFDKR1k9A8SCLYaNgXhty?amount=0.01&label=Please%20donate%20to%20multibit.org"><img
+      src="/images/common/donate0.01.png"><br>
       <small>1AhN6rPdrMuKBGFDKR1k9A8SCLYaNgXhty</small>
     </a> <br>
 

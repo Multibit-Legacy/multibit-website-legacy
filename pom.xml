@@ -5,7 +5,7 @@
 
   <groupId>org.multibit</groupId>
   <artifactId>site</artifactId>
-  <version>develop-SNAPSHOT</version>
+  <version>3.0.0</version>
 
   <url>http://localhost:8080</url>
 
