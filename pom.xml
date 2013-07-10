@@ -5,7 +5,9 @@
 
   <groupId>org.multibit</groupId>
   <artifactId>site</artifactId>
-  <version>3.0.0</version>
+
+  <!-- Only change this on a master or release branch -->
+  <version>develop-SNAPSHOT</version>
 
   <url>http://localhost:8080</url>
 
