@@ -1,8 +1,9 @@
 package org.multibit.site.resources;
 
+import com.google.common.base.Optional;
 import com.yammer.dropwizard.jersey.caching.CacheControl;
 import com.yammer.metrics.annotation.Timed;
-import org.multibit.site.InMemoryAssetCache;
+import org.multibit.site.caches.InMemoryArtifactCache;
 import org.multibit.site.model.BaseModel;
 import org.multibit.site.views.PublicFreemarkerView;
 
@@ -50,9 +51,7 @@ public class PublicPageResource extends BaseResource {
   }
 
   /**
-   * Provide the robots.txt
-   *
-   * @return The robots.txt file
+   * @return The /robots.txt file
    */
   @GET
   @Path("robots.txt")
@@ -67,19 +66,23 @@ public class PublicPageResource extends BaseResource {
   }
 
   /**
-   * Provide the site map file
-   *
-   * @return The sitemap.xml file
+   * @return The /sitemap.xml file
    */
   @GET
   @Path("sitemap.xml")
   @Timed
   @CacheControl(maxAge = 24, maxAgeUnit = TimeUnit.HOURS)
-  @Produces(MediaType.TEXT_XML)
   public Response viewSitemap() throws IOException {
 
+    // Pull this from the long-lived artifact cache
+    Optional<String> siteMap = InMemoryArtifactCache.INSTANCE.getByResourcePath(InMemoryArtifactCache.SITE_MAP_KEY);
+    if (!siteMap.isPresent()) {
+      throw notFound();
+    }
+
     return Response
-      .ok(InMemoryAssetCache.INSTANCE.getByResourcePath("/views/sitemap.xml"))
+      .ok(siteMap.get())
+      .type(MediaType.TEXT_XML)
       .build();
   }
 

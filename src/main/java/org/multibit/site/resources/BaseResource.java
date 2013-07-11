@@ -1,8 +1,10 @@
 package org.multibit.site.resources;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.HttpHeaders;
+import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 import java.util.Locale;
 
@@ -54,6 +56,14 @@ public abstract class BaseResource {
       }
     }
     return locale;
+  }
+
+  public WebApplicationException badRequest() {
+    return new WebApplicationException(Response.Status.BAD_REQUEST);
+  }
+
+  public WebApplicationException notFound() {
+    return new WebApplicationException(Response.Status.NOT_FOUND);
   }
 
 }
