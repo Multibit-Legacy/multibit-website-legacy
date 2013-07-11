@@ -21,7 +21,7 @@
         <#-- Pull in the content from the model -->
         ${model.content?replace("downloadVersion","${downloadVersion}")}
 
-        <p><a href="help_contents.html">Back to contents</a></p>
+        <p><a href="help_contents.html">Back to help contents</a></p>
 
         <hr/>
         <p>Insufficient? Please <a href="https://github.com/jim618/multibit-website/issues/new">raise an Issue</a> so that we can do better.</p>

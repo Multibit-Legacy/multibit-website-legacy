@@ -19,12 +19,12 @@
 </head>
 <body>
 <div id="centercontent" style="padding:10px;">
-<p><center><a href="help_contents.html">Back to contents</a></center></p>
+<p><center><a href="help_contents.html">Back to help contents</a></center></p>
 
 <#-- Pull in the content from the model -->
 ${model.content?replace("downloadVersion","${downloadVersion}")}
 
-<p><center><a href="help_contents.html">Back to contents</a></center></p>
+<p><center><a href="help_contents.html">Back to help contents</a></center></p>
 <br>
 </div>
 </body>
