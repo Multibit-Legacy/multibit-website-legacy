@@ -1,12 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+<head>
+  <title>MultiBit - Help - File descriptions</title>
+  <link rel="stylesheet" type="text/css" href="main.css">
+
+  <meta name="Description" content="Easy to use bitcoin software for the PC, Mac and Linux">
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+  <meta name="keywords" CONTENT="bitcoin, bitcoinj, pseudonymous, p2p, peer to peer, cryptography, digital currency, java, multibit, satoshi, nakamoto, qr code">
+  <meta name="robots" content="index, follow" />
+  <meta name="copyright" content="Copyright 2013 multibit.org">
+
+  <link rel="shortcut icon" href="favicon.ico">
+
+	<style media="screen" type="text/css">
+	html,
+	body {
+		margin:0;
+		padding:0;
+		height:100%;
+	}
+	#container {
+		min-height:100%;
+		position:relative;
+	}
+	#header {
+		background:#D9E2EC;
+		padding:10px;
+	}
+	#body {
+		padding:0px;
+		padding-bottom:30px;	/* Height of the footer */
+	}
+	#footer {
+		position:absolute;
+		bottom:0;
+		width:100%;
+		height:30px;			/* Height of the footer */
+		background:#F0F0E7;
+	}
+	/* other non-essential CSS */
+	#header p,
+	#header h1 {
+		margin:0;
+		padding:10px 0 0 10px;
+	}
+	#footer p {
+		margin:0;
+		padding:5px;
+	}
+	</style>
+
+	<!--[if lt IE 7]>
+	<style media="screen" type="text/css">
+	#container {
+		height:100%;
+	}
+	</style>
+	<![endif]-->
+</head>
+<body>
+
+<div id="container">
+	<div id="body">
+		<!-- Body start -->
+
+<div id='naviBar' style="margin:0px; padding:4px; background:#e0f0f8; color:black; font-size:13px;">
+&nbsp;<a title="Help Contents" href="help_contents.html"><b>Help Contents</b></a></div>
+
+<div id="centercontent" style="padding:10px;">
 <h2>File descriptions</h2>
-<p>When MultiBit runs, it creates various files on your computer. This help section describes what each of these files is for. For the purpose of illustration, imagine you have created a new wallet called <b>saving.wallet</b>. Here is a list of what files you will see in your user data area:</p>
+<p>When MultiBit runs, it creates various files on your computer. This help section describes what each of these files is for. For the purpose of illustration, imagine you have created a new wallet called <b>saving.wallet</b>. The location where your files are stored was tidied up in MultiBit version 0.5.13. Please read the section that applies for the version of MultiBit you are running. You can see the version number in the 'Help | About MultiBit' menu option.</p>
+<h2>Wallet files for MultiBit version 0.5.13 and later</h2>
+<p>Here is a list of what files you will see in the directory that your wallet is stored in:</p>
+<ul>
+  <li><p>saving.wallet&nbsp;&nbsp;=&nbsp;&nbsp;This is the main wallet file containing your private keys and transactions.</p></li>
+  <li><p>saving.info&nbsp;&nbsp;=&nbsp;&nbsp;This file contains the description of the wallet and the labels you have given to your addresses.</p></li>
+  <li><p>saving-data&nbsp;&nbsp;=&nbsp;&nbsp;A directory containing your wallet backup files.</p></li>
+  <li><p>saving-data/key-backup&nbsp;&nbsp;=&nbsp;&nbsp;A directory containing your automatically generated private key export files.</p></li>
+  <li><p>saving-data/rolling-backup&nbsp;&nbsp;=&nbsp;&nbsp;A directory containing your rolling wallet backups.</p></li>
+  <li><p>saving-data/wallet-backup&nbsp;&nbsp;=&nbsp;&nbsp;A directory containing your encrypted wallet backups.</p></li>
+  <li><p>saving-data/wallet-unenc-backup&nbsp;&nbsp;=&nbsp;&nbsp;A directory containing your unencrypted wallet backups.</p></li>
+</ul>
+<p><b>Private key backups</b>. In your private key backup directory you will have files called 'saving-YYYYMMDDHHMMSS.key'. Here the YYYYMMDDHHMMSS is a timestamp. With an encrypted wallet every time you add or change the password, add a receiving address or import private keys an encrypted, timestamped export of your private keys is created. This is encrypted with your wallet password. You can use these to recover the essentials of your wallet by importing one of these files into a new wallet.</p>
+<p><b>Rolling backups</b>. In your rolling backup directory you will see one (or sometimes more) file with the name 'saving-YYYYMMDDHHMMSS.wallet'. This is the rolling wallet backup file. Every time the wallet writes to disk, the existing wallet is kept as a backup. The main purpose of this file is to recover from any sudden loss of power that prevents a clean wallet save.</p>
+<p><b>Wallet backups</b>. There are two directories when backups are made of your wallets. One stores your backups for encrypted wallets, the other for unencrypted wallets. These files are in the format 'saving-YYYYMMDDHHMMSS.wallet' and 'saving-YYYYMMDDHHMMSS.info'. Your wallet is backed up to these directories when you open a wallet, add or change the password, add a receiving address or import private keys.</p>
+<p>When you add a password to a wallet all the unencrypted wallet backups are encrypted with the password you have chosen. These files are stored as ''saving-YYYYMMDDHHMMSS.wallet.cipher'. You can open these files as normal using the 'File | Open Wallet' menu option. When you do you will be asked for the wallet password to decrypt the wallet.</p>
+<p>If when MultiBit opens your main wallet file it is not successful it will automatically use the most recent backup files to try to recover your wallet.</p>
+<br/>
+<h2>Wallet files for MultiBit version 0.5.12 and earlier</h2>
+<p>Here is a list of what files you will see in the directory that your wallet is stored in:</p>
 <ul>
   <li><p>saving.wallet&nbsp;&nbsp;=&nbsp;&nbsp;This is the main wallet file containing your private keys and transactions.</p></li>
   <li><p>saving.info&nbsp;&nbsp;=&nbsp;&nbsp;This file contains the description of the wallet and the labels you have given to your addresses.</p></li>
   <li><p>saving-YYYYMMDDHHMMSS.wallet&nbsp;&nbsp;=&nbsp;&nbsp;Here the YYYYMMDDHHMMSS is a timestamp. This is the rolling wallet backup file. Every time the wallet writes to disk, the existing wallet is kept as a backup. Only one backup is kept. The main purpose of this file is to recover from any sudden loss of power that prevents a clean wallet save.</p></li>
   <li><p>saving-YYYYMMDDHHMMSS.key&nbsp;&nbsp;=&nbsp;&nbsp;You may have several of these. With an encrypted wallet every time you add or change the password, add a receiving address or import private keys an encrypted, timestamped export of your private keys is created. This is encrypted with your wallet password. You can use these to recover the essentials of your wallet by importing one of these files into a new wallet.</p></li>
 </ul>
+<p>If when MultiBit opens your main wallet file it is not successful it will automatically use the most recent rolling backup file to try to recover your wallet.</p>
 <br>
+<h2>Other, non-wallet related files</h2>
 <p>There are also non wallet related files that are created in MultiBit. These are listed below:</p>
 <ul>
   <li><p>multibit.properties&nbsp;&nbsp;=&nbsp;&nbsp;This is the MultiBit configuration file.</p></li>
@@ -14,3 +105,20 @@
   <li><p>multibit.spvstore&nbsp;&nbsp;=&nbsp;&nbsp;This is the MultiBit blockchain, a more advanced format.</p></li>
   <li><p>multibit.checkpoints&nbsp;&nbsp;=&nbsp;&nbsp;This is the MultiBit checkpoints file. This is used to avoid having to download the whole blockchain.</p></li>
 </ul>
+<br>
+<table border="0" cellpadding="0" cellspacing="0" width=100%>
+	<tbody><tr width=100%>
+        	<td align="left" width="33%">
+			<a title="Previous" href="help_backupWalletUsingPrivateKeys.html">&#60; How to backup your wallet using private keys</a>
+		</td>
+		<td align="center" width=34%>
+			<a title="Help Contents" href="help_contents.html">Back to help contents</a>
+		</td>
+		<td align="right" width=33%>
+			<a title="Next" href="help_troubleshooting.html">Troubleshooting &#62;</a>
+		</td>
+	</tr></tbody>
+</table>
+</div>
+</body>
+</html>
