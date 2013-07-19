@@ -2,7 +2,7 @@ package org.multibit.site.model;
 
 import com.google.common.base.Charsets;
 import com.google.common.base.Optional;
-import org.multibit.site.InMemoryAssetCache;
+import org.multibit.site.caches.InMemoryAssetCache;
 import org.multibit.site.utils.StreamUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
