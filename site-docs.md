@@ -1,22 +1,5 @@
 # Summary of site transition redirects
 
-## Site v1
-Entirely superseded
-
-## Site v2
-Current as at April 2013 with many external references by linking sites
-
-### Main pages
-`/` -> English index.html
-`/{page}.html` -> English main pages (includes v0.4 help pages)
-
-### Help pages
-
-`/helpImages/{image}.png` -> v0.4 help images
-
-`/v0.5/{page}.html` -> v0.5 help pages
-`/v0.5/helpImages/{image}.png` -> v0.5 help images
-
 ## Site v3
 Major push into a dynamic site with full internationalisation capabilities. Follows guidelines provided by W3C regarding language selection and identification.
 Notably there will be no inference of language from the Accept-Language header. The user will be expected to select their language from a list of available
@@ -28,7 +11,7 @@ The language code is placed in the path either at the start (for main pages) or 
 between image and textual resource provision. Dropwizard handles image assets internally and requires a specific path format to operate correctly.
 
 ### Automatic resolution of existing v2 page links
-Site v3 will provide endpoints that will automatically resolve the v2 site links and issu`e redirects (301 Moved Permanently) into v3 links
+Site v3 will provide endpoints that will automatically resolve the v2 site links and issue redirects (301 Moved Permanently) into v3 links
 
 ### Main pages
 
@@ -61,3 +44,22 @@ of `blog` is chosen since it does not imply a recent event.
 `/blog` -> English help index.html for recent articles
 `/blog/{year}/{month}/{day}/{page}.html` -> English article
 `/blog/{lang}/{year}/{month}/{day}/{page}.html` -> Language-specific article
+
+## Site v2
+Current as at April 2013 with many external references by linking sites
+Superseded in June 2013 by v3
+
+### Main pages
+`/` -> English index.html
+`/{page}.html` -> English main pages (includes v0.4 help pages)
+
+### Help pages
+
+`/helpImages/{image}.png` -> v0.4 help images
+
+`/v0.5/{page}.html` -> v0.5 help pages
+`/v0.5/helpImages/{image}.png` -> v0.5 help images
+
+## Site v1
+Entirely superseded
+
