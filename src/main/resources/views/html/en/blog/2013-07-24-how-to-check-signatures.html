@@ -1,0 +1,113 @@
+<h1>How to check digital signatures</h1>
+<p>In order to combat malware all downloads provided by MultiBit are served over HTTPS and are cryptographically
+  signed. This means that they cannot be altered without the alteration being detected.</p>
+<p>In many cases simply acquiring the code over HTTPS will be sufficient security but we at MultiBit believe in
+  going the extra mile to ensure that there is no doubt that what you think you have downloaded is exactly what we
+  have published. To that end here is a short technical guide to verifying signatures using GPG.</p>
+<p>This article is aimed at people who are comfortable with the command line but have not spent much time working
+  with SHA1, GPG and so on. As usual commands are prefixed with either <code>></code> or <code>$</code> to show the
+  typical command prompt for Windows or Unix.</p>
+<h2>Step 1 - SHA1 in action</h2>
+<p>The first step on the road to security is access to strong cryptography. We'll start by creating a simple one line
+  text file:</p>
+<pre>
+$ echo "Hello world" > example.txt
+</pre>
+<p>The above has an expected SHA1 hash of
+  <code>33ab5639bfd8e7b95eb1d8d0b87781d4ffea4d5d</code> which we will now attempt to
+  verify. Depending on your operating system you'll need to install a few applications in a particular order to establish a
+  solid trust foundation.</p>
+<h3>Windows - install FCIV</h3>
+<p><a target="_blank" href="https://www.microsoft.com/en-us/download/details.aspx?id=11533">Microsoft's File Checksum
+  Integrity
+  Verifier (FCIV)</a> is a command line tool that provides access to SHA1 checksums.</p>
+<p>Once installed, you can test it out on your example file as follows</p>
+<pre>
+> fciv.exe -sha1 example.txt
+</pre>
+
+<h3>Mac - use OpenSSL</h3>
+<p>OSX ships with an older version of OpenSSL that supports SHA1. You may want to <a
+  target="_blank" href="http://homes.cs.washington.edu/~aczeskis/openssl.html">update it</a>, but the standard version is good
+  enough for our purposes.</p>
+<pre>
+$ openssl sha1 example.txt
+</pre>
+
+<h3>Linux - use SHA1 sum</h3>
+<p>Most Linux distributions ship with the <code>sha1sum</code> utility.</p>
+<pre>
+$ sha1sum example.txt
+</pre>
+
+<h2>Step 2 - Download and verify GPG</h2>
+<p>At this point we have a way of verifying the integrity of anything we download, but we don't have any way to prove
+  authenticity. Anyone could produce a copy of MultiBit containing malicious code with a valid SHA1 and it would pass
+  our rather weak test. We need a cryptographic signature.</p>
+<p>This is provided in the GnuPG (GPG) suite of applications that are
+  <a href="http://www.gnupg.org/download/#auto-ref-3">available for download</a>. You can choose to use their binary
+  installers but remember to verify what you have downloaded using the SHA1 process above.</p>
+<p>For example after downloading the <a target="_blank" href="https://gpgtools.org/installer/index.html">GPG Tools installer</a> and
+  clicking on the SHA1 link we can verify the following:</p>
+<pre>
+$ openssl sha1 GPGTools-2013.5.20.dmg
+SHA1(GPGTools-2013.5.20.dmg)= 9f9fea935b3ce90d8d04542a754b8778f82a8b1b
+</pre>
+<p>To verify that GPG is installed and working use the following:</p>
+<pre>
+gpg --version
+</pre>
+<p>The result should look something like this:</p>
+<pre>
+gpg (GnuPG/MacGPG2) 2.0.17
+libgcrypt 1.4.6
+... more info ...
+</pre>
+<p>After you have verified GPG you can then use GPG itself to verify all future GPG updates using the process
+  described next.</p>
+
+<h2>Step 3 - Download and verify MultiBit</h2>
+<p>On startup MultiBit will check with the main site to verify that it is still the latest released version. If
+  not then it will present a dialog to inform the user and open a browser window to assist the download process.</p>
+<p>The typical process is to simply click on the installer package link for your operating system and go through
+  the process. In this case we're going to actually use the digital signature provided by MultiBit to verify that
+  the download has been signed by the lead developer Jim Burton.</p>
+<p>We import Jim's public key (<a target="_blank"
+                                  href="http://pgp.mit.edu:11371/pks/lookup?search=0x79F7C572">0x79F7C572</a>
+  ) using the following command:</p>
+<pre>
+$ gpg --keyserver pgp.mit.edu --recv-keys 0x79F7C572
+gpg: requesting key 79F7C572 from hkp server pgp.mit.edu
+gpg: key 79F7C572: "Jim Burton (multibit.org developer) <jim618@fastmail.co.uk>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+</pre>
+<p>Each public key has a unique number which has been provided on the main MultiBit website. As more people decide
+  to sign the MultiBit release then more keys will be presented on the site. By importing the key you give GPG the
+  opportunity to check that the key has not been revoked, it also means that you can now send the owner of the key
+  encrypted messages.</p>
+<p>We are now ready to check the MultiBit installer signature. Clicking the signature link ("Save As") will download the
+  signature file into the same location as the installer. It normally has a <code>.asc</code> extension (for "armoured
+  ASCII"). You can now issue the verification command. The example below is for a version 0.5.13 Mac installer.</p>
+<pre>
+gpg --verify multibit-0.5.13.dmg.asc
+gpg: Signature made Mon 22 Jul 10:07:09 2013 BST using RSA key ID 23F7FB7B
+gpg: Good signature from "Jim Burton (multibit.org developer) <jim618@fastmail.co.uk>"
+</pre>
+<p>You may see the following additional information:</p>
+<pre>
+gpg: WARNING: This key is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 299C 423C 672F 47F4 756A  6BA4 C197 2AED 79F7 C572
+Subkey fingerprint: 4A71 A836 F572 01B4 D088  7D60 0820 A658 23F7 FB7B
+</pre>
+<p>This warning from GPG is to inform you that you don't trust any keys that have signed Jim's key. As more people sign
+  Jim's key eventually you will encounter someone whose key you do trust and that will in turn validate Jim's key in
+  your trust chain. If you want to trust this key immediately you must sign it with your own key. Full information
+  about key signing, and other features of GPG <a target="_blank" href="http://www.gnupg.org/gph/en/manual.html">is
+    available here</a>.</p>
+<h2>Final notes</h2>
+<p>The use of cryptographic signatures provides a guarantee that what you think you have downloaded is actually
+  present on your system. Bitcoin applications are not like ordinary applications - they handle real money and as
+  such need to be treated with more security precautions than you would otherwise use. It is always worth learning
+  more about the technology you use and hopefully this article has given you a taste.</p>
