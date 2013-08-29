@@ -61,9 +61,7 @@
 <div id="infobox">
   <h1>Follow</h1>
 
-  <p>For the latest news you should follow MultiBit on Twitter</p><a
-  href="https://twitter.com/MultiBitOrg" class="twitter-follow-button" data-show-count="false">Follow
-  @MultiBitOrg</a>
+  <p>For the latest news you should follow <a href="https://twitter.com/MultiBitOrg">@MultiBitOrg</a> on Twitter</p>
 
   <h1>Donate</h1>
 
