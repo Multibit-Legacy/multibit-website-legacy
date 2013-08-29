@@ -36,8 +36,8 @@
 @logoWidth: 1000px;
 @contentWidth: (@logoWidth * 0.60);
 @boxWidth: (@logoWidth * 0.30);
-@karmaAdsWidth: 300px;
-@karmaAdsLeft: (@logoWidth * 0.67);
+@karmaAdsWidth: 320px;
+@karmaAdsLeft: (@logoWidth * 0.66);
 
 body {
   background-color: @bodyBackgroundColor;
@@ -277,11 +277,12 @@ a img {
 }
 
 #karmaAds {
+  font-family: "Helvetica Neue", "Liberation Sans", Arial, sans-serif;
+  font-size: 17px;
   width: @karmaAdsWidth;
-  font-size: 15px;
   height: 30px;
   position: absolute;
-  top: 33px;
+  top: 35px;
   right: 20px;
   left: @karmaAdsLeft;
   padding: 0px;

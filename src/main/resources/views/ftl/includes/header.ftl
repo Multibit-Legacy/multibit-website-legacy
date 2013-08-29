@@ -2,7 +2,7 @@
 <div id="container1">
   <div class="wrap">
     <div id="logo"><a href="/index.html"><img src="/images/common/banner.png" /></a></div>
-    <div id="karmaAds"><iframe src="https://karma-ads.com/service/ad/1ArfNRuhBsMUTQsA2SVNXFDVtGUc5sAWMy" style="width:300px; height:30px; margin: 0; border:0; padding:0; overflow:hidden;" scrolling="no"></iframe></div>
+    <div id="karmaAds"><iframe src="https://karma-ads.com/service/ad/1ArfNRuhBsMUTQsA2SVNXFDVtGUc5sAWMy" style="width:320px; height:30px; margin: 0; border:0; padding:0; overflow:hidden;" scrolling="no"></iframe></div>
   </div>
 </div>
 <div id="container2">
