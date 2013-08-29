@@ -37,7 +37,7 @@
 @contentWidth: (@logoWidth * 0.60);
 @boxWidth: (@logoWidth * 0.30);
 @karmaAdsWidth: 320px;
-@karmaAdsLeft: (@logoWidth * 0.66);
+@karmaAdsLeft: (@logoWidth * 0.658);
 
 body {
   background-color: @bodyBackgroundColor;
@@ -276,7 +276,7 @@ a img {
   font-size: 11px;
 }
 
-#karmaAds {
+#karmaAds iframe {
   font-family: "Helvetica Neue", "Liberation Sans", Arial, sans-serif;
   font-size: 17px;
   width: @karmaAdsWidth;
@@ -286,7 +286,21 @@ a img {
   right: 20px;
   left: @karmaAdsLeft;
   padding: 0px;
+  margin: 0px;
+  overflow: hidden;
   background-color: @primaryColor5;
+  border: 1px solid @secondaryColorB3;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+
+#karmaAds iframe a:link, a:visited, a:active {
+  color: @secondaryColorB3;
+}
+
+#karmaAds iframe a:link:hover, a:visited:hover, a:active:hover {
+  color: @secondaryColorB3;
 }
 
 #footer {
