@@ -3,20 +3,24 @@ package org.multibit.site.resources;
 import com.google.common.base.Optional;
 import com.yammer.dropwizard.jersey.caching.CacheControl;
 import com.yammer.metrics.annotation.Timed;
+import org.htmlcleaner.CleanerProperties;
+import org.htmlcleaner.HtmlCleaner;
+import org.htmlcleaner.PrettyXmlSerializer;
+import org.htmlcleaner.TagNode;
 import org.multibit.site.caches.InMemoryArtifactCache;
+import org.multibit.site.core.cleaner.AdvertTagVisitor;
 import org.multibit.site.model.BaseModel;
 import org.multibit.site.views.PublicFreemarkerView;
 
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Size;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URI;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -30,6 +34,37 @@ import java.util.concurrent.TimeUnit;
  */
 @Path("/")
 public class PublicPageResource extends BaseResource {
+
+  /**
+   * The advert server (e.g. KarmaAds)
+   */
+  private static final String ADVERT_SERVER_HOST = "https://karma-ads.com";
+  /**
+   * The failsafe HTML to ensure continued correct presentation
+   */
+  private static final String FAILSAFE = "http://localhost:8080/ka/failsafe.html";
+
+  /**
+   * The advert server
+   */
+  private static final URI advertServer = URI.create(
+    ADVERT_SERVER_HOST +
+      "/service/ad/1ArfNRuhBsMUTQsA2SVNXFDVtGUc5sAWMy");
+
+  private final CleanerProperties cleanerProperties;
+
+  public PublicPageResource() {
+
+    // Configure a strict set of cleaner properties
+    cleanerProperties = new CleanerProperties();
+    cleanerProperties.setTranslateSpecialEntities(true);
+    cleanerProperties.setTransResCharsToNCR(true);
+    cleanerProperties.setOmitComments(true);
+    cleanerProperties.setOmitXmlDeclaration(true);
+    cleanerProperties.setOmitDeprecatedTags(true);
+    cleanerProperties.setOmitUnknownTags(true);
+    cleanerProperties.setAllowHtmlInsideAttributes(false);
+  }
 
   /**
    * Provide the favicon
@@ -83,6 +118,38 @@ public class PublicPageResource extends BaseResource {
     return Response
       .ok(siteMap.get())
       .type(MediaType.TEXT_XML)
+      .build();
+  }
+
+  /**
+   * @return The advert HTML suitable for inclusion in an iframe
+   */
+  @GET
+  @Path("/ad")
+  @Timed
+  @CacheControl(noCache = true)
+  public Response viewAdvert() throws IOException {
+
+    // Clean a fresh advert from the advertising network
+    TagNode node = new HtmlCleaner(cleanerProperties).clean(advertServer.toURL());
+
+    try {
+      // Make some adjustments
+      node.traverse(new AdvertTagVisitor(ADVERT_SERVER_HOST));
+    } catch (WebApplicationException e) {
+      // Problem detected so redirect to failsafe
+      return Response
+        .temporaryRedirect(URI.create(FAILSAFE))
+        .type(MediaType.TEXT_HTML)
+        .build();
+    }
+
+    ByteArrayOutputStream out = new ByteArrayOutputStream();
+    new PrettyXmlSerializer(cleanerProperties).writeToStream(node, out);
+
+    return Response
+      .ok(out.toByteArray())
+      .type(MediaType.TEXT_HTML)
       .build();
   }
 
