@@ -36,6 +36,8 @@
 @logoWidth: 1000px;
 @contentWidth: (@logoWidth * 0.60);
 @boxWidth: (@logoWidth * 0.30);
+@karmaAdsWidth: 300px;
+@karmaAdsLeft: (@logoWidth * 0.67);
 
 body {
   background-color: @bodyBackgroundColor;
@@ -272,6 +274,18 @@ a img {
 
 #infobox small {
   font-size: 11px;
+}
+
+#karmaAds {
+  width: @karmaAdsWidth;
+  font-size: 15px;
+  height: 30px;
+  position: absolute;
+  top: 33px;
+  right: 20px;
+  left: @karmaAdsLeft;
+  padding: 0px;
+  background-color: @primaryColor5;
 }
 
 #footer {
