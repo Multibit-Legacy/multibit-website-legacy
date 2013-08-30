@@ -3,6 +3,8 @@ package org.multibit.site.core.cleaner;
 import org.htmlcleaner.HtmlNode;
 import org.htmlcleaner.TagNode;
 import org.htmlcleaner.TagNodeVisitor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Response;
@@ -19,6 +21,8 @@ import javax.ws.rs.core.Response;
  *         
  */
 public class AdvertTagVisitor implements TagNodeVisitor {
+  
+  private static final Logger log = LoggerFactory.getLogger(AdvertTagVisitor.class);
 
   /**
    * Only these tags will be permitted
@@ -80,6 +84,7 @@ public class AdvertTagVisitor implements TagNodeVisitor {
 
     if (!href.startsWith("/")) {
       // Absolute URL detected - trigger failsafe
+      log.error("Advert server presented absolute link: '{}' in tag '{}'. Switched to failsafe.",href, name);
       throw new WebApplicationException(Response.Status.BAD_REQUEST);
     } else {
       if ("link".equalsIgnoreCase(name)) {
