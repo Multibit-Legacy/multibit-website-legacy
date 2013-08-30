@@ -8,16 +8,13 @@ html,body {
   min-height: 100%;
 }
 
-a {
-  color: #0069d6;
-  text-decoration: none;
-  line-height: inherit;
-  font-weight: inherit;
+/* Links */
+a:link, a:visited, a:active {
+  color: #973131;
 }
 
-a:hover {
-  color: #00438a;
-  text-decoration: underline;
+a:link:hover, a:visited:hover, a:active:hover {
+  color: #973131;
 }
 
 .ka_wrapper {
@@ -41,12 +38,10 @@ a:hover {
   height: 16px;
   background: #fff url(favicon.png);
   opacity: .3;
-  filter: alpha(opacity = 30);
 }
 
 .area:hover .ka_logo {
   opacity: .9;
-  filter: alpha(opacity = 90);
   background-color: #ffe6e6;
 }
 
