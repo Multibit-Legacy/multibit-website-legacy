@@ -1,5 +1,3 @@
-package org.multibit.site.core.sitemap;
-
 import javax.net.ssl.*;
 import java.io.*;
 import java.security.KeyStore;
