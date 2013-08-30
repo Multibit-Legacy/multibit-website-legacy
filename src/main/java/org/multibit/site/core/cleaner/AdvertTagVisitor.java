@@ -20,10 +20,19 @@ import javax.ws.rs.core.Response;
  */
 public class AdvertTagVisitor implements TagNodeVisitor {
 
-  private static final String allowedTags = "html head body link div a span ";
+  /**
+   * Only these tags will be permitted
+   */
+  private static final String allowedTags = "html head body link div a b i span ";
 
+  /**
+   * The advert server host (provided by the AdvertLoader)
+   */
   private final String advertServerHost;
 
+  /**
+   * @param advertServerHost The advert server host (e.g. "https://karma-ads.com")
+   */
   public AdvertTagVisitor(String advertServerHost) {
     this.advertServerHost = advertServerHost;
   }
@@ -63,6 +72,7 @@ public class AdvertTagVisitor implements TagNodeVisitor {
 
     // Make HREF attributes absolute from expected relative
     String href = tag.getAttributeByName("href");
+    String name = tag.getName();
 
     if (href == null) {
       return;
@@ -72,7 +82,12 @@ public class AdvertTagVisitor implements TagNodeVisitor {
       // Absolute URL detected - trigger failsafe
       throw new WebApplicationException(Response.Status.BAD_REQUEST);
     } else {
-      href = advertServerHost + href;
+      if ("link".equalsIgnoreCase(name)) {
+        href="/ka"+href;
+      } else {
+        // Change to advert server direct link
+        href = advertServerHost + href;
+      }
       tag.getAttributes().put("href", href);
     }
 
