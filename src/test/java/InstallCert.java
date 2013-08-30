@@ -6,15 +6,16 @@ import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 
 /**
- * * <p>Utility to provide the following to developers:<br>
- * * <ul>
- * * <li>Quick tool to import the self-signed certificate from localhost:8443 into the local trust store</li>
- * * </ul>
- * * Example:
- * * <pre>
- * * java InstallCert localhost:8443 myPassword
- * * </pre>
- * * </p>
+ * <p>Utility to provide the following to developers:<br>
+ * <ul>
+ * <li>Quick tool to import the self-signed certificate from localhost:8443 into the local trust store</li>
+ * </ul>
+ * Example:
+ * <pre>
+ * javac InstallCert.java
+ * sudo java InstallCert localhost:8443 myPassword
+ * </pre>
+ * </p>
  */
 
 public class InstallCert {
@@ -30,7 +31,7 @@ public class InstallCert {
       String p = (args.length == 1) ? "changeit" : args[1];
       passphrase = p.toCharArray();
     } else {
-      System.out.println("Usage: java InstallCert <host>[:port] [passphrase]");
+      System.out.println("Usage: sudo java InstallCert <host>[:port] [passphrase]");
       return;
     }
 
