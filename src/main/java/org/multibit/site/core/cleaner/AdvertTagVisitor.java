@@ -63,6 +63,7 @@ public class AdvertTagVisitor implements TagNodeVisitor {
    */
   private void checkForAllowedTags(TagNode tag) {
     if (!allowedTags.contains(tag.getName()+" ")) {
+      log.error("Advert server presented disallowed tag: '{}'", tag.getName());
       throw new WebApplicationException(Response.Status.BAD_REQUEST);
     }
   }

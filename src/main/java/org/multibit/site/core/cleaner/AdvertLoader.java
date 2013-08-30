@@ -69,7 +69,7 @@ public class AdvertLoader {
 
     } catch (IOException e) {
       // Rethrow
-      throw new WebApplicationException(Response.Status.BAD_REQUEST);
+      throw new WebApplicationException(e,Response.Status.BAD_REQUEST);
     }
 
   }
