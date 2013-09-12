@@ -38,7 +38,7 @@ public class AdvertLoader {
   /**
    * The advert server
    */
-  private static final URI advertServer = URI.create(ADVERT_SERVER_HOST + "/service/ad/"+ ADVERT_SERVER_KEY);
+  private static final URI advertServer = URI.create(ADVERT_SERVER_HOST + "/service/advert/"+ ADVERT_SERVER_KEY);
 
   private final CleanerProperties cleanerProperties;
 

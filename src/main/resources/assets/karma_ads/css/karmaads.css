@@ -8,16 +8,19 @@ html,body {
   min-height: 100%;
 }
 
-/* Links */
-a:link, a:visited, a:active {
-  color: #973131;
+a {
+  color: #0069d6;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
 }
 
-a:link:hover, a:visited:hover, a:active:hover {
-  color: #973131;
+a:hover {
+  color: #00438a;
+  text-decoration: underline;
 }
 
-.ka_wrapper {
+.wrapper {
   display: table;
   height: 100%;
   width: 100%;
@@ -25,28 +28,26 @@ a:link:hover, a:visited:hover, a:active:hover {
   min-height: 100%;
 }
 
-.ka_panel {
+.panel {
   position: absolute;
   top: 0;
   right: 0;
 }
 
-.ka_logo {
+.logo {
   float: right;
   display: block;
   width: 16px;
   height: 16px;
   background: #fff url(favicon.png);
   opacity: .3;
+  filter: alpha(opacity = 30);
 }
 
-.area:hover .ka_logo {
+.area:hover .logo {
   opacity: .9;
+  filter: alpha(opacity = 90);
   background-color: #ffe6e6;
-}
-
-.ka_panel:hover .ka_menu {
-  display: block;
 }
 
 .cell a {
@@ -66,21 +67,4 @@ a:link:hover, a:visited:hover, a:active:hover {
   display: table-cell;
   vertical-align: middle;
   padding: 0 18px;
-}
-
-.ka_menu a {
-  color: #0069d6 !important;
-}
-
-.ka_menu a:hover {
-  color: #00438a !important;
-}
-
-.ka_menu {
-  display: none;
-  background-color: #ffe6e6;
-  font-size: .8em;
-  line-height: 16px;
-  padding: 0 21px 0 5px;
-  text-align: left;
 }
