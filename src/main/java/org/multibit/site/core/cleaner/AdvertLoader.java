@@ -31,9 +31,14 @@ public class AdvertLoader {
   private static final String ADVERT_SERVER_HOST = "https://karma-ads.com";
 
   /**
+   * The private key to the advert server (provided as an environment variable on the server)
+   */
+  private static final String ADVERT_SERVER_KEY = System.getenv("ADVERT_SERVER_KEY");
+
+  /**
    * The advert server
    */
-  private static final URI advertServer = URI.create(ADVERT_SERVER_HOST + "/service/ad/1ArfNRuhBsMUTQsA2SVNXFDVtGUc5sAWMy");
+  private static final URI advertServer = URI.create(ADVERT_SERVER_HOST + "/service/ad/"+ ADVERT_SERVER_KEY);
 
   private final CleanerProperties cleanerProperties;
 
