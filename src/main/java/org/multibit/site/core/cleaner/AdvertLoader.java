@@ -36,9 +36,14 @@ public class AdvertLoader {
   private static final String ADVERT_SERVER_KEY = System.getenv("ADVERT_SERVER_KEY");
 
   /**
+   * The PublisherId that indicates the advert was shown on multibit.org
+   */
+  private static final String MULTIBIT_PUBLISHER_ID = "4000";
+
+  /**
    * The advert server
    */
-  private static final URI advertServer = URI.create(ADVERT_SERVER_HOST + "/service/advert/"+ ADVERT_SERVER_KEY);
+  private static final URI advertServer = URI.create(ADVERT_SERVER_HOST + "/service/advert/"+ MULTIBIT_PUBLISHER_ID);
 
   private final CleanerProperties cleanerProperties;
 
