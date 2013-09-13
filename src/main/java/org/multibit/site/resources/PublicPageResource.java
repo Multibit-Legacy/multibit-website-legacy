@@ -4,19 +4,18 @@ import com.google.common.base.Optional;
 import com.yammer.dropwizard.jersey.caching.CacheControl;
 import com.yammer.metrics.annotation.Timed;
 import org.multibit.site.caches.InMemoryArtifactCache;
+import org.multibit.site.core.cleaner.AdvertLoader;
 import org.multibit.site.model.BaseModel;
 import org.multibit.site.views.PublicFreemarkerView;
 
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Size;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URI;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -30,6 +29,11 @@ import java.util.concurrent.TimeUnit;
  */
 @Path("/")
 public class PublicPageResource extends BaseResource {
+
+  /**
+   * The failsafe HTML to ensure continued correct presentation
+   */
+  private static final String FAILSAFE = "http://localhost:8080/ka/failsafe.html";
 
   /**
    * Provide the favicon
@@ -84,6 +88,36 @@ public class PublicPageResource extends BaseResource {
       .ok(siteMap.get())
       .type(MediaType.TEXT_XML)
       .build();
+  }
+
+  /**
+   * @return The advert HTML suitable for inclusion in an iframe
+   */
+  @GET
+  @Path("/ad")
+  @Timed
+  @CacheControl(noCache = true)
+  public Response viewAdvert() {
+
+    try {
+      byte[] advert = new AdvertLoader().loadAndClean();
+
+      // Seems OK so serve it
+      return Response
+        .ok(advert)
+        .type(MediaType.TEXT_HTML)
+        .build();
+
+    } catch (WebApplicationException e) {
+
+      // Problem detected so redirect to failsafe
+      // This will cause a 307 to be recorded in the server logs triggering an action by administrators
+      return Response
+        .temporaryRedirect(URI.create(FAILSAFE))
+        .type(MediaType.TEXT_HTML)
+        .build();
+    }
+
   }
 
   /**

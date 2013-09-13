@@ -65,7 +65,7 @@
 
   <h1>Donate</h1>
 
-  <p>MultiBit depends on donations to keep going</p>
+  <p>Your donation helps keep MultiBit running. Thanks.</p>
 
   <p>
     <a

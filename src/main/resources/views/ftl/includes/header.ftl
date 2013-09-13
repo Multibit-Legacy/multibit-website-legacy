@@ -2,6 +2,7 @@
 <div id="container1">
   <div class="wrap">
     <div id="logo"><a href="/index.html"><img src="/images/common/banner.png" /></a></div>
+    <div id="karmaAds"><iframe src="/ad" scrolling="no" frameBorder="0"></iframe></div>
   </div>
 </div>
 <div id="container2">
