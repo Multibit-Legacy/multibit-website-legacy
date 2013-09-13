@@ -1,6 +1,6 @@
 <#-- @ftlvariable name="model" type="org.multibit.site.views.PublicFreemarkerView" -->
 <#-- Template providing a single point of configuration for common variables -->
-<#assign downloadVersion = "0.5.13">
+<#assign downloadVersion = "0.5.14">
 
 <#-- Documentation for alerts
 
