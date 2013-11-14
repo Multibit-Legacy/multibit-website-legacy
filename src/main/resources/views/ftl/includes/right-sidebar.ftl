@@ -3,14 +3,14 @@
   <table>
     <tr>
       <td><a
-        href="https://multibit.org/releases/multibit-${downloadVersion}/multibit-${downloadVersion}-windows.exe"><img
+        href="https://multibit.org/releases/multibit-${downloadVersion}/multibit-${downloadVersion}-windows-setup.exe"><img
         src="/images/common/dow-win.png"></a></td>
       <td><a
-        href="https://multibit.org/releases/multibit-${downloadVersion}/multibit-${downloadVersion}-windows.exe">Windows
+        href="https://multibit.org/releases/multibit-${downloadVersion}/multibit-${downloadVersion}-windows-setup.exe">Windows
         installer</a>
-        <small>~11.7MB</small>
+        <small>~8.8MB</small>
         <a
-          href="https://multibit.org/releases/multibit-${downloadVersion}/multibit-${downloadVersion}-windows.exe.asc">
+          href="https://multibit.org/releases/multibit-${downloadVersion}/multibit-${downloadVersion}-windows-setup.exe.asc">
           <small>Signature</small>
         </a></td>
     </tr>
@@ -25,7 +25,7 @@
       <td><a
         href="https://multibit.org/releases/multibit-${downloadVersion}/multibit-${downloadVersion}.dmg">Mac
         OS X installer</a>
-        <small>~10.5MB</small>
+        <small>~7.4MB</small>
         <a
           href="https://multibit.org/releases/multibit-${downloadVersion}/multibit-${downloadVersion}.dmg.asc">
           <small>Signature</small>
@@ -43,7 +43,7 @@
       <td><a
         href="https://multibit.org/releases/multibit-${downloadVersion}/multibit-${downloadVersion}-linux.jar">Linux
         / Unix installer</a>
-        <small>~10.8MB</small>
+        <small>~7.9MB</small>
         <a
           href="https://multibit.org/releases/multibit-${downloadVersion}/multibit-${downloadVersion}-linux.jar.asc">          <small>Signature</small>
         </a></td>
@@ -65,7 +65,7 @@
 
   <h1>Donate</h1>
 
-  <p>MultiBit depends on donations to keep going</p>
+  <p>Your donation helps keep MultiBit running. Thanks.</p>
 
   <p>
     <a
