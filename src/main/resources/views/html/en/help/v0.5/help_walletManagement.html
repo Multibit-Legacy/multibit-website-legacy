@@ -1,14 +1,28 @@
 <h2>Wallet management</h2>
-<p>With MultiBit, you can have as many wallets as you like.   They are usually given the file extension ".wallet".</p>
-<p>When you open MultiBit, the wallets that were open in the previous use of MultiBit are reopened.   If this is the first time you have opened MultiBit a new, empty wallet file called 'multibit.wallet' is created in your user data directory. </p>
-<p>Your wallets appear in the side panel labelled '<img width="16" height="16" title="Wallets" alt="Wallets" src="/images/en/v0_5/yourWallets.png"/>&nbsp;Wallets'.  Click on one of the wallets to make it the active wallet. The balance for the active wallet is shown in the top left of the MultiBit screen. The wallet description and file location are shown in the title of the MultiBit window.</p>
-<p><b>Create a new wallet</b></p>
-<p>To create a new wallet, click on the '<img width="16" height="16" title="New Wallet" alt="New Wallet" src="/images/en/v0_5/createNew.png"/>&nbsp;New Wallet' button or choose the menu option 'File | <img width="16" height="16" title="New Wallet" alt="New Wallet" src="/images/en/v0_5/createNew.png"/>&nbsp;New Wallet'.   This opens a dialog window where you choose the location and name of the new wallet.   Click 'Ok' and a new wallet is created with the default description 'Your wallet description'.   You can change this to something more descriptive by clicking on the text.</p>
-<p><b>Open a wallet</b></p>
-<p>To open another wallet, choose the 'File | <img width="16" height="16" title="Open Wallet" alt="Open Wallet" src="/images/en/v0_5/openWallet.png"/>&nbsp;Open Wallet' menu option.   This opens a file chooser dialog where you can choose the wallet to open. When the wallet is opened MultiBit automatically synchronises it to get the latest transactions.</p><p>Note that MultiBit cannot open the wallet files from the Satoshi bitcoin client (wallet.dat files).</p> 
+<p>With MultiBit, you can have as many wallets as you like. They are usually given the file extension ".wallet".</p>
+<p>When you open MultiBit, the wallets that were open in the previous use of MultiBit are reopened. If this is the first time you have opened MultiBit a new, empty wallet file called "multibit.wallet" is created in your user data directory.</p>
+<p>Your wallets appear in the side panel labelled "<img width="16" height="16" title="Wallets" alt="Wallets" src="/images/en/v0_5/yourWallets.png"/>&nbsp;Wallets". Click on one of the wallets to make it the active wallet. The balance for the active wallet is shown in the top left of the MultiBit screen. The wallet description and file location are shown in the title of the MultiBit window.
+</p>
+<h3>Create a new wallet</h3>
+<p>To create a new wallet, click on the "<img width="16" height="16" title="New Wallet" alt="New Wallet" src="/images/en/v0_5/createNew.png"/>&nbsp;New Wallet" button or choose the menu option "File |
+  <img width="16" height="16" title="New Wallet" alt="New Wallet" src="/images/en/v0_5/createNew.png"/>&nbsp;New Wallet". This opens a dialog window where you choose the location and file name of the new wallet. Click "Ok" and a new wallet is created with the default description "Your wallet description".</p>
 
-<p><b>Close a wallet</b></p>
-<p>To close a wallet, choose the 'File | <img width="16" height="16" title="Close Wallet" alt="Close Wallet" src="/images/en/v0_5/closeWallet.png"/>&nbsp;Close Wallet' option.  This saves and closes the wallet and it is no longer shown in MultiBit. It is still stored on your disk - it is not deleted.</p>
+<h3>Rename the wallet</h3>
+<p>To rename the wallet, simply click on the descriptive text and type a new description. This change will be saved in the "multibit.info" file in the application directory when either the wallet is closed, or MultiBit is shut down. This does not change the file name of the wallet.</p>
 
-<p><b>Delete a wallet</b></p>
-<p>There is a hidden menu option to delete a wallet. It is not shown by default to avoid accidental loss of wallets and is intended for more experienced users. See the file 'configuration.txt' in your installation directory for more details.</p>
+<h3>Open a wallet</h3>
+<p>To open another wallet, choose the "File |
+  <img width="16" height="16" title="Open Wallet" alt="Open Wallet" src="/images/en/v0_5/openWallet.png"/>&nbsp;Open Wallet" menu option. This opens a file chooser dialog where you can choose the wallet to open. When the wallet is opened MultiBit automatically synchronises it to get the latest transactions.
+</p><p>Note that MultiBit cannot open the wallet files from the Satoshi bitcoin client (wallet.dat files).</p>
+
+<h3>Close a wallet</h3>
+<p>To close a wallet, choose the "File |
+  <img width="16" height="16" title="Close Wallet" alt="Close Wallet" src="/images/en/v0_5/closeWallet.png"/>&nbsp;Close Wallet" option. This saves and closes the wallet and it is no longer shown in MultiBit. It is still stored on your disk - it is not deleted.
+</p>
+
+<h3>Delete a wallet</h3>
+<p>There is a hidden menu option to delete a wallet. It is not shown by default to avoid accidental loss of wallets and is intended for more experienced users. See the file "configuration.txt" in your installation directory for more details.</p>
+<p>Deleting a wallet is an irreversible action known as a file "shred". If the addresses associated with the private keys in the wallet have been made public there is the chance that someone could use them to try to send you bitcoin in the future.
+  Without the private keys you will have no way to spend the bitcoin.</p>
+<p>That said, if you do not expect to retain full control over your computer (such as selling it) you may need to be sure that the wallet is unrecoverable by a malicious third party. If so,
+  then make sure that you retain encrypted backups of your private keys.</p>
