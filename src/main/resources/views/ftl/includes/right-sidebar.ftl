@@ -49,13 +49,12 @@
         </a></td>
     </tr>
   </table>
-  <p><a href="/en/help.html">How to install</a></p>
+  <p><a href="/en/help.html#how-to-install">How to install</a></p>
   <h1>Verify</h1>
   <p>Installers are signed with the PGP key <a href="http://pgp.mit.edu:11371/pks/lookup?search=0x23F7FB7B">0x23F7FB7B</a>
     (a subkey of <a href="http://pgp.mit.edu:11371/pks/lookup?search=0x79F7C572">0x79F7C572</a>)</p>
   <p><a href="/blog/2013/07/24/how-to-check-signatures.html">Learn more about signatures</a></p>
   <p><a href="/releases.html">Previous releases</a></p>
-
 </div>
 
 <div id="infobox">
