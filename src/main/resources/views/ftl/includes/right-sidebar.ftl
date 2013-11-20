@@ -58,13 +58,10 @@
 </div>
 
 <div id="infobox">
-  <h1>Follow</h1>
-
-  <p>For the latest news you should follow <a href="https://twitter.com/MultiBitOrg">@MultiBitOrg</a> on Twitter</p>
 
   <h1>Donate</h1>
 
-  <p>Your donation helps keep MultiBit running. Thanks.</p>
+  <p>Your donation helps keep MultiBit updated. Thank you.</p>
 
   <p>
     <a
@@ -73,7 +70,12 @@
       <small>1AhN6rPdrMuKBGFDKR1k9A8SCLYaNgXhty</small>
     </a> <br>
 
+  <h1>Follow</h1>
+
+  <p>For the latest news you should follow <a href="https://twitter.com/MultiBitOrg" target="_blank">@MultiBitOrg</a> on Twitter</p>
+
   <h1>Contribute</h1>
 
-  <p>To get involved you should <a href="https://github.com/jim618/multibit">fork the source code on GitHub</a>.</p>
+  <p>To get involved you should <a href="https://github.com/jim618/multibit" target="_blank">fork the source code on GitHub</a>.</p>
+
 </div>
