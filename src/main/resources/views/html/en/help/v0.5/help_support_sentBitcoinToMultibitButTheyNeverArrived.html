@@ -1,23 +1,27 @@
 <h2>I sent bitcoin to MultiBit but they never arrived</h2>
-<br/>
 <h2>What is the symptom ?</h2>
 <p>You sent some bitcoin to MultiBit but the bitcoin never arrived. There is no record of the transaction in MultiBit.</p>
-
 
 <h2>What can you do about it ?</h2>
 <p>The first thing to check is whether the bitcoin was actually sent ok. You can do this by:</p>
 <ol>
-<li><p>Requesting the transaction id from the person or company that sent it to you.</p></li>
-<li><p>Checking on blockchain.info or blockexplorer.com that the transaction exists. If it does, make a note of the date of the transaction, which you will use later.</p></li>
+  <li><p>Requesting the transaction id from the person or company that sent it to you.</p></li>
+  <li><p>Checking on blockchain.info or blockexplorer.com that the transaction exists. If it does, make a note of the date of the transaction, which you will use later.</p></li>
 </ol>
 <p>There was a bug in some earlier versions of MultiBit that incorrectly filtered incoming transactions. This bug is fixed in version 0.4.23 (and later). If you have an old version of MultiBit download the latest copy and install it.</p>
 
 <p>To get the missing transaction into your wallet:</p>
 <ol>
-<li><p>Click on the wallet in the '<img width="16" height="16" title="Wallets" alt="Wallets" src="/images/en/v0_5/yourWallets.png"/>&nbsp;Wallets' side panel to make it the active wallet.</p></li>
-<li><p>Go into the 'Tools | <img width="16" height="16" title="Reset" alt="Reset" src="/images/en/v0_5/resetTransactions.png"/>&nbsp;Reset
+  <li>
+    <p>Click on the wallet in the '<img width="16" height="16" title="Wallets" alt="Wallets" src="/images/en/v0_5/yourWallets.png"/>&nbsp;Wallets' side panel to make it the active wallet.
+    </p></li>
+  <li><p>Go into the 'Tools | <img width="16" height="16" title="Reset" alt="Reset" src="/images/en/v0_5/resetTransactions.png"/>&nbsp;Reset
     Blockchain and Transactions' menu option.</p></li>
-<li><p>Select the "Specify reset date" and select the DAY BEFORE the transaction. (Lots of dates in Bitcoin are quoted in GMT so if you choose the day before you avoid time zone problems).</p></li>
-<li><p>Click on the '<img width="16" height="16" title="Reset" alt="Reset" src="/images/en/v0_5/resetTransactions.png"/>&nbsp;Reset blockchain and transactions' button and let MultiBit sync the blockchain. Just leave MultiBit to work its way through the sync.</p></li>
-
+  <li>
+    <p>Select the "Specify reset date" and select the DAY BEFORE the transaction. (Lots of dates in Bitcoin are quoted in GMT so if you choose the day before you avoid time zone problems).</p>
+  </li>
+  <li>
+    <p>Click on the '<img width="16" height="16" title="Reset" alt="Reset" src="/images/en/v0_5/resetTransactions.png"/>&nbsp;Reset blockchain and transactions' button and let MultiBit sync the blockchain. Just leave MultiBit to work its way through the sync.
+    </p></li>
+</ol>
 <p>You should then see the transaction in your wallet.</p>

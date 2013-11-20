@@ -1,12 +1,60 @@
-<h1>Release documentation</h1>
-<p>You can access the MultiBit help as follows:</p>
+<h1>Problem ?</h1>
 <ul>
-  <li><p><a href="/en/help/v0.5/help_contents.html" title="Online help for MultiBit 0.5.x">MultiBit version 0.5.x</a></p></li>
-  <li><p><small><a href="/en/help/v0.4/help_contents.html" title="Online help for MultiBit 0.4.x">MultiBit version 0.4.x</a></small></p></li>
- </ul>
+  <li><a href="#quick-fixes">Quick fixes</a></li>
+  <li><a href="#how-to-install">How to install</a></li>
+  <li><a href="#all-help">Release-specific help</a></li>
+</ul>
+
 <hr/>
 
-<h1>Installation instructions</h1>
+<h1 id="quick-fixes">Quick fixes</h1>
+
+<p>Here are some quick fixes to common issues:</p>
+<ul>
+  <li><a href="/en/help/v0.5/help_resetBlockchain.html">Transactions are missing</a></li>
+  <li><a href="/en/help/v0.5/help_support_missingWallets.html">Lost wallet</a></li>
+  <li><a href="/en/help/v0.5/help_lostOrForgottenPassword.html">Lost or forgotten password</a></li>
+  <li><a href="/en/help/v0.5/help_support_sentBitcoinToMultibitButTheyNeverArrived.html">Receiving doesn't work</a></li>
+  <li><a href="/en/help/v0.5/help_support_sentBitcoinFromMultibitButTheyAreStuck.html">Sending doesn't work</a></li>
+  <li><a href="/en/help/v0.5/help_support_errorCodes.html">I'm seeing an error code</a></li>
+</ul>
+<h1>None of those helped. What now ?</h1>
+<p>Check that you're using the latest version of MultiBit (downloadVersion) using the "About" menu in MultiBit.</p>
+<p>If you need to upgrade, do the following:</p>
+<ol>
+  <li>Copy your existing MultiBit wallets somewhere under your exclusive control (e.g. USB stick, not a cloud backup provider)</li>
+  <li>Download and install the latest version for your computer (use the links provided in the side panel).</li>
+  <li>Start the upgraded version and check if the problem is still happening</li>
+</ol>
+
+<h1>I'm using downloadVersion and it's still happening. What now ?</h1>
+<p>There are lots of support resources online to help you use MultiBit. Just a little bit of <a href="https://www.google.com/search?q=help+with+multibit" target="_blank">searching in Google</a> will often resolve the problem.</p>
+<ol>
+  <li><a href="/en/help/v0.5/help_contents.html">Read through the MultiBit help</a> (if you have not done so already).</li>
+  <li>Look through the <a href="http://bitcoin.stackexchange.com/search?q=multibit" target="_blank">Bitcoin Stack Exchange</a> site.</li>
+  <li>
+    <a href="https://github.com/jim618/multibit/search?q=help&type=Issues" target="_blank">Search previous MultiBit issues</a> because someone else has almost certainly been in the same situation.
+  </li>
+</ol>
+
+<h1>I'm the first person to have this problem! What now ?</h1>
+<p>OK, you should file an Issue. Use the approach below to get the fastest response from the support team:</p>
+<ol>
+  <li>Copy the following text:
+<pre>
+  Bug report
+  Operating System:
+  MultiBit Version:
+  Steps to replicate the problem:
+</pre>
+  </li>
+  <li>Re-visit the <a href="https://github.com/jim618/multibit/issues" target="_blank">MultiBit Issue reporting center</a></li>
+  <li>Click on the "New Issue" button.</li>
+  <li>Paste the template text and fill it in for your computer. The more detail you can give the quicker we can address the problem. Screenshots are often very useful.</li>
+</ol>
+
+<hr/>
+<h1 id="how-to-install">How to install</h1>
 <h2><b>Windows</b> - How to install MultiBit</h2>
 <p>Download the <a href="https://multibit.org/releases/multibit-downloadVersion/multibit-downloadVersion-windows-setup.exe">Windows installer</a>.</p>
 <p>To run the installer, double click it and follow the instructions.</p>
@@ -25,17 +73,22 @@
 <p>Download the <a href="https://multibit.org/releases/multibit-downloadVersion/multibit-downloadVersion-linux.jar">Linux / Unix installer</a>.</p>
 <p>Open a terminal window and make the installer executable with:</p>
 <pre>chmod +x multibit-downloadVersion-linux.jar</pre>
-<p>Run the installer with:</p><pre>java -jar multibit-downloadVersion-linux.jar</pre>
+<p>Run the installer with:</p>
+<pre>java -jar multibit-downloadVersion-linux.jar</pre>
 <p>Follow the instructions in the installer.</p>
 <p>After installation, you will have a shortcut to start MultiBit in your "Applications | Other" menu.</p>
 
 <h3>Common gotchas</h3>
-<p>If you get an error like <code>"No command 'java' found"</code> or the installer window does not appear you probably need to install an up-to-date version of Java. See the section 'How to install Java on Linux' below.</p>
-<p>If you see an error <code>"***.desktop (No such file or directory)"</code> this is a glitch in installing the MultiBit shortcuts.  If you run the installer again with the same settings it normally fixes it.</p>
+<p>If you get an error like
+  <code>"No command 'java' found"</code> or the installer window does not appear you probably need to install an up-to-date version of Java. See the section 'How to install Java on Linux' below.
+</p>
+<p>If you see an error
+  <code>"***.desktop (No such file or directory)"</code> this is a glitch in installing the MultiBit shortcuts. If you run the installer again with the same settings it normally fixes it.
+</p>
 <p>If no MultiBit shortcut is created, you can run MultiBit manually as follows:</p>
 <ol>
-    <li>open a terminal window and 'cd' to your installation directory</li>
-    <li>type <code>java -jar multibit-exe.jar</code></li>
+  <li>open a terminal window and 'cd' to your installation directory</li>
+  <li>type <code>java -jar multibit-exe.jar</code></li>
 </ol>
 
 <h3>How to install Java on Linux</h3>
@@ -47,3 +100,13 @@
 
 <p>For <b>RedHat / CentOS</b> the installation command is:</p>
 <pre>yum install java</pre>
+
+<hr/>
+
+<h1 id="all-help">Help contents for all versions</h1>
+<p>You can access the MultiBit help as follows:</p>
+<ul>
+  <li><a href="/en/help/v0.5/help_contents.html" title="Online help for MultiBit 0.5.x">MultiBit version 0.5.x</a></li>
+  <li><small><a href="/en/help/v0.4/help_contents.html" title="Online help for MultiBit 0.4.x (no longer supported)">MultiBit version 0.4.x (no longer supported)</a></small></li>
+</ul>
+<hr/>
