@@ -1,19 +1,12 @@
-<h2>Troubleshooting</h2>
-<p>You can often diagnose a problem with MultiBit by looking at the Messages window by selecting the 'View | <img width="16" height="16" title="Messages" alt="Messages" src="/images/en/v0_5/comment.png"/>&nbsp;Messages'
-menu option.</p>
-<p>For a more detailed description of what has happened with MultiBit there are two log files to look at. These are in
-  the 'log' directory in your user data directory. The two files are:</p>
-<ul>
-  <li>multibit_console.log - this contains messages from the code that accesses the bitcoin network.
-  <li>multibit_debug.log - this contains messages from the MultiBit software itself.
-</ul>
 <h2>Where MultiBit stores your data</h2>
-<p>MultiBit stores user specific data such as logs and the default multibit.wallet in a "user data
-  directory". This directory can be worked out as follows:</p>
+<p>MultiBit stores user specific data such as logs and the default multibit.wallet in a 'user data
+  directory'. This directory can be worked out as follows:</p>
 
-<p>1) See if there is a multibit.properties in MultiBit's current working directory. If there is, use this directory as
+<p>1) In any recent version of MultiBit, immediately after starting MultiBit the 'user data directory' is written at the very top of the 'Messages' tab. It will say something like:</p>
+<ul><li><p>The user data directory is "/Users/jim/Library/Application Support/MultiBit".</p></li></ul>
+<p>2) Otherwise see if there is a multibit.properties in MultiBit's current working directory. If there is, use this directory as
   the user data directory. This is for backwards compatibility and for running everything from a USB drive.</p>
-<p>2) Otherwise set the user data directory as follows:</p>
+<p>3) Otherwise work out the user data directory as follows:</p>
 <ul>
   <li><p>PC</p>
     <p><code>
@@ -38,3 +31,11 @@ menu option.</p>
       <"user.home" system property>/MultiBit&nbsp;&nbsp;&nbsp;&nbsp;e.g. /Users/jim/MultiBit
     </code></p>
 </ul>
+<br/>
+
+<h2>Troubleshooting</h2>
+
+<p>You can often diagnose a problem with MultiBit by looking at the Messages window by selecting the 'View | <img width="16" height="16" title="Messages" alt="Messages" src="/images/en/v0_5/comment.png"/>&nbsp;Messages'
+menu option.</p>
+<p>For a more detailed description of what has happened with MultiBit there is a log file to look at. This is stored in
+  the 'log' directory in your user data directory and is called 'multibit.log'.</p>
