@@ -25,7 +25,7 @@
       <td><a
         href="https://multibit.org/releases/multibit-${downloadVersion}/multibit-${downloadVersion}.dmg">Mac
         OS X installer</a>
-        <small>~7.4MB</small>
+        <small>~7.5MB</small>
         <a
           href="https://multibit.org/releases/multibit-${downloadVersion}/multibit-${downloadVersion}.dmg.asc">
           <small>Signature</small>
