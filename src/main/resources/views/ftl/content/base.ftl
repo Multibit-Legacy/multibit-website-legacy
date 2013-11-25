@@ -17,6 +17,6 @@
 
 <#-- Uncomment when ready to present -->
 <#assign alertClass = "info">
-<#assign alertText = "UK Bitcoiners: <a href='http://www.meetup.com/London-bitcoin-meetup/events/150048852/' target='_blank'>BitcoinExpo London 2013</a> is on Saturday 30th November.">
+<#assign alertText = "UK Bitcoiners: <a href='http://www.meetup.com/London-bitcoin-meetup/events/150048852/' target='_blank'>BitcoinExpo London 2013</a> is on Saturday 30th November. Free entry.">
 
 <#-- -->
