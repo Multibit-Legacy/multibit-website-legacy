@@ -10,13 +10,16 @@ import org.multibit.site.views.PublicFreemarkerView;
 
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Size;
-import javax.ws.rs.*;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 /**
  * <p>Resource to provide the following to application:</p>
@@ -99,23 +102,36 @@ public class PublicPageResource extends BaseResource {
   @CacheControl(noCache = true)
   public Response viewAdvert() {
 
+    ExecutorService service = Executors.newSingleThreadExecutor();
+
+    Future<Response> response = service.submit(new Callable<Response>() {
+
+      @Override
+      public Response call() throws Exception {
+        try {
+          byte[] advert = new AdvertLoader().loadAndClean();
+
+          // Seems OK so serve it
+          return Response
+            .ok(advert)
+            .type(MediaType.TEXT_HTML)
+            .build();
+
+        } catch (Throwable e) {
+          // Any problem gets the fail safe response
+          return failSafeResponse();
+        }
+      }
+    });
+
     try {
-      byte[] advert = new AdvertLoader().loadAndClean();
-
-      // Seems OK so serve it
-      return Response
-        .ok(advert)
-        .type(MediaType.TEXT_HTML)
-        .build();
-
-    } catch (WebApplicationException e) {
-
-      // Problem detected so redirect to failsafe
-      // This will cause a 307 to be recorded in the server logs triggering an action by administrators
-      return Response
-        .temporaryRedirect(URI.create(FAILSAFE))
-        .type(MediaType.TEXT_HTML)
-        .build();
+      return response.get(10, TimeUnit.SECONDS);
+    } catch (InterruptedException e) {
+      return failSafeResponse();
+    } catch (ExecutionException e) {
+      return failSafeResponse();
+    } catch (TimeoutException e) {
+      return failSafeResponse();
     }
 
   }
@@ -138,6 +154,7 @@ public class PublicPageResource extends BaseResource {
   @GET
   @Path("index.html")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
+  @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
   public PublicFreemarkerView<BaseModel> getHomePage() {
 
     return getDefaultHomePage();
@@ -152,6 +169,7 @@ public class PublicPageResource extends BaseResource {
   @GET
   @Path("{page}.html")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
+  @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
   public PublicFreemarkerView<BaseModel> getDefaultPage(
     @PathParam("page") String page
   ) {
@@ -169,6 +187,7 @@ public class PublicPageResource extends BaseResource {
   @GET
   @Path("{lang}")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
+  @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
   public PublicFreemarkerView<BaseModel> getLanguageSpecificDefaultHomePage(
     @Size(min = 3, max = 3) @PathParam("lang") String lang
   ) {
@@ -187,6 +206,7 @@ public class PublicPageResource extends BaseResource {
   @GET
   @Path("{lang}/{page}.html")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
+  @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
   public PublicFreemarkerView<BaseModel> getLanguageSpecificPage(
     @Size(min = 3, max = 3) @PathParam("lang") String lang,
     @PathParam("page") String page
@@ -210,6 +230,7 @@ public class PublicPageResource extends BaseResource {
   @GET
   @Path("blog/{year}/{month}/{day}/{page}.html")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
+  @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
   public PublicFreemarkerView<BaseModel> getDefaultBlogPage(
     @Digits(integer = 2, fraction = 0) @PathParam("year") String year,
     @Digits(integer = 2, fraction = 0) @PathParam("month") String month,
@@ -235,6 +256,7 @@ public class PublicPageResource extends BaseResource {
   @GET
   @Path("/{lang}/blog/{year}/{month}/{day}/{page}.html")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
+  @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
   public PublicFreemarkerView<BaseModel> getLanguageSpecificBlogPage(
     @Size(min = 3, max = 3) @PathParam("lang") String lang,
     @Digits(integer = 2, fraction = 0) @PathParam("year") String year,
@@ -259,6 +281,7 @@ public class PublicPageResource extends BaseResource {
   @GET
   @Path("help")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
+  @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
   public PublicFreemarkerView<BaseModel> getDefaultHelpPage() {
 
     // Java6 uses StringBuilder to optimise this
@@ -280,6 +303,7 @@ public class PublicPageResource extends BaseResource {
   @GET
   @Path("{lang}/help")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
+  @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
   public PublicFreemarkerView<BaseModel> getDefaultLanguageSpecificHelpPage(
     @Size(min = 3, max = 3) @PathParam("lang") String lang
   ) {
@@ -305,6 +329,7 @@ public class PublicPageResource extends BaseResource {
   @GET
   @Path("{lang}/help/{version}")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
+  @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
   public PublicFreemarkerView<BaseModel> getDefaultLanguageVersionSpecificHelpPage(
     @Size(min = 3, max = 3) @PathParam("lang") String lang,
     @PathParam("version") String version
@@ -330,6 +355,7 @@ public class PublicPageResource extends BaseResource {
   @GET
   @Path("{lang}/help/{version}/{pathParam: (?).*}")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
+  @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
   public PublicFreemarkerView<BaseModel> getLanguageVersionSpecificHelpPage(
     @Size(min = 3, max = 3) @PathParam("lang") String lang,
     @PathParam("version") String version,
@@ -342,6 +368,18 @@ public class PublicPageResource extends BaseResource {
     BaseModel model = new BaseModel(resourcePath);
     return new PublicFreemarkerView<BaseModel>("content/help.ftl", model);
 
+  }
+
+  /**
+   * <p>Provide the fail safe response</p>
+   *
+   * @return A 307 to be recorded in the server logs triggering an action by administrators
+   */
+  private Response failSafeResponse() {
+    return Response
+      .temporaryRedirect(URI.create(FAILSAFE))
+      .type(MediaType.TEXT_HTML)
+      .build();
   }
 
 }

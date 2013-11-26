@@ -50,6 +50,7 @@
     </tr>
   </table>
   <p><a href="/en/help.html#how-to-install">How to install</a></p>
+  <p><a href="/en/help/v0.5/help_gettingStarted.html">Getting started</a></p>
   <h1>Verify</h1>
   <p>Installers are signed with the PGP key <a href="http://pgp.mit.edu:11371/pks/lookup?search=0x23F7FB7B">0x23F7FB7B</a>
     (a subkey of <a href="http://pgp.mit.edu:11371/pks/lookup?search=0x79F7C572">0x79F7C572</a>)</p>
