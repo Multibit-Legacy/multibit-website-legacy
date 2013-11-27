@@ -3,7 +3,7 @@
   has a number of private keys (one for each address). You can back up your private keys for a MultiBit wallet into a
   text file called a 'private key export file'. You can password protect this text file to prevent other people reading
   this data.</p>
-<p>To export the private keys in a wallet, do the following:</p>
+<h3>How to export the private keys in a wallet</h3>
 <ol>
   <li>In the '<img width="16" height="16" title="Wallets" alt="Wallets" src="/images/en/v0_5/yourWallets.png"/>&nbsp;Wallets'
     side panel choose the wallet you want to export the private keys for.
@@ -14,7 +14,7 @@
     Private Keys' screen appears.
   </li>
   <li>By default, the private keys file is called the same as your wallet file, only with an extension 'key' rather than
-    wallet. You can see this in the following screenshot:</p><p><img  width="617" height="479"
+    wallet. You can see this in the following screenshot:</p><p><img width="617" height="479"
                                                                      title="Export private keys"
                                                                      alt="Export private keys"
                                                                      src="/images/en/v0_5/exportPrivateKeys.png"/></li>
@@ -37,3 +37,11 @@
     the file match the keys in the wallet. A verification message is given if this is successful.
   </li>
 </ol>
+
+<h3>Export file format</h3>
+<p>The MultiBit wiki provides <a href="https://github.com/jim618/multibit/wiki/Export%20and%20limited%20import%20of%20private%20keys">detailed technical information about the file format</a>.</p>
+<p>If you are intending to store exported keys for a very long time and are concerned about code existing to open them far in the future then we recommend the following:</p>
+<ul>
+  <li>Make a copy of the MultiBit source code (fork on GitHub)</li>
+  <li>Decompile a binary of the MultiBit JAR (standard tools exist for this)</li>
+</ul>
