@@ -1,8 +1,9 @@
 <h1>Problem ?</h1>
 <ul>
   <li><a href="#quick-fixes">Quick fixes</a></li>
-  <li><a href="#how-to-install">How to install</a></li>
+  <li><a href="/en/help/v0.5/help_installing.html">How to install</a></li>
   <li><a href="/en/help/v0.5/help_gettingStarted.html">Getting started</a></li>
+  <li><a href="/en/help/v0.5/help_upgrading.html">How to upgrade from a previous version</a></li>
   <li><a href="#all-help">Release-specific help</a></li>
 </ul>
 
@@ -12,11 +13,10 @@
 
 <p>Here are some quick fixes to common issues:</p>
 <ul>
-  <li><a href="/en/help/v0.5/help_resetBlockchain.html">Transactions are missing</a></li>
   <li><a href="/en/help/v0.5/help_support_missingWallets.html">Lost wallet</a></li>
   <li><a href="/en/help/v0.5/help_lostOrForgottenPassword.html">Lost or forgotten password</a></li>
-  <li><a href="/en/help/v0.5/help_support_sentBitcoinToMultibitButTheyNeverArrived.html">Receiving doesn't work</a></li>
-  <li><a href="/en/help/v0.5/help_support_sentBitcoinFromMultibitButTheyAreStuck.html">Sending doesn't work</a></li>
+  <li><a href="/en/help/v0.5/help_support_sentBitcoinToMultibitButTheyNeverArrived.html">I sent bitcoin <strong>to</strong> MultiBit but they never arrived</a></li>
+  <li><a href="/en/help/v0.5/help_support_sentBitcoinFromMultibitButTheyAreStuck.html">I send bitcoin <strong>from</strong> MultiBit but they are stuck</a></li>
   <li><a href="/en/help/v0.5/help_support_errorCodes.html">I'm seeing an error code</a></li>
 </ul>
 <h1>None of those helped. What now ?</h1>
@@ -51,58 +51,8 @@
   </li>
   <li>Re-visit the <a href="https://github.com/jim618/multibit/issues" target="_blank">MultiBit Issue reporting center</a></li>
   <li>Click on the "New Issue" button.</li>
-  <li>Paste the template text and fill it in for your computer. The more detail you can give the quicker we can address the problem. Screenshots are often very useful.</li>
+  <li>Paste the template text and <strong>fill it in for your computer</strong>. The more detail you can give the quicker we can address the problem. Screenshots are often very useful.</li>
 </ol>
-
-<hr/>
-<h1 id="how-to-install">How to install</h1>
-<h2><b>Windows</b> - How to install MultiBit</h2>
-<p>Download the <a href="https://multibit.org/releases/multibit-downloadVersion/multibit-downloadVersion-windows-setup.exe">Windows installer</a>.</p>
-<p>To run the installer, double click it and follow the instructions.</p>
-<p>Once installed, you can start MultiBit with the 'MultiBit' shortcut in your 'All Programs | MultiBit' menu or with your desktop 'MultiBit' shortcut.</p>
-<p>You should now read <a href="/en/help/v0.5/help_gettingStarted.html">the Getting Started</a> guide.</p>
-<hr/>
-
-<h2><b>Mac</b> - How to install MultiBit</h2>
-<p>Download the <a href="https://multibit.org/releases/multibit-downloadVersion/multibit-downloadVersion.dmg">Mac OS X installer</a>.</p>
-<p>After you have downloaded the disk image file, double click it and a folder window opens.</p>
-<p>In the open folder window, drag the <code>MultiBit.app</code> application to the Applications link. MultiBit will then be copied to your Applications folder</p>
-<p>You can then open MultiBit by double clicking on this app in your Applications folder.</p>
-<p>You should now read <a href="/en/help/v0.5/help_gettingStarted.html">the Getting Started</a> guide.</p>
-<hr/>
-
-<h2><b>Linux</b> - How to install MultiBit</h2>
-<p>Download the <a href="https://multibit.org/releases/multibit-downloadVersion/multibit-downloadVersion-linux.jar">Linux / Unix installer</a>.</p>
-<p>Open a terminal window and make the installer executable with:</p>
-<pre>chmod +x multibit-downloadVersion-linux.jar</pre>
-<p>Run the installer with:</p>
-<pre>java -jar multibit-downloadVersion-linux.jar</pre>
-<p>Follow the instructions in the installer.</p>
-<p>After installation, you will have a shortcut to start MultiBit in your "Applications | Other" menu.</p>
-<p>You should now read <a href="/en/help/v0.5/help_gettingStarted.html">the Getting Started</a> guide.</p>
-
-<h3>Common gotchas</h3>
-<p>If you get an error like
-  <code>"No command 'java' found"</code> or the installer window does not appear you probably need to install an up-to-date version of Java. See the section 'How to install Java on Linux' below.
-</p>
-<p>If you see an error
-  <code>"***.desktop (No such file or directory)"</code> this is a glitch in installing the MultiBit shortcuts. If you run the installer again with the same settings it normally fixes it.
-</p>
-<p>If no MultiBit shortcut is created, you can run MultiBit manually as follows:</p>
-<ol>
-  <li>open a terminal window and 'cd' to your installation directory</li>
-  <li>type <code>java -jar multibit-exe.jar</code></li>
-</ol>
-
-<h3>How to install Java on Linux</h3>
-<p>MultiBit recommends Java 7. To install Java on a recent copy of <strong>Ubuntu</strong> open a terminal window and type:</p>
-<pre>sudo apt-get install openjdk-7-jdk</pre>
-<p>You will be prompted for your system password and then it will install the required packages.</p>
-<p>If you are running an older version of Ubuntu (e.g. something like Ubuntu 10.4 LTS) you will have to use the following:</p>
-<pre>sudo apt-get install openjdk-<b>6</b>-jdk</pre>
-
-<p>For <b>RedHat / CentOS</b> the installation command is:</p>
-<pre>yum install java</pre>
 
 <hr/>
 
