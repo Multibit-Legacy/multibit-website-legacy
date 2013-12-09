@@ -1,0 +1,35 @@
+<h2>Balance is incorrect</h2>
+<p>Sometimes when sending bitcoin the transaction fails to be relayed causing an incorrect balance to be shown. The relay failure usually appears
+  when the "seen by 1 peer" message never increases. Normally peers relay quickly so if no peers have acknowledged in more than a minute then there
+  is very likely to be a problem with the transaction.</p>
+
+<p><strong>It is extremely unlikely that you have lost your bitcoins</strong>.</p>
+
+<p>If the peers are relaying and the balance is still not correct then you should <a href="help_availableToSpend.html">review the "Spendable" article</a>.
+  You may just need to wait for a few minutes for a confirmation to take place.</p>
+
+<h3>It's not relaying - what should I do ?</h3>
+<p>Since the problem is most likely caused by an earlier transaction (which could be any transaction you have ever received) it is necessary to perform a full
+  reset of the blockchain going right back to <strong>the day before your very first transaction</strong>.</p>
+<ol>
+  <li>Open MultiBit and make sure the wallet you are interested in is selected in the '<img width="16" height="16"
+                                                                                            title="Wallets"
+                                                                                            alt="Wallets"
+                                                                                            src="/images/en/v0_4/yourWallets.png"/>&nbsp;Wallets'
+    side panel.
+  </li>
+  <li>Use the transactions tab and identify the date of the earliest transaction you ever made in MultiBit then <strong>take off an extra day</strong>.</li>
+
+  <li>Go the 'Tools | <img width="16" height="16" title="Reset" alt="Reset" src="/images/en/v0_4/resetTransactions.png"/>&nbsp;Reset
+    Blockchain and Transactions' menu option.
+  </li>
+  <li>Select the "Specific reset date" option and enter the date from the previous step.</li>
+  <li>MultiBit will start reloading the blockchain. This can take some time. Just let it run and download the
+    blockchain. When it is finished, your wallet should reflect what is on the blockchain.
+  </li>
+</ol>
+
+<h3>Even that didn't fix it - now what ?</h3>
+<p>As a last resort you can attempt to "sweep the balance". This involves exporting your private keys (password protected) into another wallet application
+  and then using that application to send the entire balance back to MultiBit using a fresh wallet.</p>
+<p>You can find more information in the <a href="help_movingAWallet.html">Moving a Wallet</a> article, starting with the "Moving from MultiBit to Blockchain.info" section.</p>
