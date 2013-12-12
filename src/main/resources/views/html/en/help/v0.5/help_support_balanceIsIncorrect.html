@@ -29,7 +29,13 @@
   </li>
 </ol>
 
-<h3>Even that didn't fix it - now what ?</h3>
-<p>As a last resort you can attempt to "sweep the balance". This involves exporting your private keys into another wallet application
+<h3>Even that didn't fix it - anything else ?</h3>
+<p>As a last resort you can attempt to "sweep the balance". This involves exporting your private keys <strong>without password protection</strong> into another wallet application
   and then using that application to send the entire balance back to MultiBit using a fresh wallet.</p>
-<p>You can find more information in the <a href="help_movingAWallet.html">Moving a Wallet</a> article, starting with the "Moving from MultiBit to Blockchain.info" section.</p>
+<p>We consider this a last resort because <strong>private keys stored without password protection should be considered compromised</strong>. Malicious code on your computer could
+steal or copy the keys and spend the balance.</p>
+<p>If you decide that this must be done then make sure that you don't use the private keys (and their associated addresses) again. We don't advise deleting them, just mark them as
+"DO NOT USE" in the wallet with the problem. That way if someone does happen to send bitcoin to them you still have the private keys to sweep the funds into a safe wallet.</p>
+
+<h3>OK I understand the risks - what do I do ?</h3>
+<p>Follow the instructions in the <a href="help_movingAWallet.html">Moving a Wallet</a> article, starting with the "Moving from MultiBit to Blockchain.info" section.</p>
