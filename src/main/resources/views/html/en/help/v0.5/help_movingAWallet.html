@@ -19,16 +19,28 @@
 <h3>Moving from MultiBit to Blockchain.info</h3>
 <p>The general outline is that you export the private keys in your wallet from MultiBit and then import them into Blockchain.info.</p>
 <ol>
-  <li><p>Follow the instructions in the <a href="help_exportingPrivateKeys.html">Exporting private keys</a> help page, making sure you export your private keys <b>without</b> password protection. (This is in step 5 on the 'Exporting private keys' page).</p></li>
-  <li><p>Open the private key export file in a text editor and select all the contents. Copy to your paste buffer.</p></li>
-  <li><p>Go into your blockchain.info wallet and select the 'Import/ Export' page.</p></li>
-  <li><p>Select the 'Import Wallet' option on the left hand side. You screen will look like this:</p>
-      <p><img width="804" height="609" title="blockchain.info import wallet" alt="blockchain.info import wallet"
-              src="/images/en/v0_5/blockchainImportWallet.png"/></p></li>
-  <li><p>Paste your private key export from MultiBit in the text area and click the 'Import Wallet' button.</p></li>
-  <li><p>Blockchain.info will then import your private keys and find the relevant transactions.</p></li>
-  <li><p>Tidy up: make sure you secure delete any intermediate files that contain your unencrypted private keys. This is to prevent someone reading them later and stealing your bitcoins.</p></li>
+  <li>Follow the instructions in the <a href="help_exportingPrivateKeys.html">Exporting private keys</a> help page, making sure you export your private keys <b>without</b> password protection. (This is in step 5 on the 'Exporting private keys' page).</p></li>
+  <li>Open the private key export file in a text editor and select all the contents. Copy to your paste buffer.</li>
+  <li>Go into your blockchain.info wallet and select the 'Import/ Export' page.</li>
+  <li>Select the 'Import Wallet' option on the left hand side. You screen will look like this:<br/>
+      <img width="804" height="609" title="blockchain.info import wallet" alt="blockchain.info import wallet"
+              src="/images/en/v0_5/blockchainImportWallet.png"/>
+  </li>
+  <li>Paste your private key export from MultiBit in the text area and click the 'Import Wallet' button.</li>
+  <li>Enter your Blockchain.info password when prompted</li>
+  <li>Blockchain.info will import your private keys and find the relevant transactions.</li>
+  <li>Tidy up: make sure you secure delete any intermediate files that contain your unencrypted private keys. This is to prevent someone reading them later and stealing your bitcoins.</p></li>
 </ol>
+
+<h3>Blockchain.info is giving me an "Error decrypting" message</h3>
+<p>There is a known issue with some wallets failing to import correctly. If you only have a few keys to import, you can do them individually using the "Import" option on the Blockchain.info site:</p>
+<ul>
+ <li>Use a fresh Notepad and copy the .key file from MultiBit</li>
+  <li>Remove all lines starting with #</li>
+  <li>Remove all dates at the end of the private keys (the keys begin with L or K) and leave no trailing spaces</li>
+  <li>Select the Import option (first item) in Blockchain.info</li>
+  <li>Enter each key into the text box and sweep it into Blockchain.info</li>
+</ul>
 
 <h3>Moving from Blockchain.info to MultiBit</h3>
 <p>The general outline is that you use the latest encrypted wallet backup blockchain.info sends you and import it into MultiBit.</p>
