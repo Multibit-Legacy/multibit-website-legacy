@@ -1,6 +1,6 @@
 <#-- @ftlvariable name="model" type="org.multibit.site.views.PublicFreemarkerView" -->
 <#-- Template providing a single point of configuration for common variables -->
-<#assign downloadVersion = "0.5.15">
+<#assign downloadVersion = "0.5.16">
 
 <#-- Documentation for alerts
 
@@ -15,10 +15,9 @@
 
 -->
 
-<#-- Uncomment when ready to present
+<#-- Uncomment when ready to present -->
 <#assign alertClass = "info">
-<#assign alertText = "UK Bitcoiners: <a href='http://www.meetup.com/London-bitcoin-meetup/events/150048852/' target='_blank'>BitcoinExpo London 2013</a> is on Saturday 30th November. Free entry.">
--->
+<#assign alertText = "New version - v0.5.16 - improved reliability of sending and receiving transactions.">
 
 
 <#-- -->
