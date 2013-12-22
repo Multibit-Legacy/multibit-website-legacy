@@ -1,40 +1,46 @@
 <h2>Troubleshooting</h2>
-<p>You can often diagnose a problem with MultiBit by looking at the Messages window by selecting the 'View | <img width="16" height="16" title="Messages" alt="Messages" src="/images/en/v0_5/comment.png"/>&nbsp;Messages'
-menu option.</p>
-<p>For a more detailed description of what has happened with MultiBit there are two log files to look at. These are in
-  the 'log' directory in your user data directory. The two files are:</p>
-<ul>
-  <li>multibit_console.log - this contains messages from the code that accesses the bitcoin network.
-  <li>multibit_debug.log - this contains messages from the MultiBit software itself.
-</ul>
-<h2>Where MultiBit stores your data</h2>
-<p>MultiBit stores user specific data such as logs and the default multibit.wallet in a "user data
-  directory". This directory can be worked out as follows:</p>
 
-<p>1) See if there is a multibit.properties in MultiBit's current working directory. If there is, use this directory as
-  the user data directory. This is for backwards compatibility and for running everything from a USB drive.</p>
-<p>2) Otherwise set the user data directory as follows:</p>
+<p>You can often diagnose a problem with MultiBit by looking at the Messages window by selecting the 'View |
+  <img width="16" height="16" title="Messages" alt="Messages" src="/images/en/v0_5/comment.png"/>&nbsp;Messages'
+  menu option.</p>
+<p>For a more detailed description of what has happened with MultiBit there is a log file to look at. This is stored in
+  the 'log' directory in your user data directory and is called 'multibit.log'. Use a simple text viewer like Notepad or TextEdit to read it.</p>
+
+<h2>Where MultiBit stores your data</h2>
+<p>MultiBit stores user specific data such as logs and the default multibit.wallet in a "user data directory". This directory can be worked out as follows:</p>
+<ol>
+  <li>Check the the very top of the "Messages" tab for a message like "The user data directory is '/Users/jim/Library/Application Support/MultiBit'"</li>
+  <li>Navigate to the MultiBit installation directory and check for a file called "multibit.properties". If there is, use this directory as
+    the user data directory. This is for backwards compatibility and for running everything from a USB drive.
+  </li>
+  <li>If none of these reveal the answer, use the technical approach given below.</li>
+</ol>
+
+<h2>Technical approach</h2>
+<p>This section is for technical users proficient with accessing environment variables. These are enclosed in "[]" such that [APPDATA] references the APPDATA environment variable.</p>
+<h3>Windows</h3>
+<p>Try one of the following locations, remembering that you may need to enable hidden directories</p>
 <ul>
-  <li><p>PC</p>
-    <p><code>
-      <"APPDATA" environment setting>/MultiBit&nbsp;&nbsp;&nbsp;&nbsp;e.g.
-    </code></p><p><code>
-      (Recent Windows) C:/Documents and Settings/jim/AppData/Roaming/MultiBit
-    </code></p><p><code>
-      or 
-    </code></p><p><code>
-      (old Windows) C:/Documents and Settings/jim/Application Data/MultiBit
-    </code></p>
-  </li>
-  <li><p>Mac</p>
-    <p><code>
-      <"user.home" system property>/Library/Application Support/MultiBit&nbsp;&nbsp;&nbsp;&nbsp;e.g.
-    </code></p><p><code>
-      /Users/jim/Library/Application Support/MultiBit
-    </code></p>
-  </li>
-  <li><p>Linux</p>
-    <p><code>
-      <"user.home" system property>/MultiBit&nbsp;&nbsp;&nbsp;&nbsp;e.g. /Users/jim/MultiBit
-    </code></p>
+  <li><code>[APPDATA]/MultiBit</code>. Windows (7,8): <code>C:\Documents and Settings\jim\AppData\Roaming\MultiBit</code>
+  <li><code>[APPDATA]/MultiBit</code>. Windows (XP and below): <code>C:\Documents and Settings\jim\Application Data\MultiBit</code>
+</ul>
+
+<h3>Mac</h3>
+<p>In OSX the user Library directory is normally hidden. Follow the <a href="http://osxdaily.com/2009/02/25/show-hidden-files-in-os-x/">show hidden files</a> instructions to reveal it in the Finder.</p>
+<ul>
+  <li><code>[user.home]/Library/Application Support/MultiBit</code>. OSX 10.5+: <code>/Users/jim/Library/Application Support/MultiBit</code>
+</ul>
+
+<h3>Linux</h3>
+<p>In Linux the user home directory is normally visible.</p>
+<ul>
+  <li><code>[user.home]/MultiBit</code>. Ubuntu/Debian: <code>/home/jim/MultiBit</code>
+</ul>
+
+<h2>Related articles</h2>
+<p>Here are some related articles</p>
+<ul>
+  <li><a href="help_fileDescriptions.html">File descriptions</a></li>
+  <li><a href="help_walletBackups.html">Wallet backup and restore</a></li>
+  <li><a href="help_movingAWallet.html">Moving a wallet</a></li>
 </ul>

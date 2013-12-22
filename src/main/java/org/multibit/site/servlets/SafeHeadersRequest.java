@@ -18,6 +18,7 @@ import java.util.List;
  * <ul>
  * <li><code>en_US</code> from Opera</li>
  * <li><code>en-419</code> from browsers with Spanish (Latin-America) set</li>
+ * <li><code>chrome://global/locale/intl.properties</code> from browsers with Quick Locale Switcher installed</li>
  * </ul>
  */
 public class SafeHeadersRequest extends HttpServletRequestWrapper {
@@ -59,7 +60,12 @@ public class SafeHeadersRequest extends HttpServletRequestWrapper {
   private String modifyAcceptLanguage(String name, String value) {
 
     if (value != null && HttpHeaders.ACCEPT_LANGUAGE.equalsIgnoreCase(name)) {
-      return value.replace("es-419", "es").replace("_", "-");
+
+      return value
+        .replace("es-419", "es") // Fix es-419 issue
+        .replace("_", "-") // Fix en_US issue
+        .replace("chrome://global/locale/intl.properties","en") // Fix Firefox QLS issue
+        ;
     }
 
     // Default to returning whatever was passed in

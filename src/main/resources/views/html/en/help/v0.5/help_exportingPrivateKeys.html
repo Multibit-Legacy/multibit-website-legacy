@@ -3,7 +3,7 @@
   has a number of private keys (one for each address). You can back up your private keys for a MultiBit wallet into a
   text file called a 'private key export file'. You can password protect this text file to prevent other people reading
   this data.</p>
-<p>To export the private keys in a wallet, do the following:</p>
+<h3>How to export the private keys in a wallet</h3>
 <ol>
   <li>In the '<img width="16" height="16" title="Wallets" alt="Wallets" src="/images/en/v0_5/yourWallets.png"/>&nbsp;Wallets'
     side panel choose the wallet you want to export the private keys for.
@@ -14,7 +14,7 @@
     Private Keys' screen appears.
   </li>
   <li>By default, the private keys file is called the same as your wallet file, only with an extension 'key' rather than
-    wallet. You can see this in the following screenshot:</p><p><img  width="617" height="479"
+    wallet. You can see this in the following screenshot:</p><p><img width="617" height="479"
                                                                      title="Export private keys"
                                                                      alt="Export private keys"
                                                                      src="/images/en/v0_5/exportPrivateKeys.png"/></li>
@@ -37,3 +37,42 @@
     the file match the keys in the wallet. A verification message is given if this is successful.
   </li>
 </ol>
+
+<h3>Export file format (no password)</h3>
+<p>Below is an example of a private key export file containing demonstration private keys. You typically use Notepad or similar when working with this file.</p>
+<pre>
+# KEEP YOUR PRIVATE KEYS SAFE !
+# Anyone who can read this file can spend your bitcoin.
+#
+# Format:
+#   &lt;Base58 encoded private key>[&lt;whitespace>[&lt;key createdAt&gt;]]
+#
+#   The Base58 encoded private keys are the same format as
+#   produced by the Satoshi client/ sipa dumpprivkey utility.
+#
+#   Key createdAt is in UTC format as specified by ISO 8601
+#   e.g: 2011-12-31T16:42:00Z . The century, 'T' and 'Z' are mandatory
+#
+<strong>Labc123abc123abc123abc123abc123abc123abc123abc123abc</strong> 2013-01-01T12:00:00Z
+<strong>Kdef456def456def456def456def456def456def456def456def</strong> 2013-01-01T12:00:00Z
+# End of private keys
+</pre>
+<p>The key (shown in bold) begins with either "L" or "K". The date is there to allow import software to know when the key was created to avoid looking further back in history
+than is necessary. Don't change the date to be more recent as doing so will very likely cause a failed import and an incorrect balance.</p>
+
+<h3>Export file format (password protected)</h3>
+<p>Below is an example of a password protected private key export file containing demonstration private keys. You typically use MultiBit or OpenSSL when working with this file.</p>
+<pre>
+U2FsdGVkX1+YqTr9vabcfVlfKlCVTjR7kEg/xD4rEUB1tBBQm6chWSOSIUyJKK/9yjxFSHkge/xI
+UCFq3MfFKqUbRnYcmOhNLBabcGRrbvsx3AawNvzp1sdHFXNvH3I+INMtYaoTjMEJVkQM8KnaUwZI
+GE5PYKtMHncv+2pYA1/3Lg09hPA++jbvwL7L+NH6ZcljvYZxseu+3M45YNK1CJ/4xQJ+Yvo6OVqJ
+nL7xIR0=
+</pre>
+<p>The content is encrypted (AES256, password-based key derivation) so can only be decrypted by special software and the provision of a password.</p>
+<p>The MultiBit wiki provides
+  <a href="https://github.com/jim618/multibit/wiki/Export%20and%20limited%20import%20of%20private%20keys">detailed technical information about the file format</a>.</p>
+<p>If you are intending to store exported keys for a very long time and are concerned about code existing to open them far in the future then we recommend the following:</p>
+<ul>
+  <li>Make a copy of the MultiBit source code (fork on GitHub)</li>
+  <li>Decompile a binary of the MultiBit JAR (standard tools exist for this)</li>
+</ul>

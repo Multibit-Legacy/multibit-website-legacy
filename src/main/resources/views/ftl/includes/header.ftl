@@ -10,10 +10,8 @@
     <li><a href="/index.html">Home</a></li>
     <li><a href="/features.html">Features</a></li>
     <li><a href="/faq.html">FAQ</a></li>
-    <li><a href="/support.html">Support</a></li>
     <li><a href="/community.html">Community</a></li>
     <li><a href="/blog.html">Blog</a></li>
-    <li><a href="/releases.html">Releases</a></li>
-    <li><a href="/help.html">Help</a></li>
+    <li id="menuHelp"><a href="/help.html">Help</a></li>
   </ul>
 </div>

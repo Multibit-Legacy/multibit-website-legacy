@@ -1,0 +1,43 @@
+<h2>Balance is incorrect</h2>
+<p>Sometimes when sending bitcoin the transaction fails to be relayed causing an incorrect balance to be shown. The relay failure usually appears
+  when the "seen by 1 peer" message never increases. Normally peers relay quickly so if no peers have acknowledged in more than a minute then there
+  is very likely to be a problem with the transaction.</p>
+
+<p><strong>It is extremely unlikely that you have lost your bitcoins</strong>.</p>
+
+<p>If the peers are relaying and the balance is still not correct then you should <a href="help_availableToSpend.html">review the "Spendable" article</a>.
+  You may just need to wait for a few minutes for a confirmation to take place.</p>
+
+<h3>It's not relaying - what should I do ?</h3>
+<p>Since the problem is most likely caused by an earlier transaction (which could be any transaction you have ever received) it is necessary to perform a full
+  reset of the blockchain for your wallet.</p>
+<ol>
+  <li>Open MultiBit and make sure the wallet you are interested in is selected in the '<img width="16" height="16"
+                                                                                            title="Wallets"
+                                                                                            alt="Wallets"
+                                                                                            src="/images/en/v0_4/yourWallets.png"/>&nbsp;Wallets'
+    side panel.
+  </li>
+<li>Go the 'Tools | <img width="16" height="16" title="Reset" alt="Reset" src="/images/en/v0_4/resetTransactions.png"/>&nbsp;Reset
+    Blockchain and Transactions' menu option.
+  </li>
+  <li>Click the 'Reset blockchain and transactions' button.</li>
+  <li>MultiBit will start reloading the blockchain. This can take some time. Just let it run and download the
+    blockchain. When it is finished, your wallet should reflect what is on the blockchain.
+  </li>
+</ol>
+
+<h3>Nope, still incorrect. What now ?</h3>
+<p>Some people have found that it takes several resets before a failed transaction is fully purged. It is worth attempting at least 3 times to clear it.</p>
+<p>The MultiBit development team are working to fix this behaviour.</p>
+
+<h3>I've tried and tried and I need to clear this</h3>
+<p>As a last resort you can attempt to "sweep the balance". This involves exporting your private keys <strong>without password protection</strong> into another wallet application
+  and then using that application to send the entire balance back to MultiBit using a fresh wallet.</p>
+<p>We consider this a last resort because <strong>private keys stored without password protection should be considered compromised</strong>. Malicious code on your computer could
+steal or copy the keys and spend the balance.</p>
+<p>If you decide that this must be done then make sure that you don't use the private keys (and their associated addresses) again. We don't advise deleting them, just mark them as
+"DO NOT USE" in the wallet with the problem. That way if someone does happen to send bitcoin to them you still have the private keys to sweep the funds into a safe wallet.</p>
+
+<h3>OK I understand the risks - what do I do ?</h3>
+<p>Follow the instructions in the <a href="help_movingAWallet.html">Moving a Wallet</a> article, starting with the "Moving from MultiBit to Blockchain.info" section.</p>

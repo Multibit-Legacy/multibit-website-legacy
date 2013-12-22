@@ -1,21 +1,48 @@
-<h2>Moving a wallet between MultiBit and blockchain.info</h2>
-<p>Normally it is best to leave your Bitcoin wallet in the application that made it.</p>
-<p>Sometimes however you need to move your wallet from one application to another. This may be because the blockchain.info site is down for maintenance or you would prefer to use another Bitcoin wallet rather than MultiBit. This help file describes how to move a MultiBit wallet to the blockchain.info site and vice versa.</p>
-<h3>How to move a MultiBit wallet to blockchain.info.</h3>
-<p>The general outline is that you export the private keys in your wallet from MultiBit and then import them into blockchain.info.</p>
+<h2>Moving a wallet to different directory</h2>
+<p>To move a wallet means copying several files at once. If you are not confident with using a computer like this then you should ask a trusted friend to help you.</p>
+<p>You may want to move a wallet to a different location, such as on to a USB drive or a different directory. The files you will need to move will be named according
+  to the original name you gave the wallet (not the description showing in the sidebar). For example, let's say you
+  wanted to move the original wallet, "multibit.wallet", created during installation:</p>
 <ol>
-  <li><p>Follow the instructions in the <a href="help_exportingPrivateKeys.html">Exporting private keys</a> help page, making sure you export your private keys <b>without</b> password protection. (This is in step 5 on the 'Exporting private keys' page).</p></li>
-  <li><p>Open the private key export file in a text editor and select all the contents. Copy to your paste buffer.</p></li>
-  <li><p>Go into your blockchain.info wallet and select the 'Import/ Export' page.</p></li>
-  <li><p>Select the 'Import Wallet' option on the left hand side. You screen will look like this:</p>
-      <p><img width="804" height="609" title="blockchain.info import wallet" alt="blockchain.info import wallet"
-              src="/images/en/v0_5/blockchainImportWallet.png"/></p></li>
-  <li><p>Paste your private key export from MultiBit in the text area and click the 'Import Wallet' button.</p></li>
-  <li><p>Blockchain.info will then import your private keys and find the relevant transactions.</p></li>
-  <li><p>Tidy up: make sure you secure delete any intermediate files that contain your unencrypted private keys. This is to prevent someone reading them later and stealing your bitcoins.</p></li>
+  <li>Ensure you have the destination available (e.g. USB stick plugged in, network drive mapped etc)</li>
+  <li>Locate "multibit.wallet" - the location appears in the title bar when you select the wallet in MultiBit</li>
+  <li>Multi-select "multibit.wallet" (file) and "multibit.info" (file) and "multibit-data" (directory)</li>
+  <li>Use your computer's Copy operation (not Move) to place the files into the destination</li>
+  <li>Verify that they are OK by using MultiBit's File | Open operation to access the wallet</li>
+  <li>Close the original wallet to avoid confusion. Closing will not delete the wallet.</li>
 </ol>
-<br/>
-<h3>How to move a blockchain.info wallet to MultiBit.</h3>
+
+<h2>Moving a wallet between MultiBit and Blockchain.info</h2>
+<p>Normally it is best to leave your Bitcoin wallet in the application that made it.</p>
+<p>Sometimes however you need to move your wallet from one application to another. This may be because the Blockchain.info site is down for maintenance or you would prefer to use another Bitcoin wallet rather than MultiBit. This help file describes how to move a MultiBit wallet to the blockchain.info site and vice versa.</p>
+
+<h3>Moving from MultiBit to Blockchain.info</h3>
+<p>The general outline is that you export the private keys in your wallet from MultiBit and then import them into Blockchain.info.</p>
+<ol>
+  <li>Follow the instructions in the <a href="help_exportingPrivateKeys.html">Exporting private keys</a> help page, making sure you export your private keys <b>without</b> password protection. (This is in step 5 on the 'Exporting private keys' page).</p></li>
+  <li>Open the private key export file in a text editor and select all the contents. Copy to your paste buffer.</li>
+  <li>Go into your blockchain.info wallet and select the 'Import/ Export' page.</li>
+  <li>Select the 'Import Wallet' option on the left hand side. You screen will look like this:<br/>
+      <img width="804" height="609" title="blockchain.info import wallet" alt="blockchain.info import wallet"
+              src="/images/en/v0_5/blockchainImportWallet.png"/>
+  </li>
+  <li>Paste your private key export from MultiBit in the text area and click the 'Import Wallet' button.</li>
+  <li>Enter your Blockchain.info password when prompted</li>
+  <li>Blockchain.info will import your private keys and find the relevant transactions.</li>
+  <li>Tidy up: make sure you secure delete any intermediate files that contain your unencrypted private keys. This is to prevent someone reading them later and stealing your bitcoins.</p></li>
+</ol>
+
+<h3>Blockchain.info is giving me an "Error decrypting" message</h3>
+<p>There is a known issue with some wallets failing to import correctly. If you only have a few keys to import, you can do them individually using the "Import" option on the Blockchain.info site:</p>
+<ul>
+ <li>Use a fresh Notepad and copy the .key file from MultiBit</li>
+  <li>Remove all lines starting with #</li>
+  <li>Remove all dates at the end of the private keys (the keys begin with L or K) and leave no trailing spaces</li>
+  <li>Select the Import option (first item) in Blockchain.info</li>
+  <li>Enter each key into the text box and sweep it into Blockchain.info</li>
+</ul>
+
+<h3>Moving from Blockchain.info to MultiBit</h3>
 <p>The general outline is that you use the latest encrypted wallet backup blockchain.info sends you and import it into MultiBit.</p>
 <ol>
    <li><p>You use the encrypted wallet backup that blockchain.info emails you as the source of your wallet's private keys. Save the wallet backup attachment to a directory somewhere. If you have your backups sent to dropbox retrieve them and save your latest backup  somewhere on your disk.</p></li>

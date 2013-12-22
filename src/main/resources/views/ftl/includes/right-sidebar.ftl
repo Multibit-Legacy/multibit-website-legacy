@@ -25,7 +25,7 @@
       <td><a
         href="https://multibit.org/releases/multibit-${downloadVersion}/multibit-${downloadVersion}.dmg">Mac
         OS X installer</a>
-        <small>~7.4MB</small>
+        <small>~7.5MB</small>
         <a
           href="https://multibit.org/releases/multibit-${downloadVersion}/multibit-${downloadVersion}.dmg.asc">
           <small>Signature</small>
@@ -49,23 +49,20 @@
         </a></td>
     </tr>
   </table>
-  <p><a href="/en/help.html">How to install</a></p>
+  <p><a href="/en/help/v0.5/help_installing.html">How to install</a></p>
+  <p><a href="/en/help/v0.5/help_gettingStarted.html">Getting started</a></p>
   <h1>Verify</h1>
   <p>Installers are signed with the PGP key <a href="http://pgp.mit.edu:11371/pks/lookup?search=0x23F7FB7B">0x23F7FB7B</a>
     (a subkey of <a href="http://pgp.mit.edu:11371/pks/lookup?search=0x79F7C572">0x79F7C572</a>)</p>
   <p><a href="/blog/2013/07/24/how-to-check-signatures.html">Learn more about signatures</a></p>
   <p><a href="/releases.html">Previous releases</a></p>
-
 </div>
 
 <div id="infobox">
-  <h1>Follow</h1>
-
-  <p>For the latest news you should follow <a href="https://twitter.com/MultiBitOrg">@MultiBitOrg</a> on Twitter</p>
 
   <h1>Donate</h1>
 
-  <p>Your donation helps keep MultiBit running. Thanks.</p>
+  <p>Your donation helps keep MultiBit updated. Thank you.</p>
 
   <p>
     <a
@@ -74,7 +71,12 @@
       <small>1AhN6rPdrMuKBGFDKR1k9A8SCLYaNgXhty</small>
     </a> <br>
 
+  <h1>Follow</h1>
+
+  <p>For the latest news you should follow <a href="https://twitter.com/MultiBitOrg" target="_blank">@MultiBitOrg</a> on Twitter</p>
+
   <h1>Contribute</h1>
 
-  <p>To get involved you should <a href="https://github.com/jim618/multibit">fork the source code on GitHub</a>.</p>
+  <p>To get involved you should <a href="https://github.com/jim618/multibit" target="_blank">fork the source code on GitHub</a>.</p>
+
 </div>
