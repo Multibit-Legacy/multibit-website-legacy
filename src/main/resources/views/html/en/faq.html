@@ -89,7 +89,7 @@
 
 <h3>So the Bitcoin community owns it ?</h3>
 
-<p>In a sense. It is not owned or controlled by any organisation. There is no government or corporation backing it.</p>
+<p>In a sense. It is not owned or controlled by any organisation. There is no government or corporation backing it. It is not patented or copyrighted.</p>
 <p>Regardless, it now being used by millions of people all over the world to conduct transactions. These people are the Bitcoin community. By reading this you are part of that community.</p>
 
 <h3>If no-one owns it, how can I trust it ?</h3>
@@ -206,7 +206,7 @@
 
 <p>Yes. Once a miner has secured a block, they send it to other nodes in the Bitcoin network for verification. It is trivial to verify that the target has been achieved and that all the transactions have not been tampered with.</p>
 
-<p>This proves that the original miner put some effort into securing the block and qualifies for their reward. This reward is called the coinbase and it is the only way
+<p>This proves that the original miner put some effort into securing the block and qualifies for their reward. This reward is called the "coinbase" and it is the only way
   that new bitcoins can be minted.</p>
 
 <p>The other miners then continue gathering transactions and grouping them into a new block which they will later link to this one.</p>
@@ -223,17 +223,20 @@
 
 <h3>Seriously ? The last bitcoin will be mined in 2140 - that's the 22nd century!</h3>
 
-<p>Yes - it's not exact but near enough. Bitcoin restricts the number of blocks that can be mined to about 1 every 10 minutes using the difficulty. This results in a controlled release of new bitcoins via the coinbase.</p>
+<p>Yes - it's not exact but near enough. Bitcoin restricts the number of blocks that can be mined to about 1 every 10 minutes using the difficulty.
+  This results in a controlled release of new bitcoins via the coinbase.</p>
+
+<p>Once all the bitcoins have been mined then the coinbase will only contain transaction fees.</p>
 
 <h3>How many have been mined so far ?</h3>
 
-<p>About 11 million.</p>
+<p>Over 12 million.</p>
 
 <h3>Wait... that doesn't add up</h3>
 
 <p>Bitcoins are released in steadily decreasing numbers. Every 210,000 blocks the number of new bitcoins released by mining a block is halved.</p>
 
-<p>From January 2009 to November 2012 it was 50 bitcoins per block, now it is 25. In September 2016 it will be 12.5 and so on.</p>
+<p>From January 2009 to November 2012 it was 50 bitcoins per block, now it is 25. Around September 2016 it will be 12.5 and so on.</p>
 
 <h3>But 21 million isn't enough for any decent sized economy...</h3>
 
@@ -279,9 +282,14 @@
 
 <h3>Way back you mentioned a fee. Does the merchant pay this ?</h3>
 
-<p>No. Bitcoin is free to receive, and incurs a small fee to send. This is called the "miner's fee" and it is used to pay for the securing and eternal storage of your transaction across millions of computers on the Internet.</p>
+<p>No. Bitcoin is free to receive, and incurs a small transaction fee to send. This is sometimes called the "miner's fee" and it is used to pay for the securing and eternal storage of your transaction across
+  millions of computers on the Internet.</p>
 
-<p>Every so often when the price of a bitcoin has stabilised for a reasonably period of time the fee is adjusted. Currently it is 0.1mXBT which is less than 0.1 USD.</p>
+<h3>How does the miner get the transaction fees ?</h3>
+
+<p>The fees are added to the coinbase which is paid to an address owned by the miner. They are not redeemable for 120 blocks.</p>
+
+<p>Every so often when the price of a bitcoin has stabilised for a reasonable duration (many months) the fee is adjusted by collective agreement. Currently it is 0.1mXBT which is less than 0.10 USD.</p>
 
 <h3>I'm really not technical - what is 0.1mXBT ?</h3>
 
@@ -382,9 +390,11 @@
 
 <h3>Gathering up unspent outputs ?</h3>
 
-<p>Yes. Imagine you have received 1.5 bitcoins each from 10 different sources giving a total of 15 XBT spread over 10 outputs.</p>
+<p>Yes. Imagine you have received 1.5 bitcoins (1.5&nbsp;XBT) each from 10 different sources giving a total of 15&nbsp;XBT spread over 10 outputs.</p>
 
-<p>You need to pay a bill of 4 XBT so you gather up 3 outputs totalling 4.5 XBT. You create 2 outputs: the first for 4 XBT to cover the bill; the second for 0.5 XBT which you send to an address that you own as "change".</p>
+<p>You need to pay a bill of 4&nbsp;XBT so you gather up 3 outputs totalling 4.5&nbsp;XBT. You create 2 outputs: the first for 4&nbsp;XBT to cover the bill; the second for 0.5&nbsp;XBT which you send to an address that you own as "change".</p>
+
+<p>If you want to pay a transaction fee this is represented by reducing the change to, say, 0.4999&nbsp;XBT. Now the total of all the outputs is less than all the inputs by 0.1&nbsp;mXBT. That imbalance is the transaction fee which can only be claimed by a successful miner.</p>
 
 <p>It is the job of your Bitcoin wallet software to handle all this.</p>
 
@@ -443,7 +453,7 @@
 <p>The price will be less because the purchasing power of Bitcoin is expected to increase over time because the money supply is limited.</p>
 
 <p>Put simply, if the Bitcoin economy grows more quickly than the number of bitcoins produced then the price of a bitcoin goes up. There are complexities to do with
-the velocity of money (a bitcoins can be re-used within an hour typically) but that's the gist of it.</p>
+  the velocity of money (a bitcoins can be re-used within an hour typically) but that's the gist of it.</p>
 
 <h3>So I'm better off hoarding my bitcoins ?</h3>
 
@@ -510,7 +520,7 @@ the velocity of money (a bitcoins can be re-used within an hour typically) but t
 <p>Only in broad terms because every exchange is different. Overall it goes like this:</p>
 
 <ol>
-  <li>Locate a reputable exchange that deals with your local currency (such as Mt Gox, Bitstamp, Coinbase, BTC-e)</li>
+  <li>Locate a reputable exchange that deals with your local currency (such as Bitstamp, Coinbase, BTC-e)</li>
   <li>Go through their registration process. This will normally require you sending official documentation to avoid money laundering activities.</li>
   <li>Instruct your bank to wire funds in your local currency to the exchange. They will provide you with all the necessary account information.</li>
   <li>Once the funds have cleared the traditional banking system you can use your funds to purchase bitcoins.</li>
