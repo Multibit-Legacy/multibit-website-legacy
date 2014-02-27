@@ -1,6 +1,7 @@
 package org.multibit.site.utils;
 
 import org.joda.time.DateTime;
+import org.joda.time.DateTimeZone;
 
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 
@@ -9,14 +10,14 @@ import javax.xml.bind.annotation.adapters.XmlAdapter;
  * <ul>
  * <li>JAXB un/marshalling</li>
  * </ul>
- *
+ * <p>All supplied times are in ISO 8509 UTC</p>
  * @since 3.0.0
  *  
  */
 public class DateTimeJaxbAdapter extends XmlAdapter<String, DateTime> {
 
   public DateTime unmarshal(String v) throws Exception {
-    return new DateTime(v);
+    return new DateTime(v).withZone(DateTimeZone.UTC);
   }
 
   public String marshal(DateTime v) throws Exception {

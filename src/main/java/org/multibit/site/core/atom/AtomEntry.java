@@ -35,7 +35,7 @@ public class AtomEntry {
   /**
    * <p>Indicates the mandatory fields for manual creation</p>
    *
-   * @param id      A URN containing a UUID (e.g. urn:uuid:abcd-efgh etc)
+   * @param id      A URN containing a UUID (e.g. "urn:uuid:abcd-efgh" etc)
    * @param title   The entry title (e.g. "MultiBit blog")
    * @param updated When the entry was last updated
    * @param link    The link to the main article

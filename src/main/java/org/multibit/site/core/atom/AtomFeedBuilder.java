@@ -6,8 +6,6 @@ import com.google.common.io.Resources;
 import com.google.common.reflect.ClassPath;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
-import org.joda.time.format.DateTimeFormatter;
-import org.joda.time.format.ISODateTimeFormat;
 import org.multibit.site.SiteService;
 import org.multibit.site.caches.InMemoryArtifactCache;
 import org.multibit.site.resources.PublicPageResource;
@@ -19,10 +17,7 @@ import javax.xml.transform.Result;
 import javax.xml.transform.Source;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.StringWriter;
+import java.io.*;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.Map;
@@ -43,15 +38,15 @@ public class AtomFeedBuilder {
   /**
    * Build a simple Atom XML
    *
+   * @param host The host name (e.g. "https://multibit.org")
    * @throws java.io.IOException If something goes wrong
    */
-  public void build() throws IOException, URISyntaxException {
+  public static AtomFeed build(String host) throws IOException, URISyntaxException {
 
     log.info("Building atom.xml...");
 
-    // Attempt to infer the blog creation dates from their timestamps
-    DateTimeFormatter fmt = ISODateTimeFormat.date();
-    String now = fmt.print(new DateTime().withZone(DateTimeZone.UTC));
+    // Keep track of the current time for updates
+    DateTime now = new DateTime(DateTimeZone.UTC);
 
     final AtomFeed atomFeed;
 
@@ -64,7 +59,8 @@ public class AtomFeedBuilder {
     } else {
       // New feed so create it
       UUID feedId = UUID.randomUUID();
-      atomFeed = new AtomFeed("urn:uuid:" + feedId.toString(), "MultiBit Blog", fmt.parseDateTime(now));
+      atomFeed = new AtomFeed("urn:uuid:" + feedId.toString(), "MultiBit Blog", now);
+      atomFeed.setAuthor("MultiBit Team");
     }
 
     // Create a map of existing entries based on their URLs (not ids)
@@ -85,25 +81,35 @@ public class AtomFeedBuilder {
 
         // Get the file timestamp
         File entryFile = new File(resourceUrl.toURI());
-        DateTime updated = new DateTime(entryFile.lastModified());
+        DateTime updated = new DateTime(entryFile.lastModified()).withZone(DateTimeZone.UTC);
 
         // Get the content
         String entryHtml = Resources.toString(resourceUrl, Charsets.UTF_8);
 
-        // Build the basis for the Atom entry
-        String entryHref = resourceInfo.getResourceName().replace("views/html/", "http://localhost:8080/");
+        // Extract a suitable URL converting the dates from yyyy-mm-dd to yyyy/mm/dd to match existing paths
+        String entryHref = resourceInfo.getResourceName().replace("views/html/", host+"/");
+        entryHref=entryHref.replaceFirst("-","/").replaceFirst("-","/").replaceFirst("-","/");
+
+        // Extract the title
         int hStartPos = entryHtml.indexOf("<h");
         int hEndPos = entryHtml.indexOf("</h");
-        String title = entryHtml.substring(hStartPos + 4, hEndPos);
+        String title = entryHtml.substring(hStartPos, hEndPos+5);
 
+        // Extract the summary
         int pStartPos = entryHtml.indexOf("<p");
         int pEndPos = entryHtml.indexOf("</p");
-        String summary = entryHtml.substring(pStartPos + 3, pEndPos);
+        String summary = entryHtml.substring(pStartPos, pEndPos+3)
+          + "<br/>"
+          + "<p>Read the rest on the <a target='_blank' href='"
+          + entryHref
+          + "'>MultiBit blog</a>.</p>";
 
         // Check if the URL has been used before
         final AtomEntry atomEntry;
         boolean changed = false;
         if (existingEntries.containsKey(entryHref)) {
+
+          log.debug("Existing: '{}'",entryHref);
 
           // Existing entry
           atomEntry = existingEntries.get(entryHref);
@@ -113,10 +119,10 @@ public class AtomFeedBuilder {
             changed = true;
           } else if (!atomEntry.getSummary().equals(summary)) {
             changed = true;
-          } else if (!atomEntry.getUpdated().equals(updated)) {
-            changed = true;
           }
         } else {
+
+          log.debug("New: '{}'",entryHref);
 
           // New entry so use the updated time
           String entryId = "urn:uuid:" + UUID.randomUUID();
@@ -131,11 +137,20 @@ public class AtomFeedBuilder {
         if (changed) {
           atomEntry.setTitle(title);
           atomEntry.setSummary(summary);
-          atomEntry.setUpdated(updated);
+          atomEntry.setUpdated(now);
         }
 
       }
     }
+
+    return atomFeed;
+
+  }
+
+  /**
+   * @param atomFeed The Atom feed
+   */
+  public static void cache(AtomFeed atomFeed) {
 
     // Marshal
     Result result = new StreamResult(new StringWriter()) {
@@ -153,6 +168,25 @@ public class AtomFeedBuilder {
     // Store this artifact for the long term
     InMemoryArtifactCache.INSTANCE.put(InMemoryArtifactCache.ATOM_FEED_KEY, result.toString());
 
-    log.info("Done");
   }
+
+  /**
+   * @param atomFeed The atom feed to write the the local file system under version control
+   */
+  public static void writeToFile(AtomFeed atomFeed) throws IOException {
+
+    // Marshal
+    FileOutputStream fos = null;
+    try {
+      fos = new FileOutputStream("src/main/resources/views/atom.xml");
+      Result result = new StreamResult(fos);
+      JAXB.marshal(atomFeed, result);
+    } finally {
+      if (fos != null) {
+        fos.close();
+      }
+    }
+
+  }
+
 }

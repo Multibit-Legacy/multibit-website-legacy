@@ -13,11 +13,9 @@ import static org.fest.assertions.api.Assertions.assertThat;
 public class AtomFeedBuilderTest {
 
   @Test
-  public void verifyBuildSite() throws JAXBException, IOException, URISyntaxException {
+  public void verifyBuildAndCache() throws JAXBException, IOException, URISyntaxException {
 
-    AtomFeedBuilder testObject = new AtomFeedBuilder();
-
-    testObject.build();
+    AtomFeedBuilder.cache(AtomFeedBuilder.build("http://localhost:8080"));
 
     Optional<String> atomFeedOptional = InMemoryArtifactCache.INSTANCE.getByResourcePath(InMemoryArtifactCache.ATOM_FEED_KEY);
 
