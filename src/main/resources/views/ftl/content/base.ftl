@@ -15,9 +15,11 @@
 
 -->
 
-<#-- Uncomment when ready to present -->
+<#-- Uncomment when ready to present 
 <#assign alertClass = "info">
 <#assign alertText = "New version - v0.5.16 - improved reliability of sending and receiving transactions.">
+
+-->
 
 
 <#-- -->
