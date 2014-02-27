@@ -41,14 +41,14 @@
             <version>1.2.1</version>
             <executions>
               <execution>
-                <phase>generate-resources</phase>
+                <phase>test-compile</phase>
                 <goals>
                   <goal>java</goal>
                 </goals>
               </execution>
             </executions>
             <configuration>
-              <mainClass>BuildWebSupport</mainClass>
+              <mainClass>org.multibit.site.utils.WebSupportUtils</mainClass>
             </configuration>
           </plugin>
 

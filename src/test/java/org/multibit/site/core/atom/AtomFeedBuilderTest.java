@@ -24,7 +24,7 @@ public class AtomFeedBuilderTest {
     String atomFeed = atomFeedOptional.get();
 
     // Simple check for correct content
-    assertThat(atomFeed).contains("http://localhost:8080/en/blog/2013-04-23-java-is-secure.html");
+    assertThat(atomFeed).contains("http://localhost:8080/en/blog/2013/04/23/java-is-secure.html");
 
   }
 

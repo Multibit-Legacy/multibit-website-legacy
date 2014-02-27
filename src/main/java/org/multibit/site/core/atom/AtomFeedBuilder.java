@@ -163,8 +163,6 @@ public class AtomFeedBuilder {
     };
     JAXB.marshal(atomFeed, result);
 
-    System.out.println(result.toString());
-
     // Store this artifact for the long term
     InMemoryArtifactCache.INSTANCE.put(InMemoryArtifactCache.ATOM_FEED_KEY, result.toString());
 
