@@ -39,6 +39,7 @@ public class AtomFeedBuilder {
    * Build a simple Atom XML
    *
    * @param host The host name (e.g. "https://multibit.org")
+   *
    * @throws java.io.IOException If something goes wrong
    */
   public static AtomFeed build(String host) throws IOException, URISyntaxException {
@@ -87,18 +88,18 @@ public class AtomFeedBuilder {
         String entryHtml = Resources.toString(resourceUrl, Charsets.UTF_8);
 
         // Extract a suitable URL converting the dates from yyyy-mm-dd to yyyy/mm/dd to match existing paths
-        String entryHref = resourceInfo.getResourceName().replace("views/html/", host+"/");
-        entryHref=entryHref.replaceFirst("-","/").replaceFirst("-","/").replaceFirst("-","/");
+        String entryHref = resourceInfo.getResourceName().replace("views/html/", host + "/");
+        entryHref = entryHref.replaceFirst("-", "/").replaceFirst("-", "/").replaceFirst("-", "/");
 
         // Extract the title
         int hStartPos = entryHtml.indexOf("<h");
         int hEndPos = entryHtml.indexOf("</h");
-        String title = entryHtml.substring(hStartPos, hEndPos+5);
+        String title = entryHtml.substring(hStartPos, hEndPos + 5);
 
         // Extract the summary
         int pStartPos = entryHtml.indexOf("<p");
         int pEndPos = entryHtml.indexOf("</p");
-        String summary = entryHtml.substring(pStartPos, pEndPos+3)
+        String summary = entryHtml.substring(pStartPos, pEndPos + 3)
           + "<br/>"
           + "<p>Read the rest on the <a target='_blank' href='"
           + entryHref
@@ -109,20 +110,19 @@ public class AtomFeedBuilder {
         boolean changed = false;
         if (existingEntries.containsKey(entryHref)) {
 
-          log.debug("Existing: '{}'",entryHref);
+          log.debug("Existing: '{}'", entryHref);
 
           // Existing entry
           atomEntry = existingEntries.get(entryHref);
 
-          // Check for changes in title, summary etc
+          // Check for changes in title only to avoid formatting issues between machines etc
           if (!atomEntry.getTitle().equals(title)) {
-            changed = true;
-          } else if (!atomEntry.getSummary().equals(summary)) {
+            log.info("Updating: '{}'", entryHref);
             changed = true;
           }
         } else {
 
-          log.debug("New: '{}'",entryHref);
+          log.debug("New: '{}'", entryHref);
 
           // New entry so use the updated time
           String entryId = "urn:uuid:" + UUID.randomUUID();
