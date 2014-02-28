@@ -26,9 +26,41 @@ import java.util.concurrent.*;
  * <ul>
  * <li>Provision of all static HTML pages</li>
  * </ul>
+ * <p>The main structure is as follows:</p>
+ * <pre>
+ *
+ * GET     /v0.4 (org.multibit.site.resources.PublicClientVersion0_4Resource)
+ * GET     /v0.4/helpImages/{image} (org.multibit.site.resources.PublicClientVersion0_4Resource)
+ * GET     /v0.4/{lang}/{pathParam: (?).*} (org.multibit.site.resources.PublicClientVersion0_4Resource)
+ * GET     /v0.4/{page}.html (org.multibit.site.resources.PublicClientVersion0_4Resource)
+ * GET     /v0.5 (org.multibit.site.resources.PublicClientVersion0_5Resource)
+ * GET     /v0.5/helpImages/{image} (org.multibit.site.resources.PublicClientVersion0_5Resource)
+ * GET     /v0.5/{lang}/{pathParam: (?).*} (org.multibit.site.resources.PublicClientVersion0_5Resource)
+ * GET     /v0.5/{page}.html (org.multibit.site.resources.PublicClientVersion0_5Resource)
+ * GET     /error/401 (org.multibit.site.resources.PublicErrorResource)
+ * GET     /error/404 (org.multibit.site.resources.PublicErrorResource)
+ * GET     /error/500 (org.multibit.site.resources.PublicErrorResource)
+ * GET     / (org.multibit.site.resources.PublicPageResource)
+ * GET     /ad (org.multibit.site.resources.PublicPageResource)
+ * GET     /{lang}/blog/{year}/{month}/{day}/{page}.html (org.multibit.site.resources.PublicPageResource)
+ * GET     /atom.xml (org.multibit.site.resources.PublicPageResource)
+ * GET     /blog/{year}/{month}/{day}/{page}.html (org.multibit.site.resources.PublicPageResource)
+ * GET     /favicon.ico (org.multibit.site.resources.PublicPageResource)
+ * GET     /help (org.multibit.site.resources.PublicPageResource)
+ * GET     /index.html (org.multibit.site.resources.PublicPageResource)
+ * GET     /robots.txt (org.multibit.site.resources.PublicPageResource)
+ * GET     /sitemap.xml (org.multibit.site.resources.PublicPageResource)
+ * GET     /{lang} (org.multibit.site.resources.PublicPageResource)
+ * GET     /{lang}/help (org.multibit.site.resources.PublicPageResource)
+ * GET     /{lang}/help/{version} (org.multibit.site.resources.PublicPageResource)
+ * GET     /{lang}/help/{version}/{pathParam: (?).*} (org.multibit.site.resources.PublicPageResource)
+ * GET     /{lang}/{page}.html (org.multibit.site.resources.PublicPageResource)
+ * GET     /{page}.html (org.multibit.site.resources.PublicPageResource)
+ *
+ * </pre>
  *
  * @since 3.0.0
- *         
+ *  
  */
 @Path("/")
 public class PublicPageResource extends BaseResource {
@@ -110,7 +142,7 @@ public class PublicPageResource extends BaseResource {
 
     return Response
       .ok(atomFeed.get())
-      .type(MediaType.TEXT_XML)
+      .type(MediaType.APPLICATION_ATOM_XML)
       .build();
   }
 
