@@ -14,9 +14,7 @@ public class SiteMapBuilderTest {
   @Test
   public void verifyBuildSite() throws JAXBException, IOException {
 
-    SiteMapBuilder testObject = new SiteMapBuilder();
-
-    testObject.build();
+    SiteMapBuilder.cache(SiteMapBuilder.build("http://localhost:8080"));
 
     Optional<String> siteMapOptional = InMemoryArtifactCache.INSTANCE.getByResourcePath(InMemoryArtifactCache.SITE_MAP_KEY);
 

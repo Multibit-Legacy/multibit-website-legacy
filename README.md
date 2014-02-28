@@ -12,7 +12,7 @@ From a technical point of view this project uses
 
 * Java - Primary language of the app
 * [Maven](http://maven.apache.org/) - Build system
-* [Dropwizard](http://dropwizard.codahale.com) - Self-contained web server
+* [Dropwizard](http://dropwizard.io) - Self-contained web server
 * HTML5 and CSS - All pages are simple HTML5
 * [LESS](http://lesscss.org/) - LESS is compiled into CSS to provide succinct stylesheets
 
@@ -129,6 +129,15 @@ The following are for administrators of the site and don't affect most people.
 #### Alerts
 
 Use `src/main/resources/views/ftl/base.ftl` to change static elements like the alert and download version.
+
+#### Building the web support files (`site.xml` and `atom.xml`)
+
+Before pushing to GitHub the `site.xml` and `atom.xml` files need to be regenerated. This is done by executing
+the normal Maven build but adding a profile parameter as well:
+
+```
+mvn -DupdateWebSupport=true clean verify
+```
 
 ### Where does the ASCII art come from?
 

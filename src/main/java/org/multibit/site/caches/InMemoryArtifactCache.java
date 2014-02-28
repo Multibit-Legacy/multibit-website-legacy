@@ -20,20 +20,19 @@ public enum InMemoryArtifactCache {
   INSTANCE;
 
   public static final String SITE_MAP_KEY = "/views/sitemap.xml";
+  public static final String ATOM_FEED_KEY = "/views/atom.xml";
 
   // A lot of threads will hit this cache
   private volatile Cache<String, String> pageCache;
 
-  private boolean noCaching=false;
-
   InMemoryArtifactCache() {
-    reset(false);
+    reset();
   }
 
   /**
    * Resets the cache and allows the expiry time to be set (perhaps for testing)
    */
-  public InMemoryArtifactCache reset(boolean noCaching) {
+  public InMemoryArtifactCache reset() {
 
     // Build the cache
     if (pageCache != null) {
@@ -45,8 +44,6 @@ public enum InMemoryArtifactCache {
       .newBuilder()
       .maximumSize(100)
       .build();
-
-    this.noCaching = noCaching;
 
     return INSTANCE;
   }

@@ -14,6 +14,7 @@ import org.slf4j.LoggerFactory;
 import javax.xml.bind.JAXB;
 import javax.xml.transform.Result;
 import javax.xml.transform.stream.StreamResult;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.StringWriter;
 
@@ -26,15 +27,15 @@ public class SiteMapBuilder {
 
   private static final Logger log = LoggerFactory.getLogger(SiteService.class);
 
-  public SiteMapBuilder() {
-  }
-
   /**
    * Build a simple site map XML
    *
+   * @param host The host (e.g. "https://multibit.org")
+   *
    * @throws java.io.IOException If something goes wrong
    */
-  public void build() throws IOException {
+  public static SiteMap build(String host) throws IOException {
+
     log.info("Building sitemap.xml...");
 
     // Assume that all resources have been created fresh at start up (no other way to tell)
@@ -47,7 +48,7 @@ public class SiteMapBuilder {
     for (ClassPath.ResourceInfo resourceInfo : classpath.getResources()) {
       if (resourceInfo.getResourceName().endsWith(".html")) {
 
-        String loc = resourceInfo.getResourceName().replace("views/html/", "http://localhost:8080/");
+        String loc = resourceInfo.getResourceName().replace("views/html/", host + "/");
         if (loc.startsWith("http")) {
           SiteUrl url = new SiteUrl(loc, now);
           siteMap.getUrlset().add(url);
@@ -55,6 +56,15 @@ public class SiteMapBuilder {
 
       }
     }
+
+    return siteMap;
+
+  }
+
+  /**
+   * @param siteMap The site map to cache
+   */
+  public static void cache(SiteMap siteMap) {
 
     // Marshal
     Result result = new StreamResult(new StringWriter()) {
@@ -70,6 +80,25 @@ public class SiteMapBuilder {
     // Store this artifact for the long term
     InMemoryArtifactCache.INSTANCE.put(InMemoryArtifactCache.SITE_MAP_KEY, result.toString());
 
-    log.info("Done");
   }
+
+  /**
+   * @param siteMap The site map to write the the local file system under version control
+   */
+  public static void writeToFile(SiteMap siteMap) throws IOException {
+
+    // Marshal
+    FileOutputStream fos = null;
+    try {
+      fos = new FileOutputStream("src/main/resources/views/sitemap.xml");
+      Result result = new StreamResult(fos);
+      JAXB.marshal(siteMap, result);
+    } finally {
+      if (fos != null) {
+        fos.close();
+      }
+    }
+
+  }
+
 }

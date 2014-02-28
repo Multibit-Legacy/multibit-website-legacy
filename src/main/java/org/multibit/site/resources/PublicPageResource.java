@@ -94,6 +94,27 @@ public class PublicPageResource extends BaseResource {
   }
 
   /**
+   * @return The /atom.xml file
+   */
+  @GET
+  @Path("atom.xml")
+  @Timed
+  @CacheControl(maxAge = 24, maxAgeUnit = TimeUnit.HOURS)
+  public Response viewAtomFeed() throws IOException {
+
+    // Pull this from the long-lived artifact cache
+    Optional<String> atomFeed = InMemoryArtifactCache.INSTANCE.getByResourcePath(InMemoryArtifactCache.ATOM_FEED_KEY);
+    if (!atomFeed.isPresent()) {
+      throw notFound();
+    }
+
+    return Response
+      .ok(atomFeed.get())
+      .type(MediaType.TEXT_XML)
+      .build();
+  }
+
+  /**
    * @return The advert HTML suitable for inclusion in an iframe
    */
   @GET

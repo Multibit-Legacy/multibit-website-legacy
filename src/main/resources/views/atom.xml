@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>MultiBit Blog</title>
+    <link rel="self" href="https://multibit.org/en/blog.html"/>
+    <id>urn:uuid:d472a60f-ba75-4143-9ae5-2780a7f66cde</id>
+    <author>MultiBit Team</author>
+    <updated>2014-02-27T00:00:00.000Z</updated>
+    <entry>
+        <id>urn:uuid:192197a0-3d3c-4df5-b2e2-7ae040e9c939</id>
+        <title>&lt;h1&gt;The Bitcoin European Conference&lt;/h1&gt;</title>
+        <link rel="self" href="https://multibit.org/en/blog/2011/10/24/prague.html"/>
+        <updated>2014-02-28T10:30:35.536Z</updated>
+        <summary>&lt;p&gt;The Bitcoin European Conference (Nov 25—27) will bring together diverse people
+  from across the spectrum to discuss the state of bitcoin and plot future
+  goals. This 3-day conference covers the cutting-edge of developments and
+  innovation through sessions that encourage interaction and discussion between
+  professionals across the fields of technology, politics, finance and
+  economics.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2011/10/24/prague.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+    </entry>
+    <entry>
+        <id>urn:uuid:434f132b-46ec-41c4-b685-45478ad26a0b</id>
+        <title>&lt;h1&gt;Berlin Hackathon&lt;/h1&gt;</title>
+        <link rel="self" href="https://multibit.org/en/blog/2012/06/27/berlin.html"/>
+        <updated>2014-02-28T10:30:35.536Z</updated>
+        <summary>&lt;p&gt;The
+  &lt;a href=&quot;http://bitcoin-hackathon.com&quot;&gt;Berlin Bitcoin Hackathon&lt;/a&gt;, 13-15 July: hackers will gather in Berlin geekdom for a weekend of intense coding and collaboration. Sunday we party at [room77](http://www.npr.org/2012/06/01/154140277/berlin-restaurant-experiments-with-virtual-currency): the restaurant at the end of capitalism. Participants are coming in from Switzerland, Austria and Finland. The event is free.
+&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2012/06/27/berlin.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+    </entry>
+    <entry>
+        <id>urn:uuid:88b9b8e3-727a-4825-bd9f-441e9b1c7153</id>
+        <title>&lt;h1&gt;London Bitcoin Conference 2012&lt;/h1&gt;</title>
+        <link rel="self" href="https://multibit.org/en/blog/2012/07/16/london.html"/>
+        <updated>2014-02-28T10:30:35.536Z</updated>
+        <summary>&lt;p&gt;The &lt;a href=&quot;http://bitcoin2012.com/&quot;&gt;Bitcoin Conference&lt;/a&gt;, London Sept 15-16. &lt;a href=&quot;https://sites.google.com/a/bitcoin2012.com/homepage/tickets&quot;&gt;Ticket price&lt;/a&gt; is €70 (Bitcoin accepted). We have a prestigious venue in central London with max capacity for 700 people.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2012/07/16/london.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+    </entry>
+    <entry>
+        <id>urn:uuid:9734da1f-2ee6-4c3d-b1a4-70b74eaa8c57</id>
+        <title>&lt;h1&gt;New release of v0.4.21&lt;/h1&gt;</title>
+        <link rel="self" href="https://multibit.org/en/blog/2013/02/24/v0.4.21.html"/>
+        <updated>2014-02-28T10:30:35.536Z</updated>
+        <summary>&lt;p&gt;Binaries for &lt;a href=&quot;https://multibit.org/releases/multibit-0.4.21/&quot;&gt;MultiBit version 0.4.21&lt;/a&gt; are now available.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2013/02/24/v0.4.21.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+    </entry>
+    <entry>
+        <id>urn:uuid:aba49b4f-fd1e-41d6-98e5-0a308fc8683e</id>
+        <title>&lt;h1&gt;New release of v0.4.22&lt;/h1&gt;</title>
+        <link rel="self" href="https://multibit.org/en/blog/2013/03/11/v0.4.22.html"/>
+        <updated>2014-02-28T10:30:35.536Z</updated>
+        <summary>&lt;p&gt;Binaries for &lt;a href=&quot;https://multibit.org/releases/multibit-0.4.22/&quot;&gt;MultiBit version 0.4.22&lt;/a&gt; are now available.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2013/03/11/v0.4.22.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+    </entry>
+    <entry>
+        <id>urn:uuid:ee50e3c4-055a-40bd-9213-1bfda5a884ce</id>
+        <title>&lt;h1&gt;New release of v0.4.23&lt;/h1&gt;</title>
+        <link rel="self" href="https://multibit.org/en/blog/2013/03/19/v0.4.23.html"/>
+        <updated>2014-02-28T10:30:35.536Z</updated>
+        <summary>&lt;p&gt;Binaries for &lt;a href=&quot;https://multibit.org/releases/multibit-0.4.23/&quot;&gt;MultiBit version 0.4.23&lt;/a&gt; are now available.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2013/03/19/v0.4.23.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+    </entry>
+    <entry>
+        <id>urn:uuid:79574605-e7d9-4ee2-861f-637427168aaf</id>
+        <title>&lt;h1&gt;New release of v0.5.9&lt;/h1&gt;</title>
+        <link rel="self" href="https://multibit.org/en/blog/2013/04/22/v0.5.9.html"/>
+        <updated>2014-02-28T10:30:35.536Z</updated>
+        <summary>&lt;p&gt;Binaries for &lt;a href=&quot;https://multibit.org/releases/multibit-0.5.9/&quot;&gt;MultiBit version 0.5.9 (Encrypted wallets)&lt;/a&gt; are now available.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2013/04/22/v0.5.9.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+    </entry>
+    <entry>
+        <id>urn:uuid:ffb4b006-bf30-4c16-b6ef-69958164df7a</id>
+        <title>&lt;h1&gt;Java is secure&lt;/h1&gt;</title>
+        <link rel="self" href="https://multibit.org/en/blog/2013/04/23/java-is-secure.html"/>
+        <updated>2014-02-28T10:30:35.536Z</updated>
+        <summary>&lt;p&gt;A few members of the MultiBit community have asked us for advice regarding the current security status of Java&#xD;
+since there has been a lot of confusion and misinformation out on the Web. Here is what we know and how it relates&#xD;
+to your use of MultiBit.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2013/04/23/java-is-secure.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+    </entry>
+    <entry>
+        <id>urn:uuid:0256cf53-2764-4f7f-ac01-537b7333c548</id>
+        <title>&lt;h1&gt;C.C.E.E.S.H.H&lt;/h1&gt;</title>
+        <link rel="self" href="https://multibit.org/en/blog/2013/04/24/cceeshh.html"/>
+        <updated>2014-02-28T10:30:35.536Z</updated>
+        <summary>&lt;p&gt;In December 2012 I (Jim) created an acronym for the main items of work that I wanted to add to MultiBit. 'CCEESHH' was the acronym, so let's see how far we have progressed:&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2013/04/24/cceeshh.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+    </entry>
+    <entry>
+        <id>urn:uuid:4b708fac-2b94-4682-85c7-dd99db8aa41c</id>
+        <title>&lt;h1&gt;MultiBit downloads for April 2013&lt;/h1&gt;</title>
+        <link rel="self" href="https://multibit.org/en/blog/2013/05/01/multibit-downloads.html"/>
+        <updated>2014-02-28T10:30:35.536Z</updated>
+        <summary>&lt;p&gt;TL;DR There were an estimated &lt;b&gt;73,200+&lt;/b&gt; downloads of MultiBit in April 2013.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2013/05/01/multibit-downloads.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+    </entry>
+    <entry>
+        <id>urn:uuid:6290f56c-2f22-4903-a00e-09e0bbb2743a</id>
+        <title>&lt;h1&gt;How to check digital signatures&lt;/h1&gt;</title>
+        <link rel="self" href="https://multibit.org/en/blog/2013/07/24/how-to-check-signatures.html"/>
+        <updated>2014-02-28T10:30:35.536Z</updated>
+        <summary>&lt;p&gt;In order to combat malware all downloads provided by MultiBit are served over HTTPS and are cryptographically
+  signed. This means that they cannot be altered without the alteration being detected.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2013/07/24/how-to-check-signatures.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+    </entry>
+    <entry>
+        <id>urn:uuid:834fa16f-1c21-45e5-87e6-9ff73dff8a5e</id>
+        <title>&lt;h1&gt;Amsterdam Bitcoin Conference 2013 (MultiBit and Trezor)&lt;/h1&gt;</title>
+        <link rel="self" href="https://multibit.org/en/blog/2013/09/27/amsterdam.html"/>
+        <updated>2014-02-28T10:30:35.536Z</updated>
+        <summary>&lt;p&gt;Over the course of 3 days in September 2013 the MultiBit team attended the European Bitcoin Conference in Amsterdam.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2013/09/27/amsterdam.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+    </entry>
+    <entry>
+        <id>urn:uuid:71be24dc-8800-4f45-ac36-5f4058d3abc9</id>
+        <title>&lt;h1&gt;MultiBit and Denial of Service attacks&lt;/h1&gt;</title>
+        <link rel="self" href="https://multibit.org/en/blog/2014/02/27/dos-attacks.html"/>
+        <updated>2014-02-28T10:30:35.536Z</updated>
+        <summary>&lt;p&gt;Over the past few months we at MultiBit have noticed a few Denial of Service (DoS) attacks taking place against our servers.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2014/02/27/dos-attacks.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+    </entry>
+</feed>
