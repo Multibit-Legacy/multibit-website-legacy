@@ -10,10 +10,10 @@ import javax.xml.bind.annotation.*;
 public class AtomLink {
 
   @XmlAttribute
-  private String href;
+  private String rel;
 
   @XmlAttribute
-  private String rel;
+  private String href;
 
   public AtomLink() {
   }
