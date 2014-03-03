@@ -4,7 +4,7 @@
     <link href="https://multibit.org/en/blog.html" rel="self"/>
     <id>urn:uuid:d472a60f-ba75-4143-9ae5-2780a7f66cde</id>
     <author>MultiBit Team</author>
-    <updated>2014-03-03T13:38:01.068Z</updated>
+    <updated>2014-03-03T13:41:42.246Z</updated>
     <entry>
         <id>urn:uuid:58905fda-a8b9-49de-8e94-ad07c0ac2a04</id>
         <title>&lt;h1&gt;HMRC clarifies tax on UK Bitcoin businesses&lt;/h1&gt;</title>
@@ -19,14 +19,6 @@
         <updated>2014-02-27T12:55:27.000Z</updated>
         <summary>&lt;p&gt;Over the past few months we at MultiBit have noticed a few Denial of Service (DoS) attacks taking place against our servers.&lt;/p&lt;br/&gt;&lt;p&gt;Read the
       rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2014/02/27/dos-attacks.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
-    </entry>
-    <entry>
-        <id>urn:uuid:0256cf53-2764-4f7f-ac01-537b7333c548</id>
-        <title>&lt;h1&gt;C.C.E.E.S.H.H&lt;/h1&gt;</title>
-        <link href="https://multibit.org/en/blog/2013/04/24/cceeshh.html" rel="self"/>
-        <updated>2013-04-24T11:51:56.000Z</updated>
-        <summary>&lt;p&gt;In December 2012 I (Jim) created an acronym for the main items of work that I wanted to add to MultiBit. 'CCEESHH' was the acronym, so let's see how far we
-      have progressed:&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2013/04/24/cceeshh.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
     </entry>
     <entry>
         <id>urn:uuid:834fa16f-1c21-45e5-87e6-9ff73dff8a5e</id>
@@ -52,6 +44,14 @@
         <updated>2013-05-01T11:51:56.000Z</updated>
         <summary>&lt;p&gt;TL;DR There were an estimated &lt;b&gt;73,200+&lt;/b&gt; downloads of MultiBit in April 2013.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a
       target='_blank' href='https://multibit.org/en/blog/2013/05/01/multibit-downloads.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+    </entry>
+    <entry>
+        <id>urn:uuid:0256cf53-2764-4f7f-ac01-537b7333c548</id>
+        <title>&lt;h1&gt;C.C.E.E.S.H.H&lt;/h1&gt;</title>
+        <link href="https://multibit.org/en/blog/2013/04/24/cceeshh.html" rel="self"/>
+        <updated>2013-04-24T11:51:56.000Z</updated>
+        <summary>&lt;p&gt;In December 2012 I (Jim) created an acronym for the main items of work that I wanted to add to MultiBit. 'CCEESHH' was the acronym, so let's see how far we
+      have progressed:&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2013/04/24/cceeshh.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
     </entry>
     <entry>
         <id>urn:uuid:ffb4b006-bf30-4c16-b6ef-69958164df7a</id>
