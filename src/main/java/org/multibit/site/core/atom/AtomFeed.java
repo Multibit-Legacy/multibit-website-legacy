@@ -1,9 +1,11 @@
 package org.multibit.site.core.atom;
 
+import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import org.joda.time.DateTime;
 
 import javax.xml.bind.annotation.*;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -40,7 +42,7 @@ public class AtomFeed {
   private Set<AtomLink> atomLinks = Sets.newLinkedHashSet();
 
   @XmlElement(name = "entry", namespace = "http://www.w3.org/2005/Atom")
-  private Set<AtomEntry> atomEntries = Sets.newLinkedHashSet();
+  private List<AtomEntry> atomEntries = Lists.newArrayList();
 
   public AtomFeed() {
   }
@@ -106,11 +108,11 @@ public class AtomFeed {
     this.atomLinks = atomLinks;
   }
 
-  public Set<AtomEntry> getAtomEntries() {
+  public List<AtomEntry> getAtomEntries() {
     return atomEntries;
   }
 
-  public void setAtomEntries(Set<AtomEntry> atomEntries) {
+  public void setAtomEntries(List<AtomEntry> atomEntries) {
     this.atomEntries = atomEntries;
   }
 }

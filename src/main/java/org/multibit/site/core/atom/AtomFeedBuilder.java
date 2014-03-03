@@ -20,6 +20,7 @@ import javax.xml.transform.stream.StreamSource;
 import java.io.*;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.Collections;
 import java.util.Map;
 import java.util.UUID;
 
@@ -63,6 +64,11 @@ public class AtomFeedBuilder {
       atomFeed = new AtomFeed("urn:uuid:" + feedId.toString(), "MultiBit Blog", now);
       atomFeed.setAuthor("MultiBit Team");
     }
+
+    // Update the overall feed timestamp since we are rebuilding it
+    atomFeed.setUpdated(now);
+
+    Collections.sort(atomFeed.getAtomEntries(), Collections.reverseOrder(new AtomEntryComparator()));
 
     // Create a map of existing entries based on their URLs (not ids)
     Map<String, AtomEntry> existingEntries = Maps.newHashMap();
