@@ -81,7 +81,7 @@ public class AtomFeedBuilder {
     for (ClassPath.ResourceInfo resourceInfo : classpath.getResources()) {
 
       String resourceName = resourceInfo.getResourceName();
-      if (resourceName.contains("/blog/")) {
+      if (resourceName.contains("/blog/") && !resourceName.contains("png")) {
 
         // Load the resource as a String
         URL resourceUrl = Resources.getResource(resourceName);
@@ -100,16 +100,21 @@ public class AtomFeedBuilder {
         // Extract the title
         int hStartPos = entryHtml.indexOf("<h");
         int hEndPos = entryHtml.indexOf("</h");
-        String title = entryHtml.substring(hStartPos, hEndPos + 5);
-
+        String title = "";
+        if (hStartPos > 0 && hEndPos > hStartPos) {
+          title = entryHtml.substring(hStartPos, hEndPos + 5);
+        }
         // Extract the summary
         int pStartPos = entryHtml.indexOf("<p");
         int pEndPos = entryHtml.indexOf("</p");
-        String summary = entryHtml.substring(pStartPos, pEndPos + 3)
+        String summary = "";
+        if (pStartPos > 0 && pEndPos > pStartPos) {
+          summary = entryHtml.substring(pStartPos, pEndPos + 3)
           + "<br/>"
           + "<p>Read the rest on the <a target='_blank' href='"
           + entryHref
           + "'>MultiBit blog</a>.</p>";
+}
 
         // Check if the URL has been used before
         final AtomEntry atomEntry;
