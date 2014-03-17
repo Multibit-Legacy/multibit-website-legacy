@@ -25,7 +25,10 @@ $ echo "Hello world" > example.txt
 <pre>
 > fciv.exe -sha1 example.txt
 </pre>
-
+<p>You may find that the <code>example.txt</code> file contains the quotes surrounding the words and is likely stored using
+  Windows line endings (CRLF) rather than Unix (LF). Avoiding this in Windows involves a fair bit of command line trickery
+  so it is easier to simply edit the file manually to strip out the extra information and change the file save format to reach
+  the quoted SHA1. While a hassle, this does prove that the SHA1 operation is correctly detecting the most minute of differences.</p>
 <h3>Mac - use OpenSSL</h3>
 <p>OSX ships with an older version of OpenSSL that supports SHA1. You may want to <a
   target="_blank" href="http://homes.cs.washington.edu/~aczeskis/openssl.html">update it</a>, but the standard version is good
