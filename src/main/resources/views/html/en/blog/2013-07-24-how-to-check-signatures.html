@@ -1,13 +1,19 @@
 <h1>How to check digital signatures</h1>
+<p><strong>Bitcoin applications are not like ordinary applications</strong> - they handle real money and as
+  such need to be treated with more security precautions than you would otherwise use.</p>
 <p>In order to combat malware all downloads provided by MultiBit are served over HTTPS and are cryptographically
   signed. This means that they cannot be altered without the alteration being detected.</p>
-<p>In many cases simply acquiring the code over HTTPS will be sufficient security but we at MultiBit believe in
-  going the extra mile to ensure that there is no doubt that what you think you have downloaded is exactly what we
-  have published. To that end here is a short technical guide to verifying signatures using GPG.</p>
+<p>In many cases simply acquiring the code direct from <code>multibit.org</code> over HTTPS will be sufficient
+  security but we at MultiBit believe in going the extra mile to ensure that there is no doubt that what you think you
+  have downloaded is exactly what we have published. To that end here is a short technical guide to verifying signatures
+  using GPG.</p>
 <p>This article is aimed at people who are comfortable with the command line but have not spent much time working
   with SHA1, GPG and so on. As usual commands are prefixed with either <code>></code> or <code>$</code> to show the
   typical command prompt for Windows or Unix.</p>
-<h2>Step 1 - SHA1 in action</h2>
+
+<p><a href="#Step 3">I have GPG installed and just want the specifics for MultiBit</a>.</p>
+
+<h2 id="Step 1">Step 1 - SHA1 in action</h2>
 <p>The first step on the road to security is access to strong cryptography. We'll start by creating a simple one line
   text file:</p>
 <pre>
@@ -15,7 +21,8 @@ $ echo "Hello world" > example.txt
 </pre>
 <p>The above has an expected SHA1 hash of
   <code>33ab5639bfd8e7b95eb1d8d0b87781d4ffea4d5d</code> which we will now attempt to
-  verify. Depending on your operating system you'll need to install a few applications in a particular order to establish a
+  verify. Depending on your operating system you'll need to install a few applications in a particular order to
+  establish a
   solid trust foundation.</p>
 <h3>Windows - install FCIV</h3>
 <p><a target="_blank" href="https://www.microsoft.com/en-us/download/details.aspx?id=11533">Microsoft's File Checksum
@@ -25,13 +32,18 @@ $ echo "Hello world" > example.txt
 <pre>
 > fciv.exe -sha1 example.txt
 </pre>
-<p>You may find that the <code>example.txt</code> file contains the quotes surrounding the words and is likely stored using
-  Windows line endings (CRLF) rather than Unix (LF). Avoiding this in Windows involves a fair bit of command line trickery
-  so it is easier to simply edit the file manually to strip out the extra information and change the file save format to reach
-  the quoted SHA1. While a hassle, this does prove that the SHA1 operation is correctly detecting the most minute of differences.</p>
+<p>You may find that the <code>example.txt</code> file contains the quotes surrounding the words and is likely stored
+  using
+  Windows line endings (CRLF) rather than Unix (LF). Avoiding this in Windows involves a fair bit of command line
+  trickery
+  so it is easier to simply edit the file manually to strip out the extra information and change the file save format to
+  reach
+  the quoted SHA1. While a hassle, this does prove that the SHA1 operation is correctly detecting the most minute of
+  differences.</p>
 <h3>Mac - use OpenSSL</h3>
 <p>OSX ships with an older version of OpenSSL that supports SHA1. You may want to <a
-  target="_blank" href="http://homes.cs.washington.edu/~aczeskis/openssl.html">update it</a>, but the standard version is good
+  target="_blank" href="http://homes.cs.washington.edu/~aczeskis/openssl.html">update it</a>, but the standard version
+  is good
   enough for our purposes.</p>
 <pre>
 $ openssl sha1 example.txt
@@ -43,14 +55,15 @@ $ openssl sha1 example.txt
 $ sha1sum example.txt
 </pre>
 
-<h2>Step 2 - Download and verify GPG</h2>
+<h2 id="Step 2">Step 2 - Download and verify GPG</h2>
 <p>At this point we have a way of verifying the integrity of anything we download, but we don't have any way to prove
   authenticity. Anyone could produce a copy of MultiBit containing malicious code with a valid SHA1 and it would pass
   our rather weak test. We need a cryptographic signature.</p>
 <p>This is provided in the GnuPG (GPG) suite of applications that are
   <a href="http://www.gnupg.org/download/#auto-ref-3">available for download</a>. You can choose to use their binary
   installers but remember to verify what you have downloaded using the SHA1 process above.</p>
-<p>For example after downloading the <a target="_blank" href="https://gpgtools.org/installer/index.html">GPG Tools installer</a> and
+<p>For example after downloading the <a target="_blank" href="https://gpgtools.org/installer/index.html">GPG Tools
+  installer</a> and
   clicking on the SHA1 link we can verify the following:</p>
 <pre>
 $ openssl sha1 GPGTools-2013.5.20.dmg
@@ -69,12 +82,14 @@ libgcrypt 1.4.6
 <p>After you have verified GPG you can then use GPG itself to verify all future GPG updates using the process
   described next.</p>
 
-<h2>Step 3 - Download and verify MultiBit</h2>
+<h2 id="Step 3">Step 3 - Download and verify MultiBit</h2>
 <p>On startup MultiBit will check with the main site to verify that it is still the latest released version. If
   not then it will present a dialog to inform the user and open a browser window to assist the download process.</p>
+
+<h3>Import Jim's public key</h3>
 <p>The typical process is to simply click on the installer package link for your operating system and go through
-  the process. In this case we're going to actually use the digital signature provided by MultiBit to verify that
-  the download has been signed by the lead developer Jim Burton.</p>
+  the installation wizard. In this case we're going to actually use the digital signature provided by MultiBit to
+  verify that the download has been signed by the lead developer Jim Burton.</p>
 <p>We import Jim's public key (<a target="_blank"
                                   href="http://pgp.mit.edu:11371/pks/lookup?search=0x79F7C572">0x79F7C572</a>
   ) using the following command:</p>
@@ -89,11 +104,14 @@ gpg:              unchanged: 1
   to sign the MultiBit release then more keys will be presented on the site. By importing the key you give GPG the
   opportunity to check that the key has not been revoked, it also means that you can now send the owner of the key
   encrypted messages.</p>
-<p>We are now ready to check the MultiBit installer signature. Clicking the signature link ("Save As") will download the
-  signature file into the same location as the installer. It normally has a <code>.asc</code> extension (for "armoured
-  ASCII"). You can now issue the verification command. The example below is for a version 0.5.13 Mac installer.</p>
+<h3>Verify the installer signature</h3>
+<p>We are now ready to verify the MultiBit installer signature. From <a href="https://multibit.org" target="_blank">the
+  front page</a>, locate the "Signature" link beside the installer for your operating system and use ("Save As").
+  This will download the signature file to the same location as the installer and it has a <code>.asc</code>
+  extension (for "armoured ASCII").</p>
+<p>You can now issue the verification command. The example below is for a version 0.5.13 Mac installer.</p>
 <pre>
-gpg --verify multibit-0.5.13.dmg.asc
+$ gpg --verify multibit-0.5.13.dmg.asc
 gpg: Signature made Mon 22 Jul 10:07:09 2013 BST using RSA key ID 23F7FB7B
 gpg: Good signature from "Jim Burton (multibit.org developer) <jim618@fastmail.co.uk>"
 </pre>
@@ -111,7 +129,8 @@ Subkey fingerprint: 4A71 A836 F572 01B4 D088  7D60 0820 A658 23F7 FB7B
     available here</a>.</p>
 <h2>Final notes</h2>
 <p>The use of cryptographic signatures provides a guarantee that what you think you have downloaded is actually
-  present on your system. Bitcoin applications are not like ordinary applications - they handle real money and as
+  present on your system. <strong>Bitcoin applications are not like ordinary applications</strong> - they handle real
+  money and as
   such need to be treated with more security precautions than you would otherwise use. It is always worth learning
   more about the technology you use and hopefully this article has given you a taste.</p>
 
