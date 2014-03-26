@@ -1,0 +1,95 @@
+<h1>MultiBit HD Sneak Preview - Welcome Wizard</h1>
+
+<p>For most people creating a wallet is the single most important step on their journey into Bitcoin. At MultiBit
+  we have worked hard to make this process as smooth as possible while not sacrificing on security.</p>
+<p>Here is a preview of the MultiBit HD Welcome Wizard that will guide new users through this process. Bear in mind that this
+  is an early preview so the final result may change cosmetically.
+</p>
+<p>Also, this wallet is being created "in app" so that we can show the flexibility that MultiBit HD gives users for representing
+  Bitcoin amounts in different styles and across a range of currencies. Normally a user opening MultiBit HD for the first time
+  would have a zero balance displayed.</p>
+
+<p>Naturally, the first step in this process is to select a preferred language but that was already shown in
+  <a href="/blog/2014/03/17/multibit-hd-sneak-preview.html" target="_blank">the previous article</a>.</p>
+
+<p>
+  <img src="/images/en/blog/mbhd-welcome/mbhd-alpha-select.png"
+       title="Select wallet" width="950">
+</p>
+
+<p>As you can see from the above, MultiBit HD will support hardware wallets <a href="http://www.bitcointrezor.com/" target="_blank">such as the Trezor</a>
+  but in its first outing it will start with BIP32 hierarchical deterministic wallets (HDW). Anyone creating their own hardware wallet
+  and wanting to integrate it into MultiBit HD should take a look at the <a href="https://github.com/bitcoin-solutions/mbhd-hardware" target="_blank">MultiBit Hardware project</a>
+  on GitHub.
+  It's still early days but a fair amount of the ground work is in place to simplify the integration process.
+</p>
+
+<p>
+  <img src="/images/en/blog/mbhd-welcome/mbhd-alpha-backup.png"
+       title="Select backup location" width="950">
+</p>
+
+<p>Keeping continuous automatic encrypted backups provides peace of mind when dealing with Bitcoin. By selecting a backup location
+  right at the outset the user can hand over management of these to the application. The old adage that "data does not exist unless
+  it is in two places" should be firmly in people's minds so we recommend that people select a managed backup location.</p>
+<p>For security we prefer Spider Oak, but Dropbox, Time Machine, rsync and so on are also great choices. Anything that continuously
+  copies the backups off the local machine and on to a different machine reliably is a good backup solution. MultiBit HD ensures that
+  all backups are encrypted locally through PGP before being written to disk.</p>
+
+<p>
+
+  <img src="/images/en/blog/mbhd-welcome/mbhd-alpha-seed.png"
+       title="Enter seed phrase" width="950">
+</p>
+
+<p>The whole purpose of hierarchical deterministic wallets (HDW) is to make the creation and control of keys much more straightforward
+  than the earlier solutions. Everything in a HD wallet hinges on a seed phrase that is randomly generated for you. Of course if you
+  don't like the words you can keep clicking refresh until you're ready.</p>
+<p>To allow for interoperability with other wallets MultiBit HD strictly adheres to the BIP39 word list and uses the BIP32 address generation
+  method. This means that the words shown above can be presented to any other BIP32/39 compatible wallet and it will be able to
+  regenerate all the keys.
+</p>
+
+<p>Users are free to choose between 12, 18 and 24 words in their seed phrase, although a seed phrase of 24 words contains more entropy
+  than Bitcoin private keys themselves so might be considered overkill.</p>
+
+<p>It is <strong>essential</strong> that users physically write down their seed phrase (and timestamp for efficient recovery if necessary). We believe
+  that people are very good at protecting physical information, and not so good with digital equivalents. Consequently we strongly
+  advise people to not attempt a copy-paste or screen shot, and obviously camera phones and printers are out. Having a paper copy which
+  can be laminated and stashed in a fire-proof box is a great way to secure all your future addresses. Keep it secret, keep it safe.</p>
+<p>
+  <img src="/images/en/blog/mbhd-welcome/mbhd-alpha-confirm.png"
+       title="Confirm seed phrase" width="950">
+</p>
+
+<p>So you did write those words down, didn't you? You will notice that there is no back button. This is deliberate. That seed phrase is vital
+  to your ongoing security, without it you will lose access to your bitcoins and nobody wants that.
+</p>
+
+<p>
+  <img src="/images/en/blog/mbhd-welcome/mbhd-alpha-password.png"
+       title="Enter password" width="950">
+</p>
+
+<p>While your seed phrase protects all your bitcoins, it is a pain to have to enter it every time you simply want to access your wallet.
+  To that end MultiBit HD uses a wallet password that locks your wallet from prying eyes and is required when spending. If you lose this
+  password you can recover it from a backup using your seed phrase.</p>
+
+<p>
+  <img src="/images/en/blog/mbhd-welcome/mbhd-alpha-report.png"
+       title="Final report" width="950">
+</p>
+
+<p>And that's how it's done.</p>
+
+<p>We'd strongly urge other wallet application developers to use hierarchical deterministic wallets and to follow BIP32/39.
+  Additionally, if we all adopt this initial workflow then users will get the same experience so they can help each other
+  and everyone benefits from the ongoing interoperability.</p>
+
+<p>26 March 2014</p>
+
+<h3>Related articles</h3>
+<p>Here are some related articles:</p>
+<ul>
+  <li><a href="/blog/2014/03/17/multibit-hd-sneak-preview.html" target="_blank">Sneak preview of MultiBit HD (Alpha)</a></li>
+</ul>
