@@ -1,0 +1,65 @@
+<h1>Introducing BRIT</h1>
+
+<p>What happens when an open source project starts to scale? Costs go up. This article describes how we decided to use Bitcoin
+  to address this problem in what we consider to be the fairest way possible. We call it the Burton-Rowe Income Technique, or BRIT.</p>
+
+<h2>Executive summary</h2>
+<p>With MultiBit HD we're introducing a "client fee" of 1,000 satoshis per spend. The current miner's fee is 10,000 satoshis per 1Kb
+  of transaction storage size. This fee will go towards further development of MultiBit HD and will also be used to support upstream projects that
+  MultiBit HD relies upon (such as Bitcoinj, XChange and so on). By charging a client fee we can avoid intrusive or privacy-breaking alternatives.</p>
+
+<h2>Background</h2>
+<p>MultiBit has been in the Bitcoin space since 2011. In that time it has seen continuous development and improvement so that it is now considered
+  one of the top Bitcoin wallets. Recently <a href="/blog/2014/03/10/multibit-downloads-reach-1.5m.html">we celebrated 1.5million downloads</a>
+  and supporting that size of user base requires either very high reliability or a full time support team. We went for the high reliability approach.</p>
+
+<p>Looking back to October 2013 we made the difficult decision to begin a rewrite of MultiBit Classic and MultiBit HD was born.
+  We chose this path because it was clear that in order for Bitcoin to grow it was imperative that wallet handling had to be made
+  much simpler for non-technical users. This meant ditching random private keys and moving to hierarchical deterministic (HD) wallets based on
+  the BIP32 and BIP39 standards.</p>
+
+<p>We took a lot of the battle-hardened code from MultiBit Classic and improved it. We completely redesigned the user interface so that it would be
+  easy for anyone to use. We laid the groundwork for supporting the Payment Protocol, external hardware wallets (Trezor etc), multi-signature and more. All
+  this development has taken months of full time work, often 7 days a week, and we're only now approaching a first release in May.</p>
+
+<p>Then we faced a hard fact: how do we get paid for all this effort ? We're a wallet not an exchange.</p>
+
+<p>So we made a list laying out our constraints:</p>
+<ul>
+  <li>open source under MIT license</li>
+  <li>no gathering or selling information to third parties</li>
+  <li>no in-app advertising</li>
+  <li>no upfront cost</li>
+  <li>must be pure Bitcoin</li>
+  <li>must survive an upgrade or wallet restore</li>
+  <li>must be decentralised apart from an anonymous initial contact</li>
+  <li>must be extremely low in consideration of people in third world countries</li>
+  <li>must allow income to be allocated to other parties efficiently and anonymously</li>
+  <li>must rely on encrypted messages to prevent snooping, MITM and replay attacks</li>
+</ul>
+
+<p>The result was a client fee of 1,000 satoshis per transaction. This compares favourably with the current miner's fee of 10,000 satoshis
+  per 1Kb (so transactions with a large number of inputs cost more). This would be charged on each spend but because the fee is well
+  below the Bitcoin dust limit of 5432 satoshis, the actual spend won't take place until later. When a sufficient number of client fees
+  have been accumulated the balance is paid off to a Bitcoin address that was obtained during set up.</p>
+
+<h2>Technical details</h2>
+<p>BRIT contains some interesting technical details which may be of interest to developers of open source software. For a complete treatment please
+refer to the MultiBit HD code repository but what follows </p>
+
+  TODO Finish off the techincal details...
+
+There are three actors in the BRIT protocol:
+
+The entity who will redeem the fee payments, called the Redeemer.
+The entity who pays the fees, called the Payer.
+A service that matches up the Redeemer with the Payer, called the Matcher.
+
+
+<p>5 April 2014</p>
+
+<h3>Related articles</h3>
+<p>Here are some related articles:</p>
+<ul>
+  <li><a href="/blog/2014/03/17/multibit-hd-sneak-preview.html" target="_blank">Sneak preview of MultiBit HD (Alpha)</a></li>
+</ul>
