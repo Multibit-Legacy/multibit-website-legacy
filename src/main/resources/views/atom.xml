@@ -3,7 +3,14 @@
     <title>MultiBit Blog</title>
     <id>urn:uuid:8352f7e9-3c35-4d91-be56-2525d929c2a3</id>
     <author>MultiBit Team</author>
-    <updated>2014-04-09T18:57:34.553Z</updated>
+    <updated>2014-04-10T18:18:55.508Z</updated>
+    <entry>
+        <id>urn:uuid:b7308af9-d3d2-4237-b86e-67f13ccb70c2</id>
+        <title>&lt;h1&gt;Introducing BRIT&lt;/h1&gt;</title>
+        <link rel="self" href="https://multibit.org/en/blog/2014/04/11/multibit-hd-brit.html"/>
+        <updated>2014-04-10T18:11:59.000Z</updated>
+        <summary>&lt;p&gt;What is the best way to provide Bitcoin users with high quality wallet software ? How do the devs get paid ?&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2014/04/11/multibit-hd-brit.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+    </entry>
     <entry>
         <id>urn:uuid:dfb3caac-0412-4c3c-a7c5-587b9ee29e36</id>
         <title>&lt;h1&gt;MultiBit not affected by Heartbleed&lt;/h1&gt;</title>
