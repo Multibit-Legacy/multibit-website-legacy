@@ -3,7 +3,24 @@
     <title>MultiBit Blog</title>
     <id>urn:uuid:8352f7e9-3c35-4d91-be56-2525d929c2a3</id>
     <author>MultiBit Team</author>
-    <updated>2014-03-26T12:15:48.664Z</updated>
+    <updated>2014-04-09T18:57:34.553Z</updated>
+    <entry>
+        <id>urn:uuid:dfb3caac-0412-4c3c-a7c5-587b9ee29e36</id>
+        <title>&lt;h1&gt;MultiBit not affected by Heartbleed&lt;/h1&gt;</title>
+        <link rel="self" href="https://multibit.org/en/blog/2014/04/10/multibit-and-heartbleed.html"/>
+        <updated>2014-04-09T18:25:14.000Z</updated>
+        <summary>&lt;p&gt;&lt;a href=&quot;http://heartbleed.com/&quot; target=&quot;_blank&quot;&gt;Heartbleed&lt;/a&gt; is the unofficial name for the CVE-2014-0160 bug with the OpenSSL library which
+  has been shown to reveal private information from affected servers. MultiBit uses SSL to ensure you are downloading from the correct site and
+  &lt;a href=&quot;http://filippo.io/Heartbleed/#multibit.org&quot; target=&quot;_blank&quot;&gt;tests show that multibit.org is NOT affected by the Heartbleed issue&lt;/a&gt;.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2014/04/10/multibit-and-heartbleed.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+    </entry>
+    <entry>
+        <id>urn:uuid:0eeac102-814e-4d18-ad9e-702007ca6985</id>
+        <title>&lt;h1&gt;MultiBit HD Sneak Preview - Welcome Wizard&lt;/h1&gt;</title>
+        <link rel="self" href="https://multibit.org/en/blog/2014/03/26/multibit-hd-welcome-wizard.html"/>
+        <updated>2014-03-26T12:12:42.000Z</updated>
+        <summary>&lt;p&gt;For most people creating a wallet is the single most important step on their journey into Bitcoin. At MultiBit
+  we have worked hard to make this process as smooth as possible while not sacrificing on security.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2014/03/26/multibit-hd-welcome-wizard.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+    </entry>
     <entry>
         <id>urn:uuid:9c18c47f-e970-432c-9793-8c54dc1d1097</id>
         <title>&lt;h1&gt;MultiBit HD Sneak Preview&lt;/h1&gt;</title>
@@ -148,13 +165,5 @@
       innovation through sessions that encourage interaction and discussion between
       professionals across the fields of technology, politics, finance and
       economics.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2011/10/24/prague.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
-    </entry>
-    <entry>
-        <id>urn:uuid:0eeac102-814e-4d18-ad9e-702007ca6985</id>
-        <title>&lt;h1&gt;MultiBit HD Sneak Preview - Welcome Wizard&lt;/h1&gt;</title>
-        <link rel="self" href="https://multibit.org/en/blog/2014/03/26/multibit-hd-welcome-wizard.html"/>
-        <updated>2014-03-26T12:12:42.000Z</updated>
-        <summary>&lt;p&gt;For most people creating a wallet is the single most important step on their journey into Bitcoin. At MultiBit
-  we have worked hard to make this process as smooth as possible while not sacrificing on security.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2014/03/26/multibit-hd-welcome-wizard.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
     </entry>
 </feed>

@@ -1,0 +1,56 @@
+<h1>Introducing BRIT</h1>
+
+<p>What is the best way to provide Bitcoin users with high quality wallet software ? How do the devs get paid ?</p>
+<p>This article describes how we plan to do this for MultiBit HD. We call it the Burton-Rowe Income Technique (BRIT).</p>
+
+<h2>Overview</h2>
+<p>With MultiBit HD we are introducing a client fee of 1,000 satoshi per spend. This compares favourably with the current
+  minimum miner's fee of 10,000 satoshi. This fee will go towards further development of MultiBit HD. We will also use
+  the funds raised to support upstream projects that MultiBit HD relies upon (such as Bitcoinj, XChange etc).</p>
+<p>By charging a client fee we can avoid intrusive or privacy-breaking alternatives.</p>
+
+<h2>Background</h2>
+<p>MultiBit has been in the Bitcoin space since 2011. In that time it has seen continuous development and improvement.
+  Recently <a href="/blog/2014/03/10/multibit-downloads-reach-1.5m.html">we celebrated 1.5 million downloads.</a></p>
+<p>Supporting a virtual metropolis of users and writing new features is now a full time job for a team of developers. On top
+  of that since October 2013 we've been working hard on the next version of MultiBit - MultiBit HD - which has a much
+  better interface and a deterministic wallet.</p>
+<p>We're fortunate to be in this position to contribute to the Bitcoin community, and to enable us to keep paying the bills
+  we had to design a way to get income according to these principles:</p>
+<ul>
+  <li>Must be open source under MIT license</li>
+  <li>No gathering or selling of information to third parties</li>
+  <li>No in-app advertising</li>
+  <li>Zero upfront cost</li>
+  <li>Must be decentralised apart from an anonymous initial contact</li>
+  <li>Fees must be extremely low</li>
+  <li>Must allow income to be allocated to other parties efficiently</li>
+  <li>All communications must rely on encrypted messages to prevent snooping, MITM and replay attacks</li>
+</ul>
+
+<p>The result was the creation of a micro-payment system, BRIT, with a client fee of 1,000 satoshi per transaction sent.</p>
+<p>At $500 per bitcoin this is 0.5 cents for each transaction sent. The <a
+  href="http://online.wsj.com/news/articles/SB10001424127887324048904578319783080709860" target="_blank">price of a latte in a New York Starbucks</a>
+  is about $4 which equates to 800 sends through MultiBit HD.</p>
+<p>There is no charge for receiving bitcoin. As this fee is below the Bitcoin dust limit of 5432 satoshi we bundle up
+  these small amounts so that you pay once every twenty to thirty sends from your wallet.</p>
+
+<h2>Developer notes</h2>
+<p>BRIT contains some interesting cryptography which we think will be of interest to Bitcoin developers. We also hope that it
+  will be of use to developers of open source applications that are not Bitcoin-specific (such as Inkscape, GIMP, Libre Office etc).
+  Perhaps one day we will see BRIT used as the basis of pay-as-you-go open source software. Support for BRIT can be implemented
+  without the need for any Bitcoin processing code in the application beyond a simple web confirmation of payment.</p>
+
+<p>All the payment code, both client and server side, will be released under the MIT licence for other teams to use freely. Right now the <a
+  href="https://github.com/bitcoin-solutions/brit-server" target="_blank">BRIT Server code and documentation</a> is available for examination
+  on GitHub. The client code is currently within the MultiBit HD repo which will be opened in the coming weeks.</p>
+
+<p>11 April 2014</p>
+
+<h3>Related articles</h3>
+<p>Here are some related articles:</p>
+<ul>
+  <li><a href="/blog/2014/03/26/multibit-hd-welcome-wizard.html" target="_blank">MultiBit HD Sneak preview - Welcome wizard</a></li>
+
+  <li><a href="/blog/2014/03/10/multibit-downloads-reach-1.5m.html" target="_blank">MultiBit downloads</a></li>
+</ul>

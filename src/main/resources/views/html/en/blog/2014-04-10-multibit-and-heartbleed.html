@@ -1,0 +1,24 @@
+<h1>MultiBit not affected by Heartbleed</h1>
+
+<p><a href="http://heartbleed.com/" target="_blank">Heartbleed</a> is the unofficial name for the CVE-2014-0160 bug with the OpenSSL library which
+  has been shown to reveal private information from affected servers. MultiBit uses SSL to ensure you are downloading from the correct site and
+  <a href="http://filippo.io/Heartbleed/#multibit.org" target="_blank">tests show that multibit.org is NOT affected by the Heartbleed issue</a>.</p>
+
+<h2>Background</h2>
+<p>The Heartbleed bug is in OpenSSL's implementation of the transport layer security protocol's (TLS/DTLS) heartbeat extension as detailed in RFC 6520. When it
+  is exploited it leads to the leak of memory contents from the server to the client and from the client to the server.</p>
+<p>This particular bug has existed for 3 years and has left a large number of SSL certificate private keys (not Bitcoin private keys) exposed to
+  the Internet. The bug is specific to OpenSSL and is not a failure of the SSL/TLS protocols themselves.</p>
+
+<h2>Always check digital signatures of Bitcoin software</h2>
+<p>While we use SSL to ensure the legitimacy of the download, we also digitally sign all releases of MultiBit software. This ensures that you can
+  be absolutely sure that you have downloaded a legitimate copy of MultiBit. Instructions for checking the signature are given below.</p>
+
+<p>10 April 2014</p>
+
+<h3>Related articles</h3>
+<p>Here are some related articles:</p>
+<ul>
+  <li><a href="/blog/2013/07/24/how-to-check-signatures.html" target="_blank">How to check digital signatures</a></li>
+  <li><a href="/blog/2013/04/23/java-is-secure.html" target="_blank">Java is secure</a></li>
+</ul>
