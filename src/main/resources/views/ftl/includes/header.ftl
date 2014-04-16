@@ -9,9 +9,7 @@
   <ul id="menu" class="wrap">
     <li><a href="/index.html">Home</a></li>
     <li><a href="/features.html">Features</a></li>
-<!-- relegate the FAQ to the community section since its about Bitcoin, not Multibit
     <li><a href="/faq.html">FAQ</a></li>
--->
     <li><a href="/community.html">Community</a></li>
     <li><a href="/blog.html">Blog</a></li>
     <li id="menuHelp"><a href="/help.html">Help</a></li>
