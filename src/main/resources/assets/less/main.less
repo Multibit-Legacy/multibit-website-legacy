@@ -395,3 +395,130 @@ a img {
   font-weight: normal;
   font-style: normal;
 }
+
+
+/* The css above is for the normal website */
+/* Responsive css below (position, margins, size only) is based on 
+   http://www.onextrapixel.com/2012/04/23/responsive-web-design-layouts-and-media-queries/ and
+   http://stackoverflow.com/questions/23304437/jquery-cycle-lite-plugin-how-to-give-containing-div-a-responsive-height
+*/
+
+/* smallish tablets  everything in one column only */
+@media screen and (max-width:900px) {
+
+	body{ 	
+		font-size:100%; 	
+	}
+
+	#slide img{ 	
+		max-width: 100%; 
+		height: 100%; 
+	}
+
+	#slide { 
+		min-height: 352px; 
+		position: relative; 
+		max-width: 100%; 
+	} 
+  	/* 352px is actual size of images */
+
+	h1 img,h2 img,h3 img{
+		margin-right:1%;
+	}
+
+	.wrap{	
+		width:100%; 
+		position: static;
+	}
+
+        #logo {
+		width: 100%; 
+		height: auto;
+  		background-image: none; 
+	}
+	#logo img{
+		max-width:100%; 
+		height: auto;
+	}
+	#logotext{
+		font-size:1 em;
+		margin:2% 0px 0px 16%;
+		height:16%;
+	}
+
+	#karmaAds iframe{
+		width:100%;
+		position:static;
+		font-size:70%
+	}
+
+	#content-full{
+		margin-top:1%; 
+		position: static; 
+		padding:3% 3% 4% 4%;
+		width:94%;
+		min-height:220%;
+		-moz-box-shadow:0px 0px 24% ;
+		-webkit-box-shadow:0px 0px 24% ;
+		box-shadow:0px 0px 24% ;
+	}
+
+	#content{
+		margin-top:1%; 
+		padding:3% 5% 4% 4%;
+		width:92%; 
+	}
+
+	#downloadbox, #infobox {
+		width:98%; 
+		height: auto; 
+		font-size:1em;
+		position:static;
+		border: 10%;
+		border-radius:1%;
+		-webkit-border-radius:1%;
+		-moz-border-radius:1%;
+		padding:0.1%; 
+		margin-top: 2%;
+		margin-bottom: 2%;
+	}
+	#infobox {
+		margin-bottom: 0;
+	}
+
+	#footer{
+		width: 96%; 
+		height: auto; 
+		position:static;
+		padding-left:4%;
+		padding-bottom:4%;
+	}
+
+	#footer>div{
+		float:none;
+		margin-right:0%;
+		padding-top:0.6%;
+	}
+}
+
+/* smaller tablets 
+   reduce max -size of #slide to avoid lots of empty space beneath the slides
+*/
+@media screen and (max-width:700px) {
+	#slide { 
+		min-height: 300px; 
+	} 
+}
+
+
+/* mobile phones 
+   don't display screenshots (as they'll be too small to be useful)
+   I think they still get downloaded, though,
+   so they still take time for the page to load
+*/
+@media screen and (max-width:480px) {
+	#container3 h1.image, #slide { 
+		display: none; 
+	}
+}
+
