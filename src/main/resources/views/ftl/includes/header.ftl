@@ -1,17 +1,27 @@
 <#-- @ftlvariable name="" type="org.multibit.site.views.PublicFreemarkerView" -->
-<div id="container1">
-  <div class="wrap">
-    <div id="logo"><a href="/index.html"><img src="/images/common/banner.png" /></a></div>
-    <div id="karmaAds"><iframe src="/ad" scrolling="no" frameBorder="0"></iframe></div>
+<div class="navbar-wrapper">
+  <div class="container">
+
+    <div class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/index.html">MultiBit</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+          ${model.navBar}
+          </ul>
+
+          <div id="karmaAds" class="navbar-form navbar-right"><iframe scrolling="no" frameBorder="0" src="/ad"></iframe></div>
+
+        </div>
+      </div>
+    </div>
+
   </div>
-</div>
-<div id="container2">
-  <ul id="menu" class="wrap">
-    <li><a href="/index.html">Home</a></li>
-    <li><a href="/features.html">Features</a></li>
-    <li><a href="/faq.html">FAQ</a></li>
-    <li><a href="/community.html">Community</a></li>
-    <li><a href="/blog.html">Blog</a></li>
-    <li id="menuHelp"><a href="/help.html">Help</a></li>
-  </ul>
 </div>

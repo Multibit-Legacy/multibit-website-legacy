@@ -2,6 +2,8 @@ package org.multibit.site.model;
 
 import com.google.common.base.Charsets;
 import com.google.common.base.Optional;
+import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 import org.multibit.site.caches.InMemoryAssetCache;
 import org.multibit.site.utils.StreamUtils;
 import org.slf4j.Logger;
@@ -11,6 +13,9 @@ import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Response;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * <p>Base class to provide the following to views:</p>
@@ -18,20 +23,28 @@ import java.io.InputStream;
  * <li>Access to Markdown content</li>
  *
  * @since 0.0.1
- *         
+ *  
  */
 public class BaseModel {
 
   private static final Logger log = LoggerFactory.getLogger(BaseModel.class);
 
-  public String content;
+  private String content;
+
+  private String navbar = "default";
+
+  private List<String> errors = Lists.newArrayList();
+  private List<String> messages = Lists.newArrayList();
+
+  private HashMap<String, String> navbars = Maps.newHashMap();
 
   public BaseModel(String resourcePath) {
 
-    log.debug("Locating resource under '/views/html{}'",resourcePath);
+    log.debug("Locating resource under '/views/html{}'", resourcePath);
 
     // Check for a fully-formed view
     if (resourcePath == null) {
+      initialiseNavBar();
       return;
     }
 
@@ -41,6 +54,9 @@ public class BaseModel {
       content = contentOptional.get();
       return;
     }
+
+    // Initialise navbar to populate the template
+    initialiseNavBar();
 
     // Only asset type supported is HTML
     if (resourcePath.endsWith(".html")) {
@@ -54,6 +70,14 @@ public class BaseModel {
         // Read the HTML fragment and cache it for later
         content = StreamUtils.toString(is, Charsets.UTF_8);
         InMemoryAssetCache.INSTANCE.put(resourcePath, content);
+
+        // Determine the navbar status
+        if (resourcePath.contains("about")) {
+          navbar = "about";
+        }
+        if (resourcePath.contains("contact")) {
+          navbar = "contact";
+        }
         return;
       } catch (IOException e) {
         throw new WebApplicationException(e, Response.Status.NOT_FOUND);
@@ -66,8 +90,113 @@ public class BaseModel {
 
   }
 
-  public String getContent() throws IOException {
+  /**
+   * @return The HTML content (as read during initialization)
+   */
+  public String getContent() {
     return content;
+  }
+
+  /**
+   * @return A list of errors that should be displayed prominently
+   */
+  public List<String> getErrors() {
+    return errors;
+  }
+
+  /**
+   * @return A list of errors that should be displayed prominently
+   */
+  public List<String> getMessages() {
+    return messages;
+  }
+
+  /**
+   * @return The navbar for this request
+   */
+  public String getNavBar() {
+    return navbars.get(navbar);
+  }
+
+  /**
+   * @return The initialised navbar map (one-off initialisation)
+   */
+  private Map<String, String> initialiseNavBar() {
+
+    String template =
+      "<li {active1}><a href=\"/download.html\">Download</a></li>\n"
+        + "<li {active2}><a href=\"/features.html\">Features</a></li>\n"
+        + "<li {active3}><a href=\"/faq.html\">FAQ</a></li>\n"
+        + "<li {active4}><a href=\"/community.html\">Community</a></li>\n"
+        + "<li {active5}><a href=\"/blog.html\">Blog</a></li>\n"
+        + "<li {active6}><a href=\"/help.html\">Help</a></li>\n";
+
+    navbars = Maps.newHashMap();
+
+    navbars.put("download", template
+        .replace("{active1}", "class=\"active\"")
+        .replace("{active2}", "")
+        .replace("{active3}", "")
+        .replace("{active4}", "")
+        .replace("{active5}", "")
+        .replace("{active6}", "")
+    );
+
+    navbars.put("features", template
+        .replace("{active1}", "")
+        .replace("{active2}", "class=\"active\"")
+        .replace("{active3}", "")
+        .replace("{active4}", "")
+        .replace("{active5}", "")
+        .replace("{active6}", "")
+    );
+
+    navbars.put("faq", template
+        .replace("{active1}", "")
+        .replace("{active2}", "")
+        .replace("{active3}", "class=\"active\"")
+        .replace("{active4}", "")
+        .replace("{active5}", "")
+        .replace("{active6}", "")
+    );
+
+    navbars.put("community", template
+        .replace("{active1}", "")
+        .replace("{active2}", "")
+        .replace("{active3}", "")
+        .replace("{active4}", "class=\"active\"")
+        .replace("{active5}", "")
+        .replace("{active6}", "")
+    );
+
+    navbars.put("blog", template
+        .replace("{active1}", "")
+        .replace("{active2}", "")
+        .replace("{active3}", "")
+        .replace("{active4}", "")
+        .replace("{active5}", "class=\"active\"")
+        .replace("{active6}", "")
+    );
+
+    navbars.put("help", template
+        .replace("{active1}", "")
+        .replace("{active2}", "")
+        .replace("{active3}", "")
+        .replace("{active4}", "")
+        .replace("{active5}", "")
+        .replace("{active6}", "class=\"active\"")
+    );
+
+    navbars.put("default", template
+        .replace("{active1}", "")
+        .replace("{active2}", "")
+        .replace("{active3}", "")
+        .replace("{active4}", "")
+        .replace("{active5}", "")
+        .replace("{active6}", "")
+    );
+
+    return navbars;
   }
 
 }

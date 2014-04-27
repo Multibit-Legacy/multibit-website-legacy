@@ -5,25 +5,20 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-  <#include "../includes/head.ftl">
+<#include "../includes/head.ftl">
 </head>
 <body>
 <#include "../includes/header.ftl">
 
-<div id="container3">
-  <div class="wrap">
-    <#if alertText??>
-      <div class="alert-message ${alertClass}">${alertText}</div>
-    </#if>
-    <div id="content">
-      <#-- Pull in the content from the model -->
-      ${model.content?replace("downloadVersion","${downloadVersion}")}
+<div class="container">
 
-      <#include "../includes/right-sidebar.ftl">
-    </div>
+<#-- Pull in the content from the model -->
+${model.content}
 
-    <#include "../includes/footer.ftl">
-  </div>
+  <hr class="featurette-divider">
+
+<#include "../includes/footer.ftl">
+
 </div>
 
 <#include "../includes/cdn-scripts.ftl">

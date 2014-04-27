@@ -10,30 +10,30 @@
 <body>
 <#include "../includes/header.ftl">
 
-<div id="container3">
-      <div class="wrap">
+<div class="container marketing">
 
-      <#if alertText??>
-        <div class="alert-message ${alertClass}">${alertText}</div>
-      </#if>
-        <div id="content-full">
+<#-- Pull in the content from the model -->
+${model.content}
 
-        <#-- Pull in the content from the model -->
-        ${model.content?replace("downloadVersion","${downloadVersion}")}
+  <hr class="featurette-divider">
 
-        <p><a href="help_contents.html">Back to help contents</a></p>
+<#if alertText??>
+  <div class="alert-message ${alertClass}">${alertText}</div>
+</#if>
+  <div id="content-full">
 
-        <hr/>
-          <p>Problem solved! How can I thank you?<br/>MultiBit is "donationware" and all <a href="bitcoin:1AhN6rPdrMuKBGFDKR1k9A8SCLYaNgXhty?amount=0.01&label=Please%20donate%20to%20multibit.org">donations</a> go towards development and server costs.</p>
-          <p>Was this article detailed enough?<br/>If not please <a href="https://github.com/jim618/multibit-website/issues/new">raise a website improvement Issue</a> so that we can do better.</p>
+  <#-- Pull in the content from the model -->
+  ${model.content?replace("downloadVersion","${downloadVersion}")}
 
-        <#-- No sidebar for help -->
-        </div>
+    <hr/>
+    <p>Problem solved! How can I thank you?<br/>MultiBit is "donationware" and all <a
+      href="bitcoin:1AhN6rPdrMuKBGFDKR1k9A8SCLYaNgXhty?amount=0.01&label=Please%20donate%20to%20multibit.org">donations</a> go towards development and server costs.</p>
 
-      <#include "../includes/footer.ftl">
+    <p>Was this article detailed enough?<br/>If not please <a href="https://github.com/jim618/multibit-website/issues/new">raise a website improvement Issue</a> so that we can do
+      better.</p>
 
-      </div>
-</div>
+  <#-- No sidebar for help -->
+  </div>
 
 <#include "../includes/cdn-scripts.ftl">
 
