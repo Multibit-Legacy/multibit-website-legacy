@@ -72,11 +72,23 @@ public class BaseModel {
         InMemoryAssetCache.INSTANCE.put(resourcePath, content);
 
         // Determine the navbar status
-        if (resourcePath.contains("about")) {
-          navbar = "about";
+        if (resourcePath.contains("download")) {
+          navbar = "download";
         }
-        if (resourcePath.contains("contact")) {
-          navbar = "contact";
+        if (resourcePath.contains("features")) {
+          navbar = "features";
+        }
+        if (resourcePath.contains("faq")) {
+          navbar = "faq";
+        }
+        if (resourcePath.contains("community")) {
+          navbar = "community";
+        }
+        if (resourcePath.contains("blog")) {
+          navbar = "blog";
+        }
+        if (resourcePath.contains("help")) {
+          navbar = "help";
         }
         return;
       } catch (IOException e) {

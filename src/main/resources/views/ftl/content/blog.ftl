@@ -12,11 +12,6 @@
 
 <div class="container marketing">
 
-<#-- Pull in the content from the model -->
-${model.content}
-
-  <hr class="featurette-divider">
-
 <#if alertText??>
   <div class="alert-message ${alertClass}">${alertText}</div>
 </#if>

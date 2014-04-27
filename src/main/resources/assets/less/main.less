@@ -1,3 +1,119 @@
+// This file provides non-Bootstrap configuration
+// Refer to variables.less for all configuration
+// Refer to bootswatch.less for Bootstrap-specific entries
+
+@import "bootswatch.less";
+
+// Softening
+html, body {
+  // See http://subtlepatterns.com
+  background: url(/images/common/cream_dust.png) repeat 0 0;
+  height: 100%
+}
+
+/* Smartphones (portrait) */
+@media only screen
+and (max-width : 1000px) {
+  /* Styles */
+  #karmaAds iframe {
+    width: @karmaAdsWidthNarrow;
+    height: @karmaAdsHeightTall;
+  }
+}
+
+/* Anything else */
+@media only screen
+and (min-width : 1001px) {
+  /* Styles */
+  #karmaAds iframe {
+    width: @karmaAdsWidth;
+    height: @karmaAdsHeight;
+  }
+}
+
+// Adverts
+#karmaAds iframe {
+  border-radius: @navbar-border-radius;
+  margin: 4px 0px 0px 0px;
+  border: 1px solid @brand-tertiary;
+}
+
+// Carousel icons
+
+.icon-larger:before
+{
+  font-size: 50px;
+}
+
+// Max size to fit on iPhone
+.icon-hero:before
+{
+  font-size: 120px;
+}
+
+
+// Navbar
+
+// Special class on .container surrounding .navbar, used for positioning it into place.
+.navbar-wrapper {
+  position: relative;
+  z-index: 15;
+}
+
+// Carousel
+
+// Carousel base class
+.carousel {
+  margin-bottom: 60px;
+
+  // Negative margin to pull up carousel. 90px is roughly margins and height of navbar.
+  margin-top: -90px;
+}
+// Since positioning the image, we need to help out the caption
+.carousel-caption {
+  z-index: 10;
+  color: #000;
+}
+
+// Caption text
+.carousel-caption p {
+  color: @brand-primary;
+}
+
+// Declare heights because of positioning of img element
+.carousel .item {
+  height: @carouselHeight;
+  background-color: @gray-light;
+}
+.carousel-inner > .item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: @carouselHeight;
+}
+
+// Marketing content
+
+// Pad the edges of the mobile views a bit
+.marketing {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+// Center align the text within the three columns below the carousel
+.marketing .col-lg-4 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.marketing h2 {
+  font-weight: normal;
+}
+.marketing .col-lg-4 p {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 /*
    Colours - see http://colorschemedesigner.com/#3e31T7D--vyw04zT--
    Primary covers the largest screen area
@@ -85,116 +201,7 @@ a img {
   border: 0;
 }
 
-/* Layout */
-#container1 {
-  background-color: @container1BackgroundColor;
-}
-
-/* Contains the menu bar */
-#container2 {
-  background-color: @container2BackgroundColor;
-  border-bottom: 3px solid @logoTextColor;
-  border-top: 3px solid @logoTextColor;
-  -moz-box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.15);
-  -webkit-box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.15);
-  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.15);
-  background-image: linear-gradient(bottom, #000 0%, @logoTextColor 80%);
-  background-image: -o-linear-gradient(bottom, #000 0%, @logoTextColor 80%);
-  background-image: -moz-linear-gradient(bottom, #000 0%, @logoTextColor 80%);
-  background-image: -webkit-linear-gradient(bottom, #000 0%, @logoTextColor 80%);
-  background-image: -ms-linear-gradient(bottom, #000 0%, @logoTextColor 80%);
-}
-
-.wrap {
-  width: @logoWidth;
-  margin: auto;
-  position: relative;
-}
-
-/* These images form the background scrolling effect */
-#back1 {
-  background: fixed url(/images/common/back2.png) repeat;
-}
-
-#back2 {
-  background: fixed url(/images/common/back1.png) repeat;
-}
-
-/* Logo */
-#logo {
-  display: block;
-  background-color: @contentBackgroundColor;
-  background-image: url(/images/common/banner.png);
-  background-repeat:no-repeat;
-  height: 100px;
-  width: @logoWidth;
-}
-
-#logo span {
-  display: none;
-}
-
-#logotext {
-  font-size: 70px;
-  font-family: Copperplate, "Copperplate Gothic Light", fantasy;
-  display: inline-block;
-  color: @logoTextColor;
-  white-space: nowrap;
-  margin: 10px 0px 0px 80px;
-  height: 80px;
-}
-
-.home {
-  font-size: 16px;
-}
-
-/* Main navbar menu */
-#menu {
-  padding: 0px;
-  margin: 0px;
-  margin: auto;
-  position: relative;
-}
-
-#menu li {
-  list-style: none;
-  border: 1px solid transparent;
-  border-radius: 3px;
-  -webkit-border-radius: 3px;
-  display: inline-block;
-  /* Fixes IE7-8 border bug */
-  *display: inline;
-  zoom: 1;
-}
-
-#menu li a, #menu li a:active, #menu li a:visited, #menu li a:link {
-  font-family: 'Ubuntu', sans-serif;
-  font-size: 90%;
-  display: block;
-  color: #dddddd;
-  text-decoration: none;
-  padding: 6px 10px;
-}
-
-#menu li:hover a, #menu li.active a {
-  color: #fff;
-}
-
-#menu li:hover, #menu li.active {
-  background-color: #575757;
-  background-image: linear-gradient(bottom, #3d3d3d 20%, #575757 80%);
-  background-image: -o-linear-gradient(bottom, #3d3d3d 20%, #575757 80%);
-  background-image: -moz-linear-gradient(bottom, #3d3d3d 20%, #575757 80%);
-  background-image: -webkit-linear-gradient(bottom, #3d3d3d 20%, #575757 80%);
-  background-image: -ms-linear-gradient(bottom, #3d3d3d 20%, #575757 80%);
-  border: 1px solid #000;
-}
-
-#menuHelp {
-  font-weight: bolder;
-}
-
-/* Appears at the top of the screen to provide messages to the users */
+// Alert banners
 .alert-message {
   background-color: @secondaryColorA5;
   border: 1px solid @secondaryColorA3;
@@ -216,182 +223,4 @@ a img {
 .alert-message.error {
   background-color: @secondaryColorB5;
   border-color: @secondaryColorB3;
-}
-
-#content-full {
-  margin-top: 5px;
-  position: relative;
-  padding: 15px (@logoWidth - @contentWidth - @boxWidth - 20) 20px 20px;
-  width: (@contentWidth + @boxWidth);
-  text-align: justify;
-  background-color: @contentBackgroundColor;
-  min-height: 1100px;
-  -moz-box-shadow: 0px 0px 120px rgba(0, 0, 0, 0.05);
-  -webkit-box-shadow: 0px 0px 120px rgba(0, 0, 0, 0.05);
-  box-shadow: 0px 0px 120px rgba(0, 0, 0, 0.05);
-}
-
-#content {
-  margin-top: 5px;
-  position: relative;
-  padding: 15px (@logoWidth - @contentWidth - 20) 20px 20px;
-  width: @contentWidth;
-  text-align: justify;
-  background-color: @contentBackgroundColor;
-  min-height: 1100px;
-  -moz-box-shadow: 0px 0px 120px rgba(0, 0, 0, 0.05);
-  -webkit-box-shadow: 0px 0px 120px rgba(0, 0, 0, 0.05);
-  box-shadow: 0px 0px 120px rgba(0, 0, 0, 0.05);
-}
-
-#content td {
-  text-align: left;
-}
-
-#downloadbox {
-  width: @boxWidth;
-  height: 500px;
-  font-size: 15px;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background-color: @primaryColor5;
-  border: 1px solid @secondaryColorB3;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  padding: 10px;
-}
-
-#infobox {
-  width: @boxWidth;
-  height: 500px;
-  position: absolute;
-  top: 560px;
-  right: 20px;
-  background-color: @primaryColor5;
-  border: 1px solid @secondaryColorB3;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  padding: 10px;
-}
-
-#infobox small {
-  font-size: 11px;
-}
-
-#karmaAds iframe {
-  font-family: "Helvetica Neue", "Liberation Sans", Arial, sans-serif;
-  font-size: 17px;
-  width: @karmaAdsWidth;
-  height: 40px;
-  position: absolute;
-  top: 30px;
-  right: 20px;
-  left: @karmaAdsLeft;
-  padding: 0px;
-  margin: 0px;
-  overflow: hidden;
-  background-color: @primaryColor5;
-  border: 1px solid @secondaryColorB3;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  color: @bodyColor;
-}
-
-/* Target the link within the advert text (not flag/home) */
-#karmaAds iframe html body.area div.ka_wrapper span.cell a a:link, a:visited, a:active {
-  color: @secondaryColorB3;
-}
-
-/* Target the link within the advert text */
-#karmaAds iframe a:link:hover, a:visited:hover, a:active:hover {
-  color: @secondaryColorB3;
-}
-
-#footer {
-  position: relative;
-  padding-left: 40px;
-  padding-bottom: 40px;
-  text-align: left;
-  font-size: 14px;
-  background-color: @contentBackgroundColor;
-}
-
-#footer>div {
-  float: left;
-  margin-right: 200px;
-  padding-top: 6px;
-  border-top: @primaryColor5 2px solid;
-}
-
-/* Used in table of contents and index pages */
-.index, .index ul, .index li {
-  list-style: none;
-  padding: 0px;
-  margin: 0px;
-}
-
-.index {
-  padding: 20px;
-  border: 2px dashed @primaryColor4;
-  display: inline-block;
-}
-
-.index>li>a {
-  font-weight: bold;
-}
-
-.index>ul {
-  padding: 20px 0px 20px 20px;
-}
-
-.index a, .index a:link, .index a:active, .index a:visited {
-  display: block;
-  text-decoration: none;
-}
-
-.list>li {
-  padding: 5px 0px 5px 0px;
-}
-
-.versiontext {
-  text-align: left;
-}
-
-.download a {
-  font-size: 20px;
-}
-
-@font-face {
-  font-family: 'UbuntuRegular';
-  src: url('/assets/font/ubuntu-r-webfont.eot');
-  src: url('/assets/font/ubuntu-r-webfont.eot?iefix') format('eot'), url('/assets/font/ubuntu-r-webfont.woff') format('woff'), url('/assets/font/ubuntu-r-webfont.ttf') format('truetype'), url('/assets/font/ubuntu-r-webfont.svg#webfontKT0zjHSC') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'UbuntuItalic';
-  src: url('/assets/font/ubuntu-ri-webfont.eot');
-  src: url('/assets/font/ubuntu-ri-webfont.eot?iefix') format('eot'), url('/assets/font/ubuntu-ri-webfont.woff') format('woff'), url('/assets/font/ubuntu-ri-webfont.ttf') format('truetype'), url('/assets/font/ubuntu-ri-webfont.svg#webfontGetaoUfe') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'UbuntuBold';
-  src: url('/assets/font/ubuntu-b-webfont.eot');
-  src: url('/assets/font/ubuntu-b-webfont.eot?iefix') format('eot'), url('/assets/font/ubuntu-b-webfont.woff') format('woff'), url('/assets/font/ubuntu-b-webfont.ttf') format('truetype'), url('/assets/font/ubuntu-b-webfont.svg#webfontEreyFiHC') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'UbuntuBoldItalic';
-  src: url('/assets/font/ubuntu-bi-webfont.eot');
-  src: url('/assets/font/ubuntu-bi-webfont.eot?iefix') format('eot'), url('/assets/font/ubuntu-bi-webfont.woff') format('woff'), url('/assets/font/ubuntu-bi-webfont.ttf') format('truetype'), url('/assets/font/ubuntu-bi-webfont.svg#webfontf1YowZka') format('svg');
-  font-weight: normal;
-  font-style: normal;
 }
