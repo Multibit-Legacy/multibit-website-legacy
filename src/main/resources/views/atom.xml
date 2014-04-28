@@ -3,7 +3,14 @@
     <title>MultiBit Blog</title>
     <id>urn:uuid:8352f7e9-3c35-4d91-be56-2525d929c2a3</id>
     <author>MultiBit Team</author>
-    <updated>2014-04-10T18:18:55.508Z</updated>
+    <updated>2014-04-28T14:16:21.531Z</updated>
+    <entry>
+        <id>urn:uuid:5d4e98f0-a1df-4588-acca-b75172effe89</id>
+        <title>&lt;h1&gt;Private key safety improvements&lt;/h1&gt;</title>
+        <link rel="self" href="https://multibit.org/en/blog/2014/04/28/private-key-safety-improvements.html"/>
+        <updated>2014-04-28T14:13:04.000Z</updated>
+        <summary>&lt;p&gt;In the MultiBit 0.5.18 release there are two changes we have made to improve the safety of your private keys:&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2014/04/28/private-key-safety-improvements.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+    </entry>
     <entry>
         <id>urn:uuid:b7308af9-d3d2-4237-b86e-67f13ccb70c2</id>
         <title>&lt;h1&gt;Introducing BRIT&lt;/h1&gt;</title>
