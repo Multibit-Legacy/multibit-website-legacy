@@ -1,0 +1,39 @@
+<h1>Private key safety improvements</h1>
+
+<p>In the MultiBit 0.5.18 release there are two changes we have made to improve the safety of your private keys:</p>
+
+<h2>1. Private key imports of Blockchain.info wallet exports are no longer supported</h2>
+<p>Recently a user found that one of their private keys was incorrect and Mike Hearn, a core Bitcoin developer, kindly performed forensics on the issue.
+  He discovered that the user had performed an import of a Blockchain.info encrypted wallet backup into MultiBit which had resulted in a corrupted private key.</p>
+
+<p>Unfortunately the original import file is no longer available for study. Blockchain.info developers were asked if anything had changed in their export
+  formats recently but nothing has. As a result the exact cause of the error cannot be precisely established. The error was not repeatable within the available
+  time for the investigation.</p>
+
+<p>It is of critical importance that private keys are kept secret and safe. Therefore to avoid this happening to any user in the future we have removed
+  the ability to import Blockchain.info 'json' and 'json.aes' wallet backups into MultiBit.</p>
+
+<p>In the early days of Bitcoin this functionality helped improve the resilience of the Bitcoin ecosystem. Should Blockchain.info be subject to a concerted
+  attack (such as a denial of service attack or similar) users would have been able to migrate their private keys into MultiBit. Over time Bitcoin has matured
+  and this is no longer necessary. With <a href="/blog/2014/03/17/multibit-hd-sneak-preview.html">HD wallets</a> private key imports will all but disappear.</p>
+
+<p>For some time there have been alternate ways to recover Blockchain.info private keys. One example is Blockchain.info's own static <a href="
+  https://blockchain.info/DecryptWallet.html">wallet decryption page</a>. Users can keep a local copy of this page on a secure machine for emergency use.</p>
+
+<p>Overall, by removing this outdated option from MultiBit we close down a potential error path for our users and thus further improve reliability.</p>
+
+<h2>2. Utility to verify the integrity of your wallet's private keys</h2>
+<p>So far we have seen only a single case of this particular error occurring. It is entirely natural for MultiBit users who have also imported private keys
+  from Blockchain.info to want to check that their wallet is OK. To support our users in this we have added an
+  <a href="/en/help/v0.5/help_checkPrivateKeys.html">integrity checking utility</a> into MultiBit 0.5.18.
+  It can be accessed through "Tools | Check Private Keys".</p>
+<p>This utility crosschecks the wallet's private keys with the wallet's receiving addresses by recalculating everything from scratch and reporting any issues.</p>
+
+<p>28 April 2014</p>
+
+<h3>Related articles</h3>
+<p>Here are some related articles:</p>
+<ul>
+  <li><a href="/en/help/v0.5/help_checkPrivateKeys.html">Check private keys</a></li>
+  <li><a href="/blog/2014/03/17/multibit-hd-sneak-preview.html" target="_blank">MultiBit HD sneak preview</a></li>
+</ul>
