@@ -1,7 +1,9 @@
 <#-- @ftlvariable name="" type="org.multibit.site.views.PublicFreemarkerView" -->
 <div class="navbar-wrapper">
   <div class="container">
-
+	<div class="page-header">
+	  <h1>MultiBit</h1>
+	</div>
     <div class="navbar navbar-inverse navbar-static-top">
       <div class="container">
         <div class="navbar-header">
