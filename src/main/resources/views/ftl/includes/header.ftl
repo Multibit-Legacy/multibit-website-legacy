@@ -2,7 +2,7 @@
 <div class="navbar-wrapper">
   <div class="container">
 	<div class="page-header">
-	  <h1>MultiBit</h1>
+	  <h1><img src="/images/clients/MultiBitHD-logo-128x128.png">MultiBit HD</h1>
 	</div>
     <div class="navbar navbar-inverse navbar-static-top">
       <div class="container">
