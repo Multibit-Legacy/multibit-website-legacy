@@ -1,5 +1,6 @@
-// MultiBit
-// Bootstrap 3.0.0
+// MultiBit HD
+// Bootstrap 3.1.1
+
 // Non-Bootstrap Variables
 // --------------------------------------------------
 
@@ -10,10 +11,15 @@
 @carouselWidth: 563px;
 @carouselHeight: 352px;
 
-@karmaAdsWidth: 340px;
-@karmaAdsWidthNarrow: 250px;
+// Standard width
+@karmaAdsWidth: 400px;
+// Width in "wrapped mode"
+@karmaAdsWidthWrapped: 365px;
+
+// Standard height
 @karmaAdsHeight: 25px;
-@karmaAdsHeightTall: 50px;
+// Height in "menu mode"
+@karmaAdsHeightWrapped: 45px;
 
 // Global values
 // --------------------------------------------------
@@ -30,8 +36,8 @@
 // Brand colors
 // -------------------------
 
-@brand-primary:         #C2F0F4;
-@brand-secondary:       #41A093;
+@brand-primary:         #41A093;
+@brand-secondary:       #973131;
 @brand-tertiary:        lighten(@brand-secondary, 22.5%);
 @brand-success:         #22B24C;
 @brand-warning:         #F5E625;
@@ -243,8 +249,7 @@
 // Padding, to be divided by two and applied to the left and right of all columns
 @grid-gutter-width:         30px;
 // Point at which the navbar stops collapsing
-@grid-float-breakpoint:     @screen-tablet;
-
+@grid-float-breakpoint:     @screen-desktop;
 
 // Navbar
 // -------------------------

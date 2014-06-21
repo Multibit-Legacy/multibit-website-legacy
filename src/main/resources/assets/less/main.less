@@ -7,58 +7,22 @@
 // Softening
 html, body {
   // See http://subtlepatterns.com
-  background: url(/images/common/cream_dust.png) repeat 0 0;
+  //background: url(/images/common/cream_dust.png) repeat 0 0;
   height: 100%
 }
 
-/* Smartphones (portrait) */
-@media only screen
-and (max-width : 1000px) {
-  /* Styles */
-  #karmaAds iframe {
-    width: @karmaAdsWidthNarrow;
-    height: @karmaAdsHeightTall;
-  }
-}
-
-/* Anything else */
-@media only screen
-and (min-width : 1001px) {
-  /* Styles */
-  #karmaAds iframe {
-    width: @karmaAdsWidth;
-    height: @karmaAdsHeight;
-  }
-}
-
-// Adverts
+// Navbar adverts should not be shown on "small" devices
+// due to ugly wrapping behaviour
 #karmaAds iframe {
   border-radius: @navbar-border-radius;
-  margin: 4px 0px 0px 0px;
+  margin: 4px 15px 0px 15px;
   border: 1px solid @brand-tertiary;
+  color: @brand-secondary;
+  width: @karmaAdsWidthWrapped;
+  height: @karmaAdsHeightWrapped;
 }
-
-// Carousel icons
-
-.icon-larger:before
-{
-  font-size: 50px;
-}
-
-// Max size to fit on iPhone
-.icon-hero:before
-{
-  font-size: 120px;
-}
-
 
 // Navbar
-
-// Special class on .container surrounding .navbar, used for positioning it into place.
-.navbar-wrapper {
-  position: relative;
-  z-index: 15;
-}
 
 // Carousel
 
@@ -91,136 +55,4 @@ and (min-width : 1001px) {
   left: 0;
   min-width: 100%;
   height: @carouselHeight;
-}
-
-// Marketing content
-
-// Pad the edges of the mobile views a bit
-.marketing {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-// Center align the text within the three columns below the carousel
-.marketing .col-lg-4 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-.marketing h2 {
-  font-weight: normal;
-}
-.marketing .col-lg-4 p {
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-/*
-   Colours - see http://colorschemedesigner.com/#3e31T7D--vyw04zT--
-   Primary covers the largest screen area
-   1: base, 2: darker, 3: darkest, 4: light, 5: lightest
-*/
-@bodyBackgroundColor: #dbdbdb;
-@bodyColor: #141414;
-@logoTextColor: #3b3b3b;
-@contentBackgroundColor: #fff;
-@container1BackgroundColor: #fff;
-@container2BackgroundColor: #3b3b3b;
-
-/* Links and bright boxes */
-@primaryColor1: #C2F0F4;
-@primaryColor2: #4EE0F8;
-@primaryColor3: #41A093;
-@primaryColor4: #D1F0F3;
-@primaryColor5: #E0F0F8;
-/* E0F0F8 is used in the client */
-
-/* Menus, navbars and message alerts */
-@secondaryColorA1: #FFE9C2;
-@secondaryColorA2: #C0B49E;
-@secondaryColorA3: #A78241;
-@secondaryColorA4: #FFEFD1;
-@secondaryColorA5: #FFF3DE;
-
-/* Headings and action buttons */
-@secondaryColorB1: #FFC2C8;
-@secondaryColorB2: #C09EA1;
-@secondaryColorB3: #973131;
-@secondaryColorB4: #FFD1D6;
-@secondaryColorB5: #FFDEE1;
-
-/* Positioning */
-@logoWidth: 1000px;
-@contentWidth: (@logoWidth * 0.60);
-@boxWidth: (@logoWidth * 0.30);
-@karmaAdsWidth: 320px;
-@karmaAdsLeft: (@logoWidth * 0.658);
-
-body {
-  background-color: @bodyBackgroundColor;
-  color: @bodyColor;
-  font-family: "Helvetica Neue", "Liberation Sans", Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-h1, h2 {
-  font-family: "Helvetica Neue", "Liberation Sans", Arial, sans-serif;
-  font-weight: normal;
-}
-
-h1 {
-  color: @secondaryColorB3;
-  font-size: 150%;
-}
-
-h2 {
-  color: @secondaryColorB3;
-  font-size: 125%;
-}
-
-h3 {
-  color: @secondaryColorB3;
-  font-size: 100%;
-}
-
-h1 img, h2 img, h3 img {
-  vertical-align: middle;
-  margin-right: 5px;
-}
-
-/* Links */
-a:link, a:visited, a:active {
-  color: @secondaryColorB3;
-}
-
-a:link:hover, a:visited:hover, a:active:hover {
-  color: @secondaryColorB3;
-}
-
-a img {
-  border: 0;
-}
-
-// Alert banners
-.alert-message {
-  background-color: @secondaryColorA5;
-  border: 1px solid @secondaryColorA3;
-  margin: 10px 0px;
-  padding: 10px;
-  color: #000;
-}
-
-.alert-message.success {
-  background-color: @primaryColor5;
-  border-color: @primaryColor3;
-}
-
-.alert-message.info {
-  background-color: @secondaryColorA5;
-  border-color: @secondaryColorA3;
-}
-
-.alert-message.error {
-  background-color: @secondaryColorB5;
-  border-color: @secondaryColorB3;
 }
