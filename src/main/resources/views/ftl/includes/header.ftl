@@ -29,7 +29,6 @@
 <#if alertText??>
 <div class="container">
   <div class="alert alert-${alertClass}">
-    <a href="#" class="close" data-dismiss="alert">&times;</a>
   ${alertText}
   </div>
 </div>
