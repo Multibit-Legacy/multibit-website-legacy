@@ -1,6 +1,9 @@
 <#-- @ftlvariable name="model" type="org.multibit.site.views.PublicFreemarkerView" -->
 <#-- Template for the main navigation and information pages with no animation -->
+
+<#-- All templates include the base.ftl for variables -->
 <#include "base.ftl">
+
 <#-- Required for IE to render correctly -->
 <!DOCTYPE HTML>
 <html lang="en">
@@ -10,16 +13,15 @@
 <body>
 <#include "../includes/header.ftl">
 
+<#-- Wrap all page content here -->
 <div class="container">
 
 <#-- Pull in the content from the model -->
-${model.content}
-
-  <hr class="featurette-divider">
-
-<#include "../includes/footer.ftl">
+  ${model.content?replace("downloadVersion","${downloadVersion}")}
 
 </div>
+
+<#include "../includes/footer.ftl">
 
 <#include "../includes/cdn-scripts.ftl">
 

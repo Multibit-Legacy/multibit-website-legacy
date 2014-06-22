@@ -1,8 +1,9 @@
 <#-- @ftlvariable name="model" type="org.multibit.site.views.PublicFreemarkerView" -->
 <#-- Template for the home page with animation script -->
 
-<#-- Template for the home page -->
+<#-- All templates include the base.ftl for variables -->
 <#include "base.ftl">
+
 <#-- Required for IE to render correctly -->
 <!DOCTYPE HTML>
 <html lang="en">
@@ -12,35 +13,17 @@
 <body>
 <#include "../includes/header.ftl">
 
-<div class="container marketing">
+<#-- Wrap all page content here -->
+<div class="container">
 
-<#if alertText??>
-  <div class="alert-message ${alertClass}">${alertText}</div>
-</#if>
-  <div id="content">
-
-  <#-- Pull in the content from the model -->
-  ${model.content}
-
-  <#include "../includes/footer.ftl">
-
-  </div>
+<#-- Pull in the content from the model -->
+  ${model.content?replace("downloadVersion","${downloadVersion}")}
 
 </div>
 
+<#include "../includes/footer.ftl">
 
 <#include "../includes/cdn-scripts.ftl">
-
-  <script type='text/javascript'>
-
-    $(document).ready(function () {
-      $('.carousel').carousel({
-        interval: 10000
-      })
-
-    });
-
-  </script>
 
 </body>
 

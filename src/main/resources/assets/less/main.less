@@ -4,11 +4,34 @@
 
 @import "bootswatch.less";
 
-// Softening
-html, body {
+html {
+
+  position: relative;
+
+  // Ensure footer is pushed to the bottom
+  min-height: 100%;
+
+}
+
+body {
+
   // See http://subtlepatterns.com
   //background: url(/images/common/cream_dust.png) repeat 0 0;
-  height: 100%
+
+  // Ensure the fixed navbar does not overlap containers
+  padding-top: 60px;
+
+  // Margin bottom by footer height
+  margin-bottom: @footer-height;
+}
+
+// Create a fixed footer
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: @footer-height;
+  background-color: #f5f5f5;
 }
 
 // Navbar adverts should not be shown on "small" devices
@@ -18,41 +41,6 @@ html, body {
   margin: 4px 15px 0px 15px;
   border: 1px solid @brand-tertiary;
   color: @brand-secondary;
-  width: @karmaAdsWidthWrapped;
-  height: @karmaAdsHeightWrapped;
-}
-
-// Navbar
-
-// Carousel
-
-// Carousel base class
-.carousel {
-  margin-bottom: 60px;
-
-  // Negative margin to pull up carousel. 90px is roughly margins and height of navbar.
-  margin-top: -90px;
-}
-// Since positioning the image, we need to help out the caption
-.carousel-caption {
-  z-index: 10;
-  color: #000;
-}
-
-// Caption text
-.carousel-caption p {
-  color: @brand-primary;
-}
-
-// Declare heights because of positioning of img element
-.carousel .item {
-  height: @carouselHeight;
-  background-color: @gray-light;
-}
-.carousel-inner > .item > img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  height: @carouselHeight;
+  width: @ka-width;
+  height: @ka-height;
 }
