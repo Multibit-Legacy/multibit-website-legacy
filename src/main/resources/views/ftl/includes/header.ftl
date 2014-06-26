@@ -1,9 +1,9 @@
 <#-- @ftlvariable name="" type="org.multibit.site.views.PublicFreemarkerView" -->
 <div class="navbar-wrapper">
   <div class="container">
-	<div class="page-header">
-	  <h1><img class="header-logo" src="/images/clients/MultiBitHD-logo.svg">MultiBit HD</h1>
-	</div>
+    <div class="page-header">
+      <h1><img class="header-logo" src="/images/clients/MultiBitHD-logo.svg">MultiBit HD</h1>
+    </div>
     <div class="navbar navbar-inverse navbar-static-top">
       <div class="container">
         <div class="navbar-header">
@@ -18,12 +18,23 @@
           <ul class="nav navbar-nav">
           ${model.navBar}
           </ul>
-
-          <div id="karmaAds" class="navbar-form navbar-right"><iframe scrolling="no" frameBorder="0" src="/ad"></iframe></div>
-
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <div id="karmaAds" class="hidden-sm navbar-right">
+                <iframe scrolling="no" frameBorder="0" src="/ad"></iframe>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
-	
+    <#-- Alert bar -->
+    <#if alertText??>
+    <div class="container">
+      <div class="alert alert-${alertClass}">
+      ${alertText}
+      </div>
+    </div>
+    </#if>
   </div>
 </div>
