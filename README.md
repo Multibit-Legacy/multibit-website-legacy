@@ -40,7 +40,7 @@ code first. It should only take a few minutes and you'll be up and running.
 If you intend to do a lot of work involving the underlying Java code you'll need an IDE. We recommend [Intellij](https://www.jetbrains.com/idea/download/)
 ([best](http://programmers.stackexchange.com/a/24231/7167)) or [Eclipse](https://www.eclipse.org/downloads/). Both are available as free downloads.
 
-If you just want to edit CSS and HTML you can do it all with a text editor and some console commands.
+If you just want to edit CSS and HTML you can do it all with a text editor and some console commands but this is really slow.
 
 ### Build and Preview
 
@@ -67,33 +67,44 @@ java -jar target/site-<version>.jar server site-config.yml
 ```
 
 where `<project root>` is the root directory of the project as checked out through git and `<version>` is the version
-as found in `pom.xml` (e.g. "3.0.0") but you'll see a `.jar` in the `target` directory so it'll be obvious.
+as found in `pom.xml` (e.g. "4.0.0") but you'll see a `.jar` in the `target` directory so it'll be obvious.
 
 All commands will work on *nix without modification, use \ instead of / for Windows.
 
 Open a browser to [http://localhost:8080/](http://localhost:8080/) and you should see the site.
 
-## Workflow
+## Workflow inside an IDE (strongly recommended)
 
 Nobody wants to waste time getting stuff done, so here are some processes that we follow to make changes to the site
 efficiently.
 
-### Changing CSS/HTML
+### Changing FTL files (rare)
 
-#### Inside an IDE
+Changes to the Freemarker templates (`.ftl`) that wrap the HTML require a restart to be picked up. To optimise this
+process you should set up a runtime configuration as follows:
 
-If you are running the application within an IDE do the following:
+1. Adjust the runtime configuration for `SiteService` so that it performs both a "make" then a `mvn generate-resources`
+2. Start the `SiteService` process and only restart if you make a change to an `.ftl` file (should be rare)
+3. The restart will automatically generate fresh CSS from the LESS so it may be a quicker workflow
+4. Refresh your browser and verify that Dropwizard serves the resource as a 200 OK rather than 304 NOT MODIFIED if the
+change is not apparent
 
-1. Create a runtime configuration for `mvn generate-resources` call it "Maven Resources"
+### Changing only CSS/HTML
+
+Changes to CSS are made by editing the `.less` files and compiling them through Maven using `mvn generate-resources`.
+HTML files can be edited directly. There is no need to restart `SiteService` if the changes do not involve a `.ftl` file
+which is the normal state of affairs.
+
+1. Create a runtime configuration for `mvn generate-resources` (no `clean`) call it "Maven Resources"
 2. Start the `SiteService` process and leave it running continuously
 3. For CSS, use Firebug/Developer Tools to preview the effect you're after then locate the `main.less` file and edit to
 accommodate your changes otherwise
 4. For HTML just edit the appropriate file under `src/main/resources/views/html`
-5. Run "Maven Resources" to compile `main.less` to `main.css` and copy all updated resources to `target`
+5. Run "Maven Resources" to compile `main.less` to `target/classes/assets/css/main.css`
 6. Refresh your browser and verify that Dropwizard serves the resource as a 200 OK rather than 304 NOT MODIFIED if the
 change is not apparent
 
-#### Outside an IDE (really slow)
+## Workflow outside an IDE (really slow)
 
 If you're running via the command line your workflow is unfortunately a little less efficient.
 
@@ -110,7 +121,7 @@ accommodate your changes otherwise
 Clearly an IDE is the better way to go if you think you will have a lot of editing work that will need an incremental
 approach.
 
-### Translation
+## Translation
 
 [Bitcoin is a global currency](http://bitcoin.org) and so this site has many translations. If you'd like to contribute your own translation for the pages on offer please use this process:
 
