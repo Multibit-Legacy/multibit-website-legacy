@@ -5,26 +5,18 @@
 @import url(http://fonts.googleapis.com/css?family=Oxygen:700);
 @import "bootswatch.less";
 
-// Softening
 html {
-
+html {
   position: relative;
-
   // Ensure footer is pushed to the bottom
   min-height: 100%;
-
-}
 body {
   // See http://subtlepatterns.com
   //background: url(/images/common/cream_dust.png) repeat 0 0;
-
   // Ensure the fixed navbar does not overlap containers
   padding-top: 60px;
-
   // Margin bottom by footer height
   margin-bottom: @footer-height;
-}
-
 // Create a fixed footer
 footer {
   position: absolute;
@@ -32,8 +24,6 @@ footer {
   width: 100%;
   height: @footer-height;
   background-color: #f5f5f5;
-}
-
 // Navbar adverts should not be shown on "small" devices
 // due to ugly wrapping behaviour
 #karmaAds iframe {
@@ -45,13 +35,7 @@ footer {
   height: @ka-height;
 }
 
-// Navbar
-
-// Special class on .container surrounding .navbar, used for positioning it into place.
-.navbar-wrapper {
   position: relative;
-  z-index: 15;
-}
 
 // page header
 .page-header h1 {
@@ -65,31 +49,13 @@ footer {
   margin-right: 21px;
 }
 
-// Carousel
-
-// Carousel base class
-// Since positioning the image, we need to help out the caption
-.carousel-caption {
-  z-index: 10;
-  color: #000;
-}
-
-// Caption text
-.carousel-caption p {
-  color: @brand-primary;
-}
-
-// Declare heights because of positioning of img element
-.carousel .item {
-  background-color: @gray-light;
-}
-// bootstrap carousel
-div.c-wrapper {
-  width: 80%;
-  margin: auto;
 }
 .carousel-inner > .item > img, 
 .carousel-inner > .item > a > img {
   margin: auto;
+  bottom: 0;
+  width: 100%;
+  height: @footer-height;
+  background-color: #f5f5f5;
 }
 

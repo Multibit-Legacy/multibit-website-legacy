@@ -12,14 +12,14 @@ import java.io.InputStream;
 /**
  * <p>Resource to provide the following to application:</p>
  * <ul>
- * <li>Provision of bare help from v0.4.x of the MultiBit client</li>
+ * <li>Provision of bare help from v0.4.x of the MultiBit Classic client</li>
  * </ul>
  *
  * @since 3.0.0
  *         
  */
 @Path("/v0.4")
-public class PublicClientVersion0_4Resource extends BaseResource {
+public class PublicClassic0_4Resource extends BaseResource {
 
   /**
    * Provide the help images

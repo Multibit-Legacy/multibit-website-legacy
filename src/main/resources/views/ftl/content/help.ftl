@@ -1,6 +1,9 @@
 <#-- @ftlvariable name="model" type="org.multibit.site.views.PublicFreemarkerView" -->
 <#-- Template for the help pages (minimal extra formatting) -->
+
+<#-- All templates include the base.ftl for variables -->
 <#include "base.ftl">
+
 <#-- Required for IE to render correctly -->
 <!DOCTYPE HTML>
 <html lang="en">
@@ -10,30 +13,21 @@
 <body>
 <#include "../includes/header.ftl">
 
-<div class="container marketing">
+<div class="container">
 
 <#-- Pull in the content from the model -->
-${model.content}
+${model.content?replace("downloadVersion","${downloadVersion}")}
 
-  <hr class="featurette-divider">
+  <hr/>
+  <p>Problem solved! How can I thank you?<br/>MultiBit is "donationware" and all <a
+    href="bitcoin:1AhN6rPdrMuKBGFDKR1k9A8SCLYaNgXhty?amount=0.01&label=Please%20donate%20to%20multibit.org">donations</a> go towards development and server costs.</p>
 
-<#if alertText??>
-  <div class="alert-message ${alertClass}">${alertText}</div>
-</#if>
-  <div id="content-full">
+  <p>Was this article detailed enough?<br/>If not please <a href="https://github.com/jim618/multibit-website/issues/new">raise a website improvement Issue</a> so that we can do
+    better.</p>
 
-  <#-- Pull in the content from the model -->
-  ${model.content?replace("downloadVersion","${downloadVersion}")}
+</div>
 
-    <hr/>
-    <p>Problem solved! How can I thank you?<br/>MultiBit is "donationware" and all <a
-      href="bitcoin:1AhN6rPdrMuKBGFDKR1k9A8SCLYaNgXhty?amount=0.01&label=Please%20donate%20to%20multibit.org">donations</a> go towards development and server costs.</p>
-
-    <p>Was this article detailed enough?<br/>If not please <a href="https://github.com/jim618/multibit-website/issues/new">raise a website improvement Issue</a> so that we can do
-      better.</p>
-
-  <#-- No sidebar for help -->
-  </div>
+<#include "../includes/footer.ftl">
 
 <#include "../includes/cdn-scripts.ftl">
 
