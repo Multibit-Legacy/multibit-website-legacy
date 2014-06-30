@@ -64,7 +64,7 @@ public class SiteService extends Service<SiteConfiguration> {
     // Adverts
     bootstrap.addBundle(new AssetsBundle("/assets/karma_ads", "/ka"));
 
-    bootstrap.addBundle(new AssetsBundle("/assets/jquery", "/jquery"));
+    bootstrap.addBundle(new AssetsBundle("/assets/js", "/js"));
     bootstrap.addBundle(new ViewBundle());
   }
 

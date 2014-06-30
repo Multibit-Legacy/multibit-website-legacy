@@ -5,7 +5,7 @@
 <#-- Documentation for alerts
 
 # Place an alert using one of these classes:
-# error (big problem!)
+# danger (big problem!)
 # success (we've fixed it!)
 # info (something important is happening)
 # Example of a beta test alert:
@@ -15,11 +15,8 @@
 
 -->
 
-<#-- Uncomment when ready to present 
+<#--&lt;#&ndash; Uncomment when ready to present -->
 <#assign alertClass = "info">
-<#assign alertText = "New version - v0.5.16 - improved reliability of sending and receiving transactions.">
+<#assign alertText = "Prepare for MultiBit HD...">
 
--->
-
-
-<#-- -->
+<#--&ndash;&gt;-->

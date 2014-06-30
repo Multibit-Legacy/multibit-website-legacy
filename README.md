@@ -138,7 +138,7 @@ The following are for administrators of the site and don't affect most people.
 
 ### Alerts
 
-Use `src/main/resources/views/ftl/base.ftl` to change static elements like the alert and download version.
+Use `src/main/resources/views/ftl/base.ftl` to change static elements like the alert and download version. 
 
 ### Building the web support files (`site.xml` and `atom.xml`)
 
