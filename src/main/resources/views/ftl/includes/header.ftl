@@ -1,6 +1,6 @@
 <#-- @ftlvariable name="" type="org.multibit.site.views.PublicFreemarkerView" -->
 <#-- Navbar -->
-<div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+<div class="navbar navbar-inverse" role="navigation">
 
     <div class="page-header">
       <h1><img class="header-logo" src="/images/clients/MultiBitHD-logo.svg">MultiBit HD</h1>
