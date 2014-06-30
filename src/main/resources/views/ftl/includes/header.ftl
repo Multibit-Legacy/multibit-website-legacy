@@ -3,7 +3,7 @@
 <div class="navbar navbar-inverse" role="navigation">
 
     <div class="page-header">
-      <h1><img class="header-logo" src="/images/clients/MultiBitHD-logo.svg">MultiBit HD</h1>
+      <h1><img class="header-logo" src="/images/clients/MultiBitHD-logo-128x128.png">MultiBit HD</h1>
     </div>
 
     <div class="navbar-header">
