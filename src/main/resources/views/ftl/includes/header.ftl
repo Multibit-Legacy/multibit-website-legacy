@@ -29,12 +29,11 @@
     </div>
     <#-- Alert bar -->
     <#if alertText??>
-    <div class="container">
-      <div class="alert alert-${alertClass}">
-      ${alertText}
+      <div class="container">
+        <div class="alert alert-${alertClass}">
+        ${alertText}
+        </div>
       </div>
-    </div>
     </#if>
   </div>
 </div>
-</#if>
