@@ -6,10 +6,11 @@
 @import "bootswatch.less";
 
 html {
-html {
   position: relative;
   // Ensure footer is pushed to the bottom
   min-height: 100%;
+}
+
 body {
   // See http://subtlepatterns.com
   //background: url(/images/common/cream_dust.png) repeat 0 0;
@@ -17,6 +18,8 @@ body {
   padding-top: 60px;
   // Margin bottom by footer height
   margin-bottom: @footer-height;
+}
+
 // Create a fixed footer
 footer {
   position: absolute;
@@ -24,6 +27,8 @@ footer {
   width: 100%;
   height: @footer-height;
   background-color: #f5f5f5;
+}
+
 // Navbar adverts should not be shown on "small" devices
 // due to ugly wrapping behaviour
 #karmaAds iframe {
@@ -34,8 +39,6 @@ footer {
   width: @ka-width;
   height: @ka-height;
 }
-
-  position: relative;
 
 // page header
 .page-header h1 {
@@ -49,7 +52,6 @@ footer {
   margin-right: 21px;
 }
 
-}
 .carousel-inner > .item > img, 
 .carousel-inner > .item > a > img {
   margin: auto;
