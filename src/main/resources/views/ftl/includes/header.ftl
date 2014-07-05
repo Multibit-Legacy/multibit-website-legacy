@@ -1,7 +1,11 @@
 <#-- @ftlvariable name="" type="org.multibit.site.views.PublicFreemarkerView" -->
 <#-- Navbar -->
-<nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
-  <div class="container-fluid">
+<div class="navbar navbar-inverse" role="navigation">
+
+    <div class="page-header">
+      <h1><img class="header-logo" src="/images/clients/MultiBitHD-logo-128x128.png">MultiBit HD</h1>
+    </div>
+
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="sr-only">Toggle navigation</span>
@@ -11,6 +15,7 @@
       </button>
       <a class="navbar-brand" href="/index.html">MultiBit HD</a>
     </div>
+
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
       ${model.navBar}
@@ -23,8 +28,9 @@
         </li>
       </ul>
     </div>
-  </div>
-</nav>
+
+</div>
+
 <#-- Alert bar -->
 <#if alertText??>
 <div class="container">
