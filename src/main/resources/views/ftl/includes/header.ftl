@@ -33,7 +33,7 @@
 
 <#-- Alert bar -->
 <#if alertText??>
-<div class="container">
+<div class="container-fluid">
   <div class="alert alert-${alertClass}">
   ${alertText}
   </div>
