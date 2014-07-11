@@ -25,4 +25,4 @@
 
 <#-- Fonts -->
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Corben" type="text/css">
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">

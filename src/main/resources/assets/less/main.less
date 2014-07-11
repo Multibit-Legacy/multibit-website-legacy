@@ -13,19 +13,23 @@ html {
 
 body {
   // Margin bottom by footer height
-  margin-bottom: @footer-height;
+  // margin-bottom: @footer-height;
 }
 
 // Create a fixed footer
 footer {
-  position: absolute;
-  bottom: 0;
   width: 100%;
   height: @footer-height;
   background-color: #f5f5f5;
 }
 
 // Navbar adverts should not be shown on "small" devices
+@media (min-width: 768px) {
+  .navbar {
+    border-radius: 0;
+  }
+}
+
 // due to ugly wrapping behaviour
 #karmaAds iframe {
   border-radius: @navbar-border-radius;
