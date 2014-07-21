@@ -11,8 +11,18 @@
 
 <link rel="shortcut icon" href="/images/favicon.png">
 
+<#-- Latest compiled and minified jQuery -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
 <#-- Use CDN Bootstrap CSS as the baseline -->
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
 <#-- Override selective entries with main.css  -->
 <link rel="stylesheet" href="/css/main.css" />

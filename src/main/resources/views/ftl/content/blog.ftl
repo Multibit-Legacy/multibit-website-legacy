@@ -31,8 +31,6 @@ ${model.content?replace("downloadVersion","${downloadVersion}")}
 
 <#include "../includes/footer.ftl">
 
-<#include "../includes/cdn-scripts.ftl">
-
 </body>
 
 </html>
