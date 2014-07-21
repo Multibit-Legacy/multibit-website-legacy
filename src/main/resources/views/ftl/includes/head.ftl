@@ -24,9 +24,6 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
-<#-- Override selective entries with main.css  -->
-<link rel="stylesheet" href="/css/main.css" />
-
 <#-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -36,3 +33,6 @@
 <#-- Fonts -->
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Corben" type="text/css">
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+<#-- Override selective entries with main.css  -->
+<link rel="stylesheet" href="/css/main.css" />

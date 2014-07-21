@@ -16,11 +16,18 @@ body {
   // margin-bottom: @footer-height;
 }
 
+// custom font awesome font size overrides
+.mb-download-icon.fa-5x {
+  font-size: 8em;// use standard fall-back sizing
+  font-size: 10vw;// use viewport percentage
+}
+
 // Create a fixed footer
 footer {
   width: 100%;
   height: @footer-height;
   background-color: #f5f5f5;
+  margin-top: 15px;
 }
 
 // Navbar adverts should not be shown on "small" devices
