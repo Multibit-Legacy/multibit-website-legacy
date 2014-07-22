@@ -1,67 +1,73 @@
+<script>
+  function showDownload(type){
+    if (type === "windows"){
+      $("#windowsIcon").removeClass("fa-windows");
+      $("#windowsIcon").addClass("fa-download");
+      $("#windowsDownloadHeading").slideUp();
+    } else if (type === "linux"){
+      $("#linuxIcon").removeClass("fa-linux");
+      $("#linuxIcon").addClass("fa-download");
+      $("#linuxDownloadHeading").slideUp();
+    } else if (type === "apple") {
+      $("#appleIcon").removeClass("fa-apple");
+      $("#appleIcon").addClass("fa-download");
+      $("#appleDownloadHeading").slideUp();
+    }
+  }
+</script>
+
 <div class="row">
 
-  <div class="col-md-4">
+  <div class="col-xs-4">
     <div class="panel panel-default">
-      <div class="panel-heading">
+      <div id="windowsDownloadHeading" class="panel-heading">
         <div class="checkbox">
           <label>
-            <input type="checkbox"> Accept terms and conditions
+            <input type="checkbox" onchange="showDownload('windows')"> Accept terms and conditions
           </label>
         </div>
       </div>
       <div class="panel-body text-center">
-        <div class="col-xs-6">
-          <i class="mb-download-icon fa fa-windows fa-5x"></i>
+        <div>
+          <i id="windowsIcon" class="mb-download-icon fa fa-windows fa-5x"></i>
           <br>MultiBit HD for Windows</a><br>
         </div>
-        <a class="btn col-xs-6" href="#">
-          <i class="mb-download-icon fa fa-download fa-5x"></i>
-          <br>Download
-        </a>
       </div>
     </div>
   </div>
 
-  <div class="col-md-4">
+  <div class="col-xs-4">
     <div class="panel panel-default">
-      <div class="panel-heading">
+      <div id="linuxDownloadHeading" class="panel-heading">
         <div class="checkbox">
           <label>
-            <input type="checkbox"> Accept terms and conditions
+            <input type="checkbox" onchange="showDownload('linux')"> Accept terms and conditions
           </label>
         </div>
       </div>
       <div class="panel-body text-center">
-        <div class="col-xs-6">
-          <i class="mb-download-icon fa fa-linux fa-5x"></i>
+        <div>
+          <i id="linuxIcon" class="mb-download-icon fa fa-linux fa-5x"></i>
           <br>MultiBit HD for Linux</a><br>
         </div>
-        <a class="btn col-xs-6" href="#">
-          <i class="mb-download-icon fa fa-download fa-5x"></i>
-          <br>Download
-        </a>
       </div>
     </div>
   </div>
 
-  <div class="col-md-4">
+  <div class="col-xs-4">
     <div class="panel panel-default">
-      <div class="panel-heading">
+      <div id="appleDownloadHeading" class="panel-heading">
         <div class="checkbox">
           <label>
-            <input type="checkbox"> Accept terms and conditions
+            <input type="checkbox" onchange="showDownload('apple')"> Accept terms and conditions
           </label>
         </div>
       </div>
       <div class="panel-body text-center">
-        <div class="col-xs-6">
-          <i class="mb-download-icon fa fa-apple fa-5x"></i>
+        <div>
+          <i id="appleIcon" class="mb-download-icon fa fa-apple fa-5x"></i>
           <br>MultiBit HD for Apple</a><br>
         </div>
-        <a class="btn col-xs-6" href="#">
-          <i class="mb-download-icon fa fa-download fa-5x"></i>
-          <br>Download
-        </a>
       </div>
     </div>
   </div>
