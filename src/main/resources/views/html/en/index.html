@@ -1,8 +1,11 @@
 <script>
   function showDownload(type){
     if (type === "windows"){
-      $("#windowsIcon").removeClass("fa-windows");
-      $("#windowsIcon").addClass("fa-download");
+      var dl =
+        '<a class="col-xs-12" href="#">'+
+          '<i class="mb-download-icon fa fa-download fa-4x"></i>'+
+        '</a>';
+      $("#windowsIcon").append(dl);
       $("#windowsDownloadHeading").slideUp();
     } else if (type === "linux"){
       $("#linuxIcon").removeClass("fa-linux");
@@ -28,10 +31,11 @@
         </div>
       </div>
       <div class="panel-body text-center">
-        <div>
-          <i id="windowsIcon" class="mb-download-icon fa fa-windows fa-5x"></i>
-          <br>MultiBit HD for Windows</a><br>
+        <div id="windowsIcon" class="col-xs-12">
+          <i class="mb-download-icon fa fa-windows fa-5x"></i>
         </div>
+
+        <br>MultiBit HD for Windows
       </div>
     </div>
   </div>
