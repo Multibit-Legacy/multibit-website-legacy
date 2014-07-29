@@ -42,6 +42,14 @@ footer {
   margin-top: 15px;
 }
 
+.navbar {
+  // fall back for mobile devices
+  position: absolute;
+  // most other browsers
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+}
 // Navbar adverts should not be shown on "small" devices
 @media (min-width: 768px) {
   .navbar {
@@ -61,11 +69,15 @@ footer {
 
 // page header
 .page-header {
+  border-top: 1px solid #eee;
   padding-left: 14px;
-  margin: 0;
+  margin: 0 0 20px 0;
+  padding-top: 55px;
+  background-color: #222;
+  border-color: #080808;
 }
 .page-header h1 {
-  font-family: 'Oxygen', sans-serif;
+  font-family: 'Corben', sans-serif;
   font-size: 400%;
   color: #999;
 }
