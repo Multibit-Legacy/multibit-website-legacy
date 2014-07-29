@@ -16,7 +16,7 @@
 -->
 
 <#--&lt;#&ndash; Uncomment when ready to present -->
-<#assign alertClass = "info">
-<#assign alertText = "Prepare for MultiBit HD...">
+<#--<#assign alertClass = "info">-->
+<#--<#assign alertText = "Prepare for MultiBit HD...">-->
 
 <#--&ndash;&gt;-->
