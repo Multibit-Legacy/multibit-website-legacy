@@ -28,7 +28,7 @@
 </div>
 
 <div class="page-header">
-  <h1><img class="header-logo" src="/images/clients/MultiBitHD-logo-128x128.png">MultiBit HD</h1>
+  <h1><img class="header-logo" src="/images/clients/MultiBitHD-logo-128x128-simple.png">MultiBit HD</h1>
 </div>
 
 <#-- Alert bar -->
