@@ -13,19 +13,42 @@ html {
 
 body {
   // Margin bottom by footer height
-  margin-bottom: @footer-height;
+  // margin-bottom: @footer-height;
+}
+
+// custom font awesome font size overrides
+.mb-download-icon.fa-5x {
+  font-size: 10vw;// use viewport percentage
+}
+.mb-download-icon.fa-4x {
+  font-size: 4vw;
+}
+.dl-panels .panel-body {
+  padding-right: 0;
+  padding-left: 0;
+}
+.dl-link {
+  display: none;
+}
+.dl-link a:hover {
+  text-decoration: none;
 }
 
 // Create a fixed footer
 footer {
-  position: absolute;
-  bottom: 0;
   width: 100%;
   height: @footer-height;
   background-color: #f5f5f5;
+  margin-top: 15px;
 }
 
 // Navbar adverts should not be shown on "small" devices
+@media (min-width: 768px) {
+  .navbar {
+    border-radius: 0;
+  }
+}
+
 // due to ugly wrapping behaviour
 #karmaAds iframe {
   border-radius: @navbar-border-radius;

@@ -14,16 +14,14 @@
 <#include "../includes/header.ftl">
 
 <#-- Wrap all page content here -->
-<div class="container">
+<div class="container-fluid">
 
 <#-- Pull in the content from the model -->
   ${model.content?replace("downloadVersion","${downloadVersion}")}
 
 </div>
 
-<#include "../includes/footer.ftl">
-
-<#include "../includes/cdn-scripts.ftl">
+<!--#include "../includes/footer.ftl"-->
 
 </body>
 

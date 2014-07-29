@@ -1,15 +1,96 @@
-<div class="container">
-<p>MultiBit HD is a secure, lightweight, international Bitcoin wallet for Windows, MacOS and Linux</p>
-	<ul>
-	  <li>MultiBit makes performing Bitcoin transactions quick and simple</li>
-	  <li>MultiBit comes in a variety of <a href="http://translate.multibit.org" target="_blank">languages</a> because Bitcoin is without borders</li>
-	  <li>MultiBit is free to download and is <a href="http://www.fsf.org/about/what-is-free-software" target="_blank">open source</a> (MIT license)</li>
-	  <li>MultiBit is easy to install</li>
-	</ul>
-	<p>MultiBit is <a href="https://en.wikipedia.org/wiki/Donationware" target="_blank">donationware</a>. If you find MultiBit useful please consider <a
-	  href="bitcoin:1AhN6rPdrMuKBGFDKR1k9A8SCLYaNgXhty?amount=0.01&label=Please%20donate%20to%20multibit.org">donating 0.01 BTC</a>. Your donation helps pay for server and development
-	  costs. Thanks.</p>
-	<div class="container-fluid">
-	  <h4>Screenshots to be added soon.</h4>
-	</div>
+<script>
+  function showDownload(){
+    $(".dl-terms-and-conditions").slideUp(function(){
+      $(".dl-icon").fadeOut(function(){
+        $(".dl-link").fadeIn();
+      });
+    });
+  }
+</script>
+
+<div class="dl-terms-and-conditions alert alert-info">
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" onchange="showDownload()"> Accept terms and conditions
+    </label>
+  </div>
+</div>
+
+<div class="row dl-panels">
+
+  <div class="col-xs-4">
+    <div class="panel">
+      <div class="panel-body">
+        <div class="dl-icon text-center">
+          <i class="mb-download-icon fa fa-windows fa-5x"></i>
+          <br />MultiBit HD for Windows
+        </div>
+        <div class="dl-link text-center">
+          <a href="#" class="btn btn-primary col-xs-12" title="Click to download Multibit HD for Windows">
+            <i class="mb-download-icon fa fa-windows fa-5x"></i>
+            <br />MultiBit HD<br /> for Windows</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xs-4">
+    <div class="panel">
+      <div class="panel-body">
+        <div class="dl-icon text-center">
+          <i class="mb-download-icon fa fa-linux fa-5x"></i>
+          <br />MultiBit HD for Linux
+        </div>
+        <div class="dl-link text-center">
+          <a href="#" class="btn btn-primary col-xs-12" title="Click to download Multibit HD for Linux">
+            <i class="mb-download-icon fa fa-linux fa-5x"></i>
+            <br />MultiBit HD<br /> for Linux</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xs-4">
+    <div class="panel">
+      <div class="panel-body">
+        <div class="dl-icon text-center">
+          <i class="mb-download-icon fa fa-apple fa-5x"></i>
+          <br />MultiBit HD for Apple
+        </div>
+        <div class="dl-link text-center">
+          <a href="#" class="btn btn-primary col-xs-12" title="Click to download Multibit HD for Apple">
+            <i class="mb-download-icon fa fa-apple fa-5x"></i>
+            <br />MultiBit HD<br /> for Apple</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="row">
+
+  <div class="col-md-7 col-lg-8">
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe class="embed-responsive-item" src="//www.youtube.com/embed/LlFPYBYIayU"></iframe>
+    </div>
+  </div>
+
+  <div class="col-md-5 col-lg-4">
+    <h3>Why choose MultiBit HD ?</h3>
+    <p>MultiBit is:</p>
+    <ul class="list">
+      <li>Quick and easy to install across all major desktop operating systems (Windows, Mac, Linux)</li>
+      <li>Secure by design - all private keys are kept encrypted on your local machine (or on a USB stick)</li>
+      <li>Faster to synchronize - usually a minute or so</li>
+      <li>Lighter - the stored data is much smaller (usually a few megabytes)</li>
+      <li>Decentralised - no fixed servers only the Bitcoin network</li>
+      <li>Flexible - multiple wallets allow for a "current account", "savings account", "expenses" etc</li>
+      <li>International - <a href="http://translate.multibit.org" target="_blank">multiple languages</a> (35+ at the last release)</li>
+    </ul>
+    <p>If you are an ordinary user of Bitcoin and simply want a wallet that just works without hassle, then MultiBit is the right choice for you.</p>
+    <p>You can download it using the links here and be up and running with Bitcoin in 5 minutes.</p>
+    <p>To get a full list of versions go to the <a href="/download.html">download section</a>.</p>
+  </div>
+
 </div>
