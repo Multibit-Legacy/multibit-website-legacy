@@ -9,7 +9,7 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="/index.html">MultiBit HD</a>
+    <a class="navbar-brand hidden-md hidden-lg" href="/index.html">MultiBit HD</a>
   </div>
 
   <div class="navbar-collapse collapse">
@@ -27,13 +27,13 @@
 
 </div>
 
-<div class="page-header">
-  <h1><img class="header-logo" src="/images/clients/MultiBitHD-logo-128x128-simple.png">MultiBit HD</h1>
+<div class="page-header hidden-xs hidden-sm">
+  <a href="/index.html"><h1><img class="header-logo" src="/images/clients/MultiBitHD-logo-128x128-simple.png">MultiBit HD</h1></a>
 </div>
 
 <#-- Alert bar -->
 <#if alertText??>
-<div class="container-fluid">
+<div class="container-fluid container-alert">
   <div class="alert alert-${alertClass}">
   ${alertText}
   </div>
