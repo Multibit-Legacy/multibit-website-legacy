@@ -42,11 +42,14 @@ footer {
   margin-top: 15px;
 }
 
-// Navbar adverts should not be shown on "small" devices
-@media (min-width: 768px) {
-  .navbar {
-    border-radius: 0;
-  }
+.navbar {
+  // fall back for mobile devices
+  position: absolute;
+  // most other browsers
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  border-bottom-color: #eee;
 }
 
 // due to ugly wrapping behaviour
@@ -61,13 +64,17 @@ footer {
 
 // page header
 .page-header {
+  border-top: 1px solid #eee;
   padding-left: 14px;
-  margin: 0;
+  margin: 0 0 20px 0;
+  padding-top: 55px;
+  background-color: #222;
+  border-color: #080808;
 }
 .page-header h1 {
-  font-family: 'Oxygen', sans-serif;
+  font-family: 'Corben', sans-serif;
   font-size: 400%;
-  color: #999;
+  color: #E6E6E6;
 }
 
 .page-header img.header-logo {
@@ -84,3 +91,15 @@ footer {
   background-color: #f5f5f5;
 }
 
+
+@media (min-width: 768px) {
+  .navbar {
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 991px) {
+  .container-alert {
+    padding-top: 69px;
+  }
+}
