@@ -4,6 +4,8 @@ This repo contains the source for the [MultiBit website](https://multibit.org).
 
 Specifically this branch is for the MultiBit HD site refresh.
 
+TODO Remove this
+
 ## MultiBit Website
 
 From a technical point of view this project uses
