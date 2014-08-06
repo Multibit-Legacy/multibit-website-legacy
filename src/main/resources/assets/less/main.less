@@ -27,6 +27,9 @@ body {
   padding-right: 0;
   padding-left: 0;
 }
+.dl-icon .well {
+  margin-bottom: 0;
+}
 .dl-link {
   display: none;
 }
@@ -46,7 +49,8 @@ footer {
   position: fixed;
   width: 100%;
   z-index: 2;
-  border-bottom-color: #eee;
+  border-bottom-width: 0;
+  border-bottom-style: none;
 }
 
 // due to ugly wrapping behaviour
@@ -69,12 +73,13 @@ footer {
 }
 .page-header h1 {
   font-family: 'Corben', sans-serif;
-  font-size: 400%;
+  font-size: 300%;
   color: #E6E6E6;
 }
 
 .page-header img.header-logo {
-  width: 100px;
+  /* width just for older browsers */
+  width: 64px;
   margin-right: 21px;
 }
 
@@ -94,7 +99,7 @@ footer {
 }
 
 @media (max-width: 991px) {
-  .container-alert {
+  .container-main-content {
     padding-top: 69px;
   }
 }
