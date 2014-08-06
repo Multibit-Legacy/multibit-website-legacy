@@ -149,6 +149,14 @@ the normal Maven build but adding a profile parameter as well:
 mvn -DupdateWebSupport=true clean verify
 ```
 
+### Pushing changes
+
+Push changes to the git repo using
+
+```
+git push production release-4.0.0:master
+```
+
 ## Where does the ASCII art come from?
 
 The ASCII art for the startup banner was created using the online tool available at
