@@ -1,19 +1,20 @@
 <script>
   function showDownload(){
-    $(".dl-terms-and-conditions").slideUp(function(){
-      $(".dl-icon").fadeOut(function(){
-        $(".dl-link").fadeIn();
+    $(".mb-downloads .panel.mb-download-panel .panel-heading").slideUp(function(){
+      $(".mb-download-link-disabled").fadeOut(function(){
+        $(".mb-download-link").fadeIn();
+        $(".mb-downloads .panel.mb-download-panel .panel-body").addClass("mb-downloads-enabled");
       });
     });
   }
 </script>
 
-<div class="dl-panels">
+<div class="mb-downloads">
 
-  <div class="panel panel-info">
+  <div class="panel panel-info mb-download-panel">
 
-    <div class="panel-heading dl-terms-and-conditions">
-      <span class="dl-terms-and-conditions-text">It is important to read the <a href="tandc.html" target="_blank">terms and conditions</a>.</span>
+    <div class="panel-heading">
+      <span class="mb-download-terms-and-conditions-text">It is important to read the <a href="tandc.html" target="_blank">terms and conditions</a>.</span>
       <div class="checkbox">
         <label>
           <input type="checkbox" onchange="showDownload()">I accept the terms and conditions.
@@ -24,13 +25,13 @@
     <div class="panel-body">
 
       <div class="col-xs-4">
-        <div class="dl-icon text-center">
+        <div class="mb-download-link-disabled text-center">
           <div class="well">
             <i class="mb-download-icon fa fa-windows fa-5x"></i>
             <br />MultiBit HD for Windows
           </div>
         </div>
-        <div class="dl-link text-center">
+        <div class="mb-download-link text-center">
           <a href="#" class="btn btn-primary col-xs-12" title="Click to download MultiBit HD for Windows">
             <i class="mb-download-icon fa fa-windows fa-5x"></i>
             <br />MultiBit HD<br /> for Windows</a>
@@ -38,13 +39,13 @@
       </div>
 
       <div class="col-xs-4">
-        <div class="dl-icon text-center">
+        <div class="mb-download-link-disabled text-center">
           <div class="well">
             <i class="mb-download-icon fa fa-linux fa-5x"></i>
             <br />MultiBit HD for Linux
           </div>
         </div>
-        <div class="dl-link text-center">
+        <div class="mb-download-link text-center">
           <a href="#" class="btn btn-primary col-xs-12" title="Click to download MultiBit HD for Linux">
             <i class="mb-download-icon fa fa-linux fa-5x"></i>
             <br />MultiBit HD<br /> for Linux</a>
@@ -52,13 +53,13 @@
       </div>
 
       <div class="col-xs-4">
-        <div class="dl-icon text-center">
+        <div class="mb-download-link-disabled text-center">
           <div class="well">
             <i class="mb-download-icon fa fa-apple fa-5x"></i>
             <br />MultiBit HD for Apple
           </div>
         </div>
-        <div class="dl-link text-center">
+        <div class="mb-download-link text-center">
           <a href="#" class="btn btn-primary col-xs-12" title="Click to download MultiBit HD for Apple">
             <i class="mb-download-icon fa fa-apple fa-5x"></i>
             <br />MultiBit HD<br /> for Apple</a>
