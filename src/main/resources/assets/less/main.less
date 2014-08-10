@@ -41,6 +41,7 @@ body {
 // custom font awesome font size overrides
 .mb-download-icon.fa-5x {
   font-size: 10vw;// use viewport percentage
+  color: gray;
 }
 .mb-download-icon.fa-4x {
   font-size: 4vw;
@@ -55,7 +56,14 @@ body {
 .mb-download-link {
   display: none;
 }
+.mb-download-link a .fa {
+  color: #333;
+}
 .mb-download-link a:hover {
+  text-decoration: none;
+}
+.mb-download-link a:hover .fa {
+  color: #e0f0f8;
   text-decoration: none;
 }
 
