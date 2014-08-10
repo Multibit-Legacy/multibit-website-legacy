@@ -59,12 +59,13 @@ body {
 .mb-download-link a .fa {
   color: #333;
 }
-.mb-download-link a:hover {
+.mb-download-link a:hover, .mb-download-link a:hover .fa {
   text-decoration: none;
+  color: black;
 }
-.mb-download-link a:hover .fa {
-  color: #e0f0f8;
-  text-decoration: none;
+.mb-download-link a.btn.btn-default:hover {
+  background-color: #e0f0f8;
+  background-image: none;
 }
 
 // Create a fixed footer
