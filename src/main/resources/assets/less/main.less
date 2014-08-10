@@ -18,20 +18,17 @@ body {
 
 .panel.mb-download-panel {
   // hide the border of this panel so we can customise its headder and body borders separately.
-  border-color: white;
-  border-width: 0;
+  border: 0 white;
 }
 .mb-download-panel .panel.mb-download-panel .panel-heading {
-  border-style: solid;
-  border-width: 1px;
+  border: 1px solid;
+  margin-bottom: 12px;
 }
 .mb-downloads .panel.mb-download-panel .panel-body {
   padding-right: 0;
   padding-left: 0;
-  border-style: solid;
-  border-width: 1px;
+  border: 1px solid #dcdcdc;
   border-top-width: 0;
-  border-color: #dcdcdc;
   border-radius: 0 0 4px 4px;
 }
 .mb-downloads .panel.mb-download-panel .panel-body.mb-downloads-enabled {
@@ -72,8 +69,7 @@ footer {
   position: fixed;
   width: 100%;
   z-index: 2;
-  border-bottom-width: 0;
-  border-bottom-style: none;
+  border-bottom: 0 none;
 }
 .navbar-inverse .navbar-nav>li>a {
   color: #B9B9B9;
@@ -93,7 +89,7 @@ footer {
 .page-header {
   border-top: 1px solid #080808;
   padding-left: 14px;
-  margin: 0 0 20px 0;
+  margin: 0 0 12px 0;
   padding-top: 55px;
   background-color: #222;
 }
@@ -101,8 +97,7 @@ footer {
   font-family: 'Corben', sans-serif;
   font-size: 300%;
   color: #E6E6E6;
-  margin-top: 10px;
-  margin-bottom: 5px;
+  margin: 0px;
 }
 .page-header a:hover {
   text-decoration: none;
