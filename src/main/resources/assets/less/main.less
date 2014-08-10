@@ -16,6 +16,28 @@ body {
   // margin-bottom: @footer-height;
 }
 
+.panel.mb-download-panel {
+  // hide the border of this panel so we can customise its headder and body borders separately.
+  border-color: white;
+  border-width: 0;
+}
+.mb-download-panel .panel.mb-download-panel .panel-heading {
+  border-style: solid;
+  border-width: 1px;
+}
+.mb-downloads .panel.mb-download-panel .panel-body {
+  padding-right: 0;
+  padding-left: 0;
+  border-style: solid;
+  border-width: 1px;
+  border-top-width: 0;
+  border-color: #dcdcdc;
+  border-radius: 0 0 4px 4px;
+}
+.mb-downloads .panel.mb-download-panel .panel-body.mb-downloads-enabled {
+  border-top-width: 1px;
+  border-radius: 4px;
+}
 // custom font awesome font size overrides
 .mb-download-icon.fa-5x {
   font-size: 10vw;// use viewport percentage
@@ -23,21 +45,17 @@ body {
 .mb-download-icon.fa-4x {
   font-size: 4vw;
 }
-.dl-panels .dl-terms-and-conditions-text {
-  margin-bottom: 10px;
-  margin-top: 10px;
-}
-.dl-panels .panel-body {
-  padding-right: 0;
-  padding-left: 0;
-}
-.dl-icon .well {
+.mb-downloads .panel.mb-download-panel .checkbox {
+  margin-top: 0;
   margin-bottom: 0;
 }
-.dl-link {
+.mb-download-icon .well {
+  margin-bottom: 0;
+}
+.mb-download-link {
   display: none;
 }
-.dl-link a:hover {
+.mb-download-link a:hover {
   text-decoration: none;
 }
 
@@ -49,12 +67,16 @@ footer {
   margin-top: 15px;
 }
 
+// navbar
 .navbar {
   position: fixed;
   width: 100%;
   z-index: 2;
   border-bottom-width: 0;
   border-bottom-style: none;
+}
+.navbar-inverse .navbar-nav>li>a {
+  color: #B9B9B9;
 }
 
 // due to ugly wrapping behaviour
@@ -82,7 +104,9 @@ footer {
   margin-top: 10px;
   margin-bottom: 5px;
 }
-
+.page-header a:hover {
+  text-decoration: none;
+}
 .page-header img.header-logo {
   /* width just for older browsers */
   width: 64px;
@@ -108,13 +132,13 @@ footer {
   .navbar {
     border-radius: 0;
   }
-  .dl-panels .panel-heading.dl-terms-and-conditions {
-    height: 61px;
+  .mb-downloads .panel.mb-download-panel .panel-heading {
+    height: 38px;
   }
-  .dl-panels .dl-terms-and-conditions-text {
+  .mb-downloads .panel.mb-download-panel .mb-download-terms-and-conditions-text {
     float: left;
   }
-  .dl-panels .checkbox {
+  .mb-downloads .panel.mb-download-panel .checkbox {
     float: right;
   }
 }
