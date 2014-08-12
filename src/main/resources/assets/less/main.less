@@ -16,6 +16,9 @@ body {
   // margin-bottom: @footer-height;
 }
 
+.mb-downloads .well {
+  margin-bottom: 0;
+}
 .panel.mb-download-panel {
   // hide the border of this panel so we can customise its headder and body borders separately.
   border: 0 white;
@@ -38,6 +41,7 @@ body {
 // custom font awesome font size overrides
 .mb-download-icon.fa-5x {
   font-size: 10vw;// use viewport percentage
+  color: gray;
 }
 .mb-download-icon.fa-4x {
   font-size: 4vw;
@@ -52,8 +56,16 @@ body {
 .mb-download-link {
   display: none;
 }
-.mb-download-link a:hover {
+.mb-download-link a .fa {
+  color: #333;
+}
+.mb-download-link a:hover, .mb-download-link a:hover .fa {
   text-decoration: none;
+  color: black;
+}
+.mb-download-link a.btn.btn-default:hover {
+  background-color: #e0f0f8;
+  background-image: none;
 }
 
 // Create a fixed footer
