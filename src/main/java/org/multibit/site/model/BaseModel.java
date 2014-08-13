@@ -75,9 +75,6 @@ public class BaseModel {
         if (resourcePath.contains("download")) {
           navbar = "download";
         }
-        if (resourcePath.contains("features")) {
-          navbar = "features";
-        }
         if (resourcePath.contains("faq")) {
           navbar = "faq";
         }
@@ -137,11 +134,10 @@ public class BaseModel {
 
     String template =
       "<li {active1}><a href=\"/download.html\">Download</a></li>\n"
-        + "<li {active2}><a href=\"/features.html\">Features</a></li>\n"
-        + "<li {active3}><a href=\"/faq.html\">FAQ</a></li>\n"
-        + "<li {active4}><a href=\"/community.html\">Community</a></li>\n"
-        + "<li {active5}><a href=\"/blog.html\">Blog</a></li>\n"
-        + "<li {active6}><a href=\"/help.html\">Help</a></li>\n";
+        + "<li {active2}><a href=\"/faq.html\">FAQ</a></li>\n"
+        + "<li {active3}><a href=\"/community.html\">Community</a></li>\n"
+        + "<li {active4}><a href=\"/blog.html\">Blog</a></li>\n"
+        + "<li {active5}><a href=\"/help.html\">Help</a></li>\n";
 
     navbars = Maps.newHashMap();
 
@@ -151,43 +147,30 @@ public class BaseModel {
         .replace("{active3}", "")
         .replace("{active4}", "")
         .replace("{active5}", "")
-        .replace("{active6}", "")
     );
 
-    navbars.put("features", template
+    navbars.put("faq", template
         .replace("{active1}", "")
         .replace("{active2}", "class=\"active\"")
         .replace("{active3}", "")
         .replace("{active4}", "")
         .replace("{active5}", "")
-        .replace("{active6}", "")
-    );
-
-    navbars.put("faq", template
-        .replace("{active1}", "")
-        .replace("{active2}", "")
-        .replace("{active3}", "class=\"active\"")
-        .replace("{active4}", "")
-        .replace("{active5}", "")
-        .replace("{active6}", "")
     );
 
     navbars.put("community", template
         .replace("{active1}", "")
         .replace("{active2}", "")
-        .replace("{active3}", "")
-        .replace("{active4}", "class=\"active\"")
+        .replace("{active3}", "class=\"active\"")
+        .replace("{active4}", "")
         .replace("{active5}", "")
-        .replace("{active6}", "")
     );
 
     navbars.put("blog", template
         .replace("{active1}", "")
         .replace("{active2}", "")
         .replace("{active3}", "")
-        .replace("{active4}", "")
-        .replace("{active5}", "class=\"active\"")
-        .replace("{active6}", "")
+        .replace("{active4}", "class=\"active\"")
+        .replace("{active5}", "")
     );
 
     navbars.put("help", template
@@ -195,17 +178,15 @@ public class BaseModel {
         .replace("{active2}", "")
         .replace("{active3}", "")
         .replace("{active4}", "")
-        .replace("{active5}", "")
-        .replace("{active6}", "class=\"active\"")
+        .replace("{active5}", "class=\"active\"")
     );
 
     navbars.put("default", template
         .replace("{active1}", "")
         .replace("{active2}", "")
         .replace("{active3}", "")
-        .replace("{active4}", "")
+        .replace("{active4", "")
         .replace("{active5}", "")
-        .replace("{active6}", "")
     );
 
     return navbars;

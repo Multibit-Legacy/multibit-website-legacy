@@ -1,1 +1,285 @@
-<div>Download placeholder</div>
+<div class="mb-downloads">
+
+  <div class="panel panel-info mb-download-panel">
+
+    <div id="tandc" class="panel-heading">
+      <span class="mb-download-terms-and-conditions-text">It is important to read the <a href="tandc.html" target="_blank">terms and conditions</a>. Clicking accept will enable
+        the download buttons.</span>
+
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" onchange="showDownload()"><span class="mb-download-terms-and-conditions-text">I accept the terms and conditions</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="panel-body">
+
+      <div class="col-xs-4">
+        <div class="mb-download-link-disabled text-center">
+          <div class="well" title="Clicking accept will enable the download buttons">
+            <i class="mb-download-icon fa fa-windows fa-5x" title="Clicking accept will enable the download buttons"></i>
+            <br/>Windows
+          </div>
+        </div>
+        <div class="mb-download-link text-center">
+          <a href="https://multibit.org/releases/multibit-hd-downloadVersion/mbhd-downloadVersion-win32.exe" class="btn btn-default col-xs-12"
+             title="Click to download MultiBit HD for Windows">
+            <i class="mb-download-icon fa fa-windows fa-5x"></i>
+            <br/>Windows</a>
+        </div>
+      </div>
+
+      <div class="col-xs-4">
+        <div class="mb-download-link-disabled text-center">
+          <div class="well" title="Clicking accept will enable the download buttons">
+            <i class="mb-download-icon fa fa-linux fa-5x" title="Clicking accept will enable the download buttons"></i>
+            <br/>Linux
+          </div>
+        </div>
+        <div class="mb-download-link text-center">
+          <a href="https://multibit.org/releases/multibit-hd-downloadVersion/mbhd-downloadVersion-linux" class="btn btn-default col-xs-12"
+             title="Click to download MultiBit HD for Linux">
+            <i class="mb-download-icon fa fa-linux fa-5x"></i>
+            <br/>Linux</a>
+        </div>
+      </div>
+
+      <div class="col-xs-4">
+        <div class="mb-download-link-disabled text-center">
+          <div class="well" title="Clicking accept will enable the download buttons">
+            <i class="mb-download-icon fa fa-apple fa-5x" title="Clicking accept will enable the download buttons"></i>
+            <br/>OS X
+          </div>
+        </div>
+        <div class="mb-download-link text-center">
+          <a href="https://multibit.org/releases/multibit-hd-downloadVersion/mbhd-downloadVersion-macosx.dmg" class="btn btn-default col-xs-12"
+             title="Click to download MultiBit HD for OS X">
+            <i class="mb-download-icon fa fa-apple fa-5x"></i>
+            <br/>OS X</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-info">
+
+  <div id="releases" class="panel-heading">
+    <span>Releases</span>
+  </div>
+
+  <div class="panel-body">
+
+    <div class="col-xs-12">
+
+      <ul>
+        <li><a href="#0.0.3">0.0.3 (Private Beta 3)</a></li>
+        <li><a href="#0.0.2">0.0.2 (Private Beta 2)</a></li>
+        <li><a href="#0.0.1">0.0.1 (Private Beta 1)</a></li>
+      </ul>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="panel panel-info">
+
+  <div id="0.0.3" class="panel-heading">
+    <a href="https://multibit.org/releases/multibit-hd-0.0.3/" target="_blank"> Release 0.0.3 ( Private Beta 3 )</a>
+  </div>
+
+  <div class="panel-body">
+
+    <div class="col-xs-12">
+
+      <p><a href="https://github.com/bitcoin-solutions/multibit-hd/issues?q=is%3Aissue+milestone%3A%22Private+beta+3%22+is%3Aclosed" target="_blank">Detailed issue list on
+        GitHub</a></p>
+
+      <ul>
+        <li>#160 Change password not working</li>
+        <li>#151 Configuration option to hide the balance display</li>
+        <li>#150 Bug in fiat amount in sends - repeated values</li>
+        <li>#145 Repair wallet gives notification of negative payment received</li>
+        <li>#144 Empty wallet shows recipient as n/a</li>
+        <li>#143 On a Mac CTRL+C, V, A are used but use of COMMAND key is more consistent</li>
+        <li>#142 Description on Send not using private notes text</li>
+        <li>#141 Send screen - recipient validation too aggressive</li>
+        <li>#140 Empty wallet progress message goes off edge of screen</li>
+        <li>#139 Exchange rate needs to show date/time exchange rate was effective</li>
+        <li>#138 When syncing, payments with the same minute are 'flicky'</li>
+        <li>#137 Empty wallet did not show currency on Payments screen even though it in transaction detail</li>
+        <li>#136 Lost transaction (on empty wallet)</li>
+        <li>#134 HD wallet breaking change in bitcoinj to rollout to MBHD breaking change</li>
+        <li>#132 Add "go to unlock" option to welcome wizard selector</li>
+        <li>#131 Get users to approve licence before first use</li>
+        <li>#129 Add CRC24 to sign and optionally to verify message</li>
+        <li>#117 Fiat amount not always shown</li>
+        <li>#107 Restore wallet from seed appears to hang</li>
+        <li>#105 Restore from seed needs a 'repeat password' entry box</li>
+        <li>#96 Number of confirmations doesn't agree blockchain.info</li>
+        <li>#64 Empty wallet is leaving some satoshis behind</li>
+        <li>#54 Miner fee is always shown as 0.1 mBTC</li>
+        <li>#18 Cloud backup directory needs work</li>
+      </ul>
+
+      <p><a href="#releases">Back to releases</a></p>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="panel panel-info">
+
+  <div id="0.0.2" class="panel-heading">
+    <a href="https://multibit.org/releases/multibit-hd-0.0.2/" target="_blank"> Release 0.0.2 ( Private Beta 2 )</a>
+  </div>
+
+  <div class="panel-body">
+
+    <div class="col-xs-12">
+
+      <p><a href="https://github.com/bitcoin-solutions/multibit-hd/issues?q=is%3Aissue+milestone%3A%22Private+beta+2%22+is%3Aclosed" target="_blank">Detailed issue list on
+        GitHub</a></p>
+
+      <ul>
+        <li>#127 Create 0.0.2 release</li>
+        <li>#121 mvn FAILURE on Multibit HD Installer</li>
+        <li>#120 Increase length limit on message sign and verify</li>
+        <li>#119 Make transaction fee negative in Transaction Amount screen</li>
+        <li>#118 Show units for all transaction amounts</li>
+        <li>#116 Verify message needs a paste button</li>
+        <li>#115 Split sent payments into two rows: BTC transacted and fees</li>
+        <li>#114 QR code popover is cramped</li>
+        <li>#113 Sign message needs a copy button</li>
+        <li>#111 Send payment sets balance to 0.00 briefly</li>
+        <li>#110 Verify network tool value spacing is too large</li>
+        <li>#109 Add spinning arrow to restore from wallet page</li>
+        <li>#108 Verify network tool not showing the correct information</li>
+        <li>#104 Complete installer</li>
+        <li>#102 Multibit hangs on "enter password" screen</li>
+        <li>#101 After change of exchange the main window title is always "MultiBit HD'</li>
+        <li>#98 "Send payment" offers blank dropdown rows when there are no contacts with addresses</li>
+        <li>#97 [Next] button missing or partly obscured in "Transaction overview"</li>
+        <li>#95 "Confirm send" screen doesn't contain amount, transaction fee, or client fee</li>
+        <li>#94 Window does not fit small screen</li>
+        <li>#93 The example formatted bitcoin display does not show in 'Preferences | Units"</li>
+        <li>#92 Replace the Nimbus scrollbar</li>
+        <li>#91 Syncs forget which payment is selected</li>
+        <li>#90 Tooltip misleading on 'Edit wallet' notes field (they aren't encrypted)</li>
+        <li>#88 "Private notes will be stored ..." comes up when hovering over "sign a message" box</li>
+        <li>#87 Help pane</li>
+        <li>#86 History section</li>
+        <li>#85 Transaction detail raw transaction too wide</li>
+        <li>#84 Wizard title not wrapping correctly on Linux in Romanian</li>
+        <li>#83 Welcome wizard language selection not working</li>
+        <li>#82 Sending has lost details</li>
+        <li>#80 Rename from "Satoshi" to "Coin"</li>
+        <li>#79 The times in MBHD are always UTC, not the local timezone</li>
+        <li>#77 writePayments on shutdown does not always have password. Why ?</li>
+        <li>#76 Status "Paid" icon in payment details should be green</li>
+        <li>#75 Check windows file delete</li>
+        <li>#73 If user changes fiat currency need to show currency in fiat amount</li>
+        <li>#72 Add client fee to transaction overview and export files</li>
+        <li>#71 Spinner icon rotation is wobbly</li>
+        <li>#68 Open Exchange Rate is not triangulating</li>
+        <li>#67 Restore from zip backup failed</li>
+        <li>#66 On Linux and Windows there is no way to see the about screen</li>
+        <li>#65 There is no visual feedback on the enter password panel if password is wrong</li>
+        <li>#63 Repair wallet should hide balance until synced</li>
+        <li>#62 Double click in a table should initiate edit/detail view</li>
+        <li>#61 Dual mode sidebar</li>
+        <li>#59 History icon is unclear</li>
+        <li>#58 Welcome wizard enter seed phrase not wrapping correctly on Linux</li>
+        <li>#56 Should not be able to empty wallet until sync completes</li>
+        <li>#52 Stretch saved encryption of password</li>
+        <li>#51 Improve wallet backups</li>
+        <li>#49 Adjust fee logic to make first fee earlier</li>
+        <li>#48 Confirmation icon size incorrect on send progress</li>
+        <li>#47 Request wizard failing on network missing</li>
+        <li>#45 TOR switchover requires better UI feedback</li>
+        <li>#44 Padding of text in components is too tight</li>
+        <li>#43 Change title fonts on wizards</li>
+        <li>#42 Locale EN_IE fails on startup</li>
+        <li>#41 Contact image glitch during search</li>
+        <li>#35 Require a "no exchange provider" option</li>
+        <li>#34 Wallet save can bork MBHD on exit</li>
+        <li>#28 Don't enable Send and Receive when Peers seen</li>
+        <li>#27 Change password report screen should disable Finish until background operation finishes</li>
+        <li>#26 Change password quirky if wrong old password entered</li>
+        <li>#25 The transaction details 'raw tx' page can be too wide</li>
+        <li>#21 Wallet Send/Request page not right with RTL</li>
+        <li>#17 Currently tricky to access Welcome wizard until logged in</li>
+        <li>#16 Implement sign and verify message</li>
+      </ul>
+
+      <p><a href="#releases">Back to releases</a></p>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="panel panel-info">
+
+  <div id="0.0.1" class="panel-heading">
+    <a href="https://multibit.org/releases/multibit-hd-0.0.1/" target="_blank"> Release 0.0.1 ( Private Beta 1 for Amsterdam 2014 )</a>
+  </div>
+
+  <div class="panel-body">
+
+    <div class="col-xs-12">
+
+      <p><a href="https://github.com/bitcoin-solutions/multibit-hd/issues?q=is%3Aissue+milestone%3A%22Private+beta+1%22+is%3Aclosed" target="_blank">Detailed issue list on
+        GitHub</a></p>
+
+      <ul>
+        <li>#15 Add password recovery</li>
+        <li>#14 Increase scrypt iterations used in encryption</li>
+        <li>#13 Migrate to encrypted HD wallets</li>
+        <li>#12 There was an error creating a connection to the Bitcoin network</li>
+        <li>#11 Failed to install artifact org.multibit.hd:mbhd-brit:zip:deterministic:0.0.1-SNAPSHOT</li>
+        <li>#10 Could not find artifact com.google:bitcoinj:jar:0.12-SNAPSHOT in bitcoinj-releases</li>
+        <li>#9 Unexpected behavior when adding and deleting contacts. enhancement</li>
+        <li>#8 If gravatars don't load (due to network not available) the UI is not shown</li>
+        <li>#7 persist contacts</li>
+        <li>#6 Display transactions</li>
+        <li>#5 Get wallet saving working</li>
+        <li>#4 Create backups</li>
+        <li>#3 Create code to manage seed generation and validation</li>
+        <li>#2 Get simple send working</li>
+      </ul>
+
+      <p><a href="#releases">Back to releases</a></p>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+
+  // Pulse the terms and conditions (8 and 0.5 works best)
+  $(document).ready(function() {
+    for(i=0;i<8;i++) {
+      $("#tandc").fadeTo('fast', 0.5).fadeTo('slow', 1.0);
+    }
+  });
+
+  function showDownload(){
+
+    $(".mb-downloads .panel.mb-download-panel .panel-heading").slideUp(function(){
+      $(".mb-download-link-disabled").fadeOut(function(){
+        $(".mb-download-link").fadeIn();
+        $(".mb-downloads .panel.mb-download-panel .panel-body").addClass("mb-downloads-enabled");
+      });
+    });
+  }
+
+</script>
