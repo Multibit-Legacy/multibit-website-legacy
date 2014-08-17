@@ -1,20 +1,13 @@
-<div class="mb-downloads">
+<div class="row mb-downloads">
 
-  <div class="panel panel-info mb-download-panel">
+  <div class="panel panel-default mb-download-panel">
 
-    <div id="tandc" class="panel-heading">
-      <span class="mb-download-terms-and-conditions-text">It is important to read the <a href="tandc.html" target="_blank">terms and conditions</a>. Clicking accept will enable
-        the download buttons.</span>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" onchange="showDownload()"><span class="mb-download-terms-and-conditions-text">I accept the terms and conditions</span>
-        </label>
-      </div>
+    <div class="panel-heading">
+      <h3 class="mb-download-heading">Get the latest version</h3>
     </div>
-
     <div class="panel-body">
 
-      <div class="col-xs-4">
+      <div class="md-download-btn-left col-xs-4">
         <div class="mb-download-link-disabled text-center">
           <div class="well" title="Clicking accept will enable the download buttons">
             <i class="mb-download-icon fa fa-windows fa-5x" title="Clicking accept will enable the download buttons"></i>
@@ -44,7 +37,7 @@
         </div>
       </div>
 
-      <div class="col-xs-4">
+      <div class="md-download-btn-right col-xs-4">
         <div class="mb-download-link-disabled text-center">
           <div class="well" title="Clicking accept will enable the download buttons">
             <i class="mb-download-icon fa fa-apple fa-5x" title="Clicking accept will enable the download buttons"></i>
@@ -59,6 +52,18 @@
         </div>
       </div>
 
+      <div class="alert alert-info col-xs-12">
+        <form class="form-horizontal" role="form">
+          <div class="form-group">
+            <div class="col-sm-8 mb-download-terms-and-conditions-text">Read and accept the <a href="tandc.html" target="_blank">terms and conditions</a> to enable the download buttons.</div>
+            <div class="col-sm-4 text-right">
+              <span class="glyphicon glyphicon-arrow-right"></span>
+              <button type="submit" class="btn btn-info" onclick="showDownload()">Accept</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
     </div>
   </div>
 </div>
@@ -67,7 +72,7 @@
 
   <div class="col-md-7 col-lg-8">
     <div class="embed-responsive embed-responsive-16by9">
-      <iframe class="embed-responsive-item" src="//www.youtube.com/embed/uzOXzvMG2G8?rel=0&showinfo=0"></iframe>
+      <iframe class="embed-responsive-item" src="//www.youtube.com/embed/uzOXzvMG2G8?rel=0&showinfo=0&html5=1"></iframe>
     </div>
   </div>
 
@@ -91,15 +96,7 @@
 
 <script>
 
-  // Pulse the terms and conditions (8 and 0.5 works best)
-  $(document).ready(function() {
-    for(i=0;i<8;i++) {
-      $("#tandc").fadeTo('fast', 0.5).fadeTo('slow', 1.0);
-    }
-  });
-
   function showDownload(){
-
     $(".mb-downloads .panel.mb-download-panel .panel-heading").slideUp(function(){
       $(".mb-download-link-disabled").fadeOut(function(){
         $(".mb-download-link").fadeIn();
