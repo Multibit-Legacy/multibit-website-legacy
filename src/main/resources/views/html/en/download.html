@@ -1,16 +1,16 @@
-<div class="mb-downloads">
+<div class="row mb-downloads">
 
-  <div class="panel panel-info mb-download-panel">
+  <div class="panel panel-info mb-download-panel col-xs-12">
 
     <div id="tandc" class="panel-heading">
-      <span class="mb-download-terms-and-conditions-text">It is important to read the <a href="tandc.html" target="_blank">terms and conditions</a>. Clicking accept will enable
-        the download buttons.</span>
-
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" onchange="showDownload()"><span class="mb-download-terms-and-conditions-text">I accept the terms and conditions</span>
-        </label>
-      </div>
+      <form class="form-horizontal" role="form">
+        <div class="form-group">
+          <div class="col-xs-9">Read and accept the <a href="tandc.html" target="_blank">terms and conditions</a> to enable the download buttons.</div>
+          <div class="col-xs-3 text-right">
+            <button type="submit" class="btn btn-info" onclick="showDownload()">Accept</button>
+          </div>
+        </div>
+      </form>
     </div>
 
     <div class="panel-body">
