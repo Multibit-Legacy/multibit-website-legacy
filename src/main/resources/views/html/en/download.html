@@ -1,21 +1,13 @@
 <div class="row mb-downloads">
 
-  <div class="panel panel-info mb-download-panel col-xs-12">
+  <div class="panel panel-default mb-download-panel">
 
-    <div id="tandc" class="panel-heading">
-      <form class="form-horizontal" role="form">
-        <div class="form-group">
-          <div class="col-xs-9">Read and accept the <a href="tandc.html" target="_blank">terms and conditions</a> to enable the download buttons.</div>
-          <div class="col-xs-3 text-right">
-            <button type="submit" class="btn btn-info" onclick="showDownload()">Accept</button>
-          </div>
-        </div>
-      </form>
+    <div class="panel-heading">
+      <h3 class="mb-download-heading">Get the latest version</h3>
     </div>
-
     <div class="panel-body">
 
-      <div class="col-xs-4">
+      <div class="md-download-btn-left col-xs-4">
         <div class="mb-download-link-disabled text-center">
           <div class="well" title="Clicking accept will enable the download buttons">
             <i class="mb-download-icon fa fa-windows fa-5x" title="Clicking accept will enable the download buttons"></i>
@@ -45,7 +37,7 @@
         </div>
       </div>
 
-      <div class="col-xs-4">
+      <div class="md-download-btn-right col-xs-4">
         <div class="mb-download-link-disabled text-center">
           <div class="well" title="Clicking accept will enable the download buttons">
             <i class="mb-download-icon fa fa-apple fa-5x" title="Clicking accept will enable the download buttons"></i>
@@ -58,6 +50,17 @@
             <i class="mb-download-icon fa fa-apple fa-5x"></i>
             <br/>OS X</a>
         </div>
+      </div>
+
+      <div class="alert alert-info col-xs-12">
+        <form class="form-horizontal" role="form">
+          <div class="form-group">
+            <div class="col-sm-8 mb-download-terms-and-conditions-text">Read and accept the <a href="tandc.html" target="_blank">terms and conditions</a> to enable the download buttons.</div>
+            <div class="col-sm-4 text-right">
+              <button type="submit" class="btn btn-info" onclick="showDownload()">Accept</button>
+            </div>
+          </div>
+        </form>
       </div>
 
     </div>
@@ -265,15 +268,7 @@
 
 <script>
 
-  // Pulse the terms and conditions (8 and 0.5 works best)
-  $(document).ready(function() {
-    for(i=0;i<8;i++) {
-      $("#tandc").fadeTo('fast', 0.5).fadeTo('slow', 1.0);
-    }
-  });
-
   function showDownload(){
-
     $(".mb-downloads .panel.mb-download-panel .panel-heading").slideUp(function(){
       $(".mb-download-link-disabled").fadeOut(function(){
         $(".mb-download-link").fadeIn();

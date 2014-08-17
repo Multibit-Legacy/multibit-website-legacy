@@ -57,6 +57,7 @@
           <div class="form-group">
             <div class="col-sm-8 mb-download-terms-and-conditions-text">Read and accept the <a href="tandc.html" target="_blank">terms and conditions</a> to enable the download buttons.</div>
             <div class="col-sm-4 text-right">
+              <span class="glyphicon glyphicon-arrow-right"></span>
               <button type="submit" class="btn btn-info" onclick="showDownload()">Accept</button>
             </div>
           </div>
@@ -95,15 +96,7 @@
 
 <script>
 
-  // Pulse the terms and conditions (8 and 0.5 works best)
-  $(document).ready(function() {
-    for(i=0;i<8;i++) {
-      $("#tandc").fadeTo('fast', 0.5).fadeTo('slow', 1.0);
-    }
-  });
-
   function showDownload(){
-
     $(".mb-downloads .panel.mb-download-panel .panel-heading").slideUp(function(){
       $(".mb-download-link-disabled").fadeOut(function(){
         $(".mb-download-link").fadeIn();
