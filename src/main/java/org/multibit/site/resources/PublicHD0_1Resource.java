@@ -32,7 +32,7 @@ public class PublicHD0_1Resource extends BaseResource {
     @PathParam("image") String image
   ) {
 
-    InputStream is = PublicPageResource.class.getResourceAsStream("/assets/images/en/v0_5/"+image);
+    InputStream is = PublicPageResource.class.getResourceAsStream("/assets/images/en/hd0_1/"+image);
 
     if (is == null) {
       throw new WebApplicationException(Response.Status.NOT_FOUND);
@@ -51,6 +51,7 @@ public class PublicHD0_1Resource extends BaseResource {
    * @return The view (template + data) allowing the HTML to be rendered
    */
   @GET
+  @Produces("text/html")
   public PublicFreemarkerView<BaseModel> getDefaultLanguageHelpContents() {
 
     // Java6 uses StringBuilder to optimise this
