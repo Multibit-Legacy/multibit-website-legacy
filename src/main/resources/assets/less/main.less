@@ -19,20 +19,40 @@ body {
 .mb-downloads .well {
   margin-bottom: 0;
 }
+.mb-downloads .alert.alert-info {
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+.mb-downloads .glyphicon.glyphicon-arrow-right {
+  display: none;
+  font-size: 20pt;
+  top: 9px;
+  line-height: 0;
+}
+.mb-downloads:hover .alert .glyphicon.glyphicon-arrow-right {
+  display: inline-block;
+}
+.mb-downloads:hover .alert .btn {
+   -webkit-box-shadow: 0px 0px 15px 5px;
+   -moz-box-shadow: 0px 0px 15px 5px;
+   box-shadow: 0px 0px 15px 5px;
+}
+.mb-downloads h3.mb-download-heading {
+  margin-top: 0;
+}
 .panel.mb-download-panel {
-  // Hide the border of this panel so we can customise its header and body borders separately
-  border: 0 white;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+.mb-download-panel .md-download-btn-left {
+  padding-left: 0;
+}
+.mb-download-panel .md-download-btn-right {
+  padding-right: 0;
 }
 .mb-download-panel .panel.mb-download-panel .panel-heading {
   border: 1px solid;
   margin-bottom: 12px;
-}
-.mb-downloads .panel.mb-download-panel .panel-body {
-  padding-right: 0;
-  padding-left: 0;
-  border: 1px solid #dcdcdc;
-  border-top-width: 0;
-  border-radius: 0 0 4px 4px;
 }
 .mb-downloads .panel.mb-download-panel .panel-body.mb-downloads-enabled {
   border-top-width: 1px;
@@ -50,6 +70,9 @@ body {
   margin-top: 0;
   margin-bottom: 0;
 }
+.mb-downloads .panel.mb-download-panel .form-group {
+    margin-bottom: 0;
+  }
 .mb-download-icon .well {
   margin-bottom: 0;
 }
@@ -65,6 +88,9 @@ body {
 }
 .mb-download-link a.btn.btn-default:hover {
   background: #e0f0f8 none;
+}
+.mb-downloads .panel.mb-download-panel .mb-download-terms-and-conditions-text {
+  color: @brand-secondary;
 }
 
 // Create a fixed footer
@@ -137,16 +163,6 @@ footer {
 @media (min-width: 768px) {
   .navbar {
     border-radius: 0;
-  }
-  .mb-downloads .panel.mb-download-panel .panel-heading {
-    height: 38px;
-  }
-  .mb-downloads .panel.mb-download-panel .mb-download-terms-and-conditions-text {
-    color: @brand-secondary;
-    float: left;
-  }
-  .mb-downloads .panel.mb-download-panel .checkbox {
-    float: right;
   }
 }
 
