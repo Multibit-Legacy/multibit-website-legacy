@@ -1,6 +1,5 @@
 package org.multibit.site.resources;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.HttpHeaders;
@@ -37,7 +36,7 @@ public abstract class BaseResource {
    * Jersey creates a fresh resource every request so this is safe
    */
   @Context
-  protected HttpServletRequest request;
+  //protected HttpServletRequest request;
 
   /**
    * @return The most appropriate locale for the upstream request (never null)
