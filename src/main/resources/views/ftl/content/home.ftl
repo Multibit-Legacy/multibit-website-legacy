@@ -14,7 +14,7 @@
 <#include "../includes/header.ftl">
 
 <#-- Wrap all page content here -->
-<div class="container-fluid container-main-content">
+<div class="container container-main-content">
 
 <#-- Pull in the content from the model -->
   ${model.content?replace("downloadVersion","${downloadVersion}")}

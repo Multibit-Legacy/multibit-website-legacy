@@ -9,7 +9,7 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand hidden-md hidden-lg" href="/index.html">MultiBit HD</a>
+    <a title="MultiBit HD home" class="navbar-brand hidden-md hidden-lg" href="/index.html">MultiBit HD</a>
   </div>
 
   <div class="navbar-collapse collapse">
@@ -28,7 +28,7 @@
 </div>
 
 <div class="page-header hidden-xs hidden-sm">
-  <a href="/index.html"><h1><img class="header-logo" src="/images/clients/MultiBitHD-logo-96x96-simple.png">MultiBit HD</h1></a>
+  <a title="MultiBit HD home" href="/index.html"><h1><img class="header-logo" src="/images/clients/MultiBitHD-logo-96x96-simple.png">MultiBit HD</h1></a>
 </div>
 
 <#-- Alert bar -->

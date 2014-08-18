@@ -133,11 +133,11 @@ public class BaseModel {
   private Map<String, String> initialiseNavBar() {
 
     String template =
-      "<li {active1}><a href=\"/download.html\">Download</a></li>\n"
-        + "<li {active2}><a href=\"/faq.html\">FAQ</a></li>\n"
-        + "<li {active3}><a href=\"/community.html\">Community</a></li>\n"
-        + "<li {active4}><a href=\"/blog.html\">Blog</a></li>\n"
-        + "<li {active5}><a href=\"/help.html\">Help</a></li>\n";
+      "<li {active1}><a href=\"/download.html\" title=\"Download latest and previous versions\">Download</a></li>\n"
+        + "<li {active2}><a href=\"/faq.html\" title=\"Frequently asked questions\">FAQ</a></li>\n"
+        + "<li {active3}><a href=\"/community.html\" title=\"The Bitcoin community at a glance\">Community</a></li>\n"
+        + "<li {active4}><a href=\"/blog.html\"  title=\"Blog posts\">Blog</a></li>\n"
+        + "<li {active5}><a href=\"/help.html\" title=\"Help with this site and our software\">Help</a></li>\n";
 
     navbars = Maps.newHashMap();
 
