@@ -1,4 +1,4 @@
-<#-- @ftlvariable name="model" type="org.multibit.site.views.PublicFreemarkerView" -->
+<#-- @ftlvariable name="" type="org.multibit.site.views.PublicFreemarkerView" -->
 <#-- Template for the help pages (minimal extra formatting) -->
 
 <#-- All templates include the base.ftl for variables -->

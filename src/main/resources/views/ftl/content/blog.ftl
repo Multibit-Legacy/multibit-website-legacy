@@ -1,4 +1,4 @@
-<#-- @ftlvariable name="model" type="org.multibit.site.views.PublicFreemarkerView" -->
+<#-- @ftlvariable name="" type="org.multibit.site.views.PublicFreemarkerView" -->
 <#-- Template for the blog pages with no download promotion -->
 
 <#-- All templates include the base.ftl for variables -->
