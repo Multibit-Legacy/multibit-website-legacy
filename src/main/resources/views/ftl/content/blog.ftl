@@ -1,4 +1,4 @@
-<#-- @ftlvariable name="view" type="org.multibit.site.views.PublicFreemarkerView" -->
+<#-- @ftlvariable name="" type="org.multibit.site.views.PublicFreemarkerView" -->
 <#-- Template for the blog pages with no download promotion -->
 
 <#-- All templates include the base.ftl for variables -->
@@ -16,7 +16,7 @@
 <div class="container">
 
 <#-- Pull in the content from the model -->
-${view.model.content?replace("downloadVersion","${downloadVersion}")}
+${model.content?replace("downloadVersion","${downloadVersion}")}
 
   <p><a href="/atom.xml"><img src="/images/common/rssicon.png" alt="Subscribe via Atom">&nbsp;Subscribe via Atom</a> | <a href="/blog.html">Back to blog contents</a></p>
 

@@ -1,4 +1,4 @@
-<#-- @ftlvariable name="view" type="org.multibit.site.views.PublicFreemarkerView" -->
+<#-- @ftlvariable name="" type="org.multibit.site.views.PublicFreemarkerView" -->
 <#-- Template for the help pages (minimal extra formatting) -->
 
 <#-- All templates include the base.ftl for variables -->
@@ -16,7 +16,7 @@
 <div class="container">
 
 <#-- Pull in the content from the model -->
-${view.model.content?replace("downloadVersion","${downloadVersion}")}
+${model.content?replace("downloadVersion","${downloadVersion}")}
 
   <hr/>
   <p>Problem solved! How can I thank you?<br/>MultiBit is "donationware" and all <a

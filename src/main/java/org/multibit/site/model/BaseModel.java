@@ -13,7 +13,6 @@ import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Response;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -29,16 +28,25 @@ public class BaseModel {
 
   private static final Logger log = LoggerFactory.getLogger(BaseModel.class);
 
+  /**
+   * This is a read only collection of string templates
+   */
+  private static final Map<String, String> navbars = Maps.newConcurrentMap();
+
+  static {
+    initialiseNavBar();
+  }
+
+  // Request scope variables
+
   private String content;
 
   private String navbar = "default";
-
   private final boolean acceptedTandC;
 
   private List<String> errors = Lists.newArrayList();
-  private List<String> messages = Lists.newArrayList();
 
-  private HashMap<String, String> navbars = Maps.newHashMap();
+  private List<String> messages = Lists.newArrayList();
 
   public BaseModel(String resourcePath, boolean acceptedTandC) {
 
@@ -46,11 +54,25 @@ public class BaseModel {
 
     // Check for a fully-formed view
     if (resourcePath == null) {
-      initialiseNavBar();
       return;
     }
 
-    log.debug("Locating resource under '/views/html{}'", resourcePath);
+    // Determine the navbar status
+    if (resourcePath.contains("download")) {
+      navbar = "download";
+    }
+    if (resourcePath.contains("faq")) {
+      navbar = "faq";
+    }
+    if (resourcePath.contains("community")) {
+      navbar = "community";
+    }
+    if (resourcePath.contains("blog")) {
+      navbar = "blog";
+    }
+    if (resourcePath.contains("help")) {
+      navbar = "help";
+    }
 
     // Check the asset cache
     Optional<String> contentOptional = InMemoryAssetCache.INSTANCE.getByResourcePath(resourcePath);
@@ -59,8 +81,7 @@ public class BaseModel {
       return;
     }
 
-    // Initialise navbar to populate the template
-    initialiseNavBar();
+    // Must be dealing with a fresh view to be here
 
     // Only asset type supported is HTML
     if (resourcePath.endsWith(".html")) {
@@ -75,22 +96,6 @@ public class BaseModel {
         content = StreamUtils.toString(is, Charsets.UTF_8);
         InMemoryAssetCache.INSTANCE.put(resourcePath, content);
 
-        // Determine the navbar status
-        if (resourcePath.contains("download")) {
-          navbar = "download";
-        }
-        if (resourcePath.contains("faq")) {
-          navbar = "faq";
-        }
-        if (resourcePath.contains("community")) {
-          navbar = "community";
-        }
-        if (resourcePath.contains("blog")) {
-          navbar = "blog";
-        }
-        if (resourcePath.contains("help")) {
-          navbar = "help";
-        }
         return;
       } catch (IOException e) {
         throw new WebApplicationException(e, Response.Status.NOT_FOUND);
@@ -129,6 +134,8 @@ public class BaseModel {
    */
   public String getNavBar() {
 
+    log.debug("NavBar= '{}', return = '{}'", navbar, navbars.get(navbar));
+
     return navbars.get(navbar == null ? "default" : navbar);
 
   }
@@ -143,7 +150,7 @@ public class BaseModel {
   /**
    * @return The initialised navbar map (one-off initialisation)
    */
-  private Map<String, String> initialiseNavBar() {
+  private static Map<String, String> initialiseNavBar() {
 
     String template =
       "<li {active1}><a href=\"/download.html\" title=\"Download latest and previous versions\">Download</a></li>\n"
@@ -152,54 +159,52 @@ public class BaseModel {
         + "<li {active4}><a href=\"/blog.html\"  title=\"Blog posts\">Blog</a></li>\n"
         + "<li {active5}><a href=\"/help.html\" title=\"Help with this site and our software\">Help</a></li>\n";
 
-    navbars = Maps.newHashMap();
-
     navbars.put("download", template
-        .replace("{active1}", "class=\"active\"")
-        .replace("{active2}", "")
-        .replace("{active3}", "")
-        .replace("{active4}", "")
-        .replace("{active5}", "")
+      .replace("{active1}", "class=\"active\"")
+      .replace("{active2}", "")
+      .replace("{active3}", "")
+      .replace("{active4}", "")
+      .replace("{active5}", "")
     );
 
     navbars.put("faq", template
-        .replace("{active1}", "")
-        .replace("{active2}", "class=\"active\"")
-        .replace("{active3}", "")
-        .replace("{active4}", "")
-        .replace("{active5}", "")
+      .replace("{active1}", "")
+      .replace("{active2}", "class=\"active\"")
+      .replace("{active3}", "")
+      .replace("{active4}", "")
+      .replace("{active5}", "")
     );
 
     navbars.put("community", template
-        .replace("{active1}", "")
-        .replace("{active2}", "")
-        .replace("{active3}", "class=\"active\"")
-        .replace("{active4}", "")
-        .replace("{active5}", "")
+      .replace("{active1}", "")
+      .replace("{active2}", "")
+      .replace("{active3}", "class=\"active\"")
+      .replace("{active4}", "")
+      .replace("{active5}", "")
     );
 
     navbars.put("blog", template
-        .replace("{active1}", "")
-        .replace("{active2}", "")
-        .replace("{active3}", "")
-        .replace("{active4}", "class=\"active\"")
-        .replace("{active5}", "")
+      .replace("{active1}", "")
+      .replace("{active2}", "")
+      .replace("{active3}", "")
+      .replace("{active4}", "class=\"active\"")
+      .replace("{active5}", "")
     );
 
     navbars.put("help", template
-        .replace("{active1}", "")
-        .replace("{active2}", "")
-        .replace("{active3}", "")
-        .replace("{active4}", "")
-        .replace("{active5}", "class=\"active\"")
+      .replace("{active1}", "")
+      .replace("{active2}", "")
+      .replace("{active3}", "")
+      .replace("{active4}", "")
+      .replace("{active5}", "class=\"active\"")
     );
 
     navbars.put("default", template
-        .replace("{active1}", "")
-        .replace("{active2}", "")
-        .replace("{active3}", "")
-        .replace("{active4", "")
-        .replace("{active5}", "")
+      .replace("{active1}", "")
+      .replace("{active2}", "")
+      .replace("{active3}", "")
+      .replace("{active4", "")
+      .replace("{active5}", "")
     );
 
     return navbars;

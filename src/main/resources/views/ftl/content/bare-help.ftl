@@ -1,4 +1,4 @@
-<#-- @ftlvariable name="view" type="org.multibit.site.views.PublicFreemarkerView" -->
+<#-- @ftlvariable name="" type="org.multibit.site.views.PublicFreemarkerView" -->
 <#-- Template for the MultiBit client help pages (no extra formatting) -->
 
 <#-- All templates include the base.ftl for variables -->
@@ -25,7 +25,7 @@
 <p><center><a href="help_contents.html">Back to help contents</a></center></p>
 
 <#-- Pull in the content from the model -->
-${view.model.content?replace("downloadVersion","${downloadVersion}")}
+${model.content?replace("downloadVersion","${downloadVersion}")}
 
 <p><center><a href="help_contents.html">Back to help contents</a></center></p>
 <br>
