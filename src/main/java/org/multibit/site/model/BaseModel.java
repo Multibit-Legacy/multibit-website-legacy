@@ -40,13 +40,13 @@ public class BaseModel {
 
   public BaseModel(String resourcePath) {
 
-    log.debug("Locating resource under '/views/html{}'", resourcePath);
-
     // Check for a fully-formed view
     if (resourcePath == null) {
       initialiseNavBar();
       return;
     }
+
+    log.debug("Locating resource under '/views/html{}'", resourcePath);
 
     // Check the asset cache
     Optional<String> contentOptional = InMemoryAssetCache.INSTANCE.getByResourcePath(resourcePath);
