@@ -42,6 +42,4 @@
 
 </div>
 
-<#include "../includes/cdn-scripts.ftl">
-
 </body>
