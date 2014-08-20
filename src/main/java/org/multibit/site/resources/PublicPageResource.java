@@ -203,23 +203,9 @@ public class PublicPageResource extends BaseResource {
   }
 
   /**
-   * @return The index page for the main site (requires a specific entry point)
-   */
-  @GET
-  @Path("index.html")
-  @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
-  @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
-  public PublicFreemarkerView<BaseModel> getHomePage() {
-
-    return getDefaultHomePage();
-
-  }
-
-  /**
    * @return The default index page for the main site with acceptance of terms and conditions
    */
   @POST
-  @Path("index.html")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(noCache = true)
   public PublicFreemarkerView<BaseModel> getDefaultHomePageWithCookie(@Context HttpServletResponse response) {
@@ -234,6 +220,31 @@ public class PublicPageResource extends BaseResource {
 
   }
 
+  /**
+   * @return The index page for the main site (requires a specific entry point)
+   */
+  @GET
+  @Path("index.html")
+  @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
+  @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
+  public PublicFreemarkerView<BaseModel> getHomePage() {
+
+    return getDefaultHomePage();
+
+  }
+
+  /**
+   * @return The index page for the main site (requires a specific entry point)
+   */
+  @POST
+  @Path("index.html")
+  @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
+  @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
+  public PublicFreemarkerView<BaseModel> getHomePageWithCookie(@Context HttpServletResponse response) {
+
+    return getDefaultHomePageWithCookie(response);
+
+  }
   /**
    * @param page The page name (or slug)
    *

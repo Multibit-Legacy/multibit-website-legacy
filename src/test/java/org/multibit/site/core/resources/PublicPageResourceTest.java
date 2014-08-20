@@ -1,9 +1,12 @@
 package org.multibit.site.core.resources;
 
+import com.sun.jersey.api.client.ClientResponse;
 import com.yammer.dropwizard.views.ViewMessageBodyWriter;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.multibit.site.core.testing.BaseResourceTest;
 import org.multibit.site.core.testing.MockHttpContextResponseInjectable;
+import org.multibit.site.resources.BaseResource;
 import org.multibit.site.resources.PublicPageResource;
 
 import javax.xml.bind.JAXBException;
@@ -63,6 +66,27 @@ public class PublicPageResourceTest extends BaseResourceTest {
       .get(String.class);
 
     assertThat(actualResponse).contains("MultiBit HD");
+
+  }
+
+  @Test
+  public void getHomepage() throws Exception {
+
+    String actualResponse = configureAsClient("/index.html")
+      .get(String.class);
+
+    assertThat(actualResponse).contains("MultiBit HD");
+
+  }
+
+  @Ignore
+  public void getDefaultHomePageWithCookie() throws Exception {
+
+    ClientResponse actualResponse = configureAsClient("/")
+      .post(ClientResponse.class);
+
+    assertThat(actualResponse.getCookies().size()).isEqualTo(1);
+    assertThat(actualResponse.getCookies().get(0).toCookie().getName()).isEqualTo(BaseResource.COOKIE_NAME);
 
   }
 
