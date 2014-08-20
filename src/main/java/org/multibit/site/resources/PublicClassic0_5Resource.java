@@ -56,7 +56,7 @@ public class PublicClassic0_5Resource extends BaseResource {
     // Java6 uses StringBuilder to optimise this
     String resourcePath = "/" + DEFAULT_LANGUAGE + "/help/v0.5/help_contents.html";
 
-    BaseModel model = new BaseModel(resourcePath);
+    BaseModel model = new BaseModel(resourcePath, acceptedTandC());
     return new PublicFreemarkerView<BaseModel>("content/bare-help.ftl", model);
 
   }
@@ -77,7 +77,7 @@ public class PublicClassic0_5Resource extends BaseResource {
     // Java6 uses StringBuilder to optimise this
     String resourcePath = "/" + DEFAULT_LANGUAGE + "/help/v0.5/" + page + ".html";
 
-    BaseModel model = new BaseModel(resourcePath);
+    BaseModel model = new BaseModel(resourcePath, acceptedTandC());
     return new PublicFreemarkerView<BaseModel>("content/bare-help.ftl", model);
 
   }
@@ -101,7 +101,7 @@ public class PublicClassic0_5Resource extends BaseResource {
     // Java6 uses StringBuilder to optimise this
     String resourcePath = "/" + lang + "/help/v0.5/" + pathParam;
 
-    BaseModel model = new BaseModel(resourcePath);
+    BaseModel model = new BaseModel(resourcePath, acceptedTandC());
     return new PublicFreemarkerView<BaseModel>("content/bare-help.ftl", model);
 
   }
