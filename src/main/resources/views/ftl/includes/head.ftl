@@ -36,21 +36,3 @@
 
 <#-- Override selective entries with main.css  -->
 <link rel="stylesheet" href="/css/main.css" />
-
-<!-- custom script -->
-<script>
-  function handleAccept(e){
-    if (e.preventDefault) e.preventDefault();
-    console.log("testing submit capture");
-    return false;
-  }
-
-  function showDownload(){
-    $(".mb-downloads .panel.mb-download-panel .panel-heading").slideUp(function(){
-      $(".mb-download-link-disabled").fadeOut(function(){
-        $(".mb-download-link").fadeIn();
-        $(".mb-downloads .panel.mb-download-panel .panel-body").addClass("mb-downloads-enabled");
-      });
-    });
-  }
-</script>

@@ -9,7 +9,7 @@
 The general idea is that Bootstrap CSS provides the foundation, then it is overridden by
 the above files which are contained in a single CSS that is fast to download.
 
-See `head.ftl` for the CDN links for CSS/JS.
+See `head.ftl` and `cdn-scripts.ftl` for the CDN links for CSS/JS.
 
 ## Workflow
 

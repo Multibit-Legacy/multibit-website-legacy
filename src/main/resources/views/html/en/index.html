@@ -61,7 +61,7 @@
             </div>
             <div class="col-sm-4 text-right">
               <span class="glyphicon glyphicon-arrow-right"></span>
-              <button type="submit" class="btn btn-info" title="Accept terms and conditions" onsubmit="handleAccept(e)">Accept</button>
+              <button type="submit" class="btn btn-info" onclick="showDownload()" title="Accept terms and conditions">Accept</button>
             </div>
           </div>
         </form>
@@ -97,4 +97,15 @@
 
 </div>
 
+<script>
 
+  function showDownload(){
+    $(".mb-downloads .panel.mb-download-panel .panel-heading").slideUp(function(){
+      $(".mb-download-link-disabled").fadeOut(function(){
+        $(".mb-download-link").fadeIn();
+        $(".mb-downloads .panel.mb-download-panel .panel-body").addClass("mb-downloads-enabled");
+      });
+    });
+  }
+
+</script>
