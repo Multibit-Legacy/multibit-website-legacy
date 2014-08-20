@@ -53,9 +53,12 @@
       </div>
 
       <div class="alert alert-info col-xs-12">
-        <form class="form-horizontal" role="form">
+        <form class="form-horizontal" role="form" method="post" action="./index.html">
           <div class="form-group">
             <div class="col-sm-8 mb-download-terms-and-conditions-text">Read and accept the <a href="tandc.html" target="_blank">terms and conditions</a> to enable the download buttons.</div>
+            <div class="hide">
+              <input type="text" name="accept" value="true">
+            </div>
             <div class="col-sm-4 text-right">
               <span class="glyphicon glyphicon-arrow-right"></span>
               <button type="submit" class="btn btn-info" onclick="showDownload()" title="Accept terms and conditions">Accept</button>
