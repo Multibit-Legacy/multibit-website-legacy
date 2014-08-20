@@ -1,4 +1,4 @@
-<#-- @ftlvariable name="" type="org.multibit.site.views.PublicFreemarkerView" -->
+<#-- @ftlvariable name="view" type="org.multibit.site.views.PublicFreemarkerView" -->
 <#-- Navbar -->
 <div class="navbar navbar-inverse" role="navigation">
 
@@ -14,7 +14,9 @@
 
   <div class="navbar-collapse collapse">
     <ul class="nav navbar-nav">
-    ${model.navBar}
+  <#if view??>
+    ${view.model.navBar}
+  </#if>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li>

@@ -8,17 +8,18 @@ import org.multibit.site.core.cleaner.AdvertLoader;
 import org.multibit.site.model.BaseModel;
 import org.multibit.site.views.PublicFreemarkerView;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Size;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
+import java.util.UUID;
 import java.util.concurrent.*;
 
 /**
@@ -190,13 +191,13 @@ public class PublicPageResource extends BaseResource {
   }
 
   /**
-   * @return The default index page for the main site
+   * @return The default index page for the main site with no cookie
    */
   @GET
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   public PublicFreemarkerView<BaseModel> getDefaultHomePage() {
 
-    BaseModel model = new BaseModel("/" + DEFAULT_LANGUAGE + "/index.html");
+    BaseModel model = new BaseModel("/" + DEFAULT_LANGUAGE + "/index.html", acceptedTandC());
     return new PublicFreemarkerView<BaseModel>("content/home.ftl", model);
 
   }
@@ -215,6 +216,25 @@ public class PublicPageResource extends BaseResource {
   }
 
   /**
+   * @return The default index page for the main site with acceptance of terms and conditions
+   */
+  @POST
+  @Path("index.html")
+  @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
+  @CacheControl(noCache = true)
+  public PublicFreemarkerView<BaseModel> getDefaultHomePageWithCookie(@Context HttpServletResponse response) {
+
+    Cookie cookie = new Cookie(COOKIE_NAME, UUID.randomUUID().toString());
+    cookie.setMaxAge(30 * 60); // Expire in 30 minutes
+
+    response.addCookie(cookie);
+
+    BaseModel model = new BaseModel("/" + DEFAULT_LANGUAGE + "/index.html", true);
+    return new PublicFreemarkerView<BaseModel>("content/home.ftl", model);
+
+  }
+
+  /**
    * @param page The page name (or slug)
    *
    * @return The default language page for the main site
@@ -227,7 +247,7 @@ public class PublicPageResource extends BaseResource {
     @PathParam("page") String page
   ) {
 
-    BaseModel model = new BaseModel("/" + DEFAULT_LANGUAGE + "/" + page + ".html");
+    BaseModel model = new BaseModel("/" + DEFAULT_LANGUAGE + "/" + page + ".html", false);
     return new PublicFreemarkerView<BaseModel>("content/main.ftl", model);
 
   }
@@ -245,7 +265,7 @@ public class PublicPageResource extends BaseResource {
     @Size(min = 3, max = 3) @PathParam("lang") String lang
   ) {
 
-    BaseModel model = new BaseModel("/" + lang + "/index.html");
+    BaseModel model = new BaseModel("/" + lang + "/index.html", acceptedTandC());
     return new PublicFreemarkerView<BaseModel>("content/home.ftl", model);
 
   }
@@ -265,7 +285,7 @@ public class PublicPageResource extends BaseResource {
     @PathParam("page") String page
   ) {
 
-    BaseModel model = new BaseModel("/" + lang + "/" + page + ".html");
+    BaseModel model = new BaseModel("/" + lang + "/" + page + ".html", acceptedTandC());
     return new PublicFreemarkerView<BaseModel>("content/main.ftl", model);
 
   }
@@ -321,7 +341,7 @@ public class PublicPageResource extends BaseResource {
     // Java6 uses StringBuilder to optimise this
     String resourcePath = "/" + lang + "/blog/" + year + "-" + month + "-" + day + "-" + page + ".html";
 
-    BaseModel model = new BaseModel(resourcePath);
+    BaseModel model = new BaseModel(resourcePath, acceptedTandC());
     return new PublicFreemarkerView<BaseModel>("content/blog.ftl", model);
 
   }
@@ -341,7 +361,7 @@ public class PublicPageResource extends BaseResource {
     String resourcePath = "/" + DEFAULT_LANGUAGE + "/help.html";
 
     // Use the main template since this is a starting point for a user
-    BaseModel model = new BaseModel(resourcePath);
+    BaseModel model = new BaseModel(resourcePath, acceptedTandC());
     return new PublicFreemarkerView<BaseModel>("content/main.ftl", model);
 
   }
@@ -364,7 +384,7 @@ public class PublicPageResource extends BaseResource {
     // Java6 uses StringBuilder to optimise this
     String resourcePath = "/" + lang + "/help.html";
 
-    BaseModel model = new BaseModel(resourcePath);
+    BaseModel model = new BaseModel(resourcePath, acceptedTandC());
     return new PublicFreemarkerView<BaseModel>("content/help.ftl", model);
 
   }
@@ -391,7 +411,7 @@ public class PublicPageResource extends BaseResource {
     // Java6 uses StringBuilder to optimise this
     String resourcePath = "/" + lang + "/help/" + version + "/help_contents.html";
 
-    BaseModel model = new BaseModel(resourcePath);
+    BaseModel model = new BaseModel(resourcePath, acceptedTandC());
     return new PublicFreemarkerView<BaseModel>("content/help.ftl", model);
 
   }
@@ -418,7 +438,7 @@ public class PublicPageResource extends BaseResource {
     // Java6 uses StringBuilder to optimise this
     String resourcePath = "/" + lang + "/help/" + version + "/" + pathParam;
 
-    BaseModel model = new BaseModel(resourcePath);
+    BaseModel model = new BaseModel(resourcePath, acceptedTandC());
     return new PublicFreemarkerView<BaseModel>("content/help.ftl", model);
 
   }

@@ -1,4 +1,4 @@
-<#-- @ftlvariable name="model" type="org.multibit.site.views.PublicFreemarkerView" -->
+<#-- @ftlvariable name="view" type="org.multibit.site.views.PublicFreemarkerView" -->
 <#include "../content/base.ftl">
 <#-- Required for IE to render correctly -->
 <!DOCTYPE HTML>

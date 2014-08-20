@@ -1,4 +1,4 @@
-<#-- @ftlvariable name="model" type="org.multibit.site.views.PublicFreemarkerView" -->
+<#-- @ftlvariable name="view" type="org.multibit.site.views.PublicFreemarkerView" -->
 <#-- Template for the main navigation and information pages with no animation -->
 
 <#-- All templates include the base.ftl for variables -->
@@ -17,7 +17,7 @@
 <div class="container container-main-content">
 
 <#-- Pull in the content from the model -->
-  ${model.content?replace("downloadVersion","${downloadVersion}")}
+  ${view.model.content?replace("downloadVersion","${downloadVersion}")}
 
 </div>
 

@@ -33,12 +33,16 @@ public class BaseModel {
 
   private String navbar = "default";
 
+  private final boolean acceptedTandC;
+
   private List<String> errors = Lists.newArrayList();
   private List<String> messages = Lists.newArrayList();
 
   private HashMap<String, String> navbars = Maps.newHashMap();
 
-  public BaseModel(String resourcePath) {
+  public BaseModel(String resourcePath, boolean acceptedTandC) {
+
+    this.acceptedTandC = acceptedTandC;
 
     // Check for a fully-formed view
     if (resourcePath == null) {
@@ -124,7 +128,16 @@ public class BaseModel {
    * @return The navbar for this request
    */
   public String getNavBar() {
-    return navbars.get(navbar);
+
+    return navbars.get(navbar == null ? "default" : navbar);
+
+  }
+
+  /**
+   * @return True if the terms and conditions have been accepted
+   */
+  public boolean isAcceptedTandC() {
+    return acceptedTandC;
   }
 
   /**
