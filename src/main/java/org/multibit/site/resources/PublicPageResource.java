@@ -191,10 +191,12 @@ public class PublicPageResource extends BaseResource {
   }
 
   /**
+   * No cache to ensure cookie status is correctly updated
    * @return The default index page for the main site with no cookie
    */
   @GET
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
+  @CacheControl(noCache = true)
   public PublicFreemarkerView<BaseModel> getDefaultHomePage() {
 
     BaseModel model = new BaseModel("/" + DEFAULT_LANGUAGE + "/index.html", acceptedTandC());
@@ -209,7 +211,7 @@ public class PublicPageResource extends BaseResource {
    */
   @POST
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
-  @CacheControl(noCache = true)
+  @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
   public PublicFreemarkerView<BaseModel> getDefaultHomePageWithCookie(@Context HttpServletResponse response) {
 
     Cookie cookie = new Cookie(COOKIE_NAME, UUID.randomUUID().toString());
@@ -225,12 +227,13 @@ public class PublicPageResource extends BaseResource {
   }
 
   /**
+   * No cache to ensure cookie status is correctly updated
    * @return The index page for the main site (requires a specific entry point)
    */
   @GET
   @Path("index.html")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
-  @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
+  @CacheControl(noCache = true)
   public PublicFreemarkerView<BaseModel> getHomePage() {
 
     return getDefaultHomePage();
@@ -251,12 +254,13 @@ public class PublicPageResource extends BaseResource {
   }
 
   /**
+   * No cache to ensure cookie status is correctly updated
    * @return The download page for the main site (requires a specific entry point)
    */
   @GET
   @Path("download.html")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
-  @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
+  @CacheControl(noCache = true)
   public PublicFreemarkerView<BaseModel> getDownloadPage() {
 
     BaseModel model = new BaseModel("/" + DEFAULT_LANGUAGE + "/download.html", acceptedTandC());
