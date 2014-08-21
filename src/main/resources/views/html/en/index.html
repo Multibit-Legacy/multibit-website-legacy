@@ -53,7 +53,7 @@
       </div>
 
       <div class="alert alert-info col-xs-12">
-        <form class="form-horizontal" role="form" method="post" action="/index.html">
+        <form class="form-horizontal" role="form" method="post" action="./index.html">
           <div class="form-group">
             <div class="col-sm-8 mb-download-terms-and-conditions-text">Read and accept the <a href="tandc.html" target="_blank">terms and conditions</a> to enable the download buttons.</div>
             <div class="hide">
@@ -96,3 +96,16 @@
   </div>
 
 </div>
+
+<script>
+
+  function showDownload(){
+    $(".mb-downloads .panel.mb-download-panel .panel-heading").slideUp(function(){
+      $(".mb-download-link-disabled").fadeOut(function(){
+        $(".mb-download-link").fadeIn();
+        $(".mb-downloads .panel.mb-download-panel .panel-body").addClass("mb-downloads-enabled");
+      });
+    });
+  }
+
+</script>
