@@ -44,9 +44,19 @@ public class BaseModel {
   private String navbar = "default";
   private final boolean acceptedTandC;
 
-  private List<String> errors = Lists.newArrayList();
+  /**
+   * Default is to not show download buttons
+   */
+  private boolean showDownload = false;
 
+  /**
+   * Default is to use /index.html as T&C acceptance endpoint
+   */
+  private String acceptAction = "/index.html";
+
+  private List<String> errors = Lists.newArrayList();
   private List<String> messages = Lists.newArrayList();
+
 
   public BaseModel(String resourcePath, boolean acceptedTandC) {
 
@@ -145,6 +155,28 @@ public class BaseModel {
    */
   public boolean isAcceptedTandC() {
     return acceptedTandC;
+  }
+
+  /**
+   * @return True if the download buttons should be shown
+   */
+  public boolean isShowDownload() {
+    return showDownload;
+  }
+
+  public void setShowDownload(boolean showDownload) {
+    this.showDownload = showDownload;
+  }
+
+  /**
+   * @return The relative path of the accept terms and conditions action
+   */
+  public String getAcceptAction() {
+    return acceptAction;
+  }
+
+  public void setAcceptAction(String acceptAction) {
+    this.acceptAction = acceptAction;
   }
 
   /**

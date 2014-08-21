@@ -1,5 +1,5 @@
 <#-- @ftlvariable name="" type="org.multibit.site.views.PublicFreemarkerView" -->
-<#include "../content/base.ftl">
+<#include "../includes/base.ftl">
 <#-- Required for IE to render correctly -->
 <!DOCTYPE HTML>
 <html lang="en">
@@ -33,7 +33,7 @@
   <div class="row">
 
     <div class="span12">
-      <a href="/"><img src="/images/common/error.png"></a>
+      <a href="/"><img src="/images/common/error.jpg"></a>
     </div>
 
   </div>

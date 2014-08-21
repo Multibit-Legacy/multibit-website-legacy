@@ -2,7 +2,7 @@
 <#-- Template for the blog pages with no download promotion -->
 
 <#-- All templates include the base.ftl for variables -->
-<#include "base.ftl">
+<#include "../includes/base.ftl">
 
 <#-- Required for IE to render correctly -->
 <!DOCTYPE HTML>

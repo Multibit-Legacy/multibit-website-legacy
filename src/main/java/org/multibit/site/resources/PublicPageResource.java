@@ -198,7 +198,9 @@ public class PublicPageResource extends BaseResource {
   public PublicFreemarkerView<BaseModel> getDefaultHomePage() {
 
     BaseModel model = new BaseModel("/" + DEFAULT_LANGUAGE + "/index.html", acceptedTandC());
-    return new PublicFreemarkerView<BaseModel>("content/home.ftl", model);
+    model.setShowDownload(true);
+    model.setAcceptAction("/index.html");
+    return new PublicFreemarkerView<BaseModel>("content/main.ftl", model);
 
   }
 
@@ -216,7 +218,9 @@ public class PublicPageResource extends BaseResource {
     response.addCookie(cookie);
 
     BaseModel model = new BaseModel("/" + DEFAULT_LANGUAGE + "/index.html", true);
-    return new PublicFreemarkerView<BaseModel>("content/home.ftl", model);
+    model.setShowDownload(true);
+    model.setAcceptAction("/index.html");
+    return new PublicFreemarkerView<BaseModel>("content/main.ftl", model);
 
   }
 
@@ -234,7 +238,7 @@ public class PublicPageResource extends BaseResource {
   }
 
   /**
-   * @return The index page for the main site (requires a specific entry point)
+   * @return The index page offers terms and conditions
    */
   @POST
   @Path("index.html")
@@ -245,6 +249,43 @@ public class PublicPageResource extends BaseResource {
     return getDefaultHomePageWithCookie(response);
 
   }
+
+  /**
+   * @return The download page for the main site (requires a specific entry point)
+   */
+  @GET
+  @Path("download.html")
+  @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
+  @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
+  public PublicFreemarkerView<BaseModel> getDownloadPage() {
+
+    BaseModel model = new BaseModel("/" + DEFAULT_LANGUAGE + "/download.html", acceptedTandC());
+    model.setShowDownload(true);
+    model.setAcceptAction("/download.html");
+    return new PublicFreemarkerView<BaseModel>("content/main.ftl", model);
+
+  }
+
+  /**
+   * @return The download page offers terms and conditions
+   */
+  @POST
+  @Path("download.html")
+  @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
+  @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
+  public PublicFreemarkerView<BaseModel> getDownloadPageWithCookie(@Context HttpServletResponse response) {
+
+    Cookie cookie = new Cookie(COOKIE_NAME, UUID.randomUUID().toString());
+    cookie.setMaxAge(30 * 60); // Expire in 30 minutes
+
+    response.addCookie(cookie);
+    BaseModel model = new BaseModel("/" + DEFAULT_LANGUAGE + "/download.html", acceptedTandC());
+    model.setShowDownload(true);
+    model.setAcceptAction("/download.html");
+    return new PublicFreemarkerView<BaseModel>("content/main.ftl", model);
+
+  }
+
   /**
    * @param page The page name (or slug)
    *
@@ -277,7 +318,7 @@ public class PublicPageResource extends BaseResource {
   ) {
 
     BaseModel model = new BaseModel("/" + lang + "/index.html", acceptedTandC());
-    return new PublicFreemarkerView<BaseModel>("content/home.ftl", model);
+    return new PublicFreemarkerView<BaseModel>("content/main.ftl", model);
 
   }
 
