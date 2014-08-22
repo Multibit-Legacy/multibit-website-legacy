@@ -2,7 +2,7 @@
 <#-- Template for the MultiBit client help pages (no extra formatting) -->
 
 <#-- All templates include the base.ftl for variables -->
-<#include "base.ftl">
+<#include "../includes/base.ftl">
 
 <#-- Required for IE to render correctly -->
 <!DOCTYPE HTML>
