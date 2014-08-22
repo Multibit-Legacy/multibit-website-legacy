@@ -4,13 +4,14 @@
 <#-- All templates include the base.ftl for variables -->
 <#include "base.ftl">
 
-<#if model.acceptedTandC == true>
-  Accepted T and C
-<#else>
-  Need to accept T and C
-</#if>
-
-<div class="row mb-downloads">
+<#-- Ensure the "jsok" style is invisible by default -->
+<style>
+  .jsok {
+    display: none;
+  }
+</style>
+<#-- The "jsok" class ensures that only JavaScript users will see this -->
+<div class="row mb-downloads jsok">
 
   <div class="panel panel-default mb-download-panel">
 
@@ -65,13 +66,14 @@
       </div>
 
       <div class="alert alert-info col-xs-12">
-        <form class="form-horizontal" action="${model.acceptAction}" method="post">
+        <form class="form-horizontal">
           <div class="form-group">
             <div class="col-sm-8 mb-download-terms-and-conditions-text">Read and accept the <a href="/tandc.html" target="_blank">terms and conditions</a> to enable the download
-              buttons.</div>
+              buttons.
+            </div>
             <div class="col-sm-4 text-right">
               <span class="glyphicon glyphicon-arrow-right"></span>
-              <button type="submit" class="btn btn-info" onclick="showDownload()" title="Accept terms and conditions">Accept</button>
+              <button type="submit" class="btn btn-info" onclick="acceptTandC()" title="Accept terms and conditions">Accept</button>
             </div>
           </div>
         </form>
@@ -81,15 +83,56 @@
   </div>
 </div>
 
-<script>
+<#-- Switch to NoScript page views -->
+<noscript>
+<#if model.acceptedTandC == true>
+  <#include "download-ns-accept.ftl">
+<#else>
+  <#include "download-ns.ftl">
+</#if>
+</noscript>
 
-  function showDownload(){
-    $(".mb-downloads .panel.mb-download-panel .panel-heading").slideUp(function(){
-      $(".mb-download-link-disabled").fadeOut(function(){
-        $(".mb-download-link").fadeIn();
-        $(".mb-downloads .panel.mb-download-panel .panel-body").addClass("mb-downloads-enabled");
+<script type="text/javascript">
+
+  $(document).ready(function () {
+
+    // Show the "jsok" class since JavaScript is available
+    $('.jsok').show();
+
+    // If cookie is already set
+    if ($.cookie("MBHD-Session")) {
+
+      // Enable the download buttons since user has accepted
+      $(".mb-downloads .panel.mb-download-panel .panel-heading").slideUp(function () {
+        $(".mb-download-link-disabled").fadeOut(function () {
+          $(".mb-download-link").fadeIn();
+          $(".mb-downloads .panel.mb-download-panel .panel-body").addClass("mb-downloads-enabled");
+        });
       });
+
+    }
+
+  }
+
+  })
+
+  <#-- Use JavaScript fade effect to show acceptance -->
+  function acceptTandC() {
+
+    // Get the session cookie through a post
+    $.post("/index.html", function (data, status) {
+
+      // Enable the download buttons since user has accepted
+      $(".mb-downloads .panel.mb-download-panel .panel-heading").slideUp(function () {
+        $(".mb-download-link-disabled").fadeOut(function () {
+          $(".mb-download-link").fadeIn();
+          $(".mb-downloads .panel.mb-download-panel .panel-body").addClass("mb-downloads-enabled");
+        });
+      });
+
     });
+
   }
 
 </script>
+
