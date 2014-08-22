@@ -2,8 +2,10 @@ package org.multibit.site.core.resources;
 
 import com.sun.jersey.api.client.ClientResponse;
 import com.yammer.dropwizard.views.ViewMessageBodyWriter;
+import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.multibit.site.SiteService;
 import org.multibit.site.core.testing.BaseResourceTest;
 import org.multibit.site.core.testing.MockHttpContextResponseInjectable;
 import org.multibit.site.resources.BaseResource;
@@ -25,6 +27,13 @@ import static org.fest.assertions.api.Assertions.assertThat;
 public class PublicPageResourceTest extends BaseResourceTest {
 
   private final PublicPageResource testObject = new PublicPageResource();
+
+  @BeforeClass
+  public static void setUp() {
+
+    new SiteService().configureFeeds();
+
+  }
 
   @Override
   protected void setUpResources() throws JAXBException {
@@ -60,7 +69,27 @@ public class PublicPageResourceTest extends BaseResourceTest {
   }
 
   @Test
-  public void getDefaultHomepage() throws Exception {
+  public void viewSiteMap() throws Exception {
+
+    String actualResponse = configureAsClient("/sitemap.xml")
+      .get(String.class);
+
+    assertThat(actualResponse).contains("urlset");
+
+  }
+
+  @Test
+  public void viewAtomFeed() throws Exception {
+
+    String actualResponse = configureAsClient("/atom.xml")
+      .get(String.class);
+
+    assertThat(actualResponse).contains("MultiBit Blog");
+
+  }
+
+  @Test
+  public void viewDefaultHomepage() throws Exception {
 
     String actualResponse = configureAsClient("/")
       .get(String.class);
@@ -69,18 +98,9 @@ public class PublicPageResourceTest extends BaseResourceTest {
 
   }
 
-  @Test
-  public void getHomepage() throws Exception {
-
-    String actualResponse = configureAsClient("/index.html")
-      .get(String.class);
-
-    assertThat(actualResponse).contains("MultiBit HD");
-
-  }
-
+  // TODO Create a mock cookie jar
   @Ignore
-  public void getDefaultHomePageWithCookie() throws Exception {
+  public void viewDefaultHomePageWithCookie() throws Exception {
 
     ClientResponse actualResponse = configureAsClient("/")
       .post(ClientResponse.class);
@@ -89,5 +109,29 @@ public class PublicPageResourceTest extends BaseResourceTest {
     assertThat(actualResponse.getCookies().get(0).toCookie().getName()).isEqualTo(BaseResource.COOKIE_NAME);
 
   }
+
+  @Test
+  public void viewHomepage() throws Exception {
+
+    String actualResponse = configureAsClient("/")
+      .get(String.class);
+
+    assertThat(actualResponse).contains("MultiBit HD");
+
+  }
+
+  // TODO Create a mock cookie jar
+  @Ignore
+  public void viewHomePageWithCookie() throws Exception {
+
+    ClientResponse actualResponse = configureAsClient("/")
+      .post(ClientResponse.class);
+
+    assertThat(actualResponse.getCookies().size()).isEqualTo(1);
+    assertThat(actualResponse.getCookies().get(0).toCookie().getName()).isEqualTo(BaseResource.COOKIE_NAME);
+
+  }
+
+  
 
 }

@@ -197,7 +197,7 @@ public class PublicPageResource extends BaseResource {
   @GET
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(noCache = true)
-  public PublicFreemarkerView<BaseModel> getDefaultHomePage() {
+  public PublicFreemarkerView<BaseModel> viewDefaultHomePage() {
 
     BaseModel model = new BaseModel("/" + DEFAULT_LANGUAGE + "/index.html", acceptedTandC());
     model.setShowDownload(true);
@@ -212,7 +212,7 @@ public class PublicPageResource extends BaseResource {
   @POST
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
-  public PublicFreemarkerView<BaseModel> getDefaultHomePageWithCookie(@Context HttpServletResponse response) {
+  public PublicFreemarkerView<BaseModel> viewDefaultHomePageWithCookie(@Context HttpServletResponse response) {
 
     Cookie cookie = new Cookie(COOKIE_NAME, UUID.randomUUID().toString());
     cookie.setMaxAge(30 * 60); // Expire in 30 minutes
@@ -234,9 +234,9 @@ public class PublicPageResource extends BaseResource {
   @Path("index.html")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(noCache = true)
-  public PublicFreemarkerView<BaseModel> getHomePage() {
+  public PublicFreemarkerView<BaseModel> viewHomePage() {
 
-    return getDefaultHomePage();
+    return viewDefaultHomePage();
 
   }
 
@@ -247,9 +247,9 @@ public class PublicPageResource extends BaseResource {
   @Path("index.html")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
-  public PublicFreemarkerView<BaseModel> getHomePageWithCookie(@Context HttpServletResponse response) {
+  public PublicFreemarkerView<BaseModel> viewHomePageWithCookie(@Context HttpServletResponse response) {
 
-    return getDefaultHomePageWithCookie(response);
+    return viewDefaultHomePageWithCookie(response);
 
   }
 
@@ -261,7 +261,7 @@ public class PublicPageResource extends BaseResource {
   @Path("download.html")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(noCache = true)
-  public PublicFreemarkerView<BaseModel> getDownloadPage() {
+  public PublicFreemarkerView<BaseModel> viewDownloadPage() {
 
     BaseModel model = new BaseModel("/" + DEFAULT_LANGUAGE + "/download.html", acceptedTandC());
     model.setShowDownload(true);
@@ -277,7 +277,7 @@ public class PublicPageResource extends BaseResource {
   @Path("download.html")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
-  public PublicFreemarkerView<BaseModel> getDownloadPageWithCookie(@Context HttpServletResponse response) {
+  public PublicFreemarkerView<BaseModel> viewDownloadPageWithCookie(@Context HttpServletResponse response) {
 
     Cookie cookie = new Cookie(COOKIE_NAME, UUID.randomUUID().toString());
     cookie.setMaxAge(30 * 60); // Expire in 30 minutes
@@ -299,7 +299,7 @@ public class PublicPageResource extends BaseResource {
   @Path("{page}.html")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
-  public PublicFreemarkerView<BaseModel> getDefaultPage(
+  public PublicFreemarkerView<BaseModel> viewDefaultPage(
     @PathParam("page") String page
   ) {
 
@@ -317,7 +317,7 @@ public class PublicPageResource extends BaseResource {
   @Path("{lang}")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
-  public PublicFreemarkerView<BaseModel> getLanguageSpecificDefaultHomePage(
+  public PublicFreemarkerView<BaseModel> viewLanguageSpecificDefaultHomePage(
     @Size(min = 3, max = 3) @PathParam("lang") String lang
   ) {
 
@@ -336,7 +336,7 @@ public class PublicPageResource extends BaseResource {
   @Path("{lang}/{page}.html")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
-  public PublicFreemarkerView<BaseModel> getLanguageSpecificPage(
+  public PublicFreemarkerView<BaseModel> viewLanguageSpecificPage(
     @Size(min = 3, max = 3) @PathParam("lang") String lang,
     @PathParam("page") String page
   ) {
@@ -360,14 +360,14 @@ public class PublicPageResource extends BaseResource {
   @Path("blog/{year}/{month}/{day}/{page}.html")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
-  public PublicFreemarkerView<BaseModel> getDefaultBlogPage(
+  public PublicFreemarkerView<BaseModel> viewDefaultBlogPage(
     @Digits(integer = 2, fraction = 0) @PathParam("year") String year,
     @Digits(integer = 2, fraction = 0) @PathParam("month") String month,
     @Digits(integer = 2, fraction = 0) @PathParam("day") String day,
     @PathParam("page") String page
   ) {
 
-    return getLanguageSpecificBlogPage(DEFAULT_LANGUAGE, year, month, day, page);
+    return viewLanguageSpecificBlogPage(DEFAULT_LANGUAGE, year, month, day, page);
 
   }
 
@@ -386,7 +386,7 @@ public class PublicPageResource extends BaseResource {
   @Path("/{lang}/blog/{year}/{month}/{day}/{page}.html")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
-  public PublicFreemarkerView<BaseModel> getLanguageSpecificBlogPage(
+  public PublicFreemarkerView<BaseModel> viewLanguageSpecificBlogPage(
     @Size(min = 3, max = 3) @PathParam("lang") String lang,
     @Digits(integer = 2, fraction = 0) @PathParam("year") String year,
     @Digits(integer = 2, fraction = 0) @PathParam("month") String month,
@@ -411,7 +411,7 @@ public class PublicPageResource extends BaseResource {
   @Path("help")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
-  public PublicFreemarkerView<BaseModel> getDefaultHelpPage() {
+  public PublicFreemarkerView<BaseModel> viewDefaultHelpPage() {
 
     // Java6 uses StringBuilder to optimise this
     String resourcePath = "/" + DEFAULT_LANGUAGE + "/help.html";
@@ -433,7 +433,7 @@ public class PublicPageResource extends BaseResource {
   @Path("{lang}/help")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
-  public PublicFreemarkerView<BaseModel> getDefaultLanguageSpecificHelpPage(
+  public PublicFreemarkerView<BaseModel> viewDefaultLanguageSpecificHelpPage(
     @Size(min = 3, max = 3) @PathParam("lang") String lang
   ) {
 
@@ -459,7 +459,7 @@ public class PublicPageResource extends BaseResource {
   @Path("{lang}/help/{version}")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
-  public PublicFreemarkerView<BaseModel> getDefaultLanguageVersionSpecificHelpPage(
+  public PublicFreemarkerView<BaseModel> viewDefaultLanguageVersionSpecificHelpPage(
     @Size(min = 3, max = 3) @PathParam("lang") String lang,
     @PathParam("version") String version
   ) {
@@ -485,7 +485,7 @@ public class PublicPageResource extends BaseResource {
   @Path("{lang}/help/{version}/{pathParam: (?).*}")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
-  public PublicFreemarkerView<BaseModel> getLanguageVersionSpecificHelpPage(
+  public PublicFreemarkerView<BaseModel> viewLanguageVersionSpecificHelpPage(
     @Size(min = 3, max = 3) @PathParam("lang") String lang,
     @PathParam("version") String version,
     @PathParam("pathParam") String pathParam

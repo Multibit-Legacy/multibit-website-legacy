@@ -47,7 +47,10 @@ public class SiteService extends Service<SiteConfiguration> {
     new SiteService().run(args);
   }
 
-  private SiteService() {
+  /**
+   * Require a public constructor for functional testing
+   */
+  public SiteService() {
 
   }
 
@@ -87,6 +90,12 @@ public class SiteService extends Service<SiteConfiguration> {
 
     // Session handler
     environment.setSessionHandler(new SessionHandler());
+    configureFeeds();
+
+
+  }
+
+  public void configureFeeds() {
 
     // Read the Atom feed and put it into the asset cache
     InputStream atomStream = SiteService.class.getResourceAsStream("/views/atom.xml");
