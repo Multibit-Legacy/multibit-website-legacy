@@ -219,6 +219,7 @@ public class PublicPageResource extends BaseResource {
 
     response.addCookie(cookie);
 
+    // Accepted by virtue of the POST
     BaseModel model = new BaseModel("/" + DEFAULT_LANGUAGE + "/index.html", true);
     model.setShowDownload(true);
     model.setAcceptAction("/index.html");
@@ -283,9 +284,12 @@ public class PublicPageResource extends BaseResource {
     cookie.setMaxAge(30 * 60); // Expire in 30 minutes
 
     response.addCookie(cookie);
-    BaseModel model = new BaseModel("/" + DEFAULT_LANGUAGE + "/download.html", acceptedTandC());
+
+    // Accepted by virtue of the POST
+    BaseModel model = new BaseModel("/" + DEFAULT_LANGUAGE + "/download.html", true);
     model.setShowDownload(true);
     model.setAcceptAction("/download.html");
+
     return new PublicFreemarkerView<BaseModel>("content/main.ftl", model);
 
   }

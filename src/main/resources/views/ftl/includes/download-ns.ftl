@@ -4,13 +4,6 @@
 <#-- All templates include the base.ftl for variables -->
 <#include "base.ftl">
 
-<#-- TODO Remove this after verification -->
-<#if model.acceptedTandC == true>
-Accepted T and C
-<#else>
-Need to accept T and C
-</#if>
-
 <div class="row mb-downloads">
 
   <div class="panel panel-default mb-download-panel">
@@ -27,6 +20,12 @@ Need to accept T and C
             <br/>Windows
           </div>
         </div>
+        <div class="mb-download-link text-center">
+          <a href="https://multibit.org/releases/multibit-hd-${downloadVersion}/mbhd-${downloadVersion}-win32.exe" class="btn btn-default col-xs-12"
+             title="Click to download MultiBit HD for Windows">
+            <i class="mb-download-icon fa fa-windows fa-5x"></i>
+            <br/>Windows</a>
+        </div>
       </div>
 
       <div class="col-xs-4">
@@ -35,6 +34,12 @@ Need to accept T and C
             <i class="mb-download-icon fa fa-linux fa-5x" title="Clicking accept will enable the download buttons"></i>
             <br/>Linux
           </div>
+        </div>
+        <div class="mb-download-link text-center">
+          <a href="https://multibit.org/releases/multibit-hd-${downloadVersion}/mbhd-${downloadVersion}-linux" class="btn btn-default col-xs-12"
+             title="Click to download MultiBit HD for Linux">
+            <i class="mb-download-icon fa fa-linux fa-5x"></i>
+            <br/>Linux</a>
         </div>
       </div>
 
@@ -45,20 +50,28 @@ Need to accept T and C
             <br/>OS X
           </div>
         </div>
+        <div class="mb-download-link text-center">
+          <a href="https://multibit.org/releases/multibit-hd-${downloadVersion}/mbhd-${downloadVersion}-macosx.dmg" class="btn btn-default col-xs-12"
+             title="Click to download MultiBit HD for OS X">
+            <i class="mb-download-icon fa fa-apple fa-5x"></i>
+            <br/>OS X</a>
+        </div>
       </div>
-
+    <#if model.acceptedTandC == false>
       <div class="alert alert-info col-xs-12">
-        <form class="form-horizontal" action="${model.acceptAction}" method="post">
+        <form class="form-horizontal" method="post" action="${model.acceptAction}">
           <div class="form-group">
             <div class="col-sm-8 mb-download-terms-and-conditions-text">Read and accept the <a href="/tandc.html" target="_blank">terms and conditions</a> to enable the download
-              buttons.</div>
+              buttons.
+            </div>
             <div class="col-sm-4 text-right">
               <span class="glyphicon glyphicon-arrow-right"></span>
-              <button type="submit" class="btn btn-info" onclick="showDownload()" title="Accept terms and conditions">Accept</button>
+              <button type="submit" class="btn btn-info" title="Accept terms and conditions">Accept</button>
             </div>
           </div>
         </form>
       </div>
+    </#if>
 
     </div>
   </div>
