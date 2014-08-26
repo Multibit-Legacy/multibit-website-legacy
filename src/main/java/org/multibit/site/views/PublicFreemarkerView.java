@@ -1,5 +1,6 @@
 package org.multibit.site.views;
 
+import com.google.common.base.Charsets;
 import com.google.common.base.Preconditions;
 import com.yammer.dropwizard.views.View;
 import org.multibit.site.model.BaseModel;
@@ -22,7 +23,7 @@ public class PublicFreemarkerView<T extends BaseModel> extends View {
   private final T model;
 
   public PublicFreemarkerView(String templateName, T model) {
-    super("/views/ftl/"+templateName);
+    super("/views/ftl/"+templateName, Charsets.UTF_8);
 
     Preconditions.checkNotNull(model, "'model' must be present");
 
