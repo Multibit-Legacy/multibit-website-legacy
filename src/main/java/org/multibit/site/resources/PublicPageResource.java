@@ -8,13 +8,11 @@ import org.multibit.site.core.cleaner.AdvertLoader;
 import org.multibit.site.model.BaseModel;
 import org.multibit.site.views.PublicFreemarkerView;
 
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletResponse;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Size;
 import javax.ws.rs.*;
-import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.NewCookie;
 import javax.ws.rs.core.Response;
 import java.io.IOException;
 import java.io.InputStream;
@@ -192,12 +190,13 @@ public class PublicPageResource extends BaseResource {
 
   /**
    * No cache to ensure cookie status is correctly updated
+   *
    * @return The default index page for the main site with no cookie
    */
   @GET
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(noCache = true)
-  public PublicFreemarkerView<BaseModel> viewDefaultHomePage() {
+  public PublicFreemarkerView<BaseModel> viewDefaultIndexPage() {
 
     BaseModel model = new BaseModel("/" + DEFAULT_LANGUAGE + "/index.html", acceptedTandC());
     model.setShowDownload(true);
@@ -212,32 +211,24 @@ public class PublicPageResource extends BaseResource {
   @POST
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
-  public PublicFreemarkerView<BaseModel> viewDefaultHomePageWithCookie(@Context HttpServletResponse response) {
+  public Response viewDefaultIndexPageWithCookie() {
 
-    Cookie cookie = new Cookie(COOKIE_NAME, UUID.randomUUID().toString());
-    cookie.setMaxAge(30 * 60); // Expire in 30 minutes
-
-    response.addCookie(cookie);
-
-    // Accepted by virtue of the POST
-    BaseModel model = new BaseModel("/" + DEFAULT_LANGUAGE + "/index.html", true);
-    model.setShowDownload(true);
-    model.setAcceptAction("/index.html");
-    return new PublicFreemarkerView<BaseModel>("content/main.ftl", model);
+    return getResponseWithCookie("/index.html");
 
   }
 
   /**
    * No cache to ensure cookie status is correctly updated
+   *
    * @return The index page for the main site (requires a specific entry point)
    */
   @GET
   @Path("index.html")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(noCache = true)
-  public PublicFreemarkerView<BaseModel> viewHomePage() {
+  public PublicFreemarkerView<BaseModel> viewIndexPage() {
 
-    return viewDefaultHomePage();
+    return viewDefaultIndexPage();
 
   }
 
@@ -248,14 +239,15 @@ public class PublicPageResource extends BaseResource {
   @Path("index.html")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
-  public PublicFreemarkerView<BaseModel> viewHomePageWithCookie(@Context HttpServletResponse response) {
+  public Response viewIndexPageWithCookie() {
 
-    return viewDefaultHomePageWithCookie(response);
+    return viewDefaultIndexPageWithCookie();
 
   }
 
   /**
    * No cache to ensure cookie status is correctly updated
+   *
    * @return The download page for the main site (requires a specific entry point)
    */
   @GET
@@ -278,19 +270,9 @@ public class PublicPageResource extends BaseResource {
   @Path("download.html")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
-  public PublicFreemarkerView<BaseModel> viewDownloadPageWithCookie(@Context HttpServletResponse response) {
+  public Response viewDownloadPageWithCookie() {
 
-    Cookie cookie = new Cookie(COOKIE_NAME, UUID.randomUUID().toString());
-    cookie.setMaxAge(30 * 60); // Expire in 30 minutes
-
-    response.addCookie(cookie);
-
-    // Accepted by virtue of the POST
-    BaseModel model = new BaseModel("/" + DEFAULT_LANGUAGE + "/download.html", true);
-    model.setShowDownload(true);
-    model.setAcceptAction("/download.html");
-
-    return new PublicFreemarkerView<BaseModel>("content/main.ftl", model);
+    return getResponseWithCookie("/download.html");
 
   }
 
@@ -513,6 +495,24 @@ public class PublicPageResource extends BaseResource {
       .temporaryRedirect(URI.create(FAILSAFE))
       .type(MediaType.TEXT_HTML)
       .build();
+  }
+
+  /**
+   * @param resourcePath The resource path (e.g. "/index.html")
+   *
+   * @return A response containing a session cookie
+   */
+  private Response getResponseWithCookie(String resourcePath) {
+
+    NewCookie cookie = new NewCookie(COOKIE_NAME, UUID.randomUUID().toString(), "/", null, null, 30 * 60, true);
+
+    // Accepted by virtue of the POST
+    BaseModel model = new BaseModel("/" + DEFAULT_LANGUAGE + resourcePath, true);
+    model.setShowDownload(true);
+    model.setAcceptAction(resourcePath);
+    PublicFreemarkerView<BaseModel> entity = new PublicFreemarkerView<BaseModel>("content/main.ftl", model);
+
+    return Response.ok().entity(entity).cookie(cookie).build();
   }
 
 }

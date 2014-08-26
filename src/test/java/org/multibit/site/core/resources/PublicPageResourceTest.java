@@ -3,11 +3,9 @@ package org.multibit.site.core.resources;
 import com.sun.jersey.api.client.ClientResponse;
 import com.yammer.dropwizard.views.ViewMessageBodyWriter;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.multibit.site.SiteService;
 import org.multibit.site.core.testing.BaseResourceTest;
-import org.multibit.site.core.testing.MockHttpContextResponseInjectable;
 import org.multibit.site.resources.BaseResource;
 import org.multibit.site.resources.PublicPageResource;
 
@@ -39,7 +37,6 @@ public class PublicPageResourceTest extends BaseResourceTest {
   protected void setUpResources() throws JAXBException {
 
     addProvider(ViewMessageBodyWriter.class);
-    addProvider(MockHttpContextResponseInjectable.class);
 
     // Configure response
 
@@ -89,49 +86,71 @@ public class PublicPageResourceTest extends BaseResourceTest {
   }
 
   @Test
-  public void viewDefaultHomepage() throws Exception {
+  public void viewDefaultIndexPage() throws Exception {
 
     String actualResponse = configureAsClient("/")
       .get(String.class);
 
-    assertThat(actualResponse).contains("MultiBit HD");
+    assertThat(actualResponse).contains("International");
 
   }
 
-  // TODO Create a mock cookie jar
-  @Ignore
-  public void viewDefaultHomePageWithCookie() throws Exception {
+  @Test
+  public void viewDefaultIndexPage_Accepted() throws Exception {
 
     ClientResponse actualResponse = configureAsClient("/")
       .post(ClientResponse.class);
 
+    assertThat(actualResponse.getEntity(String.class)).contains("International");
     assertThat(actualResponse.getCookies().size()).isEqualTo(1);
     assertThat(actualResponse.getCookies().get(0).toCookie().getName()).isEqualTo(BaseResource.COOKIE_NAME);
 
   }
 
   @Test
-  public void viewHomepage() throws Exception {
+  public void viewIndexPage() throws Exception {
 
-    String actualResponse = configureAsClient("/")
-      .get(String.class);
+    ClientResponse actualResponse = configureAsClient("/index.html")
+      .get(ClientResponse.class);
 
-    assertThat(actualResponse).contains("MultiBit HD");
+    assertThat(actualResponse.getEntity(String.class)).contains("International");
+    assertThat(actualResponse.getCookies().size()).isEqualTo(0);
 
   }
 
-  // TODO Create a mock cookie jar
-  @Ignore
-  public void viewHomePageWithCookie() throws Exception {
+  @Test
+  public void viewIndexPage_Accepted() throws Exception {
 
-    ClientResponse actualResponse = configureAsClient("/")
+    ClientResponse actualResponse = configureAsClient("/index.html")
       .post(ClientResponse.class);
 
+    assertThat(actualResponse.getEntity(String.class)).contains("International");
     assertThat(actualResponse.getCookies().size()).isEqualTo(1);
     assertThat(actualResponse.getCookies().get(0).toCookie().getName()).isEqualTo(BaseResource.COOKIE_NAME);
 
   }
 
-  
+  @Test
+  public void viewDownloadPage() throws Exception {
+
+    ClientResponse actualResponse = configureAsClient("/download.html")
+      .get(ClientResponse.class);
+
+    assertThat(actualResponse.getEntity(String.class)).contains("0.0.1");
+    assertThat(actualResponse.getCookies().size()).isEqualTo(0);
+
+  }
+
+  @Test
+  public void viewDownloadPage_Accepted() throws Exception {
+
+    ClientResponse actualResponse = configureAsClient("/download.html")
+      .post(ClientResponse.class);
+
+    assertThat(actualResponse.getEntity(String.class)).contains("0.0.1");
+    assertThat(actualResponse.getCookies().size()).isEqualTo(1);
+    assertThat(actualResponse.getCookies().get(0).toCookie().getName()).isEqualTo(BaseResource.COOKIE_NAME);
+
+  }
 
 }
