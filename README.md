@@ -2,7 +2,7 @@
 
 Project status: Private beta. Expect minor bugs and API changes.
 
-Build status: [![Build Status](https://travis-ci.org/bitcoin-solutions/multibit-website.png?branch=release-4.0.0)](https://travis-ci.org/bitcoin-solutions/multibit-website)
+Build status: [![Build Status](https://travis-ci.org/bitcoin-solutions/multibit-website.svg?branch=release-4.0.0)](https://travis-ci.org/bitcoin-solutions/multibit-website)
 
 This branch contains the source for the [MultiBit Beta website](https://beta.multibit.org).
 
