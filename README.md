@@ -1,14 +1,17 @@
 ## Welcome to the MultiBit Website Repository v4.0.0
 
-This repo contains the source for the [MultiBit website](https://multibit.org).
+Project status: Private beta. Expect minor bugs and API changes.
 
-Specifically this branch is for the MultiBit HD site refresh.
+Build status: [![Build Status](https://travis-ci.org/bitcoin-solutions/multibit-website.png?branch=release-4.0.0)](https://travis-ci.org/bitcoin-solutions/multibit-website)
+
+This branch contains the source for the [MultiBit Beta website](https://beta.multibit.org).
+
 
 ## MultiBit Website
 
 From a technical point of view this project uses
 
-* Java - Primary language of the app
+* Java 7+ - Primary language of the app
 * [Maven](http://maven.apache.org/) - Build system
 * [Dropwizard](http://dropwizard.io) - Self-contained web server
 * HTML5 and CSS - All pages are simple HTML5 with Bootstrap and Font Awesome
