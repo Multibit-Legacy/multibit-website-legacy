@@ -67,7 +67,7 @@ public class PublicPageResource extends BaseResource {
   /**
    * The failsafe HTML to ensure continued correct presentation
    */
-  private static final String FAILSAFE = "http://localhost:8080/ka/failsafe.html";
+  private static final String FAILSAFE = "/ka/failsafe.html";
 
   /**
    * Provide the favicon
