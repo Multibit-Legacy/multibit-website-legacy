@@ -1,6 +1,6 @@
 ## Welcome to the MultiBit Website Repository
 
-Project status: Private beta. Expect minor bugs and API changes.
+Project status: Pre-production staging branch. Expect text content changes.
 
 Build status: [![Build Status](https://travis-ci.org/bitcoin-solutions/multibit-website.svg?branch=develop)](https://travis-ci.org/bitcoin-solutions/multibit-website)
 
