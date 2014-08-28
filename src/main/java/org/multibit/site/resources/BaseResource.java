@@ -1,6 +1,8 @@
 package org.multibit.site.resources;
 
 import com.sun.jersey.api.core.HttpContext;
+import org.multibit.site.model.BaseModel;
+import org.multibit.site.views.PublicFreemarkerView;
 
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Context;
@@ -75,5 +77,13 @@ public abstract class BaseResource {
   protected boolean acceptedTandC() {
 
     return httpHeaders != null && httpHeaders.getCookies().containsKey(COOKIE_NAME);
+  }
+
+  protected Response pageResponse(BaseModel model, String templatePath) {
+    return Response
+      .ok()
+      .entity(new PublicFreemarkerView<BaseModel>(templatePath, model))
+      .header(com.google.common.net.HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN,"*")
+      .build();
   }
 }

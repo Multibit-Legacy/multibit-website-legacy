@@ -1,6 +1,7 @@
 package org.multibit.site.resources;
 
 import com.google.common.base.Optional;
+import com.google.common.net.HttpHeaders;
 import com.yammer.dropwizard.jersey.caching.CacheControl;
 import com.yammer.metrics.annotation.Timed;
 import org.multibit.site.caches.InMemoryArtifactCache;
@@ -196,12 +197,13 @@ public class PublicPageResource extends BaseResource {
   @GET
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(noCache = true)
-  public PublicFreemarkerView<BaseModel> viewDefaultIndexPage() {
+  public Response viewDefaultIndexPage() {
 
     BaseModel model = new BaseModel("/" + DEFAULT_LANGUAGE + "/index.html", acceptedTandC());
     model.setShowDownload(true);
     model.setAcceptAction("/index.html");
-    return new PublicFreemarkerView<BaseModel>("content/main.ftl", model);
+
+    return pageResponse(model, "content/main.ftl");
 
   }
 
@@ -226,7 +228,7 @@ public class PublicPageResource extends BaseResource {
   @Path("index.html")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(noCache = true)
-  public PublicFreemarkerView<BaseModel> viewIndexPage() {
+  public Response viewIndexPage() {
 
     return viewDefaultIndexPage();
 
@@ -254,12 +256,13 @@ public class PublicPageResource extends BaseResource {
   @Path("download.html")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(noCache = true)
-  public PublicFreemarkerView<BaseModel> viewDownloadPage() {
+  public Response viewDownloadPage() {
 
     BaseModel model = new BaseModel("/" + DEFAULT_LANGUAGE + "/download.html", acceptedTandC());
     model.setShowDownload(true);
     model.setAcceptAction("/download.html");
-    return new PublicFreemarkerView<BaseModel>("content/main.ftl", model);
+
+    return pageResponse(model, "content/main.ftl");
 
   }
 
@@ -285,12 +288,13 @@ public class PublicPageResource extends BaseResource {
   @Path("{page}.html")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
-  public PublicFreemarkerView<BaseModel> viewDefaultPage(
+  public Response viewDefaultPage(
     @PathParam("page") String page
   ) {
 
     BaseModel model = new BaseModel("/" + DEFAULT_LANGUAGE + "/" + page + ".html", false);
-    return new PublicFreemarkerView<BaseModel>("content/main.ftl", model);
+
+    return pageResponse(model, "content/main.ftl");
 
   }
 
@@ -303,12 +307,13 @@ public class PublicPageResource extends BaseResource {
   @Path("{lang}")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
-  public PublicFreemarkerView<BaseModel> viewLanguageSpecificDefaultHomePage(
+  public Response viewLanguageSpecificDefaultHomePage(
     @Size(min = 3, max = 3) @PathParam("lang") String lang
   ) {
 
     BaseModel model = new BaseModel("/" + lang + "/index.html", acceptedTandC());
-    return new PublicFreemarkerView<BaseModel>("content/main.ftl", model);
+
+    return pageResponse(model, "content/main.ftl");
 
   }
 
@@ -322,14 +327,14 @@ public class PublicPageResource extends BaseResource {
   @Path("{lang}/{page}.html")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
-  public PublicFreemarkerView<BaseModel> viewLanguageSpecificPage(
+  public Response viewLanguageSpecificPage(
     @Size(min = 3, max = 3) @PathParam("lang") String lang,
     @PathParam("page") String page
   ) {
 
     BaseModel model = new BaseModel("/" + lang + "/" + page + ".html", acceptedTandC());
-    return new PublicFreemarkerView<BaseModel>("content/main.ftl", model);
 
+    return pageResponse(model, "content/main.ftl");
   }
 
   /**
@@ -346,7 +351,7 @@ public class PublicPageResource extends BaseResource {
   @Path("blog/{year}/{month}/{day}/{page}.html")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
-  public PublicFreemarkerView<BaseModel> viewDefaultBlogPage(
+  public Response viewDefaultBlogPage(
     @Digits(integer = 2, fraction = 0) @PathParam("year") String year,
     @Digits(integer = 2, fraction = 0) @PathParam("month") String month,
     @Digits(integer = 2, fraction = 0) @PathParam("day") String day,
@@ -372,7 +377,7 @@ public class PublicPageResource extends BaseResource {
   @Path("/{lang}/blog/{year}/{month}/{day}/{page}.html")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
-  public PublicFreemarkerView<BaseModel> viewLanguageSpecificBlogPage(
+  public Response viewLanguageSpecificBlogPage(
     @Size(min = 3, max = 3) @PathParam("lang") String lang,
     @Digits(integer = 2, fraction = 0) @PathParam("year") String year,
     @Digits(integer = 2, fraction = 0) @PathParam("month") String month,
@@ -384,7 +389,8 @@ public class PublicPageResource extends BaseResource {
     String resourcePath = "/" + lang + "/blog/" + year + "-" + month + "-" + day + "-" + page + ".html";
 
     BaseModel model = new BaseModel(resourcePath, acceptedTandC());
-    return new PublicFreemarkerView<BaseModel>("content/blog.ftl", model);
+
+    return pageResponse(model, "content/blog.ftl");
 
   }
 
@@ -397,14 +403,15 @@ public class PublicPageResource extends BaseResource {
   @Path("help")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
-  public PublicFreemarkerView<BaseModel> viewDefaultHelpPage() {
+  public Response viewDefaultHelpPage() {
 
     // Java6 uses StringBuilder to optimise this
     String resourcePath = "/" + DEFAULT_LANGUAGE + "/help.html";
 
     // Use the main template since this is a starting point for a user
     BaseModel model = new BaseModel(resourcePath, acceptedTandC());
-    return new PublicFreemarkerView<BaseModel>("content/main.ftl", model);
+
+    return pageResponse(model, "content/help.ftl");
 
   }
 
@@ -419,7 +426,7 @@ public class PublicPageResource extends BaseResource {
   @Path("{lang}/help")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
-  public PublicFreemarkerView<BaseModel> viewDefaultLanguageSpecificHelpPage(
+  public Response viewDefaultLanguageSpecificHelpPage(
     @Size(min = 3, max = 3) @PathParam("lang") String lang
   ) {
 
@@ -427,7 +434,9 @@ public class PublicPageResource extends BaseResource {
     String resourcePath = "/" + lang + "/help.html";
 
     BaseModel model = new BaseModel(resourcePath, acceptedTandC());
-    return new PublicFreemarkerView<BaseModel>("content/help.ftl", model);
+
+    return pageResponse(model, "content/help.ftl");
+
 
   }
 
@@ -445,7 +454,7 @@ public class PublicPageResource extends BaseResource {
   @Path("{lang}/help/{version}")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
-  public PublicFreemarkerView<BaseModel> viewDefaultLanguageVersionSpecificHelpPage(
+  public Response viewDefaultLanguageVersionSpecificHelpPage(
     @Size(min = 3, max = 3) @PathParam("lang") String lang,
     @PathParam("version") String version
   ) {
@@ -454,7 +463,8 @@ public class PublicPageResource extends BaseResource {
     String resourcePath = "/" + lang + "/help/" + version + "/help_contents.html";
 
     BaseModel model = new BaseModel(resourcePath, acceptedTandC());
-    return new PublicFreemarkerView<BaseModel>("content/help.ftl", model);
+
+    return pageResponse(model, "content/help.ftl");
 
   }
 
@@ -471,7 +481,7 @@ public class PublicPageResource extends BaseResource {
   @Path("{lang}/help/{version}/{pathParam: (?).*}")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
-  public PublicFreemarkerView<BaseModel> viewLanguageVersionSpecificHelpPage(
+  public Response viewLanguageVersionSpecificHelpPage(
     @Size(min = 3, max = 3) @PathParam("lang") String lang,
     @PathParam("version") String version,
     @PathParam("pathParam") String pathParam
@@ -481,7 +491,8 @@ public class PublicPageResource extends BaseResource {
     String resourcePath = "/" + lang + "/help/" + version + "/" + pathParam;
 
     BaseModel model = new BaseModel(resourcePath, acceptedTandC());
-    return new PublicFreemarkerView<BaseModel>("content/help.ftl", model);
+
+    return pageResponse(model, "content/help.ftl");
 
   }
 
@@ -520,7 +531,12 @@ public class PublicPageResource extends BaseResource {
     model.setAcceptAction(resourcePath);
     PublicFreemarkerView<BaseModel> entity = new PublicFreemarkerView<BaseModel>("content/main.ftl", model);
 
-    return Response.ok().entity(entity).cookie(cookie).build();
+    return Response
+      .ok()
+      .entity(entity)
+      .header(HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN, "*")
+      .cookie(cookie)
+      .build();
   }
 
 }

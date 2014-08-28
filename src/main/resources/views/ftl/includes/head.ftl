@@ -32,11 +32,11 @@
 
 <#-- Fonts -->
 <#-- Corben works well in titles but has strange ligatures on the 'ck' combination -->
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Corben" type="text/css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Corben" type="text/css">
 <#-- Roboto is good for sub-headers -->
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto" type="text/css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" type="text/css">
 <#-- Font Awesome provides the iconography -->
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" type="text/css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" type="text/css">
 
 <#-- Override selective entries with main.css  -->
 <link rel="stylesheet" href="/css/main.css" type="text/css" />

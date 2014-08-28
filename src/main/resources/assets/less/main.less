@@ -79,6 +79,29 @@ body {
 .mb-download-link {
   display: none;
 }
+
+// NoScript version of download links
+.mb-download-link-disabled-ns .well {
+  color: #333;
+  // Forced into using fixed sizing here
+  padding: 25px;
+  height: 100px;
+}
+.mb-download-link-ns a {
+  color: #333;
+  // Forced into using fixed sizing here
+  padding: 25px;
+  height: 100px;
+}
+.mb-download-link-ns a:hover, .mb-download-link-ns a:hover {
+  text-decoration: none;
+  color: black;
+}
+.mb-download-link-ns a.btn.btn-default:hover {
+  background: #e0f0f8 none;
+}
+
+// JavaScript version of download links
 .mb-download-link a .fa {
   color: #333;
 }
@@ -143,15 +166,6 @@ footer {
   /* width just for older browsers */
   width: 64px;
   margin-right: 21px;
-}
-
-.carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
-  margin: auto;
-  bottom: 0;
-  width: 100%;
-  height: @footer-height;
-  background-color: #f5f5f5;
 }
 
 @media (min-width: 992px) {

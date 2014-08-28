@@ -1,7 +1,6 @@
 package org.multibit.site.resources;
 
 import org.multibit.site.model.BaseModel;
-import org.multibit.site.views.PublicFreemarkerView;
 
 import javax.validation.constraints.Size;
 import javax.ws.rs.*;
@@ -52,13 +51,14 @@ public class PublicHD0_1Resource extends BaseResource {
    */
   @GET
   @Produces("text/html")
-  public PublicFreemarkerView<BaseModel> getDefaultLanguageHelpContents() {
+  public Response getDefaultLanguageHelpContents() {
 
     // Java6 uses StringBuilder to optimise this
     String resourcePath = "/" + DEFAULT_LANGUAGE + "/help/hd0.1/help_contents.html";
 
     BaseModel model = new BaseModel(resourcePath, acceptedTandC());
-    return new PublicFreemarkerView<BaseModel>("content/bare-help.ftl", model);
+
+    return pageResponse(model, "content/bare-help.ftl");
 
   }
 
@@ -71,7 +71,7 @@ public class PublicHD0_1Resource extends BaseResource {
    */
   @GET
   @Path("{page}.html")
-  public PublicFreemarkerView<BaseModel> getLanguageSpecificHelpPage(
+  public Response getLanguageSpecificHelpPage(
     @PathParam("page") String page
   ) {
 
@@ -79,7 +79,8 @@ public class PublicHD0_1Resource extends BaseResource {
     String resourcePath = "/" + DEFAULT_LANGUAGE + "/help/hd0.1/" + page + ".html";
 
     BaseModel model = new BaseModel(resourcePath, acceptedTandC());
-    return new PublicFreemarkerView<BaseModel>("content/bare-help.ftl", model);
+
+    return pageResponse(model, "content/bare-help.ftl");
 
   }
 
@@ -94,7 +95,7 @@ public class PublicHD0_1Resource extends BaseResource {
   @GET
   @Path("{lang}/{pathParam: (?).*}")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
-  public PublicFreemarkerView<BaseModel> getLanguageSpecificHelpPage(
+  public Response getLanguageSpecificHelpPage(
     @Size(min = 3, max = 3) @PathParam("lang") String lang,
     @PathParam("pathParam") String pathParam
   ) {
@@ -103,7 +104,8 @@ public class PublicHD0_1Resource extends BaseResource {
     String resourcePath = "/" + lang + "/help/hd0.1/" + pathParam;
 
     BaseModel model = new BaseModel(resourcePath, acceptedTandC());
-    return new PublicFreemarkerView<BaseModel>("content/bare-help.ftl", model);
+
+    return pageResponse(model, "content/bare-help.ftl");
 
   }
 
