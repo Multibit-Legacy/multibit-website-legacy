@@ -213,7 +213,7 @@ public class PublicPageResource extends BaseResource {
   @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
   public Response viewDefaultIndexPageWithCookie() {
 
-    return getResponseWithCookie("/index.html");
+    return getDownloadResponseWithCookie("/index.html");
 
   }
 
@@ -272,7 +272,7 @@ public class PublicPageResource extends BaseResource {
   @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
   public Response viewDownloadPageWithCookie() {
 
-    return getResponseWithCookie("/download.html");
+    return getDownloadResponseWithCookie("/download.html");
 
   }
 
@@ -502,9 +502,17 @@ public class PublicPageResource extends BaseResource {
    *
    * @return A response containing a session cookie
    */
-  private Response getResponseWithCookie(String resourcePath) {
+  private Response getDownloadResponseWithCookie(String resourcePath) {
 
-    NewCookie cookie = new NewCookie(COOKIE_NAME, UUID.randomUUID().toString(), "/", null, null, 30 * 60, true);
+    NewCookie cookie = new NewCookie(
+      COOKIE_NAME,
+      UUID.randomUUID().toString(),
+      null,
+      null,
+      null,
+      NewCookie.DEFAULT_MAX_AGE,
+      false
+    );
 
     // Accepted by virtue of the POST
     BaseModel model = new BaseModel("/" + DEFAULT_LANGUAGE + resourcePath, true);

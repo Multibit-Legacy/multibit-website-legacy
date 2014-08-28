@@ -57,8 +57,7 @@
             <br/>OS X</a>
         </div>
       </div>
-    <#if model.acceptedTandC == false>
-      <div class="alert alert-info col-xs-12">
+      <div id="acceptTandC" class="alert alert-info col-xs-12">
         <form class="form-horizontal" method="post" action="${model.acceptAction}">
           <div class="form-group">
             <div class="col-sm-8 mb-download-terms-and-conditions-text">Read and accept the <a href="/tandc.html" target="_blank">terms and conditions</a> to enable the download
@@ -71,7 +70,6 @@
           </div>
         </form>
       </div>
-    </#if>
 
     </div>
   </div>

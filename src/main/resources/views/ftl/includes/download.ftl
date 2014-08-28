@@ -5,7 +5,7 @@
 <#include "base.ftl">
 
 <#if model.acceptedTandC == true>
-  <#-- Go direct to the NoScript version for better UX -->
+<#-- Go direct to the NoScript version for better UX -->
   <#include "download-ns-accept.ftl">
 <#else>
 <#-- Provide a JavaScript/NoScript alternative -->
@@ -75,25 +75,23 @@
             <br/>OS X</a>
         </div>
       </div>
-      <#if model.acceptedTandC == false>
-        <div class="alert alert-info col-xs-12">
-          <form class="form-horizontal">
-            <div class="form-group">
-              <div class="col-sm-8 mb-download-terms-and-conditions-text">Read and accept the <a href="/tandc.html"
-                                                                                                 target="_blank">terms
-                and conditions</a> to enable the download
-                buttons.
-              </div>
-              <div class="col-sm-4 text-right">
-                <span class="glyphicon glyphicon-arrow-right"></span>
-                <button type="submit" class="btn btn-info" onclick="acceptTandC()" title="Accept terms and conditions">
-                  Accept
-                </button>
-              </div>
+      <div class="alert alert-info col-xs-12 mb-download-link-disabled">
+        <form id="acceptTandC" class="form-horizontal">
+          <div class="form-group">
+            <div class="col-sm-8 mb-download-terms-and-conditions-text">Read and accept the <a href="/tandc.html"
+                                                                                               target="_blank">terms
+              and conditions</a> to enable the download
+              buttons.
             </div>
-          </form>
-        </div>
-      </#if>
+            <div class="col-sm-4 text-right">
+              <span class="glyphicon glyphicon-arrow-right"></span>
+              <button type="submit" class="btn btn-info" onclick="acceptTandC()" title="Accept terms and conditions">
+                Accept
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
 
     </div>
   </div>
@@ -115,22 +113,27 @@
     // Show the "jsok" class since JavaScript is available
     $('.jsok').show();
 
-  })
+    $('#acceptTandC').bind('submit',function() {
+      // Avoid a page refresh on submit
+      return false;
+    });
+
+  });
 
   <#-- Use JavaScript fade effect to show acceptance -->
   function acceptTandC() {
 
-    // Enable the download buttons since user has accepted
-    $(".mb-downloads .panel.mb-download-panel .panel-heading").slideUp(function () {
-      $(".mb-download-link-disabled").fadeOut(function () {
-        $(".mb-download-link").fadeIn();
-        $(".mb-downloads .panel.mb-download-panel .panel-body").addClass("mb-downloads-enabled");
-      });
-    });
-
     // Get the session cookie through a post
     $.post("${model.acceptAction}", function (data, status) {
-      // Do nothing
+
+      // Enable the download buttons since user has accepted
+      $(".mb-downloads .panel.mb-download-panel .panel-heading").slideUp(function () {
+        $(".mb-download-link-disabled").fadeOut(function () {
+          $(".mb-download-link").fadeIn();
+          $(".mb-downloads .panel.mb-download-panel .panel-body").addClass("mb-downloads-enabled");
+        });
+      });
+
     });
 
   }

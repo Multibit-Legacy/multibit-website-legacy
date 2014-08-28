@@ -1,5 +1,7 @@
 package org.multibit.site.resources;
 
+import com.sun.jersey.api.core.HttpContext;
+
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.HttpHeaders;
@@ -35,6 +37,12 @@ public abstract class BaseResource {
   protected HttpHeaders httpHeaders;
 
   /**
+   * Jersey creates a fresh resource every request so this is safe
+   */
+  @Context
+  protected HttpContext httpContext;
+
+  /**
    * @return The most appropriate locale for the upstream request (never null)
    */
   public Locale getLocale() {
@@ -66,6 +74,9 @@ public abstract class BaseResource {
    */
   protected boolean acceptedTandC() {
 
-    return httpHeaders != null && httpHeaders.getCookies().containsKey(COOKIE_NAME);
+    boolean accepted = httpHeaders != null && httpHeaders.getCookies().containsKey(COOKIE_NAME);
+
+    System.out.println("Accepted:" + accepted);
+    return accepted;
   }
 }
