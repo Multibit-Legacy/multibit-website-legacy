@@ -74,9 +74,6 @@ public abstract class BaseResource {
    */
   protected boolean acceptedTandC() {
 
-    boolean accepted = httpHeaders != null && httpHeaders.getCookies().containsKey(COOKIE_NAME);
-
-    System.out.println("Accepted:" + accepted);
-    return accepted;
+    return httpHeaders != null && httpHeaders.getCookies().containsKey(COOKIE_NAME);
   }
 }
