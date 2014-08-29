@@ -199,7 +199,7 @@ public class PublicPageResource extends BaseResource {
   @CacheControl(noCache = true)
   public Response viewDefaultIndexPage() {
 
-    BaseModel model = new BaseModel("/" + DEFAULT_LANGUAGE + "/index.html", acceptedTandC(), getLocale());
+    BaseModel model = new BaseModel("/" + getLocale().getLanguage() + "/index.html", acceptedTandC(), getLocale());
     model.setShowDownload(true);
     model.setAcceptAction("/index.html");
 

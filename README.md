@@ -128,9 +128,9 @@ approach.
 
 [Bitcoin is a global currency](http://bitcoin.org) and so this site has many translations. If you'd like to contribute your own translation for the pages on offer please use this process:
 
-1. Find the two letter [ISO 639-1](http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes#Partial_ISO_639_table) code for your language (fr, en, jp etc)
+1. Find the two letter [ISO 639-1](http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes#Partial_ISO_639_table) code for your language (fr, en, ja etc)
 2. Copy existing html files from `src/main/resources/views/html/{lang}/` according to your source language (e.g. you're a French to Japanese expert so base on `fr` and copy to
-`jp`)
+`ja`)
 3. Paste new html files to `src/main/resources/views/html/{lang}/` according to your target language
 4. Repeat for image files in `src/main/resources/assets/images/{lang}` this is for language-specific screenshots that are applicable
 5. Translate all `.html` and image files as required then issue a pull request
