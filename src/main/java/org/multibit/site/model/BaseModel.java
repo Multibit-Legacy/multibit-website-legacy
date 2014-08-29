@@ -113,7 +113,18 @@ public class BaseModel {
       // Attempt a load
       InputStream is = BaseModel.class.getResourceAsStream("/views/html" + resourcePath);
       if (is == null) {
-        throw new WebApplicationException(Response.Status.NOT_FOUND);
+
+        // Check for English locale
+        if (!resourcePath.startsWith("/en/")) {
+          // Could be a missing translation so fall back to English
+          is = BaseModel.class.getResourceAsStream("/views/html/en/" + resourcePath.substring(4));
+        }
+
+        if (is == null) {
+          // Really failed now
+          throw new WebApplicationException(Response.Status.NOT_FOUND);
+        }
+
       }
 
       try {
