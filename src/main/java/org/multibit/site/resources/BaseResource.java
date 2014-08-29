@@ -1,6 +1,7 @@
 package org.multibit.site.resources;
 
 import com.sun.jersey.api.core.HttpContext;
+import org.multibit.site.core.languages.Languages;
 import org.multibit.site.model.BaseModel;
 import org.multibit.site.views.PublicFreemarkerView;
 
@@ -9,6 +10,7 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
+import java.util.List;
 import java.util.Locale;
 
 /**
@@ -18,7 +20,7 @@ import java.util.Locale;
  * </ul>
  *
  * @since 0.0.1
- *         
+ *  
  */
 public abstract class BaseResource {
 
@@ -48,19 +50,18 @@ public abstract class BaseResource {
    * @return The most appropriate locale for the upstream request (never null)
    */
   public Locale getLocale() {
-    // TODO This should be a configuration setting
+
     Locale defaultLocale = Locale.UK;
 
-    Locale locale;
     if (httpHeaders == null) {
-      locale = defaultLocale;
+      return defaultLocale;
     } else {
-      locale = httpHeaders.getLanguage();
-      if (locale == null) {
-        locale = defaultLocale;
+      List<Locale> locales = httpHeaders.getAcceptableLanguages();
+      if (locales == null || locales.isEmpty()) {
+        return defaultLocale;
       }
+      return Languages.newLocaleFromCode(locales.get(0).toString());
     }
-    return locale;
   }
 
   public WebApplicationException badRequest() {
@@ -83,7 +84,7 @@ public abstract class BaseResource {
     return Response
       .ok()
       .entity(new PublicFreemarkerView<BaseModel>(templatePath, model))
-      .header(com.google.common.net.HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN,"*")
+      .header(com.google.common.net.HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN, "*")
       .build();
   }
 }

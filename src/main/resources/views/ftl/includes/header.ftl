@@ -4,12 +4,12 @@
 
   <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-      <span class="sr-only">Toggle navigation</span>
+      <span class="sr-only">${model.msg("navbar.toggle")}</span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a title="MultiBit HD home" class="navbar-brand hidden-md hidden-lg" href="/index.html">MultiBit HD</a>
+    <a title="MultiBit HD home" class="navbar-brand hidden-md hidden-lg" href="/index.html">${model.msg("app.title")}</a>
   </div>
 
   <div class="navbar-collapse collapse">
@@ -28,7 +28,7 @@
 </div>
 
 <div class="page-header hidden-xs hidden-sm">
-  <a title="MultiBit HD home" href="/index.html"><h1><img class="header-logo" src="/images/clients/MultiBitHD-logo-96x96-simple.png">MultiBit HD</h1></a>
+  <a title="MultiBit HD home" href="/index.html"><h1><img class="header-logo" src="/images/clients/MultiBitHD-logo-96x96-simple.png">${model.msg("app.title")}</h1></a>
 </div>
 
 <#-- Alert bar -->

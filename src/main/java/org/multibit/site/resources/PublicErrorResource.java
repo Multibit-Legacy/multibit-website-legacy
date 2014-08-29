@@ -34,7 +34,7 @@ public class PublicErrorResource extends BaseResource {
   public Response view401() {
 
     // Populate the model
-    BaseModel model = new BaseModel(null, acceptedTandC());
+    BaseModel model = new BaseModel(null, acceptedTandC(), getLocale());
 
     return pageResponse(model, "error/401.ftl");
 
@@ -52,7 +52,7 @@ public class PublicErrorResource extends BaseResource {
   public Response view404() {
 
     // Populate the model
-    BaseModel model = new BaseModel(null, acceptedTandC());
+    BaseModel model = new BaseModel(null, acceptedTandC(), getLocale());
 
     return pageResponse(model, "error/404.ftl");
 
@@ -70,7 +70,7 @@ public class PublicErrorResource extends BaseResource {
   public Response view500() {
 
     // Populate the model
-    BaseModel model = new BaseModel(null, acceptedTandC());
+    BaseModel model = new BaseModel(null, acceptedTandC(), getLocale());
 
     return pageResponse(model, "error/500.ftl");
 

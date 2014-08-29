@@ -5,6 +5,7 @@ import com.google.common.base.Optional;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import org.multibit.site.caches.InMemoryAssetCache;
+import org.multibit.site.core.languages.Languages;
 import org.multibit.site.utils.StreamUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,6 +15,7 @@ import javax.ws.rs.core.Response;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 /**
@@ -39,10 +41,18 @@ public class BaseModel {
 
   // Request scope variables
 
+  private final Locale locale;
+  private final boolean acceptedTandC;
+
+  /**
+   * The HTML content of the page
+   */
   private String content;
 
+  /**
+   * The navbar key
+   */
   private String navbar = "default";
-  private final boolean acceptedTandC;
 
   /**
    * Default is to not show download buttons
@@ -57,9 +67,14 @@ public class BaseModel {
   private List<String> errors = Lists.newArrayList();
   private List<String> messages = Lists.newArrayList();
 
+  /**
+   * @param resourcePath  The resource path for the HTML content
+   * @param acceptedTandC True if the terms and conditions have been accepted
+   * @param locale        The request locale
+   */
+  public BaseModel(String resourcePath, boolean acceptedTandC, Locale locale) {
 
-  public BaseModel(String resourcePath, boolean acceptedTandC) {
-
+    this.locale = locale;
     this.acceptedTandC = acceptedTandC;
 
     // Check for a fully-formed view
@@ -116,6 +131,14 @@ public class BaseModel {
     // Must have failed to be here
     throw new WebApplicationException(Response.Status.NOT_FOUND);
 
+  }
+
+
+  /**
+   * @return Localised text for the request locale
+   */
+  public String msg(String key) {
+    return Languages.safeText(key, locale);
   }
 
   /**
