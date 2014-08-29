@@ -63,7 +63,7 @@ public abstract class BaseResource {
       if (locales == null || locales.isEmpty()) {
         return defaultLocale;
       }
-      return Languages.newLocaleFromCode(locales.get(0).toString());
+      return Languages.newLocaleFromCode(locales.get(0).toString().replace("*","en"));
     }
   }
 

@@ -86,21 +86,23 @@ public class PublicPageResourceTest extends BaseResourceTest {
   }
 
   @Test
-  public void viewDefaultIndexPage() throws Exception {
+  public void viewLocalisedIndexPage() throws Exception {
 
-    String actualResponse = configureAsClient("/")
-      .get(String.class);
+    ClientResponse actualResponse = configureAsClient("/")
+      .get(ClientResponse.class);
 
-    assertThat(actualResponse).contains("International");
+    assertThat(actualResponse.getStatus()).isEqualTo(200);
+    assertThat(actualResponse.getEntity(String.class)).contains("International");
 
   }
 
   @Test
-  public void viewDefaultIndexPage_Accepted() throws Exception {
+  public void viewLocalisedIndexPage_Accepted() throws Exception {
 
     ClientResponse actualResponse = configureAsClient("/")
       .post(ClientResponse.class);
 
+    assertThat(actualResponse.getStatus()).isEqualTo(200);
     assertThat(actualResponse.getEntity(String.class)).contains("International");
     assertThat(actualResponse.getCookies().size()).isEqualTo(1);
     assertThat(actualResponse.getCookies().get(0).toCookie().getName()).isEqualTo(BaseResource.COOKIE_NAME);
@@ -113,6 +115,7 @@ public class PublicPageResourceTest extends BaseResourceTest {
     ClientResponse actualResponse = configureAsClient("/index.html")
       .get(ClientResponse.class);
 
+    assertThat(actualResponse.getStatus()).isEqualTo(200);
     assertThat(actualResponse.getEntity(String.class)).contains("International");
     assertThat(actualResponse.getCookies().size()).isEqualTo(0);
 
@@ -124,6 +127,7 @@ public class PublicPageResourceTest extends BaseResourceTest {
     ClientResponse actualResponse = configureAsClient("/index.html")
       .post(ClientResponse.class);
 
+    assertThat(actualResponse.getStatus()).isEqualTo(200);
     assertThat(actualResponse.getEntity(String.class)).contains("International");
     assertThat(actualResponse.getCookies().size()).isEqualTo(1);
     assertThat(actualResponse.getCookies().get(0).toCookie().getName()).isEqualTo(BaseResource.COOKIE_NAME);
@@ -131,22 +135,24 @@ public class PublicPageResourceTest extends BaseResourceTest {
   }
 
   @Test
-  public void viewDownloadPage() throws Exception {
+  public void viewLocalisedDownloadPage() throws Exception {
 
     ClientResponse actualResponse = configureAsClient("/download.html")
       .get(ClientResponse.class);
 
+    assertThat(actualResponse.getStatus()).isEqualTo(200);
     assertThat(actualResponse.getEntity(String.class)).contains("0.0.1");
     assertThat(actualResponse.getCookies().size()).isEqualTo(0);
 
   }
 
   @Test
-  public void viewDownloadPage_Accepted() throws Exception {
+  public void viewLocalisedDownloadPage_Accepted() throws Exception {
 
     ClientResponse actualResponse = configureAsClient("/download.html")
       .post(ClientResponse.class);
 
+    assertThat(actualResponse.getStatus()).isEqualTo(200);
     assertThat(actualResponse.getEntity(String.class)).contains("0.0.1");
     assertThat(actualResponse.getCookies().size()).isEqualTo(1);
     assertThat(actualResponse.getCookies().get(0).toCookie().getName()).isEqualTo(BaseResource.COOKIE_NAME);
