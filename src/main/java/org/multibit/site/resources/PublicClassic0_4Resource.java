@@ -53,7 +53,7 @@ public class PublicClassic0_4Resource extends BaseResource {
   public Response getDefaultLanguageHelpContents() {
 
     // Java6 uses StringBuilder to optimise this
-    String resourcePath = "/" + DEFAULT_LANGUAGE + "/help/v0.4/help_contents.html";
+    String resourcePath = "/" + ENGLISH + "/help/v0.4/help_contents.html";
 
     BaseModel model = new BaseModel(resourcePath, acceptedTandC(), getLocale());
 
@@ -76,7 +76,7 @@ public class PublicClassic0_4Resource extends BaseResource {
   ) {
 
     // Java6 uses StringBuilder to optimise this
-    String resourcePath = "/" + DEFAULT_LANGUAGE + "/help/v0.4/" + page + ".html";
+    String resourcePath = "/" + ENGLISH + "/help/v0.4/" + page + ".html";
 
     BaseModel model = new BaseModel(resourcePath, acceptedTandC(), getLocale());
 

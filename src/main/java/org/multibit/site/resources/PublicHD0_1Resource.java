@@ -54,7 +54,7 @@ public class PublicHD0_1Resource extends BaseResource {
   public Response getDefaultLanguageHelpContents() {
 
     // Java6 uses StringBuilder to optimise this
-    String resourcePath = "/" + DEFAULT_LANGUAGE + "/help/hd0.1/help_contents.html";
+    String resourcePath = "/" + ENGLISH + "/help/hd0.1/help_contents.html";
 
     BaseModel model = new BaseModel(resourcePath, acceptedTandC(), getLocale());
 
@@ -76,7 +76,7 @@ public class PublicHD0_1Resource extends BaseResource {
   ) {
 
     // Java6 uses StringBuilder to optimise this
-    String resourcePath = "/" + DEFAULT_LANGUAGE + "/help/hd0.1/" + page + ".html";
+    String resourcePath = "/" + ENGLISH + "/help/hd0.1/" + page + ".html";
 
     BaseModel model = new BaseModel(resourcePath, acceptedTandC(), getLocale());
 
