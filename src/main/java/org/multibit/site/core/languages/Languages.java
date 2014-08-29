@@ -69,8 +69,6 @@ public class Languages {
 
     ResourceBundle rb = ResourceBundle.getBundle(BASE_NAME, locale);
 
-    System.out.println("Locale: "+locale.toString());
-
     final String message;
 
     if (!rb.containsKey(key)) {
