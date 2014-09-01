@@ -172,7 +172,7 @@ public class BaseModel {
     if (localisedNavbars.containsKey(locale.toString())) {
       localisedNavbar = localisedNavbars.get(locale.toString());
     } else {
-      localisedNavbar = localisedNavbars.get(Locale.UK.toString());
+      localisedNavbar = localisedNavbars.get(Locale.ENGLISH.toString());
     }
 
     return localisedNavbar.get(navbar == null ? "default" : navbar);
