@@ -7,6 +7,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.io.InputStream;
+import java.util.Locale;
 
 /**
  * <p>Resource to provide the following to application:</p>
@@ -55,7 +56,7 @@ public class PublicClassic0_4Resource extends BaseResource {
     // Java6 uses StringBuilder to optimise this
     String resourcePath = "/" + ENGLISH + "/help/v0.4/help_contents.html";
 
-    BaseModel model = new BaseModel(resourcePath, acceptedTandC(), getLocale());
+    BaseModel model = new BaseModel(resourcePath, acceptedTandC(), Locale.ENGLISH);
 
     return pageResponse(model, "content/bare-help.ftl");
 
@@ -71,14 +72,14 @@ public class PublicClassic0_4Resource extends BaseResource {
   @GET
   @Path("{page}.html")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
-  public Response getLanguageSpecificHelpPage(
+  public Response getDefaultLanguageHelpPage(
     @PathParam("page") String page
   ) {
 
     // Java6 uses StringBuilder to optimise this
     String resourcePath = "/" + ENGLISH + "/help/v0.4/" + page + ".html";
 
-    BaseModel model = new BaseModel(resourcePath, acceptedTandC(), getLocale());
+    BaseModel model = new BaseModel(resourcePath, acceptedTandC(), Locale.ENGLISH);
 
     return pageResponse(model, "content/bare-help.ftl");
 
@@ -103,7 +104,7 @@ public class PublicClassic0_4Resource extends BaseResource {
     // Java6 uses StringBuilder to optimise this
     String resourcePath = "/" + lang + "/help/v0.4/" + pathParam;
 
-    BaseModel model = new BaseModel(resourcePath, acceptedTandC(), getLocale());
+    BaseModel model = new BaseModel(resourcePath, acceptedTandC(), new Locale(lang));
 
     return pageResponse(model, "content/bare-help.ftl");
 

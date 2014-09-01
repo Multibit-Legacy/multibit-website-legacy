@@ -18,6 +18,7 @@ import javax.ws.rs.core.Response;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
+import java.util.Locale;
 import java.util.UUID;
 import java.util.concurrent.*;
 
@@ -311,7 +312,7 @@ public class PublicPageResource extends BaseResource {
     @Size(min = 3, max = 3) @PathParam("lang") String lang
   ) {
 
-    BaseModel model = new BaseModel("/" + lang + "/index.html", acceptedTandC(), getLocale());
+    BaseModel model = new BaseModel("/" + lang + "/index.html", acceptedTandC(), new Locale(lang));
 
     return pageResponse(model, "content/main.ftl");
 
@@ -332,7 +333,7 @@ public class PublicPageResource extends BaseResource {
     @PathParam("page") String page
   ) {
 
-    BaseModel model = new BaseModel("/" + lang + "/" + page + ".html", acceptedTandC(), getLocale());
+    BaseModel model = new BaseModel("/" + lang + "/" + page + ".html", acceptedTandC(), new Locale(lang));
 
     return pageResponse(model, "content/main.ftl");
   }
@@ -388,7 +389,7 @@ public class PublicPageResource extends BaseResource {
     // Java6 uses StringBuilder to optimise this
     String resourcePath = "/" + lang + "/blog/" + year + "-" + month + "-" + day + "-" + page + ".html";
 
-    BaseModel model = new BaseModel(resourcePath, acceptedTandC(), getLocale());
+    BaseModel model = new BaseModel(resourcePath, acceptedTandC(), new Locale(lang));
 
     return pageResponse(model, "content/blog.ftl");
 
@@ -409,7 +410,7 @@ public class PublicPageResource extends BaseResource {
     String resourcePath = "/" + ENGLISH + "/help.html";
 
     // Use the main template since this is a starting point for a user
-    BaseModel model = new BaseModel(resourcePath, acceptedTandC(), getLocale());
+    BaseModel model = new BaseModel(resourcePath, acceptedTandC(), Locale.ENGLISH);
 
     return pageResponse(model, "content/help.ftl");
 
@@ -433,7 +434,7 @@ public class PublicPageResource extends BaseResource {
     // Java6 uses StringBuilder to optimise this
     String resourcePath = "/" + lang + "/help.html";
 
-    BaseModel model = new BaseModel(resourcePath, acceptedTandC(), getLocale());
+    BaseModel model = new BaseModel(resourcePath, acceptedTandC(), new Locale(lang));
 
     return pageResponse(model, "content/help.ftl");
 
@@ -462,7 +463,7 @@ public class PublicPageResource extends BaseResource {
     // Java6 uses StringBuilder to optimise this
     String resourcePath = "/" + lang + "/help/" + version + "/help_contents.html";
 
-    BaseModel model = new BaseModel(resourcePath, acceptedTandC(), getLocale());
+    BaseModel model = new BaseModel(resourcePath, acceptedTandC(), new Locale(lang));
 
     return pageResponse(model, "content/help.ftl");
 
@@ -490,7 +491,7 @@ public class PublicPageResource extends BaseResource {
     // Java6 uses StringBuilder to optimise this
     String resourcePath = "/" + lang + "/help/" + version + "/" + pathParam;
 
-    BaseModel model = new BaseModel(resourcePath, acceptedTandC(), getLocale());
+    BaseModel model = new BaseModel(resourcePath, acceptedTandC(), new Locale(lang));
 
     return pageResponse(model, "content/help.ftl");
 
@@ -526,7 +527,7 @@ public class PublicPageResource extends BaseResource {
     );
 
     // Accepted by virtue of the POST
-    BaseModel model = new BaseModel("/" +getLocale().getLanguage() + resourcePath, true, getLocale());
+    BaseModel model = new BaseModel("/" + getLocale().getLanguage() + resourcePath, true, getLocale());
     model.setShowDownload(true);
     model.setAcceptAction(resourcePath);
     PublicFreemarkerView<BaseModel> entity = new PublicFreemarkerView<BaseModel>("content/main.ftl", model);
