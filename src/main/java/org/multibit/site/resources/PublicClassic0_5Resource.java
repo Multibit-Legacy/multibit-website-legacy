@@ -58,7 +58,7 @@ public class PublicClassic0_5Resource extends BaseResource {
 
     BaseModel model = new BaseModel(resourcePath, acceptedTandC(), Locale.ENGLISH);
 
-    return pageResponse(model, "content/bare-help.ftl");
+    return pageResponse(model, "content/bare-mbc-help.ftl");
 
   }
 
@@ -80,7 +80,7 @@ public class PublicClassic0_5Resource extends BaseResource {
 
     BaseModel model = new BaseModel(resourcePath, acceptedTandC(), Locale.ENGLISH);
 
-    return pageResponse(model, "content/bare-help.ftl");
+    return pageResponse(model, "content/bare-mbc-help.ftl");
 
   }
 
@@ -105,7 +105,7 @@ public class PublicClassic0_5Resource extends BaseResource {
 
     BaseModel model = new BaseModel(resourcePath, acceptedTandC(), new Locale(lang));
 
-    return pageResponse(model, "content/bare-help.ftl");
+    return pageResponse(model, "content/bare-mbc-help.ftl");
 
   }
 

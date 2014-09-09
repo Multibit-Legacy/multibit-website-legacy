@@ -55,11 +55,11 @@ public class PublicHD0_1Resource extends BaseResource {
   public Response getDefaultLanguageHelpContents() {
 
     // Java6 uses StringBuilder to optimise this
-    String resourcePath = "/" + ENGLISH + "/help/hd0.1/help_contents.html";
+    String resourcePath = "/" + ENGLISH + "/help/hd0.1/contents.html";
 
     BaseModel model = new BaseModel(resourcePath, acceptedTandC(), Locale.ENGLISH);
 
-    return pageResponse(model, "content/bare-help.ftl");
+    return pageResponse(model, "content/hd-help.ftl");
 
   }
 
@@ -81,7 +81,7 @@ public class PublicHD0_1Resource extends BaseResource {
 
     BaseModel model = new BaseModel(resourcePath, acceptedTandC(), Locale.ENGLISH);
 
-    return pageResponse(model, "content/bare-help.ftl");
+    return pageResponse(model, "content/bare-hd-help.ftl");
 
   }
 
@@ -106,7 +106,7 @@ public class PublicHD0_1Resource extends BaseResource {
 
     BaseModel model = new BaseModel(resourcePath, acceptedTandC(), new Locale(lang));
 
-    return pageResponse(model, "content/bare-help.ftl");
+    return pageResponse(model, "content/bare-hd-help.ftl");
 
   }
 

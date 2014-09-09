@@ -8,24 +8,32 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<#include "../includes/head.ftl">
+
+  <style>
+    .alert-message {
+      background-color: #FFF3DE;
+      border: 1px solid #A78241;
+      margin: 10px 0px;
+      padding: 10px;
+      color: #000;
+    }
+
+  </style>
 </head>
 <body>
-<#include "../includes/header.ftl">
-
-<div class="container">
+<div id="centercontent" style="padding:10px;">
+  <p>
+  <center><a href="contents.html">Back to help contents</a></center>
+  </p>
 
 <#-- Pull in the content from the model -->
 ${model.content?replace("downloadVersion","${downloadVersion}")}
 
-  <hr/>
-  <p>Was this article detailed enough?<br/>If not please <a href="https://github.com/bitcoin-solutions/multibit-website/issues/new">raise a website content improvement Issue</a>
-    so that we can do better.</p>
-
+  <p>
+  <center><a href="contents.html">Back to help contents</a></center>
+  </p>
+  <br>
 </div>
-
-<#include "../includes/footer.ftl">
-
 </body>
 
 </html>

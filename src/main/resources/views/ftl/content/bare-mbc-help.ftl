@@ -1,5 +1,5 @@
 <#-- @ftlvariable name="" type="org.multibit.site.views.PublicFreemarkerView" -->
-<#-- Template for the MultiBit client help pages (no extra formatting) -->
+<#-- Template for the MultiBit Classic help pages (no extra formatting) -->
 
 <#-- All templates include the base.ftl for variables -->
 <#include "../includes/base.ftl">
@@ -9,26 +9,30 @@
 <html lang="en">
 <head>
 
-<style>
-  .alert-message {
-    background-color: #FFF3DE;
-    border: 1px solid #A78241;
-    margin: 10px 0px;
-    padding: 10px;
-    color: #000;
-  }
+  <style>
+    .alert-message {
+      background-color: #FFF3DE;
+      border: 1px solid #A78241;
+      margin: 10px 0px;
+      padding: 10px;
+      color: #000;
+    }
 
-</style>
+  </style>
 </head>
 <body>
 <div id="centercontent" style="padding:10px;">
-<p><center><a href="help_contents.html">Back to help contents</a></center></p>
+  <p>
+  <center><a href="help_contents.html">Back to help contents</a></center>
+  </p>
 
 <#-- Pull in the content from the model -->
 ${model.content?replace("downloadVersion","${downloadVersion}")}
 
-<p><center><a href="help_contents.html">Back to help contents</a></center></p>
-<br>
+  <p>
+  <center><a href="help_contents.html">Back to help contents</a></center>
+  </p>
+  <br>
 </div>
 </body>
 

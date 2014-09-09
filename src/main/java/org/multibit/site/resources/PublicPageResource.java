@@ -412,7 +412,7 @@ public class PublicPageResource extends BaseResource {
     // Use the main template since this is a starting point for a user
     BaseModel model = new BaseModel(resourcePath, acceptedTandC(), Locale.ENGLISH);
 
-    return pageResponse(model, "content/help.ftl");
+    return pageResponse(model, "content/hd-help.ftl");
 
   }
 
@@ -436,7 +436,7 @@ public class PublicPageResource extends BaseResource {
 
     BaseModel model = new BaseModel(resourcePath, acceptedTandC(), new Locale(lang));
 
-    return pageResponse(model, "content/help.ftl");
+    return pageResponse(model, "content/hd-help.ftl");
 
 
   }
@@ -465,7 +465,7 @@ public class PublicPageResource extends BaseResource {
 
     BaseModel model = new BaseModel(resourcePath, acceptedTandC(), new Locale(lang));
 
-    return pageResponse(model, "content/help.ftl");
+    return pageResponse(model, "content/hd-help.ftl");
 
   }
 
@@ -493,7 +493,7 @@ public class PublicPageResource extends BaseResource {
 
     BaseModel model = new BaseModel(resourcePath, acceptedTandC(), new Locale(lang));
 
-    return pageResponse(model, "content/help.ftl");
+    return pageResponse(model, "content/hd-help.ftl");
 
   }
 
