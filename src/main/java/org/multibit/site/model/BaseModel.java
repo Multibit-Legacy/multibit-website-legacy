@@ -7,8 +7,6 @@ import com.google.common.collect.Maps;
 import org.multibit.site.caches.InMemoryAssetCache;
 import org.multibit.site.core.languages.Languages;
 import org.multibit.site.utils.StreamUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Response;
@@ -28,15 +26,15 @@ import java.util.Map;
  */
 public class BaseModel {
 
-  private static final Logger log = LoggerFactory.getLogger(BaseModel.class);
-
   /**
-   * This is a read only collection of string templates
+   * This is a read only collection of localised string templates keyed first on supported locales then on active element
    */
-  private static final Map<String, String> navbars = Maps.newConcurrentMap();
+  private static final Map<String, Map<String,String>> localisedNavbars = Maps.newConcurrentMap();
 
   static {
-    initialiseNavBar();
+    localisedNavbars.put(Locale.ENGLISH.getLanguage(),localiseNavBar(Locale.ENGLISH));
+    localisedNavbars.put(Locale.JAPANESE.getLanguage(),localiseNavBar(Locale.JAPANESE));
+    localisedNavbars.put(Locale.FRENCH.getLanguage(),localiseNavBar(Locale.FRENCH));
   }
 
   // Request scope variables
@@ -64,7 +62,6 @@ public class BaseModel {
    */
   private String acceptAction = "/index.html";
 
-  private List<String> errors = Lists.newArrayList();
   private List<String> messages = Lists.newArrayList();
 
   /**
@@ -113,7 +110,18 @@ public class BaseModel {
       // Attempt a load
       InputStream is = BaseModel.class.getResourceAsStream("/views/html" + resourcePath);
       if (is == null) {
-        throw new WebApplicationException(Response.Status.NOT_FOUND);
+
+        // Check for English locale
+        if (!resourcePath.startsWith("/en/")) {
+          // Could be a missing translation so fall back to English
+          is = BaseModel.class.getResourceAsStream("/views/html/en/" + resourcePath.substring(4));
+        }
+
+        if (is == null) {
+          // Really failed now
+          throw new WebApplicationException(Response.Status.NOT_FOUND);
+        }
+
       }
 
       try {
@@ -151,25 +159,23 @@ public class BaseModel {
   /**
    * @return A list of errors that should be displayed prominently
    */
-  public List<String> getErrors() {
-    return errors;
-  }
-
-  /**
-   * @return A list of errors that should be displayed prominently
-   */
   public List<String> getMessages() {
     return messages;
   }
 
   /**
-   * @return The navbar for this request
+   * @return The localised navbar for this request
    */
   public String getNavBar() {
 
-    log.debug("NavBar= '{}', return = '{}'", navbar, navbars.get(navbar));
+    final Map<String, String> localisedNavbar;
+    if (localisedNavbars.containsKey(locale.toString())) {
+      localisedNavbar = localisedNavbars.get(locale.toString());
+    } else {
+      localisedNavbar = localisedNavbars.get(Locale.UK.toString());
+    }
 
-    return navbars.get(navbar == null ? "default" : navbar);
+    return localisedNavbar.get(navbar == null ? "default" : navbar);
 
   }
 
@@ -205,64 +211,65 @@ public class BaseModel {
   /**
    * @return The initialised navbar map (one-off initialisation)
    */
-  private static Map<String, String> initialiseNavBar() {
+  private static Map<String, String> localiseNavBar(Locale locale) {
 
-    String template =
-      "<li {active1}><a href=\"/download.html\" title=\"Download latest and previous versions\">Download</a></li>\n"
-        + "<li {active2}><a href=\"/faq.html\" title=\"Frequently asked questions\">FAQ</a></li>\n"
-        + "<li {active3}><a href=\"/community.html\" title=\"The Bitcoin community at a glance\">Community</a></li>\n"
-        + "<li {active4}><a href=\"/blog.html\"  title=\"Blog posts\">Blog</a></li>\n"
-        + "<li {active5}><a href=\"/help.html\" title=\"Help with this site and our software\">Help</a></li>\n";
+    String template = Languages.safeText("navbar.download", locale) + "\n"
+        + Languages.safeText("navbar.faq", locale) + "\n"
+        + Languages.safeText("navbar.community", locale) + "\n"
+        + Languages.safeText("navbar.blog", locale) + "\n"
+        + Languages.safeText("navbar.help", locale) + "\n";
 
-    navbars.put("download", template
-      .replace("{active1}", "class=\"active\"")
-      .replace("{active2}", "")
-      .replace("{active3}", "")
-      .replace("{active4}", "")
-      .replace("{active5}", "")
+    Map<String,String> localisedNavbar = Maps.newConcurrentMap();
+
+    localisedNavbar.put("download", template
+        .replace("[active1]", "class=\"active\"")
+        .replace("[active2]", "")
+        .replace("[active3]", "")
+        .replace("[active4]", "")
+        .replace("[active5]", "")
     );
 
-    navbars.put("faq", template
-      .replace("{active1}", "")
-      .replace("{active2}", "class=\"active\"")
-      .replace("{active3}", "")
-      .replace("{active4}", "")
-      .replace("{active5}", "")
+    localisedNavbar.put("faq", template
+        .replace("[active1]", "")
+        .replace("[active2]", "class=\"active\"")
+        .replace("[active3]", "")
+        .replace("[active4]", "")
+        .replace("[active5]", "")
     );
 
-    navbars.put("community", template
-      .replace("{active1}", "")
-      .replace("{active2}", "")
-      .replace("{active3}", "class=\"active\"")
-      .replace("{active4}", "")
-      .replace("{active5}", "")
+    localisedNavbar.put("community", template
+        .replace("[active1]", "")
+        .replace("[active2]", "")
+        .replace("[active3]", "class=\"active\"")
+        .replace("[active4]", "")
+        .replace("[active5]", "")
     );
 
-    navbars.put("blog", template
-      .replace("{active1}", "")
-      .replace("{active2}", "")
-      .replace("{active3}", "")
-      .replace("{active4}", "class=\"active\"")
-      .replace("{active5}", "")
+    localisedNavbar.put("blog", template
+        .replace("[active1]", "")
+        .replace("[active2]", "")
+        .replace("[active3]", "")
+        .replace("[active4]", "class=\"active\"")
+        .replace("[active5]", "")
     );
 
-    navbars.put("help", template
-      .replace("{active1}", "")
-      .replace("{active2}", "")
-      .replace("{active3}", "")
-      .replace("{active4}", "")
-      .replace("{active5}", "class=\"active\"")
+    localisedNavbar.put("help", template
+        .replace("[active1]", "")
+        .replace("[active2]", "")
+        .replace("[active3]", "")
+        .replace("[active4]", "")
+        .replace("[active5]", "class=\"active\"")
     );
 
-    navbars.put("default", template
-      .replace("{active1}", "")
-      .replace("{active2}", "")
-      .replace("{active3}", "")
-      .replace("{active4", "")
-      .replace("{active5}", "")
+    localisedNavbar.put("default", template
+        .replace("[active1]", "")
+        .replace("[active2]", "")
+        .replace("[active3]", "")
+        .replace("[active4", "")
+        .replace("[active5]", "")
     );
 
-    return navbars;
+    return localisedNavbar;
   }
 
 }

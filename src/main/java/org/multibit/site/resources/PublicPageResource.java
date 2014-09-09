@@ -197,7 +197,7 @@ public class PublicPageResource extends BaseResource {
   @GET
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(noCache = true)
-  public Response viewDefaultIndexPage() {
+  public Response viewLocalisedIndexPage() {
 
     BaseModel model = new BaseModel("/" + getLocale().getLanguage() + "/index.html", acceptedTandC(), getLocale());
     model.setShowDownload(true);
@@ -213,9 +213,9 @@ public class PublicPageResource extends BaseResource {
   @POST
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
-  public Response viewDefaultIndexPageWithCookie() {
+  public Response viewLocalisedIndexPageWithCookie() {
 
-    return getDownloadResponseWithCookie("/index.html");
+    return getLocalisedDownloadResponseWithCookie("/index.html");
 
   }
 
@@ -230,7 +230,7 @@ public class PublicPageResource extends BaseResource {
   @CacheControl(noCache = true)
   public Response viewIndexPage() {
 
-    return viewDefaultIndexPage();
+    return viewLocalisedIndexPage();
 
   }
 
@@ -243,7 +243,7 @@ public class PublicPageResource extends BaseResource {
   @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
   public Response viewIndexPageWithCookie() {
 
-    return viewDefaultIndexPageWithCookie();
+    return viewLocalisedIndexPageWithCookie();
 
   }
 
@@ -256,9 +256,9 @@ public class PublicPageResource extends BaseResource {
   @Path("download.html")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(noCache = true)
-  public Response viewDownloadPage() {
+  public Response viewLocalisedDownloadPage() {
 
-    BaseModel model = new BaseModel("/" + DEFAULT_LANGUAGE + "/download.html", acceptedTandC(), getLocale());
+    BaseModel model = new BaseModel("/" + getLocale().getLanguage() + "/download.html", acceptedTandC(), getLocale());
     model.setShowDownload(true);
     model.setAcceptAction("/download.html");
 
@@ -273,26 +273,26 @@ public class PublicPageResource extends BaseResource {
   @Path("download.html")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
-  public Response viewDownloadPageWithCookie() {
+  public Response viewLocalisedDownloadPageWithCookie() {
 
-    return getDownloadResponseWithCookie("/download.html");
+    return getLocalisedDownloadResponseWithCookie("/download.html");
 
   }
 
   /**
    * @param page The page name (or slug)
    *
-   * @return The default language page for the main site
+   * @return The localised page for the main site
    */
   @GET
   @Path("{page}.html")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
-  public Response viewDefaultPage(
+  public Response viewLocalisedPage(
     @PathParam("page") String page
   ) {
 
-    BaseModel model = new BaseModel("/" + DEFAULT_LANGUAGE + "/" + page + ".html", false, getLocale());
+    BaseModel model = new BaseModel("/" + getLocale().getLanguage() + "/" + page + ".html", false, getLocale());
 
     return pageResponse(model, "content/main.ftl");
 
@@ -301,7 +301,7 @@ public class PublicPageResource extends BaseResource {
   /**
    * @param lang The two letter language code (ISO 639-1)
    *
-   * @return The language specific index page for the main site
+   * @return The language specific index page for the main site overriding the locale
    */
   @GET
   @Path("{lang}")
@@ -321,7 +321,7 @@ public class PublicPageResource extends BaseResource {
    * @param lang The two letter language code (ISO 639-1)
    * @param page The page name (or slug)
    *
-   * @return The language specific page for the main site
+   * @return The language specific page for the main site overriding the locale
    */
   @GET
   @Path("{lang}/{page}.html")
@@ -358,7 +358,7 @@ public class PublicPageResource extends BaseResource {
     @PathParam("page") String page
   ) {
 
-    return viewLanguageSpecificBlogPage(DEFAULT_LANGUAGE, year, month, day, page);
+    return viewLanguageSpecificBlogPage(ENGLISH, year, month, day, page);
 
   }
 
@@ -406,7 +406,7 @@ public class PublicPageResource extends BaseResource {
   public Response viewDefaultHelpPage() {
 
     // Java6 uses StringBuilder to optimise this
-    String resourcePath = "/" + DEFAULT_LANGUAGE + "/help.html";
+    String resourcePath = "/" + ENGLISH + "/help.html";
 
     // Use the main template since this is a starting point for a user
     BaseModel model = new BaseModel(resourcePath, acceptedTandC(), getLocale());
@@ -511,9 +511,9 @@ public class PublicPageResource extends BaseResource {
   /**
    * @param resourcePath The resource path (e.g. "/index.html")
    *
-   * @return A response containing a session cookie
+   * @return A localised response with download buttons containing a session cookie
    */
-  private Response getDownloadResponseWithCookie(String resourcePath) {
+  private Response getLocalisedDownloadResponseWithCookie(String resourcePath) {
 
     NewCookie cookie = new NewCookie(
       COOKIE_NAME,
@@ -526,7 +526,7 @@ public class PublicPageResource extends BaseResource {
     );
 
     // Accepted by virtue of the POST
-    BaseModel model = new BaseModel("/" + DEFAULT_LANGUAGE + resourcePath, true, getLocale());
+    BaseModel model = new BaseModel("/" +getLocale().getLanguage() + resourcePath, true, getLocale());
     model.setShowDownload(true);
     model.setAcceptAction(resourcePath);
     PublicFreemarkerView<BaseModel> entity = new PublicFreemarkerView<BaseModel>("content/main.ftl", model);

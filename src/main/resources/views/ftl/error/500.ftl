@@ -14,18 +14,17 @@
   <div class="row">
 
     <div class="col-lg-12">
-      <h2>Oh, snap!</h2>
+      <h2>${model.msg("500.title")}</h2>
 
-      <p>It looks as though something has broken on our system. Our internal error reporting system has picked this up
-        and has sent a notification to the support engineers about it. They will sort it out as soon as possible.</p>
+      <p>${model.msg("500.explain")}</p>
 
-      <p>We are very sorry to cause you this inconvenience, your time is precious and we screwed up.</p>
+      <p>${model.msg("500.apology")}</p>
 
-      <p>Since there isn't much else to done, you should <a href="/">return to the home page</a>.</p>
+      <p>${model.msg("500.return-to-home")}</p>
 
-      <h3>Technical</h3>
+      <h3>${model.msg("500.technical-title")}</h3>
 
-      <p>500 - Internal server error</p>
+      <p>${model.msg("500.technical-explain")}</p>
 
     </div>
   </div>

@@ -3,12 +3,12 @@ package org.multibit.site.resources;
 import com.yammer.dropwizard.jersey.caching.CacheControl;
 import com.yammer.metrics.annotation.Timed;
 import org.multibit.site.model.BaseModel;
+import org.multibit.site.views.PublicFreemarkerView;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
 
 /**
  * <p>Resource to provide the following to application:</p>
@@ -31,12 +31,12 @@ public class PublicErrorResource extends BaseResource {
   @Path("/401")
   @Timed
   @CacheControl(noCache = true)
-  public Response view401() {
+  public PublicFreemarkerView view401() {
 
     // Populate the model
     BaseModel model = new BaseModel(null, acceptedTandC(), getLocale());
 
-    return pageResponse(model, "error/401.ftl");
+    return new PublicFreemarkerView<BaseModel>("error/401.ftl", model);
 
   }
 
@@ -49,12 +49,12 @@ public class PublicErrorResource extends BaseResource {
   @Path("/404")
   @Timed
   @CacheControl(noCache = true)
-  public Response view404() {
+  public PublicFreemarkerView view404() {
 
     // Populate the model
     BaseModel model = new BaseModel(null, acceptedTandC(), getLocale());
 
-    return pageResponse(model, "error/404.ftl");
+    return new PublicFreemarkerView<BaseModel>("error/404.ftl", model);
 
   }
 
@@ -67,12 +67,12 @@ public class PublicErrorResource extends BaseResource {
   @Path("/500")
   @Timed
   @CacheControl(noCache = true)
-  public Response view500() {
+  public PublicFreemarkerView view500() {
 
     // Populate the model
     BaseModel model = new BaseModel(null, acceptedTandC(), getLocale());
 
-    return pageResponse(model, "error/500.ftl");
+    return new PublicFreemarkerView<BaseModel>("error/500.ftl", model);
 
   }
 }

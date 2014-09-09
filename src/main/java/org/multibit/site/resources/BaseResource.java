@@ -24,7 +24,10 @@ import java.util.Locale;
  */
 public abstract class BaseResource {
 
-  protected static final String DEFAULT_LANGUAGE = "en";
+  /**
+   * The fallback language that should be fully available
+   */
+  protected static final String ENGLISH = "en";
 
   public static final String COOKIE_NAME = "MBHD-Session";
 
@@ -60,7 +63,7 @@ public abstract class BaseResource {
       if (locales == null || locales.isEmpty()) {
         return defaultLocale;
       }
-      return Languages.newLocaleFromCode(locales.get(0).toString());
+      return Languages.newLocaleFromCode(locales.get(0).toString().replace("*","en"));
     }
   }
 

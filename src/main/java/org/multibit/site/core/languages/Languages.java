@@ -35,7 +35,7 @@ public class Languages {
     Preconditions.checkNotNull(value, "'value' must be present");
 
     // Cover hyphenation or unusual separation
-    String[] parameters = value.replace("-","_").split("_");
+    String[] parameters = value.replace("-", "_").split("_");
 
     Preconditions.checkState(parameters.length > 0, "'value' must not be empty");
 
@@ -69,13 +69,11 @@ public class Languages {
 
     ResourceBundle rb = ResourceBundle.getBundle(BASE_NAME, locale);
 
-    System.out.println("Locale: "+locale.toString());
-
     final String message;
 
     if (!rb.containsKey(key)) {
       // If no key is present then use it direct
-      message = "Key '" + key + "' is not localised!";
+      message = "Key '" + key + "' is not localised for '" + locale.getLanguage() + "'";
     } else {
       // Must have the key to be here
       message = rb.getString(key);
