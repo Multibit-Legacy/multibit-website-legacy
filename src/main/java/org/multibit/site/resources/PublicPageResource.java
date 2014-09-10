@@ -412,7 +412,7 @@ public class PublicPageResource extends BaseResource {
     // Use the main template since this is a starting point for a user
     BaseModel model = new BaseModel(resourcePath, acceptedTandC(), Locale.ENGLISH);
 
-    return pageResponse(model, "content/hd-help.ftl");
+    return pageResponse(model, "content/main.ftl");
 
   }
 
@@ -436,7 +436,7 @@ public class PublicPageResource extends BaseResource {
 
     BaseModel model = new BaseModel(resourcePath, acceptedTandC(), new Locale(lang));
 
-    return pageResponse(model, "content/hd-help.ftl");
+    return pageResponse(model, "content/main.ftl");
 
 
   }
@@ -460,12 +460,18 @@ public class PublicPageResource extends BaseResource {
     @PathParam("version") String version
   ) {
 
-    // Java6 uses StringBuilder to optimise this
-    String resourcePath = "/" + lang + "/help/" + version + "/help_contents.html";
+    String resourcePath;
+    if (version.contains("hd")) {
+      resourcePath = "/" + lang + "/help/" + version + "/help_contents.html";
+      BaseModel model = new BaseModel(resourcePath, acceptedTandC(), new Locale(lang));
+      return pageResponse(model, "content/hd-help.ftl");
+    }
 
+    // Must be classic
+    resourcePath = "/" + lang + "/help/" + version + "/contents.html";
     BaseModel model = new BaseModel(resourcePath, acceptedTandC(), new Locale(lang));
 
-    return pageResponse(model, "content/hd-help.ftl");
+    return pageResponse(model, "content/mbc-help.ftl");
 
   }
 
@@ -493,7 +499,7 @@ public class PublicPageResource extends BaseResource {
 
     BaseModel model = new BaseModel(resourcePath, acceptedTandC(), new Locale(lang));
 
-    return pageResponse(model, "content/hd-help.ftl");
+    return version.contains("hd") ? pageResponse(model, "content/hd-help.ftl") : pageResponse(model, "content/mbc-help.ftl");
 
   }
 

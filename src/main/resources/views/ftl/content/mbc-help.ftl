@@ -15,10 +15,15 @@
 
 <div class="container">
 
+  <p><a href="help_contents.html">Back to help contents</a></p>
+  <hr/>
+
 <#-- Pull in the content from the model -->
 ${model.content?replace("downloadVersion","${downloadVersion}")}
 
   <hr/>
+  <p><a href="help_contents.html">Back to help contents</a></p>
+
   <p>Problem solved! How can I thank you?<br/>MultiBit Classic is "donationware" and all <a
     href="bitcoin:1AhN6rPdrMuKBGFDKR1k9A8SCLYaNgXhty?amount=0.01&label=Please%20donate%20to%20multibit.org">donations</a> go towards development and server costs.</p>
 

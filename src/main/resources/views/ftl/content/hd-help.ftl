@@ -15,10 +15,15 @@
 
 <div class="container">
 
+  <p><a href="contents.html">Back to help contents</a></p>
+  <hr/>
+
 <#-- Pull in the content from the model -->
 ${model.content?replace("downloadVersion","${downloadVersion}")}
 
   <hr/>
+  <p><a href="contents.html">Back to help contents</a></p>
+
   <p>Was this article detailed enough?<br/>If not please <a href="https://github.com/bitcoin-solutions/multibit-website/issues/new">raise a website content improvement Issue</a>
     so that we can do better.</p>
 
