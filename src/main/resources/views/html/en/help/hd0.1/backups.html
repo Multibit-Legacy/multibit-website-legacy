@@ -1,28 +1,33 @@
 <h3>Wallet backups</h3>
-<h4>What is a wallet backup ?</h4>
-<p>A wallet backup is a copy of your Bitcoin wallet (or your wallet's <a href="help_whatIsAPrivateKey.html">private keys</a>) that you can use to recover your
-  bitcoin if something bad happens to your original wallet file. "Something bad" can mean anything from someone stealing your computer, a hard disk failure or some other serious computer problem.</p>
 
-<h4>Do I have to enable it ?</h4>
-<p>No, MultiBit does this automatically in the background using special files that are described in detail in the <a href="help_fileDescriptions.html">File descriptions</a> article.
-  These files can often be used to recover your wallet automatically should a problem occur.</p>
-<p>MultiBit will place the backup files in a sub-directory created in the same directory as wherever you created the wallet.</p>
-<p>The backups are encrypted the same as the original wallet.</p>
-
-<h4>What if my computer is stolen or turned into metal confetti ?</h4>
-<p>Backups only work if you have access to them. If you rely on the default location for wallet backups then you are at risk if your computer is stolen or damaged beyond recovery.</p>
-
-<h4>I want my bitcoin to be safe. What do you recommend ?</h4>
-<p>A good backup is a copy of your wallet file that you store off your computer. That way if something happens to your computer you still have access to the backups.
-  IT professionals have a saying: "Data doesn't exist unless it is in two separate places".</p>
-<p>At the very least you should have the following in place:</p>
+<p>A wallet backup is an encrypted copy of your Bitcoin wallet that you can use to recover:</p>
 <ul>
-  <li>Encrypted wallets (to prevent others from accessing the data)</li>
-  <li>A new wallet created in a directory that is regularly backed up (SpiderOak, Dropbox, Carbonite, Time Machine etc)</li>
-  <li>A USB stick with additional copies of the private keys in case your machine is stolen and you forget your backup account password</li>
-  <li>Each time a new receiving address is generated a new private key is made which must be backed up.</li>
+  <li>your bitcoin</li>
+  <li>your contacts and notes</li>
+  <li>your payment history and notes</li>
 </ul>
-<p>You <strong>must</strong> use encrypted wallets if you are storing them off your computer.</p>
 
-<h4>My wallet is encrypted but it's on my machine. How can I move it ?</h4>
-<p>Please refer to the <a href="help_movingAWallet.html">moving a wallet</a> article.</p>
+<p><strong>You can always recover your bitcoin through your seed phrase</strong></p>
+
+<p>Hardware and software can fail, be lost or stolen so MultiBit HD ensures that an automatic encrypted backup is made of your wallet
+  to a location that you specify.</p>
+
+<p><strong>Data does not exist unless it is in two separate places.</strong></p>
+
+<h4>Use a cloud backup service</h4>
+
+<p>Setting up a cloud backup service is quite straightforward and for small amounts of data (under 2GB) it is often free. We would strongly
+  urge you to consider SpiderOak for its end to end encryption. However Dropbox is extremely common and provides an excellent user experience.
+  MultiBit HD encrypts all your information locally using a strong AES key derived from your password so it is safe to store the wallet files
+  in the cloud without worrying about a malicious administrator being able to read them.</p>
+
+<p>Overall, a good backup is a copy of your wallet file that you regularly store off your computer. That way if something happens to your
+  computer you still have access to the backups.</p>
+
+<h4>Related</h4>
+
+<ul>
+  <li><a href="password-recovery.html">Recovering a password</a></li>
+  <li><a href="restore-wallet.html">Restore a wallet</a></li>
+  <li><a href="move-wallet.html">Moving a wallet</a></li>
+</ul>
