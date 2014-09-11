@@ -1,5 +1,11 @@
 <h3>Verify message</h3>
 
+<p>To prove that a message really came from an owner of a Bitcoin address, get the person who claims to own the address to 
+<a href="sign-message.html">sign</a>
+ the message and send you the 
+<a href="#signed-hello-world">message with its signature.</a>
+  You can then use Multibit to verify that the message was indeed signed with the address's private key. Whoever knows its private key effectively owns an address, so you will have proven that the message really came from an owner.</p>
+
 <p>From the Tools select "Verify message"</p>
 
 <img class="img-responsive" src="/images/en/screenshots/mbhd-0.1/verify-message.png" title="Verify message screen shot"/>
@@ -21,6 +27,7 @@
 <p>If you have copied a Bitcoin signed message format message you can use the "Paste All" button to fill in all the fields instantly. Simply copy the complete contents of the
   message below and use "Paste All" to verify.</p>
 
+<a name="signed-hello-world"></a>
 <pre>
 -----BEGIN BITCOIN SIGNED MESSAGE-----
 Hello World
