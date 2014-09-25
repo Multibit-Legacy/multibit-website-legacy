@@ -1,6 +1,10 @@
 ## Welcome to the MultiBit Website Repository
 
-This repo contains the source for the [MultiBit website](https://multibit.org).
+Project status: Pre-production staging branch. Expect text content changes.
+
+Build status: [![Build Status](https://travis-ci.org/bitcoin-solutions/multibit-website.svg?branch=develop)](https://travis-ci.org/bitcoin-solutions/multibit-website)
+
+This branch contains the source for the next release of the [MultiBit Production website](https://multibit.org).
 
 ## Acknowledgements
 
