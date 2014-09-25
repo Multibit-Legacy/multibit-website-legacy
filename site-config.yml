@@ -2,8 +2,8 @@
 
 # Define the HTTP settings
 http:
-  port: 8080
-  adminPort: 8081
+  port: 9090
+  adminPort: 9091
 
 logging:
 
