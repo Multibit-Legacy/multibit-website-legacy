@@ -1,4 +1,3 @@
-
 ## Welcome to the MultiBit Website Repository v4.0.0
 
 Project status: Pre-production staging branch. Expect text content changes.
