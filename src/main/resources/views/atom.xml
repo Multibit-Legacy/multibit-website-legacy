@@ -11,6 +11,7 @@
         <updated>2014-08-17T11:26:33.000Z</updated>
         <summary>&lt;p&gt;It has been a while since our last blog post so we thought we'd give you an update on our progress.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2014/08/13/multibit-hd-is-now-open-source.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
     </entry>
+    <updated>2014-08-13T13:11:30.541Z</updated>
     <entry>
         <id>urn:uuid:5d4e98f0-a1df-4588-acca-b75172effe89</id>
         <title>&lt;h1&gt;Private key safety improvements&lt;/h1&gt;</title>
@@ -186,5 +187,12 @@
       innovation through sessions that encourage interaction and discussion between
       professionals across the fields of technology, politics, finance and
       economics.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2011/10/24/prague.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+    </entry>
+    <entry>
+        <id>urn:uuid:7e61c714-5ff6-4793-992e-8682051d2bb5</id>
+        <title>&lt;h1&gt;MultiBit HD is now open source&lt;/h1&gt;</title>
+        <link rel="self" href="https://multibit.org/en/blog/2014/08/13/multibit-hd-is-now-open-source.html"/>
+        <updated>2014-08-13T13:11:21.356Z</updated>
+        <summary>&lt;p&gt;It's been a while since our last blog post so we thought we'd bring you up to speed with what we've been doing.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2014/08/13/multibit-hd-is-now-open-source.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
     </entry>
 </feed>

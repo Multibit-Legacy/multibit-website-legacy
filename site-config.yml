@@ -2,6 +2,7 @@
 
 # Define the HTTP settings
 http:
+
   port: 8888
   adminPort: 8881
 
