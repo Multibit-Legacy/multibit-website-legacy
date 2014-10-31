@@ -17,7 +17,7 @@
 
       <div class="md-download-btn-left col-xs-4">
         <div class="mb-download-link-ns text-center" style="display:block;">
-          <a href="https://multibit.org/releases/multibit-hd-${downloadVersion}/mbhd-${downloadVersion}-win32.exe"
+          <a href="${downloadWindows}"
              class="btn btn-default col-xs-12"
              title="${model.msg("download.windows")}">
             <img src="/images/common/dow-win.png" /><br/>Windows</a>
@@ -26,7 +26,7 @@
 
       <div class="col-xs-4">
         <div class="mb-download-link-ns text-center" style="display:block;">
-          <a href="https://multibit.org/releases/multibit-hd-${downloadVersion}/mbhd-${downloadVersion}-linux"
+          <a href="${downloadLinux}"
              class="btn btn-default col-xs-12"
              title="${model.msg("download.linux")}">
             <img src="/images/common/dow-linux.png" /><br/>Linux</a>
@@ -35,7 +35,7 @@
 
       <div class="md-download-btn-right col-xs-4">
         <div class="mb-download-link-ns text-center" style="display:block;">
-          <a href="https://multibit.org/releases/multibit-hd-${downloadVersion}/mbhd-${downloadVersion}-macosx.dmg"
+          <a href="${downloadOSX}"
              class="btn btn-default col-xs-12"
              title="${model.msg("download.osx")}">
             <img src="/images/common/dow-osx-uni.png"/><br/>OS X</a>
