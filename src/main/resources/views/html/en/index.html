@@ -1,31 +1,103 @@
 <div class="row mb-video-and-features">
 
   <div class="col-md-7 col-lg-8">
-    <div class="embed-responsive embed-responsive-16by9">
-      <iframe class="embed-responsive-item" src="//www.youtube.com/embed/uzOXzvMG2G8?rel=0&showinfo=0&html5=1"
-              frameborder="0"
-              allowfullscreen
-              style="border:1px solid #ccc" >
-              </iframe>
+
+    <div id="myCarousel" class="carousel slide">
+      <!-- Carousel items -->
+      <div class="carousel-inner">
+        <div class="item">
+          <img src="/images/en/screenshots/mbhd-0.1/languages.png"/>
+        </div>
+        <div class="active item">
+          <img src="/images/en/screenshots/mbhd-0.1/contacts.png"/>
+        </div>
+        <div class="item">
+          <img src="/images/en/screenshots/mbhd-0.1/edit-contact.png"/>
+        </div>
+        <div class="item">
+          <img src="/images/en/screenshots/mbhd-0.1/send-payment.png"/>
+        </div>
+        <div class="item">
+          <img src="/images/en/screenshots/mbhd-0.1/request-payment.png"/>
+        </div>
+        <div class="item">
+          <img src="/images/en/screenshots/mbhd-0.1/sign-message.png"/>
+        </div>
+        <div class="item">
+          <img src="/images/en/screenshots/mbhd-0.1/verify-message.png"/>
+        </div>
+        <div class="item">
+          <img src="/images/en/screenshots/mbhd-0.1/units.png"/>
+        </div>
+        <div class="item">
+          <img src="/images/en/screenshots/mbhd-0.1/exchange-rates.png"/>
+        </div>
+      </div>
     </div>
+
   </div>
 
   <div class="col-md-5 col-lg-4">
     <h3 class="mb-features-heading">Why choose MultiBit HD ?</h3>
+
     <p>MultiBit HD is:</p>
-    <ul class="list">
-      <li>Quick and easy to install across all major desktop operating systems (Windows, OS X, Linux)</li>
-      <li>Secure by design - all your data is kept encrypted on your local machine</li>
-      <li>Faster to synchronize - usually a minute or so</li>
-      <li>Deterministic - you have a <strong>seed phrase</strong> which you can use to reclaim your bitcoin</li>
-      <li>Decentralised - no fixed servers only the Bitcoin network</li>
-      <li>International - <a href="http://translate.multibit.org/project/multibit-hd" target="_blank">multiple languages</a> (40+ at the last release)</li>
+    <ul id="features-list" class="list">
+      <li><i class="fa fa-windows fa-lg"></i>&nbsp;Quick and easy to install<br/>We support all major desktop operating systems (Windows, OS X, Linux)</li>
+      <li><i class="fa fa-shield fa-lg"></i>&nbsp;Secure by design<br/>All your data is kept encrypted on your local machine and we support hardware wallets such as Trezor</li>
+      <li><i class="fa fa-magic fa-lg"></i>&nbsp;Deterministic<br/>A <strong>seed phrase</strong> protects your bitcoin from data loss</li>
+      <li><i class="fa fa-cloud fa-lg"></i>&nbsp;Decentralised<br/>No fixed servers only the Bitcoin network</li>
+      <li><i class="fa fa-globe fa-lg"></i>&nbsp;International<br/>We support <a href="http://translate.multibit.org/project/multibit-hd" target="_blank">over 40 languages</a></li>
     </ul>
     <p>If you are an ordinary user of Bitcoin and simply want a wallet that just works without hassle, then MultiBit HD is the right choice for you.</p>
+
     <p>You can download it using the buttons above and be up and running with Bitcoin in 5 minutes.</p>
+
     <p>To get a full list of versions go to the <a href="/download.html">download section</a>.</p>
   </div>
 
 </div>
 
+<script language="JavaScript">
 
+  // invoke the carousel
+  $('#myCarousel').carousel({
+    interval: 5000
+  });
+
+  /* SLIDE ON CLICK */
+
+  $('.carousel-linked-nav > li > a').click(function () {
+
+// grab href, remove pound sign, convert to number
+    var item = Number($(this).attr('href').substring(1));
+
+// slide to number -1 (account for zero indexing)
+    $('#myCarousel').carousel(item - 1);
+
+// remove current active class
+    $('.carousel-linked-nav .active').removeClass('active');
+
+// add active class to just clicked on item
+    $(this).parent().addClass('active');
+
+// don't follow the link
+    return false;
+  });
+
+  /* AUTOPLAY NAV HIGHLIGHT */
+
+  // bind 'slid' function
+  $('#myCarousel').bind('slid', function () {
+
+// remove active class
+    $('.carousel-linked-nav .active').removeClass('active');
+
+// get index of currently active item
+    var idx = $('#myCarousel .item.active').index();
+
+// select currently active item and add active class
+    $('.carousel-linked-nav li:eq(' + idx + ')').addClass('active');
+
+  });
+
+</script>

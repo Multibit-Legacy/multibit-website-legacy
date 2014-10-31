@@ -1,7 +1,6 @@
 // This file provides non-Bootstrap configuration
 // Refer to variables.less for all configuration
 // Refer to bootswatch.less for Bootstrap-specific entries
-
 //@import url(http://fonts.googleapis.com/css?family=Oxygen:700);
 @import "bootswatch.less";
 
@@ -19,63 +18,79 @@ body {
 .mb-downloads .well {
   margin-bottom: 0;
 }
+
 .mb-downloads .alert.alert-info {
-    margin-top: 15px;
-    margin-bottom: 0;
+  margin-top: 15px;
+  margin-bottom: 0;
 }
+
 .mb-downloads .glyphicon.glyphicon-arrow-right {
   display: none;
   font-size: 20pt;
   top: 9px;
   line-height: 0;
 }
+
 .mb-downloads:hover .alert .glyphicon.glyphicon-arrow-right {
   display: inline-block;
 }
+
 .mb-downloads:hover .alert .btn {
-   -webkit-box-shadow: 0px 0px 15px 5px;
-   -moz-box-shadow: 0px 0px 15px 5px;
-   box-shadow: 0px 0px 15px 5px;
+  -webkit-box-shadow: 0px 0px 15px 5px;
+  -moz-box-shadow: 0px 0px 15px 5px;
+  box-shadow: 0px 0px 15px 5px;
 }
+
 .mb-downloads h3.mb-download-heading {
   margin-top: 0;
 }
+
 .panel.mb-download-panel {
   margin-right: 15px;
   margin-left: 15px;
 }
+
 .mb-download-panel .md-download-btn-left {
   padding-left: 0;
 }
+
 .mb-download-panel .md-download-btn-right {
   padding-right: 0;
 }
+
 .mb-download-panel .panel.mb-download-panel .panel-heading {
   border: 1px solid;
   margin-bottom: 12px;
 }
+
 .mb-downloads .panel.mb-download-panel .panel-body.mb-downloads-enabled {
   border-top-width: 1px;
   border-radius: 4px;
 }
+
 // Custom font awesome font size overrides
 .mb-download-icon.fa-5x {
-  font-size: 10vw;// use viewport percentage
+  font-size: 10vw; // use viewport percentage
   color: gray;
 }
+
 .mb-download-icon.fa-4x {
   font-size: 4vw;
 }
+
 .mb-downloads .panel.mb-download-panel .checkbox {
   margin-top: 0;
   margin-bottom: 0;
 }
+
 .mb-downloads .panel.mb-download-panel .form-group {
-    margin-bottom: 0;
-  }
+  margin-bottom: 0;
+}
+
 .mb-download-icon .well {
   margin-bottom: 0;
 }
+
 .mb-download-link {
   display: none;
 }
@@ -87,16 +102,19 @@ body {
   padding: 25px;
   height: 100px;
 }
+
 .mb-download-link-ns a {
   color: #333;
   // Forced into using fixed sizing here
   padding: 25px;
   height: 100px;
 }
+
 .mb-download-link-ns a:hover, .mb-download-link-ns a:hover {
   text-decoration: none;
   color: black;
 }
+
 .mb-download-link-ns a.btn.btn-default:hover {
   background: #e0f0f8 none;
 }
@@ -105,13 +123,16 @@ body {
 .mb-download-link a .fa {
   color: #333;
 }
+
 .mb-download-link a:hover, .mb-download-link a:hover .fa {
   text-decoration: none;
   color: black;
 }
+
 .mb-download-link a.btn.btn-default:hover {
   background: #e0f0f8 none;
 }
+
 .mb-downloads .panel.mb-download-panel .mb-download-terms-and-conditions-text {
   color: @brand-secondary;
 }
@@ -131,7 +152,8 @@ footer {
   z-index: 2;
   border-bottom: 0 none;
 }
-.navbar-inverse .navbar-nav>li>a {
+
+.navbar-inverse .navbar-nav > li > a {
   color: #B9B9B9;
 }
 
@@ -153,15 +175,18 @@ footer {
   padding-top: 55px;
   background-color: #222;
 }
+
 .page-header h1 {
   font-family: @header-font-primary, sans-serif;
   font-size: 300%;
   color: #E6E6E6;
   margin: 0px;
 }
+
 .page-header a:hover {
   text-decoration: none;
 }
+
 .page-header img.header-logo {
   /* width just for older browsers */
   width: 64px;
@@ -184,4 +209,54 @@ footer {
   .container-main-content {
     padding-top: 69px;
   }
+}
+
+// Carousel
+
+//#myCarousel {
+//  margin-top: 40px;
+//}
+
+.carousel-linked-nav,
+.item img {
+  display: block;
+  margin: 0 auto;
+}
+
+.carousel-linked-nav {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+.carousel .item {
+  -webkit-transition: opacity 2s;
+  -moz-transition: opacity 2s;
+  -ms-transition: opacity 2s;
+  -o-transition: opacity 2s;
+  transition: opacity 2s;
+}
+
+.carousel .active.left {
+  left: 0;
+  opacity: 0;
+  z-index: 2;
+}
+
+.carousel .next {
+  left: 0;
+  opacity: 1;
+  z-index: 1;
+}
+
+// Features list
+#features-list {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+#features-list li {
+  margin-bottom: 10px;
+}
+#features-list li i {
+  padding-right: 5px;
 }
