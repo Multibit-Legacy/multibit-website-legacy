@@ -1,5 +1,10 @@
-
 ## Welcome to the MultiBit Website Repository v4.0.0
+
+Project status: Pre-production staging branch. Expect text content changes.
+
+Build status: [![Build Status](https://travis-ci.org/bitcoin-solutions/multibit-website.svg?branch=develop)](https://travis-ci.org/bitcoin-solutions/multibit-website)
+
+This branch contains the source for the next release of the [MultiBit Production website](https://multibit.org).
 
 Project status: Private beta. Expect minor bugs and API changes.
 
