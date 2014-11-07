@@ -1,35 +1,59 @@
 <h3>Upgrading from MultiBit Classic</h3>
 
-TODO This article needs to be written
+<h4>Some history</h4>
+<p>MultiBit Classic is a first generation Simplified Payment Verification (SPV) Bitcoin wallet. When it was first introduced back in 2011 it enabled people to use Bitcoin much more easily than they could before due to the much lighter network load it required.</p>
+
+<p>At that time the concept of hierarchical deterministic (HD) wallets was unknown and all Bitcoin wallets relied on random private keys. In order to simplify matters for non-technical people these private keys were re-used resulting in a weakened security model but having the advantage of allowing for more reliable data recovery if something went wrong with a user's computer.</p> 
+
+<p>With the introduction of HD through the Bitcoin Improvement Process (BIP) it became possible for different bitcoin wallets to be able to share a common piece of data, the "seed phrase", from which an enormous number of fresh private keys could be generated. This greatly simplified the problem of safely storing user's private keys and as a result MultiBit HD was born.</p>
+
+<h4>Spending is the safest way</h4>
+<p>One of the problems with random private keys is that they cannot be easily regenerated. It is for this reason that we, the MultiBit developers, have decided against direct import of a MultiBit Classic wallet. To illustrate this, consider the following example.</p>
+
+<p>Alice imports a collection of random private keys in addition to a seed phrase into a combined wallet. Time passes and one day Alice has her computer stolen along with her backups. Fortunately she has her seed phrase and so all the bitcoins associated with it can be recovered. However, those bitcoins that remained with the random private keys are only protected by backups which have been stolen as well so they cannot be recovered.</p>
+
+<p>In the remainder of the article we discuss how to safely upgrade from MultiBit Classic to MultiBit HD and still retain control over old private keys.</p>
+
+<h4>Step 1 - Preparation</h4>
+<p>If you have a large amount stored in bitcoin (typically over 500 USD worth) then you should seriously consider purchasing a Trezor device. This will provide the best possible protection for your bitcoins while still enabling you to use them without undue hassle.</p>
+
+<p>You may decide that you want to take this opportunity to split your bitcoin up into smaller amounts and spread them across multiple wallets, each with its own seed phrase. If you choose to do this then we'd suggest the following approach:</p>
+
+<ol>
+  <li>Arrange a collection of A5 cards for each wallet</li>
+  <li>On each card write a section for Timestamp, Seed phrase (leave space for 24 words), Wallet type (MultiBit HD, Trezor) and first receiving Address</li>
+</ol>
+
+<h4>Step 2 - Spend from MultiBit Classic to MultiBit HD</h4>
+
+<p></p>
+
+<ol>
+  <li>Start MultiBit Classic and ensure it is fully synchronized</li>
+  <li>Start MultiBit HD and navigate to the "Create Wallet" screen (see the <a href="create-wallet.html">"How to create a wallet"</a> article for details).</li>
+  <li>Create a wallet using MultiBit HD (choosing the Trezor option if you have one) and fill in the card using a pen</li>
+  <li>Unlock your wallet in MultiBit HD using your password and select "Request bitcoin"</li>
+  <li>Copy the offered receiving address (or at least the first 8 letters so you can identify them later) to your card</li>
+</ol>
 
 
-<p>New versions of MultiBit are released containing bug fixes and new features every so often. We recommend you keep your version of MultiBit up-to-date.</p>
-<p>This guide tells you how upgrade to a newer version. It is assumed that you have
-  reviewed the <a href="help_gettingStarted.html" target="_blank">Getting Started</a> guide and know where all your wallet files are.</p>
+    users should sweep all funds from Classic to HD - this can be split over several addresses or even wallets if preferred - start with small amounts to gain confidence that all is well
 
-<h4>Step 1 - Locate your wallet files</h4>
-<p>If you have a standard installation (i.e. you followed our installation notes) upgrading MultiBit should be a seamless process. Your wallet and configuration files will not be in the same directory as the MultiBit application.</p>
-<p>Note: You can create new wallets in <strong>any directory</strong> however we recommend you store your wallets and configuration files separate from the
-  installation directory.</p>
-<p>You can always see the file location of your current wallet in the main title bar of your MultiBit window. For instance, it might say: "MultiBit - My wallet - /Users/jim/Library/Application Support/MultiBit/multibit.wallet". The file name at the end is where your wallet is stored.</p>
+    private keys should be exported encrypted from MultiBit Classic to cloud storage in case someone sends bitcoins to an old address - old private keys should never be deleted
 
-<h4>Step 2 (optional) - Move your wallets</h4>
-<p>If you have stored your wallets in the MultiBit installation directory (this is not recommended) and want to move the wallets out of this directory then please review the <a href="help_movingAWallet.html" target="_blank">Moving A Wallet</a> article.</p>
+    ideally keep a copy of MultiBit Classic along with the wallet files in a secure archive
 
-<h4>Step 3 - Run the installer/ Mac DMG file</h4>
-<p>Download the installer from the <a href="https://multibit.org" target="_blank">official MultiBit site</a> and <a href="/blog/2013/07/24/how-to-check-signatures.html" target="_blank">verify the GPG signature</a> to be absolutely sure you have a legitimate copy.</p>
-<p>Follow the <a href="help_installing.html" target="_blank">standard installation instructions</a> for your computer.</p>
+<h4>Step 3 - Preserve the MultiBit Classic private keys</h4>
+<p>Even though all funds have been spent to MultiBit HD receiving addresses there is still the chance that someone could send you bitcoins using the old address. To ensure that you can always access these funds it is best to maintain a copy of the private keys somewhere safe. There are several approaches to this:</p>
 
-<h4>Step 4 - (Windows and Linux only) Run the old version's uninstaller</h4>
-<p>Once you are happy with the new version of MultiBit there is a uninstaller shortcut provided so that you can uninstall the older version of MultiBit.</p>
-<p>This is not required on Mac OS X since MultiBit.app is simply overwritten.</p>
-
-<h4>Finish</h4>
-<p>That's all there is to it. MultiBit will alert you if there is a problem and the <a href="/help.html">main help contents provide answers</a> to many common questions.</p>
+<ol>
+  <li>export the private keys, encrypted, from MultiBit Classic to a <code>.key</code> file</li>
+  <li>copy the <code>.key</code> file to several safe locations (cloud backup, USB stick, etc)</li>
+  <li>avoid uninstalling MultiBit Classic in case you need it again</li>
+</ol>
 
 <h4>Related articles</h4>
 <p>Here are some related articles:</p>
 <ul>
-  <li><a href="help_support_missingWallets.html">Lost wallets</a></li>
-  <li><a href="help_lostOrForgottenPassword.html">I've lost or forgotten my password</a></li>
+  <li><a href="restore-wallet.html">I've lost or forgotten my password</a></li>
 </ul>
