@@ -9,6 +9,7 @@ package org.multibit.site.servlets;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class SafeLocaleFilter implements Filter {
@@ -30,6 +31,12 @@ public class SafeLocaleFilter implements Filter {
     } else {
       // Use the originals
       chain.doFilter(request, response);
+    }
+
+    if (response instanceof HttpServletResponse) {
+      // Strict-Transport-Security: max-age=31536000; includeSubDomains
+      ((HttpServletResponse) response).setHeader("Strict-Transport-Security", "max-age=31536000; includeSubDomains");
+
     }
 
   }
