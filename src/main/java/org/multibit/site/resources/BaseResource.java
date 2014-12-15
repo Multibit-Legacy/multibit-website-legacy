@@ -24,6 +24,7 @@ import java.util.Locale;
  */
 public abstract class BaseResource {
 
+  public static final String HSTS_HEADER_VALUE = "max-age=31536000; includeSubDomains";
   /**
    * The fallback language that should be fully available
    */
@@ -50,6 +51,23 @@ public abstract class BaseResource {
   protected HttpContext httpContext;
 
   /**
+   * <p>Decorate the response with all standard headers</p>
+   *
+   * @param builder The response builder
+   *
+   * @return The decorated response builder with all standard headers in place
+   */
+  public static Response.ResponseBuilder applyHeaders(Response.ResponseBuilder builder) {
+
+    return builder
+      // CORS - Allow access to content from any domain
+      .header(com.google.common.net.HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN, "*")
+      // HSTS - Supporting browsers should use HTTPS for all requests to this domain
+      .header("Strict-Transport-Security", HSTS_HEADER_VALUE);
+
+  }
+
+  /**
    * @return The most appropriate locale for the upstream request (never null)
    */
   public Locale getLocale() {
@@ -63,7 +81,10 @@ public abstract class BaseResource {
       if (locales == null || locales.isEmpty()) {
         return defaultLocale;
       }
-      return Languages.newLocaleFromCode(locales.get(0).toString().replace("*","en"));
+      return Languages.newLocaleFromCode(
+        locales.get(0).toString().replace("*", "en"),
+        defaultLocale
+      );
     }
   }
 
@@ -84,10 +105,9 @@ public abstract class BaseResource {
   }
 
   protected Response pageResponse(BaseModel model, String templatePath) {
-    return Response
+    return applyHeaders(Response
       .ok()
       .entity(new PublicFreemarkerView<BaseModel>(templatePath, model))
-      .header(com.google.common.net.HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN, "*")
-      .build();
+    ).build();
   }
 }

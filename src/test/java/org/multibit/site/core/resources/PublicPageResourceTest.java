@@ -48,40 +48,49 @@ public class PublicPageResourceTest extends BaseResourceTest {
   @Test
   public void viewFavicon() throws Exception {
 
-    byte[] actualResponse = configureAsClient("/favicon.ico")
-      .get(byte[].class);
+    ClientResponse actualResponse = configureAsClient("/favicon.ico")
+      .get(ClientResponse.class);
 
-    assertThat(actualResponse).isNotNull();
+    assertThat(actualResponse.getEntity(byte[].class)).isNotNull();
 
+    // Assert headers
+    assertThat(actualResponse.getHeaders().get("Strict-Transport-Security").get(0)).isEqualTo(BaseResource.HSTS_HEADER_VALUE);
   }
 
   @Test
   public void viewRobots() throws Exception {
 
-    String actualResponse = configureAsClient("/robots.txt")
-      .get(String.class);
+    ClientResponse actualResponse = configureAsClient("/robots.txt")
+      .get(ClientResponse.class);
 
-    assertThat(actualResponse).contains("Sitemap");
+    assertThat(actualResponse.getEntity(String.class)).contains("Sitemap");
 
+    // Assert headers
+    assertThat(actualResponse.getHeaders().get("Strict-Transport-Security").get(0)).isEqualTo(BaseResource.HSTS_HEADER_VALUE);
   }
 
   @Test
   public void viewSiteMap() throws Exception {
 
-    String actualResponse = configureAsClient("/sitemap.xml")
-      .get(String.class);
+    ClientResponse actualResponse = configureAsClient("/sitemap.xml")
+      .get(ClientResponse.class);
 
-    assertThat(actualResponse).contains("urlset");
+    assertThat(actualResponse.getEntity(String.class)).contains("urlset");
 
+    // Assert headers
+    assertThat(actualResponse.getHeaders().get("Strict-Transport-Security").get(0)).isEqualTo(BaseResource.HSTS_HEADER_VALUE);
   }
 
   @Test
   public void viewAtomFeed() throws Exception {
 
-    String actualResponse = configureAsClient("/atom.xml")
-      .get(String.class);
+    ClientResponse actualResponse = configureAsClient("/atom.xml")
+      .get(ClientResponse.class);
 
-    assertThat(actualResponse).contains("MultiBit Blog");
+    assertThat(actualResponse.getEntity(String.class)).contains("MultiBit Blog");
+
+    // Assert headers
+    assertThat(actualResponse.getHeaders().get("Strict-Transport-Security").get(0)).isEqualTo(BaseResource.HSTS_HEADER_VALUE);
 
   }
 
@@ -94,6 +103,8 @@ public class PublicPageResourceTest extends BaseResourceTest {
     assertThat(actualResponse.getStatus()).isEqualTo(200);
     assertThat(actualResponse.getEntity(String.class)).contains("International");
 
+    // Assert headers
+    assertThat(actualResponse.getHeaders().get("Strict-Transport-Security").get(0)).isEqualTo(BaseResource.HSTS_HEADER_VALUE);
   }
 
   @Test
@@ -107,6 +118,9 @@ public class PublicPageResourceTest extends BaseResourceTest {
     assertThat(actualResponse.getCookies().size()).isEqualTo(1);
     assertThat(actualResponse.getCookies().get(0).toCookie().getName()).isEqualTo(BaseResource.COOKIE_NAME);
 
+    // Assert headers
+    assertThat(actualResponse.getHeaders().get("Strict-Transport-Security").get(0)).isEqualTo(BaseResource.HSTS_HEADER_VALUE);
+
   }
 
   @Test
@@ -119,6 +133,8 @@ public class PublicPageResourceTest extends BaseResourceTest {
     assertThat(actualResponse.getEntity(String.class)).contains("International");
     assertThat(actualResponse.getCookies().size()).isEqualTo(0);
 
+    // Assert headers
+    assertThat(actualResponse.getHeaders().get("Strict-Transport-Security").get(0)).isEqualTo(BaseResource.HSTS_HEADER_VALUE);
   }
 
   @Test
@@ -132,6 +148,8 @@ public class PublicPageResourceTest extends BaseResourceTest {
     assertThat(actualResponse.getCookies().size()).isEqualTo(1);
     assertThat(actualResponse.getCookies().get(0).toCookie().getName()).isEqualTo(BaseResource.COOKIE_NAME);
 
+    // Assert headers
+    assertThat(actualResponse.getHeaders().get("Strict-Transport-Security").get(0)).isEqualTo(BaseResource.HSTS_HEADER_VALUE);
   }
 
   @Test
@@ -144,6 +162,8 @@ public class PublicPageResourceTest extends BaseResourceTest {
     assertThat(actualResponse.getEntity(String.class)).contains("0.0.1");
     assertThat(actualResponse.getCookies().size()).isEqualTo(0);
 
+    // Assert headers
+    assertThat(actualResponse.getHeaders().get("Strict-Transport-Security").get(0)).isEqualTo(BaseResource.HSTS_HEADER_VALUE);
   }
 
   @Test
@@ -157,6 +177,8 @@ public class PublicPageResourceTest extends BaseResourceTest {
     assertThat(actualResponse.getCookies().size()).isEqualTo(1);
     assertThat(actualResponse.getCookies().get(0).toCookie().getName()).isEqualTo(BaseResource.COOKIE_NAME);
 
+    // Assert headers
+    assertThat(actualResponse.getHeaders().get("Strict-Transport-Security").get(0)).isEqualTo(BaseResource.HSTS_HEADER_VALUE);
   }
 
 }

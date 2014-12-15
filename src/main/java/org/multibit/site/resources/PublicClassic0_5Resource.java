@@ -38,10 +38,10 @@ public class PublicClassic0_5Resource extends BaseResource {
       throw new WebApplicationException(Response.Status.NOT_FOUND);
     }
 
-    return Response
+    return applyHeaders(Response
       .ok(is)
       .type("image/png")
-      .build();
+    ).build();
 
   }
 
