@@ -11,7 +11,11 @@ import org.multibit.site.views.PublicFreemarkerView;
 
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Size;
-import javax.ws.rs.*;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.NewCookie;
 import javax.ws.rs.core.Response;
@@ -20,7 +24,13 @@ import java.io.InputStream;
 import java.net.URI;
 import java.util.Locale;
 import java.util.UUID;
-import java.util.concurrent.*;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 /**
  * <p>Resource to provide the following to application:</p>
@@ -84,10 +94,10 @@ public class PublicPageResource extends BaseResource {
 
     InputStream is = PublicPageResource.class.getResourceAsStream("/assets/images/favicon.ico");
 
-    return Response
+    return applyHeaders(Response
       .ok(is)
       .type("image/png")
-      .build();
+    ).build();
   }
 
   /**
@@ -102,7 +112,9 @@ public class PublicPageResource extends BaseResource {
 
     InputStream is = PublicPageResource.class.getResourceAsStream("/views/robots.txt");
 
-    return Response.ok(is).build();
+    return applyHeaders(Response
+      .ok(is)
+    ).build();
   }
 
   /**
@@ -120,10 +132,10 @@ public class PublicPageResource extends BaseResource {
       throw notFound();
     }
 
-    return Response
+    return applyHeaders(Response
       .ok(siteMap.get())
       .type(MediaType.TEXT_XML)
-      .build();
+    ).build();
   }
 
   /**
@@ -141,10 +153,10 @@ public class PublicPageResource extends BaseResource {
       throw notFound();
     }
 
-    return Response
+    return applyHeaders(Response
       .ok(atomFeed.get())
       .type(MediaType.APPLICATION_ATOM_XML)
-      .build();
+    ).build();
   }
 
   /**
@@ -166,10 +178,10 @@ public class PublicPageResource extends BaseResource {
           byte[] advert = new AdvertLoader().loadAndClean();
 
           // Seems OK so serve it
-          return Response
+          return applyHeaders(Response
             .ok(advert)
             .type(MediaType.TEXT_HTML)
-            .build();
+          ).build();
 
         } catch (Throwable e) {
           // Any problem gets the fail safe response
@@ -509,10 +521,10 @@ public class PublicPageResource extends BaseResource {
    * @return A 307 to be recorded in the server logs triggering an action by administrators
    */
   private Response failSafeResponse() {
-    return Response
+    return applyHeaders(Response
       .temporaryRedirect(URI.create(FAILSAFE))
       .type(MediaType.TEXT_HTML)
-      .build();
+    ).build();
   }
 
   /**
@@ -538,12 +550,13 @@ public class PublicPageResource extends BaseResource {
     model.setAcceptAction(resourcePath);
     PublicFreemarkerView<BaseModel> entity = new PublicFreemarkerView<BaseModel>("content/main.ftl", model);
 
-    return Response
+    return applyHeaders(Response
       .ok()
       .entity(entity)
       .header(HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN, "*")
+      .header("Strict-Transport-Security", "max-age=31536000; includeSubDomains")
       .cookie(cookie)
-      .build();
+    ).build();
   }
 
 }

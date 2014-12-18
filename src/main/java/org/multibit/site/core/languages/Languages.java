@@ -1,7 +1,5 @@
 package org.multibit.site.core.languages;
 
-import com.google.common.base.Preconditions;
-
 import java.text.MessageFormat;
 import java.util.Locale;
 import java.util.ResourceBundle;
@@ -26,18 +24,23 @@ public class Languages {
   }
 
   /**
-   * @param value The encoding of the locale (e.g. "ll", "ll_rr", "ll_rr_vv")
+   * @param value         The encoding of the locale (e.g. "ll", "ll_rr", "ll_rr_vv")
+   * @param defaultLocale The default locale if the value cannot be interpreted
    *
    * @return A new resource bundle based on the locale
    */
-  public static Locale newLocaleFromCode(String value) {
+  public static Locale newLocaleFromCode(String value, Locale defaultLocale) {
 
-    Preconditions.checkNotNull(value, "'value' must be present");
+    if (value==null) {
+      return defaultLocale;
+    }
 
     // Cover hyphenation or unusual separation
     String[] parameters = value.replace("-", "_").split("_");
 
-    Preconditions.checkState(parameters.length > 0, "'value' must not be empty");
+    if (parameters.length == 0) {
+      return defaultLocale;
+    }
 
     final Locale newLocale;
 
@@ -52,7 +55,12 @@ public class Languages {
         newLocale = new Locale(parameters[0], parameters[1], parameters[2]);
         break;
       default:
-        throw new IllegalArgumentException("Unknown locale descriptor: " + value);
+        return defaultLocale;
+    }
+
+    // Trap bare HTTP requests
+    if (newLocale.getLanguage().equals("null")) {
+      return defaultLocale;
     }
 
     return newLocale;
