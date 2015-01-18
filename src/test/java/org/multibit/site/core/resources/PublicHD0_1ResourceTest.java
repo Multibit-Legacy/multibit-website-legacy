@@ -57,4 +57,15 @@ public class PublicHD0_1ResourceTest extends BaseResourceTest {
 
   }
 
+  @Test
+  public void getDefaultLanguageHelpContents_GettingStarted() throws Exception {
+
+    String actualResponse = configureAsClient("/hd0.1/getting-started.html")
+      .accept(MediaType.TEXT_HTML)
+      .get(String.class);
+
+    assertThat(actualResponse).contains("Getting started");
+
+  }
+
 }
