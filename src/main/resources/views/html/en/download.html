@@ -1,259 +1,418 @@
 <div class="panel panel-info">
 
-  <div id="releases" class="panel-heading">
-    <span>Releases</span>
-  </div>
+    <div id="releases" class="panel-heading">
+        <span>Releases</span>
+    </div>
 
-  <div class="panel-body">
+    <div class="panel-body">
 
-    <div class="col-xs-12">
+        <div class="col-xs-12">
 
-      <ul>
-        <li><a href="#0.0.4">0.0.4 (Private Beta 4)</a></li>
-        <li><a href="#0.0.3">0.0.3 (Private Beta 3)</a></li>
-        <li><a href="#0.0.2">0.0.2 (Private Beta 2)</a></li>
-        <li><a href="#0.0.1">0.0.1 (Private Beta 1)</a></li>
-      </ul>
+            <ul>
+                <li><a href="#0.0.5">0.0.5 (Beta 5 Trezor)</a></li>
+                <li><a href="#0.0.4">0.0.4 (Private Beta 4)</a></li>
+                <li><a href="#0.0.3">0.0.3 (Private Beta 3)</a></li>
+                <li><a href="#0.0.2">0.0.2 (Private Beta 2)</a></li>
+                <li><a href="#0.0.1">0.0.1 (Private Beta 1)</a></li>
+            </ul>
 
-      <p><a href="releases.html">MultiBit Classic legacy releases are also available</a></p>
+            <p><a href="releases.html">MultiBit Classic legacy releases are also available</a></p>
+
+        </div>
 
     </div>
 
-  </div>
+</div>
+
+<div id="0.0.5" class="panel panel-info">
+
+    <div class="panel-heading">
+        <a href="https://multibit.org/releases/multibit-hd/multibit-hd-0.0.5/" target="_blank"> Release 0.0.5 ( Beta 5 )</a>
+    </div>
+
+    <div class="panel-body">
+
+        <div class="col-xs-12">
+
+            <p><a href="https://github.com/bitcoin-solutions/multibit-hd/issues?q=is%3Aclosed+milestone%3A%22Beta+5+Trezor%22" target="_blank">Detailed issue list on
+                GitHub</a></p>
+
+            <ul>
+                <li>#364 Wallet dashboard not showing capabilities in all cases</li>
+                <li>#362 Compatibility testing with other wallets</li>
+                <li>#355 Main view refresh removing 'Do you want to use trezor ?' alert on Wallet load report Finish trezor</li>
+                <li>#354 Intermittent Travis "sniff seed" test failure</li>
+                <li>#352 Soft wallet possibly getting encrypted with Trezor entropy instead of password trezor</li>
+                <li>#350 After incorrect PIN entry PIN matrix should be cleared trezor</li>
+                <li>#349 Trezor | Wipe wallet adds a confusing 'Trezor wallet attached' alert on successful wipe trezor</li>
+                <li>#348 On create new wallet Unlock not enabled on PIN entry after create trezor</li>
+                <li>#347 Repair wallet Finish not enabled on sync finish</li>
+                <li>#345 Trezor not being recognised</li>
+                <li>#344 Cannot dismiss 'received bitcoin' alert</li>
+                <li>#342 Swopping between two trezors does NOT give an alert trezor</li>
+                <li>#341 FEST test for plug in and pull out of trezor trezor</li>
+                <li>#340 Header is being switched on when you close the Wallet load report, even if still synchronising</li>
+                <li>#339 Internal help should prevent external or non-help articles documentation</li>
+                <li>#336 If incorrect PIN is entered, then corrected, wallet does not load trezor</li>
+                <li>#335 No user feedback if PIN is entered incorrectly trezor</li>
+                <li>#334 Trezor wallet does not appear to be syncing on UI but it actually is trezor</li>
+                <li>#333 Remove printStackTrace and System.out.println references</li>
+                <li>#332 Remove Vault of Satoshi from exchange list</li>
+                <li>#331 Entered PIN but unlock not enabled trezor</li>
+                <li>#330 Add 'Wallet start up' screen for soft wallets</li>
+                <li>#329 On password screen plugin and pull out Trezor should show PIN matrix trezor</li>
+                <li>#328 FEST test for restore Trezor wallet trezor</li>
+                <li>#327 FEST test for initialised Trezor at cold start trezor</li>
+                <li>#326 FEST test for initialised Trezor at warm start trezor</li>
+                <li>#325 FEST test for wiped Trezor at warm start trezor</li>
+                <li>#324 Header not showing on wallet unlock</li>
+                <li>#323 Add Findbugs to Maven build process</li>
+                <li>#322 Build fails under Windows</li>
+                <li>#319 Confusing Verify Network between peers discovered and sync starts</li>
+                <li>#318 FEST test for initialise Trezor use case</li>
+                <li>#317 Just created a new Trezor wallet with wiped wallet. Next does not work trezor</li>
+                <li>#315 Trezor wallet label incorrect on first synch trezor</li>
+                <li>#314 Tooltip for History is wrong</li>
+                <li>#313 Upgrade to hid4java 0.2.0 to gain better win64 support</li>
+                <li>#312 Switch to a trezor, then back to soft wallet forgets previous soft wallet choice</li>
+                <li>#311 Too many identical alerts for bitcoin received</li>
+                <li>#310 When creating a new Trezor wallet on screen pin is not shown/ wallet is not present trezor</li>
+                <li>#308 Include Trezor emulator in FEST tests</li>
+                <li>#307 Empty wallet you cannot paste a bitcoin address, only a recipient</li>
+                <li>#305 Exiting from Trezor hard wallet is resetting the configuration to the default</li>
+                <li>#304 Everything hides on a switch wallet - a bit disconcerting to users</li>
+                <li>#303 Semantics of Trezor Restore screen off Credentials isn't quite right trezor</li>
+                <li>#302 Switch wallet is not completing the handover to the Credentials wizard</li>
+                <li>#301 Tools | Trezor | Wipe Trezor shows wrong message on Cancel</li>
+                <li>#300 If you do a Restore | Use existing wallet MBHD borks</li>
+                <li>#298 Switch wallet not enabling Send and Request if that panel is being shown</li>
+                <li>#297 Tools | Trezor needs tidying up when no Trezor is attached</li>
+                <li>#294 Wipe Trezor then Restore borks MBHD trezor</li>
+                <li>#293 Use Bitcoinj's fast catch up to improve sync time after creating Trezor wallet trezor</li>
+                <li>#292 Require timestamp display when creating new Trezor wallet trezor</li>
+                <li>#289 Improve roundtripping of Trezor soft wallets trezor</li>
+                <li>#288 Switch wallet does not suppress header before sync</li>
+                <li>#287 Switch wallet hides the exit wizard too soon</li>
+                <li>#286 Restore wallet report not completing for Trezor soft wallet trezor</li>
+                <li>#284 Unlock Trezor wallet is missing a timeout trezor</li>
+                <li>#283 Verify Trezor suppresses the header balance trezor</li>
+                <li>#282 Repair wallet UI needs tweaking</li>
+                <li>#281 After a send no transaction fee available in Transaction details</li>
+                <li>#279 Peer count is 0 in Verify Network even when it's syncing</li>
+                <li>#278 Credentials wizard should be more responsive to a Trezor being plugged in trezor</li>
+                <li>#277 Replace the "Trezor soft wallet" checkbox with a drop down list</li>
+                <li>#276 Block count is incorrect on Transaction Overview</li>
+                <li>#275 Trezor hard wallets not loading correctly sometimes trezor</li>
+                <li>#274 HTTPS lookup not working correctly</li>
+                <li>#273 Trezor recognition / PIN matrix is a bit unreliable trezor</li>
+                <li>#272 Change password failing for Trezor soft wallets trezor</li>
+                <li>#270 Wallet capabilities should indicate if private keys are being stored locally</li>
+                <li>#269 Header balance is not being hidden sometimes on syncing</li>
+                <li>#268 Seeing 'Initialising' status even though MBHD appears to be syncing</li>
+                <li>#266 Trezor sends are not being counted by BRIT trezor</li>
+                <li>#265 Cancelling a SignTx operation requires better feedback on report panel trezor</li>
+                <li>#264 Empty wallet for Trezor is asking for a password trezor</li>
+                <li>#263 Wipe Trezor wizard should use the display component trezor</li>
+                <li>#262 Trezor wallets should be excluded from list of wallets with passwords trezor</li>
+                <li>#261 Check spending from Trezor "soft" wallet</li>
+                <li>#259 Show each transaction output during signing with Trezor trezor</li>
+                <li>#258 Trezor confirm message too wide for small screen trezor</li>
+                <li>#257 How does user know if Trezor or Multibit (or something else) is stuck? trezor</li>
+                <li>#256 Need spinner or 'Working...' on 'Trezor encrypt' panel trezor</li>
+                <li>#253 Do you have to open a non-Trezor wallet in order to use a Trezor wallet?</li>
+                <li>#252 Can Trezor wallet "working ..." message give more details?</li>
+                <li>#251 Wallet detection is detecting Trezor when no Trezor is present</li>
+                <li>#248 Improved performance for secure delete</li>
+                <li>#247 Seed phrase entry screen should explain that "newlines" are not required</li>
+                <li>#246 Upgrade XChange to latest release version</li>
+                <li>#245 Remove spinner from wallet report screens</li>
+                <li>#244 Implement switch wallet through "soft reset"</li>
+                <li>#243 Need beta.multbit.org SSL cert for installer</li>
+                <li>#242 Reduce the minimum required JVM version for installer installer</li>
+                <li>#241 Trezor wallet isn't persisting how many keys/addresses it has shown trezor</li>
+                <li>#239 Trezor soft wallet password recovery needs verification trezor</li>
+                <li>#238 BackupSummaryDescendingComparatorTest failing</li>
+                <li>#236 Trezor wallets aren't syncing properly trezor</li>
+                <li>#233 Send amount displayed wrong when entered</li>
+                <li>#232 Implement 'sign tx' for Trezor trezor</li>
+                <li>#230 Improve create wallet wizard</li>
+                <li>#229 Implement the Trezor 'use existing wallet' use case trezor</li>
+                <li>#228 Strange behaviour after aborted attempt to change password</li>
+                <li>#227 FEST tests fail in current version</li>
+                <li>#226 Replace KeyListeners with DocumentListeners where indicated</li>
+                <li>#222 Provide an icon to show "this is a Trezor wallet" status trezor</li>
+                <li>#221 Implement Wallet Details wizard</li>
+                <li>#219 Can't select wallet backup file in "open file" dialog</li>
+                <li>#217 Upgrade to Font Awesome 4.2</li>
+                <li>#216 Restore a Trezor wallet as a MBHD 'soft' wallet trezor</li>
+                <li>#215 Rearrange sidebar, Tools and Preferences contents</li>
+                <li>#214 Re-order the welcome wizard select options</li>
+                <li>#213 Implement the Trezor "change PIN" use case trezor</li>
+                <li>#212 Implement the Trezor "wipe device" use case</li>
+                <li>#211 Implement the Trezor "capabilities" use case</li>
+                <li>#210 Implement the Trezor "create wallet on device" use case trezor</li>
+                <li>#209 Add Trezor enable/disable selector to Labs trezor</li>
+                <li>#207 Rebase our bitcoinj as bitcoinj-0.12-alice</li>
+                <li>#204 0.00 balance shown with warning the spendable balance may be lower</li>
+                <li>#202 Introduce a blurry background lightbox rather than dark border discussion</li>
+                <li>#198 Tests fail when run in a German locale</li>
+                <li>#197 What happens to the label in a bitcoin payment link?</li>
+                <li>#194 In Tools | Change Password if you click next immediately there is no feedback</li>
+                <li>#193 Can't build current version</li>
+                <li>#192 Exchange preference is lost on rebuild</li>
+                <li>#182 Validate digit group separator and decimal separator usage directly when typing</li>
+                <li>#175 Cloud backup location preference lost on restart</li>
+                <li>#171 Unlock button hidden on "Enter password" screen</li>
+                <li>#169 Remove MultiBit HD logging from JWrapper</li>
+                <li>#167 Paste password not triggering the unlock button</li>
+                <li>#163 Make sure MBHD fails nicely when computer clock is wrong</li>
+                <li>#152 Perhaps indicate when balance is 'in progress' with a different color ?</li>
+                <li>#128 Windows 8 installer does not respond to bitcoin URI clicks</li>
+                <li>#126 Linux installer requires improvement</li>
+                <li>#125 Tidy up installer graphics</li>
+                <li>#106 Include copy of MBHD help in installer</li>
+                <li>#71 Spinner icon rotation is wobbly</li>
+
+            </ul>
+
+            <p><a href="#releases">Back to releases</a></p>
+        </div>
+
+    </div>
 
 </div>
 
 <div id="0.0.4" class="panel panel-info">
 
-  <div class="panel-heading">
-    <a href="https://multibit.org/releases/multibit-hd/multibit-hd-0.0.4/" target="_blank"> Release 0.0.4 ( Private Beta 4 )</a>
-  </div>
-
-  <div class="panel-body">
-
-    <div class="col-xs-12">
-
-      <p><a href="https://github.com/bitcoin-solutions/multibit-hd/issues?q=is%3Aissue+milestone%3A%22Private+beta+4%22+is%3Aclosed" target="_blank">Detailed issue list on
-        GitHub</a></p>
-
-      <ul>
-
-        <li>#205 Put the password box into the confirmation screen for empty wallet</li>
-        <li>#200 Change "restore wallet from seed or backup" to "restore wallet"</li>
-        <li>#196 Down arrow does not work for Sending/ Receiving</li>
-        <li>#187 There is an ophan 'wallets' parameter in the config yaml. Remove</li>
-        <li>#186 Recipient of payments of type "Sent" shows only "n/a"</li>
-        <li>#185 Add Travis build</li>
-        <li>#184 Bad report message when not enough money in wallet</li>
-        <li>#183 Link "Extended public key" parameter name in contacts entry to documentation page</li>
-        <li>#181 Paste Bitcoin address needs immediate validation</li>
-        <li>#179 Test Failure when Compiling with Java 8 on Windows 8.1</li>
-        <li>#178 When user uses £ old tx using GBP have that prefixed in the transactions list unnecessarily</li>
-        <li>#177 Crash when clicking in transaction detail on "View on blockchain.info"</li>
-        <li>#176 After restart wallet suddenly displayed as empty (0.0) and last transaction not displayed in payments list</li>
-        <li>#174 Hear no sound in 0.0.3 Linux (PB3)</li>
-        <li>#173 Adjust create wallet warning text to include "Do not print"</li>
-        <li>#171 Unlock button hidden on "Enter password" screen</li>
-        <li>#166 On a Mac, using menu option Preferences does not HIGHLIGHT the Preferences in sidebar</li>
-        <li>#165 Possible race condition in BitcoinURIListeningServiceTest</li>
-        <li>#164 Incorrect language display</li>
-        <li>#162 Available to spend sometimes too low</li>
-        <li>#161 Empty wallet button sometimes disabled for no reason</li>
-        <li>#159 If rolling backup is loaded, MBHD does not check the wallet height and resync automatically</li>
-        <li>#157 restore wallet from seed gives notice of wallet balance as payment</li>
-        <li>#156 If no private note nor QR code label is put on a payment request, combo box is wrong</li>
-        <li>#155 Multiple alerts (and sounds) on receive money</li>
-        <li>#153 Payment info looks like being lost sometimes</li>
-        <li>#148 When synchronising, moving to a new peer resets sync percentage to 0%</li>
-        <li>#146 Run repair wallet after restoring wallet from seed (or make user suppress this)</li>
-        <li>#130 Ensure all data entry fields and buttons have tooltips</li>
-        <li>#124 Fix headings in transactions export</li>
-        <li>#122 Restore from seed or backup no longer offers backup</li>
-        <li>#99 "Empty wallet" is allowed to receiving addresses within the wallet</li>
-        <li>#78 On the Send/Request screen the fiat currency is not right when you switch</li>
-        <li>#33 Single point of reference for wallet balance</li>
-      </ul>
-
-      <p><a href="#releases">Back to releases</a></p>
+    <div class="panel-heading">
+        <a href="https://multibit.org/releases/multibit-hd/multibit-hd-0.0.4/" target="_blank"> Release 0.0.4 ( Private Beta 4 )</a>
     </div>
 
-  </div>
+    <div class="panel-body">
+
+        <div class="col-xs-12">
+
+            <p><a href="https://github.com/bitcoin-solutions/multibit-hd/issues?q=is%3Aissue+milestone%3A%22Private+beta+4%22+is%3Aclosed" target="_blank">Detailed issue list on
+                GitHub</a></p>
+
+            <ul>
+
+                <li>#205 Put the password box into the confirmation screen for empty wallet</li>
+                <li>#200 Change "restore wallet from seed or backup" to "restore wallet"</li>
+                <li>#196 Down arrow does not work for Sending/ Receiving</li>
+                <li>#187 There is an ophan 'wallets' parameter in the config yaml. Remove</li>
+                <li>#186 Recipient of payments of type "Sent" shows only "n/a"</li>
+                <li>#185 Add Travis build</li>
+                <li>#184 Bad report message when not enough money in wallet</li>
+                <li>#183 Link "Extended public key" parameter name in contacts entry to documentation page</li>
+                <li>#181 Paste Bitcoin address needs immediate validation</li>
+                <li>#179 Test Failure when Compiling with Java 8 on Windows 8.1</li>
+                <li>#178 When user uses £ old tx using GBP have that prefixed in the transactions list unnecessarily</li>
+                <li>#177 Crash when clicking in transaction detail on "View on blockchain.info"</li>
+                <li>#176 After restart wallet suddenly displayed as empty (0.0) and last transaction not displayed in payments list</li>
+                <li>#174 Hear no sound in 0.0.3 Linux (PB3)</li>
+                <li>#173 Adjust create wallet warning text to include "Do not print"</li>
+                <li>#171 Unlock button hidden on "Enter password" screen</li>
+                <li>#166 On a Mac, using menu option Preferences does not HIGHLIGHT the Preferences in sidebar</li>
+                <li>#165 Possible race condition in BitcoinURIListeningServiceTest</li>
+                <li>#164 Incorrect language display</li>
+                <li>#162 Available to spend sometimes too low</li>
+                <li>#161 Empty wallet button sometimes disabled for no reason</li>
+                <li>#159 If rolling backup is loaded, MBHD does not check the wallet height and resync automatically</li>
+                <li>#157 restore wallet from seed gives notice of wallet balance as payment</li>
+                <li>#156 If no private note nor QR code label is put on a payment request, combo box is wrong</li>
+                <li>#155 Multiple alerts (and sounds) on receive money</li>
+                <li>#153 Payment info looks like being lost sometimes</li>
+                <li>#148 When synchronising, moving to a new peer resets sync percentage to 0%</li>
+                <li>#146 Run repair wallet after restoring wallet from seed (or make user suppress this)</li>
+                <li>#130 Ensure all data entry fields and buttons have tooltips</li>
+                <li>#124 Fix headings in transactions export</li>
+                <li>#122 Restore from seed or backup no longer offers backup</li>
+                <li>#99 "Empty wallet" is allowed to receiving addresses within the wallet</li>
+                <li>#78 On the Send/Request screen the fiat currency is not right when you switch</li>
+                <li>#33 Single point of reference for wallet balance</li>
+            </ul>
+
+            <p><a href="#releases">Back to releases</a></p>
+        </div>
+
+    </div>
 
 </div>
 
 <div id="0.0.3" class="panel panel-info">
 
-  <div class="panel-heading">
-    <a href="https://multibit.org/releases/multibit-hd/multibit-hd-0.0.3/" target="_blank"> Release 0.0.3 ( Private Beta 3 )</a>
-  </div>
-
-  <div class="panel-body">
-
-    <div class="col-xs-12">
-
-      <p><a href="https://github.com/bitcoin-solutions/multibit-hd/issues?q=is%3Aissue+milestone%3A%22Private+beta+3%22+is%3Aclosed" target="_blank">Detailed issue list on
-        GitHub</a></p>
-
-      <ul>
-        <li>#160 Change password not working</li>
-        <li>#151 Configuration option to hide the balance display</li>
-        <li>#150 Bug in fiat amount in sends - repeated values</li>
-        <li>#145 Repair wallet gives notification of negative payment received</li>
-        <li>#144 Empty wallet shows recipient as n/a</li>
-        <li>#143 On a Mac CTRL+C, V, A are used but use of COMMAND key is more consistent</li>
-        <li>#142 Description on Send not using private notes text</li>
-        <li>#141 Send screen - recipient validation too aggressive</li>
-        <li>#140 Empty wallet progress message goes off edge of screen</li>
-        <li>#139 Exchange rate needs to show date/time exchange rate was effective</li>
-        <li>#138 When syncing, payments with the same minute are 'flicky'</li>
-        <li>#137 Empty wallet did not show currency on Payments screen even though it in transaction detail</li>
-        <li>#136 Lost transaction (on empty wallet)</li>
-        <li>#134 HD wallet breaking change in bitcoinj to rollout to MBHD breaking change</li>
-        <li>#132 Add "go to unlock" option to welcome wizard selector</li>
-        <li>#131 Get users to approve licence before first use</li>
-        <li>#129 Add CRC24 to sign and optionally to verify message</li>
-        <li>#117 Fiat amount not always shown</li>
-        <li>#107 Restore wallet from seed appears to hang</li>
-        <li>#105 Restore from seed needs a 'repeat password' entry box</li>
-        <li>#96 Number of confirmations doesn't agree blockchain.info</li>
-        <li>#64 Empty wallet is leaving some satoshis behind</li>
-        <li>#54 Miner fee is always shown as 0.1 mBTC</li>
-        <li>#18 Cloud backup directory needs work</li>
-      </ul>
-
-      <p><a href="#releases">Back to releases</a></p>
+    <div class="panel-heading">
+        <a href="https://multibit.org/releases/multibit-hd/multibit-hd-0.0.3/" target="_blank"> Release 0.0.3 ( Private Beta 3 )</a>
     </div>
 
-  </div>
+    <div class="panel-body">
+
+        <div class="col-xs-12">
+
+            <p><a href="https://github.com/bitcoin-solutions/multibit-hd/issues?q=is%3Aissue+milestone%3A%22Private+beta+3%22+is%3Aclosed" target="_blank">Detailed issue list on
+                GitHub</a></p>
+
+            <ul>
+                <li>#160 Change password not working</li>
+                <li>#151 Configuration option to hide the balance display</li>
+                <li>#150 Bug in fiat amount in sends - repeated values</li>
+                <li>#145 Repair wallet gives notification of negative payment received</li>
+                <li>#144 Empty wallet shows recipient as n/a</li>
+                <li>#143 On a Mac CTRL+C, V, A are used but use of COMMAND key is more consistent</li>
+                <li>#142 Description on Send not using private notes text</li>
+                <li>#141 Send screen - recipient validation too aggressive</li>
+                <li>#140 Empty wallet progress message goes off edge of screen</li>
+                <li>#139 Exchange rate needs to show date/time exchange rate was effective</li>
+                <li>#138 When syncing, payments with the same minute are 'flicky'</li>
+                <li>#137 Empty wallet did not show currency on Payments screen even though it in transaction detail</li>
+                <li>#136 Lost transaction (on empty wallet)</li>
+                <li>#134 HD wallet breaking change in bitcoinj to rollout to MBHD breaking change</li>
+                <li>#132 Add "go to unlock" option to welcome wizard selector</li>
+                <li>#131 Get users to approve licence before first use</li>
+                <li>#129 Add CRC24 to sign and optionally to verify message</li>
+                <li>#117 Fiat amount not always shown</li>
+                <li>#107 Restore wallet from seed appears to hang</li>
+                <li>#105 Restore from seed needs a 'repeat password' entry box</li>
+                <li>#96 Number of confirmations doesn't agree blockchain.info</li>
+                <li>#64 Empty wallet is leaving some satoshis behind</li>
+                <li>#54 Miner fee is always shown as 0.1 mBTC</li>
+                <li>#18 Cloud backup directory needs work</li>
+            </ul>
+
+            <p><a href="#releases">Back to releases</a></p>
+        </div>
+
+    </div>
 
 </div>
 
 <div id="0.0.2" class="panel panel-info">
 
-  <div class="panel-heading">
-    <a href="https://multibit.org/releases/multibit-hd/multibit-hd-0.0.2/" target="_blank"> Release 0.0.2 ( Private Beta 2 )</a>
-  </div>
-
-  <div class="panel-body">
-
-    <div class="col-xs-12">
-
-      <p><a href="https://github.com/bitcoin-solutions/multibit-hd/issues?q=is%3Aissue+milestone%3A%22Private+beta+2%22+is%3Aclosed" target="_blank">Detailed issue list on
-        GitHub</a></p>
-
-      <ul>
-        <li>#127 Create 0.0.2 release</li>
-        <li>#121 mvn FAILURE on Multibit HD Installer</li>
-        <li>#120 Increase length limit on message sign and verify</li>
-        <li>#119 Make transaction fee negative in Transaction Amount screen</li>
-        <li>#118 Show units for all transaction amounts</li>
-        <li>#116 Verify message needs a paste button</li>
-        <li>#115 Split sent payments into two rows: BTC transacted and fees</li>
-        <li>#114 QR code popover is cramped</li>
-        <li>#113 Sign message needs a copy button</li>
-        <li>#111 Send payment sets balance to 0.00 briefly</li>
-        <li>#110 Verify network tool value spacing is too large</li>
-        <li>#109 Add spinning arrow to restore from wallet page</li>
-        <li>#108 Verify network tool not showing the correct information</li>
-        <li>#104 Complete installer</li>
-        <li>#102 Multibit hangs on "enter password" screen</li>
-        <li>#101 After change of exchange the main window title is always "MultiBit HD'</li>
-        <li>#98 "Send payment" offers blank dropdown rows when there are no contacts with addresses</li>
-        <li>#97 [Next] button missing or partly obscured in "Transaction overview"</li>
-        <li>#95 "Confirm send" screen doesn't contain amount, transaction fee, or client fee</li>
-        <li>#94 Window does not fit small screen</li>
-        <li>#93 The example formatted bitcoin display does not show in 'Preferences | Units"</li>
-        <li>#92 Replace the Nimbus scrollbar</li>
-        <li>#91 Syncs forget which payment is selected</li>
-        <li>#90 Tooltip misleading on 'Edit wallet' notes field (they aren't encrypted)</li>
-        <li>#88 "Private notes will be stored ..." comes up when hovering over "sign a message" box</li>
-        <li>#87 Help pane</li>
-        <li>#86 History section</li>
-        <li>#85 Transaction detail raw transaction too wide</li>
-        <li>#84 Wizard title not wrapping correctly on Linux in Romanian</li>
-        <li>#83 Welcome wizard language selection not working</li>
-        <li>#82 Sending has lost details</li>
-        <li>#80 Rename from "Satoshi" to "Coin"</li>
-        <li>#79 The times in MBHD are always UTC, not the local timezone</li>
-        <li>#77 writePayments on shutdown does not always have password. Why ?</li>
-        <li>#76 Status "Paid" icon in payment details should be green</li>
-        <li>#75 Check windows file delete</li>
-        <li>#73 If user changes fiat currency need to show currency in fiat amount</li>
-        <li>#72 Add client fee to transaction overview and export files</li>
-        <li>#71 Spinner icon rotation is wobbly</li>
-        <li>#68 Open Exchange Rate is not triangulating</li>
-        <li>#67 Restore from zip backup failed</li>
-        <li>#66 On Linux and Windows there is no way to see the about screen</li>
-        <li>#65 There is no visual feedback on the enter password panel if password is wrong</li>
-        <li>#63 Repair wallet should hide balance until synced</li>
-        <li>#62 Double click in a table should initiate edit/detail view</li>
-        <li>#61 Dual mode sidebar</li>
-        <li>#59 History icon is unclear</li>
-        <li>#58 Welcome wizard enter seed phrase not wrapping correctly on Linux</li>
-        <li>#56 Should not be able to empty wallet until sync completes</li>
-        <li>#52 Stretch saved encryption of password</li>
-        <li>#51 Improve wallet backups</li>
-        <li>#49 Adjust fee logic to make first fee earlier</li>
-        <li>#48 Confirmation icon size incorrect on send progress</li>
-        <li>#47 Request wizard failing on network missing</li>
-        <li>#45 TOR switchover requires better UI feedback</li>
-        <li>#44 Padding of text in components is too tight</li>
-        <li>#43 Change title fonts on wizards</li>
-        <li>#42 Locale EN_IE fails on startup</li>
-        <li>#41 Contact image glitch during search</li>
-        <li>#35 Require a "no exchange provider" option</li>
-        <li>#34 Wallet save can bork MBHD on exit</li>
-        <li>#28 Don't enable Send and Receive when Peers seen</li>
-        <li>#27 Change password report screen should disable Finish until background operation finishes</li>
-        <li>#26 Change password quirky if wrong old password entered</li>
-        <li>#25 The transaction details 'raw tx' page can be too wide</li>
-        <li>#21 Wallet Send/Request page not right with RTL</li>
-        <li>#17 Currently tricky to access Welcome wizard until logged in</li>
-        <li>#16 Implement sign and verify message</li>
-      </ul>
-
-      <p><a href="#releases">Back to releases</a></p>
-
+    <div class="panel-heading">
+        <a href="https://multibit.org/releases/multibit-hd/multibit-hd-0.0.2/" target="_blank"> Release 0.0.2 ( Private Beta 2 )</a>
     </div>
 
-  </div>
+    <div class="panel-body">
+
+        <div class="col-xs-12">
+
+            <p><a href="https://github.com/bitcoin-solutions/multibit-hd/issues?q=is%3Aissue+milestone%3A%22Private+beta+2%22+is%3Aclosed" target="_blank">Detailed issue list on
+                GitHub</a></p>
+
+            <ul>
+                <li>#127 Create 0.0.2 release</li>
+                <li>#121 mvn FAILURE on Multibit HD Installer</li>
+                <li>#120 Increase length limit on message sign and verify</li>
+                <li>#119 Make transaction fee negative in Transaction Amount screen</li>
+                <li>#118 Show units for all transaction amounts</li>
+                <li>#116 Verify message needs a paste button</li>
+                <li>#115 Split sent payments into two rows: BTC transacted and fees</li>
+                <li>#114 QR code popover is cramped</li>
+                <li>#113 Sign message needs a copy button</li>
+                <li>#111 Send payment sets balance to 0.00 briefly</li>
+                <li>#110 Verify network tool value spacing is too large</li>
+                <li>#109 Add spinning arrow to restore from wallet page</li>
+                <li>#108 Verify network tool not showing the correct information</li>
+                <li>#104 Complete installer</li>
+                <li>#102 Multibit hangs on "enter password" screen</li>
+                <li>#101 After change of exchange the main window title is always "MultiBit HD'</li>
+                <li>#98 "Send payment" offers blank dropdown rows when there are no contacts with addresses</li>
+                <li>#97 [Next] button missing or partly obscured in "Transaction overview"</li>
+                <li>#95 "Confirm send" screen doesn't contain amount, transaction fee, or client fee</li>
+                <li>#94 Window does not fit small screen</li>
+                <li>#93 The example formatted bitcoin display does not show in 'Preferences | Units"</li>
+                <li>#92 Replace the Nimbus scrollbar</li>
+                <li>#91 Syncs forget which payment is selected</li>
+                <li>#90 Tooltip misleading on 'Edit wallet' notes field (they aren't encrypted)</li>
+                <li>#88 "Private notes will be stored ..." comes up when hovering over "sign a message" box</li>
+                <li>#87 Help pane</li>
+                <li>#86 History section</li>
+                <li>#85 Transaction detail raw transaction too wide</li>
+                <li>#84 Wizard title not wrapping correctly on Linux in Romanian</li>
+                <li>#83 Welcome wizard language selection not working</li>
+                <li>#82 Sending has lost details</li>
+                <li>#80 Rename from "Satoshi" to "Coin"</li>
+                <li>#79 The times in MBHD are always UTC, not the local timezone</li>
+                <li>#77 writePayments on shutdown does not always have password. Why ?</li>
+                <li>#76 Status "Paid" icon in payment details should be green</li>
+                <li>#75 Check windows file delete</li>
+                <li>#73 If user changes fiat currency need to show currency in fiat amount</li>
+                <li>#72 Add client fee to transaction overview and export files</li>
+                <li>#71 Spinner icon rotation is wobbly</li>
+                <li>#68 Open Exchange Rate is not triangulating</li>
+                <li>#67 Restore from zip backup failed</li>
+                <li>#66 On Linux and Windows there is no way to see the about screen</li>
+                <li>#65 There is no visual feedback on the enter password panel if password is wrong</li>
+                <li>#63 Repair wallet should hide balance until synced</li>
+                <li>#62 Double click in a table should initiate edit/detail view</li>
+                <li>#61 Dual mode sidebar</li>
+                <li>#59 History icon is unclear</li>
+                <li>#58 Welcome wizard enter seed phrase not wrapping correctly on Linux</li>
+                <li>#56 Should not be able to empty wallet until sync completes</li>
+                <li>#52 Stretch saved encryption of password</li>
+                <li>#51 Improve wallet backups</li>
+                <li>#49 Adjust fee logic to make first fee earlier</li>
+                <li>#48 Confirmation icon size incorrect on send progress</li>
+                <li>#47 Request wizard failing on network missing</li>
+                <li>#45 TOR switchover requires better UI feedback</li>
+                <li>#44 Padding of text in components is too tight</li>
+                <li>#43 Change title fonts on wizards</li>
+                <li>#42 Locale EN_IE fails on startup</li>
+                <li>#41 Contact image glitch during search</li>
+                <li>#35 Require a "no exchange provider" option</li>
+                <li>#34 Wallet save can bork MBHD on exit</li>
+                <li>#28 Don't enable Send and Receive when Peers seen</li>
+                <li>#27 Change password report screen should disable Finish until background operation finishes</li>
+                <li>#26 Change password quirky if wrong old password entered</li>
+                <li>#25 The transaction details 'raw tx' page can be too wide</li>
+                <li>#21 Wallet Send/Request page not right with RTL</li>
+                <li>#17 Currently tricky to access Welcome wizard until logged in</li>
+                <li>#16 Implement sign and verify message</li>
+            </ul>
+
+            <p><a href="#releases">Back to releases</a></p>
+
+        </div>
+
+    </div>
 
 </div>
 
 <div id="0.0.1" class="panel panel-info">
 
-  <div class="panel-heading">
-    <a href="https://multibit.org/releases/multibit-hd/multibit-hd-0.0.1/" target="_blank"> Release 0.0.1 ( Private Beta 1 for Amsterdam 2014 )</a>
-  </div>
-
-  <div class="panel-body">
-
-    <div class="col-xs-12">
-
-      <p><a href="https://github.com/bitcoin-solutions/multibit-hd/issues?q=is%3Aissue+milestone%3A%22Private+beta+1%22+is%3Aclosed" target="_blank">Detailed issue list on
-        GitHub</a></p>
-
-      <ul>
-        <li>#15 Add password recovery</li>
-        <li>#14 Increase scrypt iterations used in encryption</li>
-        <li>#13 Migrate to encrypted HD wallets</li>
-        <li>#12 There was an error creating a connection to the Bitcoin network</li>
-        <li>#11 Failed to install artifact org.multibit.hd:mbhd-brit:zip:deterministic:0.0.1-SNAPSHOT</li>
-        <li>#10 Could not find artifact com.google:bitcoinj:jar:0.12-SNAPSHOT in bitcoinj-releases</li>
-        <li>#9 Unexpected behavior when adding and deleting contacts. enhancement</li>
-        <li>#8 If gravatars don't load (due to network not available) the UI is not shown</li>
-        <li>#7 persist contacts</li>
-        <li>#6 Display transactions</li>
-        <li>#5 Get wallet saving working</li>
-        <li>#4 Create backups</li>
-        <li>#3 Create code to manage seed generation and validation</li>
-        <li>#2 Get simple send working</li>
-      </ul>
-
-      <p><a href="#releases">Back to releases</a></p>
-
+    <div class="panel-heading">
+        <a href="https://multibit.org/releases/multibit-hd/multibit-hd-0.0.1/" target="_blank"> Release 0.0.1 ( Private Beta 1 for Amsterdam 2014 )</a>
     </div>
 
-  </div>
+    <div class="panel-body">
+
+        <div class="col-xs-12">
+
+            <p><a href="https://github.com/bitcoin-solutions/multibit-hd/issues?q=is%3Aissue+milestone%3A%22Private+beta+1%22+is%3Aclosed" target="_blank">Detailed issue list on
+                GitHub</a></p>
+
+            <ul>
+                <li>#15 Add password recovery</li>
+                <li>#14 Increase scrypt iterations used in encryption</li>
+                <li>#13 Migrate to encrypted HD wallets</li>
+                <li>#12 There was an error creating a connection to the Bitcoin network</li>
+                <li>#11 Failed to install artifact org.multibit.hd:mbhd-brit:zip:deterministic:0.0.1-SNAPSHOT</li>
+                <li>#10 Could not find artifact com.google:bitcoinj:jar:0.12-SNAPSHOT in bitcoinj-releases</li>
+                <li>#9 Unexpected behavior when adding and deleting contacts. enhancement</li>
+                <li>#8 If gravatars don't load (due to network not available) the UI is not shown</li>
+                <li>#7 persist contacts</li>
+                <li>#6 Display transactions</li>
+                <li>#5 Get wallet saving working</li>
+                <li>#4 Create backups</li>
+                <li>#3 Create code to manage seed generation and validation</li>
+                <li>#2 Get simple send working</li>
+            </ul>
+
+            <p><a href="#releases">Back to releases</a></p>
+
+        </div>
+
+    </div>
 
 </div>
