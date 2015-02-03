@@ -39,7 +39,7 @@ cd ~
 chmod +x multibit-hd-unix-0.0.5.sh
 ./multibit-hd-unix-0.0.5.sh
 </pre>
-<p>After a short time MultiBit HD will show a wizard and install into ~/multibit-hd. Your configuration files will be in ~/.multibit-hd and will appear on first startup. A Unity <code>.desktop</code> file will be created and registered if available so you should be able to simply open Unity and search for "MultiBit" to get started. Alternatively you can run from the command line as follows (you'll see a lot of logging messages this way):</p>
+<p>After a short time MultiBit HD will show a wizard and install into <code>~/multibit-hd</code>. Your application directory will be <code>~/.multibit-hd</code> and will hold all your configuration and wallet files. It will appear on first startup. A basic Unity <code>.desktop</code> file will be created and registered if available so you should be able to simply open Unity and search for "MultiBit" to get started (but see later). Alternatively you can run from the command line as follows (you'll see a lot of logging messages this way):</p>
 <pre>
 cd multibit-hd
 ./multibit-hd &
@@ -57,14 +57,15 @@ cat << _EOF_ > /etc/udev/rules.d/99-multibit-hd.rules
 ATTRS{idProduct}=="0001", ATTRS{idVendor}=="534c", MODE="0660", GROUP="plugdev"
 _EOF_
 
-echo Build Unity desktop file...
+echo Build Unity desktop...
+unityExec=$(ls -d $PWD/multibit-hd)
 unityIcon=$(ls -d $PWD/.install4j/multibit-hd.png)
 cat << _EOF_ > multibit-hd.desktop
 [Desktop Entry]
 Version=1.0
 Type=Application
 Terminal=false
-Exec=multibit-hd %U
+Exec=$unityExec %U
 Icon=$unityIcon
 Name[en_US]=MultiBit HD
 Comment=Secure lightweight international Bitcoin wallet
