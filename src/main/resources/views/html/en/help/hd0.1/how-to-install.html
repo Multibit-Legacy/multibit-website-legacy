@@ -119,6 +119,18 @@ deleting: lib/x86_64/freebsd/libscrypt.so
 deleting: lib/x86_64/linux/libscrypt.so
 </pre>
 
+<h4>Clicking a Bitcoin link in Firefox doesn't work</h4>
+<p>Assuming that you have installed MultiBit HD and run the post-install script this should work out of the box. However some people have fixed this by manually editing the <code>~/.mozilla/firefox/YOUR_PROFILE.default/mimeTypes.rdf</code> file with an entry as follows:</p>
+<pre>
+  ... 
+  <RDF:Description RDF:about="urn:scheme:bitcoin"
+                   NC:value="~/multibit-hd/multibit-hd">
+    <NC:handlerProp RDF:resource="urn:scheme:handler:bitcoin"/>
+  </RDF:Description>
+  ... 
+</pre>
+<p>Save and restart Firefox and click a Bitcoin URI. It should prompt for a handler and give you the option to make this choice permanent.</p>
+
 <h4>Related articles</h4>
 <p>Here are some related articles:</p>
 <ul>
