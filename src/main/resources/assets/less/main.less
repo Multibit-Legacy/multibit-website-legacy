@@ -160,7 +160,7 @@ footer {
 // due to ugly wrapping behaviour
 #karmaAds iframe {
   border-radius: @navbar-border-radius;
-  margin: 4px 15px 0px 15px;
+  margin: 4px 15px 0 15px;
   border: 1px solid @brand-tertiary;
   color: @brand-secondary;
   width: @ka-width;
@@ -180,7 +180,17 @@ footer {
   font-family: @header-font-primary, sans-serif;
   font-size: 300%;
   color: #E6E6E6;
-  margin: 0px;
+  margin: 0;
+  display: inline;
+  padding-right: 10px;
+}
+
+.page-header h2 {
+  font-family: @header-font-primary, sans-serif;
+  font-size: 200%;
+  color: #E6E6E6;
+  margin: 0;
+  display: inline;
 }
 
 .page-header a:hover {

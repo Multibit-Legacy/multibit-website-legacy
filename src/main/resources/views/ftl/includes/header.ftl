@@ -28,7 +28,7 @@
 </div>
 
 <div class="page-header hidden-xs hidden-sm">
-  <a title="MultiBit HD home" href="/index.html"><h1><img class="header-logo" src="/images/clients/MultiBitHD-logo-96x96-simple.png">${model.msg("app.title")}</h1></a>
+  <a title="MultiBit HD home" href="/index.html"><h1><img class="header-logo" src="/images/clients/MultiBitHD-logo-96x96-simple.png">${model.msg("app.title")}</h1><h2>${model.msg("app.subtitle")}</h2></a>
 </div>
 
 <#-- Alert bar -->
