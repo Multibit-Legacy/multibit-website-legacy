@@ -3,14 +3,7 @@
     <title>MultiBit Blog</title>
     <id>urn:uuid:8352f7e9-3c35-4d91-be56-2525d929c2a3</id>
     <author>MultiBit Team</author>
-    <updated>2015-02-04T13:27:21.166Z</updated>
-    <entry>
-        <id>urn:uuid:47d65cd6-83ba-4048-a578-22a35028e161</id>
-        <title>&lt;h1&gt;MultiBit HD is now open source&lt;/h1&gt;</title>
-        <link rel="self" href="https://multibit.org/en/blog/2014/08/13/multibit-hd-is-now-open-source.html"/>
-        <updated>2014-08-17T11:26:33.000Z</updated>
-        <summary>&lt;p&gt;It has been a while since our last blog post so we thought we'd give you an update on our progress.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2014/08/13/multibit-hd-is-now-open-source.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
-    </entry>
+    <updated>2015-02-04T20:05:08.406Z</updated>
     <entry>
         <id>urn:uuid:7e61c714-5ff6-4793-992e-8682051d2bb5</id>
         <title>&lt;h3&gt;MultiBit HD is now open source&lt;/h3&gt;</title>
@@ -177,17 +170,24 @@ to your use of MultiBit.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a tar
   economics.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2011/10/24/prague.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
     </entry>
     <entry>
-        <id>urn:uuid:62c92b8c-1617-40a8-88e4-79ec00b60958</id>
-        <title>&lt;h1&gt;Wallet forensics for issue #661&lt;/h1&gt;</title>
-        <link rel="self" href="https://multibit.org/en/blog/2015/02/02/wallet-forensics.html"/>
-        <updated>2015-02-04T13:27:11.367Z</updated>
-        <summary>&lt;p&gt;Recently we had a user raise a github issue (&lt;a href=&quot;https://github.com/jim618/multibit/issues/661&quot;&gt;#661&lt;/a&gt;) where unfortunately they lost a total of 1.43033675 bitcoin. This blog item is a write up on the forensics we did to find out what happened and our recommendations for action to try to prevent this happening again.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2015/02/02/wallet-forensics.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
-    </entry>
-    <entry>
         <id>urn:uuid:ddf1b3ff-c4ba-41d0-9eae-393664e60e5b</id>
         <title>&lt;h3&gt;MultiBit HD Beta 5 Released&lt;/h3&gt;</title>
         <link rel="self" href="https://multibit.org/en/blog/2015/02/04/multibit-hd-beta-5.html"/>
         <updated>2015-02-04T13:27:11.369Z</updated>
         <summary>&lt;p&gt;We are proud to announce that MultiBit HD Beta 5 is now &lt;a href=&quot;https://beta.multibit.org&quot; target=&quot;_blank&quot;&gt;available for download from our beta site&lt;/a&gt;.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2015/02/04/multibit-hd-beta-5.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+    </entry>
+    <entry>
+        <id>urn:uuid:62c92b8c-1617-40a8-88e4-79ec00b60958</id>
+        <title>&lt;h3&gt;Wallet forensics for Issue #661&lt;/h3&gt;</title>
+        <link rel="self" href="https://multibit.org/en/blog/2015/02/02/wallet-forensics.html"/>
+        <updated>2015-02-04T20:05:08.406Z</updated>
+        <summary>&lt;p&gt;Recently a user raised &lt;a href=&quot;https://github.com/jim618/multibit/issues/661&quot; target=&quot;_blank&quot;&gt;Issue #661&lt;/a&gt; on GitHub where unfortunately they lost a total of 1.43033675 bitcoin. This blog article provides details of the forensics we performed to find out what happened and our recommendations for action to try to prevent this happening again.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2015/02/02/wallet-forensics.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+    </entry>
+    <entry>
+        <id>urn:uuid:47d65cd6-83ba-4048-a578-22a35028e161</id>
+        <title>&lt;h3&gt;MultiBit HD is now open source&lt;/h3&gt;</title>
+        <link rel="self" href="https://multibit.org/en/blog/2014/08/13/multibit-hd-is-now-open-source.html"/>
+        <updated>2015-02-04T20:05:08.406Z</updated>
+        <summary>&lt;p&gt;It has been a while since our last blog post so we thought we'd give you an update on our progress.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2014/08/13/multibit-hd-is-now-open-source.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
     </entry>
 </feed>
