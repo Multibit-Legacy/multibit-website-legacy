@@ -1,18 +1,10 @@
 ## Welcome to the MultiBit Website Repository v4.0.0
 
-
-Project status: Pre-production staging branch. Expect text content changes.
-
-Build status: [![Build Status](https://travis-ci.org/bitcoin-solutions/multibit-website.svg?branch=develop)](https://travis-ci.org/bitcoin-solutions/multibit-website)
-
-This branch contains the source for the next release of the [MultiBit Production website](https://multibit.org).
-
-Project status: Private beta. Expect minor bugs and API changes.
+Project status: Public beta. Expect minor bugs and API changes.
 
 Build status: [![Build Status](https://travis-ci.org/bitcoin-solutions/multibit-website.svg?branch=release-4.0.0)](https://travis-ci.org/bitcoin-solutions/multibit-website)
 
 This branch contains the source for the [MultiBit Beta website](https://beta.multibit.org).
-
 
 ## MultiBit Website
 
@@ -41,8 +33,7 @@ Any issues are addressed in feature branches from "develop" and merged in as req
 
 If you are already familiar with Java and Maven you can skip ahead to the Build and Preview section.
 
-Some of the technology used when building the site may be unfamiliar at first so you'll need to install some supporting
-code first. It should only take a few minutes and you'll be up and running.
+Some of the technology used when building the site may be unfamiliar at first so you'll need to install some supporting code first. It should only take a few minutes and you'll be up and running.
 
 1. Install or upgrade [Java](https://java.com/en/download/index.jsp)
 1. Install or upgrade [Maven](https://maven.apache.org/download.cgi)
