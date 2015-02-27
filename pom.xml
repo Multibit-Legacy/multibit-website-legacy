@@ -155,6 +155,7 @@
       <groupId>com.yammer.dropwizard</groupId>
       <artifactId>dropwizard-testing</artifactId>
       <version>${dropwizard.version}</version>
+      <scope>test</scope>
     </dependency>
     <!-- HTML Freemarker views support -->
     <dependency>
