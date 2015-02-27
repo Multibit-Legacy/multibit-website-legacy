@@ -6,6 +6,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Represents a single entry within the site
@@ -24,6 +25,7 @@ public class AtomEntry {
   private AtomLink link;
 
   @XmlElement
+  @XmlJavaTypeAdapter(type=DateTime.class, value=AtomDateTimeAdapter.class)
   private DateTime updated;
 
   @XmlElement

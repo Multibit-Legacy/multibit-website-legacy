@@ -4,7 +4,13 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import org.joda.time.DateTime;
 
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlSeeAlso;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.util.List;
 import java.util.Set;
 
@@ -33,6 +39,7 @@ public class AtomFeed {
   private String subTitle;
 
   @XmlElement
+  @XmlJavaTypeAdapter(type=DateTime.class, value=AtomDateTimeAdapter.class)
   private DateTime updated;
 
   @XmlElement
