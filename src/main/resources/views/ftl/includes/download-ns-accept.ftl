@@ -20,7 +20,8 @@
           <a href="${downloadWindows}"
              class="btn btn-default col-xs-12"
              title="${model.msg("download.windows")}">
-            <img src="/images/common/dow-win.png" /><br/>Windows</a>
+            <img src="/images/common/dow-win.png"/><br/>Windows</a>
+          <br/><a href="/en/help/hd0.1/how-to-install-windows.html">How to install</a>
         </div>
       </div>
 
@@ -29,7 +30,8 @@
           <a href="${downloadLinux}"
              class="btn btn-default col-xs-12"
              title="${model.msg("download.linux")}">
-            <img src="/images/common/dow-linux.png" /><br/>Linux</a>
+            <img src="/images/common/dow-linux.png"/><br/>Linux</a>
+          <br/><a href="/en/help/hd0.1/how-to-install-linux.html">How to install</a>
         </div>
       </div>
 
@@ -39,6 +41,7 @@
              class="btn btn-default col-xs-12"
              title="${model.msg("download.osx")}">
             <img src="/images/common/dow-osx-uni.png"/><br/>OS X</a>
+          <br/><a href="/en/help/hd0.1/how-to-install-osx.html">How to install</a>
         </div>
       </div>
 
