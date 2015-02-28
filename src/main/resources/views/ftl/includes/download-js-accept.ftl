@@ -89,25 +89,23 @@
     function(e) {
       setTimeout(function () {
         document.location = "/en/help/hd0.1/how-to-install-windows.html";
-      }, 10000);
+      }, 5000);
     }
   );
 
   $("#download-linux").click(
     function(e) {
-      e.preventDefault();
       setTimeout(function () {
         document.location = "/en/help/hd0.1/how-to-install-linux.html";
-      }, 2000);
+      }, 5000);
     }
   );
 
   $("#download-osx").click(
     function(e) {
-      e.preventDefault();
       setTimeout(function () {
         document.location = "/en/help/hd0.1/how-to-install-osx.html";
-      }, 2000);
+      }, 5000);
     }
   );
 
