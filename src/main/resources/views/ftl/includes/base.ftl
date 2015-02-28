@@ -4,6 +4,7 @@
 
 <#-- Create download links for latest version -->
 <#assign downloadWindows = "https://multibit.org/releases/multibit-hd/multibit-hd-${downloadVersion}/multibit-hd-windows-x64-${downloadVersion}.exe">
+<#assign downloadWindows32 = "https://multibit.org/releases/multibit-hd/multibit-hd-${downloadVersion}/multibit-hd-windows-${downloadVersion}.exe">
 <#assign downloadLinux = "https://multibit.org/releases/multibit-hd/multibit-hd-${downloadVersion}/multibit-hd-unix-${downloadVersion}.sh">
 <#assign downloadOSX = "https://multibit.org/releases/multibit-hd/multibit-hd-${downloadVersion}/multibit-hd-macos-${downloadVersion}.dmg">
 
