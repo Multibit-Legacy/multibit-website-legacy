@@ -29,7 +29,7 @@
           </div>
         </div>
         <div class="mb-download-link text-center" style="display:block;">
-          <a href="${downloadWindows}" class="btn btn-default col-xs-12"
+          <a id="download-windows" href="${downloadWindows}" class="btn btn-default col-xs-12"
              title="${model.msg("download.windows")}">
             <i class="mb-download-icon fa fa-windows fa-5x"></i>
             <br/>Windows</a>
@@ -44,7 +44,7 @@
           </div>
         </div>
         <div class="mb-download-link text-center" style="display:block;">
-          <a href="${downloadLinux}" class="btn btn-default col-xs-12"
+          <a id="download-linux" href="${downloadLinux}" class="btn btn-default col-xs-12"
              title="${model.msg("download.linux")}">
             <i class="mb-download-icon fa fa-linux fa-5x"></i>
             <br/>Linux</a>
@@ -59,7 +59,7 @@
           </div>
         </div>
         <div class="mb-download-link text-center" style="display:block;">
-          <a href="${downloadOSX}" class="btn btn-default col-xs-12"
+          <a id="download-osx" href="${downloadOSX}" class="btn btn-default col-xs-12"
              title="${model.msg("download.osx")}">
             <i class="mb-download-icon fa fa-apple fa-5x"></i>
             <br/>OS X</a>
@@ -84,5 +84,29 @@
     $('.jsok').show();
 
   });
+
+  $("#download-windows").click(
+    function(e) {
+      setTimeout(function () {
+        document.location.pathname = "/en/help/hd0.1/how-to-install-windows.html";
+      }, 2000);
+    }
+  );
+
+  $("#download-linux").click(
+    function(e) {
+      setTimeout(function () {
+        document.location.pathname = "/en/help/hd0.1/how-to-install-linux.html";
+      }, 2000);
+    }
+  );
+
+  $("#download-osx").click(
+    function(e) {
+      setTimeout(function () {
+        document.location.pathname = "/en/help/hd0.1/how-to-install-osx.html";
+      }, 2000);
+    }
+  );
 
 </script>
