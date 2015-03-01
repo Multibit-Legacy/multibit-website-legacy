@@ -15,11 +15,9 @@
 
 -->
 
-<#-- Uncomment when ready to present 
+<#-- Uncomment when ready to present -->
 <#assign alertClass = "info">
-<#assign alertText = "New version - v0.5.16 - improved reliability of sending and receiving transactions.">
-
--->
+<#assign alertText = "Would you like to try out our new wallet (still-in-beta): <a href=\"https://beta.multibit.org\">MultiBit HD</a> ?">
 
 
 <#-- -->
