@@ -33,7 +33,7 @@
           </div>
         </div>
         <div class="mb-download-link text-center">
-          <a href="${downloadWindows}"
+          <a id="download-windows" href="${downloadWindows}"
              class="btn btn-default col-xs-12"
              title="${model.msg("download.windows")}">
             <i class="mb-download-icon fa fa-windows fa-5x"></i>
@@ -49,7 +49,7 @@
           </div>
         </div>
         <div class="mb-download-link text-center">
-          <a href="${downloadLinux}"
+          <a id="download-linux" href="${downloadLinux}"
              class="btn btn-default col-xs-12"
              title="${model.msg("download.linux")}">
             <i class="mb-download-icon fa fa-linux fa-5x"></i>
@@ -65,7 +65,7 @@
           </div>
         </div>
         <div class="mb-download-link text-center">
-          <a href="${downloadOSX}"
+          <a id="download-osx" href="${downloadOSX}"
              class="btn btn-default col-xs-12"
              title="${model.msg("download.osx")}">
             <i class="mb-download-icon fa fa-apple fa-5x"></i>
@@ -118,16 +118,42 @@
   <#-- Use JavaScript fade effect to show acceptance -->
   function acceptTandC() {
 
-    // Get the session cookie through a post
+    <#-- Get the session cookie through a post -->
     $.post("${model.acceptAction}", function (data, status) {
 
-      // Enable the download buttons since user has accepted
+
+      <#-- Enable the download buttons since user has accepted -->
       $(".mb-downloads .panel.mb-download-panel .panel-heading").slideUp(function () {
         $(".mb-download-link-disabled").fadeOut(function () {
           $(".mb-download-link").fadeIn();
           $(".mb-downloads .panel.mb-download-panel .panel-body").addClass("mb-downloads-enabled");
         });
       });
+
+      <#-- Use jQuery to transition to "how to install" after download has started -->
+      $("#download-windows").click(
+        function (e) {
+          setTimeout(function () {
+            document.location = "/en/help/hd0.1/how-to-install-windows.html";
+          }, 5000);
+        }
+      );
+
+      $("#download-linux").click(
+        function (e) {
+          setTimeout(function () {
+            document.location = "/en/help/hd0.1/how-to-install-linux.html";
+          }, 5000);
+        }
+      );
+
+      $("#download-osx").click(
+        function (e) {
+          setTimeout(function () {
+            document.location = "/en/help/hd0.1/how-to-install-osx.html";
+          }, 5000);
+        }
+      );
 
     });
 

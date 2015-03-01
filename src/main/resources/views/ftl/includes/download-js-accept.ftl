@@ -85,6 +85,7 @@
 
   });
 
+  <#-- Use jQuery to transition to "how to install" after download has started -->
   $("#download-windows").click(
     function(e) {
       setTimeout(function () {
