@@ -1,0 +1,62 @@
+<h3>Payment protocol support (BIP70)</h3>
+
+<p>BIP70 is a Bitcoin standard describing how merchants and wallet developers can work together to produce a seamless buying experience. It is supported by MultiBit HD Beta 8</p>
+<p>This blog article gives a walk through of how it all works, using a donation to multibit.org as an example payment.</p>
+<h4>User clicks on a 'Bitcoin payment request' link</h4>
+<p>A Bitcoin payment request is a small file that the user downloads with a browser click, or gets sent via email. If the user clicks on such a file MultiBit HD starts up and, after wallet start up, shows the user an alert:</p>
+<p>ALERT SCREEN</p>
+<p>
+  <img src="/images/en/blog/payment-protocol/alert.png"
+       title="Alert" height="664" width="1094">
+</p>
+
+<h4>User reviews Bitcoin payment request</h4>
+<p>The user reviews the Bitcoin payment request as shown below. They can pay it immediately by clicking the 'Pay this payment request' or dismiss it for the moment by
+  clicking on the 'Finish' button.
+</p>
+<p>Note that this test payment request was not signed by our multibit.org SSL certificate and hence is untrusted. Merchants will typically sign
+    their payment requests with the same SSL certificates they use for their websites.</p>
+<p>
+  <img src="/images/en/blog/payment-protocol/payment-request-details.png"
+       title="Payment request details" height="664" width="1094">
+</p>
+
+<h4>User pays payment request</h4>
+<p>Paying a payment request is very similar to paying a regular bitcoin payment. They authorise the request with their password:</p>
+
+<p>
+  <img src="/images/en/blog/payment-protocol/confirm-send.png"
+       title="Confirm send" height="664" width="1094">
+</p>
+
+<p>and then see a Send Report screen like this:</p>
+
+<p>
+  <img src="/images/en/blog/payment-protocol/send-progress.png"
+       title="Send progress" height="664" width="1094">
+</p>
+
+<h4>User sends merchant a note and receives a receipt</h4>
+<p>With BIP70 the user can send a note directly to the merchant - perhaps they want their order in a particular color ? -  and they also receive a receipt. This is shown in the next two screenshots:</p>
+
+<p>
+  <img src="/images/en/blog/payment-protocol/payment-note.png"
+       title="Payment note" height="664" width="1094">
+</p>
+
+<p>
+  <img src="/images/en/blog/payment-protocol/receipt-note.png"
+       title="Receipt note" height="664" width="1094">
+</p>
+
+<p>Note in real life the receipt note would be a bit more interesting - we are simply echoing back what the user sent us.</p>
+<p>This blog describes a basic BIP70 workflow, but there is a lot more - refund addresses, specifying multiple payment addresses to implement merge avoidance and we expect this functionality to develop over time as more merchants and wallet developers roll out its use</p>
+
+<p>12 April 2015</p>
+
+<h4>Related articles</h4>
+<p>Here are some related articles:</p>
+<ul>
+  <li><a href="/blog/2015/04/12/multibit-hd-beta-8.html" target="_blank">MultiBit HD Beta 8 release</a></li>
+  <li><a href="/blog/2015/04/12/bip32-wallet-compatibility.html" target="_blank">BIP 32 Wallet compatibility</a></li>
+</ul>
