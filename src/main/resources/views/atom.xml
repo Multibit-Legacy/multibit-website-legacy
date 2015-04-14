@@ -3,7 +3,33 @@
     <title>MultiBit Blog</title>
     <id>urn:uuid:295952f4-1701-48c2-ae70-c9c1fdda50e2</id>
     <author>MultiBit Team</author>
-    <updated>2015-03-10T19:02:55Z</updated>
+    <updated>2015-04-13T19:21:04Z</updated>
+    <entry>
+        <id>urn:uuid:6bcf1044-2ef6-4a27-9429-9e6cbb520d80</id>
+        <title>&lt;h3&gt;BIP 32 Wallet compatibility&lt;/h3&gt;</title>
+        <link rel="self" href="https://multibit.org/en/blog/2015/04/14/bip32-wallet-compatibility.html"/>
+        <updated>2015-04-14T12:00:00Z</updated>
+        <summary>&lt;p&gt;Thanks to the sterling work of github user 'gurnec' during Beta testing an incompatibility between MultiBit HD and
+  other hierarchical deterministic (HD) wallets was discovered indicating that they are not BIP 32 compliant. This is
+  important because 'BIP 32 compliance' means that a user of one wallet can easily migrate to another in a safe manner
+  simply by providing their &quot;wallet words&quot; during a restore process.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2015/04/14/bip32-wallet-compatibility.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+    </entry>
+    <entry>
+        <id>urn:uuid:840821f1-f449-4224-9f36-04cb67ba4da4</id>
+        <title>&lt;h3&gt;MultiBit HD Beta 8 Released&lt;/h3&gt;</title>
+        <link rel="self" href="https://multibit.org/en/blog/2015/04/14/multibit-hd-beta-8.html"/>
+        <updated>2015-04-14T12:00:00Z</updated>
+        <summary>&lt;p&gt;We are pleased to announce the Beta 8 release of MultiBit HD. This release includes support for the Bitcoin standard
+  &quot;Payment Protocol&quot; (BIP 70). This standard enables merchants to provide signed payment requests with lots of features like memos, refund addresses, receipts etc.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2015/04/14/multibit-hd-beta-8.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+    </entry>
+    <entry>
+        <id>urn:uuid:5ce38717-0d0b-44e1-b73b-49595556e2df</id>
+        <title>&lt;h3&gt;Payment Protocol support&lt;/h3&gt;</title>
+        <link rel="self" href="https://multibit.org/en/blog/2015/04/14/payment-protocol-support-bip70.html"/>
+        <updated>2015-04-13T19:21:04Z</updated>
+        <summary>&lt;p&gt;The &lt;a href=&quot;https://github.com/bitcoin/bips/blob/master/bip-0070.mediawiki&quot; target=&quot;_blank&quot;&gt;Payment Protocol (BIP 70)&lt;/a&gt; is a Bitcoin standard describing how merchants and wallet developers can work together
+  to produce a seamless buying experience using bitcoin. It is supported by MultiBit&amp;nbsp;HD Beta 8 and higher.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2015/04/14/payment-protocol-support-bip70.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+    </entry>
     <entry>
         <id>urn:uuid:aeceb038-850e-4307-8f36-2b3eaca84afc</id>
         <title>&lt;h3&gt;BIP32 Wallet compatibility&lt;/h3&gt;</title>
