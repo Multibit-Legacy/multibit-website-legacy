@@ -15,8 +15,8 @@
 
 <div class="container">
 
-<#-- Pull in the content from the model -->
-${model.content?replace("downloadVersion","${downloadVersion}")}
+<#-- Pull in the HTML content from the model and replace non-FTL tokens -->
+${model.content?replace("downloadVersion","${downloadVersion}")?replace("buyTrezorLink","${buyTrezorLink}")}
 
   <p><a href="/atom.xml"><img src="/images/common/rssicon.png" alt="Subscribe via Atom">&nbsp;Subscribe via Atom</a> | <a href="/blog.html">Back to blog contents</a></p>
 

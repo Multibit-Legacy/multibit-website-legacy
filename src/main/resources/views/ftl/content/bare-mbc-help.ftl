@@ -26,8 +26,8 @@
   <center><a href="help_contents.html">Back to help contents</a></center>
   </p>
 
-<#-- Pull in the content from the model -->
-${model.content?replace("downloadVersion","${downloadVersion}")}
+<#-- Pull in the HTML content from the model and replace non-FTL tokens -->
+${model.content?replace("downloadVersion","${downloadVersion}")?replace("buyTrezorLink","${buyTrezorLink}")}
 
   <p>
   <center><a href="help_contents.html">Back to help contents</a></center>

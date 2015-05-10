@@ -20,8 +20,8 @@
   <#include "../includes/download.ftl">
 </#if>
 
-  <#-- Pull in the HTML content from the model and replace non-FTL downloadVersion -->
-  ${model.content?replace("downloadVersion","${downloadVersion}")}
+  <#-- Pull in the HTML content from the model and replace non-FTL tokens -->
+${model.content?replace("downloadVersion","${downloadVersion}")?replace("buyTrezorLink","${buyTrezorLink}")}
 
 </div>
 

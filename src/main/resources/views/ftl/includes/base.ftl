@@ -8,6 +8,9 @@
 <#assign downloadLinux = "https://multibit.org/releases/multibit-hd/multibit-hd-${downloadVersion}/multibit-hd-unix-${downloadVersion}.sh">
 <#assign downloadOSX = "https://multibit.org/releases/multibit-hd/multibit-hd-${downloadVersion}/multibit-hd-macos-${downloadVersion}.dmg">
 
+<#-- Create affiliate links for recommended products and services -->
+<#assign buyTrezorLink = "https://buytrezor.com/?a=4fbc03c60545">
+
 <#-- Documentation for alerts
 
 # Place an alert using one of these classes:
