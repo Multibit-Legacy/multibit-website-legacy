@@ -81,6 +81,11 @@ cd ~/multibit-hd
 java -jar multibit-hd.jar
 </pre>
 
+<h4>My external browser does not launch</h4>
+
+<p>MultiBit HD will first attempt to launch a browser using GNOME libraries and will fall back to <code>xdg-open</code> if that fails. It may be that your
+system does not have a default browser available in which case you may need to add one manually.</p>
+
 <h4>I'm seeing a SIGSEV (0xb)</h4>
 <p>Some people have had issues using MultiBit HD with OpenJDK on Arch Linux, CentOS and OpenSuse distributions. The error manifests when trying to add a password to a wallet and occurs deep
   within the platform-specific parts of the JVM. If this affects you the error will be like this:</p>
