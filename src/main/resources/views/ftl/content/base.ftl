@@ -16,8 +16,7 @@
 -->
 
 <#-- Uncomment when ready to present -->
-<#assign alertClass = "info">
-<#assign alertText = "Would you like to try our new wallet (still-in-beta): <a href=\"https://beta.multibit.org\">MultiBit HD</a> ?">
-
+<#assign alertClass = "success">
+<#assign alertText = "MultiBit HD Release 0.1 will be replacing MultiBit Classic soon. You can <a href='https://beta.multibit.org'>start using it now</a>.">
 
 <#-- -->
