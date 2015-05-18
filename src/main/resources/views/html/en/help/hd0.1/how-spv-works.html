@@ -54,11 +54,13 @@
 <p>Bitcoinj only talks the Bitcoin network protocol which does not support features such as "give me all the UTXO for this address".</p>
 
 <h4 id="checkpoints">Checkpoints</h4>
-<p>To reduce the amount of blocks that need to be downloaded we include a checkpoints file in the installer which gives the hash of every
-  2015th block in the main chain.</p>
+<p>To reduce the amount of blocks that need to be downloaded we include a checkpoints file in the installer which contains the headers of
+  each block when the Bitcoin difficulty level changes (every 2015 blocks).</p>
 <p>This allows us to only sync from the checkpoint before the wallet birth date which saves a lot of time and is why we ask you to record
   the "datestamp" during wallet creation. Thus if the wallet datestamp is equivalent to block 200,050 and we have a checkpoint at
   block 200,000 then we can just sync 50 blocks.</p>
+<p>Since the checkpoints file is stored locally and is provided through our installer it enables us to detect when a Bitcoin node is attempting
+  to spoof the use of their forked chain (containing fake transactions) rather than the genuine Bitcoin block chain.</p>
 
 <h3>Related articles</h3>
 <p>Here are some related articles:</p>
