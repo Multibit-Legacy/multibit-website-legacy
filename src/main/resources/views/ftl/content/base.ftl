@@ -15,11 +15,8 @@
 
 -->
 
-<#-- Uncomment when ready to present 
-<#assign alertClass = "info">
-<#assign alertText = "New version - v0.5.16 - improved reliability of sending and receiving transactions.">
-
--->
-
+<#-- Uncomment when ready to present -->
+<#assign alertClass = "success">
+<#assign alertText = "MultiBit HD Release 0.1 will be replacing MultiBit Classic soon. You can <a href='https://beta.multibit.org'>start using it now</a>.">
 
 <#-- -->
