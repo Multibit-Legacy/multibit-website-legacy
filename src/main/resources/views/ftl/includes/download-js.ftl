@@ -77,7 +77,6 @@
           <div class="form-group">
             <div class="col-sm-8 mb-download-terms-and-conditions-text">${model.msg("download.tandc")}</div>
             <div class="col-sm-4 text-right">
-              <span class="glyphicon glyphicon-arrow-right"></span>
               <button type="submit" class="btn btn-info" onclick="acceptTandC()" title="${model.msg("download.tandc-title")}">
               ${model.msg("download.accept")}
               </button>
