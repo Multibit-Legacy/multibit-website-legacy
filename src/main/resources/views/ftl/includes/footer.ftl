@@ -9,7 +9,7 @@
     &nbsp;${model.msg("footer.powered")}
     &nbsp;${model.msg("footer.licence")}
     &nbsp;${model.msg("footer.trademarks")}
-    &nbsp;<a href="privacy.html" target="_blank">${model.msg("footer.privacy")}</a>
+    &nbsp;<a href="/privacy.html" target="_blank">${model.msg("footer.privacy")}</a>
     &nbsp;<a href="/tandc.html" target="_blank">${model.msg("footer.tandc")}</a>
   </p>
 </footer>
