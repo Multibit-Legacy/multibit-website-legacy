@@ -1,12 +1,17 @@
 <#-- @ftlvariable name="" type="org.multibit.site.views.PublicFreemarkerView" -->
 <#-- Template providing a single point of configuration for common variables -->
-<#assign downloadVersion = "0.1">
+<#assign downloadVersion = "0.1.0">
 
 <#-- Create download links for latest version -->
 <#assign downloadWindows = "https://multibit.org/releases/multibit-hd/multibit-hd-${downloadVersion}/multibit-hd-windows-x64-${downloadVersion}.exe">
 <#assign downloadWindows32 = "https://multibit.org/releases/multibit-hd/multibit-hd-${downloadVersion}/multibit-hd-windows-${downloadVersion}.exe">
 <#assign downloadLinux = "https://multibit.org/releases/multibit-hd/multibit-hd-${downloadVersion}/multibit-hd-unix-${downloadVersion}.sh">
 <#assign downloadOSX = "https://multibit.org/releases/multibit-hd/multibit-hd-${downloadVersion}/multibit-hd-macos-${downloadVersion}.dmg">
+
+<#assign signatureWindows = "${downloadWindows}.asc">
+<#assign signatureWindows32 = "${downloadWindows32}.asc">
+<#assign signatureLinux = "${downloadLinux}.asc">
+<#assign signatureOSX = "${downloadOSX}.asc">
 
 <#-- Create affiliate links for recommended products and services -->
 <#assign buyTrezorLink = "https://buytrezor.com/?a=4fbc03c60545">
