@@ -102,7 +102,7 @@ sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update
 sudo apt-get install oracle-java7-installer
 </pre>
-<p>However further research found a reliable workaround involving deleting libscrypt.so from the JAR:</p>
+<p>However further research found a reliable workaround involving deleting libscrypt.so from the JAR which avoids the Oracle JVM requirement:</p>
 <pre>
 zip -d "multibit-hd.jar" lib/x86_64/{freebsd,linux}/libscrypt.so
 deleting: lib/x86_64/freebsd/libscrypt.so
