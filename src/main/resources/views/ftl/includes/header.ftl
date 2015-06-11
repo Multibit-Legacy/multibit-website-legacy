@@ -18,8 +18,8 @@
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li>
-        <div id="karmaAds" class="hidden-sm navbar-right">
-          <iframe scrolling="no" frameBorder="0" src="/ad"></iframe>
+        <div id="trezorAd" class="hidden-sm navbar-right">
+            <a title="Trezor" href="https://buytrezor.com/?a=4fbc03c60545"><h1><img src="images/banner/trezor1.png"></a>
         </div>
       </li>
     </ul>
@@ -28,7 +28,7 @@
 </div>
 
 <div class="page-header hidden-xs hidden-sm">
-  <a title="MultiBit HD home" href="/index.html"><h1><img class="header-logo" src="/images/clients/MultiBitHD-logo-96x96-simple.png">${model.msg("app.title")}</h1><h2>${model.msg("app.subtitle")}</h2></a>
+    <a title="MultiBit HD home" href="/index.html"><h1><img class="header-logo" src="/images/clients/MultiBitHD-logo-96x96-simple.png">${model.msg("app.title")}</h1><h2>${model.msg("app.subtitle")}</h2></a>
 </div>
 
 <#-- Alert bar -->
