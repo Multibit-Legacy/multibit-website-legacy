@@ -64,7 +64,14 @@ to add a password to a wallet and occurs deep within the platform-specific parts
 SIGSEGV (0xb) at pc=0x00007f97ec7d06a0, pid=588, tid=140289289742080
 </pre>
 <p>After some research <a href="https://github.com/jim618/multibit/issues/325" target="_blank">members of the MultiBit community</a> found that
-  installing the Oracle Java 7 JVM fixed the problem.</p>
+  installing the Oracle Java 7 JVM fixed the problem in some cases.</p>
+<p>However further research found a reliable workaround involving deleting <code>libscrypt.so</code> from the JAR:</p>
+<pre>
+$ zip -d "multibit-exe.jar" lib/x86_64/{freebsd,linux}/libscrypt.so
+deleting: lib/x86_64/freebsd/libscrypt.so
+deleting: lib/x86_64/linux/libscrypt.so
+</pre>
+
 <h3>Related articles</h3>
 <p>Here are some related articles:</p>
 <ul>
