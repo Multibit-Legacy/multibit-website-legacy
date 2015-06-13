@@ -194,29 +194,51 @@ footer {
   margin-right: 21px;
 }
 
+.mb-banner-text a, a:hover {
+  text-decoration: none;
+  color: #E6E6E6;
+}
+
+// Show medium banner when below 1175px
+@media (min-width: 1175px) {
+  .mb-banner-large {
+    display: block;
+  }
+  .mb-banner-medium {
+    display: none;
+  }
+}
+@media (max-width: 1174px) {
+  .mb-banner-large {
+    display: none;
+  }
+  .mb-banner-medium {
+    display: block;
+  }
+}
+
+// Stack the video and features when below 992px
 @media (min-width: 992px) {
   .mb-video-and-features h3.mb-features-heading {
     margin-top: 0;
   }
 }
 
-@media (min-width: 768px) {
-  .navbar {
-    border-radius: 0;
-  }
-}
-
+// No padding for logo/banner when below 992px
 @media (max-width: 991px) {
   .container-main-content {
     padding-top: 69px;
   }
 }
 
-// Carousel
+// Hide the navbar when below 768px
+@media (min-width: 768px) {
+  .navbar {
+    border-radius: 0;
+  }
+}
 
-//#myCarousel {
-//  margin-top: 40px;
-//}
+// Carousel
 
 .carousel-linked-nav,
 .item img {
