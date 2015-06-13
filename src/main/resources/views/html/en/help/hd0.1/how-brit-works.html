@@ -1,0 +1,87 @@
+<h3>FAQ for BRIT (our fee collection mechanism)</h3>
+
+<p>We get a lot of queries about our fee collection mechanism so we have put together this FAQ to help you to see why we've done
+  it. This article starts off fairly basic but goes into some detail about how BRIT works.</p>
+
+<h4>I've heard that MultiBit HD isn't free. Is this true ?</h4>
+
+<p>Yes. With MultiBit HD we are introducing a client fee of 1,000&nbsp;satoshi per spend. This compares favourably with the current
+  miner's fee of 3,000&nbsp;satoshi.</p>
+
+<p>At 500 USD per bitcoin this is 0.5 cents for each transaction sent. The <a
+  href="http://online.wsj.com/news/articles/SB10001424127887324048904578319783080709860" target="_blank">price of a latte in a New York Starbucks</a>
+  is about 4 USD which equates to 800 sends through MultiBit HD.</p>
+<p>There is no charge for receiving bitcoin. We bundle up these small amounts so that you pay once every twenty to thirty sends from your wallet.</p>
+
+<p>The revenue generated will go towards further development of MultiBit HD. We will also use the funds raised to support upstream projects
+  that MultiBit HD relies upon (such as Bitcoinj, XChange etc) that would otherwise never see an income.</p>
+
+<h4>But Bitcoin is free and open source...</h4>
+<p>Bitcoin is not free in all cases. Typically transactions include a miner's fee to ensure that they get
+  mined into a block quickly. The amount paid varies according to the data size of the transaction, the age of
+  the bitcoin outputs involved and some other rules.</p>
+
+<h4>Bitcoin doesn't work without the miners but wallets are commonplace</h4>
+<p>That's true to some extent. There are many free and open source Bitcoin wallets available. However to make and distribute
+  a high-quality Bitcoin wallet takes a lot of time and effort. For this to be sustainable in the long run the developers
+  need to be paid.</p>
+
+
+<p>MultiBit has been in the Bitcoin space since 2011. In that time it has seen continuous development and improvement.
+  Back in March 2014 <a href="/blog/2014/03/10/multibit-downloads-reach-1.5m.html">we celebrated 1.5 million downloads</a> and we've been growing ever
+  since.</p>
+<p>Supporting a virtual metropolis of users and writing new features is now a full time job for a team of developers.</p>
+
+<h4>What about funding it through adverts ?</h4>
+<p>Too invasive. In general adverts provided by third parties place tracking cookies and monitor IP addresses. The advertisers themselves often want to
+  have detailed demographic information. We believe very strongly in the privacy of our users so we do not want to expose them to this.</p>
+
+<p>Bear in mind that technical users (including ourselves) tend to have ad-blocking software running and so don't see adverts presented in
+  a browser context and we personally find in-app adverts to be both distracting and intrusive.</p>
+
+<p>By charging a client fee we can avoid intrusive or privacy-breaking alternatives.</p>
+
+<h4>What about paying upfront for it ?</h4>
+
+<p>Possible but then we couldn't be pure Bitcoin. When people download a Bitcoin wallet for the first time they don't usually have any bitcoin to hand.
+  Consequently we would have to ask for payment using a non-Bitcoin mechanism which would defeat the point of having Bitcoin in the first place.</p>
+
+<p>There is also the problem of piracy. Once a signed, paid-for copy of MultiBit HD is out there it wouldn't be long before it is torrented. While we're
+  happy for this to happen (we release under MIT licence after all) it would mean that ongoing income from sales would be limited.</p>
+
+<p>Finally it is important to remember that people from all over the world use MultiBit HD and what is affordable to one group of people is very expensive
+  to others. An upfront fee would restrict access to Bitcoin to only those who could afford it.</p>
+
+<p>We want anyone, anywhere in the world to be able to download MultiBit HD without having to pay for it.</p>
+
+<h4>So what are you proposing instead ?</h4>
+
+<p>We're fortunate to be in this position to contribute to the Bitcoin community, and to enable us to keep paying the bills we designed a way to get income that matched these
+  principles:</p>
+<ul>
+  <li>Must be open source under MIT license</li>
+  <li>Fees must be extremely low</li>
+  <li>No gathering or selling of information to third parties</li>
+  <li>No in-app advertising</li>
+  <li>Zero upfront cost</li>
+  <li>Must be decentralised apart from an anonymous initial contact</li>
+  <li>Must allow income to be allocated to other parties efficiently</li>
+  <li>All communications must rely on encrypted messages to prevent snooping, MITM and replay attacks</li>
+</ul>
+
+To be continued
+
+<h4></h4>
+
+<h4>Can I inspect the code ?</h4>
+
+<p>Yes. All the payment code, both client and server side, has been released under the MIT licence for other teams to use freely. The <a
+  href="https://github.com/bitcoin-solutions/brit-service" target="_blank">BRIT Service code and documentation</a> is available for examination
+  on GitHub. The client code is currently within the <a href="https://github.com/bitcoin-solutions/multibit-hd" target="_blank">MultiBit HD repo</a>.</p>
+
+<h3>Related articles</h3>
+<p>Here are some related articles:</p>
+<ul>
+  <li><a href="how-spv-works.html">SPV, Bloom filters and checkpoints</a></li>
+  <li><a href="fees.html">Fees</a></li>
+</ul>
