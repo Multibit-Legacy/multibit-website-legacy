@@ -26,7 +26,29 @@
 
 <p>To tell MultiBit HD where your cloud backup is on your computer, use the <a href="edit-wallet.html">"Edit wallet"</a> screen.</p>
 
-<h3>Technical details of rolling backup process</h3>
+<h3>Technical details</h3>
+
+<h4>Encrypting "soft" wallets and their backups</h4>
+
+<p>A "soft" wallet is one that is not linked to an external hardware device such as a <a href="https://buytrezor.com?a=4fbc03c60545" target="_blank">Trezor</a>.</p>
+
+<p>We encrypt both the private keys and then, additionally, the wallet, contacts and extra payment information (such as exchange rates). The password is required to
+  unlock the local wallet and is padded to ensure that short passwords do not compromise the encryption.</p>
+
+<p>When making a backup we ZIP up the unlocked local wallet (in memory) and include the wallet password in the archive. This is then encrypted using a key dervied from
+  the wallet words. This approach allows the password to be recovered so long as the user knows the wallet words.</p>
+
+<h4>Encrypting "hard" wallets and their backups</h4>
+
+<p>A "hard" wallet is one that is linked to an external hardware device such as a Trezor. They provide much greater protection for your bitcoins because the
+private keys are never present on your desktop machine and are not susceptible to malware or viruses.</p>
+
+<p>After entering the Trezor PIN number the master public key can be extracted. This is then put through a series of one-way hashes in a similar manner to a Bitcoin
+  address: <code>RIPEMD160(SHA256(master public key))</code>. The password for this key is provided by the Trezor encrypting a fixed phrase in a deterministic manner.</p>
+
+<p>Therefore the only way to unlock either the wallet or the backups is to physically have the correct Trezor present and to know its PIN.</p>
+
+<h4>Managing the rolling backups</h4>
 
 <p>MultiBit HD maintains a comprehensive backup strategy consisting of local and cloud backups. While technical in nature
   interested readers may find the following information helpful.</p>
