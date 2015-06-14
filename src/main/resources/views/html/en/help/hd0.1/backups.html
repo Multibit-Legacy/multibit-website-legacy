@@ -28,20 +28,31 @@
 
 <h3>Technical details</h3>
 
+<p>MultiBit HD maintains three stages of wallet backup:</p>
+<ul>
+  <li>local wallet - this is where changes are made during day to day operations and encrypted with a padded password/Trezor entropy</li>
+  <li>rolling backup - this is a copy of the local wallet encrypted with a padded password/Trezor entropy</li>
+  <li>cloud backup - this is a ZIP of the wallet directory (less blockchain) encrypted with a key derived from the wallet words and is safe for cloud storage</li>
+</ul>
+
+<p>More information on the scheduling of these backups is given later.</p>
+
 <h4>Encrypting "soft" wallets and their backups</h4>
 
 <p>A "soft" wallet is one that is not linked to an external hardware device such as a <a href="https://buytrezor.com?a=4fbc03c60545" target="_blank">Trezor</a>.</p>
 
-<p>We encrypt both the private keys and then, additionally, the wallet, contacts and extra payment information (such as exchange rates). The password is required to
-  unlock the local wallet and is padded to ensure that short passwords do not compromise the encryption.</p>
+<p>The rolling backups encrypt a snapshot of the current wallet. The password is required to unlock the local wallet and is padded to ensure that short passwords do not compromise
+  the encryption.</p>
 
-<p>When making a backup we ZIP up the unlocked local wallet (in memory) and include the wallet password in the archive. This is then encrypted using a key derived from
-  the wallet words. This approach allows the password to be recovered so long as the user knows the wallet words.</p>
+<p>When making a cloud backup we copy the wallet directory and include the wallet password in the archive. This is then encrypted using a key derived from
+  the wallet words. This approach allows the password to be recovered from a cloud backup so long as the user knows the wallet words.</p>
+
+<p>It also means that cloud backups are safe for long term off-site storage.</p>
 
 <h4>Encrypting "hard" wallets and their backups</h4>
 
 <p>A "hard" wallet is one that is linked to an external hardware device such as a Trezor. They provide much greater protection for your bitcoins because the
-private keys are never present on your desktop machine and are not susceptible to malware or viruses.</p>
+  private keys are never present on your desktop machine and are not susceptible to malware or viruses.</p>
 
 <p>After entering the Trezor PIN number the master public key can be extracted. This is then put through a series of one-way hashes in a similar manner to a Bitcoin
   address: <code>RIPEMD160(SHA256(master public key))</code>. The password for this key is provided by the Trezor encrypting a fixed phrase in a deterministic manner.</p>
@@ -56,15 +67,18 @@ private keys are never present on your desktop machine and are not susceptible t
 <p>After successfully unlocking a wallet MultiBit HD will follow this process to maintain backups:</p>
 <ol>
   <li>Wait 1 minute after MultiBit HD starts and then start "ticking" every 2 minutes.</li>
-  <li>Every "tick" (2 minutes), create a rolling wallet backup. This is a copy of the encrypted wallet stored in the 
-  wallet's <code>rolling-backup</code> sub-directory. It is timestamped and encrypted with the wallet password. 
-  There are up to 4 of these in place covering the last 8 minutes of activity.</li>
-  <li>Every "tick modulo 5" (10 minutes), create a zip backup in the wallet <code>zip-backup</code> directory. These 
-  are the local zip backups. This is everything in the wallet directory except the blockstore (always retrievable from
-  the Bitcoin network) and the zip-backups themselves. Note that the rolling backups are put in the zip backup. 
-  It is actually a zip file which is then AES encrypted using a very long key derived from your wallet words.</li>
+  <li>Every "tick" (2 minutes), create a rolling wallet backup. This is a copy of the encrypted wallet stored in the
+    wallet's <code>rolling-backup</code> sub-directory. It is timestamped and encrypted with the wallet password.
+    There are up to 4 of these in place covering the last 8 minutes of activity.
+  </li>
+  <li>Every "tick modulo 5" (10 minutes), create a zip backup in the wallet <code>zip-backup</code> directory. These
+    are the local zip backups. This is everything in the wallet directory except the blockstore (always retrievable from
+    the Bitcoin network) and the zip-backups themselves. Note that the rolling backups are put in the zip backup.
+    It is actually a zip file which is then AES encrypted using a very long key derived from your wallet words.
+  </li>
   <li>Every "tick modulo 15" (30 minutes), copy the just created zip backup to the cloud backup directory if one has
-  been set.</li>
+    been set.
+  </li>
 </ol>
 
 <p>In summary:</p>
@@ -75,16 +89,16 @@ private keys are never present on your desktop machine and are not susceptible t
 </ul>
 
 <p>To avoid excessive unnecessary data storage the rolling backups are pruned, oldest first, when there are more than 4
-backups using a secure delete mechanism.</p>
+  backups using a secure delete mechanism.</p>
 
 <p>The local and cloud zip backups are pruned when there are more than 60 using the following process:</p>
 <ul>
   <li>The first 2 are always kept</li>
-  <li>The last 8 are always kept</li> 
+  <li>The last 8 are always kept</li>
   <li>For the remaining, the backup that was most rapidly replaced is secure deleted</li>
 </ul>
-<p>This approach gradually spaces out the backups so that there is protection for the most recent changes and also the 
-ability to go all the way back to the beginning if necessary.</p>
+<p>This approach gradually spaces out the backups so that there is protection for the most recent changes and also the
+  ability to go all the way back to the beginning if necessary.</p>
 
 <h4>Related</h4>
 
