@@ -1,397 +1,263 @@
-/*
-   Colours - see http://colorschemedesigner.com/#3e31T7D--vyw04zT--
-   Primary covers the largest screen area
-   1: base, 2: darker, 3: darkest, 4: light, 5: lightest
-*/
-@bodyBackgroundColor: #dbdbdb;
-@bodyColor: #141414;
-@logoTextColor: #3b3b3b;
-@contentBackgroundColor: #fff;
-@container1BackgroundColor: #fff;
-@container2BackgroundColor: #3b3b3b;
+// This file provides non-Bootstrap configuration
+// Refer to variables.less for all configuration
+// Refer to bootswatch.less for Bootstrap-specific entries
+//@import url(http://fonts.googleapis.com/css?family=Oxygen:700);
+@import "bootswatch.less";
 
-/* Links and bright boxes */
-@primaryColor1: #C2F0F4;
-@primaryColor2: #4EE0F8;
-@primaryColor3: #41A093;
-@primaryColor4: #D1F0F3;
-@primaryColor5: #E0F0F8;
-/* E0F0F8 is used in the client */
-
-/* Menus, navbars and message alerts */
-@secondaryColorA1: #FFE9C2;
-@secondaryColorA2: #C0B49E;
-@secondaryColorA3: #A78241;
-@secondaryColorA4: #FFEFD1;
-@secondaryColorA5: #FFF3DE;
-
-/* Headings and action buttons */
-@secondaryColorB1: #FFC2C8;
-@secondaryColorB2: #C09EA1;
-@secondaryColorB3: #973131;
-@secondaryColorB4: #FFD1D6;
-@secondaryColorB5: #FFDEE1;
-
-/* Positioning */
-@logoWidth: 1000px;
-@contentWidth: (@logoWidth * 0.60);
-@boxWidth: (@logoWidth * 0.30);
-@karmaAdsWidth: 320px;
-@karmaAdsLeft: (@logoWidth * 0.658);
+html {
+  position: relative;
+  // Ensure footer is pushed to the bottom
+  height: 100%;
+}
 
 body {
-  background-color: @bodyBackgroundColor;
-  color: @bodyColor;
-  font-family: "Helvetica Neue", "Liberation Sans", Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+  // Margin bottom by footer height
+  // margin-bottom: @footer-height;
 }
 
-h1, h2 {
-  font-family: "Helvetica Neue", "Liberation Sans", Arial, sans-serif;
-  font-weight: normal;
+.mb-downloads .well {
+  margin-bottom: 0;
 }
 
-h1 {
-  color: @secondaryColorB3;
-  font-size: 150%;
+.mb-downloads .alert.alert-info {
+  margin-top: 15px;
+  margin-bottom: 0;
 }
 
-h2 {
-  color: @secondaryColorB3;
-  font-size: 125%;
+.mb-downloads:hover .alert .btn {
+  -webkit-box-shadow: 0px 0px 15px 5px;
+  -moz-box-shadow: 0px 0px 15px 5px;
+  box-shadow: 0px 0px 15px 5px;
 }
 
-h3 {
-  color: @secondaryColorB3;
-  font-size: 100%;
+.mb-downloads h3.mb-download-heading {
+  margin-top: 0;
 }
 
-h1 img, h2 img, h3 img {
-  vertical-align: middle;
-  margin-right: 5px;
+.panel.mb-download-panel {
+  margin-right: 15px;
+  margin-left: 15px;
 }
 
-/* Links */
-a:link, a:visited, a:active {
-  color: @secondaryColorB3;
+.mb-download-panel .md-download-btn-left {
+  padding-left: 0;
 }
 
-a:link:hover, a:visited:hover, a:active:hover {
-  color: @secondaryColorB3;
+.mb-download-panel .md-download-btn-right {
+  padding-right: 0;
 }
 
-a img {
-  border: 0;
+.mb-download-panel .panel.mb-download-panel .panel-heading {
+  border: 1px solid;
+  margin-bottom: 12px;
 }
 
-/* Layout */
-#container1 {
-  background-color: @container1BackgroundColor;
+.mb-downloads .panel.mb-download-panel .panel-body.mb-downloads-enabled {
+  border-top-width: 1px;
+  border-radius: 4px;
 }
 
-/* Contains the menu bar */
-#container2 {
-  background-color: @container2BackgroundColor;
-  border-bottom: 3px solid @logoTextColor;
-  border-top: 3px solid @logoTextColor;
-  -moz-box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.15);
-  -webkit-box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.15);
-  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.15);
-  background-image: linear-gradient(bottom, #000 0%, @logoTextColor 80%);
-  background-image: -o-linear-gradient(bottom, #000 0%, @logoTextColor 80%);
-  background-image: -moz-linear-gradient(bottom, #000 0%, @logoTextColor 80%);
-  background-image: -webkit-linear-gradient(bottom, #000 0%, @logoTextColor 80%);
-  background-image: -ms-linear-gradient(bottom, #000 0%, @logoTextColor 80%);
+// Custom font awesome font size overrides
+.mb-download-icon.fa-5x {
+  font-size: 10vw; // use viewport percentage
+  color: gray;
 }
 
-.wrap {
-  width: @logoWidth;
-  margin: auto;
-  position: relative;
+.mb-download-icon.fa-4x {
+  font-size: 4vw;
 }
 
-/* These images form the background scrolling effect */
-#back1 {
-  background: fixed url(/images/common/back2.png) repeat;
+.mb-downloads .panel.mb-download-panel .checkbox {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
-#back2 {
-  background: fixed url(/images/common/back1.png) repeat;
+.mb-downloads .panel.mb-download-panel .form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
 }
 
-/* Logo */
-#logo {
-  display: block;
-  background-color: @contentBackgroundColor;
-  background-image: url(/images/common/banner.png);
-  background-repeat:no-repeat;
-  height: 100px;
-  width: @logoWidth;
+.mb-download-icon .well {
+  margin-bottom: 0;
 }
 
-#logo span {
+.mb-download-link {
   display: none;
 }
 
-#logotext {
-  font-size: 70px;
-  font-family: Copperplate, "Copperplate Gothic Light", fantasy;
-  display: inline-block;
-  color: @logoTextColor;
-  white-space: nowrap;
-  margin: 10px 0px 0px 80px;
-  height: 80px;
+// NoScript version of download links
+.mb-download-link-disabled-ns .well {
+  color: #333;
+  // Forced into using fixed sizing here
+  padding: 25px;
+  height: 100px;
 }
 
-.home {
-  font-size: 16px;
+.mb-download-link-ns a {
+  color: #333;
+  // Forced into using fixed sizing here
+  padding: 25px;
+  height: 100px;
 }
 
-/* Main navbar menu */
-#menu {
-  padding: 0px;
-  margin: 0px;
-  margin: auto;
-  position: relative;
-}
-
-#menu li {
-  list-style: none;
-  border: 1px solid transparent;
-  border-radius: 3px;
-  -webkit-border-radius: 3px;
-  display: inline-block;
-  /* Fixes IE7-8 border bug */
-  *display: inline;
-  zoom: 1;
-}
-
-#menu li a, #menu li a:active, #menu li a:visited, #menu li a:link {
-  font-family: 'Ubuntu', sans-serif;
-  font-size: 90%;
-  display: block;
-  color: #dddddd;
+.mb-download-link-ns a:hover, .mb-download-link-ns a:hover {
   text-decoration: none;
-  padding: 6px 10px;
+  color: black;
 }
 
-#menu li:hover a, #menu li.active a {
-  color: #fff;
+.mb-download-link-ns a.btn.btn-default:hover {
+  background: #e0f0f8 none;
 }
 
-#menu li:hover, #menu li.active {
-  background-color: #575757;
-  background-image: linear-gradient(bottom, #3d3d3d 20%, #575757 80%);
-  background-image: -o-linear-gradient(bottom, #3d3d3d 20%, #575757 80%);
-  background-image: -moz-linear-gradient(bottom, #3d3d3d 20%, #575757 80%);
-  background-image: -webkit-linear-gradient(bottom, #3d3d3d 20%, #575757 80%);
-  background-image: -ms-linear-gradient(bottom, #3d3d3d 20%, #575757 80%);
-  border: 1px solid #000;
+// JavaScript version of download links
+.mb-download-link a .fa {
+  color: #333;
 }
 
-#menuHelp {
-  font-weight: bolder;
+.mb-download-link a:hover, .mb-download-link a:hover .fa {
+  text-decoration: none;
+  color: black;
 }
 
-/* Appears at the top of the screen to provide messages to the users */
-.alert-message {
-  background-color: @secondaryColorA5;
-  border: 1px solid @secondaryColorA3;
-  margin: 10px 0px;
-  padding: 10px;
-  color: #000;
+.mb-download-link a.btn.btn-default:hover {
+  background: #e0f0f8 none;
 }
 
-.alert-message.success {
-  background-color: @primaryColor5;
-  border-color: @primaryColor3;
+.mb-downloads .panel.mb-download-panel .mb-download-terms-and-conditions-text {
+  color: @brand-secondary;
 }
 
-.alert-message.info {
-  background-color: @secondaryColorA5;
-  border-color: @secondaryColorA3;
+// Create a fixed footer
+footer {
+  width: 100%;
+  height: @footer-height;
+  background-color: #f5f5f5;
+  margin-top: 15px;
 }
 
-.alert-message.error {
-  background-color: @secondaryColorB5;
-  border-color: @secondaryColorB3;
+// navbar
+.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  border-bottom: 0 none;
 }
 
-#content-full {
-  margin-top: 5px;
-  position: relative;
-  padding: 15px (@logoWidth - @contentWidth - @boxWidth - 20) 20px 20px;
-  width: (@contentWidth + @boxWidth);
-  text-align: justify;
-  background-color: @contentBackgroundColor;
-  min-height: 1100px;
-  -moz-box-shadow: 0px 0px 120px rgba(0, 0, 0, 0.05);
-  -webkit-box-shadow: 0px 0px 120px rgba(0, 0, 0, 0.05);
-  box-shadow: 0px 0px 120px rgba(0, 0, 0, 0.05);
+.navbar-inverse .navbar-nav > li > a {
+  color: #B9B9B9;
 }
 
-#content {
-  margin-top: 5px;
-  position: relative;
-  padding: 15px (@logoWidth - @contentWidth - 20) 20px 20px;
-  width: @contentWidth;
-  text-align: justify;
-  background-color: @contentBackgroundColor;
-  min-height: 1100px;
-  -moz-box-shadow: 0px 0px 120px rgba(0, 0, 0, 0.05);
-  -webkit-box-shadow: 0px 0px 120px rgba(0, 0, 0, 0.05);
-  box-shadow: 0px 0px 120px rgba(0, 0, 0, 0.05);
-}
-
-#content td {
-  text-align: left;
-}
-
-#downloadbox {
-  width: @boxWidth;
-  height: 500px;
-  font-size: 15px;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background-color: @primaryColor5;
-  border: 1px solid @secondaryColorB3;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  padding: 10px;
-}
-
-#infobox {
-  width: @boxWidth;
-  height: 500px;
-  position: absolute;
-  top: 560px;
-  right: 20px;
-  background-color: @primaryColor5;
-  border: 1px solid @secondaryColorB3;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  padding: 10px;
-}
-
-#infobox small {
-  font-size: 11px;
-}
-
+// due to ugly wrapping behaviour
 #karmaAds iframe {
-  font-family: "Helvetica Neue", "Liberation Sans", Arial, sans-serif;
-  font-size: 17px;
-  width: @karmaAdsWidth;
-  height: 40px;
-  position: absolute;
-  top: 30px;
-  right: 20px;
-  left: @karmaAdsLeft;
-  padding: 0px;
-  margin: 0px;
-  overflow: hidden;
-  background-color: @primaryColor5;
-  border: 1px solid @secondaryColorB3;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  color: @bodyColor;
+  border-radius: @navbar-border-radius;
+  margin: 4px 15px 0 15px;
+  border: 1px solid @brand-tertiary;
+  color: @brand-secondary;
+  width: @ka-width;
+  height: @ka-height;
 }
 
-/* Target the link within the advert text (not flag/home) */
-#karmaAds iframe html body.area div.ka_wrapper span.cell a a:link, a:visited, a:active {
-  color: @secondaryColorB3;
+// page header
+.page-header {
+  border-top: 1px solid #080808;
+  padding-left: 14px;
+  margin: 0 0 12px 0;
+  padding-top: 55px;
+  background-color: #222;
 }
 
-/* Target the link within the advert text */
-#karmaAds iframe a:link:hover, a:visited:hover, a:active:hover {
-  color: @secondaryColorB3;
+.page-header h1 {
+  font-family: @header-font-primary, sans-serif;
+  font-size: 300%;
+  color: #E6E6E6;
+  margin: 0;
+  display: inline;
+  padding-right: 10px;
 }
 
-#footer {
-  position: relative;
-  padding-left: 40px;
-  padding-bottom: 40px;
-  text-align: left;
-  font-size: 14px;
-  background-color: @contentBackgroundColor;
+.page-header h2 {
+  font-family: @header-font-primary, sans-serif;
+  font-size: 200%;
+  color: #E6E6E6;
+  margin: 0;
+  display: inline;
 }
 
-#footer>div {
-  float: left;
-  margin-right: 200px;
-  padding-top: 6px;
-  border-top: @primaryColor5 2px solid;
-}
-
-/* Used in table of contents and index pages */
-.index, .index ul, .index li {
-  list-style: none;
-  padding: 0px;
-  margin: 0px;
-}
-
-.index {
-  padding: 20px;
-  border: 2px dashed @primaryColor4;
-  display: inline-block;
-}
-
-.index>li>a {
-  font-weight: bold;
-}
-
-.index>ul {
-  padding: 20px 0px 20px 20px;
-}
-
-.index a, .index a:link, .index a:active, .index a:visited {
-  display: block;
+.page-header a:hover {
   text-decoration: none;
 }
 
-.list>li {
-  padding: 5px 0px 5px 0px;
+.page-header img.header-logo {
+  /* width just for older browsers */
+  width: 64px;
+  margin-right: 21px;
 }
 
-.versiontext {
-  text-align: left;
+@media (min-width: 992px) {
+  .mb-video-and-features h3.mb-features-heading {
+    margin-top: 0;
+  }
 }
 
-.download a {
-  font-size: 20px;
+@media (min-width: 768px) {
+  .navbar {
+    border-radius: 0;
+  }
 }
 
-@font-face {
-  font-family: 'UbuntuRegular';
-  src: url('/assets/font/ubuntu-r-webfont.eot');
-  src: url('/assets/font/ubuntu-r-webfont.eot?iefix') format('eot'), url('/assets/font/ubuntu-r-webfont.woff') format('woff'), url('/assets/font/ubuntu-r-webfont.ttf') format('truetype'), url('/assets/font/ubuntu-r-webfont.svg#webfontKT0zjHSC') format('svg');
-  font-weight: normal;
-  font-style: normal;
+@media (max-width: 991px) {
+  .container-main-content {
+    padding-top: 69px;
+  }
 }
 
-@font-face {
-  font-family: 'UbuntuItalic';
-  src: url('/assets/font/ubuntu-ri-webfont.eot');
-  src: url('/assets/font/ubuntu-ri-webfont.eot?iefix') format('eot'), url('/assets/font/ubuntu-ri-webfont.woff') format('woff'), url('/assets/font/ubuntu-ri-webfont.ttf') format('truetype'), url('/assets/font/ubuntu-ri-webfont.svg#webfontGetaoUfe') format('svg');
-  font-weight: normal;
-  font-style: normal;
+// Carousel
+
+//#myCarousel {
+//  margin-top: 40px;
+//}
+
+.carousel-linked-nav,
+.item img {
+  display: block;
+  margin: 0 auto;
 }
 
-@font-face {
-  font-family: 'UbuntuBold';
-  src: url('/assets/font/ubuntu-b-webfont.eot');
-  src: url('/assets/font/ubuntu-b-webfont.eot?iefix') format('eot'), url('/assets/font/ubuntu-b-webfont.woff') format('woff'), url('/assets/font/ubuntu-b-webfont.ttf') format('truetype'), url('/assets/font/ubuntu-b-webfont.svg#webfontEreyFiHC') format('svg');
-  font-weight: normal;
-  font-style: normal;
+.carousel-linked-nav {
+  width: 120px;
+  margin-bottom: 20px;
 }
 
-@font-face {
-  font-family: 'UbuntuBoldItalic';
-  src: url('/assets/font/ubuntu-bi-webfont.eot');
-  src: url('/assets/font/ubuntu-bi-webfont.eot?iefix') format('eot'), url('/assets/font/ubuntu-bi-webfont.woff') format('woff'), url('/assets/font/ubuntu-bi-webfont.ttf') format('truetype'), url('/assets/font/ubuntu-bi-webfont.svg#webfontf1YowZka') format('svg');
-  font-weight: normal;
-  font-style: normal;
+.carousel .item {
+  -webkit-transition: opacity 2s;
+  -moz-transition: opacity 2s;
+  -ms-transition: opacity 2s;
+  -o-transition: opacity 2s;
+  transition: opacity 2s;
+}
+
+.carousel .active.left {
+  left: 0;
+  opacity: 0;
+  z-index: 2;
+}
+
+.carousel .next {
+  left: 0;
+  opacity: 1;
+  z-index: 1;
+}
+
+// Features list
+#features-list {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+#features-list li {
+  margin-bottom: 10px;
+}
+#features-list li i {
+  padding-right: 5px;
 }

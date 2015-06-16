@@ -31,10 +31,10 @@ public class RuntimeExceptionMapper implements ExceptionMapper<RuntimeException>
   public Response toResponse(RuntimeException runtime) {
 
     // Build default response
-    Response defaultResponse = Response
+    Response defaultResponse = BaseResource.applyHeaders(Response
       .serverError()
       .entity(new PublicErrorResource().view500())
-      .build();
+    ).build();
 
     // Check for any specific handling
     if (runtime instanceof WebApplicationException) {
@@ -53,16 +53,16 @@ public class RuntimeExceptionMapper implements ExceptionMapper<RuntimeException>
 
     // No logging
     if (webAppException.getResponse().getStatus() == Response.Status.UNAUTHORIZED.getStatusCode()) {
-      return Response
+      return BaseResource.applyHeaders(Response
         .status(Response.Status.UNAUTHORIZED)
         .entity(new PublicErrorResource().view401())
-        .build();
+      ).build();
     }
     if (webAppException.getResponse().getStatus() == Response.Status.NOT_FOUND.getStatusCode()) {
-      return Response
+      return BaseResource.applyHeaders(Response
         .status(Response.Status.NOT_FOUND)
         .entity(new PublicErrorResource().view404())
-        .build();
+      ).build();
     }
 
     // Debug logging

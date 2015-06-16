@@ -65,6 +65,7 @@ public class SafeHeadersRequest extends HttpServletRequestWrapper {
         .replace("es-419", "es") // Fix es-419 issue
         .replace("_", "-") // Fix en_US issue
         .replace("chrome://global/locale/intl.properties","en") // Fix Firefox QLS issue
+        .replace("null, ","") // Workaround Firefox RESTClient issue #146
         ;
     }
 

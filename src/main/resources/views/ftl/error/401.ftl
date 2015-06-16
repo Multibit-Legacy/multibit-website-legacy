@@ -1,5 +1,7 @@
-<#-- @ftlvariable name="model" type="org.multibit.site.views.PublicFreemarkerView" -->
-<#include "../content/base.ftl">
+<#-- @ftlvariable name="" type="org.multibit.site.views.PublicFreemarkerView" -->
+<#include "../includes/base.ftl">
+<#-- Required for IE to render correctly -->
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
 <#include "../includes/head.ftl">
@@ -7,25 +9,13 @@
 <body>
 <#include "../includes/header.ftl">
 
-<div id="container3">
-      <div class="wrap">
+<div class="container">
 
-      <#if alert??>
-        <div class="alert-message ${alertClass}">${alertText}</div>
-      </#if>
-        <div id="content-full">
+  <h1>Access denied!</h1>
 
-          <h1>Access denied!</h1>
+<#include "../includes/footer.ftl">
 
-          <p>You need to <a href="/openid">sign in</a> to access this information</p>
-
-        </div>
-
-      <#include "../includes/footer.ftl">
-  </div>
 </div>
-
-<#include "../includes/cdn-scripts.ftl">
 
 </body>
 

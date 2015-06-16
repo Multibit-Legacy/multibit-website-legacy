@@ -1,32 +1,31 @@
-<#-- @ftlvariable name="model" type="org.multibit.site.views.PublicFreemarkerView" -->
-<#-- Template for the main navigation and information pages with no animation -->
-<#include "base.ftl">
+<#-- @ftlvariable name="" type="org.multibit.site.views.PublicFreemarkerView" -->
+<#-- Template for the main pages direct from the nav bar -->
+
+<#-- All templates include the base.ftl for variables -->
+<#include "../includes/base.ftl">
+
 <#-- Required for IE to render correctly -->
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-  <#include "../includes/head.ftl">
+<#include "../includes/head.ftl">
 </head>
 <body>
 <#include "../includes/header.ftl">
 
-<div id="container3">
-  <div class="wrap">
-    <#if alertText??>
-      <div class="alert-message ${alertClass}">${alertText}</div>
-    </#if>
-    <div id="content">
-      <#-- Pull in the content from the model -->
-      ${model.content?replace("downloadVersion","${downloadVersion}")}
+<#-- Wrap all page content here -->
+<div class="container container-main-content">
 
-      <#include "../includes/right-sidebar.ftl">
-    </div>
+<#if model.showDownload == true>
+  <#include "../includes/download.ftl">
+</#if>
 
-    <#include "../includes/footer.ftl">
-  </div>
+  <#-- Pull in the HTML content from the model and replace non-FTL tokens -->
+${model.content?replace("downloadVersion","${downloadVersion}")?replace("buyTrezorLink","${buyTrezorLink}")}
+
 </div>
 
-<#include "../includes/cdn-scripts.ftl">
+<#include "../includes/footer.ftl">
 
 </body>
 

@@ -1,0 +1,83 @@
+<h3>Payment Protocol support</h3>
+
+<p>The <a href="https://github.com/bitcoin/bips/blob/master/bip-0070.mediawiki" target="_blank">Payment Protocol (BIP 70)</a> is a Bitcoin standard describing how merchants and wallet developers can work together
+  to produce a seamless buying experience using bitcoin. It is supported by MultiBit&nbsp;HD Beta 8 and higher.</p>
+<p>This blog article gives a walk-through of how it all works using a donation to multibit.org as an example payment.</p>
+
+<h4>User clicks on a Bitcoin Payment Request link in their browser</h4>
+<p>A Bitcoin Payment Request is a small file that contains instructions for making a payment. This file can be downloaded through
+  a browser link or perhaps sent via an email just like any other file. During installation MultiBit&nbsp;HD will register itself as a handler for
+  these kinds of links and files so when one is clicked it will start up and, after a wallet is unlocked, it will show an alert as shown below:</p>
+<p>
+  <img class="img-responsive" src="/images/en/blog/payment-protocol/alert.png"
+       title="Alert" >
+</p>
+
+<p>The Payment Protocol provides a way for merchants to sign their request - typically using their site's HTTPS keys. If this
+  signature is present and trusted the alert will indicate this. In the example, we have a signed Payment Request but the signature
+  is not trusted.</p>
+
+<p>At this stage the user can choose to dismiss the alert or proceed.</p>
+
+<h4>User clicks "Yes" to review the Payment Request</h4>
+<p>The Payment Request review panel appears and provides more details. If the user has sufficient funds they can choose to proceed
+  with payment by clicking the "Pay this payment request" button. They can also choose to abandon the process and come back to
+  it later through the Payments screen.</p>
+<p>
+  <img class="img-responsive" src="/images/en/blog/payment-protocol/payment-request-details.png"
+       title="Payment request details" >
+</p>
+
+<h4>User clicks "Pay this payment request"</h4>
+<p>Paying a payment request is very similar to making a regular Bitcoin payment. The usual payment confirmation panel appears
+  and the user authorises the request with their password or with their <a href="buyTrezorLink" target="_blank">Trezor</a> hardware wallet if present:</p>
+
+<p>
+  <img class="img-responsive" src="/images/en/blog/payment-protocol/confirm-send.png"
+       title="Confirm send" >
+</p>
+
+<h4>User clicks "Send"</h4>
+
+<p>At this point the user is committed as the transaction is broadcast to the Bitcoin network. Typically this takes a few seconds
+  to provide feedback of a successful send:</p>
+
+<p>
+  <img class="img-responsive" src="/images/en/blog/payment-protocol/send-progress.png"
+       title="Send progress" >
+</p>
+
+<h4>User clicks "Next" to send merchant a note</h4>
+<p>The Payment Protocol provides a mechanism to send an optional note directly to the merchant over a secure channel
+  - perhaps providing additional delivery instructions or selecting a particular option on the product:</p>
+
+<p>
+  <img class="img-responsive" src="/images/en/blog/payment-protocol/payment-note.png"
+       title="Payment note" >
+</p>
+
+<h4>User clicks "Next" to receive a receipt note</h4>
+<p>The merchant responds by providing a receipt note (technically a <code>PaymentACK</code>):</p>
+
+<p>
+  <img class="img-responsive" src="/images/en/blog/payment-protocol/receipt-note.png"
+       title="Receipt note" >
+</p>
+
+<p>In a real payment the receipt note acts as a message from the merchant indicating how they are going to process the order. Perhaps
+  they want to wait for several confirmations on the Bitcoin network, or maybe they will provide a link for immediate download of the
+  digital purchase. It is up to the merchant what they put here. In this example we are simply echoing back what the user sent us.</p>
+
+<h4>Conclusion</h4>
+<p>This article describes the basic workflow of the Payment Protocol but there is a lot more to it such as refund addresses; specifying
+  outputs as part of merge avoidance (increased privacy) and more. Over time we expect this functionality to develop further as more
+  merchants and wallet developers roll out its use.</p>
+
+<p>14 April 2015</p>
+
+<h4>Related articles</h4>
+<p>Here are some related articles:</p>
+<ul>
+  <li><a href="/blog/2015/04/14/multibit-hd-beta-8.html" target="_blank">MultiBit HD Beta 8 release</a></li>
+  <li><a href="/blog/2015/04/14/bip32-wallet-compatibility.html" target="_blank">BIP 32 Wallet compatibility</a></li>
+</ul>

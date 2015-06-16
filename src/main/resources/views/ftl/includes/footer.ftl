@@ -1,5 +1,15 @@
-<div id="footer">
-  <div>&copy; <a href="https://multibit.org/" target="_blank">MultiBit</a> 2011–2015. Powered by Bitcoin Solutions Ltd. Released under the <a href="http://creativecommons.org/licenses/MIT/" target="_blank">MIT license</a>.<br/>
-    All trademarks acknowledged.
-  </div>
-</div>
+<#-- @ftlvariable name="" type="org.multibit.site.views.PublicFreemarkerView" -->
+<#-- Footer text -->
+
+<#-- All templates include the base.ftl for variables -->
+<#include "base.ftl">
+
+<footer class="container-fluid">
+  <p class="text-muted">&copy;<a href="https://multibit.org/" target="_blank">${model.msg("app.developers")}</a> 2011–2015.
+    &nbsp;${model.msg("footer.powered")}
+    &nbsp;${model.msg("footer.licence")}
+    &nbsp;${model.msg("footer.trademarks")}
+    &nbsp;<a href="/privacy.html" target="_blank">${model.msg("footer.privacy")}</a>
+    &nbsp;<a href="/tandc.html" target="_blank">${model.msg("footer.tandc")}</a>
+  </p>
+</footer>

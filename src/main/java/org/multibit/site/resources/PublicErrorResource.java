@@ -34,9 +34,10 @@ public class PublicErrorResource extends BaseResource {
   public PublicFreemarkerView view401() {
 
     // Populate the model
-    BaseModel model = new BaseModel(null);
+    BaseModel model = new BaseModel(null, acceptedTandC(), getLocale());
 
-    return new PublicFreemarkerView<BaseModel>("error/401.ftl",model);
+    return new PublicFreemarkerView<BaseModel>("error/401.ftl", model);
+
   }
 
   /**
@@ -51,9 +52,10 @@ public class PublicErrorResource extends BaseResource {
   public PublicFreemarkerView view404() {
 
     // Populate the model
-    BaseModel model = new BaseModel(null);
+    BaseModel model = new BaseModel(null, acceptedTandC(), getLocale());
 
-    return new PublicFreemarkerView<BaseModel>("error/404.ftl",model);
+    return new PublicFreemarkerView<BaseModel>("error/404.ftl", model);
+
   }
 
   /**
@@ -68,8 +70,9 @@ public class PublicErrorResource extends BaseResource {
   public PublicFreemarkerView view500() {
 
     // Populate the model
-    BaseModel model = new BaseModel(null);
+    BaseModel model = new BaseModel(null, acceptedTandC(), getLocale());
 
-    return new PublicFreemarkerView<BaseModel>("error/500.ftl",model);
+    return new PublicFreemarkerView<BaseModel>("error/500.ftl", model);
+
   }
 }

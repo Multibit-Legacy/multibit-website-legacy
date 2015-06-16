@@ -1,215 +1,391 @@
-    <div class="news content underline">
-      <h3 class="image">Releases</h3> 
-      <dl>
-        <dt>All</dt>
-        <dd>
-          <h4>All available releases</h4>
-          <ul>
-            <li>All available releases are <a href="releases">here</a></li>
-           </ul>
-        </dd>
-      </dl>
-    <dl>
-      <dt>22 Apr 2013</dt>
-      <dd>
-        <h4>V0.5.9 (Encrypted Wallets release)</h4> 
-       <h5>Features</h5>
-        <ul>
-          <li>Version number removed from Mac app name</li>
-          <li>Updated help files</li>
-          <li>Fixed bug on opening wallet that is already open</li>
-          <li>Fixed ticker restart bug</li>
-  	</ul>    
-      </dd>
-    </dl>
+<div class="panel panel-info">
 
-    <dl>
-      <dt>16 Apr 2013</dt>
-      <dd>
-        <h4>V0.5.9rc1</h4> 
-       <h5>Features</h5>
-        <ul>
-          <li>Upgrade to bitcoinj v0.8</li>
-          <li>Delete Wallet not shown by default, challenge question added. (see configuration.txt)</li>
-          <li>Romanian added as target language</li>
-          <li>Mac app is now signed with a "James Burton" developer id</li>
-          <li>Fix for Mac retina display showing fuzzy text</li>
-          <li>Twisty and callout panel in the wallet panels have been removed</li>
-  	</ul>   
-      </dd>
-    </dl>
-   <dl>
-      <dt>9 Apr 2013</dt>
-      <dd>
-        <h4>V0.5.9-SNAPSHOT</h4> 
-       <h5>Features</h5>
-        <ul>
-          <li>I18n update</li>
-          <li>Update to bitcoinj 0.8-SNAPSHOT</li>
-          <li>added 'Close Wallet'</li>
-          <li>wallets now resync automatically when opened</li>
-          <li>added better sync control on import and reset blockchain</li>
-          <li>changed blockstore to SPVBlockStore - smaller download</li>
-          <li>changed 'Reset blockchain and transactions' suggested replay date to 2 days ago</li>
-          <li>reduced default fee to 0.0005 BTC</li>
-  	</ul>  
-        <h5>Bug fixes</h5> 
-        <ul>    
-          <li>fix for unparseable fee amount</li>
-          <li>apostrophes now appear in French and Italian translations properly</li>
-        </ul> 
-      </dd>
-    </dl>
+  <div id="releases" class="panel-heading">
+    <span>MultiBit Classic Releases</span>
+  </div>
 
-   <dl>
-      <dt>19 Mar 2013</dt>
-      <dd>
-        <h4>V0.4.23</h4> 
-       <h5>Features</h5>
-        <ul>
-          <li>Fix for incoming transactions not seen sometimes</li>
-          <li>Updated to bitcoinj 0.7.3.</li>
-          <li>Notifies user when a new version of MultiBit is available</li>
-          <li>Tidied up UI when switching "look and feels"</li>
-          <li>Change is now sent to the second key in a wallet if present (this helps people who have imported a blockchain.info backup)</li>
-          <li>More logging</li>
-  	</ul>       
-      </dd>
-    </dl>
-   <dl>
-      <dt>11 Mar 2013</dt>
-      <dd>
-        <h4>V0.4.22</h4> 
-       <h5>Features</h5>
-        <ul>
-          <li>Addition of OpenExchangeRates.org as an exchange. Provides over 150 currencies for currency conversion. (Needs free sign up)</li>
-          <li>Charts can be saved (right click on the chart: "Save as")</li>
-          <li>Reset blockchain and transactions default "replay from" date now goes back 2 days.</li>
-          <li>Updated to Bitcoinj 0.7.1, XChart 2.0.0, XChange 1.5.0</li>
-          <li>Simplified buttons in wallet list</li>
-  	</ul>       
-        <h5>Bug fixes</h5>
-        <ul>
-          <li>Fixed appearance of blank request screen.</li>
-          <li>Menu tooltips on Macs shown properly</li>
-	</ul>  
-      </dd>
-    </dl>
-    <dl>
-      <dt>24 Feb 2013</dt>
-      <dd>
-        <h4>V0.4.21</h4> 
-       <h5>Features</h5>
-        <ul>
-          <li>Bloom filters now active to speed up blockchain sync (when talking to bitcoind v0.8 nodes or later)</li>
-          <li>You can now specify particular peers to connect to with the 'peers' property in multibit.properties. (Use a comma separated list)</li>
-          <li>Upgrade to Bitcoinj v0.7</li>
-           <li>Fix for zero confirmation transaction vulnerability identified by Retep</li>
-  	</ul>       
-        <h5>UI Changes</h5>
-        <ul>
-          <li>Currencies in the Preferences tab now have a full description in addition to the currency code</li>
-	</ul>  
-      </dd>
-     </dl>
+  <div class="panel-body">
 
-     <dl>
-      <dt>15 Feb 2013</dt>
-      <dd>
-        <h4>V0.5.8beta.spendpolicy</h4> 
-        <ul>
-          <li>This build is virtually identical to V0.5.8beta, except that it merges in Mike Hearn's 'spendpolicy' branch</li>
-        </ul>  
-      </dd>
-     </dl>
+    <div class="col-xs-12">
 
-     <dl>
-      <dt>12 Feb 2013</dt>
-      <dd>
-        <h4>V0.5.8beta</h4> 
-       <h5>Bitcoinj v0.7 features:</h5>
-        <ul>
-          <li>Bloom filters now active to speed up blockchain sync (when talking to bitcoind v0.8rc1 nodes or later)</li>
-          <li>You can now specify particular peers to connect to with the 'peers' property in multibit.properties. (Use a comma separated list)</li>
-          <li>Fix for zero confirmation transaction vulnerability identified by Retep</li>
-  	</ul>       
-        <h5>XChange 1.4.0 features:</h5>
-        <ul>
-          <li>More exchanges supported for currency lookup: MtGox, Bitstamp, BTC-E, CampBX, VirtEx</li>
-  	</ul> 
-        <h5>UI enhancements</h5>
-        <ul>
-          <li> You can use Shift-ArrowUp and Shift-ArrowDown to move between wallets when the Wallets panel is selected</li>
-          <li>Wallet icon now highlighted when wallet is selected, more contrast between selected and unselected</li>
-          <li>Display less flicky when changing languages, fonts and look-and-feel</li>
-          <li>User chosen font now set properly in dialogs and Help screens</li>
-        </ul>   
-        <h5>General</h5>
-        <ul>
-          <li>No longer opens in 'local mode' - it picks up your other MultiBit wallets</li>
-          <li>Removed cacheManager code - no longer supported</li>
-          <li>Backward compatible wallet changes (description added, minor version dropped)</li>
-          <li>Serialised wallets now no longer always load - you may have to use an older version of MultiBit and migrate them to protobuf format</li>
-          <li>Refactoring of encryption code in response to review comments</li>
-          <li>Fix for 'Transaction cannot be cast to Comparable' bug on wallet reorgs</li>
-         </ul>      
-      </dd>
-     </dl>
+      <p><a href="https://github.com/jim618/multibit" target="_blank">MultiBit Classic is free and open source</a> under the MIT licence.</p>
 
-     <dl>
-      <dt>11 Feb 2013</dt>
-      <dd>
-        <h4>V0.4.20</h4> 
-       <h5>Features</h5>
-        <ul>
-          <li>Support for more currency exchanges. (XChange 1.4.0)</li>
-          <li>You can move up and down wallets with the Shift-ArrowUp and Shift-ArrowDown keys.</li>
-  	</ul>       
-        <h5>UI Changes</h5>
-        <ul>
-          <li>More contrast between the active wallet and the others</li>
-          <li>Less flicky when changing language, font and look-and-feel. </li>
-          <li> Improved font display in dialogs, help, tooltips </li>
-	</ul> 
-        <h5>Bug fixes</h5>
-        <ul>
-          <li>Fixed bug on display of fiat amount in Send/ Request when changing languages</li>
-          <li>Fix for 'Transaction cannot be cast to Comparable' bug on wallet reorgs</li>
-        </ul>     
-      </dd>
-     </dl>
+      <p>It is now considered to be a <strong>legacy product</strong> and is in maintenance mode. This means that only essential security
+        and network compatibility updates will be made to the codebase.</p>
 
-      <dl>
-      <dt>14 Jan 2013</dt>
-      <dd>
-        <h4>V0.4.19</h4> 
-        <p>Please note: this version does NOT include a full fix for the zero-confirmation vulnerability announced by Retep on 10 Jan 2013. (This is still being worked on).</p>
-       <h5>Improvements</h5>
-        <ul>
-          <li>Improved status notifications for transactions</li>
-          <li>Update to bitcoinj 0.6.1</li>
-          <li>Coinbase transactions now have a pickaxe icon and the status icon fills more slowly</li>
-          <li>Now only hits currency server if ticker is shown or currency conversions are on</li>
-          <li>Fiat currency fields only shown on Send and Request if fiat currency successfully found from remote server</li>
-          <li>Small increase in table row height for visual clarity</li>
-	</ul>       
-        <h5>Bug fixes</h5>
-        <ul>
-          <li>Fixed help tab borking MultiBit if no network present</li>
-	</ul>  
-      </dd>
-     </dl>
+      <p>The security model of MultiBit Classic is weaker than <a href="/index.html">MultiBit HD</a> so we only recommend using it
+        if you have private keys that cannot be migrated. </p>
 
-      <dl>
-      <dt>7 Jan 2013</dt>
-      <dd>
-        <h4>V0.4.18</h4> 
-       <h5>Bug fixes</h5>
-        <ul>
-          <li>Issue 63 fixed (default fee of 1 BTC for comma decimal separator languages)</li>
-          <li>Removed splash screen (and help about) image as it was causing a Segmentation Fault on openjdk6 when viewed in 256 colors</li>
-          <li>Fixed flickery first transaction row</li>
-          <li>Fixed color of Transactions description column in RTL languages</li>
-	</ul> 
-     </dd>
-     </dl>
+      <p>Note that release numbers are not continuous but are based on distributions made available through the main website.</p>
+
+      <ul>
+        <li><a href="#0.5.10">0.5.10</a></li>
+        <li><a href="#0.5.9">0.5.9</a></li>
+        <li><a href="#0.5.9rc1">0.5.9rc1</a></li>
+        <li><a href="#0.5.9-SNAPSHOT">0.5.9-SNAPSHOT</a></li>
+        <li><a href="#0.5.8beta.spendpolicy">0.5.8 (Spend policy beta)</a></li>
+        <li><a href="#0.5.8beta">0.5.8 (Beta)</a></li>
+        <li><a href="#0.4.23">0.4.23 (Final 0.4.x release)</a></li>
+        <li><a href="#0.4.22">0.4.22</a></li>
+        <li><a href="#0.4.21">0.4.21</a></li>
+        <li><a href="#0.4.20">0.4.20</a></li>
+        <li><a href="#0.4.19">0.4.19</a></li>
+        <li><a href="#0.4.18">0.4.18</a></li>
+
+        <li><a href="https://multibit.org/releases">All releases</a></li>
+      </ul>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="panel panel-info">
+
+  <div id="0.5.10" class="panel-heading">
+    <a href="https://multibit.org/releases/multibit-0.5.10/" target="_blank">Release 0.5.10</a>
+  </div>
+
+  <div class="panel-body">
+
+    <div class="col-xs-12">
+
+      <a href="https://multibit.org/images/en/checkLists/releaseCheckList-0.5.10.jpg">Scan of release check list</a>
+      <ul>
+        <li>Fixed issue 116 - could not import blockchain.info backups</li>
+        <li>Fixed issue 117 - fee was too high</li>
+        <li>Fixed issue 121 - MtGox ticker information not showing</li>
+        <li>Fixed issue 125 - improved over-zealous syncing of wallet(s)</li>
+        <li>Fixed issue 137 - Import / Export file chooser nomenclature</li>
+        <li>Fixed issue 140 - use installed checkpoints file if newer</li>
+        <li>Fixed issue 141 - bump to XChange 1.7.0, XChart 2.2.0</li>
+      </ul>
+
+      <p><a href="#releases">Back to releases</a></p>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="panel panel-info">
+
+  <div id="0.5.9" class="panel-heading">
+    <a href="https://multibit.org/releases/multibit-0.5.9/" target="_blank">Release 0.5.9</a>
+  </div>
+
+  <div class="panel-body">
+
+    <div class="col-xs-12">
+
+      <a href="https://multibit.org/images/en/checkLists/releaseCheckList-0.5.9.jpg">Scan of release check list</a>
+
+      <ul>
+        <li>Version number removed from Mac app name</li>
+        <li>Updated help files</li>
+        <li>Fixed bug on opening wallet that is already open</li>
+        <li>Fixed ticker restart bug</li>
+      </ul>
+
+      <p><a href="#releases">Back to releases</a></p>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="panel panel-info">
+
+  <div id="0.5.9rc1" class="panel-heading">
+    <a href="https://multibit.org/releases/multibit-0.5.9rc1/" target="_blank">Release 0.5.9rc1 ( Release Candidate 1 )</a>
+  </div>
+
+  <div class="panel-body">
+
+    <div class="col-xs-12">
+
+      <a href="https://multibit.org/images/en/checkLists/releaseCheckList-0.5.9rc1.jpg">Scan of release check list</a>
+      <ul>
+        <li>Upgrade to bitcoinj v0.8</li>
+        <li>Delete Wallet not shown by default, challenge question added. (see configuration.txt)</li>
+        <li>Romanian added as target language</li>
+        <li>Mac app is now signed with a "James Burton" developer id</li>
+        <li>Fix for Mac retina display showing fuzzy text</li>
+        <li>Twisty and callout panel in the wallet panels have been removed</li>
+      </ul>
+
+      <p><a href="#releases">Back to releases</a></p>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="panel panel-info">
+
+  <div id="0.5.9-SNAPSHOT" class="panel-heading">
+    <a href="https://multibit.org/releases/multibit-0.5.9-SNAPSHOT/" target="_blank">Release 0.5.9 ( SNAPSHOT )</a>
+  </div>
+
+  <div class="panel-body">
+
+    <div class="col-xs-12">
+
+      <a href="https://multibit.org/images/en/checkLists/releaseCheckList-0.5.9-SNAPSHOT.jpg">Scan of release check list</a>
+      <ul>
+        <li>I18n update</li>
+        <li>Update to bitcoinj 0.8-SNAPSHOT</li>
+        <li>added 'Close Wallet'</li>
+        <li>wallets now resync automatically when opened</li>
+        <li>added better sync control on import and reset blockchain</li>
+        <li>changed block store to SPVBlockStore - smaller download</li>
+        <li>changed 'Reset blockchain and transactions' suggested replay date to 2 days ago</li>
+        <li>reduced default fee to 0.0005 BTC</li>
+        <li>fix for unparseable fee amount</li>
+        <li>apostrophes now appear in French and Italian translations properly</li>
+      </ul>
+
+      <p><a href="#releases">Back to releases</a></p>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="panel panel-info">
+
+  <div id="0.5.8beta.spendpolicy" class="panel-heading">
+    <a href="https://multibit.org/releases/multibit-0.5.8beta.spendpolicy/" target="_blank">Release 0.5.8 ( Spend policy beta )</a>
+  </div>
+
+  <div class="panel-body">
+
+    <div class="col-xs-12">
+
+      <a href="https://multibit.org/images/en/checkLists/releaseCheckList0.5.8beta.spendpolicy.jpg">Scan of release check list</a>
+
+      <ul>
+        <li>This build is virtually identical to V0.5.8beta, except that it merges in Mike Hearn's 'spendpolicy' branch</li>
+      </ul>
+
+      <p><a href="#releases">Back to releases</a></p>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="panel panel-info">
+
+  <div id="0.5.8beta" class="panel-heading">
+    <a href="https://multibit.org/releases/multibit-0.5.8beta/" target="_blank">Release 0.5.8 ( Beta )</a>
+  </div>
+
+  <div class="panel-body">
+
+    <div class="col-xs-12">
+
+      <a href="https://multibit.org/images/en/checkLists/releaseCheckList-0.5.8beta.jpg">Scan of release check list</a>
+
+      <ul>
+        <li>Bloom filters now active to speed up block chain sync (when talking to bitcoind v0.8rc1 nodes or later)</li>
+        <li>You can now specify particular peers to connect to with the 'peers' property in multibit.properties. (Use a comma separated list)</li>
+        <li>Fix for zero confirmation transaction vulnerability identified by Retep</li>
+        <li>More exchanges supported for currency lookup: MtGox, Bitstamp, BTC-E, CampBX, VirtEx</li>
+        <li> You can use Shift-ArrowUp and Shift-ArrowDown to move between wallets when the Wallets panel is selected</li>
+        <li>Wallet icon now highlighted when wallet is selected, more contrast between selected and unselected</li>
+        <li>Display less flicky when changing languages, fonts and look-and-feel</li>
+        <li>User chosen font now set properly in dialogs and Help screens</li>
+        <li>No longer opens in 'local mode' - it picks up your other MultiBit wallets</li>
+        <li>Removed cacheManager code - no longer supported</li>
+        <li>Backward compatible wallet changes (description added, minor version dropped)</li>
+        <li>Serialised wallets now no longer always load - you may have to use an older version of MultiBit and migrate them to protobuf format</li>
+        <li>Refactoring of encryption code in response to review comments</li>
+        <li>Fix for 'Transaction cannot be cast to Comparable' bug on wallet reorgs</li>
+      </ul>
+
+      <p><a href="#releases">Back to releases</a></p>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="panel panel-info">
+
+  <div id="0.4.23" class="panel-heading">
+    <a href="https://multibit.org/releases/multibit-0.4.23/" target="_blank">Release 0.4.23 ( Final 0.4.x release )</a>
+  </div>
+
+  <div class="panel-body">
+
+    <div class="col-xs-12">
+
+      <a href="https://multibit.org/images/en/checkLists/releaseCheckList-0.4.23.jpg">Scan of release check list</a>
+      <ul>
+        <li>Fix for incoming transactions not seen sometimes</li>
+        <li>Updated to bitcoinj 0.7.3.</li>
+        <li>Notifies user when a new version of MultiBit is available</li>
+        <li>Tidied up UI when switching "look and feels"</li>
+        <li>Change is now sent to the second key in a wallet if present (this helps people who have imported a blockchain.info backup)</li>
+        <li>More logging</li>
+      </ul>
+
+      <p><a href="#releases">Back to releases</a></p>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="panel panel-info">
+
+  <div id="0.4.22" class="panel-heading">
+    <a href="https://multibit.org/releases/multibit-0.4.22/" target="_blank">Release 0.4.22</a>
+  </div>
+
+  <div class="panel-body">
+
+    <div class="col-xs-12">
+
+      <a href="https://multibit.org/images/en/checkLists/releaseCheckList-0.4.22.jpg">Scan of release check list</a>
+
+      <ul>
+        <li>Addition of OpenExchangeRates.org as an exchange. Provides over 150 currencies for currency conversion. (Needs free sign up)</li>
+        <li>Charts can be saved (right click on the chart: "Save as")</li>
+        <li>Reset blockchain and transactions default "replay from" date now goes back 2 days.</li>
+        <li>Updated to Bitcoinj 0.7.1, XChart 2.0.0, XChange 1.5.0</li>
+        <li>Simplified buttons in wallet list</li>
+        <li>Fixed appearance of blank request screen.</li>
+        <li>Menu tooltips on Macs shown properly</li>
+      </ul>
+
+      <p><a href="#releases">Back to releases</a></p>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="panel panel-info">
+
+  <div id="0.4.21" class="panel-heading">
+    <a href="https://multibit.org/releases/multibit-0.4.21/" target="_blank">Release 0.4.21</a>
+  </div>
+
+  <div class="panel-body">
+
+    <div class="col-xs-12">
+
+      <a href="https://multibit.org/images/en/checkLists/releaseCheckList-0.4.21.jpg">Scan of release check list</a>
+      <ul>
+        <li>Bloom filters now active to speed up blockchain sync (when talking to bitcoind v0.8 nodes or later)</li>
+        <li>You can now specify particular peers to connect to with the 'peers' property in multibit.properties. (Use a comma separated list)</li>
+        <li>Upgrade to Bitcoinj v0.7</li>
+        <li>Fix for zero confirmation transaction vulnerability identified by Retep</li>
+        <li>Currencies in the Preferences tab now have a full description in addition to the currency code</li>
+      </ul>
+
+      <p><a href="#releases">Back to releases</a></p>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="panel panel-info">
+
+  <div id="0.4.20" class="panel-heading">
+    <a href="https://multibit.org/releases/multibit-0.4.20/" target="_blank">Release 0.4.20</a>
+  </div>
+
+  <div class="panel-body">
+
+    <div class="col-xs-12">
+
+      <a href="https://multibit.org/images/en/checkLists/releaseCheckList-0.4.20.jpg">Scan of release check list</a>
+
+      <ul>
+        <li>Support for more currency exchanges. (XChange 1.4.0)</li>
+        <li>You can move up and down wallets with the Shift-ArrowUp and Shift-ArrowDown keys.</li>
+        <li>More contrast between the active wallet and the others</li>
+        <li>Less flicky when changing language, font and look-and-feel.</li>
+        <li> Improved font display in dialogs, help, tooltips</li>
+        <li>Fixed bug on display of fiat amount in Send/ Request when changing languages</li>
+        <li>Fix for 'Transaction cannot be cast to Comparable' bug on wallet reorgs</li>
+      </ul>
+
+      <p><a href="#releases">Back to releases</a></p>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="panel panel-info">
+
+  <div id="0.4.19" class="panel-heading">
+    <a href="https://multibit.org/releases/multibit-0.4.19/" target="_blank">Release 0.4.19</a>
+  </div>
+
+  <div class="panel-body">
+
+    <div class="col-xs-12">
+
+      <a href="https://multibit.org/images/en/checkLists/releaseCheckList-0.4.19.jpg">Scan of release check list</a>
+
+      <ul>
+        <li>Improved status notifications for transactions</li>
+        <li>Update to bitcoinj 0.6.1</li>
+        <li>Coinbase transactions now have a pickaxe icon and the status icon fills more slowly</li>
+        <li>Now only hits currency server if ticker is shown or currency conversions are on</li>
+        <li>Fiat currency fields only shown on Send and Request if fiat currency successfully found from remote server</li>
+        <li>Small increase in table row height for visual clarity</li>
+        <li>Fixed help tab borking MultiBit if no network present</li>
+      </ul>
+
+      <p><a href="#releases">Back to releases</a></p>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="panel panel-info">
+
+  <div id="0.4.18" class="panel-heading">
+    <a href="https://multibit.org/releases/multibit-0.4.18/" target="_blank">Release 0.4.18</a>
+  </div>
+
+  <div class="panel-body">
+
+    <div class="col-xs-12">
+
+      <a href="https://multibit.org/images/en/checkLists/releaseCheckList-0.4.18.jpg">Scan of release check list</a>
+
+      <ul>
+        <li>Issue 63 fixed (default fee of 1 BTC for comma decimal separator languages)</li>
+        <li>Removed splash screen (and help about) image as it was causing a Segmentation Fault on openjdk6 when viewed in 256 colors</li>
+        <li>Fixed flickery first transaction row</li>
+        <li>Fixed color of Transactions description column in RTL languages</li>
+      </ul>
+
+      <p><a href="#releases">Back to releases</a></p>
+
+    </div>
+
+  </div>
+
+</div>

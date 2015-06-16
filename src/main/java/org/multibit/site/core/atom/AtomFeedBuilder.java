@@ -6,6 +6,8 @@ import com.google.common.io.Resources;
 import com.google.common.reflect.ClassPath;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 import org.multibit.site.SiteService;
 import org.multibit.site.caches.InMemoryArtifactCache;
 import org.multibit.site.resources.PublicPageResource;
@@ -17,7 +19,11 @@ import javax.xml.transform.Result;
 import javax.xml.transform.Source;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
-import java.io.*;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.StringWriter;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.Collections;
@@ -32,6 +38,8 @@ import java.util.UUID;
 public class AtomFeedBuilder {
 
   private static final Logger log = LoggerFactory.getLogger(SiteService.class);
+
+  private static final DateTimeFormatter blogFormat = DateTimeFormat.forPattern("yyyy-MM-dd").withZone(DateTimeZone.UTC);
 
   public AtomFeedBuilder() {
   }
@@ -85,10 +93,7 @@ public class AtomFeedBuilder {
 
         // Load the resource as a String
         URL resourceUrl = Resources.getResource(resourceName);
-
-        // Get the file timestamp
         File entryFile = new File(resourceUrl.toURI());
-        DateTime updated = new DateTime(entryFile.lastModified()).withZone(DateTimeZone.UTC);
 
         // Get the content
         String entryHtml = Resources.toString(resourceUrl, Charsets.UTF_8);
@@ -138,10 +143,17 @@ public class AtomFeedBuilder {
 
           log.debug("New: '{}'", entryHref);
 
-          // New entry so use the updated time
           String entryId = "urn:uuid:" + UUID.randomUUID();
-
           AtomLink link = new AtomLink("self", entryHref);
+
+          // Infer the updated time based on the article name
+          DateTime updated;
+          try {
+            updated = blogFormat.parseDateTime(entryFile.getName().substring(0, 10));
+            updated = updated.plusHours(12);
+          } catch (IllegalArgumentException e) {
+            updated = now;
+          }
           atomEntry = new AtomEntry(entryId, title, link, updated, summary);
 
           atomFeed.getAtomEntries().add(atomEntry);

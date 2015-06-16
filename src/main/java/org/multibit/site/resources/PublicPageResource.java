@@ -1,6 +1,7 @@
 package org.multibit.site.resources;
 
 import com.google.common.base.Optional;
+import com.google.common.net.HttpHeaders;
 import com.yammer.dropwizard.jersey.caching.CacheControl;
 import com.yammer.metrics.annotation.Timed;
 import org.multibit.site.caches.InMemoryArtifactCache;
@@ -11,15 +12,25 @@ import org.multibit.site.views.PublicFreemarkerView;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Size;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.NewCookie;
 import javax.ws.rs.core.Response;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
-import java.util.concurrent.*;
+import java.util.Locale;
+import java.util.UUID;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 /**
  * <p>Resource to provide the following to application:</p>
@@ -68,7 +79,7 @@ public class PublicPageResource extends BaseResource {
   /**
    * The failsafe HTML to ensure continued correct presentation
    */
-  private static final String FAILSAFE = "http://localhost:8080/ka/failsafe.html";
+  private static final String FAILSAFE = "/ka/failsafe.html";
 
   /**
    * Provide the favicon
@@ -83,10 +94,10 @@ public class PublicPageResource extends BaseResource {
 
     InputStream is = PublicPageResource.class.getResourceAsStream("/assets/images/favicon.ico");
 
-    return Response
+    return applyHeaders(Response
       .ok(is)
       .type("image/png")
-      .build();
+    ).build();
   }
 
   /**
@@ -101,7 +112,9 @@ public class PublicPageResource extends BaseResource {
 
     InputStream is = PublicPageResource.class.getResourceAsStream("/views/robots.txt");
 
-    return Response.ok(is).build();
+    return applyHeaders(Response
+      .ok(is)
+    ).build();
   }
 
   /**
@@ -119,10 +132,10 @@ public class PublicPageResource extends BaseResource {
       throw notFound();
     }
 
-    return Response
+    return applyHeaders(Response
       .ok(siteMap.get())
       .type(MediaType.TEXT_XML)
-      .build();
+    ).build();
   }
 
   /**
@@ -140,10 +153,10 @@ public class PublicPageResource extends BaseResource {
       throw notFound();
     }
 
-    return Response
+    return applyHeaders(Response
       .ok(atomFeed.get())
       .type(MediaType.APPLICATION_ATOM_XML)
-      .build();
+    ).build();
   }
 
   /**
@@ -165,10 +178,10 @@ public class PublicPageResource extends BaseResource {
           byte[] advert = new AdvertLoader().loadAndClean();
 
           // Seems OK so serve it
-          return Response
+          return applyHeaders(Response
             .ok(advert)
             .type(MediaType.TEXT_HTML)
-            .build();
+          ).build();
 
         } catch (Throwable e) {
           // Any problem gets the fail safe response
@@ -190,63 +203,130 @@ public class PublicPageResource extends BaseResource {
   }
 
   /**
-   * @return The default index page for the main site
+   * No cache to ensure cookie status is correctly updated
+   *
+   * @return The default index page for the main site with no cookie
    */
   @GET
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
-  public PublicFreemarkerView<BaseModel> getDefaultHomePage() {
+  @CacheControl(noCache = true)
+  public Response viewLocalisedIndexPage() {
 
-    BaseModel model = new BaseModel("/" + DEFAULT_LANGUAGE + "/index.html");
-    return new PublicFreemarkerView<BaseModel>("content/home.ftl", model);
+    BaseModel model = new BaseModel("/" + getLocale().getLanguage() + "/index.html", acceptedTandC(), getLocale());
+    model.setShowDownload(true);
+    model.setAcceptAction("/index.html");
+
+    return pageResponse(model, "content/main.ftl");
 
   }
 
   /**
+   * @return The default index page for the main site with acceptance of terms and conditions
+   */
+  @POST
+  @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
+  @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
+  public Response viewLocalisedIndexPageWithCookie() {
+
+    return getLocalisedDownloadResponseWithCookie("/index.html");
+
+  }
+
+  /**
+   * No cache to ensure cookie status is correctly updated
+   *
    * @return The index page for the main site (requires a specific entry point)
    */
   @GET
   @Path("index.html")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
-  @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
-  public PublicFreemarkerView<BaseModel> getHomePage() {
+  @CacheControl(noCache = true)
+  public Response viewIndexPage() {
 
-    return getDefaultHomePage();
+    return viewLocalisedIndexPage();
+
+  }
+
+  /**
+   * @return The index page offers terms and conditions
+   */
+  @POST
+  @Path("index.html")
+  @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
+  @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
+  public Response viewIndexPageWithCookie() {
+
+    return viewLocalisedIndexPageWithCookie();
+
+  }
+
+  /**
+   * No cache to ensure cookie status is correctly updated
+   *
+   * @return The download page for the main site (requires a specific entry point)
+   */
+  @GET
+  @Path("download.html")
+  @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
+  @CacheControl(noCache = true)
+  public Response viewLocalisedDownloadPage() {
+
+    BaseModel model = new BaseModel("/" + getLocale().getLanguage() + "/download.html", acceptedTandC(), getLocale());
+    model.setShowDownload(true);
+    model.setAcceptAction("/download.html");
+
+    return pageResponse(model, "content/main.ftl");
+
+  }
+
+  /**
+   * @return The download page offers terms and conditions
+   */
+  @POST
+  @Path("download.html")
+  @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
+  @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
+  public Response viewLocalisedDownloadPageWithCookie() {
+
+    return getLocalisedDownloadResponseWithCookie("/download.html");
 
   }
 
   /**
    * @param page The page name (or slug)
    *
-   * @return The default language page for the main site
+   * @return The localised page for the main site
    */
   @GET
   @Path("{page}.html")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
-  public PublicFreemarkerView<BaseModel> getDefaultPage(
+  public Response viewLocalisedPage(
     @PathParam("page") String page
   ) {
 
-    BaseModel model = new BaseModel("/" + DEFAULT_LANGUAGE + "/" + page + ".html");
-    return new PublicFreemarkerView<BaseModel>("content/main.ftl", model);
+    BaseModel model = new BaseModel("/" + getLocale().getLanguage() + "/" + page + ".html", false, getLocale());
+
+    return pageResponse(model, "content/main.ftl");
 
   }
 
   /**
    * @param lang The two letter language code (ISO 639-1)
    *
-   * @return The language specific index page for the main site
+   * @return The language specific index page for the main site overriding the locale
    */
   @GET
   @Path("{lang}")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
-  public PublicFreemarkerView<BaseModel> getLanguageSpecificDefaultHomePage(
+  public Response viewLanguageSpecificDefaultHomePage(
     @Size(min = 3, max = 3) @PathParam("lang") String lang
   ) {
 
-    BaseModel model = new BaseModel("/" + lang + "/index.html");
-    return new PublicFreemarkerView<BaseModel>("content/home.ftl", model);
+    BaseModel model = new BaseModel("/" + lang + "/index.html", acceptedTandC(), new Locale(lang));
+
+    return pageResponse(model, "content/main.ftl");
 
   }
 
@@ -254,20 +334,20 @@ public class PublicPageResource extends BaseResource {
    * @param lang The two letter language code (ISO 639-1)
    * @param page The page name (or slug)
    *
-   * @return The language specific page for the main site
+   * @return The language specific page for the main site overriding the locale
    */
   @GET
   @Path("{lang}/{page}.html")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
-  public PublicFreemarkerView<BaseModel> getLanguageSpecificPage(
+  public Response viewLanguageSpecificPage(
     @Size(min = 3, max = 3) @PathParam("lang") String lang,
     @PathParam("page") String page
   ) {
 
-    BaseModel model = new BaseModel("/" + lang + "/" + page + ".html");
-    return new PublicFreemarkerView<BaseModel>("content/main.ftl", model);
+    BaseModel model = new BaseModel("/" + lang + "/" + page + ".html", acceptedTandC(), new Locale(lang));
 
+    return pageResponse(model, "content/main.ftl");
   }
 
   /**
@@ -284,14 +364,14 @@ public class PublicPageResource extends BaseResource {
   @Path("blog/{year}/{month}/{day}/{page}.html")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
-  public PublicFreemarkerView<BaseModel> getDefaultBlogPage(
+  public Response viewDefaultBlogPage(
     @Digits(integer = 2, fraction = 0) @PathParam("year") String year,
     @Digits(integer = 2, fraction = 0) @PathParam("month") String month,
     @Digits(integer = 2, fraction = 0) @PathParam("day") String day,
     @PathParam("page") String page
   ) {
 
-    return getLanguageSpecificBlogPage(DEFAULT_LANGUAGE, year, month, day, page);
+    return viewLanguageSpecificBlogPage(ENGLISH, year, month, day, page);
 
   }
 
@@ -310,7 +390,7 @@ public class PublicPageResource extends BaseResource {
   @Path("/{lang}/blog/{year}/{month}/{day}/{page}.html")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
-  public PublicFreemarkerView<BaseModel> getLanguageSpecificBlogPage(
+  public Response viewLanguageSpecificBlogPage(
     @Size(min = 3, max = 3) @PathParam("lang") String lang,
     @Digits(integer = 2, fraction = 0) @PathParam("year") String year,
     @Digits(integer = 2, fraction = 0) @PathParam("month") String month,
@@ -321,8 +401,9 @@ public class PublicPageResource extends BaseResource {
     // Java6 uses StringBuilder to optimise this
     String resourcePath = "/" + lang + "/blog/" + year + "-" + month + "-" + day + "-" + page + ".html";
 
-    BaseModel model = new BaseModel(resourcePath);
-    return new PublicFreemarkerView<BaseModel>("content/blog.ftl", model);
+    BaseModel model = new BaseModel(resourcePath, acceptedTandC(), new Locale(lang));
+
+    return pageResponse(model, "content/blog.ftl");
 
   }
 
@@ -335,14 +416,15 @@ public class PublicPageResource extends BaseResource {
   @Path("help")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
-  public PublicFreemarkerView<BaseModel> getDefaultHelpPage() {
+  public Response viewDefaultHelpPage() {
 
     // Java6 uses StringBuilder to optimise this
-    String resourcePath = "/" + DEFAULT_LANGUAGE + "/help.html";
+    String resourcePath = "/" + ENGLISH + "/help.html";
 
     // Use the main template since this is a starting point for a user
-    BaseModel model = new BaseModel(resourcePath);
-    return new PublicFreemarkerView<BaseModel>("content/main.ftl", model);
+    BaseModel model = new BaseModel(resourcePath, acceptedTandC(), Locale.ENGLISH);
+
+    return pageResponse(model, "content/main.ftl");
 
   }
 
@@ -357,15 +439,17 @@ public class PublicPageResource extends BaseResource {
   @Path("{lang}/help")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
-  public PublicFreemarkerView<BaseModel> getDefaultLanguageSpecificHelpPage(
+  public Response viewDefaultLanguageSpecificHelpPage(
     @Size(min = 3, max = 3) @PathParam("lang") String lang
   ) {
 
     // Java6 uses StringBuilder to optimise this
     String resourcePath = "/" + lang + "/help.html";
 
-    BaseModel model = new BaseModel(resourcePath);
-    return new PublicFreemarkerView<BaseModel>("content/help.ftl", model);
+    BaseModel model = new BaseModel(resourcePath, acceptedTandC(), new Locale(lang));
+
+    return pageResponse(model, "content/main.ftl");
+
 
   }
 
@@ -383,16 +467,23 @@ public class PublicPageResource extends BaseResource {
   @Path("{lang}/help/{version}")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
-  public PublicFreemarkerView<BaseModel> getDefaultLanguageVersionSpecificHelpPage(
+  public Response viewDefaultLanguageVersionSpecificHelpPage(
     @Size(min = 3, max = 3) @PathParam("lang") String lang,
     @PathParam("version") String version
   ) {
 
-    // Java6 uses StringBuilder to optimise this
-    String resourcePath = "/" + lang + "/help/" + version + "/help_contents.html";
+    String resourcePath;
+    if (version.contains("hd")) {
+      resourcePath = "/" + lang + "/help/" + version + "/help_contents.html";
+      BaseModel model = new BaseModel(resourcePath, acceptedTandC(), new Locale(lang));
+      return pageResponse(model, "content/hd-help.ftl");
+    }
 
-    BaseModel model = new BaseModel(resourcePath);
-    return new PublicFreemarkerView<BaseModel>("content/help.ftl", model);
+    // Must be classic
+    resourcePath = "/" + lang + "/help/" + version + "/contents.html";
+    BaseModel model = new BaseModel(resourcePath, acceptedTandC(), new Locale(lang));
+
+    return pageResponse(model, "content/mbc-help.ftl");
 
   }
 
@@ -409,7 +500,7 @@ public class PublicPageResource extends BaseResource {
   @Path("{lang}/help/{version}/{pathParam: (?).*}")
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
-  public PublicFreemarkerView<BaseModel> getLanguageVersionSpecificHelpPage(
+  public Response viewLanguageVersionSpecificHelpPage(
     @Size(min = 3, max = 3) @PathParam("lang") String lang,
     @PathParam("version") String version,
     @PathParam("pathParam") String pathParam
@@ -418,8 +509,9 @@ public class PublicPageResource extends BaseResource {
     // Java6 uses StringBuilder to optimise this
     String resourcePath = "/" + lang + "/help/" + version + "/" + pathParam;
 
-    BaseModel model = new BaseModel(resourcePath);
-    return new PublicFreemarkerView<BaseModel>("content/help.ftl", model);
+    BaseModel model = new BaseModel(resourcePath, acceptedTandC(), new Locale(lang));
+
+    return version.contains("hd") ? pageResponse(model, "content/hd-help.ftl") : pageResponse(model, "content/mbc-help.ftl");
 
   }
 
@@ -429,10 +521,42 @@ public class PublicPageResource extends BaseResource {
    * @return A 307 to be recorded in the server logs triggering an action by administrators
    */
   private Response failSafeResponse() {
-    return Response
+    return applyHeaders(Response
       .temporaryRedirect(URI.create(FAILSAFE))
       .type(MediaType.TEXT_HTML)
-      .build();
+    ).build();
+  }
+
+  /**
+   * @param resourcePath The resource path (e.g. "/index.html")
+   *
+   * @return A localised response with download buttons containing a session cookie
+   */
+  private Response getLocalisedDownloadResponseWithCookie(String resourcePath) {
+
+    NewCookie cookie = new NewCookie(
+      COOKIE_NAME,
+      UUID.randomUUID().toString(),
+      null,
+      null,
+      null,
+      NewCookie.DEFAULT_MAX_AGE,
+      false
+    );
+
+    // Accepted by virtue of the POST
+    BaseModel model = new BaseModel("/" + getLocale().getLanguage() + resourcePath, true, getLocale());
+    model.setShowDownload(true);
+    model.setAcceptAction(resourcePath);
+    PublicFreemarkerView<BaseModel> entity = new PublicFreemarkerView<BaseModel>("content/main.ftl", model);
+
+    return applyHeaders(Response
+      .ok()
+      .entity(entity)
+      .header(HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN, "*")
+      .header("Strict-Transport-Security", "max-age=31536000; includeSubDomains")
+      .cookie(cookie)
+    ).build();
   }
 
 }

@@ -1,11 +1,16 @@
 package org.multibit.site.resources;
 
-import javax.servlet.http.HttpServletRequest;
+import com.sun.jersey.api.core.HttpContext;
+import org.multibit.site.core.languages.Languages;
+import org.multibit.site.model.BaseModel;
+import org.multibit.site.views.PublicFreemarkerView;
+
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
+import java.util.List;
 import java.util.Locale;
 
 /**
@@ -15,11 +20,17 @@ import java.util.Locale;
  * </ul>
  *
  * @since 0.0.1
- *         
+ *  
  */
 public abstract class BaseResource {
 
-  protected static final String DEFAULT_LANGUAGE = "en";
+  public static final String HSTS_HEADER_VALUE = "max-age=31536000; includeSubDomains";
+  /**
+   * The fallback language that should be fully available
+   */
+  protected static final String ENGLISH = "en";
+
+  public static final String COOKIE_NAME = "MBHD-Session";
 
   /**
    * Jersey creates a fresh resource every request so this is safe
@@ -37,25 +48,44 @@ public abstract class BaseResource {
    * Jersey creates a fresh resource every request so this is safe
    */
   @Context
-  protected HttpServletRequest request;
+  protected HttpContext httpContext;
+
+  /**
+   * <p>Decorate the response with all standard headers</p>
+   *
+   * @param builder The response builder
+   *
+   * @return The decorated response builder with all standard headers in place
+   */
+  public static Response.ResponseBuilder applyHeaders(Response.ResponseBuilder builder) {
+
+    return builder
+      // CORS - Allow access to content from any domain
+      .header(com.google.common.net.HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN, "*")
+      // HSTS - Supporting browsers should use HTTPS for all requests to this domain
+      .header("Strict-Transport-Security", HSTS_HEADER_VALUE);
+
+  }
 
   /**
    * @return The most appropriate locale for the upstream request (never null)
    */
   public Locale getLocale() {
-    // TODO This should be a configuration setting
+
     Locale defaultLocale = Locale.UK;
 
-    Locale locale;
     if (httpHeaders == null) {
-      locale = defaultLocale;
+      return defaultLocale;
     } else {
-      locale = httpHeaders.getLanguage();
-      if (locale == null) {
-        locale = defaultLocale;
+      List<Locale> locales = httpHeaders.getAcceptableLanguages();
+      if (locales == null || locales.isEmpty()) {
+        return defaultLocale;
       }
+      return Languages.newLocaleFromCode(
+        locales.get(0).toString().replace("*", "en"),
+        defaultLocale
+      );
     }
-    return locale;
   }
 
   public WebApplicationException badRequest() {
@@ -66,4 +96,18 @@ public abstract class BaseResource {
     return new WebApplicationException(Response.Status.NOT_FOUND);
   }
 
+  /**
+   * @return True if the session cookie exists indicating acceptance of the terms and conditions
+   */
+  protected boolean acceptedTandC() {
+
+    return httpHeaders != null && httpHeaders.getCookies().containsKey(COOKIE_NAME);
+  }
+
+  protected Response pageResponse(BaseModel model, String templatePath) {
+    return applyHeaders(Response
+      .ok()
+      .entity(new PublicFreemarkerView<BaseModel>(templatePath, model))
+    ).build();
+  }
 }

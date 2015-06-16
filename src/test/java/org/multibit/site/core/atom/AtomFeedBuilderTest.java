@@ -25,6 +25,7 @@ public class AtomFeedBuilderTest {
 
     // Simple check for correct content
     assertThat(atomFeed).contains("http://localhost:8080/en/blog/2013/04/23/java-is-secure.html");
+    assertThat(atomFeed).contains("2013-04-23T12:00:00Z");
 
   }
 

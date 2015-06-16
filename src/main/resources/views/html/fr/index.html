@@ -1,10 +1,99 @@
-<h1>Une devise virtuelle P2P libre et ouverte</h1>
-<p>Bitcoin est une devise, un protocole et un logiciel qui rend possible :
-<ul>
-  <li>Transactions instantanées de pair à pair</li>
-  <li>Paiements internationaux</li>
-  <li>Aucun ou peu de frais de transaction</li>
-  <li>Et bien plus!</li>
-</ul>
-<p>Bitcoin utilise une technologie pair à pair pour fonctionner sans autorité centrale. Le traitement des transactions et la création des Bitcoins est prise en charge <b>collectivement par le réseau</b>. Par le biais de ses propriétés uniques, le Bitcoin rend possible des usages prometteurs qui ne pouvaient pas être couverts par les systèmes de paiement précédents.</p>
-<p>Le logiciel Bitcoin est un <a href="http://www.fsf.org/about/what-is-free-software" target="_blank">logiciel libre</a> développé par la communauté et publié sous la <a href="http://creativecommons.org/licenses/MIT/" target="_blank">licence MIT</a>.</p>
+<div class="row mb-video-and-features">
+
+  <div class="col-md-7 col-lg-8">
+
+    <div id="myCarousel" class="carousel slide">
+      <!-- Carousel items -->
+      <div class="carousel-inner">
+        <div class="item">
+          <img class="img-responsive" src="/images/en/screenshots/mbhd-0.1/send-payment.png"/>
+        </div>
+        <div class="item">
+          <img class="img-responsive" src="/images/en/screenshots/mbhd-0.1/request-payment.png"/>
+        </div>
+        <div class="active item">
+          <img class="img-responsive" src="/images/en/screenshots/mbhd-0.1/payments.png"/>
+        </div>
+        <div class="item">
+          <img class="img-responsive" src="/images/en/screenshots/mbhd-0.1/new-contact.png"/>
+        </div>
+        <div class="item">
+          <img class="img-responsive" src="/images/en/screenshots/mbhd-0.1/preferences.png"/>
+        </div>
+        <div class="item">
+          <img class="img-responsive" src="/images/en/screenshots/mbhd-0.1/manage-wallet.png"/>
+        </div>
+        <div class="item">
+          <img class="img-responsive" src="/images/en/screenshots/mbhd-0.1/tools.png"/>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="col-md-5 col-lg-4">
+    <h3 class="mb-features-heading">Pourquoi choisir MultiBit HD?</h3>
+
+    <p>MultiBit HD is:</p>
+    <ul id="features-list" class="list">
+      <li><i class="fa fa-windows fa-lg"></i>&nbsp;Rapide et facile à installer<br/>Nous soutenons tous les principaux systèmes d'exploitation de bureau (Windows, OS X, Linux)</li>
+      <li><i class="fa fa-shield fa-lg"></i>&nbsp;Sécurisé par conception<br/>
+        Toutes vos données sont conservées cryptées sur votre machine locale et nous soutenons portefeuilles de matériels tels que Trezor</li>
+      <li><i class="fa fa-magic fa-lg"></i>&nbsp;Déterministe<br/>Un <strong> phrase de semences </strong> protège votre bitcoin de la perte de données</li>
+      <li><i class="fa fa-cloud fa-lg"></i>&nbsp;Décentralisée<br/>Pas de serveurs fixes uniquement le réseau Bitcoin</li>
+      <li><i class="fa fa-globe fa-lg"></i>&nbsp;International<br/>Nous soutenons
+        <a href="https://crowdin.com/project/multibit-hd" target="_blank"> plus de 40 langues</a></li>
+    </ul>
+    <p>Si vous êtes un utilisateur ordinaire de Bitcoin et que vous voulez simplement un portefeuille qui fonctionne sans problème, alors MultiBit HD est le bon choix pour vous.</p>
+
+    <p>Vous pouvez le télécharger en utilisant les boutons ci-dessus et être opérationnel avec Bitcoin en 5 minutes.</p>
+
+    <p>Pour obtenir une liste complète des versions aller à la <a href="/download.html"> section de téléchargement </a>.</p>
+  </div>
+
+</div>
+
+<script language="JavaScript">
+
+  // invoke the carousel
+  $('#myCarousel').carousel({
+    interval: 5000
+  });
+
+  /* SLIDE ON CLICK */
+
+  $('.carousel-linked-nav > li > a').click(function () {
+
+// grab href, remove pound sign, convert to number
+    var item = Number($(this).attr('href').substring(1));
+
+// slide to number -1 (account for zero indexing)
+    $('#myCarousel').carousel(item - 1);
+
+// remove current active class
+    $('.carousel-linked-nav .active').removeClass('active');
+
+// add active class to just clicked on item
+    $(this).parent().addClass('active');
+
+// don't follow the link
+    return false;
+  });
+
+  /* AUTOPLAY NAV HIGHLIGHT */
+
+  // bind 'slid' function
+  $('#myCarousel').bind('slid', function () {
+
+// remove active class
+    $('.carousel-linked-nav .active').removeClass('active');
+
+// get index of currently active item
+    var idx = $('#myCarousel .item.active').index();
+
+// select currently active item and add active class
+    $('.carousel-linked-nav li:eq(' + idx + ')').addClass('active');
+
+  });
+
+</script>

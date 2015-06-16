@@ -1,5 +1,7 @@
-<#-- @ftlvariable name="model" type="org.multibit.site.views.PublicFreemarkerView" -->
-<#include "../content/base.ftl">
+<#-- @ftlvariable name="" type="org.multibit.site.views.PublicFreemarkerView" -->
+<#include "../includes/base.ftl">
+<#-- Required for IE to render correctly -->
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
 <#include "../includes/head.ftl">
@@ -7,47 +9,36 @@
 <body>
 <#include "../includes/header.ftl">
 
-<div id="container3">
-      <div class="wrap">
+<div class="container">
 
-      <#if alert??>
-        <div class="alert-message ${alertClass}">${alertText}</div>
-      </#if>
-        <div id="content-full">
+  <div class="row">
 
-          <div class="row">
+    <div class="col-lg-12">
+      <h2>${model.msg("500.title")}</h2>
 
-            <div class="span12">
-              <h2>Oh, snap!</h2>
+      <p>${model.msg("500.explain")}</p>
 
-              <p>It looks as though something has broken on our system. Our internal error reporting system has picked this up
-                and has sent notification to the support engineers about it. They will sort it out as soon as possible.</p>
+      <p>${model.msg("500.apology")}</p>
 
-              <p>We are very sorry to cause you this inconvenience, your time is precious and we screwed up.</p>
+      <p>${model.msg("500.return-to-home")}</p>
 
-              <p>Since there isn't much else to done, you should <a href="/">return to the home page</a>.</p>
+      <h3>${model.msg("500.technical-title")}</h3>
 
-              <h3>Technical</h3>
-
-              <p>500 - Internal server error</p>
-
-            </div>
-          </div>
-
-          <div class="row">
-
-            <div class="span12">
-              <a href="/"><img src="/images/common/error.jpg"></a>
-            </div>
-
-          </div>
-
-        <#include "../includes/footer.ftl">
+      <p>${model.msg("500.technical-explain")}</p>
 
     </div>
   </div>
 
-<#include "../includes/cdn-scripts.ftl">
+  <div class="row">
+
+    <div class="span12">
+      <a href="/"><img src="/images/common/error.jpg"></a>
+    </div>
+
+  </div>
+
+<#include "../includes/footer.ftl">
+
+</div>
 
 </body>
-</html>

@@ -1,0 +1,97 @@
+<div class="row mb-video-and-features">
+
+  <div class="col-md-7 col-lg-8">
+
+    <div id="myCarousel" class="carousel slide">
+      <!-- Carousel items -->
+      <div class="carousel-inner">
+        <div class="item">
+          <img class="img-responsive" src="/images/en/screenshots/mbhd-0.1/send-payment.png"/>
+        </div>
+        <div class="item">
+          <img class="img-responsive" src="/images/en/screenshots/mbhd-0.1/request-payment.png"/>
+        </div>
+        <div class="active item">
+          <img class="img-responsive" src="/images/en/screenshots/mbhd-0.1/payments.png"/>
+        </div>
+        <div class="item">
+          <img class="img-responsive" src="/images/en/screenshots/mbhd-0.1/new-contact.png"/>
+        </div>
+        <div class="item">
+          <img class="img-responsive" src="/images/en/screenshots/mbhd-0.1/preferences.png"/>
+        </div>
+        <div class="item">
+          <img class="img-responsive" src="/images/en/screenshots/mbhd-0.1/manage-wallet.png"/>
+        </div>
+        <div class="item">
+          <img class="img-responsive" src="/images/en/screenshots/mbhd-0.1/tools.png"/>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="col-md-5 col-lg-4">
+    <h3 class="mb-features-heading">なぜマルチビットHDを選ぶのか？</h3>
+
+    <p>MultiBit HD is:</p>
+    <ul id="features-list" class="list">
+      <li><i class="fa fa-windows fa-lg"></i>&nbsp;迅速かつ簡単にインストールする<br/>
+        私たちは、すべての主要なデスクトップオペレーティングシステム（Windows、OS X、Linux）をサポートして</li>
+      <li><i class="fa fa-shield fa-lg"></i>&nbsp;セキュアな設計<br/>すべてのデータは、ローカルマシン上で暗号化保たれる。わたし達 はTrezorなどのハードウェア財布をサポートしております</li>
+      <li><i class="fa fa-magic fa-lg"></i>&nbsp;決定論的<br/>シード·フレーズはあなたのビットコインをデータの損失から保護します</li>
+      <li><i class="fa fa-cloud fa-lg"></i>&nbsp;分散型<br/>ビットコインネットワークだけで 固定サーバーはありません</li>
+      <li><i class="fa fa-globe fa-lg"></i>&nbsp;インターナショナル<br/>私たちは、40以上の言語をサポートしています</li>
+    </ul>
+    <p>あなたがビットコインの通常のユーザーで 、単純に手間をかけずに動作できる 財布をもとめてる 場合は、マルチビットHDはあなたのための正しい選択です。</p>
+
+    <p>ダウンロードばあいは上記のボタンを使用してください。5分で起動してビットコインを使用し、実行することができます。</p>
+
+  </div>
+
+</div>
+
+<script language="JavaScript">
+
+  // invoke the carousel
+  $('#myCarousel').carousel({
+    interval: 5000
+  });
+
+  /* SLIDE ON CLICK */
+
+  $('.carousel-linked-nav > li > a').click(function () {
+
+// grab href, remove pound sign, convert to number
+    var item = Number($(this).attr('href').substring(1));
+
+// slide to number -1 (account for zero indexing)
+    $('#myCarousel').carousel(item - 1);
+
+// remove current active class
+    $('.carousel-linked-nav .active').removeClass('active');
+
+// add active class to just clicked on item
+    $(this).parent().addClass('active');
+
+// don't follow the link
+    return false;
+  });
+
+  /* AUTOPLAY NAV HIGHLIGHT */
+
+  // bind 'slid' function
+  $('#myCarousel').bind('slid', function () {
+
+// remove active class
+    $('.carousel-linked-nav .active').removeClass('active');
+
+// get index of currently active item
+    var idx = $('#myCarousel .item.active').index();
+
+// select currently active item and add active class
+    $('.carousel-linked-nav li:eq(' + idx + ')').addClass('active');
+
+  });
+
+</script>

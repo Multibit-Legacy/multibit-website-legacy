@@ -47,7 +47,10 @@ public class SiteService extends Service<SiteConfiguration> {
     new SiteService().run(args);
   }
 
-  private SiteService() {
+  /**
+   * Require a public constructor for functional testing
+   */
+  public SiteService() {
 
   }
 
@@ -64,7 +67,7 @@ public class SiteService extends Service<SiteConfiguration> {
     // Adverts
     bootstrap.addBundle(new AssetsBundle("/assets/karma_ads", "/ka"));
 
-    bootstrap.addBundle(new AssetsBundle("/assets/jquery", "/jquery"));
+    bootstrap.addBundle(new AssetsBundle("/assets/js", "/js"));
     bootstrap.addBundle(new ViewBundle());
   }
 
@@ -87,6 +90,12 @@ public class SiteService extends Service<SiteConfiguration> {
 
     // Session handler
     environment.setSessionHandler(new SessionHandler());
+    configureFeeds();
+
+
+  }
+
+  public void configureFeeds() {
 
     // Read the Atom feed and put it into the asset cache
     InputStream atomStream = SiteService.class.getResourceAsStream("/views/atom.xml");
