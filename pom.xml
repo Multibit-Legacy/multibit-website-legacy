@@ -7,7 +7,7 @@
   <artifactId>site</artifactId>
 
   <!-- Only change this on a master or release branch -->
-  <version>4.0.0-SNAPSHOT</version>
+  <version>3.1.0</version>
 
   <url>http://localhost:8080</url>
 

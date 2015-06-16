@@ -3,8 +3,8 @@
 # Define the HTTP settings
 http:
 
-  port: 8888
-  adminPort: 8881
+  port: 9090
+  adminPort: 9091
 
 logging:
 
