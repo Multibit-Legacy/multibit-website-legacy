@@ -33,7 +33,7 @@
 
 <p>A "soft" wallet is one that is not linked to an external hardware device such as a <a href="https://buytrezor.com?a=4fbc03c60545" target="_blank">Trezor</a>.</p>
 
-<p>The rolling backups encrypt a snapshot of the current wallet. Rolling backups are loaded automatically if the load of the primary wallet fails. The user is told if a rolling backup is loaded on the 'Wallet startup screen'.</p>
+<p>The rolling backups encrypt a snapshot of the current wallet. Rolling backups are loaded automatically if the load of the primary wallet fails. The user is told if a rolling backup is loaded on the 'Wallet startup' screen.</p>
 
 <p>When making a local or cloud backup we zip up the wallet directory and include the wallet password in encrypted form in the archive. Short wallet passwords are padded. The zip file is then encrypted using a key derived from
   the wallet words. This approach allows the password to be recovered from a cloud backup so long as the user knows the wallet words.</p>
@@ -45,7 +45,7 @@
 <p>A "hard" wallet is one that is linked to an external hardware device such as a Trezor. They provide much greater protection for your bitcoins because the
   private keys are never present on your desktop machine and are not susceptible to malware or viruses.</p>
 
-<p>After entering the Trezor PIN number the password for your Trezor wallet is provided by the Trezor encrypting a fixed phrase in a deterministic manner. This password is also used to encrypt your cloud backups.</p>
+<p>After entering the Trezor PIN the password for your Trezor wallet is provided by the Trezor encrypting a fixed phrase in a deterministic manner. This password is also used to encrypt your cloud backups.</p>
 
 <p>Therefore the only way to unlock either the wallet or the backups is to physically have the correct Trezor present and to know its PIN.</p>
 
