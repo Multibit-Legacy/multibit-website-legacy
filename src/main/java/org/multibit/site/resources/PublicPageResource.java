@@ -270,6 +270,7 @@ public class PublicPageResource extends BaseResource {
   ) {
 
     BaseModel model = new BaseModel("/" + lang + "/index.html", acceptedTandC(), new Locale(lang));
+    model.setShowDownload(true);
 
     return pageResponse(model, "content/main.ftl");
 
@@ -291,6 +292,10 @@ public class PublicPageResource extends BaseResource {
   ) {
 
     BaseModel model = new BaseModel("/" + lang + "/" + page + ".html", acceptedTandC(), new Locale(lang));
+
+    if ("index".equalsIgnoreCase(page)) {
+      model.setShowDownload(true);
+    }
 
     return pageResponse(model, "content/main.ftl");
   }
