@@ -21,7 +21,7 @@
     <entry>
         <id>urn:uuid:6bcf1044-2ef6-4a27-9429-9e6cbb520d80</id>
         <title>&lt;h3&gt;BIP 32 Wallet compatibility&lt;/h3&gt;</title>
-        <link rel="self" href="https://multibit.org/en/blog/2015/04/14/bip32-wallet-compatibility.html"/>
+        <link rel="self" href="https://multibit.org/blog/2015/04/14/bip32-wallet-compatibility.html"/>
         <updated>2015-04-14T12:00:00Z</updated>
         <summary>&lt;p&gt;Thanks to the sterling work of github user 'gurnec' during Beta testing an incompatibility between MultiBit HD and
   other hierarchical deterministic (HD) wallets was discovered indicating that they are not BIP 32 compliant. This is
