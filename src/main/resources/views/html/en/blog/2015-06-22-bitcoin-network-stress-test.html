@@ -1,60 +1,49 @@
 <h3>Bitcoin network stress test</h3>
 
 <p>On 20 June 2015 <a href="http://www.reddit.com/r/Bitcoin/comments/3agk61/ultimate_bitcoin_stress_test_monday_june_22nd/" target="_blank">CoinWallet.eu announced</a>
-  that they would perform a Bitcoin network stress test starting Monday 22 June 2015 and extending over 100 blocks (approximately 32 hours). The intention was to discover
-  in advance whether the block size limit of 1Mb would, when transaction volume exceeded its capacity, allow for quick recovery of the network to normal service.</p>
+  that they would perform a Bitcoin network stress test starting Monday 22 June 2015 and extending over 100 blocks. The stated intention was to discover
+  whether the block size limit of 1MB would, when transaction volume exceeded its capacity, allow for quick recovery of the network to normal service.</p>
 
-<p>During the stress test a range of fees, some exceeding 1,000 satoshis, was allocated to each transaction. In simple terms, any Bitcoin wallet providing a fee
+<p>During the stress test a range of fees, some exceeding 1,000 satoshi per KB of transaction, was allocated to each transaction. In simple terms, any Bitcoin wallet providing a fee
   less than or equal to this value would produce transactions that would be in competition with the stress test transactions and therefore potentially subject to a delay.</p>
 
-<p>The fee associated with a transaction is largely dependent on the size in bytes of the transaction. The base fee is attached
-  to the smallest transaction, and for each 1,000 bytes of additional size another 1,000 satoshis is added. Miners will generally
-  pick transactions with higher fees from the backlog and bring them to the front of the queue.</p>
+<p>The fee associated with a transaction is largely dependent on the size in bytes of the transaction. Miners will generally
+  pick transactions with higher fees per KB from the backlog and bring them to the front of the queue.</p>
 
-<p>A more complex view would include the age of the coins and the "fee rate" applied. Bitcoin rules prioritise older coins over newer ones and miners are suspected of
-  prioritising transactions where the size in bytes of the transaction has a disproportionately larger fee thus increasing the "fee rate".</p>
+<p>A more complex view would include the age of the coins and the fee rate per KB applied. Bitcoin rules prioritise older coins over newer ones and miners are believed to
+  prioritise transactions with higher fees per KB of transaction.</p>
 
-<p>We monitored the behaviour of both MultiBit HD (0.1.0) and Classic (0.5.18) during the stress test and the results are given
+<p>We monitored the behaviour of both MultiBit HD (version 0.1.0) and Classic (version 0.5.18) during the stress test and the results are given
   below.</p>
 
 <h4>MultiBit HD</h4>
 
-<p>MultiBit HD uses a default base fee of 3,000 satoshis which can be adjusted up or down through a range of 1,000 to 10,000 using
-  the Preferences | Fees panel. Our research during development of MultiBit HD indicated that 3,000 satoshis would usually place
-  the transaction into the next block.</p>
+<p>MultiBit HD uses a default base fee of 3,000 satoshis per KB which can be adjusted up or down through a range of 1,000 to 10,000 using
+  the Preferences | Fees panel. Our research during development of MultiBit HD indicated that 3,000 satoshis per KB would usually place
+  the transaction into the next block or two as of Summer 2015.</p>
 
 <p>During the early part of the stress test we found the following behaviour:</p>
 
 <ul>
-  <li>average time for transaction to be mined (1,000 satoshi fee):</li>
-  <li>average time for transaction to be mined (3,000 satoshi fee):</li>
-  <li>average time for transaction to be mined (10,000 satoshi fee):</li>
-  <li>all transactions OK after Repair Wallet:</li>
+  <li>average number of blocks for transaction to be mined (1,000 satoshi per KB fee):</li>
+  <li>average number of blocks for transaction to be mined (3,000 satoshi per KB fee):</li>
+  <li>average number of blocks for transaction to be mined (10,000 satoshi per KB fee):</li>
 </ul>
 
 <h4>MultiBit Classic</h4>
 
-<p>MultiBit Classic uses a fixed base fee of 1,000 satoshis. It cannot be varied so users are not able to respond to an emerging
-  "fee market". We strongly urge users of MultiBit Classic to <a href="/help/hd0.1/how-to-upgrade-from-classic.html" target="_blank">upgrade to MultiBit HD</a>.</p>
-
+<p>MultiBit Classic uses a fixed base fee of 1,000 satoshi per KB. It cannot be varied so users are not able to respond to an emerging
+   market in fees.
 <p>During the early part of the stress test we found the following behaviour:</p>
 
 <ul>
-  <li>average time for transaction to be mined (1,000 satoshi fee):</li>
-  <li>average time for transaction to be mined (3,000 satoshi fee):</li>
-  <li>average time for transaction to be mined (10,000 satoshi fee):</li>
-  <li>all transactions OK after Repair Wallet:</li>
+  <li>average number of blocks  for transaction to be mined (1,000 satoshi per KB fee):</li>
 </ul>
 
 <h4>Conclusion</h4>
 
-<p>Overall we found that </p>
+<p>Because of the greater flexibility of fee settings in MultiBit HD we strongly urge users of MultiBit Classic to <a href="/help/hd0.1/how-to-upgrade-from-classic.html" target="_blank">upgrade to MultiBit HD</a>.</p>
 
-<ul>
-  <li>MultiBit HD did better than Classic ?</li>
-  <li>a replace by fee mechanism is required ?</li>
-  <li>network load detection would be an improvement ?</li>
-</ul>
 
 <p>22 Jun 2015</p>
 
