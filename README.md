@@ -26,55 +26,79 @@ found it a bit limiting for what we needed from our website.
 
 ## Branches
 
-We follow the ["master-develop" branching strategy](http://nvie.com/posts/a-successful-git-branching-model/).
+We follow the ["Git Flow" branching strategy](http://nvie.com/posts/a-successful-git-branching-model/).
 
-This means that the latest release is on the "master" branch (the default) and the latest release candidate is on the "develop" branch.
-Any issues are addressed in feature branches from "develop" and merged in as required.
+This means that the latest release is on the `master` branch (the default) and the latest release candidate is on the `develop` branch.
+Any issues are addressed in feature branches from `develop` and merged in as required.
 
 ## Getting started
 
-If you are already familiar with Java and Maven you can skip ahead to the Build and Preview section.
+The website is a standard Maven build from a GitHub repository.
 
-Some of the technology used when building the site may be unfamiliar at first so you'll need to install some supporting code first. It should only take a few minutes and you'll be up and running.
+Below are some basic instructions for developers.
 
-1. Install or upgrade [Java](https://java.com/en/download/index.jsp)
-1. Install or upgrade [Maven](https://maven.apache.org/download.cgi)
+### Verify you have Git
 
-If you intend to do a lot of work involving the underlying Java code you'll need an IDE. We recommend [Intellij](https://www.jetbrains.com/idea/download/)
-([best](http://programmers.stackexchange.com/a/24231/7167)) or [Eclipse](https://www.eclipse.org/downloads/). Both are available as free downloads.
+```
+$ git --version
+```
 
-If you just want to edit CSS and HTML you can do it all with a text editor and some console commands but this is really slow.
+[Install git](https://help.github.com/articles/set-up-git/) if necessary.
+
+Then, if this is your first time working with the website source code, clone the source code repository (over HTTPS) using:
+
+```
+$ git clone https://github.com/bitcoin-solutions/multibit-website.git
+```
+A sub-directory called `multibit-website` will be created which is your project root directory.
+
+To update a previous clone of the website use a pull instead:
+
+```
+$ cd <project root>
+$ git pull
+```
+
+### Verify you have Maven 3+
+
+Most IDEs (such as [Intellij Community Edition](http://www.jetbrains.com/idea/download/)) come with support for Maven built in, 
+but if not then you may need to [install it manually](http://maven.apache.org/download.cgi).
+
+IDEs such as Eclipse may require the [m2eclipse plugin](http://www.sonatype.org/m2eclipse) to be configured.
+
+To quickly check that you have Maven 3+ installed check on the command line:
+```
+$ mvn --version
+```
+Maven uses a file called `pom.xml` present in the MultiBit HD source code project directory to provide all the build information.
 
 ### Build and Preview
 
 There are two ways to run up the project depending on whether you have access to a Java IDE or not.
 
-#### Inside an IDE
+#### Start the application (from an IDE)
 
-Import the project as a Maven project in the usual manner.
-
-To start the project you just need to execute `SiteService.main()` as a Java application. You'll need a runtime configuration
+To run the application within an IDE, simply execute `SiteService.main()`. You'll need a runtime configuration
 that passes in `server site-config.yml` as the Program Arguments.
 
-Open a browser to [http://localhost:8080/](http://localhost:8080/) and you should see the site.
+#### Start the application (from the command line)
 
-#### Outside of an IDE
-
-Assuming that you've got Java and Maven installed you'll find it very straightforward to get the site running. Just clone
-from GitHub and do the following:
-
+To run the application from the command line, first build from the project root directory (pulling in all sources from upstream):
 ```
 cd <project root>
-mvn clean install
+mvn clean dependency:sources install
+```
+then start the application using the shaded JAR:
+```
 java -jar target/site-<version>.jar server site-config.yml
 ```
 
 where `<project root>` is the root directory of the project as checked out through git and `<version>` is the version
 as found in `pom.xml` (e.g. "4.0.0") but you'll see a `.jar` in the `target` directory so it'll be obvious.
 
-All commands will work on *nix without modification, use \ instead of / for Windows.
+All commands will work on *nix without modification, use `\` instead of `/` for Windows.
 
-Open a browser to [http://localhost:8080/](http://localhost:8080/) and you should see the site.
+Open a browser to [http://localhost:8888/](http://localhost:8888/) and you should see the site (8888 is the develop branch port).
 
 ## Workflow inside an IDE (strongly recommended)
 

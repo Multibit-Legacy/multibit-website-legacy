@@ -33,18 +33,14 @@ $ echo "Hello world" > example.txt
 > fciv.exe -sha1 example.txt
 </pre>
 <p>You may find that the <code>example.txt</code> file contains the quotes surrounding the words and is likely stored
-  using
-  Windows line endings (CRLF) rather than Unix (LF). Avoiding this in Windows involves a fair bit of command line
-  trickery
-  so it is easier to simply edit the file manually to strip out the extra information and change the file save format to
-  reach
-  the quoted SHA1. While a hassle, this does prove that the SHA1 operation is correctly detecting the most minute of
+  using Windows line endings (CRLF) rather than Unix (LF). Avoiding this in Windows involves a fair bit of command line
+  trickery so it is easier to simply edit the file manually to strip out the extra information and change the file save format to
+  reach the quoted SHA1. While a hassle, this does prove that the SHA1 operation is correctly detecting the most minute of
   differences.</p>
 <h4>Mac - use OpenSSL</h4>
 <p>OS X ships with an older version of OpenSSL that supports SHA1. You may want to <a
   target="_blank" href="http://homes.cs.washington.edu/~aczeskis/openssl.html">update it</a>, but the standard version
-  is good
-  enough for our purposes.</p>
+  is good enough for our purposes.</p>
 <pre>
 $ openssl sha1 example.txt
 </pre>
@@ -105,14 +101,16 @@ gpg:              unchanged: 1
   opportunity to check that the key has not been revoked, it also means that you can now send the owner of the key
   encrypted messages.</p>
 <h4>Verify the installer signature</h4>
-<p>We are now ready to verify the MultiBit installer signature. From <a href="https://multibit.org" target="_blank">the
-  front page</a>, locate the "Signature" link beside the installer for your operating system and use ("Save As").
-  This will download the signature file to the same location as the installer and it has a <code>.asc</code>
+<p>We are now ready to verify the MultiBit installer signature. From <a href="https://multibit.org/download.html" target="_blank">the
+  download page</a>, click the "Installers and signatures" link beside the latest installer for your operating system.</p>
+<p>You will see the raw download page. Use File | "Save As" to download the signature file to the same location as the
+  installer. Just clicking it will show the contents in your browser. Note that a signature file has a <code>.asc</code>
   extension (for "armoured ASCII").</p>
-<p>You can now issue the verification command. The example below is for a version 0.5.13 Mac installer.</p>
+<p>You can now issue the verification command. The example below is for a MultiBit HD version 0.1.0 Windows installer.</p>
 <pre>
-$ gpg --verify multibit-0.5.13.dmg.asc
-gpg: Signature made Mon 22 Jul 10:07:09 2013 BST using RSA key ID 23F7FB7B
+$ gpg --verify multibit-hd-windows-x64-0.1.0.exe.asc
+gpg: assuming signed data in `multibit-hd-windows-x64-0.1.0.exe'
+gpg: Signature made Tue  9 Jun 13:53:45 2015 BST using RSA key ID 23F7FB7B
 gpg: Good signature from "Jim Burton (multibit.org developer) &lt;jim618@fastmail.co.uk&gt;"
 </pre>
 <p>You may see the following additional information:</p>
@@ -130,8 +128,8 @@ Subkey fingerprint: 4A71 A836 F572 01B4 D088  7D60 0820 A658 23F7 FB7B
 <h3>Final notes</h3>
 <p>The use of cryptographic signatures provides a guarantee that what you think you have downloaded is actually
   present on your system. <strong>Bitcoin applications are not like ordinary applications</strong> - they handle real
-  money and as
-  such need to be treated with more security precautions than you would otherwise use. It is always worth learning
+  money and as such need to be treated with more security precautions than you would otherwise use. It is always worth learning
   more about the technology you use and hopefully this article has given you a taste.</p>
 
-<p>24 July 2013</p>
+<p>20 Jun 2015 - Updated to reference MultiBit HD 0.1.0</p>
+<p>24 July 2013 - First released</p>

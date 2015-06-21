@@ -5,17 +5,12 @@ import com.google.common.net.HttpHeaders;
 import com.yammer.dropwizard.jersey.caching.CacheControl;
 import com.yammer.metrics.annotation.Timed;
 import org.multibit.site.caches.InMemoryArtifactCache;
-import org.multibit.site.core.cleaner.AdvertLoader;
 import org.multibit.site.model.BaseModel;
 import org.multibit.site.views.PublicFreemarkerView;
 
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Size;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.NewCookie;
 import javax.ws.rs.core.Response;
@@ -24,13 +19,7 @@ import java.io.InputStream;
 import java.net.URI;
 import java.util.Locale;
 import java.util.UUID;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 
 /**
  * <p>Resource to provide the following to application:</p>
@@ -52,7 +41,6 @@ import java.util.concurrent.TimeoutException;
  * GET     /error/404 (org.multibit.site.resources.PublicErrorResource)
  * GET     /error/500 (org.multibit.site.resources.PublicErrorResource)
  * GET     / (org.multibit.site.resources.PublicPageResource)
- * GET     /ad (org.multibit.site.resources.PublicPageResource)
  * GET     /{lang}/blog/{year}/{month}/{day}/{page}.html (org.multibit.site.resources.PublicPageResource)
  * GET     /atom.xml (org.multibit.site.resources.PublicPageResource)
  * GET     /blog/{year}/{month}/{day}/{page}.html (org.multibit.site.resources.PublicPageResource)
@@ -157,49 +145,6 @@ public class PublicPageResource extends BaseResource {
       .ok(atomFeed.get())
       .type(MediaType.APPLICATION_ATOM_XML)
     ).build();
-  }
-
-  /**
-   * @return The advert HTML suitable for inclusion in an iframe
-   */
-  @GET
-  @Path("/ad")
-  @Timed
-  @CacheControl(noCache = true)
-  public Response viewAdvert() {
-
-    ExecutorService service = Executors.newSingleThreadExecutor();
-
-    Future<Response> response = service.submit(new Callable<Response>() {
-
-      @Override
-      public Response call() throws Exception {
-        try {
-          byte[] advert = new AdvertLoader().loadAndClean();
-
-          // Seems OK so serve it
-          return applyHeaders(Response
-            .ok(advert)
-            .type(MediaType.TEXT_HTML)
-          ).build();
-
-        } catch (Throwable e) {
-          // Any problem gets the fail safe response
-          return failSafeResponse();
-        }
-      }
-    });
-
-    try {
-      return response.get(10, TimeUnit.SECONDS);
-    } catch (InterruptedException e) {
-      return failSafeResponse();
-    } catch (ExecutionException e) {
-      return failSafeResponse();
-    } catch (TimeoutException e) {
-      return failSafeResponse();
-    }
-
   }
 
   /**
@@ -325,6 +270,7 @@ public class PublicPageResource extends BaseResource {
   ) {
 
     BaseModel model = new BaseModel("/" + lang + "/index.html", acceptedTandC(), new Locale(lang));
+    model.setShowDownload(true);
 
     return pageResponse(model, "content/main.ftl");
 
@@ -346,6 +292,10 @@ public class PublicPageResource extends BaseResource {
   ) {
 
     BaseModel model = new BaseModel("/" + lang + "/" + page + ".html", acceptedTandC(), new Locale(lang));
+
+    if ("index".equalsIgnoreCase(page)) {
+      model.setShowDownload(true);
+    }
 
     return pageResponse(model, "content/main.ftl");
   }
