@@ -14,7 +14,7 @@
 <#assign signatureOSX = "${downloadOSX}.asc">
 
 <#-- Create affiliate links for recommended products and services -->
-<#assign buyTrezorLink = "https://buytrezor.com/?a=4fbc03c60545">
+<#assign buyTrezorLink = "https://buytrezor.com/?a=multibit.org">
 
 <#-- Documentation for alerts
 
