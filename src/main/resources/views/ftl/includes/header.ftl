@@ -19,7 +19,7 @@
 
     <ul class="nav navbar-nav mb-banner-text hidden-md hidden-lg navbar-right">
       <li>
-          <a title="TREZOR for $99 promo" href="https://buytrezor.com/?a=multibit.org" target="_blank"><strong>TREZOR&nbsp;$99 with code: multibit.org</strong></a>
+          <a title="TREZOR for $99 promo" href="https://buytrezor.com/?a=multibit.org" target="_blank"><strong>TREZOR&nbsp;$99&nbsp;Code: multibit.org</strong></a>
       </li>
     </ul>
 
