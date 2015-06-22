@@ -4,7 +4,7 @@
   that they would perform a Bitcoin network stress test starting Monday 22 June 2015 and extending over 100 blocks. The stated intention was to discover
   whether the block size limit of 1MB would, when transaction volume exceeded its capacity, allow for quick recovery of the network to normal service.</p>
 
-<p>During the stress test a range of fees, some exceeding 1,000 satoshi per KB of transaction, was allocated to each transaction. In simple terms, any Bitcoin wallet providing a fee
+<p>During the stress test a range of fees, some exceeding 10,000 satoshi (0.000 1 BTC) per KB of transaction, was allocated to each transaction. In simple terms, any Bitcoin wallet providing a fee
   less than or equal to this value would produce transactions that would be in competition with the stress test transactions and therefore potentially subject to a delay.</p>
 
 <p>The fee associated with a transaction is largely dependent on the size in bytes of the transaction. Miners will generally
@@ -18,32 +18,54 @@
 
 <h4>MultiBit HD</h4>
 
-<p>MultiBit HD uses a default base fee of 3,000 satoshis per KB which can be adjusted up or down through a range of 1,000 to 10,000 using
-  the Preferences | Fees panel. Our research during development of MultiBit HD indicated that 3,000 satoshis per KB would usually place
+<p>MultiBit HD uses a default base fee of 3,000 satoshi per KB which can be adjusted up or down through a range of 1,000 to 10,000 using
+  the Preferences | Fees panel. Our research during development of MultiBit HD indicated that 3,000 satoshi per KB would usually place
   the transaction into the next block or two as of Summer 2015.</p>
+
+<p>We used the excellent block chain monitor at <a href="https://tradeblock.com/blockchain/">tradeblock.com</a> to monitor the status of the Bitcoin network during the stress test</p>
 
 <p>During the early part of the stress test we found the following behaviour:</p>
 
 <ul>
-  <li>average number of blocks for transaction to be mined (1,000 satoshi per KB fee):</li>
-  <li>average number of blocks for transaction to be mined (3,000 satoshi per KB fee):</li>
-  <li>average number of blocks for transaction to be mined (10,000 satoshi per KB fee):</li>
+  <li>Transactions with a fee of 1,000 satoshi (0.000 01 BTC) per KB of transaction had not confirmed at time of writing. These transactions had fees lower than the stress test transactions and so were effectively put at the back of the queue</li>
+  <li>Transactions with a fee of 3,000 satoshi per KB either did not get mined or took 11 blocks to confirm</li>
+  <li>Transactions with a fee of 10,000 satoshi per KB took an average of 9 blocks to get mined</li>
+</ul>
+
+<p>Data:</p>
+
+<ul>
+  <li>Data: 1x tx sent: @13:34 block: 362,033. Not mined as of block:362053 0.000 01 BTC/KB fee</li>
+  <li>Data: 1x tx sent: @13:35 block: 362,033. Not mined as of block:362053. 0.000 01 BTC/KB fee</li>
+  <li>Data: 1x tx sent: @13:15 block: 362,033. Not mined as of block:362053. 0.000 03 BTC/KB fee</li>
+  <li>Data: 1x tx sent: @13:16 block: 362,033. Mined @13:27 block: 362044. 0.000 03 BTC/KB fee</li>
+  <li>Data: 1x tx sent: @13:22 block: 362,033. Mined @13:56 block: 362041. 0.000 1 BTC/KB fee</li>
+  <li>Data: 1x tx sent: @13:23 block: 362,033. Mined @14:22 block: 362043. 0.000 1 BTC/KB fee</li>
 </ul>
 
 <h4>MultiBit Classic</h4>
 
-<p>MultiBit Classic uses a fixed base fee of 1,000 satoshi per KB. It cannot be varied so users are not able to respond to an emerging
+<p>MultiBit Classic uses a fixed base fee of 10,000 satoshi per KB. It cannot be varied so users are not able to respond to an emerging
    market in fees.
 <p>During the early part of the stress test we found the following behaviour:</p>
 
 <ul>
-  <li>average number of blocks  for transaction to be mined (1,000 satoshi per KB fee):</li>
+  <li>Average number of 3 blocks for transaction to be mined (10,000 satoshi per KB fee):</li>
+</ul>
+
+<p>Data:</p>
+<ul>
+  <li>Data: 2x tx sent: @13:14 block:362,033.  Mined @13:43 block:362,036. 0.000 1 BTC/KB fee</li>
 </ul>
 
 <h4>Conclusion</h4>
 
-<p>Because of the greater flexibility of fee settings in MultiBit HD we strongly urge users of MultiBit Classic to <a href="/help/hd0.1/how-to-upgrade-from-classic.html" target="_blank">upgrade to MultiBit HD</a>.</p>
+<p>When the Bitcoin network is flooded with transactions at a particular fee level, transactions with lower fees do not get confirmed in a timely manner.
+We recommend reworking the fee slider in MultiBit HD to increase the maximum fee level up from the current maximum of 0.000 1 BTC/KB. This will enable users to outbid flooding transactions when required.</p>
 
+<p>We also noticed during the test that of the 5 block explorers we have that the user can configure,
+  3 had problems viewing our transactions even though they were definitely out in the network and had been received in the destination wallet.
+  These were biteasy.com, blockchain.info and bitpay.com. 2 blockexplorers had no problems viewing our transactions. These were blockr.io and blocktrail.com so a shout out to those block explorer providers.</p>
 
 <p>22 Jun 2015</p>
 
