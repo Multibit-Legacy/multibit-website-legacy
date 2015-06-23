@@ -7,7 +7,8 @@
   <artifactId>site</artifactId>
 
   <!-- Only change this on a master or release branch -->
-  <version>develop-SNAPSHOT</version>
+  <!-- Call it version specific to avoid multibit 'develop-SNAPSHOT' processes on main server -->
+  <version>4.1.0-SNAPSHOT</version>
 
   <url>http://localhost:8080</url>
 
