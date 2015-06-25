@@ -3,7 +3,7 @@
     <title>MultiBit Blog</title>
     <id>urn:uuid:295952f4-1701-48c2-ae70-c9c1fdda50e2</id>
     <author>MultiBit Team</author>
-    <updated>2015-06-09T13:35:50Z</updated>
+    <updated>2015-06-25T18:40:29Z</updated>
     <entry>
         <id>urn:uuid:88592b49-3259-4a45-af66-b637814d95a0</id>
         <title>&lt;h3&gt;MultiBit HD Release 0.1 is now available&lt;/h3&gt;</title>
@@ -246,5 +246,32 @@ to your use of MultiBit.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a tar
   innovation through sessions that encourage interaction and discussion between&#xD;
   professionals across the fields of technology, politics, finance and&#xD;
   economics.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2011/10/24/prague.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+    </entry>
+    <entry>
+        <id>urn:uuid:24f77621-0470-4553-838d-67fa17b2dcf1</id>
+        <title>&lt;h3&gt;BIP 32 Wallet compatibility&lt;/h3&gt;</title>
+        <link rel="self" href="https://multibit.org/en/blog/2015/04/14/bip32-wallet-compatibility.html"/>
+        <updated>2015-04-14T12:00:00Z</updated>
+        <summary>&lt;p&gt;Thanks to the sterling work of GitHub user "gurnec" during Beta testing an incompatibility between MultiBit HD and
+  other hierarchical deterministic (HD) wallets was discovered indicating that they are not BIP 32 compliant. This is
+  important because "BIP 32 compliance" means that a user of one wallet can easily migrate to another in a safe manner
+  simply by providing their "wallet words" during a restore process.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2015/04/14/bip32-wallet-compatibility.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+    </entry>
+    <entry>
+        <id>urn:uuid:03075e49-37b8-4459-8296-f0467d19250e</id>
+        <title>&lt;h3&gt;Bitcoin network stress test&lt;/h3&gt;</title>
+        <link rel="self" href="https://multibit.org/en/blog/2015/06/23/bitcoin-network-stress-test.html"/>
+        <updated>2015-06-23T12:00:00Z</updated>
+        <summary>&lt;p&gt;On 20 June 2015 &lt;a href="http://www.reddit.com/r/Bitcoin/comments/3agk61/ultimate_bitcoin_stress_test_monday_june_22nd/" target="_blank"&gt;CoinWallet.eu announced&lt;/a&gt;
+  that they would perform a Bitcoin network stress test starting Monday 22 June 2015 and extending over 100 blocks. The stated intention was to discover
+  whether the block size limit of 1MB would, when transaction volume exceeded its capacity, allow for quick recovery of the network to normal service.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2015/06/23/bitcoin-network-stress-test.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+    </entry>
+    <entry>
+        <id>urn:uuid:95e43ae7-a154-481a-92a1-74e075417b36</id>
+        <title>&lt;h3&gt;MultiBit Classic is four years old today&lt;/h3&gt;</title>
+        <link rel="self" href="https://multibit.org/en/blog/2015/07/16/multibit-classic-is-four-years-old-today.html"/>
+        <updated>2015-07-16T12:00:00Z</updated>
+        <summary>&lt;p&gt;On 16 July 2011 Jim pushed &lt;a href="https://github.com/jim618/multibit/commit/75fb14dcaf4c1dc96732cd876d7aadc7736222ee" target="_blank"&gt;the first commit&lt;/a&gt;
+  of the MultiBit source code to GitHub. This marked the beginning of a long journey into the Bitcoin ecosystem which we thought we'd share with you today.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2015/07/16/multibit-classic-is-four-years-old-today.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
     </entry>
 </feed>
