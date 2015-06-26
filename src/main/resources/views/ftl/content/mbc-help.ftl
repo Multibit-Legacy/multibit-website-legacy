@@ -19,7 +19,11 @@
   <hr/>
 
 <#-- Pull in the HTML content from the model and replace non-FTL tokens -->
-${model.content?replace("downloadVersion","${downloadVersion}")?replace("buyTrezorLink","${buyTrezorLink}")}
+${model.content
+?replace("downloadVersionHD","${downloadVersionHD}")
+?replace("downloadVersionClassic","${downloadVersionClassic}")
+?replace("buyTrezorLink","${buyTrezorLink}")
+}
 
   <hr/>
   <p><a href="help_contents.html">Back to help contents</a></p>
