@@ -21,7 +21,11 @@
 </#if>
 
   <#-- Pull in the HTML content from the model and replace non-FTL tokens -->
-${model.content?replace("downloadVersion","${downloadVersion}")?replace("buyTrezorLink","${buyTrezorLink}")}
+${model.content
+?replace("downloadVersionHD","${downloadVersionHD}")
+?replace("downloadVersionClassic","${downloadVersionClassic}")
+?replace("buyTrezorLink","${buyTrezorLink}")
+}
 
 </div>
 
