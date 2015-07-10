@@ -1,2 +1,4 @@
-
-Sitemap: http://multibit.org/sitemap.xml
+# robots.txt for multibit.org
+User-agent: *
+Sitemap: https://multibit.org/sitemap.xml
+Disallow: /releases/ # These are not to be indexed because they eat bandwidth
