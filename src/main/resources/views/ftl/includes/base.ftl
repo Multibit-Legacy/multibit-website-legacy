@@ -1,12 +1,13 @@
 <#-- @ftlvariable name="" type="org.multibit.site.views.PublicFreemarkerView" -->
 <#-- Template providing a single point of configuration for common variables -->
-<#assign downloadVersion = "0.1.0">
+<#assign downloadVersionHD = "0.1.1">
+<#assign downloadVersionClassic = "0.5.18">
 
 <#-- Create download links for latest version -->
-<#assign downloadWindows = "https://multibit.org/releases/multibit-hd/multibit-hd-${downloadVersion}/multibit-hd-windows-x64-${downloadVersion}.exe">
-<#assign downloadWindows32 = "https://multibit.org/releases/multibit-hd/multibit-hd-${downloadVersion}/multibit-hd-windows-${downloadVersion}.exe">
-<#assign downloadLinux = "https://multibit.org/releases/multibit-hd/multibit-hd-${downloadVersion}/multibit-hd-unix-${downloadVersion}.sh">
-<#assign downloadOSX = "https://multibit.org/releases/multibit-hd/multibit-hd-${downloadVersion}/multibit-hd-macos-${downloadVersion}.dmg">
+<#assign downloadWindows = "https://multibit.org/releases/multibit-hd/multibit-hd-${downloadVersionHD}/multibit-hd-windows-x64-${downloadVersionHD}.exe">
+<#assign downloadWindows32 = "https://multibit.org/releases/multibit-hd/multibit-hd-${downloadVersionHD}/multibit-hd-windows-${downloadVersionHD}.exe">
+<#assign downloadLinux = "https://multibit.org/releases/multibit-hd/multibit-hd-${downloadVersionHD}/multibit-hd-unix-${downloadVersionHD}.sh">
+<#assign downloadOSX = "https://multibit.org/releases/multibit-hd/multibit-hd-${downloadVersionHD}/multibit-hd-macos-${downloadVersionHD}.dmg">
 
 <#assign signatureWindows = "${downloadWindows}.asc">
 <#assign signatureWindows32 = "${downloadWindows32}.asc">
