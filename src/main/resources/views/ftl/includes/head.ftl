@@ -8,13 +8,11 @@
 
 <title>${model.msg("head.title")}</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="MultiBit HD Bitcoin wallet - Official Site">
-<meta name="keywords" content="multibit,multibit classic,multibit hd,multibithd,bitcoin,bitcoin wallet,bitcoin desktop wallet,bitcoin laptop wallet,bitcoin software,digital
-currency,trezor,xchange,
-bip32,bip39,bip44">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="MultiBit HD Bitcoin wallet - Official Site" />
+<meta name="keywords" content="multibit,multibit classic,multibit hd,multibithd,bitcoin,bitcoin wallet,bitcoin desktop wallet,bitcoin laptop wallet,bitcoin software,digital currency,trezor,xchange,bip32,bip39,bip44" />
 <meta name="alexaVerifyID" content="7tCwJOsMCYO8h_sG800FoCMpMJc" />
-<meta name="author" content="Gary Rowe">
+<meta name="author" content="Gary Rowe" />
 
 <link rel="shortcut icon" href="/images/favicon.png">
 
