@@ -26,7 +26,7 @@
 # Example of a beta test alert:
 
 <#assign alertClass = "success">
-<#assign alertText = "Beta testers: <a href='https://multibit.org/releases/multibit-0.5.9rc1/'>MultiBit v0.5.9 Release Candidate 1</a> is now available for trials.">
+<#assign alertText = "Beta testers: <a href='https://multibit.org/releases/multibit-classic/multibit-0.5.9rc1/'>MultiBit v0.5.9 Release Candidate 1</a> is now available for trials.">
 
 -->
 
