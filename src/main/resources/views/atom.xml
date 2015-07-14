@@ -3,7 +3,14 @@
     <title>MultiBit Blog</title>
     <id>urn:uuid:295952f4-1701-48c2-ae70-c9c1fdda50e2</id>
     <author>MultiBit Team</author>
-    <updated>2015-07-11T14:29:48Z</updated>
+    <updated>2015-07-14T12:55:46Z</updated>
+    <entry>
+        <id>urn:uuid:7ff21a06-ffd8-48b4-b204-d508a01135b3</id>
+        <title>&lt;h3&gt;MultiBit HD Release 0.1.2 is now available&lt;/h3&gt;</title>
+        <link rel="self" href="https://multibit.org/en/blog/2015/07/14/multibit-hd-release-0.1.2.html"/>
+        <updated>2015-07-14T12:00:00Z</updated>
+        <summary>&lt;p&gt;We are pleased to announce the next &lt;a href="/index.html"&gt;MultiBit HD Release (0.1.2) is available for download.&lt;/a&gt;&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2015/07/14/multibit-hd-release-0.1.2.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+    </entry>
     <entry>
         <id>urn:uuid:09385ee1-5501-4458-9ba7-d4ba1b47f5ad</id>
         <title>&lt;h3&gt;MultiBit HD Release 0.1.1 is now available&lt;/h3&gt;</title>
@@ -274,10 +281,10 @@ to your use of MultiBit.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a tar
   economics.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2011/10/24/prague.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
     </entry>
     <entry>
-        <id>urn:uuid:7ff21a06-ffd8-48b4-b204-d508a01135b3</id>
+        <id>urn:uuid:89d14477-4218-4764-a8f3-1fdb5c7116b4</id>
         <title>&lt;h3&gt;MultiBit HD Release 0.1.2 is now available&lt;/h3&gt;</title>
-        <link rel="self" href="https://multibit.org/en/blog/2015/07/14/multibit-hd-release-0.1.2.html"/>
-        <updated>2015-07-14T12:00:00Z</updated>
-        <summary>&lt;p&gt;We are pleased to announce the next &lt;a href="/index.html"&gt;MultiBit HD Release (0.1.2) is available for download.&lt;/a&gt;&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2015/07/14/multibit-hd-release-0.1.2.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+        <link rel="self" href="https://multibit.org/en/blog/2015/07/15/multibit-hd-release-0.1.2.html"/>
+        <updated>2015-07-15T12:00:00Z</updated>
+        <summary>&lt;p&gt;We are pleased to announce the next &lt;a href="/index.html"&gt;MultiBit HD Release (0.1.2) is available for download.&lt;/a&gt;&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2015/07/15/multibit-hd-release-0.1.2.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
     </entry>
 </feed>
