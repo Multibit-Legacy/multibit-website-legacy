@@ -36,6 +36,7 @@ public class BaseModel {
     localisedNavbars.put(Locale.ENGLISH.getLanguage(),localiseNavBar(Locale.ENGLISH));
     localisedNavbars.put(Locale.JAPANESE.getLanguage(),localiseNavBar(Locale.JAPANESE));
     localisedNavbars.put(Locale.FRENCH.getLanguage(),localiseNavBar(Locale.FRENCH));
+    localisedNavbars.put(Locale.SIMPLIFIED_CHINESE.getLanguage(),localiseNavBar(Locale.SIMPLIFIED_CHINESE));
   }
 
   // Request scope variables
@@ -80,7 +81,7 @@ public class BaseModel {
       return;
     }
 
-    Preconditions.checkArgument(resourcePath.contains("/"+locale.getLanguage()+"/"));
+    Preconditions.checkArgument(resourcePath.contains("/" + locale.getLanguage() + "/"));
 
     // Determine the navbar status
     if (resourcePath.contains("download")) {
