@@ -41,6 +41,12 @@ public class RuntimeExceptionMapper implements ExceptionMapper<RuntimeException>
 
       return handleWebApplicationException(runtime, defaultResponse);
     }
+    if (runtime instanceof IllegalArgumentException) {
+      return BaseResource.applyHeaders(Response
+          .status(Response.Status.NOT_FOUND)
+          .entity(new PublicErrorResource().view404())
+      ).build();
+    }
 
     // Use the default
     log.error(runtime.getMessage(),runtime);

@@ -80,7 +80,7 @@ public class BaseModel {
       return;
     }
 
-    Preconditions.checkState(resourcePath.contains("/"+locale.getLanguage()+"/"));
+    Preconditions.checkArgument(resourcePath.contains("/"+locale.getLanguage()+"/"));
 
     // Determine the navbar status
     if (resourcePath.contains("download")) {
