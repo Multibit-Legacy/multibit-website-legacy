@@ -37,6 +37,7 @@ public class BaseModel {
     localisedNavbars.put(Locale.JAPANESE.getLanguage(),localiseNavBar(Locale.JAPANESE));
     localisedNavbars.put(Locale.FRENCH.getLanguage(),localiseNavBar(Locale.FRENCH));
     localisedNavbars.put(Locale.SIMPLIFIED_CHINESE.getLanguage(),localiseNavBar(Locale.SIMPLIFIED_CHINESE));
+    localisedNavbars.put(new Locale("es").getLanguage(),localiseNavBar(new Locale("es")));
   }
 
   // Request scope variables

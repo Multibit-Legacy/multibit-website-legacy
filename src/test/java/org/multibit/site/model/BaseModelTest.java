@@ -58,4 +58,13 @@ public class BaseModelTest {
 
   }
 
+  @Test
+  public void testGetNavBar_ES() throws Exception {
+
+    BaseModel testObject = new BaseModel("/es/index.html",true, new Locale("es"));
+
+    assertThat(testObject.getNavBar()).contains("descargar");
+
+  }
+
 }
