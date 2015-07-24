@@ -1,0 +1,158 @@
+<h3>Bit flipping attack: AES+HTTPS is not enough</h3>
+
+<p>This is a guest post from a security researcher who took a close look at the way that <a href="/en/help/hd0.1/how-brit-works.html">MultiBit receives payment through the BRIT
+  system</a>. As part of our <a
+  href="/en/help/hd0.1/responsible-disclosure.html">responsible disclosure procedure</a> here are the details of the attack and what has been done to mitigate it.<p>
+
+<p>As an ordinary user of MultiBit HD <strong>this does not affect the security of your bitcoins</strong>. That said, it is always best to run on the latest version of MultiBit
+  HD so you should upgrade to version 0.1.2 or higher. We announce all our releases on Twitter and our RSS/Atom feed (see below) as a backup to our auto-upgrade system.</p>
+
+<p>If you are a developer with an interest in cryptography we would urge you to read the entirety of the article since it illustrates why even AES wrapped in HTTPS does not offer
+  sufficient security against certain attacks.</p>
+
+<h4>Overview</h4>
+
+<p>A vulnerability was identified and fixed in MultiBit HD 0.1.2 that allowed an attacker to insert unspendable Bitcoin addresses into the list MultiBit uses to
+  send fees to the developers.</p>
+
+<h4>Background</h4>
+
+<p>Recently I took a close look at BRIT, the protocol MultiBit uses to send lists of fee addresses from the developers to the wallet users. Each transaction a MultiBit user makes
+  earns the developers a small fee that is periodically sent to one of the Bitcoin addresses received via BRIT, or to a hard coded address if no BRIT addresses are available. I
+  noticed in the <a href="https://github.com/bitcoin-solutions/brit-service/blob/9c725ddc2262ae2b404fbaec76cea34cc9909514/src/main/doc/Early-draft-of-overview-of-BRIT.md"
+                    target="_blank">documentation</a> that the fee addresses sent to the user from the server are strongly encrypted, but the messages <em>had no built in
+    authentication mechanism</em>. Specifically in step 7 they make the claim that encryption</p>
+<blockquote>"...also validates the Matcher is actually the BRIT Matcher and has not been man-in-the-middled."</blockquote>
+<p>While it is true that the BRIT Matcher (server) is the only entity that could decrypt the request to get the AES key to use for the exchange, without a message authentication
+  code (MAC) the client has no way to know for sure if whatever response it receives was what the server actually sent. The client could receive random garbage and it has no way of
+  telling the difference between a response from a server with severe memory issues or just random garbage. More subtle, however, is that the client has no way of telling a valid
+  response with some non-malicious corruption from a valid response with malicious corruption. This is bad.</p>
+
+<h4>Technical</h4>
+
+<p>BRIT uses strong encryption to protect the address exchange. Specifically, they use <a href="https://en.wikipedia.org/wiki/Advanced_Encryption_Standard" target="_blank">AES-256
+  (Advanced Encryption Standard)</a> in <a href="https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher_Block_Chaining_.28CBC.29" target="_blank">CBC (cipher block
+  chaining)</a> mode to encrypt the actual address list. CBC mode has the property that changing the ciphertext of block <code>i</code> causes predictable changes in the
+  plaintext of block <code>i+1</code> at the cost of scrambling the plaintext for block <code>i</code>. Any bits flipped in block <code>i</code> will cause the same bits to flip in
+  the plaintext for block <code>i+1</code>. This is called a <a href="https://en.wikipedia.org/wiki/Bit-flipping_attack" target="_blank">bit flipping attack</a> and it is
+  especially powerful when the message has a predictable format.</p>
+
+<p>In the case of BRIT the address list changes every day, but the list is static for all users who request it on the same day. Thus if Eve requests it at 00:01 she will get the
+  same list as Bob who requests it at 23:00.</p>
+
+<p>Generally this set of conditions is not good:</p>
+<ul>
+  <li>the lack of a MAC</li>
+  <li>CBC mode</li>
+  <li>known plaintext</li>
+</ul>
+
+<p>It puts a man-in-the-middle (MITM) attacker, Eve, in a pretty powerful position. Specifically, Eve is able to change up to half of the message arbitrarily <strong>without
+  needing to break any encryption</strong> and the client will accept it as valid.</p>
+
+<p>Let's say Eve doesn't like MultiBit and wants to deny it funding. Let's also say that she can:</p>
+<ol>
+  <li>MITM any connection between a client and server (large ISP, backbone router)</li>
+  <li>alter the traffic sent between them (HTTPS proxy)</li>
+  <li>contact the server once a day (trivial)</li>
+  <li>has access to modest computing resources (trivial)</li>
+</ol>
+
+<p>Eve is now in a position to cut off nearly all of the fees MultiBit gets if she exploits this vulnerability carefully.</p>
+
+<p>While Bitcoin addresses may look random, they have some strong error detection built in. Specifically, <a
+  href="https://en.bitcoin.it/wiki/Technical_background_of_version_1_Bitcoin_addresses" target="_blank"> the last 4 bytes of the address are the first 4 bytes of the double
+  SHA-256 of the rest of the address</a>. This means randomly changing any part of an address is very unlikely to still make a valid Bitcoin address. MultiBit does this error
+  checking when importing addresses from BRIT so Eve has to do a little work to get a malicious address inserted into MultiBit's fee address list. Luckily for Eve the list is
+  static for every single user so any change that still gives her a valid address will work for every user for the entire day.</p>
+<p>In this context a malicious address is one that the MultiBit developers do not have control over and can not spend any funds sent to it. Additionally it is very, very
+  unlikely that anyone has a corresponding private key for the address so the coins sent to it are effectively burned.</p>
+
+<h4>The attack</h4>
+
+<p>To generate a malicious address:</p>
+<ol>
+  <li>select an address in the genuine fee list that begins very soon after the start of an AES block boundary (several are guaranteed since 50 addresses are returned)</li>
+  <li>randomly change the portion of the address that falls within the AES block until you get one with a valid double SHA-256 checksum</li>
+</ol>
+<p>The above has a complexity of 2<sup>32</sup> with the actual work being the double SHA-256 calculations. I re-purposed some of the MultiBit and Bitcoinj code to generate
+  these malicious addresses and I was able to get ~0.8Mhash/s on my i7-4790K and found an address about every 90 minutes. It's important to note that the work to validate the
+  addresses is the same as the proof of work to mine a block, so benchmarks from Bitcoin mining with CPUs and GPUs can be used to get an idea of how much faster finding addresses
+  can be done with a better tool. <a href="https://en.bitcoin.it/wiki/Non-specialized_hardware_comparison" target="_blank">This list</a> shows a similar i7 achieving 66.6Mhash/s
+  with a dedicated Bitcoin mining tool, so this attack can be sped up considerably. GPUs (and possibly ASICs) could also be used to further accelerate the attack.</p>
+
+<p>Consider an address from the Bitcoin wiki: <code>16UwLL9Risc3QfP<strong>qBUvKofHmBQ7wMtjvM</strong></code> we can generate some examples of malicious addresses:</p>
+
+<div align="center">
+  <table>
+    <tbody align="right">
+
+    <tr>
+      <td>1yoVWJsArgM6FgL<strong>qBUvKofHmBQ7wMtjvM</strong></td>
+    </tr>
+
+    <tr>
+      <td>1VEZvA4mApUjvP5<strong>qBUvKofHmBQ7wMtjvM</strong></td>
+    </tr>
+    <tr>
+      <td>1wXXbEVRu9XGzcp<strong>qBUvKofHmBQ7wMtjvM</strong></td>
+    </tr>
+    <tr>
+      <td>13sPH9iJyriu24y<strong>qBUvKofHmBQ7wMtjvM</strong></td>
+    </tr>
+    <tr>
+      <td>1fDmv7J6XTNQmXV<strong>qBUvKofHmBQ7wMtjvM</strong></td>
+    </tr>
+    <tr>
+      <td>11N3myPVa79dJCi<strong>qBUvKofHmBQ7wMtjvM</strong></td>
+    </tr>
+    <tr>
+      <td>1Cv2dEJFA11R3Yj<strong>qBUvKofHmBQ7wMtjvM</strong></td>
+    </tr>
+    <tr>
+      <td>17aq24aB6jMDt4g<strong>qBUvKofHmBQ7wMtjvM</strong></td>
+    </tr>
+    <tr>
+      <td>1ZuW4d5rqL9giyF<strong>qBUvKofHmBQ7wMtjvM</strong></td>
+    </tr>
+    <tr>
+      <td>11YKLgUDqxXD8Do<strong>qBUvKofHmBQ7wMtjvM</strong></td>
+    </tr>
+    <tr>
+      <td>1WYZjME5s9tXdD4<strong>qBUvKofHmBQ7wMtjvM</strong></td>
+    </tr>
+    <tr>
+      <td>1HSb2C1FR6A9y88<strong>qBUvKofHmBQ7wMtjvM</strong></td>
+    </tr>
+    <tr>
+      <td>1XR1GM2ScaMFvxW<strong>qBUvKofHmBQ7wMtjvM</strong></td>
+    </tr>
+    <tr>
+      <td>1oyHaBvLALhrZxK<strong>qBUvKofHmBQ7wMtjvM</strong></td>
+    </tr>
+
+    </tbody>
+  </table>
+</div>
+<br/>
+<p>If the original address was one of the fee addresses sent via BRIT, Eve would be able to use any of the above malicious addresses to replace it and keep fees from going
+  back to MultiBit's developers.</p>
+
+<p>If Eve wanted to steal fees for herself she would need to generate an ECC keypair that has a partial RIPEMD-160 collision with a genuine address and a valid SHA-256 checksum.
+  Assuming Eve gets an optimal address/block match up and a 1:1 mapping of the base 58 encoding to binary to make the math easier (it's not actually 1:1) this task has a
+  complexity
+  of <code>>=2<sup>(25-14)*8</sup> = 2<sup>88</sup></code> so stealing fees for herself is unlikely even if Eve is backed by a nation state.</p>
+
+<h4>The fix</h4>
+
+<p>To stop this attack BRIT was updated in version 2 and MultiBit version 0.1.2 to include a keyed MAC so that clients can detect when something was changed in transit.
+  Specifically <a href="https://en.wikipedia.org/wiki/Hash-based_message_authentication_code" target="_blank">HMAC-SHA-256</a> is used to ensure message integrity.
+  If an invalid HMAC is detected MultiBit treats it as if it cannot contact the BRIT server and falls back to hardcoded fee addresses.</p>
+
+<h4>Conclusion</h4>
+
+<p>It is important to remember that even though something was encrypted with a secret key, that alone is not enough to prove a message's validity. It is essential to include
+  authentication in addition to encryption. In the case of BRIT the lack of a MAC was enough to permit an attacker to cut off a major source of funding for the project.
+  <strong>Don't let this happen to you.</strong></p>
+
+<p>Will</p>
