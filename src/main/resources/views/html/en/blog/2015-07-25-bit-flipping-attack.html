@@ -1,14 +1,15 @@
-<h3>Bit flipping attack: AES+HTTPS is not enough</h3>
+<h3>Bit flipping attack</h3>
 
 <p>This is a guest post from a security researcher who took a close look at the way that <a href="/en/help/hd0.1/how-brit-works.html">MultiBit receives payment through the BRIT
-  system</a>. As part of our <a
-  href="/en/help/hd0.1/responsible-disclosure.html">responsible disclosure procedure</a> here are the details of the attack and what has been done to mitigate it.<p>
+  system</a>. As part of our <a href="/en/responsible-disclosure.html">responsible disclosure procedure</a> here are the details of the attack and what has been done to mitigate it.<p>
 
 <p>As an ordinary user of MultiBit HD <strong>this does not affect the security of your bitcoins</strong>. That said, it is always best to run on the latest version of MultiBit
   HD so you should upgrade to version 0.1.2 or higher. We announce all our releases on Twitter and our RSS/Atom feed (see below) as a backup to our auto-upgrade system.</p>
 
-<p>If you are a developer with an interest in cryptography we would urge you to read the entirety of the article since it illustrates why even AES wrapped in HTTPS does not offer
-  sufficient security against certain attacks.</p>
+<p>If you are a developer with an interest in cryptography we would urge you to read the entirety of the article since it illustrates why AES wrapped in HTTPS does not
+  offer sufficient security against certain attacks.</p>
+
+<hr/>
 
 <h4>Overview</h4>
 
@@ -80,6 +81,9 @@
   addresses is the same as the proof of work to mine a block, so benchmarks from Bitcoin mining with CPUs and GPUs can be used to get an idea of how much faster finding addresses
   can be done with a better tool. <a href="https://en.bitcoin.it/wiki/Non-specialized_hardware_comparison" target="_blank">This list</a> shows a similar i7 achieving 66.6Mhash/s
   with a dedicated Bitcoin mining tool, so this attack can be sped up considerably. GPUs (and possibly ASICs) could also be used to further accelerate the attack.</p>
+
+<p>My <a href="https://github.com/Marclass/BritExploit">demonstration exploit script</a> generates these addresses at roughly 10 second intervals at a cost of about 0.20 USD
+  per address on an Amazon EC2 C4 instance.</p>
 
 <p>Consider an address from the Bitcoin wiki: <code>16UwLL9Risc3QfP<strong>qBUvKofHmBQ7wMtjvM</strong></code> we can generate some examples of malicious addresses:</p>
 
@@ -155,4 +159,13 @@
   authentication in addition to encryption. In the case of BRIT the lack of a MAC was enough to permit an attacker to cut off a major source of funding for the project.
   <strong>Don't let this happen to you.</strong></p>
 
-<p>Will</p>
+<p>Marclass</p>
+
+<p>25 July 2015</p>
+
+<h4>Related articles</h4>
+<p>Here are some related articles:</p>
+<ul>
+  <li><a href="/en/help/hd0.1/how-brit-works.html">FAQ for BRIT</a></li>
+  <li><a href="/blog/2014/04/11/multibit-hd-brit.html">Introducing BRIT (older article)</a></li>
+</ul>
