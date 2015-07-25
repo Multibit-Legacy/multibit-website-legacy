@@ -3,7 +3,18 @@
     <title>MultiBit Blog</title>
     <id>urn:uuid:086239e0-5113-4c25-a976-5a1dc0921a3b</id>
     <author>MultiBit Team</author>
-    <updated>2015-07-15T12:19:38Z</updated>
+    <updated>2015-07-25T14:07:07Z</updated>
+    <entry>
+        <id>urn:uuid:37daf184-fdac-454a-93ab-b64c51db6e69</id>
+        <title>&lt;h3&gt;Bit flipping attack&lt;/h3&gt;</title>
+        <link rel="self" href="https://multibit.org/en/blog/2015/07/25/bit-flipping-attack.html"/>
+        <updated>2015-07-25T10:03:44Z</updated>
+        <summary>&lt;p&gt;This is a guest post from a security researcher who took a close look at the way that &lt;a href="/en/help/hd0.1/how-brit-works.html"&gt;MultiBit receives payment through the BRIT
+  system&lt;/a&gt;. As part of our &lt;a href="/en/responsible-disclosure.html"&gt;responsible disclosure procedure&lt;/a&gt; here are the details of the attack and what has been done to mitigate it.&lt;p&gt;
+
+&lt;p&gt;As an ordinary user of MultiBit HD &lt;strong&gt;this does not affect the security of your bitcoins&lt;/strong&gt;. That said, it is always best to run on the latest version of MultiBit
+  HD so you should upgrade to version 0.1.2 or higher. We announce all our releases on Twitter and our RSS/Atom feed (see below) as a backup to our auto-upgrade system.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2015/07/25/bit-flipping-attack.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+    </entry>
     <entry>
         <id>urn:uuid:d742bf83-2c13-4171-8fb9-0fd8bcd8343c</id>
         <title>&lt;h3&gt;MultiBit Classic is four years old today&lt;/h3&gt;</title>

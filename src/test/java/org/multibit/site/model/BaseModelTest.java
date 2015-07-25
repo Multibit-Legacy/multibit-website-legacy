@@ -16,7 +16,7 @@ public class BaseModelTest {
   @Test
   public void testInitialise_Malformed() throws Exception {
 
-    thrown.expect(IllegalStateException.class);
+    thrown.expect(IllegalArgumentException.class);
     new BaseModel("/",true, Locale.UK);
 
   }
@@ -33,7 +33,7 @@ public class BaseModelTest {
   @Test
   public void testGetNavBar_EN_Malformed() throws Exception {
 
-    thrown.expect(IllegalStateException.class);
+    thrown.expect(IllegalArgumentException.class);
 
     // Specific path overrides locale
     BaseModel testObject = new BaseModel("/en/index.html",true, Locale.JAPANESE);
@@ -54,7 +54,16 @@ public class BaseModelTest {
 
     BaseModel testObject = new BaseModel("/zh/index.html",true, Locale.CHINESE);
 
-    assertThat(testObject.getNavBar()).contains("Download");
+    assertThat(testObject.getNavBar()).contains("\u4e0b\u8f7d");
+
+  }
+
+  @Test
+  public void testGetNavBar_ES() throws Exception {
+
+    BaseModel testObject = new BaseModel("/es/index.html",true, new Locale("es"));
+
+    assertThat(testObject.getNavBar()).contains("descargar");
 
   }
 
