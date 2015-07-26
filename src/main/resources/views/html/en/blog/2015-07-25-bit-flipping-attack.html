@@ -1,7 +1,8 @@
 <h3>Bit flipping attack</h3>
 
 <p>This is a guest post from a security researcher who took a close look at the way that <a href="/en/help/hd0.1/how-brit-works.html">MultiBit receives payment through the BRIT
-  system</a>. As part of our <a href="/en/responsible-disclosure.html">responsible disclosure procedure</a> here are the details of the attack and what has been done to mitigate it.<p>
+  system</a>. As part of our <a href="/en/responsible-disclosure.html">responsible disclosure procedure</a> here are the details of the attack and what has been done to mitigate
+  it.<p>
 
 <p>As an ordinary user of MultiBit HD <strong>this does not affect the security of your bitcoins</strong>. That said, it is always best to run on the latest version of MultiBit
   HD so you should upgrade to version 0.1.2 or higher. We announce all our releases on Twitter and our RSS/Atom feed (see below) as a backup to our auto-upgrade system.</p>
@@ -82,7 +83,7 @@
   can be done with a better tool. <a href="https://en.bitcoin.it/wiki/Non-specialized_hardware_comparison" target="_blank">This list</a> shows a similar i7 achieving 66.6Mhash/s
   with a dedicated Bitcoin mining tool, so this attack can be sped up considerably. GPUs (and possibly ASICs) could also be used to further accelerate the attack.</p>
 
-<p>My <a href="https://github.com/Marclass/BritExploit">demonstration exploit script</a> generates these addresses at roughly 10 second intervals at a cost of about 0.20 USD
+<p>My <a href="https://github.com/Marclass/BritExploit">demonstration exploit script</a> generates these addresses at roughly 10 minute intervals at a cost of about 0.20 USD
   per address on an Amazon EC2 C4 instance.</p>
 
 <p>Consider an address from the Bitcoin wiki: <code>16UwLL9Risc3QfP<strong>qBUvKofHmBQ7wMtjvM</strong></code> we can generate some examples of malicious addresses:</p>
@@ -142,10 +143,9 @@
 <p>If the original address was one of the fee addresses sent via BRIT, Eve would be able to use any of the above malicious addresses to replace it and keep fees from going
   back to MultiBit's developers.</p>
 
-<p>If Eve wanted to steal fees for herself she would need to generate an ECC keypair that has a partial RIPEMD-160 collision with a genuine address and a valid SHA-256 checksum.
-  Assuming Eve gets an optimal address/block match up and a 1:1 mapping of the base 58 encoding to binary to make the math easier (it's not actually 1:1) this task has a
-  complexity
-  of <code>>=2<sup>(25-14)*8</sup> = 2<sup>88</sup></code> so stealing fees for herself is unlikely even if Eve is backed by a nation state.</p>
+<p>If Eve wanted to steal fees for herself she would need to generate an ECDSA keypair that has a partial RIPEMD-160 collision with a genuine address and a valid SHA-256
+  checksum. Assuming Eve gets an optimal address/block match up and a simplified mapping of the base 58 string to binary to make the math easier (it's not actually 1:1) this task
+  has a complexity of <code>>=2<sup>(25-14)*8</sup> = 2<sup>88</sup></code> so stealing fees for herself is unlikely even if Eve is backed by a nation state.</p>
 
 <h4>The fix</h4>
 
