@@ -20,7 +20,7 @@
         <title>&lt;h3&gt;MultiBit Classic is four years old today&lt;/h3&gt;</title>
         <link rel="self" href="https://multibit.org/en/blog/2015/07/16/multibit-classic-is-four-years-old-today.html"/>
         <updated>2015-07-16T12:00:00Z</updated>
-        <summary>&lt;p&gt;On 16 July 2011 Jim pushed &lt;a href="https://github.com/jim618/multibit/commit/75fb14dcaf4c1dc96732cd876d7aadc7736222ee" target="_blank"&gt;the first commit&lt;/a&gt;
+        <summary>&lt;p&gt;On 16 July 2011 Jim pushed &lt;a href="https://github.com/bitcoin-solutions/multibit/commit/75fb14dcaf4c1dc96732cd876d7aadc7736222ee" target="_blank"&gt;the first commit&lt;/a&gt;
   of the MultiBit source code to GitHub. This marked the beginning of a long journey as part of the Bitcoin ecosystem which we would like to share with you today.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2015/07/16/multibit-classic-is-four-years-old-today.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
     </entry>
     <entry>
@@ -106,7 +106,7 @@
         <title>&lt;h3&gt;Wallet forensics for Issue #661&lt;/h3&gt;</title>
         <link rel="self" href="https://multibit.org/en/blog/2015/02/02/wallet-forensics.html"/>
         <updated>2015-02-02T12:00:00Z</updated>
-        <summary>&lt;p&gt;Recently a user raised &lt;a href="https://github.com/jim618/multibit/issues/661" target="_blank"&gt;Issue #661&lt;/a&gt; on GitHub where unfortunately they lost a total of 1.43033675 bitcoin. This blog article provides details of the forensics we performed to find out what happened and our recommendations for action to try to prevent this happening again.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2015/02/02/wallet-forensics.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+        <summary>&lt;p&gt;Recently a user raised &lt;a href="https://github.com/bitcoin-solutions/multibit/issues/661" target="_blank"&gt;Issue #661&lt;/a&gt; on GitHub where unfortunately they lost a total of 1.43033675 bitcoin. This blog article provides details of the forensics we performed to find out what happened and our recommendations for action to try to prevent this happening again.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2015/02/02/wallet-forensics.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
     </entry>
     <entry>
         <id>urn:uuid:bcf1b6fc-5ebb-472d-b517-8423ed0616e2</id>
