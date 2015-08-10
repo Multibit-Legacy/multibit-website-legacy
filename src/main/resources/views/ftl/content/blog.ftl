@@ -29,7 +29,7 @@ ${model.content
     <a href="bitcoin:1AhN6rPdrMuKBGFDKR1k9A8SCLYaNgXhty?amount=0.01&label=Please%20donate%20to%20multibit.org">donations</a>
     go towards development and server costs.</p>
 
-  <p>Was this article accurate ?<br/>If not please <a href="https://github.com/jim618/multibit-website/issues/new">raise a website improvement Issue</a> so that we can do better.
+  <p>Was this article accurate ?<br/>If not please <a href="https://github.com/bitcoin-solutions/multibit-website/issues/new">raise a website improvement Issue</a> so that we can do better.
   </p>
 
 </div>

@@ -200,5 +200,5 @@ since their free instances are sufficient for most low to medium traffic sites a
 
 ## I've spotted a bug in the site what should I do?
 
-[Raise an Issue](https://github.com/jim618/multibit-website/issues) through GitHub and we'll address it. Before diving
+[Raise an Issue](https://github.com/bitcoin-solutions/multibit-website/issues) through GitHub and we'll address it. Before diving
 in make sure that you've checked to see that the issue has not already been raised by another.
