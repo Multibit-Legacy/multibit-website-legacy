@@ -72,7 +72,7 @@ public class BaseModelTest {
 
     BaseModel testObject = new BaseModel("/ru/index.html",true, new Locale("ru"));
 
-    assertThat(testObject.getNavBar()).contains("\u0441\u043a\u0430\u0447\u0430\u0442\u044c");
+    assertThat(testObject.getNavBar()).contains("\u0421\u043a\u0430\u0447\u0430\u0442\u044c");
 
   }
 
