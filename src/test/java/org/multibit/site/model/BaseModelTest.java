@@ -36,7 +36,7 @@ public class BaseModelTest {
     thrown.expect(IllegalArgumentException.class);
 
     // Specific path overrides locale
-    BaseModel testObject = new BaseModel("/en/index.html",true, Locale.JAPANESE);
+    new BaseModel("/en/index.html",true, Locale.JAPANESE);
 
   }
 
@@ -64,6 +64,15 @@ public class BaseModelTest {
     BaseModel testObject = new BaseModel("/es/index.html",true, new Locale("es"));
 
     assertThat(testObject.getNavBar()).contains("descargar");
+
+  }
+
+  @Test
+  public void testGetNavBar_RU() throws Exception {
+
+    BaseModel testObject = new BaseModel("/ru/index.html",true, new Locale("ru"));
+
+    assertThat(testObject.getNavBar()).contains("\u0441\u043a\u0430\u0447\u0430\u0442\u044c");
 
   }
 
