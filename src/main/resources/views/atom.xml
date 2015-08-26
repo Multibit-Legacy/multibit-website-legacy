@@ -3,14 +3,14 @@
     <title>MultiBit Blog</title>
     <id>urn:uuid:15b1f1cd-114e-49a0-87a8-efd2f16c3e98</id>
     <author>MultiBit Team</author>
-    <updated>2015-07-25T14:07:07Z</updated>
+    <updated>2015-08-26T08:48:07Z</updated>
     <entry>
         <id>urn:uuid:37daf184-fdac-454a-93ab-b64c51db6e69</id>
         <title>&lt;h3&gt;Bit flipping attack&lt;/h3&gt;</title>
         <link rel="self" href="https://multibit.org/en/blog/2015/07/25/bit-flipping-attack.html"/>
         <updated>2015-07-25T10:03:44Z</updated>
-        <summary>&lt;p&gt;This is a guest post from a security researcher who took a close look at the way that &lt;a href="/en/help/hd0.1/how-brit-works.html"&gt;MultiBit receives payment through the BRIT
-  system&lt;/a&gt;. As part of our &lt;a href="/en/responsible-disclosure.html"&gt;responsible disclosure procedure&lt;/a&gt; here are the details of the attack and what has been done to mitigate it.&lt;p&gt;
+        <summary>&lt;p&gt;This is a guest post from a security researcher who took a close look at the way that &lt;a href=&quot;/en/help/hd0.1/how-brit-works.html&quot;&gt;MultiBit receives payment through the BRIT
+  system&lt;/a&gt;. As part of our &lt;a href=&quot;/en/responsible-disclosure.html&quot;&gt;responsible disclosure procedure&lt;/a&gt; here are the details of the attack and what has been done to mitigate it.&lt;p&gt;
 
 &lt;p&gt;As an ordinary user of MultiBit HD &lt;strong&gt;this does not affect the security of your bitcoins&lt;/strong&gt;. That said, it is always best to run on the latest version of MultiBit
   HD so you should upgrade to version 0.1.2 or higher. We announce all our releases on Twitter and our RSS/Atom feed (see below) as a backup to our auto-upgrade system.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2015/07/25/bit-flipping-attack.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
@@ -20,7 +20,7 @@
         <title>&lt;h3&gt;MultiBit Classic is four years old today&lt;/h3&gt;</title>
         <link rel="self" href="https://multibit.org/en/blog/2015/07/16/multibit-classic-is-four-years-old-today.html"/>
         <updated>2015-07-16T12:00:00Z</updated>
-        <summary>&lt;p&gt;On 16 July 2011 Jim pushed &lt;a href="https://github.com/bitcoin-solutions/multibit/commit/75fb14dcaf4c1dc96732cd876d7aadc7736222ee" target="_blank"&gt;the first commit&lt;/a&gt;
+        <summary>&lt;p&gt;On 16 July 2011 Jim pushed &lt;a href=&quot;https://github.com/bitcoin-solutions/multibit/commit/75fb14dcaf4c1dc96732cd876d7aadc7736222ee&quot; target=&quot;_blank&quot;&gt;the first commit&lt;/a&gt;
   of the MultiBit source code to GitHub. This marked the beginning of a long journey as part of the Bitcoin ecosystem which we would like to share with you today.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2015/07/16/multibit-classic-is-four-years-old-today.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
     </entry>
     <entry>
@@ -28,21 +28,21 @@
         <title>&lt;h3&gt;MultiBit HD Release 0.1.2 is now available&lt;/h3&gt;</title>
         <link rel="self" href="https://multibit.org/en/blog/2015/07/15/multibit-hd-release-0.1.2.html"/>
         <updated>2015-07-15T12:00:00Z</updated>
-        <summary>&lt;p&gt;We are pleased to announce the next &lt;a href="/index.html"&gt;MultiBit HD Release (0.1.2) is available for download.&lt;/a&gt;&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2015/07/15/multibit-hd-release-0.1.2.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+        <summary>&lt;p&gt;We are pleased to announce the next &lt;a href=&quot;/index.html&quot;&gt;MultiBit HD Release (0.1.2) is available for download.&lt;/a&gt;&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2015/07/15/multibit-hd-release-0.1.2.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
     </entry>
     <entry>
         <id>urn:uuid:5ca9372d-7ff5-4fa4-af9d-e5d2242c5f55</id>
         <title>&lt;h3&gt;MultiBit HD Release 0.1.1 is now available&lt;/h3&gt;</title>
         <link rel="self" href="https://multibit.org/en/blog/2015/06/30/multibit-hd-release-0.1.1.html"/>
         <updated>2015-06-30T12:00:00Z</updated>
-        <summary>&lt;p&gt;We are pleased to announce that our first maintenance release &lt;a href="/index.html"&gt;MultiBit HD Release 0.1.1 is available for download.&lt;/a&gt;&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2015/06/30/multibit-hd-release-0.1.1.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+        <summary>&lt;p&gt;We are pleased to announce that our first maintenance release &lt;a href=&quot;/index.html&quot;&gt;MultiBit HD Release 0.1.1 is available for download.&lt;/a&gt;&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2015/06/30/multibit-hd-release-0.1.1.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
     </entry>
     <entry>
         <id>urn:uuid:bfb7fcca-bfde-418b-86a2-ca06327b4291</id>
         <title>&lt;h3&gt;Bitcoin network stress test&lt;/h3&gt;</title>
         <link rel="self" href="https://multibit.org/en/blog/2015/06/23/bitcoin-network-stress-test.html"/>
         <updated>2015-06-23T12:00:00Z</updated>
-        <summary>&lt;p&gt;On 20 June 2015 &lt;a href="http://www.reddit.com/r/Bitcoin/comments/3agk61/ultimate_bitcoin_stress_test_monday_june_22nd/" target="_blank"&gt;CoinWallet.eu announced&lt;/a&gt;
+        <summary>&lt;p&gt;On 20 June 2015 &lt;a href=&quot;http://www.reddit.com/r/Bitcoin/comments/3agk61/ultimate_bitcoin_stress_test_monday_june_22nd/&quot; target=&quot;_blank&quot;&gt;CoinWallet.eu announced&lt;/a&gt;
   that they would perform a Bitcoin network stress test starting Monday 22 June 2015 and extending over 100 blocks. The stated intention was to discover
   whether the block size limit of 1MB would, when transaction volume exceeded its capacity, allow for quick recovery of the network to normal service.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2015/06/23/bitcoin-network-stress-test.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
     </entry>
@@ -51,17 +51,17 @@
         <title>&lt;h3&gt;MultiBit HD Release 0.1 is now available&lt;/h3&gt;</title>
         <link rel="self" href="https://multibit.org/en/blog/2015/06/09/multibit-hd-release-0.1.html"/>
         <updated>2015-06-09T12:00:00Z</updated>
-        <summary>&lt;p&gt;We are pleased to announce that &lt;a href="/index.html"&gt;MultiBit HD Release 0.1 is available for download.&lt;/a&gt;&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2015/06/09/multibit-hd-release-0.1.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+        <summary>&lt;p&gt;We are pleased to announce that &lt;a href=&quot;/index.html&quot;&gt;MultiBit HD Release 0.1 is available for download.&lt;/a&gt;&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2015/06/09/multibit-hd-release-0.1.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
     </entry>
     <entry>
         <id>urn:uuid:4318632d-6ea6-4afc-a6df-5ce462743406</id>
         <title>&lt;h3&gt;BIP 32 Wallet compatibility&lt;/h3&gt;</title>
         <link rel="self" href="https://multibit.org/en/blog/2015/04/14/bip32-wallet-compatibility.html"/>
         <updated>2015-04-14T12:00:00Z</updated>
-        <summary>&lt;p&gt;Thanks to the sterling work of GitHub user "gurnec" during Beta testing an incompatibility between MultiBit HD and
+        <summary>&lt;p&gt;Thanks to the sterling work of GitHub user &quot;gurnec&quot; during Beta testing an incompatibility between MultiBit HD and
   other hierarchical deterministic (HD) wallets was discovered indicating that they are not BIP 32 compliant. This is
-  important because "BIP 32 compliance" means that a user of one wallet can easily migrate to another in a safe manner
-  simply by providing their "wallet words" during a restore process.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2015/04/14/bip32-wallet-compatibility.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+  important because &quot;BIP 32 compliance&quot; means that a user of one wallet can easily migrate to another in a safe manner
+  simply by providing their &quot;wallet words&quot; during a restore process.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2015/04/14/bip32-wallet-compatibility.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
     </entry>
     <entry>
         <id>urn:uuid:baf7f564-084d-4aee-b0f7-7293d5bb0e5f</id>
@@ -69,14 +69,14 @@
         <link rel="self" href="https://multibit.org/en/blog/2015/04/14/multibit-hd-beta-8.html"/>
         <updated>2015-04-14T12:00:00Z</updated>
         <summary>&lt;p&gt;We are pleased to announce the Beta 8 release of MultiBit HD. This release includes support for the Bitcoin standard
-  "Payment Protocol" (BIP 70). This standard enables merchants to provide signed payment requests with lots of features like memos, refund addresses, receipts etc.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2015/04/14/multibit-hd-beta-8.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+  &quot;Payment Protocol&quot; (BIP 70). This standard enables merchants to provide signed payment requests with lots of features like memos, refund addresses, receipts etc.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2015/04/14/multibit-hd-beta-8.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
     </entry>
     <entry>
         <id>urn:uuid:1d02e025-f3c8-4086-b816-8367228a71f3</id>
         <title>&lt;h3&gt;Payment Protocol support&lt;/h3&gt;</title>
         <link rel="self" href="https://multibit.org/en/blog/2015/04/14/payment-protocol-support-bip70.html"/>
         <updated>2015-04-14T12:00:00Z</updated>
-        <summary>&lt;p&gt;The &lt;a href="https://github.com/bitcoin/bips/blob/master/bip-0070.mediawiki" target="_blank"&gt;Payment Protocol (BIP 70)&lt;/a&gt; is a Bitcoin standard describing how merchants and wallet developers can work together
+        <summary>&lt;p&gt;The &lt;a href=&quot;https://github.com/bitcoin/bips/blob/master/bip-0070.mediawiki&quot; target=&quot;_blank&quot;&gt;Payment Protocol (BIP 70)&lt;/a&gt; is a Bitcoin standard describing how merchants and wallet developers can work together
   to produce a seamless buying experience using bitcoin. It is supported by MultiBit&amp;nbsp;HD Beta 8 and higher.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2015/04/14/payment-protocol-support-bip70.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
     </entry>
     <entry>
@@ -85,28 +85,28 @@
         <link rel="self" href="https://multibit.org/en/blog/2015/02/27/multibit-hd-beta-7.html"/>
         <updated>2015-02-27T12:00:00Z</updated>
         <summary>&lt;p&gt;As you may have noticed, we've stepped up the frequency of our beta release iteration cycle. Consequently the MultiBit HD Beta 7 is now
-  &lt;a href="https://multibit.org" target="_blank"&gt;available for download from our beta site&lt;/a&gt;.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2015/02/27/multibit-hd-beta-7.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+  &lt;a href=&quot;https://multibit.org&quot; target=&quot;_blank&quot;&gt;available for download from our beta site&lt;/a&gt;.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2015/02/27/multibit-hd-beta-7.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
     </entry>
     <entry>
         <id>urn:uuid:7089f75a-729a-4374-bbaf-d9ffd271c08c</id>
         <title>&lt;h3&gt;MultiBit HD Beta 6 Released&lt;/h3&gt;</title>
         <link rel="self" href="https://multibit.org/en/blog/2015/02/11/multibit-hd-beta-6.html"/>
         <updated>2015-02-11T12:00:00Z</updated>
-        <summary>&lt;p&gt;Following rapidly in the footsteps of Beta 5 the MultiBit HD Beta 6 is now &lt;a href="https://multibit.org" target="_blank"&gt;available for download from our beta site&lt;/a&gt;.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2015/02/11/multibit-hd-beta-6.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+        <summary>&lt;p&gt;Following rapidly in the footsteps of Beta 5 the MultiBit HD Beta 6 is now &lt;a href=&quot;https://multibit.org&quot; target=&quot;_blank&quot;&gt;available for download from our beta site&lt;/a&gt;.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2015/02/11/multibit-hd-beta-6.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
     </entry>
     <entry>
         <id>urn:uuid:2c06cd36-cc06-4189-9d89-a2ab52737bda</id>
         <title>&lt;h3&gt;MultiBit HD Beta 5 Released&lt;/h3&gt;</title>
         <link rel="self" href="https://multibit.org/en/blog/2015/02/04/multibit-hd-beta-5.html"/>
         <updated>2015-02-04T12:00:00Z</updated>
-        <summary>&lt;p&gt;We are proud to announce that MultiBit HD Beta 5 is now &lt;a href="https://multibit.org" target="_blank"&gt;available for download from our beta site&lt;/a&gt;.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2015/02/04/multibit-hd-beta-5.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+        <summary>&lt;p&gt;We are proud to announce that MultiBit HD Beta 5 is now &lt;a href=&quot;https://multibit.org&quot; target=&quot;_blank&quot;&gt;available for download from our beta site&lt;/a&gt;.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2015/02/04/multibit-hd-beta-5.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
     </entry>
     <entry>
         <id>urn:uuid:44661f22-ada4-4426-952c-638cb4cfe347</id>
         <title>&lt;h3&gt;Wallet forensics for Issue #661&lt;/h3&gt;</title>
         <link rel="self" href="https://multibit.org/en/blog/2015/02/02/wallet-forensics.html"/>
         <updated>2015-02-02T12:00:00Z</updated>
-        <summary>&lt;p&gt;Recently a user raised &lt;a href="https://github.com/bitcoin-solutions/multibit/issues/661" target="_blank"&gt;Issue #661&lt;/a&gt; on GitHub where unfortunately they lost a total of 1.43033675 bitcoin. This blog article provides details of the forensics we performed to find out what happened and our recommendations for action to try to prevent this happening again.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2015/02/02/wallet-forensics.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+        <summary>&lt;p&gt;Recently a user raised &lt;a href=&quot;https://github.com/bitcoin-solutions/multibit/issues/661&quot; target=&quot;_blank&quot;&gt;Issue #661&lt;/a&gt; on GitHub where unfortunately they lost a total of 1.43033675 bitcoin. This blog article provides details of the forensics we performed to find out what happened and our recommendations for action to try to prevent this happening again.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2015/02/02/wallet-forensics.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
     </entry>
     <entry>
         <id>urn:uuid:bcf1b6fc-5ebb-472d-b517-8423ed0616e2</id>
@@ -134,9 +134,9 @@
         <title>&lt;h3&gt;MultiBit not affected by Heartbleed&lt;/h3&gt;</title>
         <link rel="self" href="https://multibit.org/en/blog/2014/04/10/multibit-and-heartbleed.html"/>
         <updated>2014-04-10T12:00:00Z</updated>
-        <summary>&lt;p&gt;&lt;a href="http://heartbleed.com/" target="_blank"&gt;Heartbleed&lt;/a&gt; is the unofficial name for the CVE-2014-0160 bug with the OpenSSL library which
+        <summary>&lt;p&gt;&lt;a href=&quot;http://heartbleed.com/&quot; target=&quot;_blank&quot;&gt;Heartbleed&lt;/a&gt; is the unofficial name for the CVE-2014-0160 bug with the OpenSSL library which
   has been shown to reveal private information from affected servers. MultiBit uses SSL to ensure you are downloading from the correct site and
-  &lt;a href="http://filippo.io/Heartbleed/#multibit.org" target="_blank"&gt;tests show that multibit.org is NOT affected by the Heartbleed issue&lt;/a&gt;.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2014/04/10/multibit-and-heartbleed.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+  &lt;a href=&quot;http://filippo.io/Heartbleed/#multibit.org&quot; target=&quot;_blank&quot;&gt;tests show that multibit.org is NOT affected by the Heartbleed issue&lt;/a&gt;.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2014/04/10/multibit-and-heartbleed.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
     </entry>
     <entry>
         <id>urn:uuid:c570ab8a-53bf-4a41-b2ea-8e75cf4ad2c6</id>
@@ -154,7 +154,7 @@
         <summary>&lt;p&gt;We've been asked quite a few times about progress with MultiBit HD, the replacement for the current MultiBit Classic.
   To show that we're hard at work for the Bitcoin community here is a sneak preview of MultiBit HD and some of its many
   features. If you'd like to join in with testing (and get your name on the contributors list) please
-  &lt;a href="http://bitcoin-solutions.co.uk/contact.html" target="_blank"&gt;get in touch through our contact page&lt;/a&gt;.
+  &lt;a href=&quot;http://bitcoin-solutions.co.uk/contact.html&quot; target=&quot;_blank&quot;&gt;get in touch through our contact page&lt;/a&gt;.
 &lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2014/03/17/multibit-hd-sneak-preview.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
     </entry>
     <entry>
@@ -222,35 +222,35 @@ to your use of MultiBit.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a tar
         <title>&lt;h3&gt;New release of v0.5.9&lt;/h3&gt;</title>
         <link rel="self" href="https://multibit.org/en/blog/2013/04/22/v0.5.9.html"/>
         <updated>2013-04-22T12:00:00Z</updated>
-        <summary>&lt;p&gt;Binaries for &lt;a href="https://multibit.org/releases/multibit-classic/multibit-0.5.9/"&gt;MultiBit version 0.5.9 (Encrypted wallets)&lt;/a&gt; are now available.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2013/04/22/v0.5.9.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+        <summary>&lt;p&gt;Binaries for &lt;a href=&quot;https://multibit.org/releases/multibit-classic/multibit-0.5.9/&quot;&gt;MultiBit version 0.5.9 (Encrypted wallets)&lt;/a&gt; are now available.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2013/04/22/v0.5.9.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
     </entry>
     <entry>
         <id>urn:uuid:c8b1c93e-9294-486e-8ba3-98131bf07a69</id>
         <title>&lt;h3&gt;New release of v0.4.23&lt;/h3&gt;</title>
         <link rel="self" href="https://multibit.org/en/blog/2013/03/19/v0.4.23.html"/>
         <updated>2013-03-19T12:00:00Z</updated>
-        <summary>&lt;p&gt;Binaries for &lt;a href="https://multibit.org/releases/multibit-classic/multibit-0.4.23/"&gt;MultiBit version 0.4.23&lt;/a&gt; are now available.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2013/03/19/v0.4.23.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+        <summary>&lt;p&gt;Binaries for &lt;a href=&quot;https://multibit.org/releases/multibit-classic/multibit-0.4.23/&quot;&gt;MultiBit version 0.4.23&lt;/a&gt; are now available.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2013/03/19/v0.4.23.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
     </entry>
     <entry>
         <id>urn:uuid:fb8041ed-27aa-4561-aaf4-bc32e049029f</id>
         <title>&lt;h3&gt;New release of v0.4.22&lt;/h3&gt;</title>
         <link rel="self" href="https://multibit.org/en/blog/2013/03/11/v0.4.22.html"/>
         <updated>2013-03-11T12:00:00Z</updated>
-        <summary>&lt;p&gt;Binaries for &lt;a href="https://multibit.org/releases/multibit-classic/multibit-0.4.22/"&gt;MultiBit version 0.4.22&lt;/a&gt; are now available.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2013/03/11/v0.4.22.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+        <summary>&lt;p&gt;Binaries for &lt;a href=&quot;https://multibit.org/releases/multibit-classic/multibit-0.4.22/&quot;&gt;MultiBit version 0.4.22&lt;/a&gt; are now available.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2013/03/11/v0.4.22.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
     </entry>
     <entry>
         <id>urn:uuid:541148c5-b73e-4ae0-87f1-d9dd9a693def</id>
         <title>&lt;h3&gt;New release of v0.4.21&lt;/h3&gt;</title>
         <link rel="self" href="https://multibit.org/en/blog/2013/02/24/v0.4.21.html"/>
         <updated>2013-02-24T12:00:00Z</updated>
-        <summary>&lt;p&gt;Binaries for &lt;a href="https://multibit.org/releases/multibit-classic/multibit-0.4.21/"&gt;MultiBit version 0.4.21&lt;/a&gt; are now available.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2013/02/24/v0.4.21.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+        <summary>&lt;p&gt;Binaries for &lt;a href=&quot;https://multibit.org/releases/multibit-classic/multibit-0.4.21/&quot;&gt;MultiBit version 0.4.21&lt;/a&gt; are now available.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2013/02/24/v0.4.21.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
     </entry>
     <entry>
         <id>urn:uuid:e859352a-ae6d-4784-843b-c58ce27f7d78</id>
         <title>&lt;h3&gt;London Bitcoin Conference 2012&lt;/h3&gt;</title>
         <link rel="self" href="https://multibit.org/en/blog/2012/07/16/london.html"/>
         <updated>2012-07-16T12:00:00Z</updated>
-        <summary>&lt;p&gt;The &lt;a href="http://bitcoin2012.com/"&gt;Bitcoin Conference&lt;/a&gt;, London Sept 15-16. &lt;a href="https://sites.google.com/a/bitcoin2012.com/homepage/tickets"&gt;Ticket price&lt;/a&gt; is €70 (Bitcoin accepted). We have a prestigious venue in central London with max capacity for 700 people.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2012/07/16/london.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+        <summary>&lt;p&gt;The &lt;a href=&quot;http://bitcoin2012.com/&quot;&gt;Bitcoin Conference&lt;/a&gt;, London Sept 15-16. &lt;a href=&quot;https://sites.google.com/a/bitcoin2012.com/homepage/tickets&quot;&gt;Ticket price&lt;/a&gt; is €70 (Bitcoin accepted). We have a prestigious venue in central London with max capacity for 700 people.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2012/07/16/london.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
     </entry>
     <entry>
         <id>urn:uuid:d46f8378-4f50-42ee-bb69-59e3ab282bdc</id>
@@ -258,7 +258,7 @@ to your use of MultiBit.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a tar
         <link rel="self" href="https://multibit.org/en/blog/2012/06/27/berlin.html"/>
         <updated>2012-06-27T12:00:00Z</updated>
         <summary>&lt;p&gt;The
-  &lt;a href="http://bitcoin-hackathon.com"&gt;Berlin Bitcoin Hackathon&lt;/a&gt;, 13-15 July: hackers will gather in Berlin geekdom for a weekend of intense coding and collaboration. Sunday we party at [room77](http://www.npr.org/2012/06/01/154140277/berlin-restaurant-experiments-with-virtual-currency): the restaurant at the end of capitalism. Participants are coming in from Switzerland, Austria and Finland. The event is free.
+  &lt;a href=&quot;http://bitcoin-hackathon.com&quot;&gt;Berlin Bitcoin Hackathon&lt;/a&gt;, 13-15 July: hackers will gather in Berlin geekdom for a weekend of intense coding and collaboration. Sunday we party at [room77](http://www.npr.org/2012/06/01/154140277/berlin-restaurant-experiments-with-virtual-currency): the restaurant at the end of capitalism. Participants are coming in from Switzerland, Austria and Finland. The event is free.
 &lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2012/06/27/berlin.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
     </entry>
     <entry>
@@ -272,5 +272,12 @@ to your use of MultiBit.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a tar
   innovation through sessions that encourage interaction and discussion between
   professionals across the fields of technology, politics, finance and
   economics.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2011/10/24/prague.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+    </entry>
+    <entry>
+        <id>urn:uuid:72f4f203-87ca-421a-8d0d-e2c61d9aac93</id>
+        <title>&lt;h3&gt;MultiBit HD Release 0.1.3 is now available&lt;/h3&gt;</title>
+        <link rel="self" href="https://multibit.org/en/blog/2015/08/28/multibit-hd-release-0.1.3.html"/>
+        <updated>2015-08-28T12:00:00Z</updated>
+        <summary>&lt;p&gt;We are pleased to announce the next &lt;a href=&quot;/index.html&quot;&gt;MultiBit HD Release (0.1.3) is available for download.&lt;/a&gt;&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2015/08/28/multibit-hd-release-0.1.3.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
     </entry>
 </feed>

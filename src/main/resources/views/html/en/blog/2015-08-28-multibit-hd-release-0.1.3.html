@@ -1,0 +1,46 @@
+<h3>MultiBit HD Release 0.1.3 is now available</h3>
+
+<p>We are pleased to announce the next <a href="/index.html">MultiBit HD Release (0.1.3) is available for download.</a></p>
+
+<p>This is a maintenance release.</p>
+
+<h4>Summary of fixes</h4>
+<p>Here is a quick summary of the fixes contained in this release:</p>
+
+<ul>
+  <li>Remove Tor support (temporarily)</li>
+  <li>Reduced number of unnecessary error report triggers</li>
+  <li>Reduced BRIT fees so that small amounts are not charged on Empty Wallet</li>
+  <li>Updated Windows/OS X developer certificates</li>
+  <li>Update Bitcoinj library to 0.13.2</li>
+  <li>Various small user interface tidy ups</li>
+</ul>
+
+<h4>Temporarily dropping Tor support</h4>
+<p>It is with regret that we've had to pull Tor support from the wallet temporarily. This is due to a number of error reports that we received indicating problems out in the field
+  and our own experiences attempting to use Tor on a variety of networks.</p>
+
+<p>Our Tor support comes from the Orchid library fork integrated with the excellent Bitcoinj library and was presented under our Labs section as an experimental feature while we tried it out
+  on a larger user base. Unfortunately there are some problems with it right now that prevent it from working reliably enough to continue. Consequently we have decided to switch it off
+while we work with the Orchid/Bitcoinj team to resolve the issues so it can be reinstated in a later release.</p>
+
+<p>For more information on the discussion leading to this decision, please see the following GitHub issues:</p>
+<ul>
+  <li><a href="https://github.com/bitcoin-solutions/multibit-hd/issues/633">#633 Upgraded to Orchid 1.1.1 (Final decision based on TimeoutException)</a></li>
+  <li><a href="https://github.com/bitcoin-solutions/multibit-hd/issues/634">#634 Orchid 1.0 throws UnsupportedOperationException (fixed in Orchid 1.1.1)</a></li>
+  <li><a href="https://github.com/bitcoin-solutions/multibit-hd/issues/666">#666 Representative Tor failure from the field (with screen shots)</a></li>
+</ul>
+
+<h4>Semi-automatic update</h4>
+
+<p>We normally wait 24 hours after a release and then activate the semi-automatic upgrade process. You decide if the upgrade occurs. The upgrade process will not affect your wallet data. Only the application binaries will be upgraded.</p>
+
+<p>You can find more details, including digital signatures, on the <a href="/download.html">download page</a>.</p>
+
+<p>15 Jul 2015</p>
+
+<h4>Related articles</h4>
+<p>Here are some related articles:</p>
+<ul>
+  <li><a href="/blog/2015/07/15/multibit-hd-release-0.1.2.html" target="_blank">MultiBit HD Release 0.1.2</a></li>
+</ul>
