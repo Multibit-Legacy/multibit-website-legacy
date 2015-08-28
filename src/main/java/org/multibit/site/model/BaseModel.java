@@ -38,6 +38,7 @@ public class BaseModel {
     localisedNavbars.put(Locale.FRENCH.getLanguage(),localiseNavBar(Locale.FRENCH));
     localisedNavbars.put(Locale.SIMPLIFIED_CHINESE.getLanguage(),localiseNavBar(Locale.SIMPLIFIED_CHINESE));
     localisedNavbars.put(new Locale("es").getLanguage(),localiseNavBar(new Locale("es")));
+    localisedNavbars.put(new Locale("ru").getLanguage(),localiseNavBar(new Locale("ru")));
   }
 
   // Request scope variables
@@ -174,10 +175,10 @@ public class BaseModel {
   public String getNavBar() {
 
     final Map<String, String> localisedNavbar;
-    if (localisedNavbars.containsKey(locale.toString())) {
-      localisedNavbar = localisedNavbars.get(locale.toString());
+    if (localisedNavbars.containsKey(locale.getLanguage())) {
+      localisedNavbar = localisedNavbars.get(locale.getLanguage());
     } else {
-      localisedNavbar = localisedNavbars.get(Locale.ENGLISH.toString());
+      localisedNavbar = localisedNavbars.get(Locale.ENGLISH.getLanguage());
     }
 
     return localisedNavbar.get(navbar == null ? "default" : navbar);

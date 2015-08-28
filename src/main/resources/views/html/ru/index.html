@@ -1,0 +1,122 @@
+<div class="row mb-video-and-features">
+
+  <div class="col-md-7 col-lg-8">
+
+    <div id="myCarousel" class="carousel slide">
+      <!-- Carousel items -->
+      <div class="carousel-inner">
+        <div class="item">
+          <img class="img-responsive" src="/images/en/screenshots/mbhd-0.1/send-payment.png"/>
+        </div>
+        <div class="item">
+          <img class="img-responsive" src="/images/en/screenshots/mbhd-0.1/request-payment.png"/>
+        </div>
+        <div class="active item">
+          <img class="img-responsive" src="/images/en/screenshots/mbhd-0.1/payments.png"/>
+        </div>
+        <div class="item">
+          <img class="img-responsive" src="/images/en/screenshots/mbhd-0.1/new-contact.png"/>
+        </div>
+        <div class="item">
+          <img class="img-responsive" src="/images/en/screenshots/mbhd-0.1/preferences.png"/>
+        </div>
+        <div class="item">
+          <img class="img-responsive" src="/images/en/screenshots/mbhd-0.1/manage-wallet.png"/>
+        </div>
+        <div class="item">
+          <img class="img-responsive" src="/images/en/screenshots/mbhd-0.1/tools.png"/>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <noscript>
+    <div itemscope itemtype="http://schema.org/SoftwareApplication" class="col-md-5 col-lg-4">
+      <h3 class="mb-features-heading">Почему Multibit HD ?</h3>
+
+      <p>Если вы обычный пользователь Bitcoin и хотите кошелек , который просто работает , то Multibit HD является правильным выбором для вас.</p>
+
+      <p>MultiBit HD:</p>
+      <ul id="features-list-ns" class="list">
+        <li>Быстрый и простой в установке<br/>Мы поддерживаем все основные настольные операционные системы ( Windows, OS X, Linux )</li>
+        <li>Безопасный дизайн<br/>Все ваши данные хранятся в зашифрованном виде на локальном компьютере, и мы поддерживаем аппаратные кошельки, такие как
+          <a href="https://buytrezor.com?a=multibit.org" target="_blank">Trezor</a></li>
+        <li>Детерминированный<br/>Набор <strong>слов кошелька</strong> защищает Bitcoin от потери данных</li>
+        <li>Децентрализованный<br/>Только не фиксированные серверы сети Bitcoin</li>
+        <li>Международный<br/>Мы поддерживаем <a href="https://crowdin.com/project/multibit-hd" target="_blank">более 40 языков</a></li>
+      </ul>
+
+      <p>Вы можете скачать его с помощью кнопок выше, запустить и начать работать с Bitcoin за 5 минут.</p>
+
+      <p>Ищите Multibit Classic? <a href="/releases.html">Загрузка доступна здесь.</a></p>
+    </div>
+
+  </noscript>
+
+  <div itemscope class="col-md-5 col-lg-4 jsok">
+    <h3 class="mb-features-heading">Почему Multibit HD ?</h3>
+
+    <p>Если вы обычный пользователь Bitcoin и хотите кошелек , который просто работает , то Multibit HD является правильным выбором для вас.</p>
+
+    <p>MultiBit HD:</p>
+    <ul id="features-list-js" class="list">
+      <li><i class="fa fa-windows fa-lg"></i>&nbsp;Быстрый и простой в установке<br/>Мы поддерживаем все основные настольные операционные системы ( Windows, OS X, Linux )</li>
+      <li><i class="fa fa-shield fa-lg"></i>&nbsp;Безопасный дизайн<br/>Все ваши данные хранятся в зашифрованном виде на локальном компьютере, и мы поддерживаем аппаратные кошельки, такие как
+        <a href="https://buytrezor.com?a=multibit.org" target="_blank">Trezor</a></li>
+      <li><i class="fa fa-magic fa-lg"></i>&nbsp;Детерминированный<br/>Набор <strong>слов кошелька</strong> защищает Bitcoin от потери данных</li>
+      <li><i class="fa fa-cloud fa-lg"></i>&nbsp;Децентрализованный<br/>Только не фиксированные серверы сети Bitcoin</li>
+      <li><i class="fa fa-globe fa-lg"></i>&nbsp;Международный<br/>Мы поддерживаем <a href="https://crowdin.com/project/multibit-hd" target="_blank">более 40 языков</a></li>
+    </ul>
+
+    <p>Вы можете скачать его с помощью кнопок выше, запустить и начать работать с Bitcoin за 5 минут.</p>
+
+    <p>Ищите Multibit Classic? <a href="/releases.html">Загрузка доступна здесь.</a></p>
+  </div>
+
+</div>
+
+<script language="JavaScript">
+
+  // invoke the carousel
+  $('#myCarousel').carousel({
+    interval: 5000
+  });
+
+  /* SLIDE ON CLICK */
+
+  $('.carousel-linked-nav > li > a').click(function () {
+
+// grab href, remove pound sign, convert to number
+    var item = Number($(this).attr('href').substring(1));
+
+// slide to number -1 (account for zero indexing)
+    $('#myCarousel').carousel(item - 1);
+
+// remove current active class
+    $('.carousel-linked-nav .active').removeClass('active');
+
+// add active class to just clicked on item
+    $(this).parent().addClass('active');
+
+// don't follow the link
+    return false;
+  });
+
+  /* AUTOPLAY NAV HIGHLIGHT */
+
+  // bind 'slid' function
+  $('#myCarousel').bind('slid', function () {
+
+// remove active class
+    $('.carousel-linked-nav .active').removeClass('active');
+
+// get index of currently active item
+    var idx = $('#myCarousel .item.active').index();
+
+// select currently active item and add active class
+    $('.carousel-linked-nav li:eq(' + idx + ')').addClass('active');
+
+  });
+
+</script>
