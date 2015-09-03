@@ -1,6 +1,6 @@
 <h2>Exporting private keys</h2>
 <p>Private keys are long strings of letters and numbers that are literally the key to spending your bitcoin. Each wallet
-  has a number of private keys (one for each address). You can back up your private keys for a MultiBit wallet into a
+  has a number of private keys (one for each address). You can back up your private keys for a MultiBit Classic wallet into a
   text file called a 'private key export file'. You can password protect this text file to prevent other people reading
   this data.</p>
 <h3>How to export the private keys in a wallet</h3>
@@ -61,7 +61,7 @@
 than is necessary. Don't change the date to be more recent as doing so will very likely cause a failed import and an incorrect balance.</p>
 
 <h3>Export file format (password protected)</h3>
-<p>Below is an example of a password protected private key export file containing demonstration private keys. You typically use MultiBit or OpenSSL when working with this file.</p>
+<p>Below is an example of a password protected private key export file containing demonstration private keys. You typically use MultiBit Classic or OpenSSL when working with this file.</p>
 <pre>
 U2FsdGVkX1+YqTr9vabcfVlfKlCVTjR7kEg/xD4rEUB1tBBQm6chWSOSIUyJKK/9yjxFSHkge/xI
 UCFq3MfFKqUbRnYcmOhNLBabcGRrbvsx3AawNvzp1sdHFXNvH3I+INMtYaoTjMEJVkQM8KnaUwZI
@@ -69,10 +69,10 @@ GE5PYKtMHncv+2pYA1/3Lg09hPA++jbvwL7L+NH6ZcljvYZxseu+3M45YNK1CJ/4xQJ+Yvo6OVqJ
 nL7xIR0=
 </pre>
 <p>The content is encrypted (AES256, password-based key derivation) so can only be decrypted by special software and the provision of a password.</p>
-<p>The MultiBit wiki provides
+<p>The MultiBit Classic wiki provides
   <a href="https://github.com/bitcoin-solutions/multibit/wiki/Export%20and%20limited%20import%20of%20private%20keys">detailed technical information about the file format</a>.</p>
 <p>If you are intending to store exported keys for a very long time and are concerned about code existing to open them far in the future then we recommend the following:</p>
 <ul>
-  <li>Make a copy of the MultiBit source code (fork on GitHub)</li>
-  <li>Decompile a binary of the MultiBit JAR (standard tools exist for this)</li>
+  <li>Make a copy of the MultiBit Classic source code (fork on GitHub)</li>
+  <li>Decompile a binary of the MultiBit Classic JAR (standard tools exist for this)</li>
 </ul>

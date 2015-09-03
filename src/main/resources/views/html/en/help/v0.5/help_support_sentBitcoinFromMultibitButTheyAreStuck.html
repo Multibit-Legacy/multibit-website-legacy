@@ -1,12 +1,12 @@
-<h2>I sent bitcoin from MultiBit but they are stuck</h2>
+<h2>I sent bitcoin from MultiBit Classic but they are stuck</h2>
 <h3>What is the symptom ?</h3>
-<p>You sent some bitcoin from MultiBit but the bitcoin is stuck and never confirms.</p>
+<p>You sent some bitcoin from MultiBit Classic but the bitcoin is stuck and never confirms.</p>
 <p>The bitcoins never arrive. Your balance seems to be wrong.</p>
 <p>In the '<img width="16" height="16" title="Transactions" alt="Transactions" src="/images/en/v0_5/transactions.png"/>&nbsp;Transactions' tab the transaction is shown with a square ("Seen by 1 peer") or, very rarely, a triangle ("Seen by 0 peers").
 </p>
 
 <h3>What does a status of a square or triangle mean ?</h3>
-<p>When you press the 'Send' button, MultiBit broadcasts your transaction to a single bitcoind peer. It then listens on all its other connections to check that the transaction has been broadcast successfully.</p>
+<p>When you press the 'Send' button, MultiBit Classic broadcasts your transaction to a single bitcoind peer. It then listens on all its other connections to check that the transaction has been broadcast successfully.</p>
 <p>If you see a square or triangle in the transaction status this is a "did not broadcast" failure which means that the broadcast and propagation through the Bitcoin network was unsuccessful.</p>
 
 <h3>What can you do about it ?</h3>
@@ -16,10 +16,10 @@
 <h4>You lost your network connection and the transaction did not get sent successfully to the peer (did not broadcast)</h4>
 <p>If you suspect this is the cause, do the following:</p>
 <ol>
-  <li>Close MultiBit.</li>
+  <li>Close MultiBit Classic.</li>
   <li>Fix your network connection and try it out using a browser.</li>
   <li>
-    Restart MultiBit and it will re-transmit any transactions that were unsuccessfully sent previously. It can sometimes take a couple of minutes to send a transaction and for it to propagate through the Bitcoin network.
+    Restart MultiBit Classic and it will re-transmit any transactions that were unsuccessfully sent previously. It can sometimes take a couple of minutes to send a transaction and for it to propagate through the Bitcoin network.
   </li>
 </ol>
 <h4>The peer received the transaction but "did not like it" (did not relay)</h4>
