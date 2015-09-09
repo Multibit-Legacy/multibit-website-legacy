@@ -10,6 +10,7 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
+import java.security.SecureRandom;
 import java.util.List;
 import java.util.Locale;
 
@@ -31,6 +32,8 @@ public abstract class BaseResource {
   protected static final String ENGLISH = "en";
 
   public static final String COOKIE_NAME = "MBHD-Session";
+
+  private static final SecureRandom random = new SecureRandom();
 
   /**
    * Jersey creates a fresh resource every request so this is safe
@@ -109,5 +112,16 @@ public abstract class BaseResource {
       .ok()
       .entity(new PublicFreemarkerView<BaseModel>(templatePath, model))
     ).build();
+  }
+
+  /**
+   *
+   * @return A random value according to the desired weighting to be used
+   */
+  protected int getBannerPrefix() {
+
+    // Random between 0 and 1
+    return random.nextInt(2);
+
   }
 }

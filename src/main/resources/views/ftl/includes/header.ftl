@@ -19,7 +19,7 @@
 
     <ul class="nav navbar-nav mb-banner-text hidden-md hidden-lg navbar-right">
       <li>
-          <a title="TREZOR for $99 promo" href="https://buytrezor.com/?a=multibit.org" target="_blank"><strong>TREZOR&nbsp;$99&nbsp;Code: multibit.org</strong></a>
+          <a title="${model.advert("text-title")}" href="${model.advert("text-url")}" target="_blank"><strong>${model.advert("text-title")}</strong></a>
       </li>
     </ul>
 
@@ -32,10 +32,10 @@
 
     <h2>${model.msg("app.subtitle")}</h2></a>
   <span class="mb-banner-large pull-right">
-    <a title="TREZOR for $99 promo" href="https://buytrezor.com/?a=multibit.org" target="_blank"><img src="/images/banner/trezor-99-banner-512x72.png"></a>
+    <a title="${model.advert("large-title")}" href="${model.advert("large-url")}" target="_blank"><img src="${model.advert("large-image-path")}"></a>
   </span>
   <span class="mb-banner-medium pull-right">
-    <a title="TREZOR for $99 promo" href="https://buytrezor.com/?a=multibit.org" target="_blank"><img src="/images/banner/trezor-99-banner-280x72.png"></a>
+    <a title="${model.advert("medium-title")}" href="${model.advert("medium-url")}" target="_blank"><img src="${model.advert("medium-image-path")}"></a>
   </span>
 </div>
 
