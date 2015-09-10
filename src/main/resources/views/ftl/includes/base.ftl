@@ -1,7 +1,7 @@
 <#-- @ftlvariable name="" type="org.multibit.site.views.PublicFreemarkerView" -->
 <#-- Template providing a single point of configuration for common variables -->
 <#assign downloadVersionHD = "0.1.3">
-<#assign downloadVersionClassic = "0.5.18">
+<#assign downloadVersionClassic = "0.5.19">
 
 <#-- Create download links for latest version -->
 <#assign downloadWindows = "https://multibit.org/releases/multibit-hd/multibit-hd-${downloadVersionHD}/multibit-hd-windows-x64-${downloadVersionHD}.exe">
