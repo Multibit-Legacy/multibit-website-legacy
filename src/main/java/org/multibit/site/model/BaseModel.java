@@ -1,9 +1,11 @@
 package org.multibit.site.model;
 
 import com.google.common.base.Charsets;
+import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import org.multibit.site.caches.InMemoryAssetCache;
 import org.multibit.site.core.languages.Languages;
 import org.multibit.site.utils.StreamUtils;
 
@@ -130,6 +132,18 @@ public class BaseModel {
       navbar = "help";
     }
 
+    // Create a cache key
+    String cacheKey = bannerPrefix + "." + resourcePath;
+
+    // Check the asset cache
+    Optional<String> contentOptional = InMemoryAssetCache.INSTANCE.getByResourcePath(cacheKey);
+    if (contentOptional.isPresent()) {
+      content = contentOptional.get();
+      return;
+    }
+
+    // Must be dealing with a fresh view to be here
+
     // Only asset type supported is HTML
     if (resourcePath.endsWith(".html")) {
       // Attempt a load
@@ -150,8 +164,9 @@ public class BaseModel {
       }
 
       try {
-        // Read the HTML fragment
+        // Read the HTML fragment and cache it for later
         content = StreamUtils.toString(is, Charsets.UTF_8);
+        InMemoryAssetCache.INSTANCE.put(cacheKey, content);
 
         return;
       } catch (IOException e) {
