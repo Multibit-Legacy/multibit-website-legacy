@@ -6,6 +6,7 @@ import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import org.multibit.site.caches.InMemoryAssetCache;
+import org.multibit.site.core.banners.Banners;
 import org.multibit.site.core.languages.Languages;
 import org.multibit.site.utils.StreamUtils;
 
@@ -39,33 +40,6 @@ public class BaseModel {
     localisedNavbars.put(Locale.SIMPLIFIED_CHINESE.getLanguage(), localiseNavBar(Locale.SIMPLIFIED_CHINESE));
     localisedNavbars.put(new Locale("es").getLanguage(), localiseNavBar(new Locale("es")));
     localisedNavbars.put(new Locale("ru").getLanguage(), localiseNavBar(new Locale("ru")));
-  }
-
-  /**
-   * This is a read only collection of banner strings
-   */
-  private static final Map<String, String> banners = Maps.newConcurrentMap();
-
-  static {
-    // TREZOR
-    banners.put("0.large-title", "TREZOR for $99 promo");
-    banners.put("0.medium-title", "TREZOR for $99 promo");
-    banners.put("0.text-title", "TREZOR&nbsp;$99&nbsp;Code: multibit.org");
-    banners.put("0.large-url", "https://buytrezor.com/?a=multibit.org");
-    banners.put("0.medium-url", "https://buytrezor.com/?a=multibit.org");
-    banners.put("0.text-url", "TREZOR for $99 promo");
-    banners.put("0.large-image-path", "/images/banner/trezor-99-banner-512x72.png");
-    banners.put("0.medium-image-path", "/images/banner/trezor-99-banner-280x72.png");
-
-    // KeepKey
-    banners.put("1.large-title", "KeepKey: Your Private Bitcoin Vault");
-    banners.put("1.medium-title", "KeepKey: Your Private Bitcoin Vault");
-    banners.put("1.text-title", "KeepKey:&nbsp;Your&nbsp;Private&nbsp;Bitcoin&nbsp;Vault");
-    banners.put("1.large-url", "https://padlock.link/ulpj");
-    banners.put("1.medium-url", "https://padlock.link/u0f7");
-    banners.put("1.text-url", "https://padlock.link/wgrt");
-    banners.put("1.large-image-path", "/images/banner/keepkey-invite-banner-512x72.png");
-    banners.put("1.medium-image-path", "/images/banner/keepkey-invite-banner-280x72.png");
   }
 
   // Request scope variables
@@ -189,12 +163,12 @@ public class BaseModel {
   }
 
   /**
-   * @param key The advert key (e.g. "large-title")
+   * @param key The banner key (e.g. "large-title")
    *
-   * @return The string (can be HTML) associated with the given
+   * @return The string (can be HTML) associated with the given key
    */
-  public String advert(String key) {
-    return banners.get(bannerPrefix + "." + key);
+  public String banner(String key) {
+    return Banners.get(bannerPrefix + "." + key);
   }
 
   /**
