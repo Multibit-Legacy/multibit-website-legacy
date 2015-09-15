@@ -5,6 +5,7 @@ import com.google.common.net.HttpHeaders;
 import com.yammer.dropwizard.jersey.caching.CacheControl;
 import com.yammer.metrics.annotation.Timed;
 import org.multibit.site.caches.InMemoryArtifactCache;
+import org.multibit.site.core.banners.Banners;
 import org.multibit.site.model.BaseModel;
 import org.multibit.site.views.PublicFreemarkerView;
 
@@ -83,8 +84,8 @@ public class PublicPageResource extends BaseResource {
     InputStream is = PublicPageResource.class.getResourceAsStream("/assets/images/favicon.ico");
 
     return applyHeaders(Response
-      .ok(is)
-      .type("image/png")
+        .ok(is)
+        .type("image/png")
     ).build();
   }
 
@@ -101,7 +102,7 @@ public class PublicPageResource extends BaseResource {
     InputStream is = PublicPageResource.class.getResourceAsStream("/views/robots.txt");
 
     return applyHeaders(Response
-      .ok(is)
+        .ok(is)
     ).build();
   }
 
@@ -121,8 +122,8 @@ public class PublicPageResource extends BaseResource {
     }
 
     return applyHeaders(Response
-      .ok(siteMap.get())
-      .type(MediaType.TEXT_XML)
+        .ok(siteMap.get())
+        .type(MediaType.TEXT_XML)
     ).build();
   }
 
@@ -142,9 +143,33 @@ public class PublicPageResource extends BaseResource {
     }
 
     return applyHeaders(Response
-      .ok(atomFeed.get())
-      .type(MediaType.APPLICATION_ATOM_XML)
+        .ok(atomFeed.get())
+        .type(MediaType.APPLICATION_ATOM_XML)
     ).build();
+  }
+
+  /**
+   * <p>Provide the redirect for the given source and banner ID</p>
+   *
+   * @param rawSlug     The slug (e.g. "trezor", "keep-key")
+   * @param rawBannerId The banner Id (e.g. "0", "1")
+   * @param rawSource   The source (e.g. "small", "medium", "large")
+   *
+   * @return A redirect response based on
+   */
+  @GET
+  @Path("/goto/{slug}/{bannerId}/{source}")
+  @Timed
+  @CacheControl(maxAge = 24, maxAgeUnit = TimeUnit.HOURS)
+  public Response bannerRedirect(@PathParam("slug") String rawSlug,
+                                 @PathParam("bannerId") int rawBannerId,
+                                 @PathParam("source") String rawSource) {
+
+    // All validation performed in Banners
+    URI uri = Banners.createRedirectUri(rawBannerId, rawSource);
+
+    return Response.temporaryRedirect(uri).build();
+
   }
 
   /**
@@ -157,7 +182,7 @@ public class PublicPageResource extends BaseResource {
   @CacheControl(noCache = true)
   public Response viewLocalisedIndexPage() {
 
-    BaseModel model = new BaseModel("/" + getLocale().getLanguage() + "/index.html", acceptedTandC(), getLocale());
+    BaseModel model = new BaseModel("/" + getLocale().getLanguage() + "/index.html", acceptedTandC(), getLocale(), bannerId);
     model.setShowDownload(true);
     model.setAcceptAction("/index.html");
 
@@ -216,7 +241,7 @@ public class PublicPageResource extends BaseResource {
   @CacheControl(noCache = true)
   public Response viewLocalisedDownloadPage() {
 
-    BaseModel model = new BaseModel("/" + getLocale().getLanguage() + "/download.html", acceptedTandC(), getLocale());
+    BaseModel model = new BaseModel("/" + getLocale().getLanguage() + "/download.html", acceptedTandC(), getLocale(), bannerId);
     model.setShowDownload(true);
     model.setAcceptAction("/download.html");
 
@@ -250,7 +275,7 @@ public class PublicPageResource extends BaseResource {
     @PathParam("page") String page
   ) {
 
-    BaseModel model = new BaseModel("/" + getLocale().getLanguage() + "/" + page + ".html", false, getLocale());
+    BaseModel model = new BaseModel("/" + getLocale().getLanguage() + "/" + page + ".html", false, getLocale(), bannerId);
 
     return pageResponse(model, "content/main.ftl");
 
@@ -269,7 +294,7 @@ public class PublicPageResource extends BaseResource {
     @Size(min = 3, max = 3) @PathParam("lang") String lang
   ) {
 
-    BaseModel model = new BaseModel("/" + lang + "/index.html", acceptedTandC(), new Locale(lang));
+    BaseModel model = new BaseModel("/" + lang + "/index.html", acceptedTandC(), new Locale(lang), bannerId);
     model.setShowDownload(true);
 
     return pageResponse(model, "content/main.ftl");
@@ -291,7 +316,7 @@ public class PublicPageResource extends BaseResource {
     @PathParam("page") String page
   ) {
 
-    BaseModel model = new BaseModel("/" + lang + "/" + page + ".html", acceptedTandC(), new Locale(lang));
+    BaseModel model = new BaseModel("/" + lang + "/" + page + ".html", acceptedTandC(), new Locale(lang), bannerId);
 
     if ("index".equalsIgnoreCase(page)) {
       model.setShowDownload(true);
@@ -351,7 +376,7 @@ public class PublicPageResource extends BaseResource {
     // Java6 uses StringBuilder to optimise this
     String resourcePath = "/" + lang + "/blog/" + year + "-" + month + "-" + day + "-" + page + ".html";
 
-    BaseModel model = new BaseModel(resourcePath, acceptedTandC(), new Locale(lang));
+    BaseModel model = new BaseModel(resourcePath, acceptedTandC(), new Locale(lang), bannerId);
 
     return pageResponse(model, "content/blog.ftl");
 
@@ -372,7 +397,7 @@ public class PublicPageResource extends BaseResource {
     String resourcePath = "/" + ENGLISH + "/help.html";
 
     // Use the main template since this is a starting point for a user
-    BaseModel model = new BaseModel(resourcePath, acceptedTandC(), Locale.ENGLISH);
+    BaseModel model = new BaseModel(resourcePath, acceptedTandC(), Locale.ENGLISH, bannerId);
 
     return pageResponse(model, "content/main.ftl");
 
@@ -396,7 +421,7 @@ public class PublicPageResource extends BaseResource {
     // Java6 uses StringBuilder to optimise this
     String resourcePath = "/" + lang + "/help.html";
 
-    BaseModel model = new BaseModel(resourcePath, acceptedTandC(), new Locale(lang));
+    BaseModel model = new BaseModel(resourcePath, acceptedTandC(), new Locale(lang), bannerId);
 
     return pageResponse(model, "content/main.ftl");
 
@@ -425,13 +450,13 @@ public class PublicPageResource extends BaseResource {
     String resourcePath;
     if (version.contains("hd")) {
       resourcePath = "/" + lang + "/help/" + version + "/help_contents.html";
-      BaseModel model = new BaseModel(resourcePath, acceptedTandC(), new Locale(lang));
+      BaseModel model = new BaseModel(resourcePath, acceptedTandC(), new Locale(lang), bannerId);
       return pageResponse(model, "content/hd-help.ftl");
     }
 
     // Must be classic
     resourcePath = "/" + lang + "/help/" + version + "/contents.html";
-    BaseModel model = new BaseModel(resourcePath, acceptedTandC(), new Locale(lang));
+    BaseModel model = new BaseModel(resourcePath, acceptedTandC(), new Locale(lang), bannerId);
 
     return pageResponse(model, "content/mbc-help.ftl");
 
@@ -459,7 +484,7 @@ public class PublicPageResource extends BaseResource {
     // Java6 uses StringBuilder to optimise this
     String resourcePath = "/" + lang + "/help/" + version + "/" + pathParam;
 
-    BaseModel model = new BaseModel(resourcePath, acceptedTandC(), new Locale(lang));
+    BaseModel model = new BaseModel(resourcePath, acceptedTandC(), new Locale(lang), bannerId);
 
     return version.contains("hd") ? pageResponse(model, "content/hd-help.ftl") : pageResponse(model, "content/mbc-help.ftl");
 
@@ -472,8 +497,8 @@ public class PublicPageResource extends BaseResource {
    */
   private Response failSafeResponse() {
     return applyHeaders(Response
-      .temporaryRedirect(URI.create(FAILSAFE))
-      .type(MediaType.TEXT_HTML)
+        .temporaryRedirect(URI.create(FAILSAFE))
+        .type(MediaType.TEXT_HTML)
     ).build();
   }
 
@@ -495,17 +520,17 @@ public class PublicPageResource extends BaseResource {
     );
 
     // Accepted by virtue of the POST
-    BaseModel model = new BaseModel("/" + getLocale().getLanguage() + resourcePath, true, getLocale());
+    BaseModel model = new BaseModel("/" + getLocale().getLanguage() + resourcePath, true, getLocale(), bannerId);
     model.setShowDownload(true);
     model.setAcceptAction(resourcePath);
     PublicFreemarkerView<BaseModel> entity = new PublicFreemarkerView<BaseModel>("content/main.ftl", model);
 
     return applyHeaders(Response
-      .ok()
-      .entity(entity)
-      .header(HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN, "*")
-      .header("Strict-Transport-Security", "max-age=31536000; includeSubDomains")
-      .cookie(cookie)
+        .ok()
+        .entity(entity)
+        .header(HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN, "*")
+        .header("Strict-Transport-Security", "max-age=31536000; includeSubDomains")
+        .cookie(cookie)
     ).build();
   }
 

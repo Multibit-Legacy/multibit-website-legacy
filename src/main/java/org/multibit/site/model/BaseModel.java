@@ -6,6 +6,7 @@ import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import org.multibit.site.caches.InMemoryAssetCache;
+import org.multibit.site.core.banners.Banners;
 import org.multibit.site.core.languages.Languages;
 import org.multibit.site.utils.StreamUtils;
 
@@ -30,21 +31,22 @@ public class BaseModel {
   /**
    * This is a read only collection of localised string templates keyed first on supported locales then on active element
    */
-  private static final Map<String, Map<String,String>> localisedNavbars = Maps.newConcurrentMap();
+  private static final Map<String, Map<String, String>> localisedNavbars = Maps.newConcurrentMap();
 
   static {
-    localisedNavbars.put(Locale.ENGLISH.getLanguage(),localiseNavBar(Locale.ENGLISH));
-    localisedNavbars.put(Locale.JAPANESE.getLanguage(),localiseNavBar(Locale.JAPANESE));
-    localisedNavbars.put(Locale.FRENCH.getLanguage(),localiseNavBar(Locale.FRENCH));
-    localisedNavbars.put(Locale.SIMPLIFIED_CHINESE.getLanguage(),localiseNavBar(Locale.SIMPLIFIED_CHINESE));
-    localisedNavbars.put(new Locale("es").getLanguage(),localiseNavBar(new Locale("es")));
-    localisedNavbars.put(new Locale("ru").getLanguage(),localiseNavBar(new Locale("ru")));
+    localisedNavbars.put(Locale.ENGLISH.getLanguage(), localiseNavBar(Locale.ENGLISH));
+    localisedNavbars.put(Locale.JAPANESE.getLanguage(), localiseNavBar(Locale.JAPANESE));
+    localisedNavbars.put(Locale.FRENCH.getLanguage(), localiseNavBar(Locale.FRENCH));
+    localisedNavbars.put(Locale.SIMPLIFIED_CHINESE.getLanguage(), localiseNavBar(Locale.SIMPLIFIED_CHINESE));
+    localisedNavbars.put(new Locale("es").getLanguage(), localiseNavBar(new Locale("es")));
+    localisedNavbars.put(new Locale("ru").getLanguage(), localiseNavBar(new Locale("ru")));
   }
 
   // Request scope variables
 
   private final Locale locale;
   private final boolean acceptedTandC;
+  private final int bannerPrefix;
 
   /**
    * The HTML content of the page
@@ -72,11 +74,13 @@ public class BaseModel {
    * @param resourcePath  The resource path for the HTML content
    * @param acceptedTandC True if the terms and conditions have been accepted
    * @param locale        The request locale
+   * @param bannerPrefix  The prefix of the banner to show for this page impression (0, 1, etc)
    */
-  public BaseModel(String resourcePath, boolean acceptedTandC, Locale locale) {
+  public BaseModel(String resourcePath, boolean acceptedTandC, Locale locale, int bannerPrefix) {
 
     this.locale = locale;
     this.acceptedTandC = acceptedTandC;
+    this.bannerPrefix = bannerPrefix;
 
     // Check for a fully-formed view
     if (resourcePath == null) {
@@ -102,8 +106,11 @@ public class BaseModel {
       navbar = "help";
     }
 
+    // Create a cache key
+    String cacheKey = bannerPrefix + "." + resourcePath;
+
     // Check the asset cache
-    Optional<String> contentOptional = InMemoryAssetCache.INSTANCE.getByResourcePath(resourcePath);
+    Optional<String> contentOptional = InMemoryAssetCache.INSTANCE.getByResourcePath(cacheKey);
     if (contentOptional.isPresent()) {
       content = contentOptional.get();
       return;
@@ -133,7 +140,7 @@ public class BaseModel {
       try {
         // Read the HTML fragment and cache it for later
         content = StreamUtils.toString(is, Charsets.UTF_8);
-        InMemoryAssetCache.INSTANCE.put(resourcePath, content);
+        InMemoryAssetCache.INSTANCE.put(cacheKey, content);
 
         return;
       } catch (IOException e) {
@@ -153,6 +160,15 @@ public class BaseModel {
    */
   public String msg(String key) {
     return Languages.safeText(key, locale);
+  }
+
+  /**
+   * @param key The banner key (e.g. "large-title")
+   *
+   * @return The string (can be HTML) associated with the given key
+   */
+  public String banner(String key) {
+    return Banners.get(bannerPrefix + "." + key);
   }
 
   /**
@@ -220,12 +236,12 @@ public class BaseModel {
   private static Map<String, String> localiseNavBar(Locale locale) {
 
     String template = Languages.safeText("navbar.download", locale) + "\n"
-        + Languages.safeText("navbar.faq", locale) + "\n"
-        + Languages.safeText("navbar.community", locale) + "\n"
-        + Languages.safeText("navbar.blog", locale) + "\n"
-        + Languages.safeText("navbar.help", locale) + "\n";
+      + Languages.safeText("navbar.faq", locale) + "\n"
+      + Languages.safeText("navbar.community", locale) + "\n"
+      + Languages.safeText("navbar.blog", locale) + "\n"
+      + Languages.safeText("navbar.help", locale) + "\n";
 
-    Map<String,String> localisedNavbar = Maps.newConcurrentMap();
+    Map<String, String> localisedNavbar = Maps.newConcurrentMap();
 
     localisedNavbar.put("download", template
         .replace("[active1]", "class=\"active\"")

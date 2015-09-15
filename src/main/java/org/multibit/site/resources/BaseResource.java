@@ -1,6 +1,7 @@
 package org.multibit.site.resources;
 
 import com.sun.jersey.api.core.HttpContext;
+import org.multibit.site.core.banners.Banners;
 import org.multibit.site.core.languages.Languages;
 import org.multibit.site.model.BaseModel;
 import org.multibit.site.views.PublicFreemarkerView;
@@ -31,6 +32,11 @@ public abstract class BaseResource {
   protected static final String ENGLISH = "en";
 
   public static final String COOKIE_NAME = "MBHD-Session";
+
+  /**
+   * Jersey creates a fresh resource every request so this is safe
+   */
+  protected int bannerId = Banners.INSTANCE.getBannerId();
 
   /**
    * Jersey creates a fresh resource every request so this is safe
@@ -110,4 +116,5 @@ public abstract class BaseResource {
       .entity(new PublicFreemarkerView<BaseModel>(templatePath, model))
     ).build();
   }
+
 }

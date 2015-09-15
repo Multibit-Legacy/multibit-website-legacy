@@ -57,7 +57,7 @@ public class PublicHD0_1Resource extends BaseResource {
     // Java6 uses StringBuilder to optimise this
     String resourcePath = "/" + ENGLISH + "/help/hd0.1/contents.html";
 
-    BaseModel model = new BaseModel(resourcePath, acceptedTandC(), Locale.ENGLISH);
+    BaseModel model = new BaseModel(resourcePath, acceptedTandC(), Locale.ENGLISH, bannerId);
 
     return pageResponse(model, "content/hd-help.ftl");
 
@@ -79,7 +79,7 @@ public class PublicHD0_1Resource extends BaseResource {
     // Java6 uses StringBuilder to optimise this
     String resourcePath = "/" + ENGLISH + "/help/hd0.1/" + page + ".html";
 
-    BaseModel model = new BaseModel(resourcePath, acceptedTandC(), Locale.ENGLISH);
+    BaseModel model = new BaseModel(resourcePath, acceptedTandC(), Locale.ENGLISH, bannerId);
 
     return pageResponse(model, "content/bare-hd-help.ftl");
 
@@ -104,7 +104,7 @@ public class PublicHD0_1Resource extends BaseResource {
     // Java6 uses StringBuilder to optimise this
     String resourcePath = "/" + lang + "/help/hd0.1/" + pathParam;
 
-    BaseModel model = new BaseModel(resourcePath, acceptedTandC(), new Locale(lang));
+    BaseModel model = new BaseModel(resourcePath, acceptedTandC(), new Locale(lang), bannerId);
 
     return pageResponse(model, "content/bare-hd-help.ftl");
 
