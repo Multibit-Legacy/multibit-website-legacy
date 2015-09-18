@@ -101,7 +101,7 @@ public class PublicPageResourceTest extends BaseResourceTest {
       .get(ClientResponse.class);
 
     assertThat(actualResponse.getStatus()).isEqualTo(200);
-    assertThat(actualResponse.getEntity(String.class)).contains("International");
+    assertThat(actualResponse.getEntity(String.class)).contains("Global");
 
     // Assert headers
     assertThat(actualResponse.getHeaders().get("Strict-Transport-Security").get(0)).isEqualTo(BaseResource.HSTS_HEADER_VALUE);
@@ -114,7 +114,7 @@ public class PublicPageResourceTest extends BaseResourceTest {
       .post(ClientResponse.class);
 
     assertThat(actualResponse.getStatus()).isEqualTo(200);
-    assertThat(actualResponse.getEntity(String.class)).contains("International");
+    assertThat(actualResponse.getEntity(String.class)).contains("Global");
     assertThat(actualResponse.getCookies().size()).isEqualTo(1);
     assertThat(actualResponse.getCookies().get(0).toCookie().getName()).isEqualTo(BaseResource.COOKIE_NAME);
 
@@ -130,7 +130,7 @@ public class PublicPageResourceTest extends BaseResourceTest {
       .get(ClientResponse.class);
 
     assertThat(actualResponse.getStatus()).isEqualTo(200);
-    assertThat(actualResponse.getEntity(String.class)).contains("International");
+    assertThat(actualResponse.getEntity(String.class)).contains("Global");
     assertThat(actualResponse.getCookies().size()).isEqualTo(0);
 
     // Assert headers
@@ -144,7 +144,7 @@ public class PublicPageResourceTest extends BaseResourceTest {
       .post(ClientResponse.class);
 
     assertThat(actualResponse.getStatus()).isEqualTo(200);
-    assertThat(actualResponse.getEntity(String.class)).contains("International");
+    assertThat(actualResponse.getEntity(String.class)).contains("Global");
     assertThat(actualResponse.getCookies().size()).isEqualTo(1);
     assertThat(actualResponse.getCookies().get(0).toCookie().getName()).isEqualTo(BaseResource.COOKIE_NAME);
 
