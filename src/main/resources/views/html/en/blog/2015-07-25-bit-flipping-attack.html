@@ -15,7 +15,7 @@
 <h4>Overview</h4>
 
 <p>A vulnerability was identified and fixed in MultiBit HD 0.1.2 that allowed an attacker to insert unspendable Bitcoin addresses into the list MultiBit uses to
-  send fees to the developers.</p>
+  send fees to the developers. (CVE-2015-6964)</p>
 
 <h4>Background</h4>
 
@@ -55,7 +55,7 @@
 <p>Let's say Eve doesn't like MultiBit and wants to deny it funding. Let's also say that she can:</p>
 <ol>
   <li>MITM any connection between a client and server (large ISP, backbone router)</li>
-  <li>alter the traffic sent between them (HTTPS proxy)</li>
+  <li>alter the traffic sent between them </li>
   <li>contact the server once a day (trivial)</li>
   <li>has access to modest computing resources (trivial)</li>
 </ol>
@@ -78,9 +78,9 @@
   <li>randomly change the portion of the address that falls within the AES block until you get one with a valid double SHA-256 checksum</li>
 </ol>
 <p>The above has a complexity of 2<sup>32</sup> with the actual work being the double SHA-256 calculations. I re-purposed some of the MultiBit and Bitcoinj code to generate
-  these malicious addresses and I was able to get ~0.8Mhash/s on my i7-4790K and found an address about every 90 minutes. It's important to note that the work to validate the
+  these malicious addresses and I was able to get ~0.8M cracks/s on my i7-4790K and found an address about every 90 minutes. It's important to note that the work to validate the
   addresses is the same as the proof of work to mine a block, so benchmarks from Bitcoin mining with CPUs and GPUs can be used to get an idea of how much faster finding addresses
-  can be done with a better tool. <a href="https://en.bitcoin.it/wiki/Non-specialized_hardware_comparison" target="_blank">This list</a> shows a similar i7 achieving 66.6Mhash/s
+  can be done with a better tool or different hardware. <a href="https://en.bitcoin.it/wiki/Non-specialized_hardware_comparison" target="_blank">This list</a> shows a similar i7 achieving 66.6Mhash/s
   with a dedicated Bitcoin mining tool, so this attack can be sped up considerably. GPUs (and possibly ASICs) could also be used to further accelerate the attack.</p>
 
 <p>My <a href="https://github.com/Marclass/BritExploit">demonstration exploit script</a> generates these addresses at roughly 10 minute intervals at a cost of about 0.20 USD
