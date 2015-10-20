@@ -1,6 +1,6 @@
 <#-- @ftlvariable name="" type="org.multibit.site.views.PublicFreemarkerView" -->
 <#-- Template providing a single point of configuration for common variables -->
-<#assign downloadVersionHD = "0.1.3">
+<#assign downloadVersionHD = "0.1.4">
 <#assign downloadVersionClassic = "0.5.19">
 
 <#-- Create download links for latest version -->
