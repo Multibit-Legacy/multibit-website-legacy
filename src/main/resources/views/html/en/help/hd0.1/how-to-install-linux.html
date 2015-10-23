@@ -39,8 +39,8 @@
 <p>Assuming you have a suitable JVM installed and have downloaded the installer to your home directory, do the following at the command shell:</p>
 <pre>
 cd ~
-chmod +x multibit-hd-unix-0.1.0.sh
-./multibit-hd-unix-0.1.0.sh
+chmod +x multibit-hd-unix-0.x.y.sh
+./multibit-hd-unix-0.x.y.sh
 </pre>
 <p>After a short time MultiBit HD will show a wizard and install into <code>~/multibit-hd</code>. Your application directory will be <code>~/.multibit-hd</code> and will hold all
   your configuration and wallet files. It will appear on first startup. A basic Unity <code>.desktop</code> file will be created and registered if available so you should be able
@@ -56,13 +56,15 @@ cd multibit-hd
   us know through the website issue link at the foot of the page.</p>
 
 <h3 id="ubuntu">Ubuntu</h3>
-<p>This script will activate the USB HID rules for Trezor:</p>
+<p>This script will activate the USB HID rules for Trezor and KeepKey (just re-attach your device after running):</p>
 <pre>
 #!/bin/sh
 echo Activate HID USB...
 cat << _EOF_ > /etc/udev/rules.d/99-multibit-hd.rules
 # Trezor HID device
 ATTRS{idProduct}=="0001", ATTRS{idVendor}=="534c", MODE="0660", GROUP="plugdev"
+# KeepKey HID device
+ATTRS{idProduct}=="0001", ATTRS{idVendor}=="2b24", MODE="0660", GROUP="plugdev"
 _EOF_
 </pre>
 <p>This script will ensure that MultiBit HD can respond correctly to Bitcoin links in web pages</p>
