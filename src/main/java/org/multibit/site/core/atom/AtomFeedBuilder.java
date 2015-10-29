@@ -19,16 +19,10 @@ import javax.xml.transform.Result;
 import javax.xml.transform.Source;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.StringWriter;
+import java.io.*;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.util.Collections;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 /**
  * <p>Atom feed builder</p>
@@ -84,6 +78,10 @@ public class AtomFeedBuilder {
       existingEntries.put(atomEntry.getLink().getHref(), atomEntry);
     }
 
+    // Set of paths for all articles that exist on disk.
+    // These are the path part of the URL (no host or port)
+    Set<String> existingPathsOnDisk = new HashSet<String>();
+
     // Examine the classpath for new/updated entries
     ClassPath classpath = ClassPath.from(PublicPageResource.class.getClassLoader());
     for (ClassPath.ResourceInfo resourceInfo : classpath.getResources()) {
@@ -98,9 +96,13 @@ public class AtomFeedBuilder {
         // Get the content
         String entryHtml = Resources.toString(resourceUrl, Charsets.UTF_8);
 
-        // Extract a suitable URL converting the dates from yyyy-mm-dd to yyyy/mm/dd to match existing paths
-        String entryHref = resourceInfo.getResourceName().replace("views/html/", host + "/");
-        entryHref = entryHref.replaceFirst("-", "/").replaceFirst("-", "/").replaceFirst("-", "/");
+        // Keep track of the articles path - this does not have the host or port
+        String entryPath = resourceInfo.getResourceName().replace("views/html", "");
+        entryPath = entryPath.replaceFirst("-", "/").replaceFirst("-", "/").replaceFirst("-", "/");
+        existingPathsOnDisk.add(entryPath);
+
+        // This is the full HTML ref with host and port
+        String entryHref = host + entryPath;
 
         // Extract the title
         int hStartPos = entryHtml.indexOf("<h");
@@ -109,6 +111,7 @@ public class AtomFeedBuilder {
         if (hStartPos >= 0 && hEndPos > hStartPos) {
           title = entryHtml.substring(hStartPos, hEndPos + 5);
         }
+
         // Extract the summary
         int pStartPos = entryHtml.indexOf("<p");
         int pEndPos = entryHtml.indexOf("</p");
@@ -165,12 +168,38 @@ public class AtomFeedBuilder {
           atomEntry.setSummary(summary);
           atomEntry.setUpdated(now);
         }
-
       }
     }
 
-    return atomFeed;
+    // Remove articles that exist in the Atom feed but have been removed/renamed on disk
+    List<AtomEntry> atomEntries = atomFeed.getAtomEntries();
+    List<AtomEntry> atomEntriesToDelete = new ArrayList<AtomEntry>();
+    // Loop over the entries that are present in the Atom feel XML
+    for (AtomEntry atomEntry : atomEntries) {
+      String atomEntryHref = atomEntry.getLink().getHref();
+      // Subset to Atom entries for blog articles
+      if (atomEntryHref.contains("/blog/") && !atomEntryHref.contains("png")) {
+        String atomEntryPath = new URL(atomEntryHref).getPath();
+        // See if the Atom entry path actually exists on disk - if not it has been deleted/ renamed
+        boolean found = false;
+        for (String existingPathOnDisk : existingPathsOnDisk) {
+          if (existingPathOnDisk.equals(atomEntryPath)) {
+            found = true;
+            break;
+          }
+        }
+        if (!found) {
+          log.debug("Deleted: '{}'", atomEntryPath);
+          atomEntriesToDelete.add(atomEntry);
+        }
+      }
+    }
+    log.debug("There are {} deleted articles to remove from the Atom feed", atomEntriesToDelete.size());
+    log.debug("Size of Atom feed before deletion : {}", atomFeed.getAtomEntries().size());
+    atomEntries.removeAll(atomEntriesToDelete);
+    log.debug("Size of Atom feed after deletion : {}", atomFeed.getAtomEntries().size());
 
+    return atomFeed;
   }
 
   /**

@@ -3,20 +3,13 @@
     <title>MultiBit Blog</title>
     <id>urn:uuid:15b1f1cd-114e-49a0-87a8-efd2f16c3e98</id>
     <author>MultiBit Team</author>
-    <updated>2015-10-22T14:57:13Z</updated>
+    <updated>2015-10-29T16:26:43Z</updated>
     <entry>
-        <id>urn:uuid:bbf2ed75-9c0e-4337-bf55-bec95941131f</id>
+        <id>urn:uuid:6e14df8c-4b56-428d-8254-d71f8f81eb51</id>
         <title>&lt;h3&gt;MultiBit HD Release 0.1.4 is now available&lt;/h3&gt;</title>
-        <link rel="self" href="https://multibit.org/en/blog/2015/10/22/multibit-hd-release-0.1.4.html"/>
-        <updated>2015-10-22T12:00:00Z</updated>
-        <summary>&lt;p&gt;We are pleased to announce the next &lt;a href="/index.html"&gt;MultiBit HD release (0.1.4) is available for download.&lt;/a&gt;&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2015/10/22/multibit-hd-release-0.1.4.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
-    </entry>
-    <entry>
-        <id>urn:uuid:7b8f9d6c-39fa-4215-8141-c4041efc6515</id>
-        <title>&lt;h3&gt;MultiBit HD Release 0.1.4 is now available&lt;/h3&gt;</title>
-        <link rel="self" href="https://multibit.org/en/blog/2015/10/21/multibit-hd-release-0.1.4.html"/>
-        <updated>2015-10-21T12:00:00Z</updated>
-        <summary>&lt;p&gt;We are pleased to announce the next &lt;a href="/index.html"&gt;MultiBit HD release (0.1.4) is available for download.&lt;/a&gt;&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2015/10/21/multibit-hd-release-0.1.4.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+        <link rel="self" href="https://multibit.org/en/blog/2015/10/23/multibit-hd-release-0.1.4.html"/>
+        <updated>2015-10-23T12:00:00Z</updated>
+        <summary>&lt;p&gt;We are pleased to announce the next &lt;a href="/index.html"&gt;MultiBit HD release (0.1.4) is available for download.&lt;/a&gt;&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2015/10/23/multibit-hd-release-0.1.4.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
     </entry>
     <entry>
         <id>urn:uuid:727744bb-10e1-4504-a432-d45bb2d1b0a0</id>
@@ -300,12 +293,5 @@ to your use of MultiBit.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a tar
   innovation through sessions that encourage interaction and discussion between
   professionals across the fields of technology, politics, finance and
   economics.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2011/10/24/prague.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
-    </entry>
-    <entry>
-        <id>urn:uuid:6e14df8c-4b56-428d-8254-d71f8f81eb51</id>
-        <title>&lt;h3&gt;MultiBit HD Release 0.1.4 is now available&lt;/h3&gt;</title>
-        <link rel="self" href="https://multibit.org/en/blog/2015/10/23/multibit-hd-release-0.1.4.html"/>
-        <updated>2015-10-23T12:00:00Z</updated>
-        <summary>&lt;p&gt;We are pleased to announce the next &lt;a href="/index.html"&gt;MultiBit HD release (0.1.4) is available for download.&lt;/a&gt;&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2015/10/23/multibit-hd-release-0.1.4.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
     </entry>
 </feed>
