@@ -18,8 +18,8 @@ public enum Banners {
   INSTANCE;
 
   private static final SecureRandom random = new SecureRandom();
-  private static final Range<Integer> trezorRange = Range.closed(0, 499);
-  private static final Range<Integer> keepKeyRange = Range.closed(500, 999);
+  private static final Range<Integer> trezorRange = Range.closed(0, 199);
+  private static final Range<Integer> keepKeyRange = Range.closed(200, 999);
 
   /**
    * This is a read only collection of banner strings
