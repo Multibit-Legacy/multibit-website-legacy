@@ -1,8 +1,8 @@
-<h3>Request payment</h3>
+<h3>1. Request payment</h3>
 
 <p>To request bitcoin from someone else they need a "receiving address". MultiBit HD gives you a new receiving address each time you select "Send/Request" and then "Request".</p>
 
-<ol>
+<ul>
   <li>On the "Request payment" screen you don't <em>have</em> to fill anything in.  You can just copy the the address, by:
     <ul>
       <li>highlighting the address and using CTRL-C, or</li>
@@ -17,5 +17,20 @@
     </ul>
    </li>
   <li>Click "Finish" to go back to the Send/Request screen.</li>
-</ol>
+</ul>
+<p>Once you have requested a payment, it appears in the Payments screen with the status 'You requested'.</p>
+<h3>2. The other person then sends you bitcoin - it is initially 'Unconfirmed'</h3>
+<p>When the other person sends you bitcoin, you see at the top of MultiBit HD the message "+ Unconfirmed: mBTC xyz", where "xyz" is the amount of bitcoin they sent you.</p>
+<p>Initially when a bitcoin transaction is sent it is not yet in a block and is 'unconfirmed'. You cannot spend unconfirmed transactions in MultiBit HD.</p>
+<p>When your request has been paid and before it is confirmed the status of the transaction is 'Receiving'. If the other person only sends you part of the bitcoin you requested, the status is 'Part paid'.</p>
 
+<h3>3. Some time later your transaction is confirmed and you can spend it.</h3>
+<p>Bitcoin miners process all the unconfirmed transactions and put them into blocks. Once this happens your transaction is confirmed and you can spend it. This normally takes between 10 minutes and an hour. Once your transaction is confirmed in a block its status changes to 'Received'.</p>
+
+<h3>How can I find out more about a transaction ?</h3>
+<p>You can view many details of a particular transaction as follows:</p>
+<ul>
+  <li>Select a transaction in the Payments screen and click the 'Details' button (or double click the transaction) to open the 'Transaction wizard'. </li>
+  <li>In the transaction wizard, navigate to the screen titled 'Transaction details'. Click the 'View in blockchain.info' button to see your transaction in a block explorer.</li>
+  <li>MultiBit HD supports several block explorers. You can change which block explorer is used to view a transaction as described in <a href="payment-settings.html">Payment settings</a></li>
+</ul>
