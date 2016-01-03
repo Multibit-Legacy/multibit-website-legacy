@@ -5,7 +5,7 @@
 <#include "base.ftl">
 
 <footer class="container-fluid">
-  <p class="text-muted">&copy;<a href="https://multibit.org/" target="_blank">${model.msg("app.developers")}</a> 2011–2015.
+  <p class="text-muted">&copy;<a href="https://multibit.org/" target="_blank">${model.msg("app.developers")}</a> 2011–2016.
     &nbsp;${model.msg("footer.powered")}
     &nbsp;${model.msg("footer.licence")}
     &nbsp;${model.msg("footer.trademarks")}
