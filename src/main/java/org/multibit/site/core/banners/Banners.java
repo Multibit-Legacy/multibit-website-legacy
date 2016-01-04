@@ -43,14 +43,14 @@ public enum Banners {
     // KeepKey
     banners.put("1.id", "1");
     banners.put("1.slug", "keep-key");
-    banners.put("1.large-title", "KeepKey: Your Private Bitcoin Vault");
-    banners.put("1.medium-title", "KeepKey: Your Private Bitcoin Vault");
-    banners.put("1.small-title", "KeepKey:&nbsp;Your&nbsp;Private&nbsp;Bitcoin&nbsp;Vault");
+    banners.put("1.large-title", "KeepKey: A Simple Bitcoin Hardware Wallet");
+    banners.put("1.medium-title", "KeepKey: A Simple Bitcoin Hardware Wallet");
+    banners.put("1.small-title", "KeepKey:&nbsp;A&nbsp;Simple&nbsp;Bitcoin&nbsp;Hardware&nbsp;Wallet");
     banners.put("1.large-url", "https://padlock.link/ulpj");
     banners.put("1.medium-url", "https://padlock.link/u0f7");
     banners.put("1.small-url", "https://padlock.link/wgrt");
-    banners.put("1.large-image-path", "/images/banner/keepkey-invite-banner-512x72.png");
-    banners.put("1.medium-image-path", "/images/banner/keepkey-invite-banner-280x72.png");
+    banners.put("1.large-image-path", "/images/banner/keepkey-get-yours-banner-512x72.png");
+    banners.put("1.medium-image-path", "/images/banner/keepkey-get-yours-banner-280x72.png");
 
   }
 
