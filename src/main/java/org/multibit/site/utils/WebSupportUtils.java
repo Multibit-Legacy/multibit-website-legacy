@@ -27,7 +27,7 @@ public class WebSupportUtils {
 
     // At present this results in slight fuzziness
     // so has been switched off
-    //ScreenShotResizer.resizeAll(Paths.get("src/main/resources/assets/images/en/screenshots/mbhd-0.1"), "*.png");
+    //ScreenShotResizer.resizeAll(Paths.get("src/main/resources/assets/images/en/screenshots/mbhd-0.2"), "*.png");
 
   }
 
