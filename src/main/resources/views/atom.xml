@@ -3,7 +3,14 @@
     <title>MultiBit Blog</title>
     <id>urn:uuid:a0fc7f26-56dd-4c05-a8c8-4188681da8af</id>
     <author>MultiBit Team</author>
-    <updated>2015-11-04T12:25:57Z</updated>
+    <updated>2016-02-12T10:54:02Z</updated>
+    <entry>
+        <id>urn:uuid:0fb8a21c-1401-4d79-843f-30ab3be26e42</id>
+        <title>&lt;h3&gt;MultiBit HD Release 0.2.0 is now available&lt;/h3&gt;</title>
+        <link rel="self" href="https://multibit.org/en/blog/2016/02/12/multibit-hd-release-0.2.0.html"/>
+        <updated>2016-02-12T12:00:00Z</updated>
+        <summary>&lt;p&gt;We are pleased to announce the next &lt;a href="/index.html"&gt;MultiBit HD release (0.2.0) is available for download.&lt;/a&gt;&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2016/02/12/multibit-hd-release-0.2.0.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+    </entry>
     <entry>
         <id>urn:uuid:917455ed-8867-42df-a087-b56b4ab7c2ad</id>
         <title>&lt;h3&gt;MultiBit HD Release 0.1.4 is now available&lt;/h3&gt;</title>
