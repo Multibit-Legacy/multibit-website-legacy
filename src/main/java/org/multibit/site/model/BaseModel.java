@@ -45,7 +45,6 @@ public class BaseModel {
   // Request scope variables
 
   private final Locale locale;
-  private final boolean acceptedTandC;
   private final int bannerPrefix;
 
   /**
@@ -63,23 +62,16 @@ public class BaseModel {
    */
   private boolean showDownload = false;
 
-  /**
-   * Default is to use /index.html as T&C acceptance endpoint
-   */
-  private String acceptAction = "/index.html";
-
   private List<String> messages = Lists.newArrayList();
 
   /**
    * @param resourcePath  The resource path for the HTML content
-   * @param acceptedTandC True if the terms and conditions have been accepted
    * @param locale        The request locale
    * @param bannerPrefix  The prefix of the banner to show for this page impression (0, 1, etc)
    */
-  public BaseModel(String resourcePath, boolean acceptedTandC, Locale locale, int bannerPrefix) {
+  public BaseModel(String resourcePath, Locale locale, int bannerPrefix) {
 
     this.locale = locale;
-    this.acceptedTandC = acceptedTandC;
     this.bannerPrefix = bannerPrefix;
 
     // Check for a fully-formed view
@@ -202,13 +194,6 @@ public class BaseModel {
   }
 
   /**
-   * @return True if the terms and conditions have been accepted
-   */
-  public boolean isAcceptedTandC() {
-    return acceptedTandC;
-  }
-
-  /**
    * @return True if the download buttons should be shown
    */
   public boolean isShowDownload() {
@@ -217,17 +202,6 @@ public class BaseModel {
 
   public void setShowDownload(boolean showDownload) {
     this.showDownload = showDownload;
-  }
-
-  /**
-   * @return The relative path of the accept terms and conditions action
-   */
-  public String getAcceptAction() {
-    return acceptAction;
-  }
-
-  public void setAcceptAction(String acceptAction) {
-    this.acceptAction = acceptAction;
   }
 
   /**

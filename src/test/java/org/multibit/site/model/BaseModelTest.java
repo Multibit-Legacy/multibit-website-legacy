@@ -17,14 +17,14 @@ public class BaseModelTest {
   public void testInitialise_Malformed() throws Exception {
 
     thrown.expect(IllegalArgumentException.class);
-    new BaseModel("/",true, Locale.UK, 0);
+    new BaseModel("/", Locale.UK, 0);
 
   }
 
   @Test
   public void testGetNavBar_EN() throws Exception {
 
-    BaseModel testObject = new BaseModel("/en/index.html",true, Locale.UK, 0);
+    BaseModel testObject = new BaseModel("/en/index.html", Locale.UK, 0);
 
     assertThat(testObject.getNavBar()).contains("Download");
 
@@ -36,14 +36,14 @@ public class BaseModelTest {
     thrown.expect(IllegalArgumentException.class);
 
     // Specific path overrides locale
-    new BaseModel("/en/index.html",true, Locale.JAPANESE, 0);
+    new BaseModel("/en/index.html", Locale.JAPANESE, 0);
 
   }
 
   @Test
   public void testGetNavBar_JA() throws Exception {
 
-    BaseModel testObject = new BaseModel("/ja/index.html",true, Locale.JAPANESE, 0);
+    BaseModel testObject = new BaseModel("/ja/index.html", Locale.JAPANESE, 0);
 
     assertThat(testObject.getNavBar()).contains("\u30c0\u30a6\u30f3\u30ed\u30fc\u30c9");
 
@@ -52,7 +52,7 @@ public class BaseModelTest {
   @Test
   public void testGetNavBar_ZH() throws Exception {
 
-    BaseModel testObject = new BaseModel("/zh/index.html",true, Locale.CHINESE, 0);
+    BaseModel testObject = new BaseModel("/zh/index.html", Locale.CHINESE, 0);
 
     assertThat(testObject.getNavBar()).contains("\u4e0b\u8f7d");
 
@@ -61,7 +61,7 @@ public class BaseModelTest {
   @Test
   public void testGetNavBar_ES() throws Exception {
 
-    BaseModel testObject = new BaseModel("/es/index.html",true, new Locale("es"), 0);
+    BaseModel testObject = new BaseModel("/es/index.html", new Locale("es"), 0);
 
     assertThat(testObject.getNavBar()).contains("descargar");
 
@@ -70,7 +70,7 @@ public class BaseModelTest {
   @Test
   public void testGetNavBar_RU() throws Exception {
 
-    BaseModel testObject = new BaseModel("/ru/index.html",true, new Locale("ru"), 0);
+    BaseModel testObject = new BaseModel("/ru/index.html", new Locale("ru"), 0);
 
     assertThat(testObject.getNavBar()).contains("\u0421\u043a\u0430\u0447\u0430\u0442\u044c");
 

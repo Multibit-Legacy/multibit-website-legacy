@@ -108,22 +108,6 @@ public class PublicPageResourceTest extends BaseResourceTest {
   }
 
   @Test
-  public void viewLocalisedIndexPage_Accepted() throws Exception {
-
-    ClientResponse actualResponse = configureAsClient("/")
-      .post(ClientResponse.class);
-
-    assertThat(actualResponse.getStatus()).isEqualTo(200);
-    assertThat(actualResponse.getEntity(String.class)).contains("Global");
-    assertThat(actualResponse.getCookies().size()).isEqualTo(1);
-    assertThat(actualResponse.getCookies().get(0).toCookie().getName()).isEqualTo(BaseResource.COOKIE_NAME);
-
-    // Assert headers
-    assertThat(actualResponse.getHeaders().get("Strict-Transport-Security").get(0)).isEqualTo(BaseResource.HSTS_HEADER_VALUE);
-
-  }
-
-  @Test
   public void viewIndexPage() throws Exception {
 
     ClientResponse actualResponse = configureAsClient("/index.html")
@@ -131,22 +115,6 @@ public class PublicPageResourceTest extends BaseResourceTest {
 
     assertThat(actualResponse.getStatus()).isEqualTo(200);
     assertThat(actualResponse.getEntity(String.class)).contains("Global");
-    assertThat(actualResponse.getCookies().size()).isEqualTo(0);
-
-    // Assert headers
-    assertThat(actualResponse.getHeaders().get("Strict-Transport-Security").get(0)).isEqualTo(BaseResource.HSTS_HEADER_VALUE);
-  }
-
-  @Test
-  public void viewIndexPage_Accepted() throws Exception {
-
-    ClientResponse actualResponse = configureAsClient("/index.html")
-      .post(ClientResponse.class);
-
-    assertThat(actualResponse.getStatus()).isEqualTo(200);
-    assertThat(actualResponse.getEntity(String.class)).contains("Global");
-    assertThat(actualResponse.getCookies().size()).isEqualTo(1);
-    assertThat(actualResponse.getCookies().get(0).toCookie().getName()).isEqualTo(BaseResource.COOKIE_NAME);
 
     // Assert headers
     assertThat(actualResponse.getHeaders().get("Strict-Transport-Security").get(0)).isEqualTo(BaseResource.HSTS_HEADER_VALUE);
@@ -160,22 +128,6 @@ public class PublicPageResourceTest extends BaseResourceTest {
 
     assertThat(actualResponse.getStatus()).isEqualTo(200);
     assertThat(actualResponse.getEntity(String.class)).contains("0.0.1");
-    assertThat(actualResponse.getCookies().size()).isEqualTo(0);
-
-    // Assert headers
-    assertThat(actualResponse.getHeaders().get("Strict-Transport-Security").get(0)).isEqualTo(BaseResource.HSTS_HEADER_VALUE);
-  }
-
-  @Test
-  public void viewLocalisedDownloadPage_Accepted() throws Exception {
-
-    ClientResponse actualResponse = configureAsClient("/download.html")
-      .post(ClientResponse.class);
-
-    assertThat(actualResponse.getStatus()).isEqualTo(200);
-    assertThat(actualResponse.getEntity(String.class)).contains("0.0.1");
-    assertThat(actualResponse.getCookies().size()).isEqualTo(1);
-    assertThat(actualResponse.getCookies().get(0).toCookie().getName()).isEqualTo(BaseResource.COOKIE_NAME);
 
     // Assert headers
     assertThat(actualResponse.getHeaders().get("Strict-Transport-Security").get(0)).isEqualTo(BaseResource.HSTS_HEADER_VALUE);
