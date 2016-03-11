@@ -35,6 +35,22 @@ your own network setup.</p>
   <li>The overall number of nodes - the more the merrier</li>
 </ul>
 
+<h4>I see "There was an error in creating a connection to be Bitcoin network" in the corner</h4>
+
+<p>You most likely have a corrupted file in your wallet directory. Here's the procedure to resolve the situation:</p>
+
+<ol>
+  <li>Start MultiBit HD as normal</li>
+  <li>Unlock your wallet and click Finish as normal</li>
+  <li>Click "Manage Wallet" in the sidebar and click the "Wallet dashboard" button</li>
+  <li>Make a note of your "application directory" and your "wallet directory" (copy/paste into a text editor is useful here)</li>
+  <li>Close MultiBit HD in the usual way</li>
+  <li>Open a file browser and navigate to the "application directory" and from there into your "wallet directory"</li>
+  <li>Locate the file called <code>mbhd.spvchain</code> and delete it</li>
+  <li>Start MultiBit HD as normal and unlock your wallet</li>
+  <li>You should now be able to connect to the Bitcoin network and after a  much longer synchronization process than usual your balance will be restored</li>
+</ol>
+
 <h4>Related</h4>
 
 <ul>
