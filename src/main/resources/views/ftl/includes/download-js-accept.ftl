@@ -89,7 +89,7 @@
   $("#download-windows").click(
     function(e) {
       setTimeout(function () {
-        document.location = "/en/help/hd0.1/how-to-install-windows.html";
+        document.location = "/en/help/hd0.3/how-to-install-windows.html";
       }, 5000);
     }
   );
@@ -97,7 +97,7 @@
   $("#download-linux").click(
     function(e) {
       setTimeout(function () {
-        document.location = "/en/help/hd0.1/how-to-install-linux.html";
+        document.location = "/en/help/hd0.3/how-to-install-linux.html";
       }, 5000);
     }
   );
@@ -105,7 +105,7 @@
   $("#download-osx").click(
     function(e) {
       setTimeout(function () {
-        document.location = "/en/help/hd0.1/how-to-install-osx.html";
+        document.location = "/en/help/hd0.3/how-to-install-osx.html";
       }, 5000);
     }
   );
