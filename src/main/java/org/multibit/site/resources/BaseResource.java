@@ -31,8 +31,6 @@ public abstract class BaseResource {
    */
   protected static final String ENGLISH = "en";
 
-  public static final String COOKIE_NAME = "MBHD-Session";
-
   /**
    * Jersey creates a fresh resource every request so this is safe
    */
@@ -100,14 +98,6 @@ public abstract class BaseResource {
 
   public WebApplicationException notFound() {
     return new WebApplicationException(Response.Status.NOT_FOUND);
-  }
-
-  /**
-   * @return True if the session cookie exists indicating acceptance of the terms and conditions
-   */
-  protected boolean acceptedTandC() {
-
-    return httpHeaders != null && httpHeaders.getCookies().containsKey(COOKIE_NAME);
   }
 
   protected Response pageResponse(BaseModel model, String templatePath) {

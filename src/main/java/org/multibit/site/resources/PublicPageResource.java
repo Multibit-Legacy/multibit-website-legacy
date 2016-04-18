@@ -1,25 +1,24 @@
 package org.multibit.site.resources;
 
 import com.google.common.base.Optional;
-import com.google.common.net.HttpHeaders;
 import com.yammer.dropwizard.jersey.caching.CacheControl;
 import com.yammer.metrics.annotation.Timed;
 import org.multibit.site.caches.InMemoryArtifactCache;
 import org.multibit.site.core.banners.Banners;
 import org.multibit.site.model.BaseModel;
-import org.multibit.site.views.PublicFreemarkerView;
 
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Size;
-import javax.ws.rs.*;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.NewCookie;
 import javax.ws.rs.core.Response;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
 import java.util.Locale;
-import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -173,38 +172,21 @@ public class PublicPageResource extends BaseResource {
   }
 
   /**
-   * No cache to ensure cookie status is correctly updated
-   *
-   * @return The default index page for the main site with no cookie
+   * @return The default index page for the main site
    */
   @GET
   @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
   @CacheControl(noCache = true)
   public Response viewLocalisedIndexPage() {
 
-    BaseModel model = new BaseModel("/" + getLocale().getLanguage() + "/index.html", acceptedTandC(), getLocale(), bannerId);
+    BaseModel model = new BaseModel("/" + getLocale().getLanguage() + "/index.html", getLocale(), bannerId);
     model.setShowDownload(true);
-    model.setAcceptAction("/index.html");
 
     return pageResponse(model, "content/main.ftl");
 
   }
 
   /**
-   * @return The default index page for the main site with acceptance of terms and conditions
-   */
-  @POST
-  @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
-  @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
-  public Response viewLocalisedIndexPageWithCookie() {
-
-    return getLocalisedDownloadResponseWithCookie("/index.html");
-
-  }
-
-  /**
-   * No cache to ensure cookie status is correctly updated
-   *
    * @return The index page for the main site (requires a specific entry point)
    */
   @GET
@@ -218,21 +200,6 @@ public class PublicPageResource extends BaseResource {
   }
 
   /**
-   * @return The index page offers terms and conditions
-   */
-  @POST
-  @Path("index.html")
-  @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
-  @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
-  public Response viewIndexPageWithCookie() {
-
-    return viewLocalisedIndexPageWithCookie();
-
-  }
-
-  /**
-   * No cache to ensure cookie status is correctly updated
-   *
    * @return The download page for the main site (requires a specific entry point)
    */
   @GET
@@ -241,24 +208,10 @@ public class PublicPageResource extends BaseResource {
   @CacheControl(noCache = true)
   public Response viewLocalisedDownloadPage() {
 
-    BaseModel model = new BaseModel("/" + getLocale().getLanguage() + "/download.html", acceptedTandC(), getLocale(), bannerId);
+    BaseModel model = new BaseModel("/" + getLocale().getLanguage() + "/download.html", getLocale(), bannerId);
     model.setShowDownload(true);
-    model.setAcceptAction("/download.html");
 
     return pageResponse(model, "content/main.ftl");
-
-  }
-
-  /**
-   * @return The download page offers terms and conditions
-   */
-  @POST
-  @Path("download.html")
-  @Produces(MediaType.TEXT_HTML + ";charset=utf-8")
-  @CacheControl(maxAge = 5, maxAgeUnit = TimeUnit.MINUTES)
-  public Response viewLocalisedDownloadPageWithCookie() {
-
-    return getLocalisedDownloadResponseWithCookie("/download.html");
 
   }
 
@@ -275,7 +228,7 @@ public class PublicPageResource extends BaseResource {
     @PathParam("page") String page
   ) {
 
-    BaseModel model = new BaseModel("/" + getLocale().getLanguage() + "/" + page + ".html", false, getLocale(), bannerId);
+    BaseModel model = new BaseModel("/" + getLocale().getLanguage() + "/" + page + ".html", getLocale(), bannerId);
 
     return pageResponse(model, "content/main.ftl");
 
@@ -294,7 +247,7 @@ public class PublicPageResource extends BaseResource {
     @Size(min = 3, max = 3) @PathParam("lang") String lang
   ) {
 
-    BaseModel model = new BaseModel("/" + lang + "/index.html", acceptedTandC(), new Locale(lang), bannerId);
+    BaseModel model = new BaseModel("/" + lang + "/index.html", new Locale(lang), bannerId);
     model.setShowDownload(true);
 
     return pageResponse(model, "content/main.ftl");
@@ -316,7 +269,7 @@ public class PublicPageResource extends BaseResource {
     @PathParam("page") String page
   ) {
 
-    BaseModel model = new BaseModel("/" + lang + "/" + page + ".html", acceptedTandC(), new Locale(lang), bannerId);
+    BaseModel model = new BaseModel("/" + lang + "/" + page + ".html", new Locale(lang), bannerId);
 
     if ("index".equalsIgnoreCase(page)) {
       model.setShowDownload(true);
@@ -376,7 +329,7 @@ public class PublicPageResource extends BaseResource {
     // Java6 uses StringBuilder to optimise this
     String resourcePath = "/" + lang + "/blog/" + year + "-" + month + "-" + day + "-" + page + ".html";
 
-    BaseModel model = new BaseModel(resourcePath, acceptedTandC(), new Locale(lang), bannerId);
+    BaseModel model = new BaseModel(resourcePath, new Locale(lang), bannerId);
 
     return pageResponse(model, "content/blog.ftl");
 
@@ -397,7 +350,7 @@ public class PublicPageResource extends BaseResource {
     String resourcePath = "/" + ENGLISH + "/help.html";
 
     // Use the main template since this is a starting point for a user
-    BaseModel model = new BaseModel(resourcePath, acceptedTandC(), Locale.ENGLISH, bannerId);
+    BaseModel model = new BaseModel(resourcePath, Locale.ENGLISH, bannerId);
 
     return pageResponse(model, "content/main.ftl");
 
@@ -421,7 +374,7 @@ public class PublicPageResource extends BaseResource {
     // Java6 uses StringBuilder to optimise this
     String resourcePath = "/" + lang + "/help.html";
 
-    BaseModel model = new BaseModel(resourcePath, acceptedTandC(), new Locale(lang), bannerId);
+    BaseModel model = new BaseModel(resourcePath, new Locale(lang), bannerId);
 
     return pageResponse(model, "content/main.ftl");
 
@@ -450,13 +403,13 @@ public class PublicPageResource extends BaseResource {
     String resourcePath;
     if (version.contains("hd")) {
       resourcePath = "/" + lang + "/help/" + version + "/help_contents.html";
-      BaseModel model = new BaseModel(resourcePath, acceptedTandC(), new Locale(lang), bannerId);
+      BaseModel model = new BaseModel(resourcePath, new Locale(lang), bannerId);
       return pageResponse(model, "content/hd-help.ftl");
     }
 
     // Must be classic
     resourcePath = "/" + lang + "/help/" + version + "/contents.html";
-    BaseModel model = new BaseModel(resourcePath, acceptedTandC(), new Locale(lang), bannerId);
+    BaseModel model = new BaseModel(resourcePath, new Locale(lang), bannerId);
 
     return pageResponse(model, "content/mbc-help.ftl");
 
@@ -484,54 +437,10 @@ public class PublicPageResource extends BaseResource {
     // Java6 uses StringBuilder to optimise this
     String resourcePath = "/" + lang + "/help/" + version + "/" + pathParam;
 
-    BaseModel model = new BaseModel(resourcePath, acceptedTandC(), new Locale(lang), bannerId);
+    BaseModel model = new BaseModel(resourcePath, new Locale(lang), bannerId);
 
     return version.contains("hd") ? pageResponse(model, "content/hd-help.ftl") : pageResponse(model, "content/mbc-help.ftl");
 
-  }
-
-  /**
-   * <p>Provide the fail safe response</p>
-   *
-   * @return A 307 to be recorded in the server logs triggering an action by administrators
-   */
-  private Response failSafeResponse() {
-    return applyHeaders(Response
-        .temporaryRedirect(URI.create(FAILSAFE))
-        .type(MediaType.TEXT_HTML)
-    ).build();
-  }
-
-  /**
-   * @param resourcePath The resource path (e.g. "/index.html")
-   *
-   * @return A localised response with download buttons containing a session cookie
-   */
-  private Response getLocalisedDownloadResponseWithCookie(String resourcePath) {
-
-    NewCookie cookie = new NewCookie(
-      COOKIE_NAME,
-      UUID.randomUUID().toString(),
-      null,
-      null,
-      null,
-      NewCookie.DEFAULT_MAX_AGE,
-      false
-    );
-
-    // Accepted by virtue of the POST
-    BaseModel model = new BaseModel("/" + getLocale().getLanguage() + resourcePath, true, getLocale(), bannerId);
-    model.setShowDownload(true);
-    model.setAcceptAction(resourcePath);
-    PublicFreemarkerView<BaseModel> entity = new PublicFreemarkerView<BaseModel>("content/main.ftl", model);
-
-    return applyHeaders(Response
-        .ok()
-        .entity(entity)
-        .header(HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN, "*")
-        .header("Strict-Transport-Security", "max-age=31536000; includeSubDomains")
-        .cookie(cookie)
-    ).build();
   }
 
 }
