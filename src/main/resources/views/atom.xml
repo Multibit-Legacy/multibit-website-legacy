@@ -3,7 +3,14 @@
     <title>MultiBit Blog</title>
     <id>urn:uuid:15b1f1cd-114e-49a0-87a8-efd2f16c3e98</id>
     <author>MultiBit Team</author>
-    <updated>2016-04-15T14:29:05Z</updated>
+    <updated>2016-05-25T13:25:03Z</updated>
+    <entry>
+        <id>urn:uuid:087b105b-fc37-4e94-841a-0924eb228a34</id>
+        <title>&lt;h3&gt;KeepKey LLC is buying MultiBit&lt;/h3&gt;</title>
+        <link rel="self" href="https://multibit.org/en/blog/2016/05/25/multibit-is-being-sold-to-keepkey.html"/>
+        <updated>2016-05-25T12:00:00Z</updated>
+        <summary>&lt;p&gt;The MultiBit team is pleased to announce that KeepKey LLC, makers of the popular KeepKey hardware wallet, have put in an offer to buy MultiBit which has been accepted. Within a few weeks we will complete the transfer of control over the MultiBit code and website to them and we will step back from further development.&lt;/p&lt;br/&gt;&lt;p&gt;Read the rest on the &lt;a target='_blank' href='https://multibit.org/en/blog/2016/05/25/multibit-is-being-sold-to-keepkey.html'&gt;MultiBit blog&lt;/a&gt;.&lt;/p&gt;</summary>
+    </entry>
     <entry>
         <id>urn:uuid:36c1a674-49e0-4fc8-89b6-54b45ae60bcd</id>
         <title>&lt;h3&gt;MultiBit HD Release 0.3.0 is now available&lt;/h3&gt;</title>
